@@ -1,0 +1,96 @@
+/*首页样式*/
+/*头部*/
+/*第一行*/
+.header{
+    height: 256px;
+    background: url("../images/bg1.jpg") no-repeat;
+    position: relative;
+    -webkit-background-size:cover;
+    background-size:cover;
+    -webkit-background-origin:border-box;
+    background-origin:border-box;
+}
+.header .row-one{
+    margin: 20px;
+}
+.header .row-one>div{
+    height: 50px;
+}
+.header .row-one .label{
+    background: #3d3d3d;
+    margin: 5px 0;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.header .row-one .options>ul{
+    width: 38px;
+    text-align: center;
+}
+.header .row-one .options>ul:first-child{
+    margin-right: -15px;
+}
+/*头部第二行*/
+.header .row-two{
+    margin-top: -10px;
+    text-align: center;
+    color: #ffffff;
+}
+.header .row-two>h3{
+    font-weight: 100;
+}
+/*头部第三行*/
+.header .row-three{
+    width: 80%;
+    margin-left: 10%;
+    position: absolute;
+    bottom: 10px;
+}
+
+/*第二部分*/
+.buys{
+    padding-top:22px;
+    border-bottom:1px solid #c5c5c5;
+}
+.buys ul{
+    width:51px;
+    margin:  auto;
+    text-align: center;
+    height: 119px;
+}
+.buys ul>li:last-child{
+    margin-top: 5px;
+}
+/*第三部分*/
+.carousels{
+    margin: 0 -15px;
+    padding: 10px 0px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #c5c5c5;
+}
+.carousels img{
+    width: 100%;
+}
+/*第四部分*/
+.house-list{
+
+}
+.house-list > .list-header{
+    height: 48px;
+    line-height: 48px;
+    padding: 0 15px;
+
+}
+.house-list > .list-content > .media{
+    padding: 15px 10px;
+    border-top: 1px solid #c5c5c5;
+    margin: 0;
+}
+.house-list > .list-content > .media .media-heading{
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
