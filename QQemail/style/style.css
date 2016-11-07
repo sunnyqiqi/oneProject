@@ -1,0 +1,134 @@
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;}
+body{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#000;}
+a{
+	text-decoration:none;}
+a:hover{
+	text-decoration:underline;}
+.clear{
+	clear:both;}
+#wrap{
+	width:800px;
+	margin:0 auto;}
+#head{
+	margin-top:40px;
+	height:30px;
+	background:#EAF3FF;
+	border-radius:5px;}
+#head img{
+	margin-top:-17px;
+	background:#fff;
+	float:left;}
+#head_menu{
+	float:right;}
+#head_menu ul{
+	list-style-type:none;
+	margin-right:8px;
+	line-height:30px;}
+#head_menu ul li{
+	display:inline;
+	/*如果一个列表横向显示后，需要做宽度和高度的处理，那么你用float处理*/}
+#head_menu ul li a{
+	padding-right:4px;
+	color:#03309D;}	
+/*content*/
+#content{
+	margin-top:20px;}
+#con_left{
+	width:435px;
+	height:330px;
+	float:left;
+	background:#FFF;}
+#con_left img{
+	float:left;
+	margin:10px 0 0 7px;}
+#con_text{
+	margin-top:30px;}
+#con_text h2{
+	font-size:17px;
+	color:#03309d;}
+#con_text p{
+	font-size:12px;
+	line-height:27px;}
+#con_text span{
+	font-size:12px;
+	line-height:30px;}
+#con_menu{
+	color:#9889AB;
+	font-size:12px;
+	margin:42px 0 0 25px;}
+#con_right{
+	width:362px;
+	height:330px;
+	float:right;
+	background:#EDF5FF;
+	border-radius:10px;
+	border:#acc3e4 solid 1px;
+	padding-left:20px;
+	margin-top:-330px;}	
+#con_right h3{
+	margin-top:30px;
+	color:#274587;}
+#user{
+	margin-top:20px;}
+#username{
+	width:180px;
+	height:32px;
+	border-radius:5px;
+	float:left;}
+#mail{
+	width:124px;
+	height:32px;
+	border-radius:5px;}
+	
+#password{
+	width:310px;
+	height:32px;
+	border-radius:5px;
+	margin-top:10px;}
+#con_right .zt{
+	margin-top:5px;
+	font-size:12px;}
+#con_right .zt a{
+	float:right;
+	margin-right:42px;}
+#login{
+	margin-top:15px;
+	background-color:#7AAF12;
+	color:#fff;
+	width:85px;
+	height:33px;
+	border:1px solid #55850a;
+	border-radius:7px;
+	font-size:16px;
+	font-weight:bold;}
+#con_right .qh{
+	font-size:13px;
+	line-height:55px;}
+#con_right .ft{
+	color:#868686;
+	font-size:12px;}
+/*footer*/
+#footer_menu{
+	height:30px;
+	background:#EAF3FF;
+	text-align:center;
+	margin-top:15px;
+	line-height:30px;}
+#footer_menu ul{
+	}
+#footer_menu li{
+	display:inline;
+	font-size:12px;}
+#footer_menu li a{
+	padding-right:4px;}
+#footer_con{
+	text-align:center;
+	margin-top:5px;
+	color:#666;
+	font-size:13px;}
