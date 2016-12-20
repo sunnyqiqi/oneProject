@@ -1,0 +1,160 @@
+article,section,aside,nav,header,footer,address{
+    display: block;
+}
+*{
+    margin: 0 auto;padding: 0;
+}
+.one{
+    background: url("../images/1.jpg");
+    width: 1600px;
+    height:1257px;
+}
+/*第一个导航条*/
+.one_1{
+    background: rgba(6,28,40,0.6) none repeat scroll 0 0 !important;
+    height: 69px;
+    line-height: 69px;
+    overflow: hidden;
+}
+.one_1 div{
+    color: #71777B;
+    font-size: 13px;
+    margin-left: 152px;
+}
+.one_1 div span{
+    margin-left: 15px;
+}
+.one_1 ul{
+    display: inline-block;
+    float: right;
+    margin-top: -70px;
+    margin-right: 136px;
+
+}
+.one_1 ul li {
+    display: inline-block;
+
+
+}
+.one_1 ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    margin: 0 17px;
+    font-weight: 700;
+}
+.one_1 a:hover{
+    text-decoration:underline;
+    color: #32B0EE;
+}
+/*晨硕产品*/
+.one_3{
+    background-color: #F4F7F9;
+    height: 462px;
+}
+/*案例分析*/
+.one_4{
+    background: url("../images/4.jpg");
+    height: 324px;
+}
+.one_4 ul{
+    margin-left: 552px;
+}
+.one_4 ul li{
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    margin-top: 261px;
+}
+.one_4 ul li a{
+    color: #062033;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 44px;
+
+}
+.one_4 .active{
+    background: #0EB493;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+.one_4 a:hover{
+    background: #0EB493;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+/*图片*/
+.one_5{
+    background: #2A283E;
+    height: 606px;
+}
+.one_5 ul{
+    margin-left: 25px;
+}
+.one_5 ul li{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 18px;
+}
+/*顶级团队*/
+.one_6{
+    background: url("../images/6.jpg");
+    height: 871px;
+    overflow: hidden;
+}
+.one_6 ul {
+    margin-left: 190px;
+}
+.one_6 ul li{
+    display: inline-block;
+    float: left;
+    margin-left: 30px;
+    margin-top: 350px;
+}
+/*专业服务*/
+.one_7{
+    background:url("../images/7.jpg");
+    height: 600px;
+}
+/*地理*/
+.one_8{
+    background: url("../images/8.jpg") no-repeat;
+    height: 544px;
+}
+.one_8 img{
+    margin-top: 150px;
+}
+/*联系我们*/
+.one_9{
+    background: url("../images/9.jpg");
+    height: 498px;
+}
+.one_9 div{
+    display: inline-block;
+    margin-left: 200px;
+    margin-top: 105px;
+}
+.one_91{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+
+}
+.one_92{
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+}
+#one_9{
+    margin-left:560px;
+    margin-top: 20px;
+}
+#one_91{
+    margin-left: 1258px;
+    margin-top: 30px;
+}
+
+
+
