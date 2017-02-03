@@ -1,0 +1,235 @@
+@charset "utf-8";
+.content_box1_list dl {
+    float: left;
+    width: 25%;
+    margin: 20px 0px;
+    text-align: center;
+}
+.content_box1_list dl dd{
+    font-size: 14px;
+}
+.cont_box2_title{
+    height: 48px;
+    background: #F0F0F0;
+    border:1px solid #D6D6D6;
+    border-bottom:0;
+    line-height: 48px;
+    text-align: center;
+    position: relative;
+}
+.cont_box2_list{
+    line-height: 50px;
+}
+.cont_box2_list li{
+    padding: 0px 10px;
+    overflow: hidden;
+    border-top: 1px solid #BFBFBF;
+}
+.cont_box2_list span{
+    float: left;
+}
+.cont_box2_list a{
+    float: left;
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.content_list ul{
+}
+.content_list>ul>li{
+    border-bottom: 1px solid #EEEEEE;
+    height: 30px;
+    width: 95%;
+    padding: 10px 10px;
+    position: relative;
+
+    overflow: hidden;
+}
+.content_list ul li div.lf{
+    width: 100%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.content_list ul li.active div.lf{
+    left: -60px;
+}
+.content_list ul li div.lf a{
+    font-size: 14px;
+}
+.content_list ul li .del_danger{
+    width: 50px;
+    height: 48px;
+    background: #FD3B31;
+    border: 1px solid #EE908B;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #fff;
+    text-align: center;
+    line-height: 48px;
+    font-size: 14px;
+}
+.content_list_lh50>ul>li{
+    line-height: 50px;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+.content_list_lh50 ul li img{
+    width: 30px;
+    margin-top: 10px;
+}
+.content_list ul li.neirong{
+    height: 462px;
+}
+.btn_cont{
+   text-align: center;
+}
+.btn{
+    display: inline-block;
+    background: #0287BF;
+    margin-top: 30px;
+    border: 1px solid #86C6E0;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.chongtu_info{
+    line-height: 24px !important;
+    height: auto !important;
+    background: #F2F2F2;
+}
+.tabl1{
+    border-bottom: 1px solid #EEEEEE;
+}
+.tabl1 tr td{
+    border-top: 1px solid #EEEEEE;
+    padding: 0px 10px;
+    line-height: 50px;
+    text-align: center;
+}
+.tabl1 tr td:first-child{
+    border-right: 1px solid #EEEEEE;
+    text-align: left;
+    width: 50%;
+}
+.tz_info{
+    line-height: 26px;
+}
+.tz_info_title{
+    border-bottom: 1px solid #E9E9E9;
+    padding: 10px;
+}
+.tz_info_cont{
+    padding: 10px 0px;
+}
+.list_user dl{
+    width: 25%;
+    text-align: center;
+    float: left;
+}
+.list_user dl dd{
+    width: 50px;
+    height: 50px;
+    -web-border-radius: 90px;
+    -moz-border-radius: 90px;
+    border-radius: 90px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    margin: 10px auto;
+}
+.list_user dl dd.bg_1{
+    background: #F6BF26;
+}
+.list_user dl dd.bg_2{
+    background: #F6BF26;
+}
+.list_user dl dd.bg_3{
+    background: #FFAC69;
+}
+.list_user dl dd.bg_4{
+    background: #FF943E;
+}
+.list_user dl dd.bg_5{
+    background: #5EC9F7;
+}
+.list_user dl dd.bg_6{
+    background: #20ACE7;
+}
+.list_user dl dd.bg_7{
+    background: #6BB5CE;
+}
+.list_user dl dd.bg_8{
+    background: #3C869F;
+}
+.date table{
+    text-align: center;
+    background: linear-gradient(top,#676165,#4E515A);
+    background: -moz-linear-gradient(top,#676165,#4E515A);
+    background: -webkit-linear-gradient(top,#676165,#4E515A);
+    padding: 10px;
+}
+.date table th{
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+.date table td{
+    padding: 10px 5px;
+    text-align: center;
+    color: #817C82;
+    font-size: 10px;
+}
+.date table td span{
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 90px;
+    -moz-border-radius: 90px;
+    -webkit-border-radius: 90px;
+    text-align: center;
+    line-height: 25px;
+    margin: 2px auto;
+    font-size: 16px;
+    color: #fff;
+}
+.date table td:hover span,.date table td.active span{
+    background: #8B898E;
+}
+.date table td:hover p,.date table td.active p{
+    color: transparent;
+    background: url("../images/dian.png") no-repeat;
+    display: inline-block;
+    background-size: 50%;
+    width: 7px;
+    height: 7px;
+    vertical-align: middle;
+}
+.date table td p.fontGray{
+    font-size: 6px;
+}
+.no_date{
+    margin: 50px auto;
+    width: 100px;
+    text-align: center;
+}
+.xiangqing_info{
+     background: #F3F3F3;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    line-height: 26px;
+}
+.weixiu_info{
+    border-bottom: 1px solid #E0E0E0;
+}
+.tz_info_cont+.content_list_lh50 ul li{
+    border-top: 1px solid #EDEDED;
+}
+table.lheight50 td{
+    padding: 0px 15px;
+}
