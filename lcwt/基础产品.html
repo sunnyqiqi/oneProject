@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<title></title>
+	<style>
+		/*基础产品*/
+
+     	.middle{
+			margin-top: 34px;
+			margin:34 auto;
+		}
+		.middle ul li {
+			border-bottom: 8px solid #fff;
+		}
+		.middle ul li img{
+			width: 350px;		
+		}
+		#outer li.active{
+			border-bottom: 8px solid #0183E5;
+		}
+		.middle ul li {
+			display: inline-block;
+		}
+		.middle1{
+			width: 1100px;
+			/*margin-left:200px;*/
+			/*background-color:#FAFAFA;*/
+			margin-top: 34px;
+			text-align: center;
+			display: none;
+		}
+		.middle1 .img2{
+			margin-top: 20px;
+			display:inline-block;
+			magrin:0 auto;
+		}
+		.middle1 ul{
+			margin-top: -21px;
+			width: 100%;
+			margin:0 auto;
+		}
+		.middle1 ul li {
+			float: left;
+			margin-top: 14px;
+			height: 202px;
+		}
+		.pic_box {
+			background-color:#FAFAFA;
+			width: 100%;
+			height: 520px;
+			margin: 0 auto;	
+		}
+		.pic_box{
+			clear: both;	
+		}
+		.pic_box ul li {
+			list-style: none;
+		}
+	   .on{
+			display:block;
+		}
+
+		/*弹框*/
+		.opaBox{
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.3);
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+			
+		}
+		.opacon{
+			width: 800px;
+			height: 500px;
+			position: absolute;
+			left: 50%;
+			margin-left:-400px;
+			top:50%;
+			margin-top:-250px;
+			background: #fff no-repeat;
+			background-size: 100%;
+			overflow:auto;
+		}
+		.dialog_close{
+			float: right;
+			font-size: 16px;
+			font-family: "微软雅黑";
+		}
+		/*.dialog_text{
+			overflow: hidden;
+		}*/
+	</style>
+	<script type="text/javascript">
+    // 换页面
+	$(function(){
+		$("#outer li").click(function(){
+
+			$(this).addClass('active').siblings().removeClass('active');
+			$('.middle1').eq($(this).index()).addClass('on').siblings().removeClass('on');
+		});
+	})
+ 
+    //点击变色
+    $(function(){
+	   		$("#hright li").click(function(){
+	     	$(this).addClass('blue').siblings().removeClass('blue');
+	 	 });
+   	})
+
+    //弹框
+	   window.onload = function(){
+           var oPic = document.getElementById("pic");
+          	var oOpa = document.getElementById("opaBox");
+          	var aLi  = oPic.children;
+          	// alert(aLi.length);
+          	for(var i = 0;i<aLi.length;i++){
+          		aLi[i].onclick = function(){
+          			// alert(111);
+          			oOpa.style.display = "block";
+          		}
+          	}
+          	oOpa.onclick = function(){
+          		this.style.display = "none";
+          	}
+        }
+    </script>
+</head>
+<body>
+<div class="content">
+	<div class="header">
+		<div class="w1100">
+			<div class="h_left">
+				<span><img src="images/1.jpg"></span>
+				<ul class="h_right" id="hright">
+					<li ><a href="首页.html"  target="_self">首页</a>|</li>
+					<li class="blue"><a href="基础产品.html"  target="_self">基础产品</a>|</li>
+					<li><a href="解决方案.html"  target="_self">解决方案</a>|</li>
+					<li><a href="专业服务.html"  target="_self">专业服务</a>|</li>
+					<li><a href="公司历程.html"  target="_self">公司历程</a>|</li>
+					<li><a href="联系我们.html" target="_self">联系我们</a></li>
+				</ul>
+			</div>	
+		</div>
+	</div>
+			
+	<div class="middle w1100">
+		<ul id="outer">
+			<li class="active"><a href="#"><img src="images/2.jpg" height="190"></a></li>
+			<li><a href="#"><img src="images/3.jpg"></a></li>
+			<li><a href="#"><img src="images/4.jpg"></a></li>
+		</ul>
+	</div>
+
+		<div class="pic_box" id="picBox">
+		 <div class="middle1 w1100 on" >
+			<img src="images/11.jpg" class="img2">
+			<ul id="pic" class="pic1">
+				<li><a href="#"><img src="images/5.jpg"></a></li>
+				<li><a href="#"><img src="images/6.jpg"></a></li>
+				<li><a href="#"><img src="images/7.jpg"></a></li>
+				<li><a href="#"><img src="images/8.jpg"></a></li>
+				<li><a href="#"><img src="images/9.jpg"></a></li>
+				<li><a href="#"><img src="images/10.jpg"></a></li>
+			</ul>
+		</div>
+		<div class="middle1 w1100">
+			<img src="images/11.jpg" class="img2">
+			<ul id="pic" class="pic1">
+				<li><a href="#"><img src="images/33.jpg"></a></li>
+				<li><a href="#"><img src="images/6.jpg"></a></li>
+				<li><a href="#"><img src="images/7.jpg"></a></li>
+				<li><a href="#"><img src="images/32.jpg"></a></li>
+				<li><a href="#"><img src="images/35.jpg"></a></li>
+				<li><a href="#"><img src="images/34.jpg"></a></li>
+			</ul>
+		</div>
+		
+
+		<div class="middle1 w1100" >
+			<img src="images/11.jpg" class="img2">
+			<ul id="pic" class="pic1">
+				<li><a href="#"><img src="images/33.jpg"></a></li>
+				<li><a href="#"><img src="images/6.jpg"></a></li>
+				<li><a href="#"><img src="images/7.jpg"></a></li>
+				<li><a href="#"><img src="images/32.jpg"></a></li>
+				<li><a href="#"><img src="images/35.jpg"></a></li>
+				<li><a href="#"><img src="images/34.jpg"></a></li>
+			</ul>
+		</div>
+		</div>
+
+
+
+		<div class="bottom w1110">
+			<p>地址：北京市海淀区农大南路硅谷亮城5号楼503室&nbsp;京ICP备 14006706&nbsp;号-1</p>
+			<p>电话：010-51661646&nbsp;邮箱：lgq@lcwt.com.cn</p>
+			<p>版权所有：联创万通（北京）科技有限公司</p>
+		</div>
+	</div>
+</div>
+
+<!-- 弹框 -->
+	<div class="opaBox" id="opaBox">
+		<div class="opacon">
+			<div class="dialog_screen"></div>
+			<div class="dialog_content dialog_content_2">
+				<div class="dialog_title">
+				<span class="dialog_close">关闭</span>
+				<h2 class="dialog_h3">戴尔</h2>
+				<hr/>
+			</div>
+			<div class="dialog_text">
+				<div class="text_input">
+						<img src="images/36.jpg" alt="">
+				</div>
+		    </div>
+	    </div>
+    </div>
+</body>
+</html>

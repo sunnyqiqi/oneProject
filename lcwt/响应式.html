@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<title>响应式布局</title>
+	<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+		.content{
+			width: 1100px;
+			/*background-color: red;*/
+		}
+		.c_head ul{
+			width: 1100px;
+		}
+		.c_head li{
+			/*background-color: yello;*/
+			text-align: center;
+		}
+		._head .active{
+			background-color: blue;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var ulNode=document.getElementById("c_con");
+			console.log(ulNode);
+			var liNodes=document.getElementById("c_con").children;
+			console.log(liNodes);
+			var oBox=aPic.children;
+			console.log(oBox);
+			for(var i=0;i<liNodes.length;i++){
+				// console.log(i);
+				// var aNodes=document.getElementsByTagName("li").chidren;
+				// console.log(aNodes);
+				liNodes[i].index=i;
+				liNodes[i].onclick=function(){
+					for(var i=0;i<liNodes.length;i++){
+						liNodes[i].className='';
+						oBox[i].className='';
+
+					}
+					liNodes[this.index].className='active';
+					oBox[this.index].className='on';
+
+				}
+			}
+			
+
+		}
+	</script>
+</head>
+<body>
+	<div class="content">
+		<div class="c_head">
+			<ul id="c_con">
+				<li class="active"><a href="#">首页</a></li>
+				<li><a href="#">你好</a></li>
+				<li><a href="#">完整</a></li>
+			</ul>
+		</div>
+		<div class="c_con1">
+			<ul id="aPic">
+				<li><a href="#"><img src="images/1.jpg" alt=""></a></li>
+				<li><a href="#">img src="images/1.jpg"</a></li>
+				<li><a href="#">img src="images/1.jpg"</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
