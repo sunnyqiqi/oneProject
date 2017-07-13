@@ -1,0 +1,43 @@
+/*vv+*/
+/*mid_l*/
+.mid_l{float:left; width:189px; margin-left:22px; display:inline}
+.mid_l p{background:url("../bg_mid_01.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_mid_01.jpg*/ repeat-x; height:31px; color:#fff; font-size:14px; border:1px solid 5B8ED0; line-height:31px; padding-left:26px}
+.mid_l p span{background:url("../bg_mid_02.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_mid_02.jpg*/ no-repeat left center; padding-left:14px}
+.mid_l ul{border:1px solid #D2D2D2; border-top:0; background:#F6F4F5; padding:8px 0;width:187px}
+.mid_l ul li{width:155px; height:34px; line-height:34px; margin-left:16px; background:url("../bg_left_1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_left_1.jpg*/ no-repeat left bottom;}
+.mid_l ul li a{background:url("../bg_left_2.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_left_2.jpg*/ no-repeat 2px center; padding-left:12px;}
+.mid_l ul li a:hover{background:url("../bg_left_3.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_left_3.jpg*/ no-repeat 2px center;}
+.mid_l ul li .dz{background:url("../bg_left_3.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_left_3.jpg*/ no-repeat 2px center; color:#0165BB}
+.mid_l ul .last{background:none}
+/*mid_r*/
+.mid_r{float:right; width:752px; margin-right:22px; display:inline}
+.ad img{width:750px; height:171px; border:1px solid #D4D3D1; margin:7px 0 5px 0}
+.about_l{width:579px; background:url("../bg_icon7.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_icon7.jpg*/ no-repeat left 33px}
+.about_l .meun_2{background:url("../bg_icon.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_icon.jpg*/ repeat-x; height:31px; line-height:31px; border:1px solid #D2D2D2; font-size:14px; padding-left:12px; color:#0165BB; font-weight:bold}
+.about_article p{line-height:1.8em; color:#666; margin:10px 15px 5px 20px; text-indent:2em;}
+.about_r{width:159px}
+/*news*/
+.about_l .meun_2 span{float:right; font-weight:normal; color:#333; padding-right:10px}
+.about_l .meun_2 span a{color:#333}
+#big{font-size:16px}
+#mid{font-size:14px}
+#style_elements{width:550px; margin-left:15px}
+#style_elements h1{font-size:14px; color:#0165BB; font-weight:normal; line-height:40px; text-align:center; width:550px; margin-top:30px; border-bottom:1px solid #D2D2D2}
+#style_elements .time_c{text-align:center; margin:10px 0 25px 0;color:#666}
+/*#style_elements .time_c span{margin-right:60px; margin-left:-20px}*/
+#style_elements p{line-height:2.4em; color:#666; text-indent:2em}
+.size_b{font-size:14px; font-weight:bold}
+/*20110817*/
+.table_cont p{ text-indent:0; line-height:1.2em;}
+
+#style_elements h2,#style_elements h3{font-size:12px; color:#666; padding-top:4px; padding-bottom:10px;}
+#style_elements ul li{line-height:1.8em;padding-left:25px; background:url("../bg_icon06.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/service/bg_icon06.jpg*/ no-repeat 12px 9px; color:#666; margin-left:12px;}
+/*20110823*/
+.about_article ul li{line-height:1.8em;padding-left:65px; background:url("../bg_icon06.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/service/bg_icon06.jpg*/ no-repeat 52px 9px; color:#666;}
+.about_article ul p{color:#666; line-height:1.8em; text-indent:2em}
+.about_article ul{padding-top:6px;}
+/*20110824*/
+.tab_menu{width:305px; height:31px; border:1px solid #D4D4D4; border-right:none;overflow:hidden; background:url("../bg_tab.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/index/bg_tab.jpg*/ repeat-x; margin-bottom:6px; margin-top:10px; margin-left:20px}
+.tab_menu ul{padding-top:0px;}
+.tab_menu ul li{float:left; height:33px; line-height:31px; font-family:"微软雅黑"; width:102px; text-align:center;color:#323232;cursor:pointer;background:url("../bg_tab_2.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/index/bg_tab_2.jpg*/ no-repeat right top;padding-left:0px;}
+.tab_menu ul .selected{background:url("../bg_tab_1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/index/bg_tab_1.jpg*/ no-repeat; color:#fff; margin:-1px 0 0 -1px}

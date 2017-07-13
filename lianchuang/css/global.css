@@ -1,0 +1,244 @@
+@charset "utf-8";/* CSS Document *//*vv+*/*
+{font-size:12px; font-family:Verdana,"宋体",Arial, Helvetica, sans-serif}
+body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dd,dt,img,from,input{margin:0px; padding:0px}
+img{border:0}
+ul,li{list-style:none}
+.clear{width:0px; height:0px; line-height:0px; margin:0px; padding:0px; font-size:0px; clear:both}
+.t_l{text-align:left}
+.t_c{text-align:center}
+.t_t{text-align:right}
+.f_l{float:left}
+.f_r{float:right}
+.none{display:none}
+a{color:#666; text-decoration:none;}
+a:hover{color:#0165BB;}
+html {overflow:-moz-scrollbars-vertical;overflow-x:hidden}
+html {min-height:101%;}
+/*header*/
+#header{
+ height:84px;
+ background:url("../bg_header.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_header.jpg*/ repeat-x}
+#top{height:30px; overflow:hidden; width:1000px; margin:0 auto;background:url("../bg_top.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_top.jpg*/ no-repeat 20px top}
+#top ul{margin-left:20px;}#top ul li{float:left; line-height:30px; background:url("../bg_top.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_top.jpg*/ no-repeat right top; padding:0 8px 0 7px}
+#top ul li a{color:#ACACAC}
+#top ul li a:hover{color:#0165BB;}
+.top_right{color:#ABABAB; margin-right:20px; display:inline; line-height:30px;background:url("../bg_top.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_top.jpg*/ no-repeat 298px top; width:500px; text-align:right}
+.top_right span a{color:#ACACAC; text-decoration:underline}
+.button_1{background:url("../w_bg1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/w_bg1.jpg*/ no-repeat; width:33px; height:19px; line-height:19px; text-align:center; border:0; color:#ABABAB; cursor:pointer;_margin-top:6px}
+.button_2{background:url("../bg_search.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_search.jpg*/ no-repeat; width:128px; height:20px; line-height:20px; padding-left:20px;color:#ABABAB; border:0; margin-left:10px}
+/*logo_nav*/
+.logo_nav{height:54px;width:1000px; margin:0 auto; position:relative}
+.logo{width:250px}.logo h1{margin:17px 0 0 20px}
+.logo .logo_img{margin:17px 0 0 20px}
+/*nav*/
+/*.nav ul{margin-left:60px;}.nav li{float:left; height:54px; line-height:54px; background:url(../images/common/bg_nav.jpg) no-repeat left center; padding:0 15px}.nav li a{font-family:"微软雅黑"; font-size:14px; color:#000}.nav .bg_none{background:none}*//*bg_border*/
+#bg_border{background:url("../bg_border.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_border.jpg*/ no-repeat center top; height:4px; overflow:hidden}
+/*bg_middle*/#bg_middle{background:url("../bg_content.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_content.jpg*/ repeat-x; height:10px; overflow:hidden}
+/*footer*/#footer{height:40px; background:url("../bg_footer.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_footer.jpg*/ no-repeat center top}
+#footer p{width:980px; margin:0 auto; line-height:40px; color:#666}
+#footer p span{float:right; margin-right:10px;font-family:Arial, Helvetica, sans-serif}
+#footer p a{color:#666; padding:0 10px}#footer p a:hover{color:#0165BB;}
+/*page*/
+.page{height:20px; line-height:20px; margin-top:20px}
+.page li{ float:left; line-height:15px; }
+.page span{color:#666;background:#FC0; padding:5px; line-height:20px; border:1px solid #ccc; }
+.page a{color:#666; margin:0 2px;background:#E0E0E0; padding:5px; line-height:20px; border:1px solid #ccc;}
+.page a:hover{color:#0165BB; background:#FC0}
+.page .dq{color:#0165BB}.button_6{height:16px; line-height:16px; width:55px; border:1px solid #C0C1BC; text-align:center}
+.button_7{background:url("../bg_icon6.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_icon6.jpg*/ no-repeat; width:46px; height:19px; line-height:19px; border:0; color:#666; cursor:pointer}
+/*top_icon*/
+.top_icon{width:960px; margin:0 auto; text-align:right}
+/*crumbs*/
+.crumbs{border-bottom:1px solid #D2D2D2; padding:8px 2px; color:#656565}
+.crumbs_rss{margin:0 21px 0 22px;}
+.crumbs span{color:#0065BA;margin-left:8px}
+.crumbs a{margin:0 7px}
+/*middle*/
+#middle{width:1000px; margin:0 auto; margin-top:6px; margin-bottom:50px}
+/*k_lj*/
+.k_lj{border:1px solid #D3D1D2; padding-bottom:5px; margin-bottom:9px}
+.k_lj h3{height:31px; line-height:31px; background:#F6F4F5 url("../bg_icon4.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_icon4.jpg*/ no-repeat 25px center; padding-left:40px; font-weight:normal; margin-bottom:5px; color:#3F3F3F}
+.k_lj p{line-height:2.2em; background:url("../bg_icon5.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_icon5.jpg*/ no-repeat 43px center; padding-left:50px;}
+.k_lj p a{color:#666}
+.k_lj p a:hover{color:#0165BB}
+/*left_phone*/
+.left_phone{margin-top:11px; border:1px solid #D2D2D2; background:url("../bg_icon8.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_icon8.jpg*/ repeat-x left bottom; padding-bottom:10px}
+.phone_1{margin-top:12px; color:#656565; padding-left:12px}
+.phone_1 span{color:#E31933; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:14px}
+/*2011.07.19 -- login -- reg*/
+#login{display:none; position:absolute; left:0; top:0;z-index:999;*width:1400px;}
+#transparent{width:100%;height:100%;_height:800px;background:#000;left:0px;top:0;z-index:110;filter:alpha(opacity=70);opacity:0.7; position:fixed}
+.transparent{width:100%;height:100%;_height:800px;background:#000;left:0px;top:0;z-index:110;filter:alpha(opacity=70);opacity:0.7; position:fixed;}
+.login_from{background:url("../bg_login.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_login.jpg*/ no-repeat; width:343px; height:220px;position:fixed; _position:absolute; left:35%; top:150px; z-index:1100;}
+.login_t{height:32px; line-height:32px; font-weight:bold; font-size:14px; padding-left:30px; color:#fff; margin-bottom:25px}
+.login_from p{color:#656565; margin-bottom:6px; padding-left:47px;height:25px;text-align:left}
+.text01{background:url("../bg_login02.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_login02.jpg*/ no-repeat; width:157px; height:25px; line-height:25px; border:0; padding:0 5px}
+.text02{background:url("../bg_login03.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_login03.jpg*/ no-repeat; width:75px; height:25px; line-height:25px; border:0; padding:0 5px}
+.text03{background:url("../bg_login07.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_login07.jpg*/ no-repeat; width:209px; height:25px; line-height:25px; border:0; padding:0 5px}
+.l_name{background:url("../bg_icon9.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_icon9.jpg*/ no-repeat 27px 3px}
+.l_pw{background:url("../bg_icon10.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_icon10.jpg*/ no-repeat 27px 3px}
+.l_tj{margin:15px 0 0 95px}
+.l_tj input{margin-right:5px}
+#reg{display:none; position:absolute; left:0; top:0;z-index:999}
+.reg_from{background:url("../bg_reg.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_reg.jpg*/ no-repeat; width:397px; height:331px;position:fixed;_position:absolute; left:35%; top:150px; z-index:1100}
+.reg_from p{color:#656565; margin-bottom:6px;_margin-bottom:4px;padding-left:20px;height:25px; }
+.reg_from p span{color:#FE0000}
+.reg_from label{width:100px; text-align:right; float:left; display:block; line-height:25px}
+.r_tj{margin:15px 0 0 120px  }
+#login .login_t{text-align:left;height:32px; line-height:32px; font-weight:bold; font-size:14px; padding-left:30px; color:#fff; margin-bottom:25px}
+#login .l_tj{ text-align:left;margin:15px 0 0 100px}
+/*2011.07.22 -- nav *//*--nav--start--*/
+.nav{width:750px; overflow:hidden;text-align:center;}
+.allsort .mc{position: absolute; top: 9px; left:280px;width:750px;background:url("../nav_icon.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/nav_icon.jpg*/ no-repeat 585px 0px;}
+.allsort .item {width:84px; float:left; display:inline; height:38px}.allsort .item1,.allsort .item2,.allsort .item4{width:64px; }.allsort span{width:84px; height:34px; line-height:34px;}.allsort .item1 span,.allsort .item2 span,.allsort .item4 span{width:64px;}.allsort .item  span a{font-family:"微软雅黑"; font-size:14px; color:#000; text-align:center}.allsort .item a:hover{color:#0165BB;}.allsort .item .i-mc {display:none;}.allsort .hover .i-mc {	DISPLAY: block; Z-INDEX: 14}.i-mc .tab_menu li.selected {background:url("bg_nav_n_b1.jpg.html")/*tpa=http://www.dongfangtech.com.cn/statics/images/bg_nav_n_b1.jpg.html*/ no-repeat; font-weight:bold}.hide{display:none}.allsort .hover .menu_2{width:84px; height:34px; line-height:34px; display:block; background:url("../bg_hover2.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover2.jpg*/ no-repeat;color:#0165BB; }  .i-mc{width:954px; position:absolute; left:-259px; top:36px; border:1px solid #C7C7C7; padding:1px;text-align:left;}  .allsort .hover .h_1,.allsort .hover .h_2,.allsort .hover .h_3{width:64px;background:url("../bg_hover1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover1.jpg*/ no-repeat;color:#0165BB;}  .allsort .hover .h_6{width:84px;background:url("../bg_hover7.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover7.jpg*/ no-repeat;color:#0165BB;}  .allsort .hover .h_1{background:none}/*.allsort .hover .h_3{width:64px;background:url(../images/common/bg_hover9.jpg) no-repeat;color:#0165BB;}*/  .allsort .hover .h_3{width:64px;background:url("../bg_hover1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover1.jpg*/ no-repeat;color:#0165BB;}  .allsort .hover .h_7{width:84px;background:url("../bg_hover10.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover10.jpg*/ no-repeat;color:#0165BB;}  .bg_nav_2{background:#fff url("../bg_nav_2.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_2.jpg*/ no-repeat 1px 1px; height:170px; }  .bg_nav_3{background:#fff url("../bg_nav_3.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_3.jpg*/ no-repeat 1px 1px; height:260px}  .bg_nav_4{background:#fff url("../bg_nav_4.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_4.jpg*/ no-repeat 1px 1px; height:208px}  .bg_nav_5{background:#fff url("../bg_nav_5.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_5.jpg*/ no-repeat 1px 1px; height:169px}  .bg_nav_6{background:#fff url("../bg_nav_6.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_6.jpg*/ no-repeat 1px 1px; height:68px}  .bg_nav_7{background:#fff url("../bg_nav_7.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_7.jpg*/ no-repeat 1px 1px; height:109px}  .bg_h_1,.bg_h_2,.bg_h_3,.bg_h_4,.bg_h_5,.bg_h_6{background:url("../bg_hover3.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover3.jpg*/ no-repeat; width:74px; height:8px; overflow:hidden; position:absolute; left:317px; top:-7px}  .bg_h_2{left:381px;background:url("../bg_hover4.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover4.jpg*/ no-repeat;width:94px;}/*.bg_h_3{left:465px;background:url(../images/common/bg_hover8.jpg) no-repeat;}*/  .bg_h_3{left:465px;background:url("../bg_hover3.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover3.jpg*/ no-repeat;}  .bg_h_4{left:529px;background:url("../bg_hover4.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover4.jpg*/ no-repeat;width:94px;}  .bg_h_5{left:613px;background:url("../bg_hover5.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover5.jpg*/ no-repeat;width:94px;}  .bg_h_6{left:697px;background:url("../bg_hover11.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_hover11.jpg*/ no-repeat;width:94px;}/*--2--*/  .i-mc dl{width:177px; border-left:1px solid #BFBFBF; float:left;  height:135px;display:inline; margin-top:24px}  .i-mc .bg_l_n{border:0; margin-left:15px}  .i-mc dd{line-height:1.2em; height:38px; background:url("../bg_nav_n1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n1.jpg*/ no-repeat 30px 3px; padding-left:44px}  .i-mc dd a{color:#0165BB}  .i-mc dt{  line-height:22px; }  .i-mc dt a{background:url("../bg_nav_n2.gif")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n2.gif*/ no-repeat 44px center;padding-left:54px;}  .i-mc dt a:hover{background:url("../bg_nav_n3.gif")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n3.gif*/ no-repeat 44px center;}/*--3--*/  .bg_nav_3 dl{height:210px}  .bg_nav_3 .bg_l_n{width:156px; margin-left:10px;display:inline}  .bg_nav_3 dd{background:url("../bg_nav_n1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n1.jpg*/ no-repeat 10px 3px; padding-left:24px}  .bg_nav_3 dt{width:156px; overflow:hidde}  .bg_nav_3 dt a{background:url("../bg_nav_n2.gif")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n2.gif*/ no-repeat 24px 7px;padding-left:34px;display:block}  .bg_nav_3 dt a:hover{background:url("../bg_nav_n3.gif")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n3.gif*/ no-repeat 24px 7px;display:block}  .bg_nav_3 .bg_2_2{width:154px}  .bg_nav_3 .bg_2_3{width:161px}  .bg_nav_3 .bg_2_4{width:160px}  .bg_nav_3 .bg_2_5{width:160px}  .bg_nav_3 .bg_2_6{width:145px;overflow:hidde}  .bg_nav_3 .bg_2_6 dt{width:140px; overflow:hidde}/*--4--*/  .bg_nav_4 dl{height:175px;overflow:hidden}  .bg_nav_4 dd{background:url("../bg_nav_n1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n1.jpg*/ no-repeat 20px 3px; padding-left:34px}  .bg_nav_4 dt{width:165px; overflow:hidden}  .bg_nav_4 dt a{background:url("../bg_nav_n2.gif")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n2.gif*/ no-repeat 34px center;padding-left:44px;}  .bg_nav_4 dt a:hover{background:url("../bg_nav_n3.gif")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n3.gif*/ no-repeat 34px center;}/*--5--*/  .bg_nav_5 dl{height:130px; width:200px}/*--6--*/  .bg_nav_6 dl{height:14px; overflow:hidden}/*--7--*/  .bg_nav_7 ul{margin:14px 0 0 0px;}  .bg_nav_7 ul li{ margin-top:10px; height:14px;background:url("../bg_nav_n1.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/common/bg_nav_n1.jpg*/ no-repeat 30px center; padding-left:44px; float:left; width:130px; border-left:1px solid #BFBFBF} /*--nav--end--*/  .light{color:#0165BB;}/*2011.08.04*/  .service h2,.service h3{font-size:13px; color:#666; padding-top:4px; padding-bottom:10px;}  .service ul li{line-height:1.8em;padding-left:25px; background:url("../bg_icon06.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/service/bg_icon06.jpg*/ no-repeat 12px 9px; color:#666; margin-left:12px;}  .service ul p{color:#666; line-height:1.8em; text-indent:2em}  .table_cont{background-color:#D3D1D2;  margin-top:10px;}  .table_cont tr td{background-color:#FFF;padding:5px;}  .table_cont tr th{background-color:#F6F4F5;padding:5px; color:#666666;}/*2011.08.17*/  .service_list_t h2,.service_list_t h3{font-size:13px; color:#666; padding-top:4px; padding-bottom:10px;}  .service_list_t ul li{line-height:1.8em;padding-left:25px; background:url("../bg_icon06.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/service/bg_icon06.jpg*/ no-repeat 12px 9px; color:#666;}  .service_list_t ul p{color:#666; line-height:1.8em; text-indent:2em}  .service_list_t ul{padding-top:6px;}  .table_cont p{ text-indent:0;}/*2011.08.25*/  .table_cont_1{border-left:1px solid #D3D1D2;border-top:1px solid #D3D1D2}  .table_cont_1 tr td{border-right:1px solid #D3D1D2;border-bottom:1px solid #D3D1D2;padding:5px; color:#666}  .table_cont_1 tr th{border-right:1px solid #D3D1D2;border-bottom:1px solid #D3D1D2;background:#F6F4F5;padding:5px;color:#666}/*20110826*/  .main{overflow-x:hidden;overflow-y:hidden}  .about_article h2{font-size:13px; color:#666; padding-top:15px; padding-bottom:2px; text-indent:1em; line-height:22px;}/*20110907*/  #notLogin_2{float:left;margin-left:763px;display:inline}  #loginDone_2{float:left;width:295px;text-align:right}  .lgn-name{width:200px;text-align:right}/*20111103*/  .error{margin:0 21px 0 34px;}  .error p{line-height:2em; color:#666}/*头部*/  .w_header{width:100%;padding-top:7px;margin:0 auto; height:145px;}
+.w_nav{
+   height:40px;
+   z-index:8;
+   position:absolute;
+   width:100%;
+   background:url("../images/sm_navbg.png")/*tpa=http://www.dongfangtech.com.cn/statics/images/sm_navbg.jpg*/ center;
+}
+.w_nav h1{
+   float:left;
+}
+.w_nav_con{
+   margin:0px auto;
+   height:43px;
+   width:960px;
+}
+.w_nav_con li{
+   float:left;
+   position:relative;
+   height:40px;
+   border-bottom:none;
+}
+.w_nav_con li span{
+   display:block;
+   text-align:center;
+   line-height:40px;
+}
+.w_nav_w1{
+   width:90px;
+}
+.w_nav_w2{
+   width:90px;
+}
+.w_nav_w3{
+   width:105px;
+}
+.w_nav_w4{
+   width:90px;
+}
+.w_nav_con .w_nav_sp{
+   background:url("../opacity_bg.png")/*tpa=http://www.dongfangtech.com.cn/statics/images/opacity_bg.png*/ repeat;
+   border:1px #D0D4D2 solid;
+   border-bottom:none;
+   color:#F00
+}
+.w_nav_con span a{
+   font-family:"微软雅黑";
+   font-size: 14px;
+   color: black;
+   color:#FFF
+}
+.w_nav_con span a:hover{
+   color:#32a0f6;
+}
+.w_list_box{
+   display:none;
+   position:absolute;
+   top:42px;
+   left:-1px;
+   padding:15px 0 15px 12px;
+   background:url("../opacity_bg.png")/*tpa=http://www.dongfangtech.com.cn/statics/images/opacity_bg.png*/ repeat;
+   border:1px #D0D4D2 solid;
+}
+.w_nav_w4 .w_list_box,.w_nav_w3 .w_list_box{
+    left:0px;
+}
+.w_list_box_h{
+   position:absolute;
+   top:-1px;
+   width:80px;
+   left:0;
+   height:1px;
+   background-color:#F8F8F7;
+   overflow:hidden;
+}
+.w_nav_w4 .w_list_box_h,.w_nav_w3 .w_list_box_h{
+ left:481px;
+}
+.w_n2{
+ width:52px;
+}
+.w_n3{
+ width:94px;
+}
+.w_n4{
+ width:108px;
+}
+.w_list_dl{
+ float:left;
+ width:152px;
+ line-height:24px;
+ overflow:hidden;
+}
+.w_list_dl dt{
+   padding-left:8px;
+   background:url("../w_bg3.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/w_bg3.jpg*/ 0 10px no-repeat;
+}
+.w_list_dl dt a{
+  color:#0165BB;
+}
+.w_list_box2 dt a{
+   color:#0165BB;
+}
+.w_list_box2 dt a:hover{
+   color:#0165BB;
+}
+.w_list_dl dd{
+  padding-left:15px;
+  background:url("../w_bg4.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/w_bg4.jpg*/ 8px 13px no-repeat;
+}
+.w_search{
+   margin-top:20px;
+   width:191px;
+   height:20px;
+   line-height:20px;
+   background:url("../w_bg5.jpg")/*tpa=http://www.dongfangtech.com.cn/statics/images/w_bg5.jpg*/ 0 0 no-repeat;
+   overflow:hidden; height:30px;
+   float:right;
+}
+.w_search input{
+   float:right;
+   height:20px;
+   border:0 none;
+   background:none;
+}
+.w_sub{
+ width:39px;
+ cursor:pointer;
+ text-indent:-9999px
+}
+.w_text{
+   width:130px;
+   outline:none;
+   height:20px;
+   line-height:20px\9;
+}
+/*尾部*/
+.w_footer{width:958px;margin:0 auto;line-height:53px;overflow:hidden;border-top:1px #B5B1AB solid; color:#FFF}
+.w_footer a:link{color:black;margin:0 5px;color:#FFF}
+.w_footer a:hover{color:#FF0;}
+.w_footer span{float:right;}
+.in_span{position:absolute; width:180px; height:50px;margin-top:20px;display:block;z-index:20; background-color:#fff; filter:alpha(Opacity=0);opacity:0}
+.in_span2{position:absolute; width:95px; height:50px;margin-top:20px;display:block;z-index:20; background-color:#fff; filter:alpha(Opacity=0);opacity:0}
+.cur{ font-weight:bold;}
+.search{ float:left; width:400px;_width:auto; padding-left:20px; height:70px}
+
+ .search .bd{  padding:0px; float:left;}
+.search .text{border:1px solid #e5e5e7;padding:4px 0 3px 40px; height:18px;width:210px;background:#fff url("../icon.png")/*tpa=http://www.dongfangtech.com.cn/statics/images/v9/icon.png*/ no-repeat}
+.search .button{ background:#3a6ea5; border:none; margin-bottom:15px; color:#fff; height:1.9em;margin-left:3px;width:4.2em; margin-left:6px;vertical-align:middle; text-align:center}
+
+
+*,body,ul,h1,h2{ margin:0; padding:0; list-style:none;}body{font:12px "宋体"; padding-top:20px;}a{ color:#777;border:none;}#menu { width:189px; margin:auto;} #menu h1 { font-size:12px; border:#F4F4F4 1px solid; margin-top:1px;  background-color:#F4F4F4;  line-height:25px;} #menu h2 { font-size:12px; border:#E7E7E7 1px solid; border-top-color:#FFF; font-weight:100; line-height:20px;} #menu ul { border:#E7E7E7 1px solid; border-top:none;overflow:auto;border-top-color:#FFF;background:#FFF} #menu a { display:block; padding:5px 0 3px 10px; text-decoration:none; overflow:hidden;} #menu a:hover{ color:#036; background:#F4F4F4;} #menu .no {display:none; background:#FFF} #menu .h1 a{color:#0165bb;} #menu .h2 a{color:#06F;} #menu  h1 a{color:#06F;}
