@@ -1,0 +1,104 @@
+`<style>
+	img{
+		width:150px;
+		height:150px;
+		border: 1px solid #fff;
+		border-radius: 88px;
+	}
+
+</style>
+<div class="collapse navbar-collapse">
+  <form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+	  <select class="form-control" ng-model="data.search.key">
+	  	<option value="">请选择</option>
+	  	<option value="name">姓名</option>
+	  	<option value="pepartment">系别</option>
+		<option value="major">专业</option>
+	  </select>
+      <input type="text" ng-model="data.search.val" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="data.searchStu()">搜索</button>
+  </form>
+</div>
+<!--信息列表-->
+<div class="row">
+	<div class="col-xs-12 " >
+	<ul class="media-list">
+		<li class="media well" ng-repeat="item in data.stuSchool">
+			<input type="checkbox" class="pull-left" 
+			ng-model = "item.checked"
+			style="margin:5px">
+			<a class="pull-left" href="">
+				<img class="media-object" src="{{item.picture}}" alt="">
+			</a>
+			<div class="media-body">
+			  <h3>{{item.name}}</h3>
+			  系别：{{item.pepartment}}
+			  <br>
+			  专业：{{item.major}}
+			  <br>
+			  导员：{{item.teacher}}
+			  <br>
+			  职位：{{item.position}}
+			</div>
+		</li>
+	</ul>
+	</div>
+</div>
+
+<!--操作栏-->
+<div style="position:fixed;bottom:20px;">
+<div class="btn-group">
+   <button class="btn btn-primary" ng-click="data.showAddModal()">添加</button>
+   <button class="btn btn-primary"
+   ng-click="data.showUpdModal()">修改</button>
+   <button class="btn btn-primary"
+   ng-click="data.delStu()">删除</button>
+</div>
+</div>
+<!--模态框。弹框-->
+<div class="modal fade" id="stuModal" tabindex="-1" >
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		<div class="modal-header">
+		    <button class="close" data-dismiss="modal">&times;</button>
+		    <h4 class="modal-title">
+				{{data.modalTitle}}
+			</h4>
+		</div>
+	<form action="javascript:void(0);" ng-submit="data.option=='upd'?data.updStu():data.addStu()">
+		<div class="modal-body">
+		    <div class="input-group">
+			  <span class="input-group-addon">姓名</span>
+			  <input type="" ng-model="data.newUser.name" 
+			  ng-readonly="data.option=='upd'?true:false" 
+			  class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">系别</span>
+			  <input type="" ng-model="data.newUser.pepartment" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">专业</span>
+			  <input type="" ng-model="data.newUser.major" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">导员</span>
+			  <input type="" ng-model="data.newUser.teacher" class="form-control">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon">职位</span>
+			  <input type="" ng-model="data.newUser.position" class="form-control">
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary"
+			type="submit">提交</button>
+		    <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+		</div>
+	</form>
+
+	    </div>
+	  </div>
+    </div>

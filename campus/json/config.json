@@ -1,0 +1,46 @@
+[{
+  "cId":1,
+  "cName":"学生信息管理",
+  "url":null,
+  "parent":null
+},{
+  "cId":3,
+  "cName":"学生成绩管理",
+  "url":null,
+  "parent":null
+},{
+  "cId":4,
+  "cName":"学生奖惩管理",
+  "url":null,
+  "parent":null
+},{
+  "cId":5,
+  "cName":"学生基本信息管理",
+  "url":"#stuMan",
+  "parent":1
+},{
+  "cId":6,
+  "cName":"学生在校信息",
+  "url":"#stuSchoolMan",
+  "parent":1
+},{
+  "cId":10,
+  "cName":"成绩查询",
+  "url":"#grade",
+  "parent":3
+},{
+  "cId":11,
+  "cName":"补考信息查看",
+  "url":"#makeUpExam",
+  "parent":3
+},{
+  "cId":12,
+  "cName":"等级考试查询",
+  "url":"#gradeExam",
+  "parent":3
+},{
+  "cId":13,
+  "cName":"奖励",
+  "url":"#award",
+  "parent":4
+}]

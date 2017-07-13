@@ -1,0 +1,56 @@
+[{
+  "id":1001,
+  "name":"王靖宇",
+  "gender":"男",
+  "mathgrade":99,
+  "englishgrade":98,
+  "chinagrade":97,
+  "levelFour":99,
+  "levelSix":98,
+  "makeUp":"毛概",
+  "remark":"重修"
+},{
+  "id":1002,
+  "name":"金娜",
+  "gender":"女",
+  "mathgrade":99,
+  "englishgrade":98,
+  "chinagrade":97,
+  "levelFour":99,
+  "levelSix":98,
+  "makeUp":"高数、毛概",
+  "remark":"重修"
+},{
+  "id":1003,
+  "name":"王炳飞",
+  "gender":"男",
+  "mathgrade":99,
+  "englishgrade":98,
+  "chinagrade":97,
+  "levelFour":99,
+  "levelSix":98,
+  "makeUp":"英语",
+  "remark":"重修"
+},{
+  "id":1004,
+  "name":"吕姗",
+  "gender":"女",
+  "mathgrade":99,
+  "englishgrade":98,
+  "chinagrade":97,
+  "levelFour":99,
+  "levelSix":98,
+  "makeUp":"高数",
+  "remark":"重修"
+},{
+  "id":1005,
+  "name":"段文宇",
+  "gender":"女",
+  "mathgrade":99,
+  "englishgrade":98,
+  "chinagrade":97,
+  "levelFour":99,
+  "levelSix":98,
+  "makeUp":"英语",
+  "remark":"重修"
+}]

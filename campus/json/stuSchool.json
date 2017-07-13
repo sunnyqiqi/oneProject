@@ -1,0 +1,65 @@
+[{
+  "id":1001,
+  "name":"王靖宇",
+  "pepartment":"计算机科学与技术系",
+  "major":"信息管理与信息系统",
+  "teacher":"黄扬扬",
+  "position":"班长",
+  "picture":"images/王靖宇.jpg"
+},{
+  "id":1002,
+  "name":"金娜",
+  "pepartment":"计算机科学与技术系",
+  "major":"计算机科学与技术",
+  "teacher":"黄扬扬",
+  "position":"班长",
+  "picture":"images/金娜.jpg"
+},{
+  "id":1003,
+  "name":"王炳飞",
+  "pepartment":"法学系",
+  "major":"信息管理与信息系统",
+  "teacher":"黄扬扬",
+  "position":"班长",
+  "picture":"images/王炳飞.jpg"
+},{
+  "id":1004,
+  "name":"吕姗",
+  "pepartment":"机械系",
+  "major":"信息管理与信息系统",
+  "teacher":"黄扬扬",
+  "position":"班长",
+  "picture":"images/吕姗.jpg"
+},{
+  "id":1005,
+  "name":"段文宇",
+  "pepartment":"财务管理",
+  "major":"信息管理与信息系统",
+  "teacher":"黄扬扬",
+  "position":"班长",
+  "picture":"images/段文宇.jpg"
+},{
+  "id":1006,
+  "name":"张涛丽",
+  "pepartment":"医学系",
+  "major":"信息管理与信息系统",
+  "teacher":"黄扬扬",
+  "position":"班长",
+  "picture":"images/段文宇.jpg"
+},{
+  "id":1007,
+  "name":"龚思瑶",
+  "pepartment":"化学系",
+  "major":"信息管理与信息系统",
+  "teacher":"黄扬扬",
+  "position":"班长",
+  "picture":"images/龚思瑶.jpg"
+},{
+  "id":1008,
+  "name":"狄晋霞",
+  "pepartment":"化学系",
+  "major":"信息管理与信息系统",
+  "teacher":"黄扬扬",
+  "position":"班长",
+  "picture":"images/狄晋霞.jpg"
+}]

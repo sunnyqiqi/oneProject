@@ -1,0 +1,31 @@
+[{
+  "id":1001,
+  "name":"王靖宇",
+  "gender":"女",
+  "levelFour":99,
+  "levelSix":98
+},{
+  "id":1002,
+  "name":"金娜",
+  "gender":"女",
+  "levelFour":99,
+  "levelSix":98
+},{
+  "id":1003,
+  "name":"王炳飞",
+  "gender":"男",
+  "levelFour":99,
+  "levelSix":98
+},{
+  "id":1004,
+  "name":"吕姗",
+  "gender":"男",
+  "levelFour":99,
+  "levelSix":98
+},{
+  "id":1005,
+  "name":"段文宇",
+  "gender":"男",
+  "levelFour":99,
+  "levelSix":98
+}]

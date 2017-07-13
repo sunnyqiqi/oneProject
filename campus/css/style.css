@@ -1,0 +1,15 @@
+body{
+    background:url(../images/b3.jpg);
+    background-size: 100%;
+}
+.navbar-inverse{
+    background-color: pink;
+    border-color: pink;
+    border-radius: 0%;
+}
+.navbar-inverse .navbar-brand{
+    color: #000;
+}
+.table>tbody>tr>td{
+    border-top:1px solid #999999;
+}
