@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr-办公费用</title>
+    <link rel="stylesheet" type="text/css" href="../tool/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../tool/css/page.css">
+    <link rel="stylesheet" type="text/css" href="css/hr_employeelist.css">
+    <link rel="stylesheet" type="text/css" href="css/hr_companySystem.css">
+</head>
+<body>
+<!-- 头部 -->
+<div class="contenthead">
+    <p>公司信息</p>
+    <ul class="contenthead-left">
+        <li class="break"></li>
+    </ul>
+</div>
+<!-- 内容 -->
+<div class="rightcontent">
+    <div class="smnavigation">
+        <span>查看日期</span>
+        <input type="time" style="border-right:1px solid #e6e6e6">
+        -
+        <input type="time" name="" id="" style="border-right:1px solid #e6e6e6">
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="border-left:none">名字</th>
+
+                <th>类别</th>
+                <th>日期 <i></i></th>
+                <th>数量</th>
+                <th>总金额</th>
+                <th>经手人</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="border-left:none">办公文具</td>
+                <td>办公用品</td>
+                <td>2016-02-01</td>
+                <td>数量</td>
+                <td>1200元</td>
+                <td>张三</td>
+            </tr>
+            <tr>
+                <td style="border-bottom: 1px solid #dddddd; border-left:none" >办公文具</td>
+                <td style="border-bottom: 1px solid #dddddd;">办公用品</td>
+                <td style="border-bottom: 1px solid #dddddd;">2016-02-01</td>
+                <td style="border-bottom: 1px solid #dddddd;">数量</td>
+                <td style="border-bottom: 1px solid #dddddd;">1200元</td>
+                <td style="border-bottom: 1px solid #dddddd;">张三</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="handle">
+            <div class="handle-righ clearafter">
+                <span>每页显示</span>
+                <div id="select" class="select1">
+                    <cite class="p-s-u " ng-bind="pagenow"></cite>
+                    <ul class="p-s-ul" style="display: none;">
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                    </ul>
+                </div>
+                <input name="" type="hidden" value="" id="container1" class="container">
+                <span>条数据</span>
+                <span class="pageD"></span>
+                <span>当前在</span>
+                <span class="C-page"></span>
+                <span>页</span>
+                <span class="pageU"></span>
+                <span>共</span>
+                <span class="C-num">2</span>
+                <span>条数据</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

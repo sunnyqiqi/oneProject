@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出入库-库存查询</title>
+    <link rel="stylesheet" href="static/storage/css/storage.css">
+    <link rel="stylesheet" href="static/finance/css/finance.css">
+    <link rel="stylesheet" href="static/goods/goods.css">
+   <!-- <script src="js/img_auto.js"></script>-->
+
+</head>
+<body>
+<div class="finance_content">
+    <div class="lik_content_max_height_box">
+        <div class="con_header contenthead">
+    <h2>
+        库存查询</h2>
+    <div class="right" style="width:58px;">
+        <div class="res kccx_dianjiasx_btn_xxl" title="点击刷新"></div>
+    </div>
+</div>
+        <div class="sbar second-level hr_left_bjbm">
+            <div class="xs_ke_tabbox">
+                <ul class="clearfix relative crk_kcsearck_btn kccx_splist_tab_xxl">
+                    <li class="tab_btn tabhover2 left" name="vendition_kexz" typeid="1">所有商品分类</li>
+
+                    <li class="tab_btn left" name="vendition_kexz" typeid="2" >所有整机商品</li>
+                </ul>
+                <p class="line"></p>
+            </div>
+            <div class="tabcontent" name="vendition_kexz">
+                <div class="hr_left_nav">
+                    <ul class="change ">
+                    	<!--<li class="hr_left_all"><span>所有分类<i class="crkkccx_spflmainlength_xxl">(4)</i></span></li>-->
+                    	<ul class="kccx_spfl_listhtml_xxl"></ul>
+                        <!--<ul class="hr_ul1">
+                            <li class="hr_left_1"><span>服务器(3)</span></li>
+                            <ul class="hr_ul3">
+                                <li class="hr_left_2"><span>服务器7300</span></li>
+                                <li class="hr_left_2"><span>服务器1</span></li>
+                                <li class="hr_left_2"><span>服务器12</span></li>
+                            </ul>
+                        </ul>
+                        <ul class="hr_ul1">
+                            <li class="hr_left_1"><span>交换器(1)</span></li>
+                            <ul class="hr_ul3">
+                                <li class="hr_left_2"><span>交换器</span></li>
+                            </ul>
+                        </ul>-->
+                    </ul>
+                </div>
+                <div class="allgoods" style="height: auto;"></div>
+            </div>
+            <div class="tabcontent none" name="vendition_kexz">
+                <div class="hr_left_nav">
+
+                    <ul class="change">
+                    	<!--<li class="hr_left_all"><span>所有配置商品<i class="crkkccx_spflmainlength_xxl">(4)</i></span></li>-->
+                    	<ul class="kccx_peizhisp_listhtml_xxl"></ul>
+                        <!--<ul class="hr_ul1">
+                            <li class="hr_left_1"><span>7600</span></li>
+                            <ul class="hr_ul3">
+                                <li class="hr_left_2"><span>7600</span></li>
+                                <li class="hr_left_2"><span>7600-S</span></li>
+                                <li class="hr_left_2"><span>r7600</span></li>
+                            </ul>
+                        </ul>
+                        <ul class="hr_ul1">
+                            <li class="hr_left_1"><span>7300(1)</span></li>
+                            <ul class="hr_ul3">
+                                <li class="hr_left_2"><span>7300</span></li>
+                            </ul>
+                        </ul>-->
+                    </ul>
+                </div>
+                <div class="allgoods" style="height: auto;">
+                </div>
+            </div>
+        </div>
+        <div class="rightcontent sbar" style="padding-left: 25px;padding-right: 22px;">
+    <div class="con_right_head clearfix" style="border:none;">
+        <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input kccx_ssvalue_xxl" value="商品编号/商品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" >
+            <button class="search_but but_blue kccx_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+        </div>
+        <div class="inline_block" style="margin-left:30px;">
+            <input type="checkbox" class="kccx_status_show_btnxxl" typeid="1">不显示已停用
+        </div>
+        <!--<button class="but_cancel but_small inline_block zkgjssBtn" name="storage_ckgl_zkgjss">展开高级搜索</button>-->
+       <div class="right con_right_result right">
+        <p class="left">搜索结果: <span class=" f_color kccx_listmain_nums_xxl">0</span>条</p>
+        <!--<p class="left c_r">总计金额: <span>0.00</span>元</p>-->
+       </div>
+           <!-- <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="crk_kfgl_xzckx">
+                   <i class="eyeIcon"></i>选择查看项</span>
+       </div>
+           &lt;!&ndash;选择查看项&ndash;&g        <!--  <div class="t-z-list ckx_cont" name="crk_kfgl_xzckx" style="right: 36px; line-height: 27px; top: 57px; display: none;">
+               <i class="ckx_icon_right"></i>
+               <div class="b-j-p-x f_color">编辑排序</div>
+               <ul class="sbar muban_addkey_list">
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+                   <li class="l-li-b">
+                       <input type="checkbox">
+                       <p class="z-d-l">字段1</p>
+                   </li>
+               </ul>
+               &lt;!&ndash;  &ndash;&gt;
+               <div class="bot-btn">
+                   <button class="but_small but_blue">保存</button>
+                   <button class="but_small but_cancal">恢复默认</button>
+               </div>
+           </div>
+           <div class="closeckx_cont" style="display: none;"></div>-->
+    </div>
+            <div class="crk_kcsearch_box">
+                <div class="container lik_table_wrap">
+        <div class="lik_table_max_height table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>商品编号</th>
+                    <th>商品名称</th>
+                   <!-- <th>规格</th>-->
+                    <th>属性</th>
+                    <th>计算单位</th>
+                    <th class="order kccx_kcsx_sortpx_xxl">库存上限 <i class="price_icon"></i></th>
+                    <th class="order kccx_kcxx_sortpx_xxl">库存下限 <i class="price_icon"></i></th>
+                    <th class="order kccx_dqkc_sort_pxxxl">当前库存 </th>
+                    <!--<th class="order kccx_kykc_sort_xxl">可用库存 </th>-->
+                    <th class="order kccx_dcksl_sort_xxl">待出库数量 </th>
+                    <th class="order kccx_drksl_sortpx_xxl">待入库数量 </th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="kccx_sp_listhtml_xxl">
+                <!--<tr class="zkgjss_cont" name="storage_kccx_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="序号">
+                            <i></i>
+                            <ul class="select_list">
+                                <li>01</li>
+                                <li>02</li>
+                                <li>03</li>
+                                <li>04</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="仓库名称">
+                            <i></i>
+                            <ul class="select_list">
+                                <li>01</li>
+                                <li>02</li>
+                                <li>03</li>
+                                <li>04</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="负责人">
+                            <i></i>
+                            <ul class="select_list">
+                                <li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                </tr>-->
+                <!--<tr>
+                    <td>01</td>
+                    <td>SP65454</td>
+                    <td>硬盘</td>
+                    <td>1T</td>
+                    <td>品牌：<span>戴尔</span></td>
+                    <td>块</td>
+                    <td>100</td>
+                    <td>10</td>
+                    <td class="relative crk_kccx_dqku">55<span class="storage_single_circle but_red m_left_10">高</span>
+                        <div class="cg_ghs_contMsgBox" style="display: none;left: 20px;width: 150px;">
+                            <i class="cg_ghs_torr"></i>
+                            <div class="cg_ghs_contMsgBoxDet" style="margin-top: 6px;">
+                                <ul>
+                                    <li class="c_3">库存高于预警：<span class="c_r">163块</span></li>
+                                    <li>(库存最高预警：<span>100块</span>)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                    <td>20</td>
+                    <td>35</td>
+                    <td>20</td>
+                    <td>
+                        <button class="but_mix but_look val_dialog" name="crk_kfcl_kfclxq">查看</button><button class="but_mix but_look val_dialog" name="crk_kfcl_kfclLook">库房分布</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>SP65454</td>
+                    <td>硬盘</td>
+                    <td>1T</td>
+                    <td>品牌：<span>戴尔</span></td>
+                    <td>块</td>
+                    <td>100</td>
+                    <td>10</td>
+                    <td class="relative crk_kccx_dqku">55<span class="storage_single_circle but_yellow m_left_10">低</span><div class="cg_ghs_contMsgBox" style="display: none;left: 20px;width: 150px;">
+                        <i class="cg_ghs_torr"></i>
+                        <div class="cg_ghs_contMsgBoxDet" style="margin-top: 6px;">
+
+                            <ul>
+                                <li>库存低于预警：<span class="c_y">10块</span></li>
+                                <li>(库存最低预警：<span>10块</span>)</li>
+                            </ul>
+                        </div>
+                    </div></td>
+                    <td>20</td>
+                    <td>35</td>
+                    <td>20</td>
+                    <td>
+                        <button class="but_mix but_look val_dialog" name="crk_kfcl_kfclxq">查看</button><button class="but_mix but_look val_dialog" name="crk_kfcl_kfclLook">库房分布</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>SP65454</td>
+                    <td>硬盘</td>
+                    <td>1T</td>
+                    <td>品牌：<span>戴尔</span></td>
+                    <td>块</td>
+                    <td>100</td>
+                    <td>10</td>
+                    <td>55</td>
+                    <td>20</td>
+                    <td>35</td>
+                    <td>20</td>
+                    <td>
+                        <button class="but_mix but_look val_dialog" name="crk_kfcl_kfclxq">查看</button><button class="but_mix but_exit val_dialog" name="crk_kfcl_kfclLook">库房分布</button>
+                    </td>
+                </tr>
+                <tr class="grey">
+                    <td><span class="voidIcon">已停用</span></td>
+                    <td>SP65454</td>
+                    <td>硬盘</td>
+                    <td>1T</td>
+                    <td>品牌：<span>戴尔</span></td>
+                    <td>块</td>
+                    <td>100</td>
+                    <td>10</td>
+                    <td>55</td>
+                    <td>20</td>
+                    <td>35</td>
+                    <td>20</td>
+                    <td>
+
+                    </td>
+                </tr>-->
+                </tbody>
+            </table>
+            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+            <div class="no_data_box none kccx_sperr_html_xxl">
+                <div class="no_data">
+                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                </div>
+                <div class="no_data_bottom"></div>
+            </div>
+        </div>
+        <div class="handle">
+        <div class="fenye_box kccx_fenye_list_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <ul class="select_list select_list_to_top">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+                <i></i>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+    </div>
+
+    </div>
+                <div class="div_1 container none lik_table_wrap">
+                    <div class="lik_table_max_height table-container">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>配置商品编号</th>
+                                <th>配置商品名称</th>
+                                <!--<th>规格</th>-->
+                                <th>属性</th>
+                                <th>计算单位</th>
+                                <th class="order">待入库数量 </th>
+								<!--<i class="price_icon"></i>-->
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="kccx_pzsp_table_xxl">
+                            <!--<tr class="zkgjss_cont" name="storage_kccx_zkgjss">
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="序号">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>01</li>
+                                            <li>02</li>
+                                            <li>03</li>
+                                            <li>04</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="仓库名称">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>01</li>
+                                            <li>02</li>
+                                            <li>03</li>
+                                            <li>04</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="负责人">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                            </tr>-->
+                            <!--<tr>
+                                <td>01</td>
+                                <td>PZ65454</td>
+                                <td>7600</td>
+                                <td>IT</td>
+                                <td>品牌：<span>戴尔</span></td>
+                                <td>台</td>
+                                <td>20</td>
+                                <td>
+                                    <button class="but_mix but_look val_dialog" name="crk_kfcl_kfclxq_pz">查看</button><button class="but_mix but_look val_dialog" name="crk_kfcl_kfclLook_pz">库房分布</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>PZ65454</td>
+                                <td>r7600</td>
+                                <td>IT</td>
+                                <td>品牌：<span>戴尔</span></td>
+                                <td>台</td>
+                                <td>20</td>
+                                <td>
+                                    <button class="but_mix but_look val_dialog" name="crk_kfcl_kfclxq_pz">查看</button><button class="but_mix but_look val_dialog" name="crk_kfcl_kfclLook_pz">库房分布</button></td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>PZ65454</td>
+                                <td>7600_S</td>
+                                <td>IT</td>
+                                <td>品牌：<span>戴尔</span></td>
+                                <td>台</td>
+                                <td>20</td>
+                                <td>
+                                    <button class="but_mix but_look val_dialog" name="crk_kfcl_kfclxq_pz">查看</button><button class="but_mix but_look val_dialog" name="crk_kfcl_kfclLook_pz">库房分布</button></td>
+                            </tr>
+                            <tr class="grey">
+                                <td><span class="voidIcon">已停用</span></td>
+                                <td>PZ65454</td>
+                                <td>7300</td>
+                                <td>IT</td>
+                                <td>品牌：<span>戴尔</span></td>
+                                <td>台</td>
+                                <td>20</td>
+                                <td>
+
+                                </td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                        <div class="no_data_box none kccx_pzsp_taberrhtml_xxl">
+                            <div class="no_data">
+                                <!--<span class="inline_block"></span>-->
+                                <p class="c_9">抱歉，没有找到相关内容！</p>
+                            </div>
+                            <div class="no_data_bottom"></div>
+                        </div>
+                    </div>
+                    <div class="handle">
+        <div class="fenye_box kccx_fenye_peizhitwo_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <ul class="select_list select_list_to_top">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+                <i></i>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+    </div>
+
+                </div>
+            </div>
+
+</div>
+    </div>
+</div>
+<!--库房存量-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_kfcl_kfclLook">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle2">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">库房存量</h3>
+            </div>
+            <div class="dialog_text sbar" style="">
+                <div class="div_1 container">
+                    <div class="div_1 table-container">
+                        <table class="kccx_sp_kffb_listhtml_xxl">
+                            <!--<thead>
+                            <tr>
+                                <th>商品编号</th>
+                                <th>商品名称</th>
+                                <th>基本单位</th>
+                                <th>规格</th>
+                                <th>属性</th>
+                                <th>库房A数量</th>
+                                <th>库房B数量</th>
+                                <th>库房C数量</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>SP1321311</td>
+                                <td>硬盘</td>
+                                <td>块</td>
+                                <td>IT</td>
+                                <td>品牌：<span></span><span></span>
+                                </td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>7</td>
+                            </tr>
+                            </tbody>-->
+                        </table>
+                        <div class="kccx_sp_kgcl_errhtml_xxl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--库房详情-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_kfcl_kfclxq">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle5 crk_kfcl_kfclxq_a">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">库房详情</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 86%;margin-top: 0;">
+            	<div class="dialog_text_con" style="padding:30px 0 0;">
+	                <div class="t_textinput crk_kcxq_detile clearfix" style="height: auto;">
+	                    <div class="left val_dialogTop pro_look_img_btn" style="position: relative;" name="cru_sp_ck_img_look">
+	                        <img src="" alt="产品图片" title="这是产品图" class="kccx_kfxq_cpimg_xxl" style="width: 100%;height: 100%;">
+                            <div class="sp_ck_img_box" style="width: 180px;top:160px;">
+                                共<sapn class="pro_goods_list_detail_img_num_total">0</sapn>张
+                            </div>
+	                    </div>
+	                    <div class="inline_block" style="float:left;width: 76%;margin-left: 15px;">
+	                        <h2 class="con_title kccx_sp_ckxq_mc_xxl">硬盘</h2>
+	                        <button class="but_small but_blue val_dialogTop kccx_spkfxq_snbtn_xxl" name="crk_kfgl_lookxlh">SN码/序列号</button>
+	                        <p class="l-s-x">商品编号：<span class="kccx_kfxq_spbh_xxl">1014679813</span></p>
+	                        <!--<p class="l-s-x">规格：<span class="kccx_kfxq_gg_xxl">1T</span></p>-->
+	                        <p class="l-s-x" style="overflow: hidden;"><span>属性：</span><span class="kccx_kfxq_sx_xxl">品牌:戴尔</span></p>
+	                        <input type="text" class="time_input inp_noInput c_9 kccx_kfxq_bz_xxl" readonly="readonly" style="margin-top: 7px;" value="备注：是从750拆卸下来">
+	                    </div>
+	                </div>
+	                <div class="finance_three stroage_finance_three" style="background:none;">
+	                    <div class="finance_khysqk_kuanxiang">
+	                        <p style="color:#7d7d80;background:#f0f1f5;">当前库存</p>
+	                        <p class="finance_fontsize1" style="background: #f5f6fa;margin-left: 0;"><span class="kccx_spkfxq_dqkc_nums">100</span></p>
+	                    </div>
+	                    <div class="finance_khysqk_kuanxiang">
+	                        <p style="color:#7d7d80;background:#f0f1f5;">待入库数量</p>
+	                        <p class="finance_fontsize1 kccx_spkfxq_drksl_xxl" style="background: #f5f6fa;">50</p>
+	                    </div>
+	                    <div class="finance_khysqk_kuanxiang" style="width: 35%;">
+	                        <p style="color:#7d7d80;background:#f0f1f5;">待出库数量</p>
+	                        <p class="finance_fontsize1 kccx_spkfxq_dcknum_xxl" style="background:#f5f6fa;">20</p>
+	                    </div>
+	                </div>
+
+	                <div class="con_right_head clearfix" style="border:none;">
+	                    <div class="cont_search inline_block"><input type="text" class="search_input kccx_spcrd_value_xxl" value="出入库单号/关联业务单号" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" onkeyup="kccx_spcrkdss_now(this.value)"><span class="search_but kccx_spcrd_btnss_xxl">搜索</span>
+	                    </div>
+	                </div>
+	                <div class="div_1 container">
+	                    <div class="div_1 table-container">
+	                        <table>
+	                            <thead>
+	                            <tr>
+	                                <th>序号</th>
+	                                <th>出入库日期</th>
+	                                <th>出入库单号</th>
+	                                <th>出入库库房</th>
+	                                <th>出入库类型</th>
+	                                <th>关联业务单号</th>
+	                                <th>相关往来名称</th>
+	                                <th>出库数量</th>
+	                                <th>入库数量</th>
+	                            </tr>
+	                            </thead>
+	                            <tbody class="kccx_kfxq_crkdlist_html_xxl">
+	                            <!--<tr>
+	                                <td>01</td>
+	                                <td>2016-10-02</td>
+	                                <td>CKD654987963</td>
+	                                <td>库房A</td>
+	                                <td>销售出库</td>
+	                                <td>XSD465464</td>
+	                                <td>今日头条</td>
+	                                <td>2</td>
+	                                <td>0</td>
+	                            </tr>
+	                            <tr>
+	                                <td>02</td>
+	                                <td>2016-10-02</td>
+	                                <td>RKD654987963</td>
+	                                <td>库房B</td>
+	                                <td>采购入库</td>
+	                                <td>CGD987987</td>
+	                                <td>戴尔中国</td>
+	                                <td>1</td>
+	                                <td>1</td>
+	                            </tr>-->
+	                            </tbody>
+	                        </table>
+	                        <div class="crkd_list_errhtml_xxl"></div>
+	                    </div>
+	                </div>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--图片弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="cru_sp_ck_img_look">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content image_box_a">
+            <div class="image_box">
+                <div class="image_box_slider_head">
+                    <i class=""></i>
+                </div>
+                <div class="image_box_content lik_img_auto_box">
+                    <img src="" alt="" class="image_box_content_img">
+                </div>
+                <div class="noprint goods_icon_pre"><i></i></div>
+                <div class="noprint goods_icon_nxt"><i></i></div>
+                <div class="icon_page noprint goods_icon_page">1/3</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--图片弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="cru_sp_ck_img_look1">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content image_box_a">
+            <div class="image_box">
+                <div class="image_box_slider_head">
+                    <i class=""></i>
+                </div>
+                <div class="image_box_content lik_img_auto_box">
+                    <img src="" alt="" class="image_box_content_img">
+                </div>
+                <div class="noprint goods_icon_pre"><i></i></div>
+                <div class="noprint goods_icon_nxt"><i></i></div>
+                <div class="icon_page noprint goods_icon_page">1/3</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--查看序列号-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_kfgl_lookxlh">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_b" style="height: 400px;width: 716px;" >
+            <div class="dialog_title relative">
+                <i class="dialog_close"></i>
+                <h3 class="dialog_h3">商品序列号</h3>
+            </div>
+            <div class="" style="margin:0;padding:0 20px;height: 92%;">
+                <div class="con_right_head clearfix" style="border:none;">
+                    <div class="muban_tabBox left" style="margin-right:30px;">
+                        <ul class="tabtitle kccx_spxlh_qhnums_xxl">
+                            <li name="crk_kfgl_xlhmain" class="taba tabhover" typeid="0">在库</li>
+                            <li name="crk_kfgl_xlhmain" class="taba" typeid="1">出库</li>
+                        </ul>
+                    </div>
+                    <div class="con_right_result right" style="margin-right: 0;">
+                        <p style="margin-right: 0;">总数: <span class="c_r kccx_xlh_nums_xxl">0</span></p>
+                    </div>
+                </div>
+                <div class="muban_new_box">
+                    <div class="tabcontent" name="crk_kfgl_xlhmain" style="padding: 0;">
+                        <div class="container">
+                            <div class="table-container" style="margin:0;max-height: 670px;">
+                                <table class="crk_rkgl_dealRK_rkBox">
+                                    <thead>
+                                    <tr>
+                                        <th>SN号</th>
+                                        <th>序列号</th>
+                                        <th>入库人</th>
+                                        <th>入库时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="kccx_xlh_splist_zaikuhtml_xxl">
+                                    <!--<tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>-->
+                                    </tbody>
+                                </table>
+                                <div class="kccx_xlh_zaiku_errhtml_xxl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabcontent none" name="crk_kfgl_xlhmain" style="padding: 0;">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container" style="margin:0;">
+                                <table class="crk_rkgl_dealRK_rkBox">
+                                    <thead>
+                                    <tr style="width: 50%;">
+                                        <th>SN号</th>
+                                        <th>序列号</th>
+                                        <th>出库人</th>
+                                        <th>出库时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="kccx_xlh_splist_chukuhtml_xxl">
+                                    <!--<tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>-->
+                                    </tbody>
+                                </table>
+                                <div class="kccx_xlh_chuku_errhtml_xxl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_cancel but_small">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--配置-库房存量-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_kfcl_kfclLook_pz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle2">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">库房存量</h3>
+            </div>
+            <div class="dialog_text sbar" style="">
+                <div class="div_1 container">
+                    <div class="div_1 table-container">
+                        <table class="kccx_pzsp_kffbhtml_xxl">
+                            <!--<thead>
+                            <tr>
+                                <th>商品编号</th>
+                                <th>商品名称</th>
+                                <th>基本单位</th>
+                                <th>规格</th>
+                                <th>属性</th>
+                                <th>库房A数量</th>
+                                <th>库房B数量</th>
+                                <th>库房C数量</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>PZ1321311</td>
+                                <td>7600</td>
+                                <td>台</td>
+                                <td>IT</td>
+                                <td>品牌：<span>戴尔 </span>类型：<span>固态硬盘</span>
+                                </td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>7</td>
+                            </tr>
+                            </tbody>-->
+                        </table>
+                        <div class="kccx_pzsp_kffberr_htmlxxl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--配置-库房详情-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_kfcl_kfclxq_pz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle5">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">库房详情</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin-top: 0;height: 86%;">
+            	 <div class="dialog_text_con" style="padding:0;padding-top: 30px;">
+                <div class="t_textinput crk_kcxq_detile clearfix" style="height: auto;overflow: hidden;">
+                    <div class="left pro_look_img_btn val_dialogTop" style="position: relative;" name="cru_sp_ck_img_look1" >
+                        <img src="" alt="产品图片" title="这是产品图" class="kccx_pzsp_cpimg_xxl" style="width: 100%;height: 100%;">
+                        <div class="sp_ck_img_box" style="width: 180px;top: 160px;">共<sapn class="pro_goods_list_detail_img_num_total">0</sapn>张</div>
+                    </div>
+                    <div class="inline_block" style="float: left;width: 76%;margin-left: 15px;">
+                        <h2 class="con_title kccx_pzsp_ckxq_mc_xxl">7600</h2>
+                        <button class="but_small but_blue val_dialogTop kccx_pzsp_xlh_btnxxl" name="crk_kfgl_lookxlh_pz">SN码/序列号</button>
+                        <p class="l-s-x">整机商品编号：<span class="kccx_pzsp_spbh_xxl">PZ1014679813</span></p>
+                        <!--<p class="l-s-x">规格：<span class="kccx_pzsp_ggs_xxl">inter</span></p>-->
+                        <p class="l-s-x">属性：<span class="kccx_pzsp_sx_xxl">品牌:戴尔</span></p>
+                        <input type="text" class="time_input inp_noInput c_9 kccx_pzsp_beizhu_xxl" readonly="readonly" style="margin-top: 7px;" value="商品哈桑品">
+                    </div>
+                </div>
+                <div class="finance_three stroage_finance_three">
+                    <div class="finance_khysqk_kuanxiang">
+                        <p>当前库存</p>
+                        <p class="finance_fontsize1"><span class="kccx_pzsp_dqkc_nums_xxl">0</span></p>
+                    </div>
+                    <div class="finance_khysqk_kuanxiang">
+                        <p class="">整机待入库数量</p>
+                        <p class="finance_fontsize1 kccx_pzsp_zhejdairksl_xxl">50</p>
+                    </div>
+                    <div class="finance_khysqk_kuanxiang">
+                        <p>整机待出库数量</p>
+                        <p class="finance_fontsize1 kccx_pzsp_zhejidaichukusl_xxl">20</p>
+                    </div>
+                </div>
+                <!--<div class="finance_three finance_khyfqp_sqtj1 crk_kfgl_detile">
+                    <div style="margin-left: 10px;">
+                        <p>当前库存</p>
+                        <p class="finance_fontsize1 kccx_pzsp_dqkc_nums_xxl">100</p>
+                    </div>
+                    <div class="finance_fontsize">
+                        <p>=</p>
+                        <p></p>
+                    </div>
+                    <div style="width: 32%;">
+                        <p>当前库存 <span>（期初库存+入库数量）</span></p>
+                        <p class="finance_fontsize1"><span class="left" style="margin-left: 30px;"></span> <span class="kccx_pzsp_qckcjia_rksl_xxl">50+100</span></p>
+                    </div>
+                    <!--<div class="finance_fontsize">
+                        <p>+</p>
+                        <p></p>
+                    </div>
+                    <div>
+                        <p>待入库数量</p>
+                        <p class="finance_fontsize1">50</p>
+                    </div>
+                    <div class="finance_fontsize">
+                        <p>-</p>
+                        <p></p>
+                    </div>
+                    <div style="position: relative;cursor:pointer;" class="finance_khysqk_kuanxiang">
+                        <p>待出库数量</p>
+                        <p class="finance_fontsize1">20</p>
+                    </div>-->
+                <!--</div>-->
+                <div class="con_right_head clearfix" style="border:none;">
+                    <div class="cont_search inline_block"><input type="text" class="search_input kccx_pzsp_crdvalue_xxl" value="出入库单号/关联业务单号" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" onkeyup="kccx_pzsp_crdss_now(this.value)"><span class="search_but kccx_pzsp_sscrd_btnxxl">搜索</span>
+                    </div>
+                </div>
+                <div class="div_1 container">
+                    <div class="div_1 table-container">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>出入库日期</th>
+                                <th>出入库单号</th>
+                                <th>出入库库房</th>
+                                <th>出入库类型</th>
+                                <th>关联业务单号</th>
+                                <th>相关往来名称</th>
+                                <th>出库数量</th>
+                                <th>入库数量</th>
+                            </tr>
+                            </thead>
+                            <tbody class="kccx_pzsp_tablist_htmlxxl">
+                            <!--<tr>
+                                <td>01</td>
+                                <td>2016-10-02</td>
+                                <td>CKD654987963</td>
+                                <td>库房A</td>
+                                <td>销售出库</td>
+                                <td>XSD465464</td>
+                                <td>今日头条</td>
+                                <td>2</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>2016-10-02</td>
+                                <td>RKD654987963</td>
+                                <td>库房B</td>
+                                <td>采购入库</td>
+                                <td>CGD987987</td>
+                                <td>戴尔中国</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                        <div class="kccx_pzsp_taberr_htmlxxl"></div>
+                    </div>
+                </div>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--配置-查看序列号-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_kfgl_lookxlh_pz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_7" style="height: 400px !important;" >
+            <div class="dialog_title relative">
+                <i class="dialog_close"></i>
+                <h3 class="dialog_h3">商品序列号</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin:0;padding:0 20px;">
+                <div class="con_right_head clearfix" style="border:none;">
+                    <div class="muban_tabBox left" style="margin-right:30px;">
+                        <ul class="tabtitle">
+                            <li name="crk_kfgl_xlhmain" class="taba tabhover">在库</li>
+                            <!--<li name="crk_kfgl_xlhmain" class="taba">出库</li>-->
+                        </ul>
+                    </div>
+                    <div class="con_right_result right" style="margin-right: 0;">
+                        <p style="margin-right: 0;">总数: <span class="c_r kccx_pzsp_ckxlh_nums_xxl">0</span></p>
+                    </div>
+                </div>
+                <div class="muban_new_box">
+                    <div class="tabcontent" name="crk_kfgl_xlhmain" style="padding: 0;">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container" style="margin:0;">
+                                <table class="crk_rkgl_dealRK_rkBox">
+                                    <thead>
+                                    <tr>
+                                        <th>SN号</th>
+                                        <th>入库人</th>
+                                        <th>入库时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="kccx_pzsp_ckxlh_listhtml_xxl">
+                                    <!--<tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>-->
+                                    </tbody>
+                                </table>
+                                <div class="kccx_pzsp_ckxlh_errhtml_xxl"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="tabcontent none" name="crk_kfgl_xlhmain" style="padding: 0;">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container" style="margin:0;">
+                                <table class="crk_rkgl_dealRK_rkBox">
+                                    <thead>
+                                    <tr style="width: 50%;">
+                                        <th>SN号</th>
+                                        <th>序列号</th>
+                                        <th>出库人</th>
+                                        <th>出库时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(7300）4654464646464</td>
+                                        <td>SN564897987</td>
+                                        <td>小六</td>
+                                        <td>2016-10-10 10:00:00</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_cancel but_small">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+    	$('.table-container').scroll(function () {
+
+                        $('.kccx_sperr_html_xxl').css('padding-left', parseInt($(this).scrollLeft()))
+    })
+       $(".crk_kccx_dqku").live("mouseenter",function () {
+           $(this).children(".cg_ghs_contMsgBox").show();
+       });
+        $(".crk_kccx_dqku").live("mouseleave",function () {
+            $(this).children(".cg_ghs_contMsgBox").hide();
+        });
+        //动态设置表格高度
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+        $(".crk_kcsearck_btn li").live("click",function () {
+           if($(this).hasClass("tabhover2")){
+               var btn_index = $(this).index();
+               $(".crk_kcsearch_box .container").eq(btn_index).show().siblings(".container").hide();
+           }
+        });
+        $(window).resize(function () {
+            $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+        });
+        //统一给select_list添加类
+        $('ul.select_list').addClass('sbar');
+
+//      $('.tanceng .image_box_slider_head>i').live('click',function(){
+////            alert(111);
+//          $(this).closest('.dialog_box').remove();
+//          $(".tanceng").css('display','none');
+//      });
+    });
+</script>
+</body>
+<script src="js/storage/73.js"></script>
+</html>

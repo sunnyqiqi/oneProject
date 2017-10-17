@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr-员工部门</title>
+    <link rel="stylesheet" type="text/css" href="static/hr/css/hr_employeelist.css?v=20173241613">
+    <script src="static/hr/js/hr_employee_api.js"></script>
+    <script src="static/hr/js/hr_dept_api.js"></script>
+    <script src="static/hr/js/hr_bmyg.js"></script>
+    <style>
+        /*.hr_ul1 li,.hr_ul2.li {*/
+            /*display: block;*/
+            /*position: absolute;*/
+            /*width: 8px;*/
+            /*height: 8px;*/
+            /*content: "";*/
+            /*background: url(../../images/iconright.png);*/
+            /*background-repeat: no-repeat;*/
+            /*z-index: 3;*/
+            /*margin-left: -14px;*/
+            /*!*margin-top: 6px;*!*/
+            /*!* margin-top: 12px;*!*/
+        /*}*/
+       /* .hr_left_1:before, .hr_left_1:before{
+            display: block;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            content: "";
+            !*background: url(static/images/iconright.png);*!
+            background: url(static/images/icondown.png);
+            background-repeat: no-repeat;
+            z-index: 3;
+            margin-left: -14px;
+            margin-top: 12px;
+            cursor: pointer;
+        }*/
+
+    </style>
+</head>
+
+<body>
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>部门员工</h2>
+	    <div class="right zj_bm_yg_header_show_div">
+        <button class="but_blue val_dialog zcj_set_start_pass_hr" name="hr_csmmsz">初始密码设置</button><button class="but_blue val_dialog zcj_bm_add_dept_hr" name="hr_addbm">添加部门</button><button class="but_blue val_dialog zcj_hr_bmyg_add_cy_btn" name="hr_addcyad">添加成员</button><button class="but_blue val_dialog zcj_ry_pl_dr_hr" name="hr_drcy">批量导入成员</button><!--<button class="but_blue val_dialog zcj_ry_dc_out_hr" name="hr_dccy">导出成员</button>--><div class="zcj_dj_ref_btn" style="float: right" title="点击刷新"><span class="res" style="margin-right: 30px;margin-left: -20px;"></span></div>
+        <!--<div class="attributesetting">-->
+            <!--<ul>-->
+                <!--<li>商品属性设置</li>-->
+                <!--<li>基本单位设置</li>-->
+                <!--<li>商品分类设置</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    </div>
+</div>
+<!-- 页面菜单 -->
+<div class="second-level hr_left_bjbm">
+    <p class="hr_employeelist_title val_dialog zcj_bm_edit_dept_hr" id="wrap" name="hr_bmyg_bjbm"><i></i>编辑部门</p>
+    <div class="sbar" style="overflow-y: auto;overflow-x: hidden;top: 54px;height: 100%;">
+        <div class="hr_left_nav" style="top:54px;">
+            <ul class="change zcj_left_tree_list">
+                <!--<li class="hr_left_all"><span>所有成员<i class="zcj_all_number">(10)</i></span></li>-->
+
+            <!--<ul class="hr_ul1">
+                <li class="hr_left_1"><span>产品部(2)</span></li>
+                <ul class="hr_ul3">
+                    <li class="hr_left_bmyg2 hr_left_2"><span>高杨</span></li>
+                    <li class="hr_left_bmyg2 hr_left_2"><span>梁浩</span></li>
+                </ul>
+                <ul class="hr_ul1">
+                    <li class="hr_left_1"><span>后台(4)</span></li>
+                    <ul class="hr_ul3">
+                        <li class="hr_left_bmyg2 hr_left_2"><span>文康</span></li>
+                        <li class="hr_left_bmyg2 hr_left_2"><span>贺文</span></li>
+                        <li class="hr_left_bmyg2 hr_left_2"><span>永昌</span></li>
+                        <li class="hr_left_bmyg2 hr_left_2"><span>郭建</span></li>
+                    </ul>
+                </ul>
+                <ul class="hr_ul1">
+                    <li class="hr_left_1"><span>前端(3)</span></li>
+                    <ul class="hr_ul3">
+                        <li class="hr_left_bmyg2 hr_left_2"><span>王慧</span></li>
+                        <li class="hr_left_bmyg2 hr_left_2"><span>孙琦</span></li>
+                        <li class="hr_left_bmyg2 hr_left_2"><span>周从军</span></li>
+                    </ul>
+                </ul>
+                <ul class="hr_ul1">
+                    <li class="hr_left_1"><span>离职人员(1)</span></li>
+                    <ul class="hr_ul3">
+                        <li class="hr_left_bmyg2 hr_left_2"><span>张三</span></li>
+                    </ul>
+                </ul>-->
+            </ul>
+        </div>
+        <div class="allgoods" style="height: auto;"></div>
+    </div>
+</div>
+<!-- 页面菜单结束 -->
+<div class="sbar rightcontent" style="padding-right: 30px;padding-left: 30px;">
+    <div class="con_right_head clearfix" style="border:none;">
+	  <div class="cont_search inline_block hr_base_search">
+        <input id="hr_search" type="text" class="search_input" value="搜索成员姓名/部门" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+        <button class="search_but but_blue zcj_hr_search_btn" style="height: 30px;width: auto;">搜索</button>
+         </div>
+        <!--<button class="but_small inline_block zkgjssBtn zcj_hr_zkgjss_btn" name="hr_basegsxx_zkgjss">展开高级搜索</button>-->
+       <!-- <div style="display:inline-block;position:relative;">
+            <button class="but_cancel but_small inline_block zkgjssBtn" name="sp_basegsxx_zkgjss">展开高级搜索</button>
+            <i class="zkggss_sort_up zkgjss_cont" name="sp_basegsxx_zkgjss" style="top:35px;right: 51px;"></i>
+        </div>-->
+        <div class="right con_right_result right">
+           <!-- <p class="left">所有成员(<span class="c_r zcj_hr_dept_count">1</span>个部门，共<span class="c_r zcj_hr_dept_man_num">2</span>人)</p>-->
+            <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="hr_bmyg_xzckx">
+                <i class="eyeIcon"></i>选择查看项</span>
+        </div>
+        <!--选择查看项-->
+        <div class="t-z-list ckx_cont" name="hr_bmyg_xzckx" style="right: 13px; line-height: 27px; top: 64px; display: none;">
+            <i class="ckx_icon_right"></i>
+            <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+            <ul class="sbar muban_addkey_list">
+                <!--<li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">手机</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">性别</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">出生日期</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">学历</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">字段1</p>
+                </li>-->
+            </ul>
+            <!--  -->
+            <div class="bot-btn">
+                <button class="but_small but_blue zcj_bc_save_btnid">保存</button>
+                <button class="but_small but_cancal zcj_recover_defalult">恢复默认</button>
+            </div>
+        </div>
+        <div class="closeckx_cont" style="display: none;"></div>
+    </div>
+    <!--展开高级搜索-->
+    <div class="container zkgjss_cont zkgjss_content" name="sp_basegsxx_zkgjss">
+        <div class="lik_table_max_height">
+            <table class="table table-bordered">
+                <tr>
+                    <td class="goods_jcd_bmyg_attr_search_table">
+                        <div class="zkgjjss_value">
+                            <div class="zkgjjss_value_left">入职状态</div>
+                            <div class="zkgjjss_value_right">
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block zj_bmyg_spzt_input_val" value="待选择">
+                                    <i></i>
+                                    <ul class="select_list zcj_hr_rz_status_list sbar" style="display: none;">
+                                        <li data-id="1">未办理</li>
+                                        <li data-id="2">办理中</li>
+                                        <li data-id="3">已办理</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zkgjjss_value">
+                            <div class="zkgjjss_value_left">部门</div>
+                            <div class="zkgjjss_value_right">
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block zj_bmyg_spzt_input_val" value="待选择">
+                                    <i></i>
+                                    <ul class="select_list zcj_gjss_bm_list sbar" style="display: none;">
+                                       <!-- <li data-id="1">未办理</li>
+                                        <li data-id="2">办理中</li>
+                                        <li data-id="3">已办理</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zkgjjss_value">
+                            <div class="zkgjjss_value_left">岗位名称</div>
+                            <div class="zkgjjss_value_right">
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block zj_bmyg_spzt_input_val" value="待选择">
+                                    <i></i>
+                                    <ul class="select_list zcj_gjss_bm_list sbar" style="display: none;">
+                                        <!-- <li data-id="1">未办理</li>
+                                         <li data-id="2">办理中</li>
+                                         <li data-id="3">已办理</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zkgjjss_value">
+                            <div class="zkgjjss_value_left">性别</div>
+                            <div class="zkgjjss_value_right">
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block zj_bmyg_spzt_input_val" value="待选择">
+                                    <i></i>
+                                    <ul class="select_list zcj_hr_sex_list sbar" style="display: none;">
+                                        <li>男</li>
+                                        <li>女</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zkgjjss_value">
+                            <div class="zkgjjss_value_left">学历</div>
+                            <div class="zkgjjss_value_right">
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block zj_bmyg_spzt_input_val" value="待选择">
+                                    <i></i>
+                                    <ul class="select_list zcj_xl_list_show sbar" style="display: none;">
+                                        <li>本科</li>
+                                        <li>专科</li>
+                                        <li>硕士</li>
+                                        <li>博士</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container lik_table_wrap">
+        <div class="lik_table_max_height table-container">
+            <table class="table table-bordered" id="zcj_table_check_id">
+                <thead>
+                <tr>
+                    <th class="ht_checkbox">
+                        <input type="checkbox" class="checkAll" name="hr_ygbm_checkbox"/>
+                    </th>
+                    <th>名字</th>
+                    <th>工号</th>
+                    <th>入职状态</th>
+                    <th>部门</th>
+                    <th>岗位</th>
+                    <th>手机</th>
+                    <th>邮箱</th>
+                    <th>性别</th>
+                    <th>出生日期</th>
+                    <th>学历</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="hr_tbody">
+                <tr class="zkgjss_cont" name="hr_basegsxx_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block zj_rz_state" value="入职状态">
+                            <i></i>
+                            <ul class="select_list zcj_hr_rz_status_list" style="display: none;">
+                                <li data-id="1">未办理</li>
+                                <li data-id="2">办理中</li>
+                                <li data-id="3">已办理</li>
+                               <!-- <li data-id="4">已离职</li>-->
+                            </ul>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block zj_rz_dept_name" value="部门">
+                            <i></i>
+                            <ul class="select_list zcj_gjss_bm_list" style="display: none;">
+                               <!-- <li>产品</li>
+                                <li>前端</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>后台</li>
+                                <li>编辑</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block zj_rz_gw_name" value="岗位名称">
+                            <i></i>
+                            <ul class="select_list zcj_hr_gwmc_name_list" style="display: none;">
+                               <!-- <li>产品</li>
+                                <li>前端</li>
+                                <li>后台</li>
+                                <li>编辑</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="性别">
+                            <i></i>
+                            <ul class="select_list zcj_hr_sex_list" style="display: none;">
+                                <li>男</li>
+                                <li>女</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="学历">
+                            <i></i>
+                            <ul class="select_list zcj_xl_list_show" style="display: none;">
+                                <li>本科</li>
+                                <li>专科</li>
+                                <li>硕士</li>
+                                <li>博士</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                </tr>
+                <!--<tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>少林</td>
+                    <td>0506</td>
+                    <td>PHP组</td>
+                    <td>php开放</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox"  name="hr_ygbm_checkbox">
+                    </td>
+                    <td>王1</td>
+                    <td>0506</td>
+                    <td>PHP组</td>
+                    <td>技术</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>null</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>王2</td>
+                    <td>0506</td>
+                    <td>PHP组</td>
+                    <td>php</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>null</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>王3</td>
+                    <td>0506</td>
+                    <td>PHP组</td>
+                    <td>开发</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>null</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>王4</td>
+                    <td>0506</td>
+                    <td>开发组</td>
+                    <td>技术</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>null</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>王5</td>
+                    <td>0506</td>
+                    <td>开发组</td>
+                    <td>开发</td>
+                    <td>15000006666</td>
+                    <td>女</td>
+                    <td>-</td>
+                    <td>null</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>王66</td>
+                    <td>0506</td>
+                    <td>财务部</td>
+                    <td>会计</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>null</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>qqq</td>
+                    <td>0506</td>
+                    <td>行政人事部</td>
+                    <td>11111</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>null</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>新员工</td>
+                    <td>0506</td>
+                    <td>行政人事部</td>
+                    <td>1111</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>null</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ht_checkbox">
+                        <input type="checkbox" name="hr_ygbm_checkbox">
+                    </td>
+                    <td>234</td>
+                    <td>0506</td>
+                    <td>技术部</td>
+                    <td>65</td>
+                    <td>15000006666</td>
+                    <td>男</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn but_look" name="hr_ckxx">查看</button><button class="but_mix but_exit val_dialog" name="hr_addcyad_bj">编辑</button><button class="but_mix but_r but_del val_dialog" name="hr_bmyg_delete">删除</button>
+                    </td>
+                </tr>-->
+                </tbody>
+                <tbody class="hr_tbody_info"></tbody>
+            </table>
+            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+            <div class="no_data_box none zcj_no_data_show_div">
+                <div class="no_data">
+                    <!--<span class="inline_block"></span>-->
+                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                </div>
+                <div class="no_data_bottom"></div>
+            </div>
+        </div>
+        <div class="handle">
+            <div class="hr_yidong">
+                <button id="zcj_select_true" class="zcj_move_to_btn" name="" style="margin-left: -25px;background:#ccc;">移动到</button>
+            </div>
+            <div class="fenye_box hr_bmyg_page">
+                <span>每页显示</span>
+                <div class="inline_block select_mormal">
+                    <input type="text" class="select_input" value="10">
+
+                    <ul class="select_list select_list_to_top">
+                        <li>5</li>
+                        <li>10</li>
+                        <li>15</li>
+                        <li>20</li>
+                    </ul>
+                    <i></i>
+                </div>
+                <span>条数据</span>
+                <div class="fenye_btn first_page_valid"><span></span></div>
+                <div class="fenye_btn prev_page_valid"><span></span></div>
+                <span class="page_box on">1</span>
+                <span class="page_box">2</span>
+                <span class="page_box">3</span>
+                <span class="page_box">4</span>
+                <div class="fenye_btn next_page_valid"><span></span></div>
+                <div class="fenye_btn last_page_valid"><span></span></div>
+                <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--添加部门弹窗-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_addbm">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height:354px;width:500px;">
+		<div class="dialog_title">
+		    <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加部门</h3>
+				</div>
+            <div class="dialog_text sbar" style="padding:45px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:31px;">
+                    <div class="t_left"><i class="c_r">*</i>部门名称</div>
+                    <div class="t_right"><input type="text" class="time_input" id="hr_addbm_name" value="请输入部门名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"/></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><!--<i class="c_r">*</i>-->所属上级</div>
+                   <div class="t_right rightinput_box">
+				     <input type="hidden" id="hiddenid" name="hiddenName" value="0" />
+ 					<input type="text" class="time_input c_3 zcj_sel_show_val" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+					  <span class="inp_addBtn val_dialogTop zcj_select_bm_tree" name="hr_bmyg_xzbm"><b>+</b>选择部门</span>
+					  </div>
+			    </div>
+                <!--<div class="t_textinput">-->
+                    <!--<div class="t_left">&lt;!&ndash;<i class="c_r">*</i>&ndash;&gt;部门成员</div>-->
+                    <!--<div class="t_right rightinput_box">-->
+                        <!--<input type="hidden" id="zcj_hid_bmcy" name="hiddenName" value="0" />-->
+                        <!--<input type="text" class="time_input c_3 zcj_sel_show_val" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>-->
+                        <!--<ul class="inp_add_list lik_inp_add_list zcj_select_cy_xs_nr_show"></ul>-->
+                        <!--<span class="inp_addBtn val_dialogTop zcj_select_cylb_list" name="hr_bmyg_xzfzr"><b>+</b>选择成员</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+				 <div class="t_textinput">
+                       <div class="t_left"><!--<i class="c_r">*</i>-->部门主管</div>
+                    <div class="t_right rightinput_box"  >
+
+                    <input type="text" class="time_input c_3 zcj_show_man" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);"/>
+                            <span class="inp_addBtn val_dialogTop zcj_select_man_list" name="hr_bmyg_xzfzr"><b>+</b>选择部门主管</span>
+
+                     </div>
+                </div>
+                <!--<div class="t_textinput">-->
+                    <!--<div class="t_left "><i class="c_r v_hidden">*</i>部门主管</div>-->
+                    <!--<div class="t_right">-->
+                        <!--<div class="inline_block select_mormal select_100">-->
+                            <!--<input type="text" class="select_input zcj_select_bmzg_input_show" value="请选择"/>-->
+                            <!--<i></i>-->
+                            <!--<ul class="select_list zcj_list_marry sbar zcj_select_bm_zg_charge" style="display: block;">-->
+
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small hr_addbm_save">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 添加成员弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_addcyad">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6">
+           <div class="dialog_title">
+             <i class="dialog_close zcj_add_cy_gb_close">关闭</i>
+                <h3 class="dialog_h3">添加成员</h3>
+           </div>
+		   <div class="dialog_text sbar" style="height: 89%;margin:0;padding: 0;">
+            <!-- <div class="hr_add_tx">
+                <div class="add_imgtx">
+                    <img class="inline_block tx add_tximgsrc hr_15_employee_add_face" data-url="" src="static/hr/images/touxiang.png">
+                    <button class="but_cancel but_look">点击上传头像</button>
+                    <input class="add_txBtn_sctx add_txBtn hr_15_employee_add_face_upload" name="imgurl" type="file"/>
+                </div>
+            </div> -->
+
+         <div class="hr_Msg_box">
+                <h3 class="cont_title inline_block p_left_10">基本资料</h3>
+				 <div class="text_input">
+                    <div class="text_intext" style="width:13%;color:#333;">
+                        <i class="c_r v_hidden">*</i>
+                        <span style="margin-left: -5%;">头像</span>
+                    </div>
+                    <div class="text_ininput" style="width:80%">
+                        <div class="add_imgtx">
+                            <img class="inline_block tx add_tximgsrc hr_15_employee_add_face" src="static/hr/images/touxiang.png">
+                        </div>
+                        <div style="position: relative;">
+                        	<button class="right but_cancel but_look hr_add_img_btn">上传头像</button>
+                            <input class="right add_txBtn_sctx add_txBtn hr_15_employee_add_face_upload hr_add_txBtn" type="file" name="imgurl">
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>姓名</div>
+                         <div class="t_right"><input type="text" class="time_input hr_15_employee_add_name" id="hr_addMember_name" value="请输入姓名" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                         </div>
+                    </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r ">*</i>工号</div>
+
+ <div class="t_right"><input type="text" class="time_input inp_noInput hr_15_employee_add_jobnumber" value="" readonly="readonly"/></div>
+
+
+             </div>
+
+                 <div class="t_textinput">
+
+
+                    <div class="t_left"><i class="c_r v_hidden">*</i>性别</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input hr_15_employee_add_sex" value="请选择">
+                            <i></i>
+                            <ul class="select_list" style="display: none;">
+  								<li>男</li>
+                                <li>女</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>手机</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_mobile" value="请输入手机号" onfocus="fn_focus(this);"  onblur="fn_blur(this);"></div>
+
+                </div>
+
+                   <div class="t_textinput">
+                         <div class="t_left"><i class="c_r v_hidden">*</i>部门</div>
+
+
+                        <div class="t_right" style="width: 318px">
+                        	<input type="hidden" id="zcj_depid" value="0"/>
+                            <input type="text" class="time_input hr_15_employee_add_deptname" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(51, 51, 51);"/>
+                            <span class="inp_addBtn val_dialogTop zcj_select_bm_btn" name="hr_bmyg_xzbm"><b>+</b>选择部门</span>
+                        </div>
+                       <div class="t_right" style="width: 122px;float: right;margin-top: -28px;margin-left: 0px"><input type="checkbox" disabled="true" class="zcj_is_set_bmzg" value="" style="margin-top: 8px"/>是否设为部门主管</div>
+                    </div>
+             <!--<div class="t_textinput">-->
+                 <!--<div class="t_left">&lt;!&ndash;<input type="checkbox" value=""/>&ndash;&gt;</div>-->
+                 <!--<div class="t_right"><input type="checkbox" disabled="true" value="" style="margin-top: 8px"/>是否设为部门主管</div>-->
+             <!--</div>-->
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>岗位</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_deptallname" value="请输入岗位" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_email" value="请输入邮箱" onfocus="fn_focus(this);" onblur="fn_blur(this);"></i></div>
+
+                </div>
+                <h3 class="cont_title inline_block p_left_10">详细资料</h3>
+             <div class="t_textinput">
+                 <div class="t_left">学历</div>
+                 <div class="t_right"><input class="time_input hr_addMember_education" value="请输入学历" onfocus="fn_focus(this);" onblur="fn_blura(this);" style="cursor: pointer;"></div>
+             </div>
+                <!--<div class="t_textinput">
+                    <div class="t_left">毕业日期</div>
+                    <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input hr_15_employee_add_graduationtime" readonly="readonly" onclick="laydate()" style="cursor: pointer;"></div>
+                </div>-->
+                <!--<div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>入职日期</div>
+                    <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);"  value="请选择日期"  class="laydate-icon time_input hr_15_employee_add_workdate" readonly="readonly" onclick="laydate()" style="cursor: pointer;"></div>
+                </div>-->
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>民族</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_nation" value="请输入民族" onfocus="fn_focus(this);"  onblur="fn_blur(this);"></div>
+
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r v_hidden">*</i>籍贯</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_birthplace" value="请输入籍贯" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>身份证号</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_idnumber" value="请输入身份证" onfocus="fn_focus(this);"  onblur="fn_blur(this);"></div>
+
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left">生日</div>
+                    <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input hr_15_employee_add_birthday" readonly="readonly" onclick="laydate()" style="cursor: pointer;"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>婚姻状况</div>
+
+            <div class="t_right">
+
+
+                     <div class="inline_block select_mormal select_100">
+				<input type="text" class="select_input hr_15_employee_add_marital_status" value="请选择">
+							<i></i>
+                                <ul class="select_list zcj_marry_status_list" style="display: none;">
+                                    <li data-id="1">已婚</li>
+                                    <li data-id="0">未婚</li>
+
+			    	  </ul>
+                </div>
+                  </div>
+			</div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>家庭住址</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_address" value="请输入家庭住址" onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>紧急联系人</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_contact" value="请输入紧急联系人" onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>紧急人联系电话</div>
+                    <div class="t_right"><input type="text" class="time_input hr_15_employee_add_contact_lx" value="请输入紧急人联系电话" onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+ 				</div>
+				<h3 class="cont_title inline_block p_left_10">登录密码</h3>
+                    <div style="margin-bottom: 14px;" class="zcj_select_pass_status">
+                     <input type="radio" name="hr_radioa" checked="checked" class="hr_radio_no zcj_end_sy_default_pass" value="1"><span style="margin-right: 10px;margin-left: 5px;">使用默认密码</span>
+                        <input type="radio" name="hr_radioa" class="hr_radio zcj_no_sy_default_pass" value="2"><span style="margin-right: 10px;margin-left: 5px;">不使用默认密码</span>
+                    </div>
+                    <div class="hr_password" style="display: none;">
+                        <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>登录密码</div>
+                        <div class="t_right"><input type="text" value="请输入密码" class="time_input inp_noInput zcj_login_pass_put" onfocus="fn_focus(this);this.type='password'" onblur="fn_blur(this);(this.value == '请输入密码')?this.type='text':this.type='password';"></div>
+                    </div>
+                        <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>确认密码</div>
+                        <div class="t_right"><input type="text" value="请再次输入密码" class="time_input inp_noInput zcj__end_login_pass_put" onfocus="fn_focus(this);this.type='password'" onblur="fn_blur(this);(this.value == '请再次输入密码')?this.type='text':this.type='password';"></div>
+                            </div>
+                    </div>
+                    <div class="hr_password1">
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>登录密码</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput" disabled="disabled"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>确认密码</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput" disabled="disabled"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small hr_15_employee_add_save">保存</button><button class="but_cancel but_small zcj_hr_add_qx_out_btn">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--弹窗-导入-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_drcy">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_3" style="width:550px;height:360px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">批量导入成员</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;height:68%;margin-top: 0;">
+              <div class="hr_unhead_box">需按照官方导入模板(xlsx)修改表格，立即生效</div>
+                 <div class="leadinBox" style="padding: 10px 10px 20px; z-index: 1;">
+
+                    <div class="leadinCon" style="padding-left: 55px; z-index: 2;">
+                        <p>第一步&nbsp;&nbsp;请根据导入模板的格式整理需要导入的数据</p>
+
+                        <p class="link-mu"><a href="" class="zcj_down_url_template">下载《用户导入模板》</a></p>
+ 
+                        <p>第二步&nbsp;&nbsp;请上传需要导入的文件</p>
+                        <div class="clearafter upload_con" style="overflow: hidden;">
+                            <span class="upload_fileadd warp_namebegin complete"></span>
+                            <span class="upload_choose_file hr_changeFile_but">选择文件</span>
+                            <input id="hr_changeFile" name="fileurl" type="file" class="file_box zj_add_inputbegin" style="top: -5px;right: 61px;"/>
+
+                        </div>
+                        <span class="points hr_points">导入只增加新成员信息</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_save_member_btn">上传</button><button class="but_cancel but_small">取消</button>
+  			</div>
+        </div>
+    </div>
+</div>
+
+<!--导出成员弹窗-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_dccy">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_4" style="width: 320px;height: 200px;">
+            <i class="dialog_close_but">关闭</i>
+            <em class="exportIcon"></em>
+            <p class="exportMsg">导出成功，请点击下载</p>
+            <p class="exportFlie f_color">成员表.doc</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- 弹窗-查看信息 -->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar hr_Sideslip" style="display: none" name="hr_ckxx">
+	<div class="Sideslip-btn"><span class="slider_close hr_slider_close"></span></div>
+    <div class="Sideslip-head hr_emploeelist_Sideslip-head">
+
+        <div class="sides-img">
+            <div style="width: 80px;height: 80px;margin: 0 auto;">
+                <img class="inline_block tx add_tximgsrc zcj_hr_yg_info_check" src="static/images/hr_touxiang.png" style="width: 100%;height: 100%;border-radius: 50%;">
+            </div>
+            <!--<span style="border-radius:50%;"></span>-->
+            <p class="msg-name zcj_user_name" style="margin-top: 14px;">路海波 （<i class="zcj_sex_show">男</i>)</p>
+             <p class="msg-status" style="margin-top: 4px;">（<i class="zcj_bl_info"></i>）</p>
+
+        </div>
+    </div>
+    <!-- 基本信息 -->
+    <div class="sbar d-r-t j-bx-b">
+        <div class="d-r-t-h" style="border-bottom: 1px solid #f5f5f5;">
+            <h3 class="cont_title inline_block p_left_10" style="margin-left: -1em;">基本信息</h3>
+            <p class="l-s-x">姓名：<span class="fz-employee-name"> </span></p>
+            <p class="l-s-x">工号：<span class="fz-employee-jobnumber"> </span></p>
+            <p class="l-s-x">性别：<span class="fz-employee-sex"> </span></p>
+            <p class="l-s-x">手机：<span class="fz-employee-mobile"> </span></p>
+            <p class="l-s-x">部门：<span class="fz-employee-deptname"> </span></p>
+            <p class="l-s-x">岗位：<span class="fz-employee-ranking"> </span></p>
+            <p class="l-s-x">邮箱：<span class="fz-employee-email">  </span></p>
+        </div>
+        <div class="d-r-t-h">
+            <h3 class="cont_title inline_block p_left_10" style="margin-left: -1em;">详细资料</h3>
+            <p class="l-s-x">学历：<span class="fz-employee-education"></span></p>
+           <!-- <p class="l-s-x">毕业日期：<span class="fz-employee-graduationtime"></span></p>
+            <p class="l-s-x">入职日期：<span class="fz-employee-workdate"> </span></p>-->
+            <p class="l-s-x">民族：<span class="fz-employee-nation"> </span></p>
+            <p class="l-s-x">籍贯：<span class="fz-employee-birthplace"> </span></p>
+            <p class="l-s-x">身份证号：<span class="fz-employee-idnumber"> </span></p>
+            <p class="l-s-x">生日：<span class="fz-employee-birthday"> </span></p>
+            <p class="l-s-x">婚姻状况：<span class="fz-employee-marital_status"> </span></p>
+            <p class="l-s-x">家庭住址：<span class="fz-employee-address"> </span></p>
+            <p class="l-s-x">紧急联系人：<span class="fz-employee-contact"> </span></p>
+			 <p class="l-s-x">紧急联系人电话：<span class="fz-employee-pione"> </span></p>
+        </div>
+    </div>
+    <div class="pra-4-cent newpra-4-cent">
+        <div class="alertBtn-te">
+            <input type="hidden" id="zcj_del_editor_hidden" value=""/><button class="but_exit val_dialog zcj_chack_bj_btn" name="hr_addcyad_bj">编辑</button><!--<button class="but_r val_dialog zcj_check_del" name="hr_bmyg_delete">删除</button>-->
+
+        </div>
+    </div>
+</div>
+<!-- 编辑中添加成员弹窗-->
+<div class="dialog">
+    <div class="dialog_box zcj_gb_btn" name="hr_addcyad_bj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑成员</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 89%;margin:0;padding: 0;">
+               <!--  <div class="hr_add_tx">
+                    <div class="add_imgtx">
+                        <img class="inline_block tx add_tximgsrc zcj_edit_icon_mr_show" src="static/hr/images/touxiang.png">
+                        <button class="but_cancel">点击上传头像</button>
+                        <input class="add_txBtn add_txBtn_sctx zj_edit_hr_cy_icon" name="imgurl" type="file">
+                    </div>
+                </div> -->
+                <div class="hr_Msg_box">
+                    <h3 class="cont_title inline_block p_left_10">基本资料</h3>
+					<div class="text_input">
+                    <div class="text_intext" style="width:13%;color:#333;">
+                        <i class="c_r v_hidden">*</i>
+                        <span style="margin-left: -5%;">头像</span>
+                    </div>
+                    <div class="text_ininput" style="width:80%">
+                        <div class="add_imgtx">
+                            <img class="inline_block tx add_tximgsrc zcj_edit_icon_mr_show" src="static/images/hr_touxiang.png">
+                        </div>
+                        <div style="position: relative;">
+                        	<button class="right but_cancel but_look hr_add_img_btn">上传头像</button>
+                            <input class="right add_txBtn_sctx add_txBtn zj_edit_hr_cy_icon hr_add_txBtn" type="file" name="imgurl">
+                        </div>
+                    </div>
+                </div>
+
+                   <!--  <div class="text_input">
+                     <div class="text_intext" style="width:13%;color:#333;"><i class="c_r v_hidden">*</i><span>头像</span></div>
+                     <div class="text_ininput" style="width:80%">
+                         <div class="add_imgtx">
+                         <img class="inline_block tx add_tximgsrc zcj_edit_icon_mr_show" src="static/images/hr_touxiang.png">
+                             <div class="hr_down">
+                             上传头像
+                             </div>
+                         <!--<button class="but_cancel but_look">点击上传头像</button>-->
+                       <!--    <input class="add_txBtn add_txBtn_sctx zj_edit_hr_cy_icon" name="imgurl" type="file">
+                         </div>
+                     </div>
+                 </div>  -->
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i> 姓名</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_name c_3" value="请输入姓名" onfocus="fn_focus(this);" onblur="fn_blur(this);"/></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>工号</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput zcj_edit_inum c_3" value="" readonly="true"/></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r v_hidden">*</i>性别</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input zcj_edit_sex c_3" value="请选择">
+                                <i></i>
+                                <ul class="select_list zcj_list_marry" style="display: none;">
+                                    <li>男</li>
+                                    <li>女</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>手机</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_mobile c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>部门</div>
+                        <div class="t_right" style="width: 318px">
+                            <input type="hidden" id="bjz_add_bm_id" value=""/><input type="text" class="time_input zcj_edit_section c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            <span class="inp_addBtn val_dialogTop zcj_edit_sel_bm_xg" name="hr_bmyg_xzbm"><b>+</b>选择部门</span>
+                        </div>
+                        <div class="t_right" style="width: 122px;float: right;margin-top: -28px;"><input type="checkbox" class="zcj_edit_is_set_bmzg" value="" style="margin-top: 8px"/><label>是否设为部门主管</label></div>
+                    </div>
+                   <!-- <div class="t_textinput">
+                        <div class="t_left">&lt;!&ndash;<input type="checkbox" value=""/>&ndash;&gt;</div>
+                        <div class="t_right"><input type="checkbox" value=""/>是否设为部门主管</div>
+                    </div>-->
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>岗位</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_post c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_mail c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></i></div>
+                    </div>
+                    <h3 class="cont_title inline_block p_left_10">详细资料</h3>
+                    <div class="t_textinput">
+                        <div class="t_left">学历</div>
+                        <div class="t_right"><input class="time_input hr_edit_Member_education c_3" value="" onfocus="fn_focus(this);" onblur="fn_blura(this);" style="cursor: pointer;"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>民族</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_nation c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>籍贯</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_inative c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>身份证号</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_identity_inum c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>生日</div>
+                        <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="" class="laydate-icon time_input zcj_identity_selectdata c_3" readonly="readonly" onclick="laydate()" style="cursor: pointer;"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r v_hidden">*</i>婚姻状况</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input zcj_edit_marry c_3" value="">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li data-id="1">已婚</li>
+                                    <li data-id="0">未婚</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>家庭住址</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_address c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>紧急联系人</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_urgency c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>紧急人联系电话</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_edit_urgency_ipone c_3" value="" onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+                    </div>
+                    <h3 class="cont_title inline_block p_left_10">修改成员密码</h3>
+
+                    <button class="val_dialogTop but_small but_blue zcj_yg_amend_pass_btn" name="hr_tjcy_xgmm">修改密码</button>
+                    <!--<div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>原密码</div>
+                        <div class="t_right"><input type="password" class="time_input zcj_edit_password" placeholder="请输入原密码" onblur="fn_blur(this);(this.value == '请输入原密码')?this.type='text':this.type='password';"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>登录密码</div>
+                        <div class="t_right"><input type="password" class="time_input zcj_edit_new_password" placeholder="请输入新密码" onblur="fn_blur(this);(this.value == '请输入密码')?this.type='text':this.type='password';"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>确认密码</div>
+                        <div class="t_right"><input type="password" class="time_input zcj_edit_again_password" placeholder="请再次输入新密码" onblur="fn_blur(this);(this.value == '请再次输入密码')?this.type='text':this.type='password';"></div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_edit_save_btn">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--修改密码设置-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_tjcy_xgmm">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 450px;height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">修改密码设置</h3>
+            </div>
+            <div class="dialog_text sbar hr_mima">
+                <div class="t_textinput" style="margin-top: 20px;">
+                    <div class="t_left"><i class="c_r">*</i>登录密码</div>
+                    <div class="t_right"><input type="text" value="请输入密码" class="time_input zcj_edit_new_password" onfocus="fn_focus(this);this.type='password'" onblur="fn_blur(this);(this.value == '请输入密码')?this.type='text':this.type='password';"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>确认密码</div>
+                    <div class="t_right"><input type="text" value="请再次输入密码" class="time_input zcj_edit_again_password" onfocus="fn_focus(this);this.type='password'" onblur="fn_blur(this);(this.value == '请再次输入密码')?this.type='text':this.type='password';"></div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_end_amend_cg_pass">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_bmyg_delete">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu zcj_bm_ry_del_btn">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--初始密码设置-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_csmmsz">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content" style="width: 450px;height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close fz_close">关闭</i>
+                <h3 class="dialog_h3">初始密码设置</h3>
+            </div>
+            <div class="dialog_text sbar hr_mima">
+                <div class="t_textinput" style="margin-top: 20px;">
+                    <div class="t_left">
+                        <i class="c_r">*</i>成员初始密码
+                    </div>
+                    <div class="t_right"><input type="hidden" id="user_uid" value=""/>
+                        <input type="password" class="time_input zcj_star_pass" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>确认初始密码</div>
+                    <div class="t_right">
+                        <input type="password" class="time_input zcj_end_pass" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_pass_btn ">确定</button><button class="but_cancel but_small fz_auto_close">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--选择部门-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_bmyg_xzbm">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3" >
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+
+<div class="list_box" >
+                    <div class="list_box_con">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexit zcj_select_content_tree"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1 zcj_child1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1 zcj_child1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+
+                 <button class="but_blue but_small zcj_end_depart_btn">确定</button><button class="but_cancel but_small zcj_cancel_name">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--选择负责人-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_bmyg_xzfzr">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+
+                 <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择负责人</h3></div>
+
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box">
+                  <div class="list_box_con list_box_uldx">
+                        <div class="left_nav">
+                            <ul class="list_box_level zcj_person_list_tree"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_person_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--移动到-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_movecy">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+
+                   <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+
+                 <div class="list_box_con">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexit zcj_tree_move"><!--<li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+
+                 <button class="but_blue but_small zcj_btn_move_end">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--编辑部门弹窗-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_bmyg_bjbm">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox2">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box">
+                    <div class="list_box_title">
+                        <div class="list_box_But inline_block relative"><button class="but_small but_exit val_dialogTop zcj_new_fl" name="hr_bmyg_xjfl">新建分类</button><button class="but_exit val_dialogTop zcj_eat_bj_bt" name="hr_bmyg_bjfl">编辑</button><!--<button class="but_small but_exit val_dialogTop zcj_new_bmzg_set_fl" name="hr_bmzg_xjfl">设置主管</button>--> <button class="but_look zcj_up_move">上移</button><button class="but_look zcj_down_move">下移</button> <button class="but_r val_dialogTop zcj_del_fl_btn" name="hr_bmyg_delete1">删除</button></div>
+                    </div>
+                    <div class="list_box_con">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexit exitdepCon"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有部门(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">产品部(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_hr_bjbm_tc_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新建分类弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_bmyg_xjfl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 280px;width:600px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建分类</h3></div>
+            <div class="dialog_text sbar" style="padding:30px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input zj_fl_name_val" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>上级分类</div>
+                    <div class="t_right">
+                        <input type="hidden" id="hid_val" value="0"/><input type="text" class="time_input c_3 zcj_up_fl_val" value="" readonly="true" style="background: #fff;">
+                        <i class="choose_input f_color val_dialogTop zcj_superior_fl" name="hr_bmyg_xzsjfl"><b>+</b>选择上级分类</i>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                 <button class="but_blue but_small zcj_bc_new_btn">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择上级分类弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_bmyg_xzsjfl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+
+                <div class="dialog_title"> <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con">
+                        <div class="left_nav zcj_bm_select_tree">
+                            <ul class="list_box_level list_box_ulexit zcj_up_tree"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                               <!-- <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+
+                                      <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器22</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_end_sel_btn zcj_editor_sj_fl">确定</button> <button class="but_cancel but_small zcj_cancel_btn">取消</button>
+           </div>
+        </div>
+    </div>
+</div>
+<!--编辑分类弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_bmyg_bjfl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 280px;width:600px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑分类</h3></div>
+            <div class="dialog_text sbar" style="padding:28px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="hidden" id="hidden_fl_edit_id" value=""/><input type="text" class="time_input zcj_fl_name_value" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>上级分类</div>
+                    <div class="t_right">
+                        <input type="hidden" id="hidden_fjid_edit_name" value=""/><input type="text" class="time_input c_3 zcj_editor_fl_val" value="" readonly="true" style="background: #fff;">
+                        <i class="choose_input f_color val_dialogTop zcj_bj_select_up" name="hr_bmyg_xzsjfl"><b>+</b>选择上级分类</i>
+                    </div>
+                </div>
+               <!-- <div class="t_textinput">
+                    <div class="t_left">&lt;!&ndash;<i class="c_r">*</i>&ndash;&gt;部门主管</div>
+                    <div class="t_right rightinput_box"  >
+
+                        <input type="text" class="time_input c_3 zcj_show_man" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);"/>
+                        <span class="inp_addBtn val_dialogTop zcj_select_man_list" name="hr_bmyg_xzfzr"><b>+</b>选择部门主管</span>
+
+                    </div>
+                </div>-->
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zj_save_editor_btn">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--编辑分类弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_bmyg_bjfl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 280px;width:600px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑分类</h3></div>
+            <div class="dialog_text sbar" style="padding:30px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>上级分类</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input c_3" value="" readonly="true" style="background: #fff;">
+                        <i class="choose_input f_color val_dialogTop" name="hr_bmyg_xzsjfl"><b>+</b>选择上级分类</i>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zj_hr_bj_save">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_bmyg_delete1">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar hr_content_delete">
+                <p class="p1">删除分类后，分类部门将全部放入上一层级部门中。</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu zcj_hr_bmyg_edit_del_bm_btn">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+
+
+</div>
+ </div>
+    </div>
+<script>
+
+
+    $(document).ready(function(){
+       $(".add_txBtn_sctx").live("mouseenter",function(){
+//           alert(1);
+          $(this).prev().css("color","#2989ff");
+           $(this).prev().css("border-color","#2989ff");
+       });
+        $(".add_txBtn_sctx").live("mouseleave",function(){
+//            alert(1);
+            $(this).prev().css("color", "");
+            $(this).prev().css("border-color", "");
+        });
+
+
+
+        //密码切换
+        $(".hr_radio_no").live("click",function(){
+            $(this).attr('checked', 'checked').siblings('input:radio').attr('checked', null).parent().siblings(".hr_password1").show();
+            $(this).parent().siblings(".hr_password").hide();
+        });
+        $(".hr_radio").live("click",function(){
+            $(this).attr('checked', true).parent().siblings(".hr_password1").hide();
+            $(this).parent().siblings(".hr_password").show();
+        });
+    });
+
+//        //密码切换
+//        $("input.hr_radio_no").die("click").live("click",function(){
+////            alert(1111);
+//            $(this).parent().siblings(".hr_password").find("input").addClass("inp_noInput");
+//            $(this).parent().siblings(".hr_password").find("input").attr("disabled","disabled");
+//            $(this).parent().siblings(".hr_password").find("input").css("color","#f5f5f5");
+//        });
+//        $("input.hr_radio").die("click").live("click",function(){
+////            alert(1111);
+//            $(this).parent().siblings(".hr_password").find("input").removeClass("inp_noInput");
+//            $(this).parent().siblings(".hr_password").find("input").removeAttr("disabled");
+//        });
+//    });
+
+
+</script>
+<script>
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+
+//    //吸顶条效果
+//        $('.hr_left_bjbm').scroll(function(){
+//            var h =$(this).scrollTop();
+//            $('#wrap').css('top',h);
+//        });
+</script>
+</body>
+</html>

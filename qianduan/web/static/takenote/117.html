@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>借出归还</title>
+    <link rel="stylesheet" href="static/takenote/css/takenote.css">
+    <link rel="stylesheet" href="static/vendition/css/vend_client.css">
+</head>
+<body>
+<div class="finance_content">
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>借出归还</h2>
+    <div class="right" style="width:196px;">
+        <button class="but_blue val_dialog takenote_jcgh_create_btn" name="takenote_jcgh_xj">新建借出归还</button><div class="res takenote_jcgh_res" title="点击刷新"></div>
+    </div>
+</div>
+<!--第二行-->
+<div class="takenote_con_m_box sbar" style="padding-left: 25px;padding-right: 22px;">
+    <div class="con_right_head clearfix" style="border:none;">
+        <div class="work_tabSp inline_block" style="margin-top: 3px;">
+            <ul class="tabtitle zj_jcgjh_header_ul_list">
+                <li name="takenote_jcgh_tabSp_v" class="taba tabhover" id="takenote_jcgh_myList">我发起的</li>
+                <li name="takenote_jcgh_tabSp_v" class="taba" id="takenote_jcgh_csList">抄送我的</li>
+            </ul>
+        </div>
+        <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input takenote_jcgh_search_inp" value="借出归还编号/借出编号/客户名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+            <button class="search_but but_blue takenote_jcgh_search_btn" style="height: 30px;width: auto;">搜索</button>
+        </div>
+        <!--<button class="but_small inline_block zkgjssBtn" name="takenote_jcgh_zkgjss">展开高级搜索</button>-->
+        <div class="takenote_xs">
+            <input type="checkbox" checked="checked" class="takenote_jcgh_list_no_show">
+            <p>不显示已作废</p>
+        </div>
+        <div class="takenote_xzckx">
+            <p class="left">搜索结果: <span class=" f_color" id="takenote_jcgh_totalcount">3</span>条</p>
+            <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="takenote_jcd_xzckx">
+                <i class="eyeIcon"></i>选择查看项</span>
+        </div>
+        <!--选择查看项-->
+        <div class="t-z-list ckx_cont" name="takenote_jcd_xzckx" style="right: 13px; line-height: 27px; top: 64px; display: none;">
+            <i class="ckx_icon_right"></i>
+            <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+            <ul class="sbar muban_addkey_list sq_jcgh_look_field_ul"></ul>
+            <!--  -->
+            <div class="bot-btn">
+                <button class="but_small but_blue sq_jcgh_look_field_save">保存</button>
+                <button class="but_small but_cancal sq_jcgh_look_field_reset">恢复默认</button>
+            </div>
+        </div>
+        <div class="closeckx_cont" style="display: none;"></div>
+    </div>
+    <div>
+        <div class="tabcontent" name="takenote_jcgh_tabSp_v" style="padding: 0;">
+            <div class="container lik_table_wrap">
+                <div class="table-container lik_table_max_height">
+                    <table class="sq_jcgh_table">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>借出归还编号</th>
+                            <th>借出编号</th>
+                            <th>客户名称</th>
+                            <th class="order">入库日期<i class="price_icon"></i></th>
+                            <th>入库状态</th>
+                            <th class="order">创建日期<i class="price_icon"></i></th>
+                            <th>下单人</th>
+                            <th>备注</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="zkgjss_cont" name="takenote_jcgh_zkgjss">
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block" value="入库状态">
+                                    <i></i>
+                                    <ul class="select_list">
+                                        <li>值一</li>
+                                        <li>值二</li>
+                                        <li>值三</li>
+                                        <li>值四</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block" value="下单人">
+                                    <i></i>
+                                    <ul class="select_list">
+                                        <li>值一</li>
+                                        <li>值二</li>
+                                        <li>值三</li>
+                                        <li>值四</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true">
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody class="takenote_jcgh_tbody"></tbody>
+                    </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <div class="no_data_box none page_117_nodata">
+                        <div class="no_data">
+                            <!--<span class="inline_block"></span>-->
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>
+                </div>
+                <div class="handle page_117_nodata_handler">
+                    <div class="fenye_box takenote_jcgh_fenye">
+                        <span>每页显示</span>
+                        <div class="inline_block select_mormal">
+                            <input type="text" class="select_input takenote_jcgh_search_num" value="10">
+                            <ul class="select_list select_list_to_top">
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                            </ul>
+                            <i></i>
+                        </div>
+                        <span>条数据</span>
+                        <div class="fenye_btn first_page_valid"><span></span></div>
+                        <div class="fenye_btn prev_page_valid"><span></span></div>
+                        <span class="page_box on">1</span>
+                        <span class="page_box">2</span>
+                        <span class="page_box">3</span>
+                        <span class="page_box">4</span>
+                        <div class="fenye_btn next_page_valid"><span></span></div>
+                        <div class="fenye_btn last_page_valid"><span></span></div>
+                        <span>当前页面共<cite class="f_color mLR_5">0</cite>条数据</span>
+                        <span class="m_left_10">共<cite class="f_color mLR_5">0</cite>页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--新建借出归还-->
+<div class="dialog">
+    <div class="dialog_box" name="takenote_jcgh_xj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6 takenote_jcgh_new" style="width: 680px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建借出归还</h3>
+            </div>
+            <div class="dialog_text sbar xs_shd_dialog_text" style="padding:0 ;margin:0;height: 90%;">
+                <div class="unhead_box">
+                    创建日期：<span class="takenote_jcgh_create_time"></span>
+                    下单人：<span style="padding-right: 20px;" class="takenote_jcgh_create_uname"></span>
+                </div>
+                <div class="dialog_text_con" style="padding:0 60px 30px;">
+                    <h2 class="cont_title">借出归还</h2>
+                    <div class="takenote_jcgh_new_input">
+                        <div class="t_textinput">
+                            <div class="t_left t_left_conrow"><i class="c_r">*</i>借出归还单编号</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 takenote_jcgh_create_code" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left t_left_conrow"><i class="c_r">*</i>选择借出单</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal select_100">
+                                    <input type="text" class="select_input c_3 takenote_jcgh_create_lend_code" value="请选择借出单">
+                                </div>
+                                <span class="inp_addBtn val_dialogTop takenote_jcgh_create_choose_lend" name="takenote_jcgh_xzjcd"><b>+</b>选择借出单</span>
+                            </div>
+                        </div>
+                        <hr class="xs_bjd_hr" style="margin-left: -100px;width: 1200px;">
+                    </div>
+                    <h2 class="cont_title">基本信息</h2>
+                    <div class="takenote_jcgh_new_input">
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>客户</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 takenote_jcgh_choose_lend_cus_name" value="" readonly="true"></div>
+                        </div>
+                        <hr class="xs_bjd_hr" style="margin-left: -100px;width: 1200px;">
+                    </div>
+                    <h2 class="cont_title">入库信息</h2>
+                    <div class="takenote_jcgh_new_input">
+                        <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                            <div class="t_left" style="width: 30%;"><i class="c_r">*</i>入库时间</div>
+                            <div class="t_right" style="margin-left: 30%;">
+                                <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zj_jrgh_enter_ku_time" readonly="readonly" onclick="laydate()" style="color: rgb(51, 51, 51);">
+                            </div>
+                        </div>
+                        <hr class="xs_bjd_hr" style="margin-left: -100px;width: 1200px;">
+                    </div>
+
+                    <!--选择商品-->
+                    <div class="takenote_jcgh_new_addBox none" style="margin-bottom: 25px;">
+                        <h2 class="cont_title" style="margin: 0 0 20px -10px;">选择借出归还商品</h2>
+                        <div class="xs_xsbjd_sp_box page_108_shdSP" style="background: rgb(247, 247, 247); margin: 0px -60px; border: 1px solid rgb(230, 230, 230);">
+                            <div class="xs_xsbjd_bjd_box" style="margin: 20px 45px;">
+                                <div class="xs_xsbjd_box_ul xs_shd_box_ul">
+                                    <ul class="headlist clearfix">
+                                        <li style="background:#32a0f6;border-color:#32a0f6;color:#fff;">商品</li>
+                                        <li>整机商品</li>
+                                    </ul>
+                                </div>
+                                <div class="xs_xsbjd_SPbj">
+                                    <!--商品-->
+                                    <div class="tabcontent" name="xs_xsbjd_tabcotent" style="padding: 15px 25px 25px;">
+                                        <div class="div_1 container">
+                                            <div class="div_1 table-container">
+                                                <table>
+                                                    <thead>
+                                                    <tr>
+                                                        <th width="32">选择</th>
+                                                        <th width="140">编号</th>
+                                                        <th width="100">名称</th>
+                                                        <th width="545">属性</th>
+                                                        <th width="65">借出数量</th>
+                                                        <th width="88">归还数量</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="zj_pt_good_content_show_info">
+                                                   <!-- <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td>SP201705069999</td>
+                                                        <td>硬盘</td>
+                                                        <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                        <td>2块</td>
+                                                        <td><div class="xs_num_input num_input inline_block num_input_new"><button class="but_grey_a but_opa_small inp_plus ven_sell_quote_productnum_change">+</button><input type="text" class="productnum" value="1"><button class="but_grey_a but_opa_small radius_left_0 inp_reduce ven_sell_quote_productnum_change">-</button></div></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="checkbox"></td>
+                                                        <td>SP201705069999</td>
+                                                        <td>硬盘</td>
+                                                        <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                        <td>2块</td>
+                                                        <td><div class="xs_num_input num_input inline_block num_input_new"><button class="but_grey_a but_opa_small inp_plus ven_sell_quote_productnum_change">+</button><input type="text" class="productnum" value="1"><button class="but_grey_a but_opa_small radius_left_0 inp_reduce ven_sell_quote_productnum_change">-</button></div></td>
+                                                    </tr>-->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--整机商品-->
+                                    <div class="tabcontent none zj_complate_goods_info_show_list" name="xs_xsbjd_tabcotent" style="padding: 15px 25px;">
+                                       <!-- <div class="xs_div_2" style="border-bottom: 1px solid #e6e6e6;">
+                                            <div class="div_1 container">
+                                                <table>
+                                                    <thead>
+                                                    <tr>
+                                                        <th width="32"><input type="checkbox" class="checkAll" name="xs_shd_check"></th>
+                                                        <th width="140">编号</th>
+                                                        <th width="100">名称</th>
+                                                        <th width="375">属性</th>
+                                                        <th width="65">借出数量</th>
+                                                        <th width="88">归还数量</th>
+                                                        <th width="60">操作</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td><input type="checkbox" name="xs_shd_check"></td>
+                                                        <td>ZJ201705069999</td>
+                                                        <td>R730</td>
+                                                        <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                        <td>2块</td>
+                                                        <td><div class="xs_num_input num_input inline_block num_input_new"><button class="but_blue but_opa_small inp_plus sell_quote_create_package_num_change">+</button><input type="text" value="1" class="sell_quote_create_package_num" style="border:1px solid #23a2f3;"><button class="but_blue but_opa_small radius_left_0 inp_reduce sell_quote_create_package_num_change">-</button></div></td>
+                                                        <td><button class="but_mix box_open_btn_1 but_blue_1">展开</button></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="xs_xsbjd_table_t2 none" style="padding: 10px;border-bottom: 2px solid #e6e6e6;">
+                                            <div class="box_open_list goods_tc_toggle">
+                                                <p class="box_open_head" style="background: rgb(255, 255, 255); border-radius: 3px;"><span class="cont_title"style="padding-left: 0;margin-left: 0;">CPU</span></p>
+                                                <div class="div_1 container">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th width="32">选择</th>
+                                                            <th width="140">编号</th>
+                                                            <th width="100">名称</th>
+                                                            <th width="435">属性</th>
+                                                            <th width="65">借出数量</th>
+                                                            <th width="88">归还数量</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><input type="checkbox"></td>
+                                                            <td>SP201705069999</td>
+                                                            <td>硬盘</td>
+                                                            <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                            <td>2块</td>
+                                                            <td><div class="xs_num_input num_input inline_block num_input_new"><button class="but_grey_a but_opa_small inp_plus ven_sell_quote_productnum_change">+</button><input type="text" class="productnum" value="1"><button class="but_grey_a but_opa_small radius_left_0 inp_reduce ven_sell_quote_productnum_change">-</button></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="checkbox" name="xs_shd_check"></td>
+                                                            <td>SP201705069999</td>
+                                                            <td>硬盘</td>
+                                                            <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                            <td>2块</td>
+                                                            <td><div class="xs_num_input num_input inline_block num_input_new"><button class="but_grey_a but_opa_small inp_plus ven_sell_quote_productnum_change">+</button><input type="text" class="productnum" value="1"><button class="but_grey_a but_opa_small radius_left_0 inp_reduce ven_sell_quote_productnum_change">-</button></div></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="xs_div_2" style="border-bottom: 1px solid #e6e6e6;">
+                                            <div class="div_1 container">
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td width="32"><input type="checkbox" name="xs_shd_check"></td>
+                                                        <td width="140">ZJ201705069999</td>
+                                                        <td width="100">R730</td>
+                                                        <td width="375">日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                        <td width="65">2块</td>
+                                                        <td width="88"><div class="xs_num_input num_input inline_block num_input_new"><button class="but_blue but_opa_small inp_plus sell_quote_create_package_num_change">+</button><input type="text" value="1" class="sell_quote_create_package_num" style="border:1px solid #23a2f3;"><button class="but_blue but_opa_small radius_left_0 inp_reduce sell_quote_create_package_num_change">-</button></div></td>
+                                                        <td width="60"><button class="but_mix box_open_btn_1 but_blue_1">展开</button></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="xs_xsbjd_table_t2 none" style="padding: 10px;border-bottom: 2px solid #e6e6e6;">
+                                            <div class="box_open_list goods_tc_toggle">
+                                                <p class="box_open_head" style="background: rgb(255, 255, 255); border-radius: 3px;"><span class="cont_title" style="padding-left: 0;margin-left: 0;">内存</span></p>
+                                                <div class="div_1 container">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th width="32">选择</th>
+                                                            <th width="140">编号</th>
+                                                            <th width="100">名称</th>
+                                                            <th width="435">属性</th>
+                                                            <th width="65">借出数量</th>
+                                                            <th width="88">归还数量</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><input type="checkbox"></td>
+                                                            <td>SP201705069999</td>
+                                                            <td>硬盘</td>
+                                                            <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                            <td>2块</td>
+                                                            <td><div class="xs_num_input num_input inline_block num_input_new"><button class="but_grey_a but_opa_small inp_plus ven_sell_quote_productnum_change">+</button><input type="text" class="productnum" value="1"><button class="but_grey_a but_opa_small radius_left_0 inp_reduce ven_sell_quote_productnum_change">-</button></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="checkbox" name="xs_shd_check"></td>
+                                                            <td>SP201705069999</td>
+                                                            <td>硬盘</td>
+                                                            <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                            <td>2块</td>
+                                                            <td><div class="xs_num_input num_input inline_block num_input_new"><button class="but_grey_a but_opa_small inp_plus ven_sell_quote_productnum_change">+</button><input type="text" class="productnum" value="1"><button class="but_grey_a but_opa_small radius_left_0 inp_reduce ven_sell_quote_productnum_change">-</button></div></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                    </div>
+                                </div>
+                                <hr class="xs_bjd_hr" style="margin-left: -100px;width: 1200px;">
+                                <div class="t_textinput t_textarea" style="width: 50%;margin-left: 26px;margin-bottom: 30px;">
+                                    <div class="t_left">
+                                        备注
+                                    </div>
+                                    <div class="t_right">
+                                        <textarea class="txt_normal zj_bz_meark_text_val" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">请输入备注</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="inp_box clearfix takenote_jcgh_new_input">
+                        <p class="inp_lP left">
+                            <i class="v_hidden">*</i>
+                            <em>抄送人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2 zj_select_csr_icon_show">
+                           <!-- <li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">王二麻</p>
+
+                            </li>-->
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop zcj_jcgh_jcgh_select_cs_add_btn" name="takenote_jcgh_csr"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue val_dialogToptakenote_jcgh_create_submit_btn" name="takenote_jcgh_jcghtj">提交</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择借出单弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="takenote_jcgh_xzjcd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1000px;height:600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择借出单</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;">
+                <div class="sp_right_con" style="padding-left:30px;padding-right: 20px">
+                    <div class="con_right_head clearfix" style="border:none;">
+                        <div class="cont_search inline_block">
+                            <input type="text" class="search_input takenote_jcgh_create_choose_lend_search_inp" value="借出单编号/客户名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);"><span
+                            class="search_but takenote_jcgh_create_choose_lend_search_btn">搜索</span></div>
+                        <div class="con_right_result right">
+                            <p class="left">搜索结果: <span
+                                class="f_color takenote_jcgh_create_choose_lend_total">0</span>条</p>
+                        </div>
+                    </div>
+                    <div class="container lik_table_wrap" style="height:62%;">
+                        <div class="table-container lik_table_max_height" style="margin:0;">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>借出编号</th>
+                                    <th>客户</th>
+                                    <th>预计归还日期</th>
+                                    <th>审批状态</th>
+                                    <th>创建日期</th>
+                                    <th>借处商品金额（元）</th>
+                                    <th>备注</th>
+                                </tr>
+                                </thead>
+                                <tbody class="takenote_jcgh_choose_lend_tbody">
+                                <!--<tr>
+                                    <td><input type="radio" name="xs_bjd_xzxsdd"></td>
+                                    <td>JCD4646546</td>
+                                    <td>戴尔中国</td>
+                                    <td>2016-10-10</td>
+                                    <td>通过</td>
+                                    <td>2016-10-10</td>
+                                    <td>5000</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" name="xs_bjd_xzxsdd"></td>
+                                    <td>JCD4646546</td>
+                                    <td>戴尔中国</td>
+                                    <td>2016-10-10</td>
+                                    <td>通过</td>
+                                    <td>2016-10-10</td>
+                                    <td>5000</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" name="xs_bjd_xzxsdd"></td>
+                                    <td>JCD4646546</td>
+                                    <td>戴尔中国</td>
+                                    <td>2016-10-10</td>
+                                    <td>通过</td>
+                                    <td>2016-10-10</td>
+                                    <td>5000</td>
+                                    <td>-</td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                            <div class="no_data_box none takenote_jcgh_create_choose_lend_nodata_box">
+                                <div class="no_data">
+                                    <!--<span class="inline_block"></span>-->
+                                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                                </div>
+                                <div class="no_data_bottom"></div>
+                            </div>
+                        </div>
+                        <div class="handle takenote_jcgh_create_choose_lend_handle">
+                            <div class="fenye_box takenote_jcgh_create_choose_lend_pagination">
+                                <span>每页显示</span>
+                                <div class="inline_block select_mormal">
+                                    <input type="text" class="select_input" value="10">
+                                    <ul class="select_list select_list_to_top sbar" style="height: 0px; padding-top: 0px; padding-bottom: 0px; display: none;">
+                                        <li>5</li>
+                                        <li>10</li>
+                                        <li>15</li>
+                                        <li>20</li>
+                                    </ul>
+                                    <i></i>
+                                </div>
+                                <span>条数据</span>
+                                <div class="fenye_btn first_page_invalid"><span></span></div>
+                                <div class="fenye_btn prev_page_invalid"><span></span></div>
+                                <span class="page_box on" style="display: inline-block;">1</span>
+                                <span class="page_box" style="display: none;">2</span>
+                                <span class="page_box" style="display: none;">3</span>
+                                <span class="page_box" style="display: none;">4</span>
+                                <div class="fenye_btn next_page_invalid"><span></span></div>
+                                <div class="fenye_btn last_page_invalid"><span></span></div>
+                                <span>当前页面共<cite class="f_color mLR_5">8</cite>条数据</span>
+                                <span class="m_left_10">共<cite class="f_color mLR_5">1</cite>页</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue takenote_jcgh_save takenote_jcgh_create_choose_lend_save">确定</button>
+                <button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-借出归还提交弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="takenote_jcgh_jcghtj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">生成借出归还单</h3>
+            </div>
+            <div class="dialog_text sbar takenote_scd">
+                <p class="p1" style="padding: 50px 12px 18px;">您的借出归还单：<span class="f_color">6545646</span>已生成</p>
+                <p class="p2">入库信息已推送入库管理</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--抄送人成员树结构-->
+<div class="dialog">
+    <div class="dialog_box" name="takenote_jcgh_csr">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择抄送人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left">
+                    <div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><!--<input type="text" class="time_input" value="搜索成员/部门/手机等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i>--></div>
+                    </div>
+                    <div class="list_box_con" style="height: auto">
+                        <div class="left_nav sbar">
+                            <ul class="list_box_level list_box_ul zj_jcd_csr_jcgh_left_ul_list_tree" style="height: 420px;"><!--<li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span><span class="list_check"><em></em></span></li>-->
+                             <!--   <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">思思</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">思思</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list zj_jcd_select_jcgh_csr_right_list_ul">
+                           <!-- <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zj_jcd_select_jcgh_csr_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--查看-借出归还-->
+<div class="right_sidebar_h" ></div>
+<div class="right_sidebar Sideslip" name="takenote_ghd_jcgh_ck" style="width: 766px;">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left">借出归还-<span class="zj_jcgh_show_kh_name_check"></span></p>
+            </div>
+            <p class="slider_head_msg_det">
+                下单人：<span class="takenote_jcgh_user_name"></span>
+                创建日期<span class="takenote_jcgh_create_time"></span>
+            </p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="takenote_ghd_base_right2">基本信息</li>
+                <li name="takenote_ghd_base_right2">借出单</li>
+                <li name="takenote_ghd_base_right2">入库单</li>
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b" style="width: 600px;height: 100%;overflow: hidden;">
+            <!--基本信息-->
+            <div class="ht_base_msg sbar" name="takenote_ghd_base_right2">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <h3 class="cont_title">基本信息</h3>
+                        <p class="l-s-x">借出归还编号：<span class="takenote_jcgh_code_sn"></span></p>
+                        <p class="l-s-x">借出单编号：<span class="takenote_jcgh_lend_code_sn"></span></p>
+                        <p class="l-s-x">客户：<span class="takenote_jcgh_customer_name"></span></p>
+                    </div>
+                    <div class="d-r-t-h">
+                        <h3 class="cont_title">入库信息</h3>
+                        <p class="l-s-x">入库日期：<span class="takenote_jcgh_in_time"></span></p>
+                        <p class="l-s-x">备注：<span class="takenote_jcgh_remark"></span></p>
+                        <p class="l-s-x">抄送人：<span class="takenote_jcgh_copy_flow"></span></p>
+                    </div>
+                    <div class="d-r-t-h sbar" style="border-bottom: 0;">
+                        <h3 class="cont_title">借出归还商品</h3>
+                        <p class="l-s-x" style="margin-bottom: 30px;"><span style="margin-left: -5px;"><button class="but_blue but_small val_dialog zj_jcgh_check_info_btn" name="takenote_ghd_jbxxxq1">查看借出归还单</button></span></p>
+                    </div>
+                </div>
+            </div>
+            <!--借出单-->
+            <div class="ht_base_msg sbar" name="takenote_ghd_base_right2">
+                <div class="ht_base_msgCon sbar zj_jcgh_jcd_jb_xq_info" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <h3 class="cont_title">基本信息</h3>
+                        <p class="l-s-x">借出单编号：<span class="takenote_jcgh_borrow_code_sn"></span></p>
+                        <p class="l-s-x">客户：<span class="takenote_jcgh_borrow_supplier_name"></span></p>
+                        <p class="l-s-x">预计归还日期：<span class="takenote_jcgh_borrow_expect_return_time"></span></p>
+                        <p class="l-s-x">税率：<span class="takenote_jcgh_borrow_tax_rate"></span></p>
+                        <p class="l-s-x">备注：<span class="takenote_jcgh_borrow_note"></span></p>
+                        <p class="l-s-x">抄送人：<span class="takenote_jcgh_borrow_cc_name"></span></p>
+                        <p class="l-s-x">归还状态：<span class="takenote_jcgh_borrow_thetype"></span></p>
+                    </div>
+                    <div class="d-r-t-h">
+                        <h3 class="cont_title">出库信息</h3>
+                        <p class="l-s-x">出库日期：<span class="takenote_jcgh_borrow_send_time"></span></p>
+                        <p class="l-s-x">物流方式：<span class="takenote_jcgh_borrow_logistics_type"></span></p>
+                        <p class="l-s-x">承担运费：<span class="takenote_jcgh_borrow_is_freight"></span></p>
+                        <p class="l-s-x">收货人：<span class="takenote_jcgh_borrow_receiver"></span></p>
+                        <p class="l-s-x">联系电话：<span class="takenote_jcgh_borrow_mobile"></span></p>
+                        <p class="l-s-x">收货地址：<span class="takenote_jcgh_borrow_address"></span></p>
+                    </div>
+                    <div class="d-r-t-h sbar" style="border-bottom: 0;">
+                        <h3 class="cont_title">借出商品</h3>
+                        <p class="l-s-x" style="margin-bottom: 30px;"><span style="margin-left: -5px;"><button class="but_blue but_small val_dialog zj_jcgh_check_jcd_info_xq" name="takenote_jrd_look_xq">查看借出单</button></span></p>
+                    </div>
+                </div>
+            </div>
+            <!--入库单-->
+            <div class="ht_base_msg sbar" name="takenote_ghd_base_right2">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <h3 class="cont_title">入库信息</h3>
+                        <p class="l-s-x">入库状态：<span class="takenote_jcgh_rkstatus"></span></p>
+                        <div class="container lik_table_wrap ccc" style="line-height: 30px;border: none;display: inline-block;">
+                            <table class="takenote_table" style="width: 499px;">
+                                <thead>
+                                <tr>
+                                    <th width="90">商品入库数量</th>
+                                    <th width="90">商品分配数量</th>
+                                    <th width="85">整机入库数量</th>
+                                    <th width="90">整机分配数量</th>
+                                    <th width="65">分配状态</th>
+                                    <th width="50">分配人</th>
+                                </tr>
+                                </thead>
+                                <tbody class="zj_goods_jcgh_order_look_skjl_tbody"></tbody>
+                                <tbody>
+                                <tr class="table_total ven_sell_order_look_skjl_tbody_table_total none">
+                                    <td>合计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="c_r ven_sell_order_look_skjl_total"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                            <div class="no_data_box none zj_sell_order_look_jcgh_tbody_nodata_box">
+                                <div class="no_data">
+                                    <!--<span class="inline_block"></span>-->
+                                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                                </div>
+                                <div class="no_data_bottom" style="height:4px;"></div>
+                            </div>
+                        </div>
+                        <div class="container lik_table_wrap ccc" style="line-height: 30px;border: none;display: inline-block;">
+                            <table class="takenote_table" style="width: 499px;">
+                                <thead>
+                                <tr>
+                                    <th width="30">序号</th>
+                                    <th width="60">入库库房</th>
+                                    <th width="70">商品入库数量</th>
+                                    <th width="70">商品已入库数量</th>
+                                    <th width="70">整机入库数量</th>
+                                    <th width="70">整机已入库数量</th>
+                                    <th width="60">整机拆卸数量</th>
+                                    <th width="45">入库状态</th>
+                                    <th width="40">入库人</th>
+
+                                </tr>
+                                </thead>
+                                <tbody class="zj_jcgh_order_look_skjl_tbody"></tbody>
+                                <tbody>
+                                <tr class="table_total ven_sell_order_look_skjl_tbody_table_total none">
+                                    <td>合计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="c_r ven_sell_order_look_skjl_total"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                            <div class="no_data_box none zj_no_order_look_jcgh_tbody_nodata_box">
+                                <div class="no_data">
+                                    <!--<span class="inline_block"></span>-->
+                                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                                </div>
+                                <div class="no_data_bottom" style="height:4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--借入归还-查看借出归还单-->
+<div class="dialog">
+    <div class="dialog_box" name="takenote_ghd_jbxxxq1">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6" style="width: 750px;">
+            <div class="dialog_title xs_dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">借出归还-<span class="zj_jcgh_check_kh_head_name"></span></h3>
+               <!-- <button class="but_grey_no but_small but_zwpdf" style="position: absolute;right:36px;top:9px;"><i></i>导出PDF</button>
+                <button class="but_grey_no but_small but_print2 htmb_btnPrint1" style="position: absolute;right:145px;top:9px;"><i></i>打印</button>-->
+                <p class="l-s-x" style="margin-left: 10px;">
+                    <span class="c_9">创建日期：<span class="zj_jcgh_quote_look_create_at c_9"></span></span>
+                    <span class="c_9">下单人：<span class="zj_jcgh_quote_look_uname c_9" style="padding-right: 20px;"></span></span>
+                </p>
+            </div>
+            <div class="dialog_text sbar xs_dialog_text" style="padding:0;margin:0;height: 86%;">
+                <div class="dialog_text_con" style="padding:20px 25px;">
+                    <div class="xs_unhead_box xs_thh_unhead_box_hh zj_jrgh_check_zj_info">
+                        <p class="left c_3"><span class="bold">借出归还单编号：</span><span class="c_6 zj_goods"></span></p>
+                        <p class="left c_3"><span class="bold">借出单编号：</span><span class="c_6 zj_goods"></span></p>
+                        <p class="left c_3"><span class="bold">客户：</span><span class="c_6 zj_goods"></span></p>
+                        <p class="left c_3"><span class="bold">入库日期：</span><span class="c_6 zj_goods"></span></p>
+                    </div>
+                    <h2 class="cont_title" style="margin-bottom: 0;">借出归还商品</h2>
+                    <!--商品-->
+                    <div class="xs_div_1">
+                        <h3 class="xs_cont_title_h3">商品</h3>
+                        <div class="xs_div_2" style="margin-top: 20px;">
+                            <table class="xs_bjd_table" style="border: none;">
+                                <thead>
+                                <tr>
+                                    <th width="140">编号</th>
+                                    <th width="120">名称</th>
+                                    <th width="240">属性</th>
+                                    <th width="70">借出数量</th>
+                                    <th width="70">归还数量</th>
+                                    <th width="60"></th>
+                                </tr>
+                                </thead>
+                                <tbody class="zj_jcgh_goods_info_list_con">
+                                <!--<tr>
+                                    <td>SP4465464</td>
+                                    <td>硬盘</td>
+                                    <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>硬盘</td>
+                                    <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--整机商品-->
+                    <div class="xs_div_1" style="padding-bottom: 20px;">
+                        <h3 class="xs_cont_title_h3">整机商品</h3>
+                        <div class="zj_complate_goods_info_xq_list"></div>
+                        <!--<div class="xs_div_2" style="margin-top: 20px;">
+                            <table class="xs_bjd_table">
+                                <thead>
+                                <tr>
+                                    <th width="140">编号</th>
+                                    <th width="120">名称</th>
+                                    <th width="240">属性</th>
+                                    <th width="70">借出数量</th>
+                                    <th width="70">归还数量</th>
+                                    <th width="60">配件</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="c_3 xs_bjd_bold">
+                                    <td>SP4465464</td>
+                                    <td>硬盘</td>
+                                    <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td><button class="but_mix box_open_btn_2 but_blue_1">展开</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="xs_tc_goods_box goods_tc_toggle" style="display: none;">
+                            <table class="xs_bjd_table_1">
+                                <thead>
+                                <tr style="background: #fff;">
+                                    <th class="c_3" style="font-weight: 100;">CPU</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th width="140">编号</th>
+                                    <th width="360">属性</th>
+                                    <th width="70">借出数量</th>
+                                    <th width="70">归还数量</th>
+                                    <th width="60"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="xs_bjd_table_1">
+                                <thead>
+                                <tr style="background: #fff;">
+                                    <th class="c_3" style="font-weight: 100;">硬盘</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th width="140">编号</th>
+                                    <th width="360">属性</th>
+                                    <th width="70">借出数量</th>
+                                    <th width="70">归还数量</th>
+                                    <th width="60"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="xs_div_2">
+                            <table class="xs_bjd_table">
+                                <tbody>
+                                <tr class="c_3 xs_bjd_bold">
+                                    <td width="140">TC4465464</td>
+                                    <td width="120">10月超值套餐</td>
+                                    <td width="240">10月超值套餐10月超值套餐</td>
+                                    <td width="70">2套</td>
+                                    <td width="70">2套</td>
+                                    <td width="60"><button class="but_mix box_open_btn_2 but_blue_1">展开</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="xs_tc_goods_box goods_tc_toggle" style="display: none;">
+                            <table class="xs_bjd_table_1">
+                                <thead>
+                                <tr style="background: #fff;">
+                                    <th class="c_3" style="font-weight: 100;">CPU</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th width="140">编号</th>
+                                    <th width="360">属性</th>
+                                    <th width="70">借出数量</th>
+                                    <th width="70">归还数量</th>
+                                    <th width="60"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="xs_bjd_table_1">
+                                <thead>
+                                <tr style="background: #fff;">
+                                    <th class="c_3" style="font-weight: 100;">硬盘</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th width="140">编号</th>
+                                    <th width="360">属性</th>
+                                    <th width="70">借出数量</th>
+                                    <th width="70">归还数量</th>
+                                    <th width="60"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>SP4465464</td>
+                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,</td>
+                                    <td>2块</td>
+                                    <td>2块</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--我发起的-详情弹窗-查看借出单-->
+<div class="dialog">
+    <div class="dialog_box" name="takenote_jrd_look_xq">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle5">
+            <div class="dialog_title xs_dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">借出单-<span class="zj_ck_jcd_name_kh_show"></span></h3>
+                <!--<button class="but_grey_no but_small but_zwpdf" style="position: absolute;right:36px;top:9px;"><i></i>导出PDF</button>
+                <button class="but_grey_no but_small but_print2 htmb_btnPrint1" style="position: absolute;right:145px;top:9px;"><i></i>打印</button>-->
+                <p class="l-s-x" style="margin-left: 10px;">
+                    <span class="c_9">创建日期：<span class="zj_jcd_quote_look_create_at c_9"></span></span>
+                    <span class="c_9">下单人：<span class="zj_jcd_quote_look_uname c_9" style="padding-right: 20px;"></span></span>
+                </p>
+            </div>
+            <div class="dialog_text sbar xs_dialog_text" style="padding:0;margin:0;height: 86%;">
+                <div class="dialog_text_con" style="padding:20px 25px;">
+                    <div class="xs_unhead_box takenote_jcd_unhead_box zj_look_info_header_content">
+                        <p class="left c_3"><span class="bold">借出单编号：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">客户：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">预计归还时间：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">出库日期：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">物流方式：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">承担运费：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">收货人：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">联系电话：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">收货地址：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                        <p class="left c_3"><span class="bold">备注：</span><span class="c_6 zj_jcd_bh_show_info"></span></p>
+                    </div>
+                    <h2 class="cont_title" style="margin-bottom: 0;margin-top: 20px;">借出商品</h2>
+                    <!--商品-->
+                    <div class="xs_div_1">
+                        <h3 class="xs_cont_title_h3">商品</h3>
+                        <div class="xs_div_2" style="margin-top: 20px;">
+                            <table class="xs_bjd_table" style="border: none;">
+                                <thead>
+                                <tr>
+                                    <th width="30">序号</th>
+                                    <th width="90">编号</th>
+                                    <th width="150">名称</th>
+                                    <th width="325">属性</th>
+                                    <th width="50">数量</th>
+                                    <th width="150">单价</th>
+                                    <th width="90">含税价</th>
+                                    <th width="105">总价</th>
+                                    <th width="60"></th>
+                                </tr>
+                                </thead>
+                                <tbody class="zj_jcgh_jcd_goods_table_content_info"></tbody>
+                                <tbody>
+                                <!-- <tr>
+                                     <td>01</td>
+                                     <td>SP4465464</td>
+                                     <td>硬盘</td>
+                                     <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                     <td>2块</td>
+                                     <td>￥1000.00</td>
+                                     <td>￥1170.00</td>
+                                     <td>￥1170.00</td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>02</td>
+                                     <td>SP4465464</td>
+                                     <td>硬盘</td>
+                                     <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                     <td>2块</td>
+                                     <td class="xs_bjd_td xs_goods_box" style="position: relative;">
+                                         <div>
+                                             <span>￥1000.00</span>
+                                             <i class="ven_warning_arrow xs_goods_down_img"></i>
+                                         </div>
+                                         <div class="work_vent_client_contMsgBox" style="display: none;top: 8px;left: 94px">
+                                         <i class="work_vent_client_torr"></i>
+                                         <div class="work_vent_client_contMsgBoxDet fnc_output_ticket_total_remain_ticket_num_list">低于 500(零售价)</div>
+                                         </div>
+                                     </td>
+                                     <td>￥1170.00</td>
+                                     <td>￥1170.00</td>
+                                     <td></td>
+                                 </tr>-->
+                                <tr class="c_3 xs_bjd_bold" style="border-top: 2px solid #e6e6e6;">
+                                    <td>合计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>￥<span class="zj_jcd_goods_hj_sum">0</span></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--整机商品-->
+                    <div class="xs_div_1">
+                        <h3 class="xs_cont_title_h3">整机商品</h3>
+                        <div class="zj_jcgh_jcd_complete_goods_dv_content">
+                            <!--<div class="xs_div_2" style="margin-top: 20px;">
+                                <table class="xs_bjd_table">
+                                    <thead>
+                                    <tr>
+                                        <th width="30">序号</th>
+                                        <th width="90">编号</th>
+                                        <th width="150">名称</th>
+                                        <th width="340">属性</th>
+                                        <th width="50">数量</th>
+                                        <th width="150">单价</th>
+                                        <th width="90">含税价</th>
+                                        <th width="90">总价</th>
+                                        <th width="60">配件</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="c_3 c_3 xs_bjd_bold">
+                                        <td>01</td>
+                                        <td>ZJ4465464</td>
+                                        <td>R730（选配）</td>
+                                        <td>品牌:金士顿/类型:DD3</td>
+                                        <td>2套</td>
+                                        <td class="xs_bjd_td xs_goods_box" style="position: relative;">
+                                            <div>
+                                                <span>￥1000.00</span>
+                                                <i class="ven_warning_arrow_up xs_goods_down_img"></i>
+                                            </div>
+                                            <div class="work_vent_client_contMsgBox" style="display: none;top: 3px;left: 94px">
+                                                <i class="work_vent_client_torr"></i>
+                                                <div class="work_vent_client_contMsgBoxDet fnc_output_ticket_total_remain_ticket_num_list" style="font-weight: 100;">高于 500(零售价)</div>
+                                            </div>
+                                        </td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td><button class="but_mix box_open_btn_1 but_blue_1">展开</button></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="xs_tc_goods_box goods_tc_toggle" style="display: none;">
+                                <table class="xs_bjd_table_1">
+                                    <thead>
+                                    <tr style="background: #fff;">
+                                        <th class="c_3" style="font-weight: 100;">CPU</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th width="90">编号</th>
+                                        <th width="560">属性</th>
+                                        <th width="50">数量</th>
+                                        <th width="150">单价</th>
+                                        <th width="90">含税价</th>
+                                        <th width="90">总价</th>
+                                        <th width="60"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>SP456464</td>
+                                        <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                        <td>2块</td>
+                                        <td>￥1000.00</td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP456464</td>
+                                        <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                        <td>2块</td>
+                                        <td>￥1000.00</td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table class="xs_bjd_table_1">
+                                    <thead>
+                                    <tr style="background: #fff;">
+                                        <th class="c_3" style="font-weight: 100;">硬盘</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <th width="90">编号</th>
+                                    <th width="560">属性</th>
+                                    <th width="50">数量</th>
+                                    <th width="150">单价</th>
+                                    <th width="90">含税价</th>
+                                    <th width="90">总价</th>
+                                    <th width="60"></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>SP456464</td>
+                                        <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                        <td>2块</td>
+                                        <td>￥1000.00</td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP456464</td>
+                                        <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                        <td>2块</td>
+                                        <td>￥1000.00</td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="xs_div_2">
+                                <table class="xs_bjd_table">
+                                    <tbody>
+                                    <tr class="c_3 xs_bjd_bold">
+                                        <td width="30">02</td>
+                                        <td width="90">TC4465464</td>
+                                        <td width="150">10月超值套餐</td>
+                                        <td width="340">-</td>
+                                        <td width="50">2套</td>
+                                        <td width="150" class="xs_bjd_td xs_goods_box" style="position: relative;">
+                                            <div>
+                                                <span>￥1000.00</span>
+                                                <i class="ven_warning_arrow_up xs_goods_down_img"></i>
+                                            </div>
+                                            <div class="work_vent_client_contMsgBox" style="display: none;top: 3px;left: 94px">
+                                                <i class="work_vent_client_torr"></i>
+                                                <div class="work_vent_client_contMsgBoxDet fnc_output_ticket_total_remain_ticket_num_list" style="font-weight: 100;">高于 500(零售价)</div>
+                                            </div>
+                                        </td>
+                                        <td width="90">￥1170.00</td>
+                                        <td width="90">￥1170.00</td>
+                                        <td width="60"><button class="but_mix box_open_btn_1 but_blue_1">展开</button></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="xs_tc_goods_box goods_tc_toggle" style="display: none;">
+                                <table class="xs_bjd_table_1">
+                                    <thead>
+                                    <tr style="background: #fff;">
+                                        <th class="c_3" style="font-weight: 100;">CPU</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th width="90">编号</th>
+                                        <th width="560">属性</th>
+                                        <th width="50">数量</th>
+                                        <th width="150">单价</th>
+                                        <th width="90">含税价</th>
+                                        <th width="90">总价</th>
+                                        <th width="60"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>SP456464</td>
+                                        <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                        <td>2块</td>
+                                        <td>￥1000.00</td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP456464</td>
+                                        <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                        <td>2块</td>
+                                        <td>￥1000.00</td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table class="xs_bjd_table_1">
+                                    <thead>
+                                    <tr style="background: #fff;">
+                                        <th class="c_3" style="font-weight: 100;">硬盘</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th width="90">编号</th>
+                                        <th width="560">属性</th>
+                                        <th width="50">数量</th>
+                                        <th width="150">单价</th>
+                                        <th width="90">含税价</th>
+                                        <th width="90">总价</th>
+                                        <th width="60"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>SP456464</td>
+                                        <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                        <td>2块</td>
+                                        <td>￥1000.00</td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>SP456464</td>
+                                        <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存 2133MHz</td>
+                                        <td>2块</td>
+                                        <td>￥1000.00</td>
+                                        <td>￥1170.00</td>
+                                        <td>￥1170.00</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>-->
+                        </div>
+                        <div class="xs_div_2">
+                            <table class="xs_bjd_table_3">
+                                <tbody>
+                                <tr class="c_3 c_3 xs_bjd_bold">
+                                    <td width="30">合计</td>
+                                    <td width="90"></td>
+                                    <td width="150"></td>
+                                    <td width="340"></td>
+                                    <td width="50"></td>
+                                    <td width="150"></td>
+                                    <td width="90"></td>
+                                    <td width="90">￥<span class="zj_jcd_complete_goods_price_sum">0</span></td>
+                                    <td width="60"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="xs_bjd_beizhu">
+                        <div class="right cg_cgbjd_newright xs_bjd_look_form">
+                            <div class="t_textinput">
+                                <div class="t_left" style="margin-right:8px;">单价合计：</div>
+                                <div class="t_right">￥<span class="zj_jcd_unit_price_hj">0</span></div>
+                            </div>
+                            <div class="t_textinput">
+                                <div class="t_left" style="margin-right:8px;">
+                                    合计税额（含税17%）：
+                                </div>
+                                <div class="t_right">￥<span class="zj_jcd_contain_tax">0</span></div>
+                            </div>
+                            <div class="t_textinput">
+                                <div class="t_left" style="margin-right:8px;">
+                                    其他费用：
+                                </div>
+                                <div class="t_right">
+                                    ￥<span class="zj_jcd_other_cost">0</span>
+                                </div>
+                            </div>
+                            <div class="t_textinput bold" style="font-size: 14px;margin-top: 25px;">
+                                <div class="t_left" style="margin-right:8px;">
+                                    总计金额：
+                                </div>
+                                <div class="t_right">
+                                    ￥<span class="zj_jcd_sum_price_num">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="c_9" style="margin: 10px 0;">备注：-</p>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit zj_jcd_my_fqd_bjd_div">
+                <button class="but_small but_blue val_dialogTop zj_jcd_check_info_zxs_bjd" name="takenote_bjd_exit">转销售报价单</button><!--<button class="but_small but_green val_dialogTop" name="takenote_jcd_jcgh_xj">借出归还</button>--><button class="but_small but_cancel">取消</button>
+            </div>
+            <div class="dialog_submit ht_submit zj_jcd_dwsp_bjd_div">
+                <button class="but_small but_red val_dialogTop zj_no_tg_jrd_btn" name="takenote_jrd_dwsp_shenpi">拒绝通过</button><button class="but_small but_green val_dialogTop zj_tg_sp_jrd_end_btn" name="takenote_jrd_dwsp_shenpi">通过审批</button><button class="but_small but_cancel">取消</button>
+                <!--<button class="but_small but_blue val_dialogTop zj_jcd_check_info_zxs_bjd" name="takenote_bjd_exit">转销售报价单</button>&lt;!&ndash;<button class="but_small but_green val_dialogTop" name="takenote_jcd_jcgh_xj">借出归还</button>&ndash;&gt;<button class="but_small but_cancel">取消</button>-->
+            </div>
+            <div class="dialog_submit ht_submit zj_cswd_jrd_div">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    //打印
+    $(".htmb_btnPrint1").die("click").live("click",function () {
+//        alert(111);
+        $(this).parent().siblings(".ht_mbxsprint_box").jqprint({
+            debug: false,
+            importCSS: true,
+            printContainer: true,
+            operaSupport: false
+        });
+    });
+
+
+    //新建借入归还单
+    var xs_sp_arr = [];
+    $(".page_117_newBut_sq").live("click",function(){
+        xs_sp_arr = [];
+        $(".takenote_jcgh_new_addBox").addClass("none");
+        $('.takenote_jcgh_new').css('width','');
+        $('.takenote_jcgh_new_input').css('width','');
+
+    });
+
+    $('.tanceng .takenote_jcgh_save').live('click',function(){
+//        $(this).closest('.dialog_box').remove();
+        $('.takenote_jcgh_new_addBox').removeClass('none');
+        $('.takenote_jcgh_new').css('width','1000');
+        $('.takenote_jcgh_new_input').css('width','56%');
+    });
+
+    //新建里的切换商品
+    $('.tanceng .xs_xsbjd_box_ul ul li').live('click',function(){
+        $(this).closest('.xs_xsbjd_box_ul').siblings('.xs_xsbjd_SPbj').children('.tabcontent').addClass('none').eq($(this).index()).removeClass('none');
+        $(this).closest('.xs_xsbjd_box_ul').find('li').css({'background':'','border-color':'','color':''}).eq($(this).index()).css({'background':'#32a0f6','borderColor':'#32a0f6','color':'#fff'});
+    });
+    //借处归还-展开收起
+    $(".box_open_btn_1").die().live("click", function () {
+        $(this).toggle(function () {
+            $(this).html("收起");
+            $(this).removeClass('but_look').addClass('but_blue');
+            $(this).parents('.xs_bjd_table').css('border-bottom','none');
+            $(this).css({'border':'1px solid #23a2f3','color':'#fff'});
+            $(this).parents('.xs_div_2').next('.xs_xsbjd_table_t2').slideDown(100);
+        }, function () {
+            $(this).html("展开");
+            $(this).removeClass('but_blue').addClass('but_look');
+            $(this).parents('.xs_bjd_table').css('border-bottom','2px solid #e6e6e6');
+            $(this).css({'border':'','color':''});
+            $(this).parents('.xs_div_2').next('.xs_xsbjd_table_t2').slideUp(100);
+        });
+        $(this).trigger('click');
+    });
+
+    //查看借出归还单
+    $(".box_open_btn_2").die().live("click", function () {
+        $(this).toggle(function () {
+            $(this).html("收起");
+            $(this).removeClass('but_look').addClass('but_blue');
+            $(this).parents('.xs_bjd_table').css('border-bottom','none');
+            $(this).css({'border':'1px solid #23a2f3','color':'#fff'});
+            $(this).parents('.xs_div_2').next('.xs_tc_goods_box').slideDown(100);
+        }, function () {
+            $(this).html("展开");
+            $(this).removeClass('but_blue').addClass('but_look');
+            $(this).parents('.xs_bjd_table').css('border-bottom','2px solid #e6e6e6');
+            $(this).css({'border':'','color':''});
+            $(this).parents('.xs_div_2').next('.xs_tc_goods_box').slideUp(100);
+        });
+        $(this).trigger('click');
+    });
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+
+
+</script>
+<script src="static/takenote/js/117_1.js"></script>
+</body>
+</html>

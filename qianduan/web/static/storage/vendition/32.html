@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="static/vendition/css/vend_client.css">
+</head>
+<body>
+    <div class="finance_content">
+        <div class="lik_content_max_height_box">
+    <div class="vend_title">
+        <h2>销售流程</h2>
+        <div class="right"><button name="vendition_addxslc" class="val_dialogTop but_blue but_title" id="ven_sell_flow_create">新建销售流程</button><div class="res" title="点击刷新" id="ven_sell_flow_refresh"></div></div>
+    </div>
+    <div class="con_right_head clearfix relative" style="border:none;padding:20px 30px;">
+        <!--<div class="work_tabSp" style="margin-top: 0;">
+            <ul class="tabtitle">
+                <li name="vendition_tabXslc_v" class="taba tabhover" id="ven_sell_flow_searAll">全部</li>
+                <li name="vendition_tabXslc_v" class="taba" id="ven_sell_flow_searUse">使用中</li>
+                <li name="vendition_tabXslc_v" class="taba" id="ven_sell_flow_searStop">已停用</li>
+            </ul>
+        </div>-->
+        <div class="cont_search inline_block"><input type="text" class="search_input" value="搜索销售流程/应用部门"
+                                                     onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                     style="color: rgb(204, 204, 204);" id="ven_sell_flow_searKey">
+            <button class="search_but but_blue" id="ven_sell_flow_searKey_btn">搜索</button>
+        </div>
+        <button class="but_cancel but_small inline_block zkgjssBtn" name="hrgsxx_zkgjss_xslc">展开高级搜索</button>
+        <div class="inline_block" style="margin-left:30px;">
+            <input type="checkbox" id="ven_sell_flow_noShow">不显示停用状态
+        </div>
+        <div class="right con_right_result right" style="margin-right: -4px;">
+            <p class="left">搜索结果: <span class=" f_color" id="ven_sell_flow_search_total">3</span>条</p>
+        </div>
+        <div class="closeckx_cont"></div>
+    </div>
+
+    <div class="tabcontent" name="vendition_tabXslc_v" style="padding-top: 0;">
+        <div class="container">
+            <div class="table-container lik_table_max_height" style="margin:0;">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>销售流程名称</th>
+                        <th>应用部门</th>
+                        <th>创建人</th>
+                        <th>创建日期</th>
+                        <th>最后修改人</th>
+                        <th>最后修改时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="work_zkgjss zkgjss_cont" name="hrgsxx_zkgjss_xslc">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="应用部门"
+                                       id="ven_sell_flow_search_dept_inp">
+                                <i></i>
+                                <ul class="select_list sbar" id="ven_sell_flow_search_dept_ul">
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人"
+                                       id="ven_sell_flow_search_uname_inp">
+                                <i></i>
+                                <ul class="select_list sbar" id="ven_sell_flow_search_uname_ul">
+                                </ul>
+                            </div>
+                        </td>
+                        <td><input type="text" class="select_input block" readonly="true">
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="最后修改人"
+                                       id="ven_sell_flow_search_updataname_inp">
+                                <i></i>
+                                <ul class="select_list sbar" id="ven_sell_flow_search_updataname_ul">
+                                </ul>
+                            </div>
+                        </td>
+                        <td><input type="text" class="select_input block" readonly="true">
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="状态"
+                                       id="ven_sell_flow_search_status_inp">
+                                <i></i>
+                                <ul class="select_list sbar" id="ven_sell_flow_search_status_ul">
+                                    <li>使用中</li>
+                                    <li>停用</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td>01</td>
+                        <td>销售流程</td>
+                        <td>销售A部</td>
+						<td>张三</td>
+						<td>2017-1-12</td>
+						<td>李四</td>
+						<td>2017-1-14</td>
+                        <td><span class="c_g">使用中</span></td>
+						<td><button class="but_cancel but_mix r_sidebar_btn but_look" name="vendition_xslc_rights">查看</button><button class="but_cancel but_mix but_exit val_dialogTop" name="vendition_addxslc_exit">编辑</button><button class="but_cancel but_mix but_r">停用</button><button class="but_cancel but_mix but_r val_dialog" name="xs_xslc_delete">删除</button></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>销售流程</td>
+                        <td>销售A部</td>
+						<td>张三</td>
+						<td>2017-1-12</td>
+						<td>李四</td>
+						<td>2017-1-14</td>
+                        <td><span class="c_g">使用中</span></td>
+						<td><button class="but_cancel but_mix r_sidebar_btn but_look" name="vendition_xslc_rights">查看</button><button class="but_cancel but_mix but_exit val_dialogTop" name="vendition_addxslc_exit">编辑</button><button class="but_cancel but_mix but_r">停用</button><button class="but_cancel but_mix but_r but_delete">删除</button></td>
+                    </tr>
+					<tr>
+                        <td>03</td>
+                        <td>销售流程</td>
+                        <td>销售A部</td>
+						<td>张三</td>
+						<td>2017-1-12</td>
+						<td>李四</td>
+						<td>2017-1-14</td>
+                        <td><span class="c_r">停用</span></td>
+						<td><button class="but_cancel but_mix r_sidebar_btn but_look" name="vendition_xslc_rights">查看</button><button class="but_cancel but_mix but_lv">启用</button></td>
+                    </tr>-->
+                    </tbody>
+                    <tbody id="ven_sell_flow_list"></tbody>
+                </table>
+                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                <div class="no_data_box none ven_sell_flow_nodata_box">
+                    <div class="no_data">
+                        <!--<span class="inline_block"></span>-->
+                        <p class="c_9">抱歉，没有找到相关内容！</p>
+                    </div>
+                    <div class="no_data_bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="handle ven_sell_flow_handle">
+        <div class="fenye_box ven_sell_flow_all_page">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <ul class="select_list select_list_to_top">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+                <i></i>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+    </div>
+            </div></div>
+    <div class="work_content sbar">
+    <!--新建销售流程弹窗-->
+    <div class="dialog">
+        <div class="dialog_box" name="vendition_addxslc">
+            <div class="dialog_screen"></div>
+            <div class="dialog_content dialog_content_7" style="height:84% !important;">
+                <div class="dialog_title"><i class="dialog_close">关闭</i>
+                    <h3 class="dialog_h3">新建销售流程</h3></div>
+                <div class="sbar dialog_text addxslc_box" style="margin:0;padding:0;height: 92%;">
+                    <div class="unhead_box" style="color: #999999;">
+                        制单人：<span class="m_right_10 ven_sell_flow_create_uname">张三</span>
+                        制单日期：<span class="ven_sell_flow_create_date">2016-10-27 14:48:13</span>
+                    </div>
+                    <div class="dialog_text_con" style="padding:20px;"><div class="xslc_divbutton"><button class="but_gray tabhover2 tab_btn" name="xs_xslc_taba">第一步 <span >设置基本信息</span></button><button class="but_gray tab_btn" name="xs_xslc_taba">第二步 <span>销售阶段要求</span></button><button class="but_gray tab_btn" name="xs_xslc_taba">第三步 <span>选择适用范围</span></button></div>
+                        <div class="tabcontent xs_xslc_con" name="xs_xslc_taba">
+                            <div class="xslc_divtext" >
+                                <h3 class="cont_title block p_left_10 m_bottom_20">销售流程名称</h3>
+                                <div class="t_textinput">
+                                    <div class="t_left t_left2"><i class="c_r">*</i>销售流程名称</div>
+                                    <div class="t_right t_right2"><input type="text" class="time_input ven_sell_flow_create_name" value="请输入销售流程名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                </div>
+                                <h3 class="cont_title block p_left_10 m_bottom_20">销售阶段设置</h3>
+                                <div class="xslc_set">
+                                    <div class="xslc_setTitle">
+                                        <span class="setTitle_1">阶段名称</span>
+                                        <span class="setTitle_2">赢单率</span>
+                                    </div>
+                                    <ul class="xslc_setul ven_sell_flow_create_steps">
+                                        <li><div><span class="xslc_setul_1">阶段<cite>1</cite></span><div class="xslc_setul_2"><input type="text" value="请输入阶段名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_create_steps_name"/></div><div class="xslc_setul_3"><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeydown="value=value.replace(/[^\-?\d.]/g,'')" onkeyup="value=value.replace(/[^\-?\d.]/g,'')" class="ven_sell_flow_create_steps_winrate"/><i>%</i></div><div class="xslc_setul_4"><button class="xslc_setulAddli but_green">+</button><button class="xslc_setuldelli but_red">-</button></div></div></li>
+                                        <li><div><span class="xslc_setul_1">阶段<cite>2</cite></span><div class="xslc_setul_2"><input type="text" value="请输入阶段名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_create_steps_name"/></div><div class="xslc_setul_3"><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeydown="value=value.replace(/[^\-?\d.]/g,'')" onkeyup="value=value.replace(/[^\-?\d.]/g,'')" class="ven_sell_flow_create_steps_winrate"/><i>%</i></div><div class="xslc_setul_4"><button class="xslc_setulAddli but_green">+</button><button class="xslc_setuldelli but_red">-</button></div></div></li>
+                                    </ul>
+                                    <ul class="xslc_setul">
+                                        <li><span class="xslc_setul_1">阶段</span><div class="xslc_setul_2"><input type="text" value="未成交" readonly="true"/></div><div class="xslc_setul_3"><input type="text" value="0" readonly="true"/><i>%</i></div></li>
+
+                                        <li><span class="xslc_setul_1">阶段</span><div class="xslc_setul_2"><input type="text" value="成交" readonly="true"/></div><div class="xslc_setul_3"><input type="text" value="100" readonly="true"/><i>%</i></div></li>
+
+                                        <li><span class="xslc_setul_1">阶段</span><div class="xslc_setul_2"><input type="text" value="无效" readonly="true"/></div><div class="xslc_setul_3"><input type="text" value="0" readonly="true"/><i>%</i></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcontent none xs_xslc_con" name="xs_xslc_taba">
+                            <div class="xslc_divtext">
+                                <h3 class="cont_title block p_left_10 m_bottom_20">销售阶段要求</h3>
+                                <i class="ven_sell_flow_create_steps_content">
+                                    <div>
+                                        <div class="t_textinput t_textarea">
+                                            <div class="t_left"><i class="c_r">*</i>阶段<cite>1</cite>要求</div>
+                                            <div class="t_right"><textarea class="txt_normal ven_sell_flow_create_steps_content_textarea" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入销售流程名称</textarea></div>
+                                        </div>
+                                        <div class="vendition_xslcss">
+                                            <input type="checkbox" class="ven_sell_flow_create_steps_content_remind_checkbox"/><span>本阶段停留</span><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_create_steps_content_remind_day"/><span>天时提醒销售人员执行</span>
+                                        </div>
+                                        <div class="vendition_xslcss">
+                                            <input type="checkbox" class="ven_sell_flow_create_steps_content_confirm_checkbox"/><span>本阶段完成需直属上级确认</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="t_textinput t_textarea">
+                                            <div class="t_left"><i class="c_r">*</i>阶段<cite>2</cite>要求</div>
+                                            <div class="t_right"><textarea class="txt_normal ven_sell_flow_create_steps_content_textarea" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入销售流程名称</textarea></div>
+                                        </div>
+                                        <div class="vendition_xslcss">
+                                            <input type="checkbox" class="ven_sell_flow_create_steps_content_remind_checkbox"/><span>本阶段停留</span><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_create_steps_content_remind_day"/><span>天时提醒销售人员执行</span>
+                                        </div>
+                                        <div class="vendition_xslcss">
+                                            <input type="checkbox" class="ven_sell_flow_create_steps_content_confirm_checkbox"/><span>本阶段完成需直属上级确认</span>
+                                        </div>
+                                    </div>
+
+                                </i>
+
+                            </div>
+                        </div>
+                        <div class="tabcontent none xs_xslc_con" name="xs_xslc_taba">
+                            <div class="xslc_divtext relative">
+                                <h3 class="cont_title block p_left_10 m_bottom_20">选择使用范围</h3>
+                                <div class="input_rightBtn" style="margin-top: 50px;">
+                                    <p class="input_tishi_top" style="margin-left:0;">以下部门今后新增的销售机会将使用此销售流程</p>
+                                    <div class="input_rightBtn_right" style="left:0;width: 100%">
+                                        <div class="rightinput_box">
+                                            <input type="text" class="c_3">
+                                            <span class="inp_addBtn val_dialogTop ven_sell_flow_choose_dept" name="vendition_xslc_changebm"><b style="line-height: 22px;">+</b>选择部门</span>
+                                        </div>
+                                        <ul class="inp_add_list ven_sell_flow_create_add_dept_list">
+                                            <!--<li>销售部A <i></i></li>
+                                            <li>销售部A <i></i></li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="vendition_xslcss p_left_0">
+                                    <input type="checkbox" class="ven_sell_flow_create_is_order"/><span>必须新建销售单方可成交</span>
+                                </div>
+                                <div class="vendition_xslcss p_left_0">
+                                    <span class="m_0">勾选并保存，当选择成交时必须新建销售单后，销售机会和跟进拜访的状态才为成交；反之不需要新建销售单直接成交</span>
+                                </div>
+                                <div class="dialog_submit" style="border:none;width:86%;">
+                                    <button class="but_blue but_small ven_sell_flow_create_save">保存</button><button class="but_small xs_xslc_cancel">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="dialog_submit">-->
+                <!--<button class="but_blue but_small xs_next_btn" name="vendition_xslctab_middle">下一步</button><button class="but_cancel but_small">取消</button>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <!--编辑销售流程弹窗-->
+    <div class="dialog">
+        <div class="dialog_box" name="vendition_addxslc_exit">
+            <div class="dialog_screen"></div>
+            <div class="dialog_content dialog_content_7" style="height:84% !important;">
+                <div class="dialog_title"><i class="dialog_close">关闭</i>
+                    <h3 class="dialog_h3">编辑销售流程</h3></div>
+                <div class="sbar dialog_text addxslc_box" style="margin:0;padding:0;height: 92%;">
+                    <div class="unhead_box" style="color: #999999;">
+                        制单人：<span class="m_right_10">张三</span>
+                        制单日期：<span class="ven_sell_flow_edit_date"></span>
+                    </div>
+                    <div class="dialog_text_con" style="padding:20px;"><div class="xslc_divbutton"><button class="but_gray tabhover2 tab_btn" name="xs_xslc_taba">第一步 <span >设置基本信息</span></button><button class="but_gray tab_btn" name="xs_xslc_taba">第二步 <span>销售阶段要求</span></button><button class="but_gray tab_btn" name="xs_xslc_taba">第三步 <span>选择适用范围</span></button></div>
+                        <div class="tabcontent xs_xslc_con" name="xs_xslc_taba">
+                            <div class="xslc_divtext" >
+                                <h3 class="cont_title block p_left_10 m_bottom_20">销售流程名称</h3>
+                                <div class="t_textinput">
+                                    <div class="t_left t_left2"><i class="c_r">*</i>销售流程名称</div>
+                                    <div class="t_right t_right2"><input type="text" class="time_input ven_sell_flow_edit_name" value="请输入销售流程名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                </div>
+                                <h3 class="cont_title block p_left_10 m_bottom_20">销售阶段设置</h3>
+                                <div class="xslc_set">
+                                    <div class="xslc_setTitle">
+                                        <span class="setTitle_1">阶段名称</span>
+                                        <span class="setTitle_2">赢单率</span>
+                                    </div>
+                                    <ul class="xslc_setul ven_sell_flow_edit_steps_list">
+                                        <!--<li><div><span class="xslc_setul_1">阶段<cite>1</cite></span><div class="xslc_setul_2"><input type="text" value="请输入阶段名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_edit_steps_name"/></div><div class="xslc_setul_3"><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeydown="value=value.replace(/[^\-?\d.]/g,'')" onkeyup="value=value.replace(/[^\-?\d.]/g,'')" class="ven_sell_flow_create_steps_winrate"/><i>%</i></div><div class="xslc_setul_4"><button class="xslc_setulAddli but_green">+</button><button class="xslc_setuldelli but_red">-</button></div></div></li>
+                                        <li><div><span class="xslc_setul_1">阶段<cite>2</cite></span><div class="xslc_setul_2"><input type="text" value="请输入阶段名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_edit_steps_name"/></div><div class="xslc_setul_3"><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeydown="value=value.replace(/[^\-?\d.]/g,'')" onkeyup="value=value.replace(/[^\-?\d.]/g,'')" class="ven_sell_flow_create_steps_winrate"/><i>%</i></div><div class="xslc_setul_4"><button class="xslc_setulAddli but_green">+</button><button class="xslc_setuldelli but_red">-</button></div></div></li>-->
+                                    </ul>
+                                    <ul class="xslc_setul">
+                                        <li><span class="xslc_setul_1">阶段</span><div class="xslc_setul_2"><input type="text" value="未成交" readonly="true"/></div><div class="xslc_setul_3"><input type="text" value="0" readonly="true"/><i>%</i></div></li>
+
+                                        <li><span class="xslc_setul_1">阶段</span><div class="xslc_setul_2"><input type="text" value="成交" readonly="true"/></div><div class="xslc_setul_3"><input type="text" value="100" readonly="true"/><i>%</i></div></li>
+
+                                        <li><span class="xslc_setul_1">阶段</span><div class="xslc_setul_2"><input type="text" value="无效" readonly="true"/></div><div class="xslc_setul_3"><input type="text" value="0" readonly="true"/><i>%</i></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcontent none xs_xslc_con" name="xs_xslc_taba">
+                            <div class="xslc_divtext">
+                                <h3 class="cont_title block p_left_10 m_bottom_20">销售阶段要求</h3>
+                                <div class="ven_sell_flow_edit_steps_content">
+
+                                </div>
+                               <!-- <div class="t_textinput t_textarea">
+                                    <div class="t_left"><i class="c_r">*</i>阶段<cite>1</cite>要求</div>
+                                    <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入销售流程名称</textarea></div>
+                                </div>
+                                <div class="vendition_xslcss">
+                                    <input type="checkbox"/><span>本阶段停留</span><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);"/><span>天时提醒销售人员执行</span>
+                                </div>
+                                <div class="vendition_xslcss">
+                                    <input type="checkbox"/><span>本阶段完成需直属上级确认</span>
+                                </div>
+
+                                <div class="t_textinput t_textarea">
+                                    <div class="t_left"><i class="c_r">*</i>阶段<cite>2</cite>要求</div>
+                                    <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入销售流程名称</textarea></div>
+                                </div>
+                                <div class="vendition_xslcss">
+                                    <input type="checkbox"/><span>本阶段停留</span><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);"/><span>天时提醒销售人员执行</span>
+                                </div>
+                                <div class="vendition_xslcss">
+                                    <input type="checkbox"/><span>本阶段完成需直属上级确认</span>
+                                </div>-->
+
+                            </div>
+                        </div>
+                        <div class="tabcontent none xs_xslc_con" name="xs_xslc_taba">
+                            <div class="xslc_divtext relative">
+                                <h3 class="cont_title block p_left_10 m_bottom_20">选择使用范围</h3>
+                                <div class="input_rightBtn" style="margin-top: 50px;">
+                                    <p class="input_tishi_top" style="margin-left:0;">以下部门今后新增的销售机会将使用此销售流程</p>
+                                    <div class="input_rightBtn_right" style="left:0;width: 100%">
+                                        <div class="rightinput_box">
+                                            <input type="text" class="c_3">
+                                            <span class="inp_addBtn val_dialogTop ven_sell_flow_edit_choose_dept" name="vendition_xslc_changebm"><b style="line-height: 22px;">+</b>选择部门</span>
+                                        </div>
+                                        <ul class="inp_add_list ven_sell_flow_edit_dept_list">
+                                            <!--<li>销售部A <i></i></li>
+                                            <li>销售部A <i></i></li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="vendition_xslcss p_left_0">
+                                    <input type="checkbox" class="ven_sell_flow_edit_is_order"/><span>必须新建销售单方可成交</span>
+                                </div>
+                                <div class="vendition_xslcss p_left_0">
+                                    <span class="m_0">勾选并保存，当选择成交时必须新建销售单后，销售机会和跟进拜访的状态才为成交；反之不需要新建销售单直接成交</span>
+                                </div>
+                                <div class="dialog_submit" style="border:none;width:86%;">
+                                    <button class="but_blue but_small ven_sell_flow_edit_save" >保存</button><button class="but_small xs_xslc_cancel">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="dialog_submit">-->
+                <!--<button class="but_blue but_small xs_next_btn" name="vendition_xslctab_middle">下一步</button><button class="but_cancel but_small">取消</button>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <!--选择部门弹窗-->
+    <div class="dialog">
+        <div class="dialog_box" name="vendition_xslc_changebm">
+            <div class="dialog_screen"></div>
+            <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+                <div class="dialog_title"><i class="dialog_close">关闭</i>
+                    <h3 class="dialog_h3">选择部门</h3></div>
+                <div class="dialog_text sbar clearfix">
+                    <div class="list_box left">
+                        <div class="list_box_title">
+                            <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input"
+                                                                                         value="搜索成员/部门/手机等"
+                                                                                         onfocus="fn_focus(this);"
+                                                                                         onblur="fn_blur(this);"><i
+                                class="list_search"></i></div>
+                        </div>
+                        <div class="list_box_con">
+                            <div class="left_nav">
+                                <ul class="list_box_level list_box_ul">
+                                    <li class="left_all"><span class="icon_open change_ba"></span><span
+                                        class="icon_file"></span><span
+                                        class="list_msg">所有部门</span></li>
+                                    <i class="ven_sell_flow_dept_list"></i>
+                                    <!--<ul class="ul1">
+                                        <li class="left_1"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="icon_open"></span><span
+                                            class="icon_file"></span><span class="list_msg">销售部(3)</span><span
+                                            class="list_check"><em></em></span></li>
+                                        <ul class="ul3" style="display: none;">
+                                            <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                                class="list_before_span"></i><i class="list_before_span"></i><i
+                                                class="list_before_span"></i><span class="list_msg">销售部1</span><span
+                                                class="list_check"><em></em></span></li>
+                                            <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                                class="list_before_span"></i><i class="list_before_span"></i><i
+                                                class="list_before_span"></i><span class="list_msg">销售部2</span><span
+                                                class="list_check"><em></em></span></li>
+                                            <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                                class="list_before_span"></i><i class="list_before_span"></i><i
+                                                class="list_before_span"></i><span class="list_msg">销售部3</span><span
+                                                class="list_check"><em></em></span></li>
+                                        </ul>
+                                    </ul>
+                                    <ul class="ul1">
+                                        <li class="left_1"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="icon_open"></span><span
+                                            class="icon_file"></span><span class="list_msg">技术部(1)</span><span
+                                            class="list_check"><em></em></span></li>
+                                        <ul class="ul3">
+                                            <li class="left_2"><i class="list_before_span"></i><i
+                                                class="list_before_span"></i><i class="list_before_span"></i><i
+                                                class="list_before_span"></i><span class="list_msg">技术部</span><span
+                                                class="list_check"><em></em></span></li>
+                                        </ul>
+                                    </ul>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list_chooseed right">
+                        <div class="list_box_title">
+                            <!--<h3>已选列表</h3>-->
+                            <h3 class="dialog_h3">已选列表</h3>
+                        </div>
+                        <div class="list_conMsg">
+                            <ul class="list_choose_list ven_sell_flow_dept_chosen">
+                                <!--<li>
+                                    <span>张三</span>
+                                    <i class="list_choose_delete"> </i>
+                                </li>
+                                <li>
+                                    <span>张三</span>
+                                    <i class="list_choose_delete"> </i>
+                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="dialog_submit">
+                    <button class="but_blue but_small ven_sell_flow_create_choose_dept_save">确定</button>
+                    <button class="but_cancel but_small">取消</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--右侧弹窗-->
+    <div class="right_sidebar_h" ></div>
+    <div class="right_sidebar Sideslip" name="vendition_xslc_rights" style="width: 720px;">
+        <div class="slider_head">
+            <div class="slider_head_con">
+                <div class="silder_top clearfix">
+                    <p class="slider_head_name left" id="ven_sell_flow_look_name">销售流程</p>
+                    <div class="slider_head_moreBox right">
+                        <span class="slider_head_but right slider_head_More">更多</span>
+                        <ul class="slider_head_list" id="ven_sell_flow_look_more">
+                            <!--<li class="val_dialogTop" name="vendition_addxslc_exit" id="ven_sell_flow_look_more_edit">编辑</li>-->
+                            <!--<li id="ven_sell_flow_look_more_operate">停用</li>-->
+                            <!--<li id="ven_sell_flow_look_more_del" class="val_dialog" name="xs_xslc_delete">删除</li>-->
+                        </ul>
+                    </div>
+                </div>
+                <p class="slider_head_msg_det">状态：<span id="ven_sell_flow_look_status"></span></p>
+            </div>
+            <i class="slider_head_close"></i>
+        </div>
+        <div class="ht_d_r_t sbar">
+            <div class="Sideslip_list ht_slid_list">
+                <ul style="padding-top:10px;">
+                    <li class="Sideslip_list_on" name="sliderTab_xslc">基本信息</li>
+                    <li name="sliderTab_xslc" id="ven_sell_flow_look_history">历史记录</li>
+                </ul>
+            </div>
+            <div class="d-r-t j-bx-b" style="width: 554px;height: 100%;overflow: hidden;">
+                <!--基本信息-->
+                <div class="ht_base_msg sbar" name="sliderTab_xslc">
+                    <div class="ht_base_msgCon sbar" style="bottom: 0;">
+                        <div class="d-r-t-h" style="bottom: 0;">
+                            <h3 class="cont_title">基本信息</h3>
+                            <p class="l-s-x">创建日期 ：<span id="ven_sell_flow_look_create_at"></span></p>
+                            <p class="l-s-x">应用部门：<span id="ven_sell_flow_look_dept_name"></span></p>
+                            <p class="l-s-x" style="position: relative">必须新建销售单方可赢单：<span id="ven_sell_flow_is_order"></span></p>
+                            <h3 class="cont_title">销售流程</h3>
+                            <ul class="clearfix sale_saleflow_steplist xs_xslc_list" id="ven_sell_flow_steps_nav">
+                                <!--<li>
+                                    <span class="sale_saleflow_circle sale_saleflow_circle_On" name="xs_lc_step1">1</span>
+                                    <hr class="sale_saleflow_circleLine">
+                                    <span class="sale_saleflow_circleP">阶段1</span>
+                                </li>
+                                <li>
+                                    <span class="sale_saleflow_circle" name="xs_lc_step2">2</span>
+                                    <hr class="sale_saleflow_circleLine">
+                                    <span class="sale_saleflow_circleP">阶段2</span>
+                                </li>
+                                <li>
+                                    <span class="sale_saleflow_circle" name="xs_lc_step3">3</span>
+                                    <hr class="sale_saleflow_circleLine">
+                                    <span class="sale_saleflow_circleP">阶段3</span>
+                                </li>
+                                <li>
+                                    <span class="sale_saleflow_circle" name="xs_lc_step4">4</span>
+                                    <hr class="sale_saleflow_circleLine">
+                                    <span class="sale_saleflow_circleP">阶段4</span>
+                                </li>
+                                <li class="sale_saleFLow_stepLast">
+                                    <span class="sale_saleflow_circle" name="xs_lc_step5">5</span>
+                                    <span class="sale_saleflow_circleP">阶段5</span>
+                                </li>-->
+                            </ul>
+                            <div id="ven_sell_flow_steps"></div>
+                            <!--<div class="xs_lc_step" name="xs_lc_step1" style="display: block;">
+                                <p class="l-s-x"><h4 style="display: inline-block; font-size: 14px;">阶段1：<span>验证客户</span></h4>
+                                <hr class="xs_xslc_hrLine"/><span class="f_color">赢率：10%</span></p>
+                                <h4 class="">阶段要求</h4>
+                                <p class="l-s-x">阶段要求说明文字阶段要求说明文字阶段要求说明文字阶段要求说明文字</p>
+                                <h4 class="">提醒</h4>
+                                <p class="l-s-x">停留3天</p>
+                            </div>
+                            <div class="xs_lc_step" name="xs_lc_step2">
+                                <p class="l-s-x"><h4 style="display: inline-block; font-size: 14px;">阶段2：<span>验证客户</span></h4>
+                                <hr class="xs_xslc_hrLine"><span class="f_color">赢率：30%</span></p>
+                                <h4 class="">跟进客户</h4>
+                                <p class="l-s-x">阶段要求说明文字阶段要求说明文字阶段要求说明文字阶段要求说明文字</p>
+                                <h4 class="">提醒</h4>
+                                <p class="l-s-x">停留3天</p>
+                            </div>
+                            <div class="xs_lc_step" name="xs_lc_step3">
+                                <p class="l-s-x"><h4 style="display: inline-block; font-size: 14px;">阶段3：<span>销售订单</span></h4>
+                                <hr class="xs_xslc_hrLine"/><span class="f_color">赢率：60%</span></p>
+                                <h4 class="">阶段要求</h4>
+                                <p class="l-s-x">阶段要求说明文字阶段要求说明文字阶段要求说明文字阶段要求说明文字</p>
+                                <h4 class="">提醒</h4>
+                                <p class="l-s-x">停留3天</p>
+                            </div>
+                            <div class="xs_lc_step" name="xs_lc_step4">
+                                <p class="l-s-x"><h4 style="display: inline-block; font-size: 14px;">阶段4：<span>确认收货</span></h4>
+                                <hr class="xs_xslc_hrLine"/><span class="f_color">赢率：80%</span></p>
+                                <h4 class="">阶段要求</h4>
+                                <p class="l-s-x">阶段要求说明文字阶段要求说明文字阶段要求说明文字阶段要求说明文字</p>
+                                <h4 class="">提醒</h4>
+                                <p class="l-s-x">停留3天</p>
+                            </div>
+                            <div class="xs_lc_step" name="xs_lc_step5">
+                                <p class="l-s-x"><h4 style="display: inline-block; font-size: 14px;">阶段5：<span>收到货款</span></h4>
+                                <hr class="xs_xslc_hrLine"/><span class="f_color">赢率：100%</span></p>
+                                <h4 class="">阶段要求</h4>
+                                <p class="l-s-x">阶段要求说明文字阶段要求说明文字阶段要求说明文字阶段要求说明文字</p>
+                                <h4 class="">提醒</h4>
+                                <p class="l-s-x">停留3天</p>
+                            </div>-->
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 历史记录 -->
+                <div class="ht_base_msg sbar" name="sliderTab_xslc">
+                    <div class="ht_base_msgCon sbar ven_sell_flow_history_list" style="bottom:0;width: 100%">
+                        <!--<div class="d-r-t-h" >
+                            <div class="d-r-box">
+                                <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                                <div class="d-r-r">
+                                    <p class="u-id-t">王小二</p>
+                                    <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自：手机端</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-r-t-h xslc_right_lsbjjl">
+                            <div>
+                                <strong>新建阶段1：</strong>
+                                <p><span>验证客户：</span>赢单10%</p>
+                            </div>
+                            <div>
+                                <strong></strong>
+                                <p><span>阶段要求：</span>阶段要求详细内容阶段要求详细内容</p>
+                            </div>
+                            <div>
+                                <strong></strong>
+                                <p><span>提醒时间：</span>停留3天</p>
+                            </div>
+                            <div>
+                                <strong></strong>
+                                <p><span>上级确认：</span>开启</p>
+                            </div>
+                            <div>
+                                <strong>新建阶段2：</strong>
+                                <p><span>跟进客户：</span>赢单90%</p>
+                            </div>
+                            <div style="margin-left: 8em;">
+                                <strong></strong>
+                                <p><span>阶段要求：</span>阶段要求阶段要求详细内容阶段要求详细内容详细内容</p>
+                            </div>
+                            <div>
+                                <strong></strong>
+                                <p><span>提醒时间：</span>停留3天</p>
+                            </div>
+                            <div>
+                                <strong></strong>
+                                <p><span>上级确认：</span>开启</p>
+                            </div>
+                            <div>
+                                <strong>新建适用部门：</strong>
+                                <p>销售部A、销售部B、销售部C、销售部D</p>
+                            </div>
+                            <div>
+                                <strong>销售单赢单：</strong>
+                                <p>开启</p>
+                            </div>
+                            <div>
+                                <strong>状态：</strong>
+                                <p>启用</p>
+                            </div>
+                            <div>
+                                <strong>来源：</strong>
+                                <p>手机端</p>
+                            </div>
+                        </div>
+                        <div class="d-r-t-h">
+                            <div class="d-r-box">
+                                <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                                <div class="d-r-r">
+                                    <p class="u-id-t">王小二</p>
+                                    <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自：手机端</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-r-t-h xslc_right_lsbjjl">
+                            <div>
+                                <strong>状态：</strong>
+                                <p>停用</p>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="" id="ven_sell_flow_curid_inphid">
+        <!--弹出层-删除-->
+    <div class="dialog">
+        <div class="dialog_box" name="xs_xslc_delete">
+            <div class="dialog_screen"></div>
+            <div class="dialog_content dialog_content_delete">
+                <div class="dialog_title" style="z-index: 1;">
+                    <i class="dialog_close">关闭</i>
+                    <h3 class="dialog_h3">提示</h3>
+                </div>
+                <div class="dialog_text sbar">
+                    <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                    <p class="p2">删除后将无法恢复，请慎重操作！</p>
+                </div>
+                <div class="dialog_submit">
+                    <button class="but_red but_small delete_anniu" id="ven_sell_flow_del_btn">删除</button><button class="but_cancel but_small">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+//            创建时添加阶段
+            $(".xslc_setulAddli").die('click').live("click",function () {
+                $(this).parents("ul").append('<li><div><span class="xslc_setul_1">阶段<cite>2</cite></span><div class="xslc_setul_2"><input type="text" value="请输入阶段名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_create_steps_name"/></div><div class="xslc_setul_3"><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeydown="value=value.replace(/[^\-?\d.]/g,"")" onkeyup="value=value.replace(/[^\-?\d.]/g,"")" class="ven_sell_flow_create_steps_winrate"/><i>%</i></div><div class="xslc_setul_4"><button class="xslc_setulAddli but_green">+</button><button class="xslc_setuldelli but_red">-</button></div></div></li>');
+                $.each($('.tanceng .ven_sell_flow_create_steps cite'), function (i, v) {
+                    $('.tanceng .ven_sell_flow_create_steps cite').eq(i).html(i+1)
+                });
+                venSellFlowCreateStepsContent()
+            });
+//            创建时删除阶段
+            $(".xslc_setuldelli").die('click').live("click",function(){
+                var length = $(this).parents("ul").children("li").length;
+                if( length == 1){
+                    alert("请至少保持一个元素");
+                }else{
+                    $(this).parents("li").remove();
+                }
+                $.each($('.tanceng .ven_sell_flow_create_steps cite'), function (i, v) {
+                    $('.tanceng .ven_sell_flow_create_steps cite').eq(i).html(i+1)
+                });
+                venSellFlowCreateStepsContent()
+            });
+//            创建阶段要求同步
+            function venSellFlowCreateStepsContent(){
+                var createStepsContent = '';
+                $.each($('.tanceng .ven_sell_flow_create_steps').children(), function (i, v) {
+                    createStepsContent+='<div><div class="t_textinput t_textarea">\
+                                            <div class="t_left"><i class="c_r">*</i>阶段<cite>'+(i+1)+'</cite>要求</div>\
+                                            <div class="t_right"><textarea class="txt_normal ven_sell_flow_create_steps_content_textarea" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入销售阶段要求</textarea></div>\
+                                            </div>\
+                                            <div class="vendition_xslcss">\
+                                            <input type="checkbox" class="ven_sell_flow_create_steps_content_remind_checkbox"/><span>本阶段停留</span><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_create_steps_content_remind_day"/><span>天时提醒销售人员执行</span>\
+                                            </div>\
+                                            <div class="vendition_xslcss">\
+                                            <input type="checkbox" class="ven_sell_flow_create_steps_content_confirm_checkbox"/><span>本阶段完成需直属上级确认</span>\
+                                        </div></div>'
+                });
+                $('.tanceng .ven_sell_flow_create_steps_content').html(createStepsContent);
+            }
+//            编辑时添加阶段
+            $(".xslc_edit_setulAddli").die('click').live("click",function () {
+                $(this).parents("ul").append('<li><div><span class="xslc_setul_1">阶段<cite>2</cite></span><div class="xslc_setul_2"><input type="text" value="请输入阶段名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_edit_steps_name"/></div><div class="xslc_setul_3"><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeydown="value=value.replace(/[^\-?\\d.]/g,\'\')" onkeyup="value=value.replace(/[^\-?\\d.]/g,\'\')" class="ven_sell_flow_edit_steps_winrate"/><i>%</i></div><div class="xslc_setul_4"><button class="xslc_edit_setulAddli but_green">+</button><button class="xslc_setuldelli but_red">-</button></div></div></li>');
+                // 控制序号
+                $.each($('.tanceng .ven_sell_flow_edit_steps_list cite'), function (i, v) {
+                    $('.tanceng .ven_sell_flow_edit_steps_list cite').eq(i).html(i+1)
+                });
+                venSellFlowEditStepsContent()
+            });
+//            编辑时删除阶段
+            $(".xslc_edit_setuldelli").die('click').live("click",function(){
+                var length = $(this).parents("ul").children("li").length;
+                if( length == 1){
+                    alert("请至少保持一个元素");
+                }else{
+                    $(this).parents("li").remove();
+                }
+                $.each($('.tanceng .ven_sell_flow_edit_steps_list cite'), function (i, v) {
+                    $('.tanceng .ven_sell_flow_edit_steps_list cite').eq(i).html(i+1)
+                });
+                venSellFlowEditStepsContent()
+            });
+//            阶段要求同步
+            function venSellFlowEditStepsContent(){
+                var editStepsContent = '';
+                $.each($('.tanceng .ven_sell_flow_edit_steps_list').children(), function (i, v) {
+                    editStepsContent+='<div><div class="t_textinput t_textarea">\
+                                            <div class="t_left"><i class="c_r">*</i>阶段<cite>'+(i+1)+'</cite>要求</div>\
+                                            <div class="t_right"><textarea class="txt_normal ven_sell_flow_edit_steps_content_textarea" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入销售阶段要求</textarea></div>\
+                                            </div>\
+                                            <div class="vendition_xslcss">\
+                                            <input type="checkbox" class="ven_sell_flow_edit_steps_content_remind_checkbox"/><span>本阶段停留</span><input type="text" onfocus="fn_focus(this);" onblur="fn_blur(this);" class="ven_sell_flow_edit_steps_content_remind_day"/><span>天时提醒销售人员执行</span>\
+                                            </div>\
+                                            <div class="vendition_xslcss">\
+                                            <input type="checkbox" class="ven_sell_flow_edit_steps_content_confirm_checkbox"/><span>本阶段完成需直属上级确认</span>\
+                                        </div></div>'
+                });
+                $('.tanceng .ven_sell_flow_edit_steps_content').html(editStepsContent);
+            }
+
+            //点击选择部门确定后插入选定的值
+            $(".bm_name").live("click",function(){
+                var _text = $(this).text();
+                alert(_text);
+            });
+
+
+//        右侧查看步骤点击
+            $(".xs_xslc_list li .sale_saleflow_circle ").live("click",function () {
+                $(".xs_xslc_list li .sale_saleflow_circle ").removeClass("sale_saleflow_circle_On");
+                $(this).addClass("sale_saleflow_circle_On");
+                var step_name=$(this).attr("name");
+                $(".xs_lc_step[name='"+step_name+"']").show().siblings("div").hide();
+            });
+            $(".xs_xslc_cancel").live("click",function () {
+                $(this).parents(".dialog_box").remove()
+//            $(".dialog_close").trigger("click");
+                var num = $('.tanceng').children(".dialog_box").length;
+                if(num < 1 ){
+                    $(".tanceng").hide();
+                };
+
+            });
+
+            // 新建销售流程部门选择删除
+            $('.ven_sell_flow_create_add_dept_list li i').live('click', function(){
+                $(this).closest('li').remove()
+            })
+
+            // 编辑销售流程部门选择删除
+            $('.ven_sell_flow_edit_dept_list li i').live('click', function(){
+                $(this).closest('li').remove()
+            })
+
+        });
+    </script>
+
+
+</div>
+</body>
+<script src="static\vendition\js\32.js"></script>
+<script>
+    //lik create
+    $('.table-container').scroll(function() {
+        $('.table_head_fixed').css('left', -$(this).scrollLeft());
+        console.log();
+        $('.ven_sell_flow_nodata_box').css('padding-left', parseInt($(this).scrollLeft()))
+    })
+</script>
+<script>
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+</script>
+</html>

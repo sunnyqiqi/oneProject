@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr-办理入职</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr-办理入职</title>
+    <link rel="stylesheet" type="text/css" href="../tool/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../tool/css/page.css">
+    <link rel="stylesheet" type="text/css" href="../tool/css/settingSalary.css">
+    <link rel="stylesheet" type="text/css" href="css/hr_employeelist.css">
+    <link rel="stylesheet" type="text/css" href="css/hr_entry.css">
+</head>
+<body>
+<!--header-->
+<div class="contenthead">
+    <p>办理入职</p>
+    <span class="break contenthead-left" style="margin-top: 15px"></span>
+</div>
+<!--left-->
+<div class="second-level">
+    <div class="allgoods">
+        <p class="hr_entry_on"><span class="file"></span>所有成员(2)<span></span></p>
+        <p><span class="file"></span>未办理入职(1)<span></span></p>
+        <p><span class="file"></span>已办理入职(1)<span></span></p>
+    </div>
+    <!-- 二级 -->
+</div>
+<!--right-->
+<div class="rightcontent">
+    <div class="smnavigation">
+        <input type="text" placeholder="搜索成员／部门／手机等">
+        <span class="sm-search">搜索</span>
+        <div class="smnavigation-right">
+            <p class="">所有成员(1个部门，共2人)</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th width="15" style="border: none !important">
+                     <input type="checkbox"/>
+                </th>
+                <th >状态</th>
+                <th>姓名</th>
+                <th>入职时间 <i></i></th>
+                <th>入职培训</th>
+                <th>技能培训</th>
+                <th>设定工资</th>
+                <th>社保</th>
+                <th>公司福利</th>
+                <th>学历</th>
+                <th>借款状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="border-left: none !important">
+                    <input type="checkbox">
+                </td>
+                <td class="hr_entry_tbfirst">未办理</td>
+                <td>海波</td>
+                <td>-</td>
+                <td></td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div class="td-btn">查看</div>
+                    <div class="td-btn">编辑</div>
+                    <div class="td-btn">删除</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-left: none !important;">
+                    <input type="checkbox">
+                </td>
+                <td class="hr_entry_tbfirst">未办理(草稿)</td>
+                <td>木易</td>
+                <td>2016-10-10</td>
+                <td>李四</td>
+                <td>张三</td>
+                <td>基本工资+绩效+奖金</td>
+                <td>养老+医疗+失业...</td>
+                <td>话费补助</td>
+                <td>大学</td>
+                <td>无借款/有2笔</td>
+                <td>
+                    <div class="td-btn">查看</div>
+                    <div class="td-btn">编辑</div>
+                    <div class="td-btn">删除</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-left: none !important;border-bottom: 1px solid #dddddd;">
+                    <input type="checkbox">
+                </td>
+
+                <td style="border-bottom: 1px solid #dddddd;" class="hr_entry_green">已办理</td>
+                <td style="border-bottom: 1px solid #dddddd;">木易</td>
+                <td style="border-bottom: 1px solid #dddddd;">2016-10-10</td>
+                <td style="border-bottom: 1px solid #dddddd;">李四</td>
+                <td style="border-bottom: 1px solid #dddddd;">张三</td>
+                <td style="border-bottom: 1px solid #dddddd;">基本工资+绩效+奖金</td>
+                <td style="border-bottom: 1px solid #dddddd;">养老+医疗+失业...</td>
+                <td style="border-bottom: 1px solid #dddddd;" >话费补助</td>
+                <td style="border-bottom: 1px solid #dddddd;">大学</td>
+                <td style="border-bottom: 1px solid #dddddd;">无借款/有2笔</td>
+                <td style="border-bottom: 1px solid #dddddd;">
+                    <div class="td-btn">查看</div>
+                    <div class="td-btn">编辑</div>
+                    <div class="td-btn">删除</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="handle">
+            <div class="handle-righ clearafter">
+                <span>每页显示</span>
+                <div id="select" class="select1">
+                    <cite class="p-s-u"></cite>
+                    <ul class="p-s-ul" style="display: none;">
+                        <li class="t-s-x"><a href="javascript:;" ></a></li>
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                    </ul>
+                </div>
+                <input name="" type="hidden" value="" id="container1" class="container">
+                <span>条数据</span>
+                <span class="pageD"></span>
+                <span>当前在</span>
+                <span class="C-page"></span>
+                <span>页</span>
+                <span class="pageU"></span>
+                <span>共</span>
+                <span class="C-num">2</span>
+                <span>条数据</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-查看-->
+<div class="Sideslip" style="display:none;width:402px;height: 100%;">
+    <div class="Sideslip-head ">
+        <span class="Sideslip-btn"></span>
+        <div class="sides-img">
+            <span></span>
+            <p class="msg-name">路海波（男）</p>
+            <p class="msg-status">（未办理）</p>
+        </div>
+    </div>
+    <!-- 基本信息 -->
+    <div class="d-r-t j-bx-b">
+        <div class="d-r-t-h">
+            <h4>基本信息</h4>
+            <p class="l-s-x">入职时间：<span>未填写</span></p>
+            <p class="l-s-x">入职培训：<span>未填写</span></p>
+            <p class="l-s-x">技能培训：<span>未填写</span></p>
+            <p class="l-s-x">设定工资：<span>未填写</span></p>
+            <p class="l-s-x">设定社保：<span>未填写</span></p>
+            <p class="l-s-x">公司福利：<span>未填写</span></p>
+            <p class="l-s-x">加班餐：&nbsp;<span>未填写</span></p>
+        </div>
+    </div>
+</div>
+<!--弹窗-员工入职信息-->
+<div class="par-alt" style="display:none">
+    <div class="hr_employeelist_mumberCon hr_enter_mumberCon empMsgBox">
+        <div class="a-head">
+            <h4>员工入职信息</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_entry_add-dep-con ">
+            <h3>海波</h3>
+            <label>
+                <p class="conP conPm">入职时间</p><input class="inp eminp hr_entry_eminp" type="text" placeholder="输入部门名称">
+            </label>
+            <label class="e-m-c">
+                <p class="conP conPm">入职培训</p>
+                <select class="msg-chos munselect epsele hr_entry_munselect">
+                    <option value="number:1" label="张三" selected="selected"></option>
+                    <option value="number:2" label="李四">李四</option>
+                </select>
+                <span class="msg-emp">编辑</span>
+                <div class="inchoose" style="display: none">
+                    <ul>
+                        <li>
+                            <p><em class="chooses"></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                        <li>
+                            <p><em class="chooses"></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                        <li>
+                            <p><em class="chooses"></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                    </ul>
+                </div>
+            </label>
+            <label class="e-m-c">
+                <p class="conP conPm">技能培训</p>
+                <select class="msg-chos munselect epsele hr_entry_munselect">
+                    <option value="number:1" label="张三" selected="selected"></option>
+                    <option value="number:2" label="李四">李四</option>
+                </select>
+                <span class="msg-emp">编辑</span>
+                <div class="inchoose" style="display: none">
+                    <ul>
+                        <li>
+                            <p><em class="chooses"></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                        <li>
+                            <p><em class="chooses"></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                        <li>
+                            <p><em class="chooses"></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                    </ul>
+                </div>
+            </label>
+            <label class="e-m-c">
+                <p class="conP conPm">设定工资</p>
+                <select class="msg-chos munselect epsele hr_entry_munselect hr_entry_munselectS">
+                    <option value="number:1" label="张三" selected="selected"></option>
+                    <option value="number:2" label="李四">李四</option>
+                </select>
+                <span class="msg-emp">编辑</span>
+                <div class="inchoose" style="display: none">
+                    <ul>
+                        <li>
+                            <p><em class="chooses"></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                        <li>
+                            <p><em class="chooses" ></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                        <li>
+                            <p><em class="chooses"></em> 入职培训01 负责人张三</p>
+                            <i></i>
+                        </li>
+                    </ul>
+                </div>
+            </label>
+            <label class="sec-con clearafter">
+                <p class="conP conPm setconP">设定社保</p>
+                <!--<input class="ng-pristine ng-untouched ng-valid inp inpBL" type="text" value="技术部">-->
+                <div class="chekbox fr cheklinie">
+                    <label><em class="chooses"></em>养老
+                        <input type="text" name="" class="pasture">
+                    </label>
+                    <label><em class="chooses"></em>医疗 </label>
+                    <label><em class="chooses"></em>失业 </label>
+                    <label><em class="chooses"></em>工伤</label>
+                    <label><em class="chooses"></em>生育</label>
+                    <label><em class="chooses"></em>住房基金</label>
+                    <label>社保生效时间<input name="security" type="time" class="time" placeholder="选择日期"/></label>
+                </div>
+            </label>
+            <label class="sec-con clearafter">
+                <p class="conP conPm fl" >公司福利</p>
+                <!--<input class="ng-pristine ng-untouched ng-valid inp inpBL" type="text" value="技术部">-->
+                <div class="chekbox fr ">
+                    <label><em class="chooses"></em>餐补 10元
+                    </label>
+                    <label><em class="chooses"></em>话费补助 100元 </label>
+                    <label><em class="chooses"></em>交通补助 100元 </label>
+                    <label><em class="chooses"></em>住房补助 1000元</label>
+                    <span class="msg-emp fr pearExit">编辑</span>
+                </div>
+            </label>
+        </div>
+        <div class="pra-4-cent newpra-4-cent hr_entry_pra-4-centBox">
+            <div class="alertBtn-te hr_entry_btnBox clearafter">
+                <div class="pra-4-cent-btn1">保存草稿</div>
+                <div class="pra-4-cent-btn1">审批入职</div>
+                <div class="pra-4-cent-btn2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-入职培训-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent">
+        <div class="a-head">
+            <h4>编辑入职培训</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_entry_add-dep hr_emploeelist_add-dep">
+            <span>+ 添加</span>
+            <span>编辑</span>
+            <span>上移</span>
+            <span>下移</span>
+            <span>批量删除</span>
+        </div>
+        <div class=" a-container" >
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th width="15" style="border: none !important">
+                        <input type="checkbox">
+                    </th>
+                    <th>名称</th>
+                    <th>负责人</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr >
+                    <td style="border-left: none !important">
+                        <input type="checkbox" >
+                    </td>
+                    <td>入职培训01</td>
+                    <td>张三</td>
+                    <td>
+                        <div class="td-btn" >编辑</div>
+                        <div class="td-btn" ng-click="prevshow=!prevshow">预览</div>
+                        <div class="td-btn">删除</div>
+                    </td>
+                </tr>
+                <!-- end ngRepeat: shop in store -->
+                <tr>
+
+                    <td style="border-left: none !important">
+                        <input type="checkbox">
+                    </td>
+                    <td>入职培训02</td>
+                    <td>李四</td>
+                    <td>
+                        <div class="td-btn">编辑</div>
+                        <div class="td-btn">预览</div>
+                        <div class="td-btn">删除</div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td style="border-left: none !important;border-bottom: 1px solid #dddddd;">
+                        <input type="checkbox">
+                    </td>
+                    <td style="border-bottom: 1px solid #dddddd;">入职培训03</td>
+                    <td style="border-bottom: 1px solid #dddddd;">马五</td>
+                    <td style="border-bottom: 1px solid #dddddd;">
+                        <div class="td-btn">编辑</div>
+                        <div class="td-btn" >预览</div>
+                        <div class="td-btn">删除</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pra-4-cent inBtn">
+            <div class="pra-4-cent-btn1">保存</div>
+            <div class="pra-4-cent-btn2">取消</div>
+        </div>
+    </div>
+</div>
+<!--弹窗-预览入职培训-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent prevread" style="width: 664px">
+        <div class="a-head">
+            <h4>入职培训01 &nbsp;负责人：张三</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="read-prev-con">
+            <p>一、公司优势培训，包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>
+            <p>一、公司优势培训，包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>
+            <p>一、公司优势培训，包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>
+            <p>一、公司优势培训，包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>
+            <p>一、公司优势培训，包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>
+        </div>
+
+    </div>
+</div>
+<!--弹窗-添加入职培训-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent inBox">
+        <div class="a-head">
+            <h4>添加入职培训</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_entry_add-dep-con">
+            <label>
+                <p class="conP conPm">培训名称</p><input class="inp inpIn" type="text" placeholder="输入部门名称">
+            </label>
+            <label>
+                <p class="conP conPm">负责人</p><input class=" inp inpIn" type="text" placeholder="请选择负责人">
+            </label>
+            <label>
+                <p class="conP conPm">培训内容</p>
+                <textarea class="inp inpS inpInS munselect textCont"placeholder="请输入培训内容"></textarea>
+            </label>
+
+        </div>
+        <div class="pra-4-cent newpra-4-cent">
+            <div class="alertBtn-te">
+                <div class="pra-4-cent-btn1">保存</div>
+                <div class="pra-4-cent-btn2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-公司福利-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent">
+        <div class="a-head">
+            <h4>编辑公司福利</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_emploeelist_add-dep hr_entry_add-dep">
+            <span>+ 添加</span>
+            <span>编辑</span>
+            <span>上移</span>
+            <span>下移</span>
+            <span>批量删除</span>
+        </div>
+        <div class="container a-container">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th width="15" style="border: none !important">
+                            <input  type="checkbox"  >
+                    </th>
+                    <th>福利类型</th>
+                    <th data-resizable-column-id="last_name">金额</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                    <td style="border-left: none !important">
+                            <input  type="checkbox"  >
+                    </td>
+                    <td>餐补</td>
+                    <td>100元</td>
+                    <td>
+                        <div class="td-btn">编辑</div>
+                        <div class="td-btn">删除</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-left: none !important">
+                        <input  type="checkbox">
+                    </td>
+                    <td>交通补助</td>
+                    <td>100元</td>
+                    <td>
+                        <div class="td-btn">编辑</div>
+                        <div class="td-btn">删除</div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td style="border-left: none !important;border-bottom: 1px solid #dddddd;">
+                            <input  type="checkbox" >
+                    </td>
+                    <td style="border-bottom: 1px solid #dddddd;">住房补助</td>
+                    <td style="border-bottom: 1px solid #dddddd;">1000元</td>
+                    <td style="border-bottom: 1px solid #dddddd;">
+                        <div class="td-btn">编辑</div>
+                        <div class="td-btn">删除</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pra-4-cent inBtn">
+            <div class="pra-4-cent-btn1">保存</div>
+            <div class="pra-4-cent-btn2">取消</div>
+        </div>
+    </div>
+</div>
+<!--弹窗-编辑公司福利-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent inBox inBoxs">
+        <div class="a-head">
+            <h4>编辑公司福利</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_entry_add-dep-con">
+            <label>
+                <p class="conP conPm">福利类别</p><input class="inp inpIn" type="text" value="餐补">
+            </label>
+            <label>
+                <p class="conP conPm">金额</p><input class=" inp inpIn" type="text" value="100元">
+            </label>
+        </div>
+        <div class="pra-4-cent newpra-4-cent ">
+            <div class="alertBtn-te">
+                <div class="pra-4-cent-btn1">保存</div>
+                <div class="pra-4-cent-btn2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-设定工资-->
+<div class="par-alt" style="display:none;">
+    <div class="hr_employeelist_mumberCon hr_enter_mumberCon empMsgBox">
+        <div class="a-head">
+            <h4>设定工资</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="a-3-cent hr_employeelist_mumlist hr_leave_mumlist">
+            <div class="scrollbar" id="style-1">
+                <h4 >工资组成类型</h4>
+                <label class="clearafter">
+                    <em class="icon">*</em>
+                    <p class="conP conPm">姓名</p>
+                    <input type="text" value="张三" readonly="true" style="background: #f2f2f2">
+                </label>
+                <label class="clearafter">
+                    <p class="conP">职责</p>
+                    <input type="text" value="销售经理" readonly="true" style="background: #f2f2f2">
+                </label>
+                <label class="clearafter">
+                    <p class="conP">部门名称</p>
+                    <input type="text" value="销售部" readonly="true" style="background: #f2f2f2">
+                </label>
+                <div class="hr_entry_setMean">
+                    <label class="hr_entry_choosed"><input type="checkbox" checked="checked" disabled="disabled"> 基本工资+绩效</label>
+                    <label><input type="checkbox">提成</label>
+                    <label><input type="checkbox">团队提成</label>
+                    <label><input type="checkbox">奖金</label>
+                    <label><input type="checkbox">计件</label>
+                    <label><input type="checkbox">任务绩效</label>
+                </div>
+                <label class="clearafter">
+                    <p class="conP">计算天数</p>
+                    <select class="munselect hr_emploeelist_inp">
+                        <option value="按月统计" label="按月统计" selected="selected">按月统计</option>
+                        <option value="按考勤天数" label="按考勤天数">按考勤天数</option></select>
+                </label>
+                <span class="hr_entry_redP">
+                    基本工资+绩效+提成+团队提成+奖金+计件+任务绩效
+                </span>
+                <h4>基本工资+绩效</h4>
+                <label >
+                    <p class="conP">选择时间</p>
+                    <input type="date" class="hr_entry_msg-liz hr_entry_rate" value="" placeholder="开始时间">
+                    <hr class="hr_entry_trans_line ">
+                    <input type="date" class="hr_entry_msg-liz hr_entry_rate" value="" placeholder="结束时间">
+                </label>
+                <label >
+                    <p class="conP hr_enter_longP">总工资数额</p>
+                    <input type="type" placeholder="请输入工资总额(元为单位)" >
+                    <span class="hr_entry_singInp">
+                        <input type="radio" checked="checked" name="1"> 按工资数额组成
+                        <input type="radio" name="1"> 按工资比例组成
+                        </span>
+                </label>
+                <label >
+                    <em class="icon">*</em>
+                    <p class="conP conPm">基本工资</p>
+                    <input type="text" placeholder="请输入基本工资(元为单位)">
+                </label>
+                <div class="hr_entry_salaryChoose">
+                    <label for="" class="hr_entry_probation "><input type="checkbox" name="" id="">是否开启试用期工资</label>
+                    <label for="" class="clearafter">
+                        <p class="conP conPm">试用期工资</p>
+                        <input type="text" class="hr_entry_baserate" placeholder="请输入基本工资比例">
+                    </label>
+                    <label  class="clearafter">
+                        <p class="conP">选择时间</p>
+                        <input type="date" class="hr_entry_msg-liz hr_entry_rate hr_enter_timeS" value="" placeholder="开始时间">
+                        <hr class="hr_entry_trans_line ">
+                        <input type="date" class="hr_entry_msg-liz hr_entry_rate hr_enter_timeS" value="" placeholder="结束时间">
+                    </label>
+                </div>
+                <label >
+                    <p class="conP">绩效工资</p>
+                    <input type="text" class="hr_entry_yuan">元
+                </label>
+                <h4>提成设定</h4>
+                <div class="salaryMsg">
+                    <label>
+                        <em class="iconStar">*</em><p class="conP conPm msgP">任务总额</p>
+                        <input type="text" placeholder="请输入工资总额(元为单位)" class="type_in">
+                    </label>
+                    <label>
+                        <em class="iconStar">*</em><p class="conP conPm msgP">选择提成</p>
+                        <input type="text" value="销售A部" class="type_in">
+                    </label>
+                    <label>
+                        <em class="iconStar">*</em><p class="conP conPm msgP">选择时间</p>
+                        <input type="date" class="type_in hr_entry_typeIn">
+                        <hr class="trans_line">
+                        <input type="date" class="type_in hr_entry_typeIn">
+                    </label>
+                        <h5 class="calaTitle">
+                            <p>核算方式</p>
+                            <label>
+                                <input type="radio" name="cala">按年度
+                            </label>
+                            <label>
+                                <input type="radio" name="cala">按利润
+                            </label>
+                        </h5>
+                        <label >
+                            <em class="iconStar">*</em><p class="conP conPm msgP tsP">提成比例1:</p>
+                            <span class="fw_cala">完成任务的</span>
+
+                            <input type="text" class="msg-liz rate" value="80%" readonly="true">
+                            <hr class="trans_line">
+                            <input type="text" class="msg-liz rate" value="100%" readonly="true">
+                        </label>
+                        <label >
+                            <em class="iconStar">*</em><p class="conP conPm msgP">提成百分比</p>
+                            <input type="text" class="msg-liz" value="20%" readonly="true">
+                        </label>
+                        <label >
+                            <em class="iconStar">*</em><p class="conP conPm msgP tsP">提成比例1:</p>
+                            <span class="fw_cala">完成任务的</span>
+                            <input type="text" class="msg-liz rate" value="50%" readonly="true">
+                            <hr class="trans_line">
+                            <input type="text" class="msg-liz rate" value="79%" readonly="true">
+                        </label>
+                        <label >
+                            <em class="iconStar">*</em><p class="conP conPm msgP">提成百分比</p>
+                            <input type="text" class="msg-liz" value="100%" readonly="true">
+                        </label>
+                        <label >
+                            <em class="iconStar">*</em><p class="conP conPm msgP tsP">提成比例1:</p>
+                            <span class="fw_cala">完成任务的</span>
+                            <input type="text" class="msg-liz rate" value="30%" readonly="true">
+                            <hr class="trans_line">
+                            <input type="text" class="msg-liz rate" value="49%" readonly="true">
+                        </label>
+                        <label >
+                            <em class="iconStar">*</em><p class="conP conPm msgP">提成百分比</p>
+                            <input type="text" class="msg-liz" value="100%" readonly="true">
+                        </label>
+                        <h5 class="calaTitle">
+                            <p>回款核算方式</p>
+                            <span class="extr_ts">超出周期扣除提成金额比例</span>
+                        </h5>
+                        <label class="back_cr frt_lab">
+                            <input type="text" class="msg-liz rate hr_entry_spcrate" value="1天" readonly="true">
+                            <hr class="trans_line">
+                            <input type="text" class="msg-liz rate hr_entry_spcrate" value="-1%" readonly="true">
+                        </label>
+                        <label class="back_cr">
+                            <input type="text" class="msg-liz rate hr_entry_spcrate" value="2天" readonly="true">
+                            <hr class="trans_line">
+                            <input type="text" class="msg-liz rate hr_entry_spcrate" value="-3%" readonly="true">
+                        </label>
+                    </div>
+                <h4>团队提成</h4>
+                <div class="salaryMsg">
+                    <label>
+                        <em class="iconStar">*</em><p class="conP conPm msgP">任务总额</p>
+                        <input type="text" placeholder="请输入工资总额(元为单位)" class="type_in">
+                    </label>
+                    <label>
+                        <em class="iconStar">*</em><p class="conP conPm msgP hr_enter_longP">选择团队提成</p>
+                        <input type="text" value="销售A部" class="type_in">
+                    </label>
+                    <label>
+                        <em class="iconStar">*</em><p class="conP conPm msgP">选择时间</p>
+                        <input type="date" class="type_in hr_entry_typeIn">
+                        <hr class="trans_line">
+                        <input type="date" class="type_in hr_entry_typeIn">
+                    </label>
+                    <h5 class="calaTitle">
+                        <p>核算方式</p>
+                        <label>
+                            <input type="radio" name="cala">按年度
+                        </label>
+                    </h5>
+                    <label >
+                        <em class="iconStar">*</em><p class="conP conPm msgP tsP">提成比例1:</p>
+                        <span class="fw_cala">完成任务的</span>
+
+                        <input type="text" class="msg-liz rate" value="80%" readonly="true">
+                        <hr class="trans_line">
+                        <input type="text" class="msg-liz rate" value="100%" readonly="true">
+                    </label>
+                    <label >
+                        <em class="iconStar">*</em><p class="conP conPm msgP">提成百分比</p>
+                        <input type="text" class="msg-liz" value="20%" readonly="true">
+                    </label>
+                    <label >
+                        <em class="iconStar">*</em><p class="conP conPm msgP tsP">提成比例1:</p>
+                        <span class="fw_cala">完成任务的</span>
+                        <input type="text" class="msg-liz rate" value="50%" readonly="true">
+                        <hr class="trans_line">
+                        <input type="text" class="msg-liz rate" value="79%" readonly="true">
+                    </label>
+                    <label >
+                        <em class="iconStar">*</em><p class="conP conPm msgP">提成百分比</p>
+                        <input type="text" class="msg-liz" value="100%" readonly="true">
+                    </label>
+                    <label >
+                        <em class="iconStar">*</em><p class="conP conPm msgP tsP">提成比例1:</p>
+                        <span class="fw_cala">完成任务的</span>
+                        <input type="text" class="msg-liz rate" value="30%" readonly="true">
+                        <hr class="trans_line">
+                        <input type="text" class="msg-liz rate" value="49%" readonly="true">
+                    </label>
+                    <label >
+                        <em class="iconStar">*</em><p class="conP conPm msgP">提成百分比</p>
+                        <input type="text" class="msg-liz" value="100%" readonly="true">
+                    </label>
+                    <h5 class="calaTitle">
+                        <p>回款核算方式</p>
+                        <span class="extr_ts">超出周期扣除提成金额比例</span>
+                    </h5>
+                    <label class="back_cr frt_lab">
+                        <input type="text" class="msg-liz rate hr_entry_spcrate" value="1天" readonly="true">
+                        <hr class="trans_line">
+                        <input type="text" class="msg-liz rate hr_entry_spcrate" value="-1%" readonly="true">
+                    </label>
+                    <label class="back_cr">
+                        <input type="text" class="msg-liz rate hr_entry_spcrate" value="2天" readonly="true">
+                        <hr class="trans_line">
+                        <input type="text" class="msg-liz rate hr_entry_spcrate" value="-3%" readonly="true">
+                    </label>
+                </div>
+                <h4 >奖金</h4>
+                <label class="clearafter">
+                    <em class="icon">*</em>
+                    <p class="conP conPm">奖金</p>
+                    <input type="text" value="500" readonly="true" class="hr_entry_yuan" style="background: #f2f2f2">元
+                    <span class="hr_entry_singInp">
+                        <input type="checkbox" checked="checked" name="1">全勤
+                        <input type="checkbox" name="1"> 完成所有任务
+                        </span>
+                </label>
+                <h4 >计件</h4>
+                <p class="hr_entry_tip tip num_tip">开启后针对配置商品备货时间计件</p>
+                <label class="clearafter">
+                    <em class="icon">*</em>
+                    <p class="conP conPm">选择计件</p>
+                    <input type="text" value="">
+                </label>
+                <label class="clearafter">
+                    <em class="icon">*</em>
+                    <p class="conP conPm">计件金额</p>
+                    <input type="text" value="10" readonly="true" class="hr_entry_yuan" style="background: #f2f2f2">元
+                    <p class="hr_entry_inptip tip num_tip">
+                        60分钟内完成
+                    </p>
+                </label>
+                <h4>任务绩效</h4>
+                <p class="hr_entry_tip tip num_tip">接到任务未按时完成的情况下会扣除绩效工资</p>
+                <label class="clearafter">
+                    <!--<em class="icon"></em>-->
+                    <p class="conP hr_enter_longP">任务薪资1名称</p>
+                    <input type="text" value="" placeholder="">
+                </label>
+                <label class="clearafter">
+                    <!--<em class="icon">*</em>-->
+                    <p class="conP" style="width: auto;">未完成扣除金额</p>
+                    <input type="text" value="1" readonly="true" class="hr_entry_last" style="background: #f2f2f2">次
+                    <!--<hr class="hr_entry_trans_line ">-->
+                    <input type="text" value="100" readonly="true" class="hr_entry_last" style="background: #f2f2f2">元
+                </label>
+            </div>
+            <div class="pra-4-cent hr_entry_pra-4-cent newpra-4-cent">
+                <div class="alertBtn-te">
+                    <div class="pra-4-cent-btn1">提交</div>
+                    <div class="pra-4-cent-btn2">取消</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

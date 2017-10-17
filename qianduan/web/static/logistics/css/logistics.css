@@ -1,0 +1,398 @@
+.logistics_content{
+    overflow: auto;
+    background: #fff;
+    height: 100%;
+}
+/*收支-账户管理*/
+/*第一行*/
+.logistics_title{
+    line-height: 60px;
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 0 25px;
+}
+.logistics_right{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.logistics_xs{
+    display: inline-block;
+    margin-left: 30px;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.logistics_xs p{
+    width: 100px;
+    margin-left: 18px;
+    margin-top: -29px;
+}
+
+
+
+/*快递单*/
+.dialog_box1{
+    position: relative;
+}
+.dialog_box1 input{
+    color: #000;
+}
+.jijianrenxingming{
+    width: 82px;
+    height: 7px;
+    position: absolute;
+    left: 120px;
+    top: 172px;
+}
+.shifadi{
+    width: 122px;
+    height: 7px;
+    position: absolute;
+    top: 172px;
+    left: 260px;
+}
+.danweimingcheng{
+    height: 6px;
+    width: 265px;
+    left: 115px;
+    top: 193px;
+    position: absolute;
+}
+.jijiandizhi1{
+    position: absolute;
+    width: 31px;
+    height: 10px;
+    top: 213px;
+    left: 111px;
+}
+.jijiandizhi2{
+    position: absolute;
+    width: 31px;
+    height: 10px;
+    top: 213px;
+    left: 181px;
+}
+.jijiandizhi3{
+    position: absolute;
+    width: 31px;
+    height: 10px;
+    top: 213px;
+    left: 247px;
+}
+.jijiandizhi4{
+    position: absolute;
+    width: 31px;
+    height: 10px;
+    top: 213px;
+    left: 317px;
+}
+.jijiandizhi5{
+    position: absolute;
+    width: 309px;
+    height: 6px;
+    top: 241px;
+    left: 68px;
+}
+.lianxidianhua{
+    position: absolute;
+    height: 9px;
+    top: 265px;
+    width: 120px;
+    left: 156px;
+}
+.youzhengbianma{
+    position: absolute;
+    height: 8px;
+    top: 265px;
+    left: 348px;
+    width: 31px;
+}
+.wenjian{
+    position: absolute;
+    top: 300px;
+    left: 92px;
+}
+.wupin{
+    position: absolute;
+    top: 300px;
+    left: 149px;
+}
+.neijianpinming{
+    position: absolute;
+    width: 85px;
+    height: 25px;
+    top: 321px;
+    left: 111px;
+}
+.shuliang{
+    position: absolute;
+    width: 31px;
+    height: 6px;
+    top: 320px;
+    left: 255px;
+}
+.zhongliang{
+    position: absolute;
+    width: 31px;
+    height: 6px;
+    top: 321px;
+    left: 352px;
+}
+.tiji{
+    position: absolute;
+    width: 47px;
+    height: 6px;
+    top: 339px;
+    left: 261px;
+}
+.feijinjipin{
+    position: absolute;
+    top: 359px;
+    left: 328px;
+}
+.tijianyewuyuan{
+    position: absolute;
+    top: 476px;
+    left: 61px;
+    width: 142px;
+    height: 19px;
+}
+.yewuyewuyuan{
+    position: absolute;
+    top: 476px;
+    left: 237px;
+    height: 18px;
+    width: 141px;
+}
+.mudidimingcheng{
+    position: absolute;
+    right: 103px;
+    top: 119px;
+    width: 91px;
+    height: 22px;
+}
+.shoujianrenxingming{
+    position: absolute;
+    top: 172px;
+    right: 291px;
+    width: 80px;
+    height: 7px;
+}
+.danweimingcheng1{
+    position: absolute;
+    right: 100px;
+    width: 281px;
+    height: 6px;
+    top: 193px;
+}
+.shoujiandizhi2{
+    position: absolute;
+    right: 207px;
+    top: 213px;
+    height: 10px;
+    width: 22px;
+}
+.shoujiandizhi3{
+    position: absolute;
+    right: 266px;
+    top: 213px;
+    height: 10px;
+    width: 31px;
+}
+.shoujiandizhi4{
+    position: absolute;
+    height: 10px;
+    right: 335px;
+    top: 215px;
+    width: 43px;
+}
+.shoujiandizhi1{
+    position: absolute;
+    right: 135px;
+    top: 213px;
+    height: 10px;
+    width: 30px;
+}
+.shoujiandizhi5{
+    position: absolute;
+    top: 241px;
+    width: 329px;
+    height: 6px;
+    right: 103px;
+}
+.lianxidianhua1{
+    position: absolute;
+    top: 265px;
+    width: 142px;
+    height: 9px;
+    right: 197px;
+}
+.youzhengbianma1{
+    position: absolute;
+    height: 8px;
+    top: 265px;
+    right: 97px;
+    width: 31px;
+}
+.jingjitiaojian{
+    position: absolute;
+    top: 295px;
+    right: 105px;
+}
+.gerida{
+    position: absolute;
+    top: 295px;
+    right: 192px;
+}
+.cirida{
+    position: absolute;
+    top: 296px;
+    right: 264px;
+}
+.cichenda{
+    position: absolute;
+    top: 296px;
+    right: 339px;
+}
+.dangrida{
+    position: absolute;
+    top: 296px;
+    right: 417px;
+}
+.shi{
+    position: absolute;
+    top: 316px;
+    right: 400px;
+}
+.fou{
+    position: absolute;
+    top: 316px;
+    right: 366px;
+}
+.qianshouduanxintongzhi{
+    position: absolute;
+    top: 353px;
+    right: 382px;
+}
+.yejianpaisong{
+    position: absolute;
+    top: 353px;
+    right: 226px;
+}
+.xianjin{
+    position: absolute;
+    top: 392px;
+    right: 276px;
+}
+.xieyijiesuan{
+    position: absolute;
+    top: 393px;
+    right: 133px;
+}
+.shoujianrenqianming{
+    position: absolute;
+    top: 431px;
+    right: 295px;
+    height: 19px;
+    width: 140px;
+}
+.daishoujianrenqianming{
+    position: absolute;
+    top: 432px;
+    right: 107px;
+    height: 19px;
+    width: 140px;
+}
+.beizhu{
+    position: absolute;
+    top: 484px;
+    right: 221px;
+    width: 186px;
+    height: 9px;
+}
+.xiaozie{
+    text-align: right;
+    position: absolute;
+    width: 11px;
+    height: 5px;
+    top: 315px;
+    right: 98px;
+}
+.renminbiwan{
+    padding: 0;
+    position: absolute;
+    border: none;
+    border-bottom: 1px solid;
+    top: 316px;
+    right: 300px;
+    height: 13px;
+    width: 14px;
+    color: #000;
+}
+.renminbiqian{
+    padding: 0;
+    position: absolute;
+    border: none;
+    border-bottom: 1px solid;
+    top: 316px;
+    right: 271px;
+    height: 13px;
+    width: 14px;
+    color: #000;
+}
+.renminbibai{
+    padding: 0;
+    position: absolute;
+    border: none;
+    border-bottom: 1px solid;
+    top: 316px;
+    right: 241px;
+    height: 13px;
+    width: 14px;
+    color: #000;
+}
+.renminbishi{
+    padding: 0;
+    position: absolute;
+    border: none;
+    border-bottom: 1px solid;
+    top: 316px;
+    right: 210px;
+    height: 13px;
+    width: 14px;
+    color: #000;
+}
+.renminbiyuan{
+    padding: 0;
+    position: absolute;
+    border: none;
+    border-bottom: 1px solid;
+    top: 316px;
+    right: 180px;
+    height: 13px;
+    width: 14px;
+    color: #000;
+}
+.wl_list_msg>.inp_addBtn{
+    background: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    color: #23a2f3;
+    cursor: pointer;
+    line-height: 25px;
+    vertical-align: top;
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+.wl_search{
+    width: 340px !important;
+}
+.wl_search>input{
+    width: 266px !important;
+}

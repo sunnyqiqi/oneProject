@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr-办理入职</title>
+    <link rel="stylesheet" type="text/css" href="static/hr/css/hr_employeelist.css?v=20170314">
+    <!--<link rel="stylesheet" type="text/css" href="static/goods/css/goods.css"> -->
+     <script src="static/hr/js/zj_entry.js"></script>
+
+</head>
+
+<body>
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>办理入职</h2>
+    <div class="right" style="width: 77px;">
+        <div class="res zcj_rzhibl_dl_sx_btn" title="点击刷新"></div>
+    </div>
+</div>
+<!-- 页面菜单 -->
+<div class="sbar second-level hr_left_bjbm">
+    <div class="hr_left_nav">
+        <!--<ul class="change">-->
+            <!--<li class="hr_left_all zj_all_end"><span>所有成员(<i class="zcj_sear_count">0</i>)</span></li>-->
+            <ul class="hr_ul1">
+                <i class="nav_arrow"></i>
+                <li class="hr_left_1 zcj_not_bl"><span>未办理入职(<i class="zj_bl_rz_count">0</i>)</span></li>
+                <ul class="hr_ul3 zcj_wrzhi_ry">
+                    <!--  <li class="hr_left_bmyg2 hr_left_2"><span>高杨</span></li>
+                      <li class="hr_left_bmyg2 hr_left_2"><span>梁浩</span></li>-->
+                </ul>
+            </ul>
+            <ul class="hr_ul1">
+                <i class="nav_arrow"></i>
+                <li class="hr_left_1 zcj_endenter_bl"><span>已办理入职(<i class="zj_bl_lz_count">0</i>)</span></li>
+                <ul class="hr_ul3 zcj_yrzhi_ry">
+                    <!-- <li class="hr_left_bmyg2 hr_left_2"><span>文康</span></li>
+                     <li class="hr_left_bmyg2 hr_left_2"><span>贺文</span></li>
+                     <li class="hr_left_bmyg2 hr_left_2"><span>永昌</span></li>
+                     <li class="hr_left_bmyg2 hr_left_2"><span>郭建</span></li>-->
+                </ul>
+            </ul>
+        <!--</ul>-->
+    </div>
+    <div class="allgoods"  style="height: auto;">
+    </div>
+</div>
+<!-- 页面菜单结束 -->
+<div class="sbar rightcontent" style="padding-right: 30px;padding-left: 30px;">
+<div class="con_right_head clearfix" style="border:none;">
+
+<div class="cont_search inline_block hr_base_search">
+        <input type="text" class="search_input" id="hr_search" value="搜索成员姓名" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+        <button class="search_but but_blue zcj_searchbtn" style="height: 30px;width: auto;">搜索</button>
+ </div>
+            <button class="but_small inline_block zkgjssBtn zcj_yg_blrz_gjss_btn" name="hr_blrz_zkgjss">展开高级搜索</button>
+            <div class="right con_right_result right">
+                <p class="left">所有成员(<span class=" c_r zcj_blrz_wbl_num">0</span>个未办理，共<span class="c_r zcj_blrz_zgbl_znum">0</span>人)</p>
+            </div>
+
+        </div>
+
+
+     <div class="container lik_table_wrap">
+        <div class="lik_table_max_height table-container zcj_tableContent">
+            <table id="all_table" class="zj_table_end_info">
+            <thead>
+            <tr>
+ 				<th>名字</th>
+                <th>状态</th>
+
+                <th>入职时间</th>
+                <th>入职培训</th>
+
+                <th>设定工资</th>
+                <th>社保</th>
+                <th>公司福利</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="hr_tbody z_blrz">
+                    <tr class="zkgjss_cont" name="hr_blrz_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="状态">
+                                <i></i>
+                                <ul class="select_list zcj_yg_blrz_zt_list_zs">
+                                    <li val="1">未办理</li>
+                                    <li val="2">办理中</li>
+                                    <li val="3">已办理</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="设定工资">
+                                <i></i>
+                                <ul class="select_list zcj_yg_rz_gz_set_list">
+                                    <li gz="1,2">基本绩效</li>
+                                    <li gz="3">提成</li>
+                                    <li gz="4">团队提成</li>
+                                    <li gz="5">奖金</li>
+                                    <li gz="6">计件</li>
+                                    <li gz="7">任务绩效</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="社保">
+                                <i></i>
+                                <ul class="select_list zcj_shebao_show_list">
+                                    <li as="1">社保</li>
+                                    <li as="1">公积金</li>
+                                    <li as="1">社保,公积金</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="公司福利">
+                                <i></i>
+                                <ul class="select_list zcj_gs_fl_ygrz_list_show">
+                                    <li>餐补</li>
+                                    <li>交通补助</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                    </tr>
+                   <!-- <tr>
+                        <td>张威</td>
+                        <td><span class="c_r">未办理</span></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><button class="but_mix but_green but_blue val_dialog" name="hr_blrz_ygrz">办理入职</button></td></td>
+                    </tr>
+                    <tr>
+                        <td>李凯</td>
+                        <td><span class="c_y">办理中</span></td>
+                        <td>2016-10-10</td>
+                        <td>入职培训01 张三</td>
+                        <td>基本工资+提成</td>
+                        <td>社保</td>
+                        <td>交通、饭补</td>
+                        <td><button class="but_mix but_green but_blue val_dialog" name="hr_blrz_ygrz">办理入职</button></td></td>
+                    </tr>
+                    <tr>
+                        <td>赵旺杰</td>
+                        <td><span class="c_g">已办理</span></td>
+                        <td>2016-10-10</td>
+                        <td>入职培训01</td>
+                        <td>基本工资+绩效</td>
+                        <td>社保</td>
+                        <td>餐补</td>
+                        <td><button class="but_mix but_look r_sidebar_btn" name="hr_blrz_ck">查看</button><button class="but_mix but_exit val_dialogTop" name="hr_blrz_ygrz_bj">编辑</button></td>
+                    </tr>-->
+            </tbody>
+                <tbody class="zcj_bl_rz_ry_data"></tbody>
+        </table>
+        <!--&lt;!&ndash;未办理入职&ndash;&gt;
+        <table id="not_table" style="display: none">
+            <thead>
+            <tr>
+                <th>状态</th>
+                <th>姓名</th>
+                <th>入职时间</th>
+                <th>入职培训</th>
+                <th>技能培训</th>
+                <th>设定工资</th>
+                <th>社保</th>
+                <th>公司福利</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="z_notbody">
+
+            </tbody>
+        </table>
+        &lt;!&ndash;已办理入职&ndash;&gt;
+        <table  id="end_table" style="display: none">
+            <thead>
+            <tr>
+                <th>状态</th>
+                <th>姓名</th>
+                <th>入职时间</th>
+                <th>入职培训</th>
+                <th>技能培训</th>
+                <th>设定工资</th>
+                <th>社保</th>
+                <th>公司福利</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="z_already">
+
+            </tbody>
+        </table>-->
+            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+            <div class="no_data_box none zcj_no_data_show_company_enter">
+                <div class="no_data">
+                    <!--<span class="inline_block"></span>-->
+                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                </div>
+                <div class="no_data_bottom"></div>
+            </div>
+    </div>
+         <div class="handle">
+             <div class="fenye_box zcj_box_btn zcj_pre_btn zcj_end_btn">
+                 <span>每页显示</span>
+                 <div class="inline_block select_mormal">
+                     <input type="text" class="select_input" value="10">
+                     <i></i>
+                     <ul class="select_list">
+                         <li>5</li>
+                         <li>10</li>
+                         <li>15</li>
+                         <li>20</li>
+                     </ul>
+                 </div>
+                 <span>条数据</span>
+                 <div class="fenye_btn first_page_valid"><span></span></div>
+                 <div class="fenye_btn prev_page_valid"><span></span></div>
+
+                 <span class="page_box on">1</span>
+                 <span class="page_box">2</span>
+                 <span class="page_box">3</span>
+                 <span class="page_box">4</span>
+                 <!-- <span class="page_box_last" style="line-height:15px;">...</span>-->
+                 <div class="fenye_btn next_page_valid"><span></span></div>
+                 <div class="fenye_btn last_page_valid"><span></span></div>
+                 <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                 <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+
+             </div>
+         </div>
+     </div>
+
+
+</div>
+
+</div>
+
+
+<!--员工入职信息弹窗-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_blrz_ygrz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="height:600px;width: 600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">员工入职信息</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin:0;padding:0;height: 87%;">
+                <div class="hr_ygrzxx_name zcj_name_info">貂蝉</div>
+                <div class="hr_Msg_box">
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>角色权限</div>
+                        <div class="t_right">
+                            <!--<div class="select_special">-->
+
+                                <div class="inline_block select_mormal select_100">
+								 <input type="text" class="select_input zcj_select_role_name_id" value="请选择角色权限"/>
+
+                                    <i></i>
+                                   <!-- <button class="but_blue val_dialogTop zcj_blrz_edit_btn" name="hr_blrz_bjrzpx" style="height: 32px;top:-1px;">编辑</button>-->
+                                <!--</div>-->
+                                <ul class="select_list zcj_ygrz_staff_qx_list">
+                                    <!--<li><input type="checkbox"/><cite>入职培训02<span>负责人：董卓</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>-->
+                                </ul>
+                            </div>
+                            <!--<div style="position: relative;padding: 0 10px;">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -34px;">
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>入职时间</div>
+                        <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zcj_ygrz_end_rz_time" readonly="readonly" onclick="laydate()" style="cursor: pointer;"></div>
+                        <!--<div style="position: relative;padding: 0 10px;">
+                            <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -21px;">
+                        </div>-->
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>入职培训</div>
+                        <div class="t_right">
+                            <div class="select_special">
+
+                            <div class="select_specialInput hr_ygrz_px1" style="height: 30px;">
+                                <input type="hidden" class="zcj_entry_px_name" value=""><span style="margin-left: 0px" class="zcj_select_rzpx_name_show"></span>
+								<!--<i></i>-->
+								<button class="but_grey val_dialogTop zcj_blrz_edit_btn" name="hr_blrz_bjrzpx" style="height: 32px;top:-1px;width: 86px;">选择入职培训</button>
+                            </div>
+                               <!-- <ul class="select_special_list hr_ygrz_px zcj_rzbj_list_show" style="z-index: 1!important;">-->
+                                <!-- <li><input type="checkbox"/><cite>入职培训02<span>负责人：董卓</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>
+                                    <li><input type="checkbox"/><cite>入职培训03<span>负责人：刘备</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>
+                                    <li><input type="checkbox"/><cite>入职培训04<span>负责人：关羽</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>-->
+                                <!--</ul>-->
+                            </div>
+                            <div style="position: relative;padding: 0 10px;" class="zcj_blrzhi_px_img">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -29px;"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>设定工资</div>
+                        <div class="t_right">
+                            <div class="select_special">
+                                <div class="select_specialInput" style="height: 30px;">
+                                <input type="hidden" class="zcj_set_gz_fs_id" value=""><cite class="zcj_set_gz_name"></cite>
+                       <button class="but_grey val_dialogTop zcj_set_end_rz_gz_btn" name="hr_blrz_sdgz" style="height: 32px;top:-1px;">设定工资</button></div>
+                            </div>
+                            <div style="position: relative;padding: 0 10px;" class="zcj_blrzhi_set_gz_img">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -29px;"/>
+                         </div>
+                        </div>
+                    </div>
+                    <!--<div class="t_textinput t_textinput_shebao" style="height:auto">
+                        <div class="t_left" style="margin-top: 6px;"><i class="c_r">*</i>设定社保</div>
+                        <div class="t_right hr_set_shebao">
+                            <ul class="t_rightul t_rightul_shebao clearfix">
+                                <li>
+                                    <input type="checkbox" class="hr_checkbox1 zcj_insurance">
+                                    <span>缴纳社保</span>
+                                </li>
+                                <li class="hr_rz_sbjs" style="margin-left: 35px;">
+                                    <div class="t_left">个人社保扣款</div>
+                                    <div class="t_right" style="height: 30px;">
+                                        <input type="text" class="time_input hr_inp_60 check_yes zcj_social_num_val zcj_blrz_sbjs_znum_val" value="请输入数额" style="display: none;" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                        <input type="text" class="time_input hr_inp_60 inp_noInput check_no"  value="" readonly="readonly"/>
+                                        <i class="unit">元</i>
+                                        &lt;!&ndash;<input type="text" class="time_input hr_inp_60 inp_noInput zcj_sb_js_znum_val" style="width: 40px;margin-left: 28px;padding: 0px"  value="" readonly="readonly"/>&ndash;&gt;
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="hr_checkbox2 zcj_welfare_money">
+                                    <span>缴纳公积金</span>
+                                </li>
+                                <li class="hr_rz_gjj">
+                                    <div class="t_left">个人公积金扣款</div>
+                                    <div class="t_right" style="height: 30px;">
+                                        <input type="text" class="time_input hr_inp_60 hr_check_yes zcj_blrz_gjjse_znum_val" style="display: none;"  value="请输入数额" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                        <input type="text" class="time_input hr_inp_60 inp_noInput hr_check_no"  value="" readonly="readonly"/>
+                                        <i class="unit">元</i>
+                                    </div>
+                                </li>
+                            </ul>
+                           &lt;!&ndash; <div style="position: relative;padding: 0 10px;">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-35px;right: -34px;">
+                            </div>&ndash;&gt;
+                        </div>
+                    </div>-->
+                    <div class="t_textinput t_textinput_shebao" style="height:auto">
+                        <div class="t_left" style="margin-top: 6px;"><i class="c_r v_hidden">*</i>设定社保</div>
+                        <div class="t_right hr_set_shebao">
+                            <ul class="t_rightul t_rightul_shebao clearfix" style="height: 70px;">
+                                <li>
+                                    <input type="checkbox" class="hr_checkbox1 zcj_insurance">
+                                    <span>缴纳社保</span>
+                                </li>
+                                <li class="hr_rz_sbjs" style="margin-left: 35px;">
+                                    <!--<div class="t_left">个人社保扣款</div>-->
+                                    <div class="t_right" style="height: 30px;margin-left: 58px;">
+                                        <input type="text" class="time_input hr_inp_60 check_yes zcj_social_num_val lik_input_number zcj_blrz_sbjs_znum_val" value="请输入数额" style="display: none;" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                        <input type="text" class="time_input hr_inp_60 inp_noInput check_no"  value="" readonly="readonly"/>
+                                        <i class="unit">元</i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="hr_checkbox2 zcj_welfare_money">
+                                    <span>缴纳公积金</span>
+                                </li>
+                                <li class="hr_rz_gjj">
+                                   <!-- <div class="t_left">个人公积金扣款</div>-->
+                                    <div class="t_right" style="height: 30px;">
+                                        <input type="text" class="time_input hr_inp_60 hr_check_yes lik_input_number zcj_blrz_gjjse_znum_val" style="display: none;"  value="请输入数额" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                        <input type="text" class="time_input hr_inp_60 inp_noInput hr_check_no"  value="" readonly="readonly"/>
+                                        <i class="unit" style="right: 68px;">元</i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- <div class="t_textinput" style="height:auto">
+                         <div class="t_left"><i class="c_r v_hidden">*</i>公司福利</div>
+                         <div class="t_right hr_set_shebao">
+                             <ul class="t_rightul hr_set_buzhu zcj_blrz_yg_fl_list_zs">
+                                &lt;!&ndash; <li><input type="checkbox"/><span>餐补&nbsp;&nbsp;10元</span></li>
+                                 <li><input type="checkbox"/><span>话费补助&nbsp;&nbsp;100元</span></li>
+                                 <li><input type="checkbox"/><span>交通补助&nbsp;&nbsp;100元</span></li>
+                                 <li><input type="checkbox"/><span>住房补助&nbsp;&nbsp;100元</span></li>&ndash;&gt;
+
+                             </ul>
+                             <div class="select_specialInput_bj" style="position: relative">
+                                 <a class="val_dialogTop zcj_yg_blrz_bj_gsfl_btn" name="hr_blrz_sdgsfl" style="position: absolute;top: 0px">编辑</a>
+                             </div>
+                             &lt;!&ndash;<div style="position: relative;padding: 0 10px;">
+                                 <img src="static/images/hr_duihao.png" style="position: absolute;top:3px;right: -34px;">
+                             </div>&ndash;&gt;
+                         </div>
+                     </div>-->
+                    <div class="t_textinput" style="height:auto">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>公司福利</div>
+                        <div class="t_right hr_set_shebao" style="overflow: hidden;">
+                            <ul class="t_rightul hr_set_buzhu left zcj_blrz_yg_fl_list_zs" style="width: 369px;">
+                               <!-- <li><input type="checkbox"/><span>餐补&nbsp;&nbsp;10元</span></li>
+                                <li><input type="checkbox"/><span>话费补助&nbsp;&nbsp;100元</span></li>
+                                <li><input type="checkbox"/><span>交通补助&nbsp;&nbsp;100元</span></li>
+                                <li><input type="checkbox"/><span>住房补助&nbsp;&nbsp;100元</span></li>-->
+                            </ul>
+                            <div class="select_specialInput_bj right">
+                                <a class="val_dialogTop zcj_yg_blrz_bj_gsfl_btn" name="hr_blrz_sdgsfl" style="position: absolute;">编辑</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_green but_small zcj_yg_blrz_info_save_btn">保存</button><button class="but_blue but_small zcj_yg_end_enter_rz_btn">确认入职</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--编辑员工办理入职信息弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_ygrz_bj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="height:600px;width: 600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">员工入职信息</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin:0;padding:0;">
+                <div class="hr_ygrzxx_name">貂蝉</div>
+                <div class="hr_Msg_box">
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>角色权限</div>
+                        <div class="t_right">
+                            <!--<div class="select_special">-->
+
+                                <div class="inline_block select_mormal select_100">
+								 <input type="text" class="select_input zcj_select_role_name_id c_3" value="请选择角色权限"/>
+                                    <!--<cite><span class="zcj_select_role_name_id">请选择角色</span></cite>-->
+                                    <i></i>
+                                    <!-- <button class="but_blue val_dialogTop zcj_blrz_edit_btn" name="hr_blrz_bjrzpx" style="height: 32px;top:-1px;">编辑</button>-->
+                                <!--</div>-->
+                                <ul class="select_list zcj_ygrz_staff_qx_list">
+                                    <!--<li><input type="checkbox"/><cite>入职培训02<span>负责人：董卓</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>-->
+                                </ul>
+                            </div>
+                            <!--<div style="position: relative;padding: 0 10px;">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -34px;">
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>入职时间</div>
+                        <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zcj_yg_edit_show_time c_3" readonly="readonly" onclick="laydate()" style="cursor: pointer;"></div>
+                        <!--<div style="position: relative;padding: 0 10px;">
+                            <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -21px;">
+                        </div>-->
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>入职培训</div>
+                        <div class="t_right">
+                            <div class="select_special">
+
+                                <div class="select_specialInput hr_ygrz_px1" style="height: 30px;">
+                                    <input type="hidden" class="zcj_yg_edit_rzpx_id_yc c_3" value=""><span style="margin-left: 0px" class="zcj_bjyg_rzpx_name_show"></span>
+                                    <!--<i></i>-->
+                                    <button class="but_grey val_dialogTop zcj_ygrz_info_bj_pxbj_btn" name="hr_blrz_bjrzpx" style="height: 32px;top:-1px;width: 86px;">选择入职培训</button>
+                                </div>
+                                <!-- <ul class="select_special_list hr_ygrz_px zcj_rzbj_list_show" style="z-index: 1!important;">-->
+                                <!-- <li><input type="checkbox"/><cite>入职培训02<span>负责人：董卓</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>
+                                    <li><input type="checkbox"/><cite>入职培训03<span>负责人：刘备</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>
+                                    <li><input type="checkbox"/><cite>入职培训04<span>负责人：关羽</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>-->
+                                <!--</ul>-->
+                            </div>
+                            <div style="position: relative;padding: 0 10px;display: none;" class="zcj_v_hidden_img">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -29px;">
+                            </div>
+                        </div>
+                    </div>
+
+                   <!-- <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>入职培训</div>
+                        <div class="t_right">
+                            <div class="select_special">
+                                <div class="select_specialInput hr_ygrz_px1" style="height: 30px;">
+                                    <input type="hidden" class="zcj_yg_edit_rzpx_id_yc" value=""><cite>入职培训01<span class="zcj_bjyg_rzpx_name_show">负责人：董卓</span></cite>
+                                    <i></i>
+                                    <button class="but_blue val_dialogTop zcj_ygrz_info_bj_pxbj_btn" name="hr_blrz_bjrzpx" style="height: 32px;top:-1px;">编辑</button>
+                                </div>
+                                <ul class="select_special_list hr_ygrz_px zcj_hr_ygrz_px_list" style="z-index: 1!important;">
+                                    &lt;!&ndash;<li><input type="checkbox"/><cite>入职培训02<span>负责人：董卓</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>
+                                    <li><input type="checkbox"/><cite>入职培训03<span>负责人：刘备</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>
+                                    <li><input type="checkbox"/><cite>入职培训04<span>负责人：关羽</span></cite><button class="but_mix but_look val_dialogTop right" name="hr_blrz_rzpxPre" style="margin-top: 3px;">预览</button></li>&ndash;&gt;
+                                </ul>
+                            </div>
+                            <div style="position: relative;padding: 0 10px;">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -34px;">
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>设定工资</div>
+                        <div class="t_right">
+                            <div class="select_special">
+                                <div class="select_specialInput" style="height: 30px;">
+                                    <input type="hidden" class="zcj_edit_yg_gz_yc_id c_3" value=""><span class="zcj_ygbj_set_show_gz_name" style="margin: 0;"></span>
+                                    <button class="but_grey val_dialogTop zcj_yg_info_edit_set_gz_btn" name="hr_blrz_sdgz" style="height: 32px;top:-1px;">设定工资</button></div>
+                            </div>
+                            <div style="position: relative;padding: 0 10px;display: none;" class="zcj_set_gz_v_hidden_img">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -29px;">
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>设定工资</div>
+                        <div class="t_right">
+                            <div class="select_special">
+                                <div class="select_specialInput" style="height: 30px;">
+                                    <input type="hidden" class="zcj_edit_yg_gz_yc_id" value="1,2"/><cite class="zcj_ygbj_set_show_gz_name">基本工资+绩效、提成、团队提成、奖金、计件、任务绩效</cite>
+                                    &lt;!&ndash;<i></i>&ndash;&gt;
+                                    <button class="but_blue val_dialogTop zcj_yg_info_edit_set_gz_btn" name="hr_blrz_sdgz" style="height: 32px;top:-1px;">设定工资</button></div>
+                            </div>
+                            <div style="position: relative;padding: 0 10px;">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-23px;right: -34px;">
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="t_textinput t_textinput_shebao" style="height:auto">
+                        <div class="t_left" style="margin-top: 6px;"><i class="c_r v_hidden">*</i>设定社保</div>
+                        <div class="t_right hr_set_shebao">
+                            <ul class="t_rightul t_rightul_shebao clearfix">
+                                <li>
+                                    <input type="checkbox" class="hr_checkbox1 zcj_ygblrz_jlsb_qr"/>
+                                    <span>缴纳社保</span>
+                                </li>
+                                <li class="hr_rz_sbjs" style="margin-left: 15px;">
+                                   <!-- <div class="t_left">社保基数</div>-->
+                                    <div class="t_right" style="height: 30px;">
+                                        <input type="text" class="time_input hr_inp_60 check_yes zcj_yg_blrz_shebao_js_num c_3" value="请输入社保基数" style="display: none;" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                        <input type="text" class="time_input hr_inp_60 inp_noInput check_no zcj_ygrzhi_bj_sbnum_srk"  value="" readonly="readonly"/>
+                                        <i class="unit">元</i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="hr_checkbox2 zcj_ygblrz_jlgjj_qr"/>
+                                    <span>缴纳公积金</span>
+                                </li>
+                                <li class="hr_rz_gjj">
+                                   <!-- <div class="t_left">公积金数额</div>-->
+                                    <div class="t_right" style="height: 30px;">
+                                        <input type="text" class="time_input hr_inp_60 hr_check_yes zcj_yg_blrz_gjj_se_num c_3" style="display: none;"  value="请输入公积金数额" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                        <input type="text" class="time_input hr_inp_60 inp_noInput hr_check_no zcj_ygrzhi_bj_gjjnum_srk"  value="" readonly="readonly"/>
+                                        <i class="unit" style="right: 68px;">元</i>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- <div style="position: relative;padding: 0 10px;">
+                                 <img src="static/images/hr_duihao.png" style="position: absolute;top:-35px;right: -34px;">
+                             </div>-->
+                        </div>
+                    </div>
+                   <!-- <div class="t_textinput t_textinput_shebao" style="height:auto">
+                        <div class="t_left" style="margin-top: 6px;"><i class="c_r">*</i>设定社保</div>
+                        <div class="t_right">
+                            <ul class="t_rightul t_rightul_shebao clearfix">
+                                <li>
+                                    <input type="checkbox" class="hr_checkbox2 zcj_ygblrz_jlsb_qr"/>
+                                    <span>缴纳社保</span>
+                                </li>
+                                <li class="hr_rz_sbjs">
+                                    <div class="t_left">社保基数</div>
+                                    <div class="t_right" style="height: 30px;">
+                                        <input type="text" class="time_input inp_96 check_yes zcj_yg_blrz_shebao_js_num" value="请输入社保基数" style="display: none;" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                        <input type="text" class="time_input inp_96 inp_noInput check_no zcj_ygrzhi_bj_sbnum_srk"  value="" readonly="readonly"/>
+                                        <i class="unit">元</i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <input type="checkbox" class="hr_checkbox2 zcj_ygblrz_jlgjj_qr">
+                                    <span>缴纳公积金</span>
+                                </li>
+                                <li class="hr_rz_gjj">
+                                    <div class="t_left">公积金数额</div>
+                                    <div class="t_right" style="height: 30px;">
+                                        <input type="text" class="time_input inp_96 hr_check_yes zcj_yg_blrz_gjj_se_num" style="display: none;"  value="请输入公积金数额" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                        <input type="text" class="time_input inp_96 inp_noInput hr_check_no zcj_ygrzhi_bj_gjjnum_srk"  value="" readonly="readonly"/>
+                                        <i class="unit">元</i>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div style="position: relative;padding: 0 10px;">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:-35px;right: -34px;">
+                            </div>
+                        </div>
+                    </div>-->
+                    <!--<div class="t_textinput" style="height:auto">
+                        <div class="t_left"><i class="c_r">*</i>公司福利</div>
+                        <div class="t_right hr_set_shebao">
+                            <ul class="t_rightul hr_set_buzhu zcj_yg_rz_gs_fl_list_show">
+                               &lt;!&ndash; <li><input type="checkbox"/><span>餐补&nbsp;&nbsp;10元</span></li>
+                                <li><input type="checkbox"/><span>话费补助&nbsp;&nbsp;100元</span></li>
+                                <li><input type="checkbox"/><span>交通补助&nbsp;&nbsp;100元</span></li>
+                                <li><input type="checkbox"/><span>住房补助&nbsp;&nbsp;100元</span></li>&ndash;&gt;
+
+                            </ul>
+                            <div class="select_specialInput_bj" style="position: relative">
+                                <a class="val_dialogTop zcj_yg_yzblrz_info_edit_gsfl_btn" name="hr_blrz_sdgsfl" style="position: absolute;top: 0px">编辑</a>
+                            </div>
+                            &lt;!&ndash;<div style="position: relative;padding: 0 10px;">
+                                <img src="static/images/hr_duihao.png" style="position: absolute;top:3px;right: -34px;">
+                            </div>&ndash;&gt;
+                        </div>
+                    </div>-->
+                    <div class="t_textinput" style="height:auto">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>公司福利</div>
+                        <div class="t_right hr_set_shebao" style="overflow: hidden;">
+                            <ul class="t_rightul hr_set_buzhu left zcj_yg_rz_gs_fl_list_show" style="width: 369px;">
+                                <!--<li><input type="checkbox"/><span>餐补&nbsp;&nbsp;10元</span></li>
+                                <li><input type="checkbox"/><span>话费补助&nbsp;&nbsp;100元</span></li>
+                                <li><input type="checkbox"/><span>交通补助&nbsp;&nbsp;100元</span></li>
+                                <li><input type="checkbox"/><span>住房补助&nbsp;&nbsp;100元</span></li>-->
+                            </ul>
+                            <div class="select_specialInput_bj right">
+                                <a class="val_dialogTop zcj_yg_yzblrz_info_edit_gsfl_btn" name="hr_blrz_sdgsfl" style="position: absolute;">编辑</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_bc_info">确定</button><button class="but_cancel but_small">返回</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--弹出设定入职培训-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_blrz_bjrzpx">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content" style="width: 500px;height:350px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑入职培训</h3>
+            </div>
+            <div class="hr_emploeelist_add-dep" style="padding-left: 10px;">
+                <button class="val_dialogTop but_look zcj_rzpx_add_btn" name="hr_blrz_addrzpx">添加入职培训</button>
+            </div>
+            <div class="dialog_text sbar" style="padding:5px 15px;height:54%;">
+                <table>
+                    <thead>
+                    <tr>
+                         <th><input type="checkbox" class="checkAll" name="hr_blru_rzpxExit"/></th>
+                        <th>名称</th>
+                        <th>负责人</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="zcj_bmpx_edit_list_show">
+                    <!--<tr>
+                        &lt;!&ndash;<td><input type="checkbox" name="hr_blru_rzpxExit"/></td>&ndash;&gt;
+                        <td>入职培训01</td>
+                        <td>董卓</td>
+                        <td>
+                            <button class="but_mix but_exit val_dialogTop" name="hr_blrz_bjbjrzpx">编辑</button><button class="but_mix val_dialogTop but_look" name="hr_blrz_rzpxPre">预览</button><button class="but_mix but_r but_delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        &lt;!&ndash;<td><input type="checkbox" name="hr_blru_rzpxExit"/></td>&ndash;&gt;
+                        <td>入职培训02</td>
+                        <td>刘备</td>
+                        <td>
+                            <button class="but_mix val_dialogTop" name="hr_blrz_bjbjrzpx">编辑</button><button class="but_mix val_dialogTop but_look" name="hr_blrz_rzpxPre">预览</button><button class="but_mix but_r but_delete">删除</button>
+                        </td>
+                    </tr>-->
+                    </tbody>
+                </table>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_rzpx_end_but">确定</button><!--<button class="but_cancel but_small">取消</button>-->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+ <!--添加入职培训弹窗-->
+
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_addrzpx">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="width: 540px;height: 348px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加入职培训</h3></div>
+            <div class="dialog_text" style="padding:20px 40px;height: 50%;">
+                <div class="t_textinput t_textinput1">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>培训名称</div>
+                    <div class="t_right">
+						<div class="t_right">
+                        <input type="text" class="time_input zcj_rzpx_add_tjrzpx_name" value="请输入部门名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+ 						</div>
+                    </div>
+                </div>
+                <div class="t_textinput t_textinput1">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>负责人</div>
+                    <div class="t_right">
+						<div class="t_right">
+                        <input type="hidden" id="zcj_add_xz_hid_fzr_id" value=""/><input type="text" class="time_input zcj_rzpx_xzfzr_val_name" value="请选择负责人" onfocus="fn_focus(this);" onblur="fn_blur(this);" readonly="readonly"/>
+                        <span class="inp_addBtn val_dialogTop zcj_rzpx_xz_fzr_add" name="hr_blrz_xzfzr"><b style="font-weight: 900;">+</b>选择负责人</span>
+						</div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 13%;"><i class="c_r v_hidden">*</i>培训内容</div>
+                    <div class="t_right1">
+					<textarea class="txt_normal" id="zcj_add_px_nr_text" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入备注</textarea>
+					</div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_rzpx_add_px_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+ <!--弹窗-预览入职培训01-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_rzpxPre">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="height: 494px;width: 700px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3 zcj_blrz_mc_show_name">入职培训01</h3>
+            </div>
+
+            <div class="sbar dialog_text" style="height:100%;padding:0;margin-top: 0;">
+                <div class="hr_blrz_ylrz" style="padding: 0;">
+                    <h3 class="c_6">负责人：<span class="zcj_rzhi_px_fzr_tb">张三</span> </h3>
+                </div>
+                <div>
+                <div class="hr_blrz_rzpxPre zcj_rzpxnr_content_show" style="padding: 24px 20px;">
+                    <!--<h3>一、公司优势培训</h3>-->
+                   <!-- <p class="zcj_rzpxnr_content_show">包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>-->
+                    <!--<h3>二、菜鸟教程在线工具</h3>
+                    <p>包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>
+                    <h3>三、笔记静态动态具</h3>
+                    <p>包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>
+                    <h3>四、开发静态</h3>
+                    <p>包括公司实力或者在同行业当中的地位，公司的发展目标(有没有上市的计划)，背景及公司理念，管理层介绍，组织架构，各部门主管的熟悉等，培训之后带新员工到各部门和公司主要办公环境走一遍。</p>-->
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+ <!--弹出-设定公司福利-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_sdgsfl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 500px;height:390px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">设定公司福利</h3>
+            </div>
+            <div class="hr_emploeelist_add-dep" style="padding-left: 10px;">
+                <button class="val_dialogTop but_look zcj_blrz_add_gn_gsfl_btn" name="hr_blrz_gjgsfl">添加福利</button>
+            </div>
+            <div class="dialog_text sbar" style="padding:5px 15px;height:54%;">
+                <table>
+                    <thead>
+                    <tr>
+                        <!--<th><input type="checkbox" class="checkAll" name="hr_blru_sdgsfl"/></th>-->
+                        <th>福利类别</th>
+                        <th>金额</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="zcj_yg_rzbl_fl_dy_list">
+                    <!--<tr>
+                        &lt;!&ndash;<td><input type="checkbox" name="hr_blru_sdgsfl"/></td>&ndash;&gt;
+                        <td>餐补</td>
+                        <td>100元</td>
+                        <td><button class="but_mix val_dialogTop but_exit" name="hr_blrz_cbgzbzExit">编辑</button><button class="but_mix but_r but_delete">删除</button></td>
+                    </tr>
+                    <tr>
+                        &lt;!&ndash;<td><input type="checkbox" name="hr_blru_sdgsfl"/></td>&ndash;&gt;
+                        <td>交通补助</td>
+                        <td>100元</td>
+                        <td><button class="but_mix val_dialogTop but_exit" name="hr_blrz_chebgzbzExit">编辑</button><button class="but_mix but_r but_delete">删除</button></td>
+                    </tr>
+                    <tr>
+                        &lt;!&ndash;<td><input type="checkbox" name="hr_blru_sdgsfl"/></td>&ndash;&gt;
+                        <td>住房补助</td>
+                        <td>1000元</td>
+                        <td><button class="but_mix val_dialogTop but_exit" name="hr_blrz_zfbgzbzExit">编辑</button><button class="but_mix but_r but_delete">删除</button></td>
+                    </tr>-->
+                    </tbody>
+                </table>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_blrzyg_bjfl_enter_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--弹窗-添加公司福利-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_gjgsfl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加公司福利</h3>
+            </div>
+            <div class="dialog_text" style="padding: 20px 38px 0 26px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>福利类别</div>
+                    <div class="t_right" style="margin-left: 17%;"><input type="text" class="time_input zcj_blrz_add_gsfl_lb_val" value="请输入福利类别" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>金额</div>
+                    <div class="t_right" style="margin-left: 17%;"><input type="text" class="time_input zcj_blrz_add_gsfl_je_price" value="请输入金额" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue zcj_blrz_add_gs_fl_end_btn">确定</button><button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗-设定工资-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_sdgz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 630px;height: 800px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">设定工资</h3>
+            </div>
+            <div class="dialog_text sbar work_t_left zcj_set_pay_content_show" style="padding:5px 40px;height:87%;margin:0;">
+                <h2 class="cont_title">工资组成类型</h2>
+				<div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                    <p class="l-s-x">姓名：<span class="zcj_set_gz_yg_name">张三</span></p>
+                    <p class="l-s-x">岗位职责：<span class="zcj_set_gz_yg_zhize">销售经理</span></p>
+                    <p class="l-s-x">部门名称：<span class="zcj_set_gz_yg_bm">销售部</span></p>
+                </div>
+				<div class="t_textinput hr_set_shebao" style="height: auto;margin:14px auto">
+                    <div class="hr_setxz_con zcj_yg_set_gz_fs" style="margin-left: 10px;">
+                        <label style="margin-bottom: -4px;color:#333;"><input type="checkbox" checked="checked" disabled="disabled" art="1" value="1,2" style="vertical-align: middle;">基本工资+绩效</label>
+                        <label for=""><input type="checkbox" art="2" value="3" class="zcj_blrz_tc_val_number zcj_input_xzset">提成</label>
+                        <label for=""><input type="checkbox" art="3" value="4" class="zcj_blrz_tdtc_val_number zcj_input_xzset">团队提成</label>
+                        <label for=""><input type="checkbox" art="4" value="5" class="zcj_blrz_jjtc_val_number zcj_input_xzset">奖金</label>
+                        <label for=""><input type="checkbox" art="5" value="6" class="zcj_blrz_jiantc_val_number zcj_input_xzset">计件</label>
+                        <label for=""><input type="checkbox" art="6" value="7" class="zcj_blrz_rwjxtc_val_number zcj_input_xzset">任务绩效</label>
+                    </div>
+                </div>
+                <!--<div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i> 姓名</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input inp_noInput c_3 zcj_set_gz_yg_name" value="张三" readonly="true"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i> 岗位职责</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input inp_noInput c_3 zcj_set_gz_yg_zhize" value="销售经理" readonly="true">
+                    </div>
+                </div>
+                <div class="t_textinput" style="height: auto;margin: 0 auto 10px;">
+                    <div class="t_left"><i class="c_r v_hidden">*</i> 部门名称</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input inp_noInput c_3 zcj_set_gz_yg_bm" value="销售部" readonly="true">
+                        <div class="hr_setxz_con zcj_yg_set_gz_fs" style="margin-left: -10px;">
+                            <label style="display: block;margin-bottom: -4px;color:#333;"><input type="checkbox" checked="checked" disabled="disabled" style="vertical-align:middle" art="1" value="1,2">基本工资+绩效</label>
+                            <label for=""><input type="checkbox" art="2" value="3" class="zcj_input zcj_blrz_tc_val_number"/>提成</label>
+                            <label for=""><input type="checkbox" art="3" value="4" class="zcj_blrz_tdtc_val_number">团队提成</label>
+                            <label for=""><input type="checkbox" art="4" value="5" class="zcj_input zcj_blrz_jjtc_val_number"/>奖金</label>
+                            <label for=""><input type="checkbox" art="5" value="6" class="zcj_input zcj_blrz_jiantc_val_number"/>计件</label>
+                            <label for=""><input type="checkbox" art="6" value="7" class="zcj_input zcj_blrz_rwjxtc_val_number"/>任务绩效</label>
+                        </div>
+                    </div>
+                </div>-->
+                <!--<div class="hr_setgz_totle c_3" style="margin-top: -10px;">
+                    <span>基本工资</span>+<span>绩效</span>+<span>提成</span>+<span>团队提成</span>+<span>奖金</span>+<span>计件</span>+<span>任务绩效</span>
+                </div>-->
+              <div class="zcj_set_pay_fs" style="display: block;">
+				<hr class="hr_hr">
+                    <h2 class="cont_title">基本工资+绩效</h2>
+                    <div class="t_textinput hr_blrz_input" style="height: auto;">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>总工资数额</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_96 lik_input_number zcj_blrz_zgzi_ze_znum_val" value="请输入工资总额" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            <i class="unit">元</i>
+                        </div>
+                    </div>
+                    <div class="t_textinput hr_blrz_input">
+                        <div class="t_left"><i class="c_r">*</i>基本工资</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_96 lik_input_number zcj_blrz_jbzi_znum_show" value="请输入基本工资" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            <i class="unit">元</i>
+                        </div>
+                    </div>
+                    <div class="t_textinput hr_blrz_input" style="height: auto;">
+                        <div class="t_left"><i class="c_r">*</i>绩效工资</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_96 lik_input_number zcj_blrz_jxzi_se_show" value="0" disabled="disabled" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            <i class="unit">元</i>
+
+                            </div>
+                        </div>
+							<div class="t_textinput hr_blrz_input">
+                                <label style="display: block;font-size: 14px;">
+                                    <input type="checkbox" class="hr_checkbox3 zcj_is_for_kq_sygz" style="margin-right: 6px;"/>是否开启试用期工资
+                                </label>
+                    </div>
+
+                    <div class="t_textinput hr_blrz_input">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>试用期工资</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_96 lik_input_number check_sygz_yes zcj_jbgz_bl_val_sr" disabled="disabled" value="请输入基本工资比例" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+								<!--<input type="text" class="time_input inp_96 check_sygz_no inp_noInput" readonly="readonly">-->
+                            <i class="unit">%</i>
+                        </div>
+                    </div>
+                  <div class="t_textinput hr_blrz_input" style="width: 60%;">
+                      <div class="t_left t_left_conrow" style="width: 18%;"><i class="c_r">*</i>试用期时间</div>
+                      <div class="t_right" style="margin-left: 25%;">
+                          <div class="t_textinput left" style="width: 42%; z-index: 1;">
+                          <div class="t_left" style="width: 43%; z-index: 1;"><i class="c_r v_hidden">*</i>开始时间</div>
+                          <div class="t_right" style="width:100%; margin-left: 54%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp zcj_syq_start_time" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(hr_sdgz_start)" id="hr_sdgz_start">
+                          </div>
+                          </div>
+                          <div class="t_textinput right" style="width: 22%; z-index: 2;">
+                          <div class="t_left" style="width: 100%; z-index: 1;"><i class="c_r v_hidden">*</i>结束时间</div>
+                          <div class="t_right" style="width: 202%; margin-left: 118%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp zcj_syq_end_time" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(hr_sdgz_end)" id="hr_sdgz_end">
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                 <!--&lt;!&ndash; <div class="t_textinput hr_blrz_input">&ndash;&gt;-->
+                  <!--<div class="t_left t_left_conrow" style="line-height: 28px"><i class="c_r">*</i>试用期时间</div>-->
+                      <!--<div class="dialog_text sbar" style="padding: 0px;margin: 0px">-->
+
+                          <!--<div class="t_textinput left" style="width: 42%; z-index: 1;">-->
+                              <!--<div class="t_left" style="width: 25%; z-index: 1;"><i class="c_r v_hidden">*</i>开始时间</div>-->
+                              <!--<div class="t_right" style="width: 75%; margin-left: 25%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp zcj_syq_start_time" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(hr_sdgz_start)" id="hr_sdgz_start">-->
+                              <!--</div>-->
+                          <!--</div>-->
+                          <!--<div class="t_textinput right" style="width: 42%; z-index: 2;">-->
+                              <!--<div class="t_left" style="width: 25%; z-index: 1;"><i class="c_r v_hidden">*</i>结束时间</div>-->
+                              <!--<div class="t_right" style="width: 75%; margin-left: 25%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp zcj_syq_end_time" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(hr_sdgz_end)" id="hr_sdgz_end">-->
+                              <!--</div>-->
+                          <!--</div>-->
+                      <!--</div>-->
+                 <!--&lt;!&ndash; </div>&ndash;&gt;-->
+                    <div class="t_textinput hr_blrz_input" >
+                         <label>
+                        <span>试用期工资：</span><span class="zcj_sygz_shu_e">0</span>元
+						 </label>
+                    </div>
+                </div>
+               <div class="zcj_set_pay_fs zcj_set_tc_list_data_show" style="display: none;">
+				 <hr class="hr_hr">
+                    <h2 class="cont_title">个人提成</h2>
+                    <div class="t_textinput hr_blrz_input">
+                      <div class="t_left"><i class="c_r"></i>任务总额</div>
+                        <div class="t_right">
+						<input type="text" class="time_input inp_96 zcj_ygrz_tc_srze_num" value="请输入工资总额(元为单位)" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+						<i class="unit">元</i>
+						</div>
+                     </div>
+                     <div class="t_textinput">
+                         <div class="t_left t_left_conrow" style="width: 12%;"><i class="c_r v_hidden">*</i>选择个人提成</div>
+                         <div class="t_right" style="margin-left: 16%;">
+                             <div class="inline_block select_mormal select_100">
+                             <input type="text" class="select_input zcj_ygrz_xztc_name_show" value="请选择提成"/>
+                             <i></i>
+                              <ul class="select_list zcj_select_tc_list_sj">
+                                <!-- <li>提成1</li>-->
+                             </ul>
+                            </div>
+                         </div>
+                     </div>
+                   <div class="hr_label">
+                       <p><span style="margin-right: 23px;">任务周期</span><span class="zj_gr_an_year">按年度</span></p>
+                       <p><span>任务核算方式</span><span class="zj_gr_an_profit">按流水</span></p>
+                       <p><span>提成结算方式</span><span class="zj_gr_an_quarter">按年度</span></p>
+                   </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="font-weight: 600;"><i class="c_r v_hidden">*</i>提成比例</div>
+                    </div>
+                    <div style="overflow: hidden;">
+                        <div class="t_textinput hr_blrz_tc left">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例1：</div>
+                            <div class="t_right">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left work_t_left c_6"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right" style="width: 90%;">
+                                        <div class="t_textinput inline_block left" style="width: 28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tc1_start_data_num" readonly="true" value=""/>
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block" style="width: 28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj__tc1_end_data_num" readonly="true" value=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc_bfb right">
+                            <div class="t_left c_6"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right">
+                                <input type="text" class="time_input inp_noInput c_3 zcj_tc1_tcbfb_data_num" value="" readonly="true"/></div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc left">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例2：</div>
+                            <div class="t_right clearfix">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left work_t_left c_6"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right" style="width: 90%;">
+                                        <div class="t_textinput inline_block left" style="width: 28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tc2_start_data_num" readonly="true" value=""/>
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block" style="width: 28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj__tc2_end_data_num" value="" readonly="true"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc_bfb right">
+                            <div class="t_left c_6"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tc2_tcbfb_data_num" value="" readonly="true"/></div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc left">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例3：</div>
+                            <div class="t_right">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left c_6"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right" style="width: 90%;">
+                                        <div class="t_textinput inline_block left" style="width: 28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tc3_start_data_num" readonly="true" value=""/>
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block" style="width: 28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj__tc3_end_data_num" value="" readonly="true"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc_bfb right">
+                            <div class="t_left c_6"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tc3_tcbfb_data_num" value="" readonly="true"/></div>
+                        </div>
+                    </div>
+                   <div>
+                       <div class="t_textinput">
+                           <div class="t_left" style="font-weight: 600;"><i class="c_r v_hidden">*</i>超额完成比例</div>
+                       </div>
+                       <div class="t_textinput hr_blrz_tc_bfb right">
+                           <div class="t_left c_6"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                           <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_grtc4_tcbfb_data_num" value="" readonly="true"/></div>
+                       </div>
+                       <div class="t_textinput hr_blrz_tc left">
+                           <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例4：</div>
+                           <div class="t_right">
+                               <div class="t_textinput hr_setgz_sjBox">
+                                   <div class="t_left c_6"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                   <div class="t_right" style="width: 90%;">
+                                       <div class="t_textinput inline_block left" style="width: 28%">
+                                           <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_grtc4_start_data_num" readonly="true" value=""/>
+                                           </div>
+                                       </div>
+                                       <span class="inline_block left hr_setgz_line">-</span>
+                                       <div class="t_textinput inline_block" style="width: 28%">
+                                           <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_grtc4_end_data_num" value="" readonly="true"/>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   </div>
+
+
+
+                    <!--<div class="t_textinput" style="height: 50px;">-->
+                    <!--<div class="c_3" style="font-weight: 600;margin-left: -6px;"><i class="c_r v_hidden">*</i>回款核算方式</div>-->
+                    <!--<p class="c_6" style="margin-left:0;top:30px;">超出周期扣除提成金额比例</p>-->
+                    <!--</div>-->
+                <!--<div style="overflow: hidden;">-->
+                    <!--<div class="t_textinput hr_setgz_hkhsfs">-->
+                        <!--<div class="t_textinput inline_block left" style="width: 16%">-->
+                            <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" readonly="true" value="1天">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<span class="inline_block left hr_setgz_line">-</span>-->
+                        <!--<div class="t_textinput inline_block" style="width: 16%">-->
+                            <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="-1%" readonly="true">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="t_textinput hr_setgz_hkhsfs">-->
+                        <!--<div class="t_textinput inline_block left" style="width: 16%;">-->
+                            <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" readonly="true" value="2天">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<span class="inline_block left hr_setgz_line">-</span>-->
+
+     <!--<div class="t_textinput inline_block" style="width: 16%;">-->
+                            <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="-3%" readonly="true"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+               <!--</div>-->
+                <!--团队提成-->
+                <div class="zcj_set_pay_fs zcj_set_tdtc_list_data_show" style="display: none;">
+                    <hr class="hr_hr">
+                    <h2 class="cont_title">团队提成</h2>
+                    <div class="t_textinput hr_blrz_input">
+                        <div class="t_left"><i class="c_r">*</i>任务总额</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_96 zcj_blrz_tdtc_rw_znum" value="请输入工资总额(元为单位)" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            <i class="unit">元</i>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="width: 12%;"><i class="c_r v_hidden">*</i>选择提成</div>
+                        <div class="t_right" style="margin-left: 12%;">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input zcj_ygrz_tdtc_name_show" value="请选择提成"/>
+                                <i></i>
+                                <ul class="select_list zcj_tdtc_list_select_data">
+                                    <!--<li>销售A组</li>
+                                    <li>销售B组</li>
+                                    <li>销售C组</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--三个label-->
+                    <div class="hr_label">
+                        <p><span style="margin-right: 23px;">任务周期</span><span class="zj_an_year">按年度</span></p>
+                        <p><span>任务核算方式</span><span class="zj_an_profit">按流水</span></p>
+                        <p><span>提成结算方式</span><span class="zj_an_quarter">按年度</span></p>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="font-weight: 600;"><i class="c_r v_hidden">*</i>提成比例</div>
+                    </div>
+                    <!--<div class="t_textinput">-->
+                        <!--<div class="t_right hr_setgz_hsfs" style="margin-left:0;width: 100%;">-->
+                            <!--<button class="but_mix1 but_hr" style="margin: 0 5px 0 0;"><span class="c_3">按年度</span></button><button class="but_mix1 but_hr" style="margin: 0 5px;"><span class="c_3">按利润</span></button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div style="overflow: hidden;">
+                        <div class="t_textinput hr_blrz_tc left">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例1：</div>
+                            <div class="t_right">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left work_t_left c_6"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right" style="width: 90%;">
+                                        <div class="t_textinput inline_block left" style="width:28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc1_begin_num_val" readonly="true" value="">
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block" style="width:28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc1_end_num_val" value="" readonly="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc_bfb right">
+                            <div class="t_left c_6"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc1_percent_num_val" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc left">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例2：</div>
+                            <div class="t_right clearfix">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left work_t_left c_6"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right" style="width: 90%;">
+                                        <div class="t_textinput inline_block left" style="width:28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc2_begin_num_val" readonly="true" value="">
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block" style="width:28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc2_end_num_val" value="" readonly="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc_bfb right">
+                            <div class="t_left c_6"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc2_percent_num_val" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc left">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例3：</div>
+                            <div class="t_right">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left c_6"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right" style="width: 90%;">
+                                        <div class="t_textinput inline_block left" style="width:28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc3_begin_num_val" readonly="true" value="">
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block" style="width:28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc3_end_num_val" value="" readonly="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc_bfb right">
+                            <div class="t_left c_6"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc3_percent_num_val" value="" readonly="true"></div>
+                        </div>
+                    </div>
+                    <!--<div style="overflow: hidden;">-->
+                        <!--<div class="t_textinput hr_setgz_hkhsfs">-->
+                            <!--<div class="t_textinput inline_block left" style="width: 16%">-->
+                                <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" readonly="true" value="1天">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<span class="inline_block left hr_setgz_line">-</span>-->
+                            <!--<div class="t_textinput inline_block" style="width: 16%">-->
+                                <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="-1%" readonly="true">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="t_textinput hr_setgz_hkhsfs">-->
+                            <!--<div class="t_textinput inline_block left" style="width: 16%;">-->
+                                <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" readonly="true" value="2天">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<span class="inline_block left hr_setgz_line">-</span>-->
+                            <!--<div class="t_textinput inline_block" style="width:16%;">-->
+                                <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="-3%" readonly="true"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div>
+                        <div class="t_textinput">
+                            <div class="t_left" style="font-weight: 600;"><i class="c_r v_hidden">*</i>超额完成比例</div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc_bfb right">
+                            <div class="t_left c_6"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc4_tcbfb_data_num" value="" readonly="true"/></div>
+                        </div>
+                        <div class="t_textinput hr_blrz_tc left">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例4：</div>
+                            <div class="t_right">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left c_6"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right" style="width: 90%;">
+                                        <div class="t_textinput inline_block left" style="width: 28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc4_start_data_num" readonly="true" value=""/>
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block" style="width: 28%">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_tdtc4_end_data_num" value="" readonly="true"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--奖金-->
+               <div class="zcj_set_pay_fs zcj_bonuslist_data_show" style="display: none;">
+                   <hr class="hr_hr">
+                    <h2 class="cont_title">奖金</h2>
+                    <div class="t_textinput hr_blrz_input" style="height: auto;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>奖金</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_96 inp_noInput zcj_jj_price_num_show" value="" readonly="readonly"><i class="unit">元</i>
+                            <div style="margin: 6px 0;">
+                               <!-- <button class="but_mix1 but_hr" style="margin: 0 5px 0 0;"><span class="c_r">全勤</span></button><button class="but_mix1 but_hr" style="margin: 0 5px;"><span class="c_r">完成所有任务</span></button>-->
+							<label style="margin-right: 10px;">
+                                <!--<input type="checkbox" class="zcj_jj_is_all_qq" value=""/>--><span>全勤</span>
+                            </label>
+                            <label for="">
+                                <!--<input type="checkbox" class="zcj_accom_all_task" value=""/>--><span>完成所有任务</span>
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="zcj_set_pay_fs zcj_xzjj_set_data_list" style="display: none;">
+				<hr class="hr_hr">
+                    <h2 class="cont_title">计件</h2>
+                    <p class="c_6 m_bottom_10">针对配置商品备货时间计件</p>
+                    <div class="t_textinput hr_blrz_input">
+                        <div class="t_left"><i class="c_r">*</i>选择计件</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input zcj_blrz_jj_xz_jq_val" value="请选择">
+                                <i></i>
+                                <ul class="select_list zcj_jj_data_list_name_show" style="display: none;">
+                                    <!--<li>库房装机</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput hr_blrz_input" style="height: 50px;">
+                        <div class="t_left"><i class="c_r">*</i>计件金额</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput inp_96 zcj_jj_price_number_show" value="请选择" readonly="readonly">
+                            <i class="unit">元</i>
+							 <p class="c_9">60分钟内完成</p>
+                            <!--<p class="input_tishi" style="margin-left:0;top:30px;">关联后则表示此借入单借入的商品</p>-->
+                            <!--<div style="margin: 6px -5px;">
+                                <label><button class="but_mix1 but_hr"><span class="c_r">60分钟内完成</span></button></label>
+                            </div>-->
+                         </div>
+                    </div>
+                </div>
+                <div class="zcj_set_pay_fs zcj_rw_jx_list_show" style="display: none;">
+				  <hr class="hr_hr">
+                     <h2 class="cont_title">任务绩效</h2>
+                     <p class="c_6 m_bottom_10">接到任务未按时完成的情况下会扣除绩效工资</p>
+                     <div class="t_textinput hr_blrz_input">
+                          <div class="t_left" style="width: 32%;"><i class="c_r v_hidden">*</i>任务薪资1名称</div>
+                         <div class="t_right" style="margin-left: 38%;">
+                             <div class="inline_block select_mormal select_100">
+                                 <input type="text" class="select_input zcj_blrz_rwjx_xz_jq_val" value="请选择">
+                                 <i></i>
+                                 <ul class="select_list zcj_rwjx_list_data_show" style="display: none;">
+                                     <!--<li>库房装机</li>-->
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="t_textinput hr_blrz_input">
+                         <div class="t_left" style="width: 33%;"><i class="c_r v_hidden">*</i>未完成扣除金额</div>
+                         <div class="t_right clearfix" style="margin-left: 32%;">
+                             <div class="t_textinput inline_block left" style="width: 30%">
+                                 <div class="t_right">
+                                     <input type="text" class="time_input c_3 inp_noInput zcj_rwjx_no_wc_num" value="" readonly="readonly"/>
+                                 </div>
+									<i class="unit" style="right: 132px;">次</i>
+                             </div>
+                             <div class="t_textinput inline_block" style="width: 49%;margin-left: 10px;">
+                                 <div class="t_right">
+                                     <input type="text" class="time_input c_3 t_right_je inp_noInput zcj_rwjx_no_wc_price" value="" readonly="readonly"/>
+                                 </div>
+                             </div>
+                             <i class="unit" style="right: 15px;">元</i>
+                         </div>
+                     </div>
+                  </div>
+            </div>
+
+             <div class="dialog_submit" style="z-index:1;">
+                <input type="hidden" id="zcj_set_gz_wc_end_id" value=""><button class="but_blue but_small zcj_blrz_sdgz_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗-选择提成部门-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_blrz_xztcbm">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择提成部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexit zcj_xzset_select_bm_list_tree"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_xz_set_select_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 右侧弹窗-查看信息 -->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar hr_Sideslip" style="display: none" name="hr_blrz_ck">
+    <div class="Sideslip-btn"><span class="slider_close hr_slider_close"></span></div>
+    <div class="Sideslip-head hr_emploeelist_Sideslip-head">
+
+        <div class="sides-img">
+            <span><img src="" style="width: 80px;height: 80px;border-radius: 50%;"></span>
+            <p class="msg-name zj_yg_rzhi_name" style="margin-top: 14px;"> </p>
+            <p class="msg-status" style="margin-top: 4px;">(已办理)</p>
+        </div>
+    </div>
+    <!-- 基本信息 -->
+    <div class="sbar d-r-t j-bx-b">
+        <div class="d-r-t-h zcj_yg_rz_bl_info_show">
+            <h3 class="cont_title inline_block p_left_10" style="margin-left: -1em;">基本信息</h3>
+            <p class="l-s-x">入职时间：<span> </span></p>
+            <p class="l-s-x">入职培训：<span> </span></p>
+            <p class="l-s-x">设定工资：<span> </span></p>
+            <p class="l-s-x">设定社保：<span> </span></p>
+            <p class="l-s-x">公司福利：<span> </span></p>
+        </div>
+        <!--如有需要可以使用
+        <div class="d-r-t-h">
+            <h3 class="cont_title inline_block p_left_10" style="margin-left: -1em;">详细资料</h3>
+            <p class="l-s-x">毕业日期：<span>2012-07</span></p>
+            <p class="l-s-x">入职日期：<span>2014-05</span></p>
+            <p class="l-s-x">民族：<span>满族</span></p>
+            <p class="l-s-x">籍贯：<span>北京市朝阳区速度放缓速度放缓</span></p>
+            <p class="l-s-x">身份证号：<span>201315198805052456</span></p>
+            <p class="l-s-x">生日：<span>1988-05-05</span></p>
+            <p class="l-s-x">婚姻状况：<span>未婚</span></p>
+            <p class="l-s-x">家庭住址：<span>山东各地房管局</span></p>
+            <p class="l-s-x">紧急联系人：<span>李四</span></p>
+        </div>-->
+    </div>
+    <div class="pra-4-cent newpra-4-cent">
+        <div class="alertBtn-te">
+            <button class="inline_block but_exit zj_check_edit_info_btn" name="">编辑</button>
+        </div>
+    </div>
+</div>
+
+<!--选择负责人-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_xzfzr">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择负责人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con list_box_uldx">
+                        <div class="left_nav">
+                            <ul class="list_box_level zcj_list_people"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_blrz_xz_qr_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--编辑入职培训弹窗-->
+    <!--编辑入职培训弹窗-->
+    <div class="dialog">
+        <div class="dialog_box" name="hr_blrz_bjbjrzpx">
+            <div class="dialog_screen"></div>
+            <div class="dialog_content dialog_content_3" style="width: 540px;height: 348px;">
+                <div class="dialog_title"><i class="dialog_close">关闭</i>
+                    <h3 class="dialog_h3">编辑入职培训</h3></div>
+                <div class="dialog_text" style="padding:20px 40px;height: 50%;">
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>培训名称</div>
+                        <div class="t_right">
+                            <input type="text" class="c_3 time_input zcj_bj_xg_bm_name" value="请输入部门名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>负责人</div>
+                        <div class="t_right">
+                            <input type="hidden" id="zcj_blrzhi_fzr_id" value=""><input type="text" class="c_3 time_input zcj_blrz_fzr_val_show" value="请选择负责人" onfocus="fn_focus(this);" onblur="fn_blur(this);" readonly="readonly"/>
+                            <span class="inp_addBtn val_dialogTop zcj_add_person" name="hr_blrz_xzfzr"><b style="font-weight: 900;">+</b>选择负责人</span>
+                        </div>
+                    </div>
+                    <div class="t_textinput t_textarea">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>培训内容</div>
+                        <div class="t_right"><textarea class="c_3 txt_normal zcj_px_nr_show_wb" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">请输入备注</textarea></div>
+                    </div>
+                </div>
+                <div class="dialog_submit">
+                    <button class="but_blue but_small zcj_blrz_bj_end_qr_btn">确定</button><button class="but_cancel but_small">取消</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<!--弹窗-编辑公司福利餐补-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_cbgzbzExit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑公司福利</h3>
+            </div>
+            <div class="dialog_text" style="padding: 20px 38px 0 26px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left "><i class="c_r v_hidden">*</i>福利类别</div>
+                    <div class="t_right" style="margin-left: 17%;">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="c_3 time_input zcj_blrz_bj_cb_val" value="请输入福利类别" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>金额</div>
+                    <div class="t_right" style="margin-left: 17%;"><input type="text" class="c_3 time_input zcj_blrz_bj_jezs_val" value="请输入金额" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue zcj_blrz_bj_qd_end_btn">确定</button><button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-编辑公司福利车补-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_chebgzbzExit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑公司福利</h3>
+            </div>
+            <div class="dialog_text" style="padding: 20px 38px 0 26px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>福利类别</div>
+                    <div class="t_right" style="margin-left: 17%;">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="time_input" value="交通补贴" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="t_textinput t_textarea" style="height:40px">-->
+                <!--<div class="t_left"><i class="c_r v_hidden">*</i>福利类别</div>-->
+                <!--<div class="t_right" style="margin-left: 17%;">-->
+                <!--<input type="text" class="time_input" value="餐补" onfocus="fn_focus(this);" onblur="fn_blur(this);">-->
+                <!--<i></i>-->
+                <!--<ul class="select_list" style="display: none;">-->
+                <!--<li>男</li>-->
+                <!--<li>女</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>金额</div>
+                    <div class="t_right" style="margin-left: 17%;"><input type="text" class="time_input" value="100元" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue">确定</button><button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-编辑公司福利住房补贴-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_blrz_zfbgzbzExit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑公司福利</h3>
+            </div>
+            <div class="dialog_text" style="padding: 20px 38px 0 26px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>福利类别</div>
+                    <div class="t_right" style="margin-left: 17%;">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="time_input" value="住房补贴" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>金额</div>
+                    <div class="t_right" style="margin-left: 17%;"><input type="text" class="time_input" value="100元" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue">确定</button><button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    //缴纳社保
+    $(".tanceng .hr_checkbox1").live("click",function(){
+        if($(".hr_checkbox1").is(':checked')){
+//            alert(1111);
+            $(".check_no").hide();
+            $(".check_yes").show();
+        }else{
+            $(".check_yes").hide();
+            $(".check_no").show();
+        }
+    });
+    //缴纳公积金
+    $(".tanceng .hr_checkbox2").live("click",function(){
+        if($(".hr_checkbox2").is(':checked')){
+    //            alert(1111);
+            $(".hr_check_no").hide();
+            $(".hr_check_yes").show();
+        }else{
+            $(".hr_check_yes").hide();
+            $(".hr_check_no").show();
+        }
+    });
+
+</script>
+<script>
+    //提成时间
+    var hr_sdgz_start = {
+        elem: '#hr_sdgz_start',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            hr_sdgz_end.min = datas; //开始日选好后，重置结束日的最小日期
+            hr_sdgz_end.start = datas; //将结束日的初始值设定为开始日
+            //console.log(datas)
+        }
+    };
+    var hr_sdgz_end = {
+        elem: '#hr_sdgz_end',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            hr_sdgz_start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+    };
+
+
+    //团队提成时间
+    var hr_sdgz_td_start = {
+        elem: '#hr_sdgz_td_start',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            hr_sdgz_td_end.min = datas; //开始日选好后，重置结束日的最小日期
+            hr_sdgz_td_end.start = datas; //将结束日的初始值设定为开始日
+            //console.log(datas)
+        }
+    };
+    var hr_sdgz_td_end = {
+        elem: '#hr_sdgz_td_end',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            hr_sdgz_td_start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+    };
+</script>
+<script>
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+</script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询序列号</title>
+    <link rel="stylesheet" href="static/goods/goods.css">
+</head>
+<body>
+<div class="finance_content">
+    <div class="contenthead con_header">
+        <h2>查询序列号 </h2>
+        <div class="right" style="width: 32px;text-indent:0;">
+            <div class="res goods_search_number_res" title="点击刷新"></div>
+        </div>
+    </div>
+    <div class="goods_search_number">
+        <div class="goods_search_number_box">
+            <!--查询盒子(最开始的时候：goods_search_number_box：height:22%;top:40%;bottom:60%;)-->
+            <div class="goods_search_number_box_up">查询SN码/序列号</div>
+            <!--查询SN码-->
+            <div class="t_textinput" style="padding: 0 50px;">
+                <div class="t_left">查询SN码</div>
+                <div class="t_right">
+                <input type="text" class="time_input sq_search_inp" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">
+                <span class="inp_addBtn" style="right: -2px;"><button class="but_blue but_small goods_search_save val_dialog" name="goods_search_SN" style="padding: 4px 12px;">确定</button></span>
+                </div>
+            </div>
+            <!--查询序列号-->
+            <div class="t_textinput" style="padding: 0 50px;">
+                <div class="t_left">查询序列号</div>
+                <div class="t_right">
+                <input type="text" class="time_input sq_search_inp_two" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">
+                <span class="inp_addBtn" style="right: -2px;"><button class="but_blue but_small goods_search_save_two val_dialog" name="goods_search_num" style="padding: 4px 12px;">确定</button></span>
+            </div>
+            </div>
+            <!--&lt;!&ndash;无结果盒子(无结果的时候：goods_search_number_box：height:45%;top:0;bottom:0;)&ndash;&gt;-->
+            <!--<div class="goods_search_content_no none">-->
+                <!--<div class="goods_search_content_a">SN码/序列号</div>-->
+                <!--<div class="goods_search_content_b goods_search_content_bb none"><span class="c_3 goods_search_content_num"></span></div>-->
+                <!--<div class="goods_search_content_b goods_search_content_bc none"><span class="c_3 goods_search_content_num_two"></span></div>-->
+                <!--<div class="goods_search_content_c none">无结果</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;有结果盒子(有结果的时候：goods_search_number_box：height:92%;top:0;bottom:0;goods_search_content_yes:overflow-y: scroll;height: 77%;)&ndash;&gt;-->
+
+        </div>
+    </div>
+</div>
+
+<!--SN码-->
+<div class="dialog">
+    <div class="dialog_box " name="goods_search_SN">
+        <div class="dialog_screen"></div>
+        <div class="goods_dialog_content">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">查询SN码</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 90%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">查询SN码</h2>
+                    <div class="goods_search_content_yes sbar">
+                        <div class="goods_search_content_a">SN码</div>
+                        <div class="goods_search_content_b goods_search_content_bb"><span class="c_3 goods_search_content_num"></span></div>
+                        <div class="goods_search_content_d">
+                            <!--信息盒子-->
+                            <div class="goods_search_content_goods">
+                                <!--商品信息-->
+                                <div class="goods_search_content_goods_a">商品信息</div>
+                                <div class="goods_search_content_goods_b">
+                                    <p class="l-s-x c_3">商品编号：<span class="productInfo_code_sn"></span></p>
+                                    <p class="l-s-x c_3">商品名称：<span class="productInfo_product_name"></span></p>
+                                    <p class="l-s-x c_3">计算单位：<span class="productInfo_unit_name"></span></p>
+                                    <p class="l-s-x c_3">属性：<span class="productInfo_attr_name"></span></p>
+                                </div>
+                                <!--关联整机信息-->
+                                <div class="goods_search_content_goods_a">关联整机信息</div>
+                                <div class="goods_search_content_goods_b">
+                                    <p class="l-s-x c_3">商品编号：<span class="settingInfo_code_sn"></span></p>
+                                    <p class="l-s-x c_3">商品名称：<span class="settingInfo_product_name"></span></p>
+                                    <p class="l-s-x c_3">计算单位：<span class="settingInfo_unit_name"></span></p>
+                                    <p class="l-s-x c_3">属性：<span class="settingInfo_attr_name"></span></p>
+                                    <p class="l-s-x c_3">SN码：<span class="goods_search_color settingInfo_sn"></span></p>
+                                </div>
+                                <!--采购信息-->
+                                <div class="goods_search_content_goods_a">采购信息</div>
+                                <div class="goods_search_content_goods_b">
+                                    <p class="l-s-x c_3">采购订单编号：<span class="purchaseInfo_purchase_sn"></span></p>
+                                    <p class="l-s-x c_3">采购日期：<span class="purchaseInfo_purchase_time"></span></p>
+                                    <p class="l-s-x c_3">供应商名称：<span class="purchaseInfo_purchase_name"></span></p>
+                                </div>
+                                <!--入库信息-->
+                                <div class="goods_search_content_goods_a">入库信息</div>
+                                <div class="goods_search_content_goods_b" style="border-bottom: none;">
+                                    <p class="l-s-x c_3">入库时间：<span class="inputInfo_input_time"></span></p>
+                                    <p class="l-s-x c_3">入库人：<span class="inputInfo_input_name"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_blue">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--序列号-->
+<div class="dialog">
+    <div class="dialog_box " name="goods_search_num">
+        <div class="dialog_screen"></div>
+        <div class="goods_dialog_content">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">查询序列号</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 90%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">查询序列号</h2>
+                    <div class="goods_search_content_yes sbar">
+                        <div class="goods_search_content_a">序列号</div>
+                        <div class="goods_search_content_b goods_search_content_bc"><span class="c_3 goods_search_content_num_two"></span></div>
+                        <div class="goods_search_content_d">
+                            <!--信息盒子-->
+                            <div class="goods_search_content_goods">
+                                <!--商品信息-->
+                                <div class="goods_search_content_goods_a">商品信息</div>
+                                <div class="goods_search_content_goods_b">
+                                    <p class="l-s-x c_3">商品编号：<span class="productInfo_code_sn"></span></p>
+                                    <p class="l-s-x c_3">商品名称：<span class="productInfo_product_name"></span></p>
+                                    <p class="l-s-x c_3">计算单位：<span class="productInfo_unit_name"></span></p>
+                                    <p class="l-s-x c_3">属性：<span class="productInfo_attr_name"></span></p>
+                                </div>
+                                <!--关联整机信息-->
+                                <div class="goods_search_content_goods_a">关联整机信息</div>
+                                <div class="goods_search_content_goods_b">
+                                    <p class="l-s-x c_3">商品编号：<span class="settingInfo_code_sn"></span></p>
+                                    <p class="l-s-x c_3">商品名称：<span class="settingInfo_product_name"></span></p>
+                                    <p class="l-s-x c_3">计算单位：<span class="settingInfo_unit_name"></span></p>
+                                    <p class="l-s-x c_3">属性：<span class="settingInfo_attr_name"></span></p>
+                                    <p class="l-s-x c_3">SN码：<span class="goods_search_color settingInfo_sn"></span></p>
+                                </div>
+                                <!--采购信息-->
+                                <div class="goods_search_content_goods_a">采购信息</div>
+                                <div class="goods_search_content_goods_b">
+                                    <p class="l-s-x c_3">采购订单编号：<span class="purchaseInfo_purchase_sn"></span></p>
+                                    <p class="l-s-x c_3">采购日期：<span class="purchaseInfo_purchase_time"></span></p>
+                                    <p class="l-s-x c_3">供应商名称：<span class="purchaseInfo_purchase_name"></span></p>
+                                </div>
+                                <!--入库信息-->
+                                <div class="goods_search_content_goods_a">入库信息</div>
+                                <div class="goods_search_content_goods_b" style="border-bottom: none;">
+                                    <p class="l-s-x c_3">入库时间：<span class="inputInfo_input_time"></span></p>
+                                    <p class="l-s-x c_3">入库人：<span class="inputInfo_input_name"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_blue">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    function check(str) {
+        var temp = ""
+        for(var i = 0; i < str.length; i++)
+            if(str.charCodeAt(i) > 0 && str.charCodeAt(i) < 255)
+                temp += str.charAt(i)
+        return temp
+    }
+</script>
+<script src="static/goods/js/s_124.js"></script>
+</html>

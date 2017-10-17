@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品-商品价格</title>
+    <link rel="stylesheet" href="static/goods/goods.css">
+    <link rel="stylesheet" href="static/finance/css/finance.css">
+    <link rel="stylesheet" href="static/vendition/css/vend_client.css">
+</head>
+<style>
+    @media screen and (max-width: 1366px) {
+        .finance_con_right_head1 {
+            height: 90px;
+        }
+
+        .finance_cont_search1 {
+            display: block;
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            margin-top: -25px;
+            margin-left: 0 !important;
+        }
+    }
+
+    @media screen and (min-width: 1366px) and (max-width: 1640px) {
+        .finance_con_right_head1 {
+            height: 90px;
+        }
+
+        .finance_cont_search1 {
+            display: block;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            margin-top: -25px;
+            margin-left: 0 !important;
+        }
+    }
+</style>
+<body>
+<div class="finance_content">
+    <div class="contenthead con_header">
+        <h2>商品价格</h2>
+        <div class="right" style="text-indent: 0;">
+            <div class="res" title="点击刷新" id="goods_price_refresh_btn"></div>
+        </div>
+    </div>
+    <div class="sbar second-level hr_left_bjbm goods_left_list">
+        <!--商品-->
+        <div class="goods_left_box">
+            <!--<div class="goods_base_left_header">-->
+                <!--<div class="cont_search inline_block sp_base_search">-->
+                    <!--<input type="text" class="search_input pro_goods_price_cate_search_inp" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">-->
+                    <!--<ul class="inp_add_list sq_inp_add_list">-->
+                        <!--&lt;!&ndash;<li style="margin-top: 1px;">硬盘 <i></i></li>&ndash;&gt;-->
+                    <!--</ul>-->
+                    <!--<button class="search_but but_blue pro_goods_price_cate_search_btn">搜索</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="goods_base_left_middle">
+                <div class="Sideslip_list ht_slid_list">
+                    <ul class="pro_goods_price_cate_list_ul">
+                        <!--<li class="Sideslip_list_on">-->
+                            <!--<span>CPU（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>硬盘（3）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>内存（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>电源（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>RAID卡（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>网卡（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>GPU（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>显卡（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>机箱（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>光纤HBA卡（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<span>操作系统（0）</span>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--整机商品-->
+        <div class="package_goods_left_box none">
+            <!--<div class="goods_base_left_header">-->
+                <!--<div class="cont_search inline_block sp_base_search">-->
+                    <!--<input type="text" class="search_input pro_complete_price_cate_search_inp" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">-->
+                    <!--<ul class="inp_add_list sq_inp_add_list_complete">-->
+                        <!--&lt;!&ndash;<li style="margin-top: 1px;">硬盘 <i></i></li>&ndash;&gt;-->
+                    <!--</ul>-->
+                    <!--<button class="search_but but_blue pro_complete_goods_price_cate_search_btn">搜索</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="goods_base_left_middle">
+                <div class="Sideslip_list ht_slid_list">
+                    <ul class="pro_complete_goods_price_cate_list_ul">
+                        <!--<li class="Sideslip_list_on">-->
+                        <!--<span>CPU（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>硬盘（3）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>内存（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>电源（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>RAID卡（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>网卡（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>GPU（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>显卡（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>机箱（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>光纤HBA卡（0）</span>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<span>操作系统（0）</span>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sbar rightcontent goods_price_rightconten goods_right_list" style="padding-left:30px;padding-right: 20px">
+        <div class="work_tabSp inline_block" style="margin-top: 20px; z-index: 1;">
+            <ul class="tabtitle finance_account_tabtitle">
+                <li name="goods_price" class="taba tabhover">商品</li>
+                <li name="goods_price" class="taba">套餐商品</li>
+                <li name="goods_price" class="taba">整机商品</li>
+            </ul>
+        </div>
+        <!--商品价格-->
+        <div class="tabcontent" name="goods_price" style="padding: 0;">
+            <div style="overflow: hidden;">
+                <div class="con_right_head clearfix left" style="border:none;">
+                    <div class="cont_search inline_block sp_base_search">
+                        <input type="text" class="search_input pro_goods_price_list_search_inp" value="请输入关键字/商品编号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <button class="search_but but_blue pro_goods_price_list_search_btn">搜索</button>
+                    </div>
+                    <button class="but_cancel but_small inline_block zkgjssBtn" name="sp_basegsxx_zkgjss">展开高级搜索</button>
+                    <div  class="cont_search inline_block" style="margin-left:30px;width: inherit;">
+                        <input type="checkbox" class="pro_goods_price_noshow_invalid_checkbox" checked="checked"> 不显示停用商品
+                    </div>
+                </div>
+                <div class="right" style="margin-top:20px;">
+                    <div class="con_right_result right">
+                        <p class="left">搜索结果: <span class=" f_color pro_goods_price_search_num_total"></span>条</p>
+                            <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="takenote_jrd_xzckx"><i
+                                class="eyeIcon"></i>选择查看项</span>
+                    </div>
+                    <!--选择查看项-->
+                    <div class="t-z-list ckx_cont" name="takenote_jrd_xzckx" style="right:33px;line-height: 27px; top: 58px; display: none;">
+                        <i class="ckx_icon_right"></i>
+                        <ul class="sbar muban_addkey_list" id="goods_price_choose_look_ul" style="height: 200px;">
+                            <li class="l-li-b">
+                                <input type="checkbox">
+                                <p class="z-d-l">基本单位</p>
+                            </li>
+                            <li class="l-li-b">
+                                <input type="checkbox">
+                                <p class="z-d-l">最新采购价（元）</p>
+                            </li>
+                        </ul>
+                        <!--  -->
+                        <div class="bot-btn">
+                            <button class="but_small but_blue" id="goods_price_choose_look_save">保存</button>
+                            <button class="but_small but_cancal" id="goods_price_choose_look_reset">恢复默认</button>
+                        </div>
+                    </div>
+                    <div class="closeckx_cont" style="display: none;"></div>
+                </div>
+            </div>
+            <!--展开高级搜索-->
+            <div class="container zkgjss_cont zkgjss_content" name="sp_basegsxx_zkgjss">
+                <div class="lik_table_max_height">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td class="goods_attr_search_table">
+                                <div class="zkgjjss_value">
+                                    <div class="zkgjjss_value_left">商品属性</div>
+                                    <div class="zkgjjss_value_right">
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text" class="select_input block" id="ven_sell_quote_search_status_inp"
+                                                   value="属性">
+                                            <i></i>
+                                            <ul class="select_list" id="ven_sell_quote_search_status_ul">
+                                                <li>审批中</li>
+                                                <li>未通过</li>
+                                                <li>已通过</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="90" style="padding: 0; position:relative;">
+                                <span class="clear_search_btn xsht_cleargjss_btnxxl" thetype="1">清除选择</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="container lik_table_wrap">
+                <div class="table-container" style="margin-bottom:0;">
+                    <table class="goods_price_table">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <!--<th>商品编号</th>-->
+                            <!--<th>商品名称</th>-->
+                            <!--<th>基本单位</th>-->
+                            <th>属性</th>
+                            <th class="order">最新零售价（元）<i class="price_icon"></i></th>
+                            <th class="order">最新最低价（元）<i class="price_icon"></i></th>
+                            <th class="order pro_goods_price_new">最新成本价（元）<i class="price_icon"></i></th>
+                            <th class="order pro_goods_price_new">最新采购价（元）<i class="price_icon"></i></th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="pro_goods_price_list_tbody"></tbody>
+                        <!--<tbody>-->
+                            <!--<tr class="table_total pro_goods_price_list_table_total">-->
+                            <!--<td>合计</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td class="c_r pro_goods_retail_price_total">-->
+                                <!--0-->
+                            <!--</td>-->
+                            <!--<td class="c_r pro_goods_lower_price_total">-->
+                               <!--0-->
+                            <!--</td>-->
+                            <!--<td class="c_r pro_goods_lower_cost_total">-->
+                               <!--0-->
+                            <!--</td>-->
+                            <!--<td class="c_r pro_goods_status_price_total">-->
+                                <!--0-->
+                            <!--</td>-->
+                            <!--<td></td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <div class="no_data_box none pro_goods_price_list_nodata_box">
+                        <div class="no_data">
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>
+                </div>
+                <div class="handle pro_goods_price_list_handle">
+                    <div class="fenye_box pro_goods_price_list_page">
+                        <span>每页显示</span>
+                        <div class="inline_block select_mormal">
+                            <input type="text" class="select_input" value="10">
+                            <ul class="select_list select_list_to_top">
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                            </ul>
+                            <i></i>
+                        </div>
+                        <span>条数据</span>
+                        <div class="fenye_btn first_page_valid"><span></span></div>
+                        <div class="fenye_btn prev_page_valid"><span></span></div>
+                        <span class="page_box on">1</span>
+                        <span class="page_box">2</span>
+                        <span class="page_box">3</span>
+                        <span class="page_box">4</span>
+                        <div class="fenye_btn next_page_valid"><span></span></div>
+                        <div class="fenye_btn last_page_valid"><span></span></div>
+                        <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                        <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--套餐商品价格-->
+        <div class="tabcontent" name="goods_price" style="padding: 0;display: none;">
+            <div style="overflow: hidden;">
+                <div class="con_right_head clearfix left" style="border:none;">
+                    <div class="cont_search inline_block sp_base_search">
+                        <input type="text" class="search_input pro_package_price_list_search_inp" value="请输入关键字/套餐编号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <button class="search_but but_blue pro_package_price_list_search_btn">搜索</button>
+                    </div>
+                    <div  class="cont_search inline_block" style="margin-left:30px;width: inherit;">
+                        <input type="checkbox" class="pro_package_price_noshow_invalid_checkbox" checked="checked"> 不显示停用商品
+                    </div>
+                </div>
+                <div class="right" style="margin-top: 20px;">
+                    <div class="right con_right_result right">
+                        <p class="left">搜索结果: <span class=" f_color pro_package_price_list_num_total"></span>条</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container lik_table_wrap">
+                <div class="table-container" style="margin-bottom:0;">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>套餐商品编号</th>
+                            <th>套餐商品名称</th>
+                            <th class="cw_td" style="position: relative;">
+                                <p class="finance_khysqk1">原价<i class="b_b mark_gantan">!</i></p>
+                                <div class="work_vent_client_contMsgBox goods_tc_lr_div" style="padding-left: 8px; width: 113px !important;left: 13px;">
+                                    <i class="work_vent_client_torr" style="left: 36px;"></i>
+                                    <div class="work_vent_client_contMsgBoxDet">
+                                        <p>包含商品的零售总价</p>
+                                    </div>
+                                </div>
+                            </th>
+                            <th>最新套餐总价（元）</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="pro_package_price_list_tbody">
+                        <!--<tr>-->
+                            <!--<td>01</td>-->
+                            <!--<td>TC7987799</td>-->
+                            <!--<td>10月无税甩货</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1170.00</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新套餐总价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p>无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<button class="but_mix val_dialog but_exit" name="sp_pricetc_tj">调价</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td>02</td>-->
+                            <!--<td>TC7987799</td>-->
+                            <!--<td>10月无税甩货</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1170.00</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新套餐总价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p>无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<button class="but_mix val_dialog but_exit" name="sp_pricetc_tj">调价</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr class="grey">-->
+                            <!--<td>02</td>-->
+                            <!--<td>TC7987799</td>-->
+                            <!--<td>10月无税甩货</td>-->
+                            <!--<td>-->
+                                <!--<p>1170.00</p>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<button class="but_mix1 but_grey1">调价</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        </tbody>
+                        <!--<tbody>-->
+                        <!--<tr class="table_total pro_package_price_list_table_total">-->
+                            <!--<td>合计</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td class="c_r">-->
+                                <!--1000-->
+                            <!--</td>-->
+                            <!--<td></td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <div class="no_data_box none pro_package_price_list_nodata_box">
+                        <div class="no_data">
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>
+                </div>
+                <div class="handle pro_package_price_list_handle">
+                    <div class="fenye_box pro_package_price_list_page">
+                        <span>每页显示</span>
+                        <div class="inline_block select_mormal">
+                            <input type="text" class="select_input" value="10">
+                            <ul class="select_list select_list_to_top">
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                            </ul>
+                            <i></i>
+                        </div>
+                        <span>条数据</span>
+                        <div class="fenye_btn first_page_valid"><span></span></div>
+                        <div class="fenye_btn prev_page_valid"><span></span></div>
+                        <span class="page_box on">1</span>
+                        <span class="page_box">2</span>
+                        <span class="page_box">3</span>
+                        <span class="page_box">4</span>
+                        <div class="fenye_btn next_page_valid"><span></span></div>
+                        <div class="fenye_btn last_page_valid"><span></span></div>
+                        <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                        <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--整机商品价格-->
+        <div class="tabcontent" name="goods_price" style="padding: 0;display: none;">
+            <div style="overflow: hidden;">
+                <div class="con_right_head clearfix left" style="border:none;">
+                    <div class="cont_search inline_block sp_base_search">
+                        <input type="text" class="search_input pro_complete_price_list_search_inp" value="请输入整机商品名称/整机商品编号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <button class="search_but but_blue pro_complete_price_list_search_btn">搜索</button>
+                    </div>
+                    <div  class="cont_search inline_block" style="margin-left:30px;width: inherit;">
+                        <input type="checkbox" class="pro_complete_price_list_noshow_invalid_btn" checked="checked"> 不显示停用商品
+                    </div>
+                </div>
+                <div class="right" style="margin-top: 20px;">
+                    <div class="con_right_result right">
+                        <p class="left">搜索结果: <span class=" f_color pro_complete_price_search_num_total"></span>条</p>
+                            <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="takenote_jrd_xzckx"><i
+                                class="eyeIcon"></i>选择查看项</span>
+                    </div>
+                    <!--选择查看项-->
+                    <div class="t-z-list ckx_cont" name="takenote_jrd_xzckx" style="right:33px;line-height: 27px; top: 58px; display: none;">
+                        <i class="ckx_icon_right"></i>
+                        <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                        <ul class="sbar muban_addkey_list pro_complete_price_list_look_ul" style="height: 200px;">
+                            <li class="l-li-b">
+                                <input type="checkbox">
+                                <p class="z-d-l">基本单位</p>
+                            </li>
+                        </ul>
+                        <!--  -->
+                        <div class="bot-btn">
+                            <button class="but_small but_blue pro_complete_price_list_look_save">保存</button>
+                            <button class="but_small but_cancal pro_complete_price_list_look_reset">恢复默认</button>
+                        </div>
+
+                    </div>
+                    <div class="closeckx_cont" style="display: none;"></div>
+                </div>
+            </div>
+            <div class="container lik_table_wrap">
+                <div class="table-container" style="margin-bottom:0;">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <!--<th>整机商品编号</th>-->
+                            <th>整机商品名称</th>
+                            <!--<th>基本单位</th>-->
+                            <th>属性</th>
+                            <th class="order">最新零售价（元）<i class="price_icon"></i></th>
+                            <th class="order">最新最低价（元）<i class="price_icon"></i></th>
+                            <th class="order pro_goods_price_new">最新成本价（元）<i class="price_icon"></i></th>
+                            <th class="order pro_goods_price_new">最新采购价（元）<i class="price_icon"></i></th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="pro_complete_price_list_tbody">
+                        <!--<tr>-->
+                            <!--<td>01</td>-->
+                            <!--<td>ZJ46465313</td>-->
+                            <!--<td>R430-A</td>-->
+                            <!--<td>套</td>-->
+                            <!--<td>冷盘冷电/4背板</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新零售价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新最低价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新成本价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000.00</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;left:-90px;">-->
+                                    <!--<i class="sp_spsl_torr" style="left: 135px;"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新采购价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<button class="but_mix val_dialog but_exit" name="sp_price_zjtj">调价</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td>02</td>-->
+                            <!--<td>ZJ46465313</td>-->
+                            <!--<td>R430-A</td>-->
+                            <!--<td>套</td>-->
+                            <!--<td>冷盘冷电/4背板</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新零售价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新最低价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新成本价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000.00</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;left:-90px;">-->
+                                    <!--<i class="sp_spsl_torr" style="left: 135px;"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新采购价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<button class="but_mix val_dialog but_exit" name="sp_price_zjtj">调价</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td>03</td>-->
+                            <!--<td>ZJ46465313</td>-->
+                            <!--<td>R430-A</td>-->
+                            <!--<td>套</td>-->
+                            <!--<td>冷盘冷电/4背板</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新零售价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新最低价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;">-->
+                                    <!--<i class="sp_spsl_torr"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新成本价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                            <!--<p class="c_9">无税：1000.00</p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="sp_price_show">-->
+                                <!--<p class="f_color">1000.00</p>-->
+                                <!--<div class="sp_price_slvMsgBox sp_div_show" style="display: none;left:-90px;">-->
+                                    <!--<i class="sp_spsl_torr" style="left: 135px;"></i>-->
+                                    <!--<ul class="sp_price_MSGlist">-->
+                                        <!--<li>-->
+                                            <!--<p>最新采购价(元):</p>-->
+                                            <!--<p class="c_r">含税：1170.00<span class="c_9">（增值税17%，税额：170.00）</span></p>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<button class="but_mix val_dialog but_exit" name="sp_price_zjtj">调价</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--<tr class="grey">-->
+                            <!--<td>04</td>-->
+                            <!--<td>ZJ46465313</td>-->
+                            <!--<td>R430-A</td>-->
+                            <!--<td>套</td>-->
+                            <!--<td>冷盘冷电/4背板</td>-->
+                            <!--<td>-->
+                                <!--1000-->
+                            <!--</td>-->
+                            <!--<td>-->
+                               <!--1000-->
+
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--1000-->
+
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--1000-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<button class="but_mix1 but_grey1" name="">调价</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        </tbody>
+                        <!--<tbody class="pro_complete_price_list_table_total">-->
+                        <!--<tr class="table_total">-->
+                            <!--<td>合计</td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td></td>-->
+                            <!--<td class="c_r">-->
+                                <!--1100-->
+                            <!--</td>-->
+                            <!--<td class="c_r">-->
+                                <!--1000-->
+                            <!--</td>-->
+                            <!--<td class="c_r">-->
+                                <!--1000-->
+
+                            <!--</td>-->
+                            <!--<td class="c_r">-->
+                                <!--1000-->
+                            <!--</td>-->
+                            <!--<td></td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                    </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <div class="no_data_box none pro_complete_price_list_nodata_box">
+                        <div class="no_data">
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>
+                </div>
+                <div class="handle pro_complete_price_list_handle">
+                    <div class="fenye_box pro_complete_price_list_page">
+                        <span>每页显示</span>
+                        <div class="inline_block select_mormal">
+                            <input type="text" class="select_input" value="10">
+                            <ul class="select_list select_list_to_top">
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                            </ul>
+                            <i></i>
+                        </div>
+                        <span>条数据</span>
+                        <div class="fenye_btn first_page_valid"><span></span></div>
+                        <div class="fenye_btn prev_page_valid"><span></span></div>
+                        <span class="page_box on">1</span>
+                        <span class="page_box">2</span>
+                        <span class="page_box">3</span>
+                        <span class="page_box">4</span>
+                        <div class="fenye_btn next_page_valid"><span></span></div>
+                        <div class="fenye_btn last_page_valid"><span></span></div>
+                        <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                        <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                    </div>
+                <!--</div>-->
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--********商品价格********-->
+<!--弹窗-调价-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_price_tj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="height: 530px;width: 720px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">商品调价</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    调价人：<span style="margin-right: 10px;" class="pro_goods_price_list_detail_user_name">张三</span>
+                    调价日期：<span class="pro_goods_price_list_detail_created_at">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con">
+                    <h2 class="cont_title" style="border-left: none;"><span class="pro_goods_price_list_detail_name">硬盘</span>：<span class="c_3 pro_goods_price_list_attr_value" style="font-weight: 100;">日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</span></h2>
+                    <div class="l-s-x clearfix pro_goods_price_new" style="line-height: 30px;">
+                        <p class="left c_3">最新采购价格：</p>
+                        <p class="left c_r">含税价：<span class="pro_goods_price_list_purchase_price"></span><i class="c_9">（含税17%，税额 <span class="pro_goods_price_list_purchase_price_a"></span>元）</i></p>
+                    </div>
+                    <span class="c_9 sp_price_lsjg val_dialogTop pro_goods_price_list_history_product" style="line-height:30px;" name="sp_price_lscgj">历史采购价(元)<i class="b_b mark_gantan">!</i></span>
+                    <hr class="finance_sz_ysqk" style="width: 1200px;">
+                    <h2 class="cont_title" style="margin-top:20px;">销售价格</h2>
+                    <div class="l-s-x clearfix" style="line-height: 30px;">
+                        <p class="left c_3"><span style="margin-right:20px;">成本价(元)</span><input type="text" class="goods_inp_50 lik_input_number pro_goods_price_list_detail_cost_price" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" value="0"></p>
+                        <p class="left c_r">含税价（元）：<span class="pro_goods_price_list_detail_cost_price_a"></span><i class="c_9">（含增值税17%，税额：<span class="pro_goods_price_list_detail_cost_price_b"></span>元）</i></p>
+                    </div>
+                    <div class="l-s-x clearfix" style="line-height: 30px;">
+                        <p class="left c_3"><span style="margin-right:20px;">零售价(元)</span><input type="text" class="goods_inp_50 lik_input_number pro_goods_price_list_detail_retail_price" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" value="0"></p>
+                        <p class="left c_r">含税价（元）：<span class="pro_goods_price_list_detail_retail_price_a">550</span><i class="c_9">（含增值税17%，税额：<span class="pro_goods_price_list_detail_retail_price_b"></span>元）</i></p>
+                    </div>
+                    <div class="l-s-x clearfix" style="line-height: 30px;">
+                        <p class="left c_3"><span style="margin-right: 20px;">最低价(元)</span><input type="text" class="goods_inp_50 lik_input_number pro_goods_price_list_detail_lower_price" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" value="0"></p>
+                        <p class="left c_r">含税价（元）：<span class="pro_goods_price_list_detail_lower_price_a">530</span><i class="c_9">（含增值税17%，税额：<span class="pro_goods_price_list_detail_lower_price_b"></span>元）</i></p>
+                    </div>
+                    <span class="c_9 sp_price_lsjg val_dialogTop pro_history_adjust_price_btn" style="line-height:50px;" name="sp_price_lsxsj">历史调价(元)<i class="b_b mark_gantan">!</i></span>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_goods_price_list_detail_save">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-历史采购价-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_price_lscgj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1 page_50_goods_price_goods_price_log_modal" style="width: 700px;height:500px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3 ">历史采购价</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0 60px 30px;height: 83%;">
+              <!--   <div class="clearfix" style="margin:20px 0 10px;">
+                    <div class="t_textinput left" style="width:40%;">
+                        <div class="t_left" style="width: 26%;"><i class="c_r v_hidden">*</i>日期查询</div>
+                        <div class="t_right clearfix" style="width: 65%;margin-left: 35%;">
+                            <div class="inline_block select_mormal left select_100">
+                                <input type="text" class="select_input" value="选择日期" style="color: rgb(51, 51, 51);">
+                                <i></i>
+                                <ul class="select_list sbar" style="display: none;">
+                                    <li>全部时间</li>
+                                    <li class="val_dialogTop" name="xs_shd_chooseTime">自定义时间</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="pro_history_price_product_div">
+                    <!--<ul class="sp_lscg_list">-->
+                        <!--<li>-->
+                            <!--<p class="sp_lscg_p c_9">-->
+                                <!--采购日期：<span style="margin-right:25px;">2016-10-11</span>负责人：<span >张三</span>-->
+
+                            <!--</p>-->
+                            <!--<div class="clearfix">-->
+                                <!--<p class="left">采购价（元）：</p>-->
+                                <!--<p class="right c_r">含税价（元）：<span>500</span><i class="c_9">（含税17%，税额：85元）</i></p>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-筛选时间-->
+<div class="dialog">
+    <div class="dialog_box" name="xs_shd_chooseTime">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="height: 194px; width: 614px; padding: 0px; z-index: 2;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">自定义时间</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding-top: 12px; z-index: 2;">
+                <div class="t_textinput left" style="width: 45%; z-index: 1;">
+                    <div class="t_left" style="width: 25%; z-index: 1;"><i class="c_r v_hidden">*</i>开始时间</div>
+                    <div class="t_right" style="width: 75%; margin-left: 25%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(hr_gszd_start)" id="hr_gszd_start">
+
+                    </div>
+                </div>
+                <div class="t_textinput right" style="width: 45%; z-index: 2;">
+                    <div class="t_left" style="width: 25%; z-index: 1;"><i class="c_r v_hidden">*</i>结束时间</div>
+                    <div class="t_right" style="width: 75%; margin-left: 25%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(hr_gszd_end)" id="hr_gszd_end">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit" style="z-index: 3;">
+                <button class="but_blue but_small ven_after_order_look_record_zdysj_save">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-历史调价-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_price_lsxsj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle1">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">历史调价</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0 60px 30px;height: 85%;">
+                <!-- <div class="clearfix" style="margin:20px 0 10px;">
+                    <div class="t_textinput left" style="width:40%;">
+                        <div class="t_left" style="width: 26%;"><i class="c_r v_hidden">*</i>日期查询</div>
+                        <div class="t_right clearfix" style="width: 65%;margin-left: 35%;">
+                            <div class="inline_block select_mormal left select_100">
+                                <input type="text" class="select_input" value="选择日期" style="color: rgb(51, 51, 51);">
+                                <i></i>
+                                <ul class="select_list sbar" style="display: none;">
+                                    <li>全部时间</li>
+                                    <li class="val_dialog" name="xs_shd_chooseTime">自定义时间</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="pro_history_price_adjuest_div">
+                    <!--<ul class="sp_lscg_list ">-->
+                            <!--<p class="sp_lscg_p c_9" style="position: relative;">-->
+                                <!--经办人：<span style="margin-right:25px;">张三</span>采购日期：<span>2016-10-11</span>-->
+                                <!--<span class="box_open_btn" style="right: 13px;">收起 <i class="right icon_show" style="margin-top: 12px;"></i></span>-->
+                            <!--</p>-->
+                            <!--<li>-->
+                                <!--<div class="clearfix">-->
+                                    <!--<p class="left">成本价（元）</p>-->
+                                    <!--<p class="right">-->
+                                        <!--<span class="c_r goods_sp_m_r">含税价（元）：<span class="c_r">500.00</span></span>-->
+                                        <!--<span class="c_3 goods_sp_m_r">无税价（元）：<span class="c_3">415.00</span></span>-->
+                                        <!--<i class="c_9">（含税17%，税额：85元）</i>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="clearfix">-->
+                                    <!--<p class="left">零售价（元）</p>-->
+                                    <!--<p class="right">-->
+                                        <!--<span class="c_r goods_sp_m_r">含税价（元）：<span class="c_r">500.00</span></span>-->
+                                        <!--<span class="c_3 goods_sp_m_r">无税价（元）：<span class="c_3">415.00</span></span>-->
+                                        <!--<i class="c_9">（含税17%，税额：85元）</i>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="clearfix">-->
+                                    <!--<p class="left">最低价（元）</p>-->
+                                    <!--<p class="right">-->
+                                        <!--<span class="c_r goods_sp_m_r">含税价（元）：<span class="c_r">500.00</span></span>-->
+                                        <!--<span class="c_3 goods_sp_m_r">无税价（元）：<span class="c_3">415.00</span></span>-->
+                                        <!--<i class="c_9">（含税17%，税额：85元）</i>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--<ul class="sp_lscg_list ">-->
+                            <!--<p class="sp_lscg_p c_9" style="position: relative;">-->
+                                <!--经办人：<span style="margin-right:25px;">张三</span>采购日期：<span>2016-10-11</span>-->
+                                <!--<span class="box_open_btn" style="right: 13px;">收起 <i class="right icon_show" style="margin-top: 12px;"></i></span>-->
+                            <!--</p>-->
+                            <!--<li>-->
+                                <!--<div class="clearfix">-->
+                                    <!--<p class="left">成本价（元）</p>-->
+                                    <!--<p class="right">-->
+                                        <!--<span class="c_r goods_sp_m_r">含税价（元）：<span class="c_r">500.00</span></span>-->
+                                        <!--<span class="c_3 goods_sp_m_r">无税价（元）：<span class="c_3">415.00</span></span>-->
+                                        <!--<i class="c_9">（含税17%，税额：85元）</i>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="clearfix">-->
+                                    <!--<p class="left">零售价（元）</p>-->
+                                    <!--<p class="right">-->
+                                        <!--<span class="c_r goods_sp_m_r">含税价（元）：<span class="c_r">500.00</span></span>-->
+                                        <!--<span class="c_3 goods_sp_m_r">无税价（元）：<span class="c_3">415.00</span></span>-->
+                                        <!--<i class="c_9">（含税17%，税额：85元）</i>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="clearfix">-->
+                                    <!--<p class="left">最低价（元）</p>-->
+                                    <!--<p class="right">-->
+                                        <!--<span class="c_r goods_sp_m_r">含税价（元）：<span class="c_r">500.00</span></span>-->
+                                        <!--<span class="c_3 goods_sp_m_r">无税价（元）：<span class="c_3">415.00</span></span>-->
+                                        <!--<i class="c_9">（含税17%，税额：85元）</i>-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--*********套餐商品**********-->
+<!--弹窗-套餐调价-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_pricetc_tj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle1">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">套餐商品调价</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 88%;">
+                <div class="finance_three1 finance_khyfqp_sqtj1 goods_tc_div" style="border-top:none;">
+                        <div class="finance_khysqk_kuanxiang goods_tc_one" style="margin-top: -13px;">
+                            <p class="c_3 cw_td1 goods_tcsp_lr">利润测算<i class="b_b mark_gantan">!</i></p>
+                            <p class="finance_fontsize1 c_r v_hidden">9</p>
+                            <div class="work_vent_client_contMsgBox goods_tc_lr_div" style="width: 472px!important;padding-left: 8px;">
+                                <i class="work_vent_client_torr" style="left: 94px;"></i>
+                                <div class="work_vent_client_contMsgBoxDet">
+                                    <p><span class="c_3">盈利额：</span>（总商品单件 - 总成本价=为正） - <span class="c_3">亏损额：</span>（总商品单件 - 总成本价=为负）</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="c_3">套餐盈利额(元)</p>
+                            <p class="finance_fontsize1 c_r package_goods_addPrice">0</p>
+                        </div>
+                        <div class="finance_fontsize">
+                            <p>-</p>
+                            <p></p>
+                        </div>
+                        <div>
+                            <p class="c_3">套餐亏损额(元)</p>
+                            <p class="finance_fontsize1 c_r package_goods_subPrice">0</p>
+                        </div>
+                        <div class="finance_fontsize">
+                            <p>=</p>
+                            <p></p>
+                        </div>
+                        <div>
+                            <p class="c_3">推算金额(元)</p>
+                            <p class="finance_fontsize1 c_r package_goods_totalPrice">0</p>
+                        </div>
+                    </div>
+                <div class="dialog_text_con" style="margin-top: 25px;">
+                    <div class="takenote_bg clearfix">
+                        <div class="takenote_bj" style="overflow: hidden;">
+                            <p class="cont_title pro_package_goods_price_list_detail_name" style="float: left;margin-left: 0;"></p>
+                            <p class="cont_title goods_package_cont_title" style="border-left: 0;">
+                                <input type="checkbox" class="goods_package_checkbox">按零售价折扣率<input type="text" class="c_3 goods_package_text inp_noInput lik_input_number" readonly="readonly" value="0">%
+                            </p>
+                            <p class="c_9 goods_price_tj">
+                                调价日期：<span style="margin-right: 20px;" class="pro_package_goods_price_list_detail_created_at"></span>调价人：<span class="pro_package_goods_price_list_detail_user_name">张三</span>
+                            </p>
+                        </div>
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>商品名称</th>
+                                        <th>商品编号</th>
+                                        <th>属性</th>
+                                        <th>数量</th>
+                                        <th>商品单价（元）</th>
+                                        <th>总价（元）</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="package_goods_detail_tbody">
+                                    <!--<tr>-->
+                                        <!--<td>01</td>-->
+                                        <!--<td>硬盘</td>-->
+                                        <!--<td>SP11564654</td>-->
+                                        <!--<td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>-->
+                                        <!--<td>2块</td>-->
+                                        <!--<td class="xs_goods_box" style="position: relative;">                                                    <div class="xs_goods_big_box"><div class="inline_block select_100" style="color: rgb(51, 51, 51);"><input type="text" class="lik_input_number c_3 time_input xs_bjd_inp xs_xsbjd_inp_60 product_reference_price ven_sell_quote_goods_cost_one" value="30" style="color: rgb(153, 153, 153);margin-right: 10px;"></div><ul class="xs_goods_select select_list" style="padding-bottom: 5px;left: -2px;top: 44px;"><li>30(零售价)</li><li>40(最低价)</li><li>20(成本价)</li><div class="none"><div class="xs_goods_li_box"><p class="p1">上次报价：</p><p class="p2">0</p><i class="xs_goods_down_img xs_goods_down_img1 ven_warning_arrow_up" style="margin: -3px 8px; display: none;"></i><p></p></div></div></ul></div>-->
+                                        <!--</td>-->
+                                        <!--<td>1170.00</td>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<td>02</td>-->
+                                        <!--<td>内存</td>-->
+                                        <!--<td>SP4679872</td>-->
+                                        <!--<td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>-->
+                                        <!--<td>1条</td>-->
+                                        <!--<td>-->
+                                            <!--<div class="inline_block select_mormal select_50">-->
+                                                <!--<input type="text" class="select_input slider_head_More" value="现金">-->
+                                                <!--<ul class="select_list" style="width: 154px;left: -65px;">-->
+                                                    <!--<li>含税500.00（零售价）</li>-->
+                                                    <!--<li>含税500.00（最低价）</li>-->
+                                                    <!--<li>含税500.00（成本价）</li>-->
+                                                <!--</ul>-->
+                                            <!--</div>-->
+                                        <!--</td>-->
+                                        <!--<td>1170.00</td>-->
+                                    <!--</tr>-->
+                                    </tbody>
+                                    <tbody>
+                                    <tr class="table_total">
+                                        <td>合计</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="c_r pro_package_goods_price_list_detail_num"></td>
+                                        <td></td>
+                                        <td class="c_r pro_package_goods_price_list_detail_total_price"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="tn_bottom" style="min-height:60px;">
+                                <div class="tn1" style="line-height: 60px;">
+                                    <div class="left" style="margin-left: 20px;">
+                                        <span class="c_9 sp_price_lsjg val_dialogTop pro_history_adjust_price_package_btn" style="line-height:30px;" name="sp_price_lstctj">历史套餐调价(元)<i class="b_b mark_gantan">!</i></span>
+                                    </div>
+                                    <div class="right" style="margin-right: 20px;">
+                                        <span class="c_3" style="line-height:30px;margin-right: 30px;" name="sp_price_lscgj">原价（元）：<span class="c_r pro_package_goods_price_list_detail_total_old_price" style="text-decoration: line-through;text-decoration-color: #333;">0</span></span>
+                                        <span class="c_3" style="line-height:30px;" name="sp_price_lscgj">套餐总价（元）：<span class="c_r pro_package_goods_price_list_detail_total_price">0</span></span>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_price_package_save">保存</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-历史套餐调价-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_price_lstctj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle1">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">历史调价</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0 60px 30px;height: 88%;">
+                <!-- <div class="clearfix" style="margin:20px 0 10px;">
+                    <div class="t_textinput left" style="width:40%;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>日期查询</div>
+                        <div class="t_right clearfix" style="width: 65%;margin-left: 18%;">
+                            <div class="inline_block select_mormal left select_100">
+                                <input type="text" class="select_input" value="选择日期" style="color: rgb(51, 51, 51);">
+                                <i></i>
+                                <ul class="select_list sbar" style="display: none;">
+                                    <li>全部时间</li>
+                                    <li class="val_dialog" name="xs_shd_chooseTime">自定义时间</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="pro_history_price_adjuest_package_div">
+
+                    <!--<div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">-->
+                        <!--<div class="box_open_list goods_tc_toggle">-->
+                            <!--<p class="box_open_head">-->
+                                <!--<span class="cont_title" style="padding-left: 0;margin-left:-16px;border-left:0;">-->
+                                    <!--套餐总价（元）：<span class="c_r">含税2340.00</span>-->
+                                <!--</span>-->
+                                <!--<span class="c_9 goods_sp_m_r" style="font-size: 12px;">调价日期：<span>2016-10-27 14:48:13 </span></span>-->
+                                <!--<span class="c_9" style="font-size: 12px;">调价人：<span>张三</span></span>-->
+                                <!--<span class="box_open_btn" style="right: 13px;">收起 <i class="right icon_show"></i></span>-->
+                            <!--</p>-->
+                            <!--<div class="div_1 container">-->
+                                <!--<div class="div_1 table-container">-->
+                                    <!--<table>-->
+                                        <!--<thead>-->
+                                        <!--<tr>-->
+                                            <!--<th>序号</th>-->
+                                            <!--<th>商品名称</th>-->
+                                            <!--<th>商品编号</th>-->
+                                            <!--<th>属性</th>-->
+                                            <!--<th>数量</th>-->
+                                            <!--<th>商品单价（元）</th>-->
+                                            <!--<th>总价（元）</th>-->
+                                        <!--</tr>-->
+                                        <!--</thead>-->
+                                        <!--<tbody>-->
+                                        <!--<tr>-->
+                                            <!--<td>01</td>-->
+                                            <!--<td>硬盘</td>-->
+                                            <!--<td>SP11564654</td>-->
+                                            <!--<td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>-->
+                                            <!--<td>1块</td>-->
+                                            <!--<td>500</td>-->
+                                            <!--<td>500</td>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td>02</td>-->
+                                            <!--<td>内存</td>-->
+                                            <!--<td>SP11564654</td>-->
+                                            <!--<td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>-->
+                                            <!--<td>1块</td>-->
+                                            <!--<td>500</td>-->
+                                            <!--<td>500</td>-->
+                                        <!--</tr>-->
+                                        <!--</tbody>-->
+                                    <!--</table>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">-->
+                        <!--<div class="box_open_list goods_tc_toggle">-->
+                            <!--<p class="box_open_head">-->
+                                <!--<span class="cont_title" style="padding-left: 0;margin-left:-16px;border-left:0;">-->
+                                    <!--套餐总价（元）：<span class="c_r">含税2340.00</span>-->
+                                <!--</span>-->
+                                <!--<span class="c_9 goods_sp_m_r" style="font-size: 12px;">调价日期：<span>2016-10-27 14:48:13 </span></span>-->
+                                <!--<span class="c_9" style="font-size: 12px;">调价人：<span>张三</span></span>-->
+                                <!--<span class="box_open_btn" style="right: 13px;">收起 <i class="right icon_show"></i></span>-->
+                            <!--</p>-->
+                            <!--<div class="div_1 container">-->
+                                <!--<div class="div_1 table-container">-->
+                                    <!--<table>-->
+                                        <!--<thead>-->
+                                        <!--<tr>-->
+                                            <!--<th>序号</th>-->
+                                            <!--<th>商品名称</th>-->
+                                            <!--<th>商品编号</th>-->
+                                            <!--<th>属性</th>-->
+                                            <!--<th>数量</th>-->
+                                            <!--<th>商品单价（元）</th>-->
+                                            <!--<th>总价（元）</th>-->
+                                        <!--</tr>-->
+                                        <!--</thead>-->
+                                        <!--<tbody>-->
+                                        <!--<tr>-->
+                                            <!--<td>01</td>-->
+                                            <!--<td>硬盘</td>-->
+                                            <!--<td>SP11564654</td>-->
+                                            <!--<td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>-->
+                                            <!--<td>1块</td>-->
+                                            <!--<td>500</td>-->
+                                            <!--<td>500</td>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td>02</td>-->
+                                            <!--<td>内存</td>-->
+                                            <!--<td>SP11564654</td>-->
+                                            <!--<td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>-->
+                                            <!--<td>1块</td>-->
+                                            <!--<td>500</td>-->
+                                            <!--<td>500</td>-->
+                                        <!--</tr>-->
+                                        <!--</tbody>-->
+                                    <!--</table>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--*******整机商品********-->
+<!--弹窗-调价-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_price_zjtj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="height: 530px;width: 670px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">整机商品调价</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    调价人：<span style="margin-right: 10px;" class="pro_complete_price_list_detail_user_name"></span>
+                    调价日期：<span class="pro_complete_price_list_detail_created_at"></span>
+                </div>
+                <div class="dialog_text_con">
+                    <h2 class="cont_title" style="border-left: none;"><span class="pro_complete_price_list_detail_name"></span>：<span class="c_3 pro_complete_price_list_attr_value" style="font-weight: 100;"></span></h2>
+                    <div class="l-s-x clearfix pro_goods_price_new" style="line-height: 30px;">
+                        <p class="left c_3">最新采购价（元）：</p>
+                        <p class="left c_r">含税价：<span class="pro_complete_price_list_purchase_price"></span><i class="c_9">（含税17%，税额 <span class="pro_complete_price_list_purchase_price_a"></span>元）</i></p></div>
+                    <span class="c_9 sp_price_lsjg val_dialogTop pro_complete_price_list_history_product" style="line-height:30px;" name="sp_price_lscgj">历史采购价(元)<i class="b_b mark_gantan">!</i></span>
+                    <hr class="finance_sz_ysqk" style="width: 1200px;">
+                    <h2 class="cont_title" style="margin-top:20px;">销售价格</h2>
+                    <div class="l-s-x clearfix" style="line-height: 30px;">
+                        <p class="left c_3"><span style="margin-right:20px;">成本价(元)</span><input type="text" class="goods_inp_50 pro_complete_price_list_detail_cost_price" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" value="0"></p>
+                        <p class="left c_r">含税价（元）：<span class="pro_complete_price_list_detail_cost_price_a">0</span><i class="c_9">（含增值税17%，税额：<span class="pro_complete_price_list_detail_cost_price_b"></span>    元）</i></p>
+                    </div>
+                    <div class="l-s-x clearfix" style="line-height: 30px;">
+                        <p class="left c_3"><span style="margin-right:20px;">零售价(元)</span><input type="text" class="goods_inp_50 pro_complete_price_list_detail_retail_price" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" value="0"></p>
+                        <p class="left c_r">含税价（元）：<span class="pro_complete_price_list_detail_retail_price_a"></span><i class="c_9">（含增值税17%，税额：<span class="pro_complete_price_list_detail_retail_price_b"></span>   元）</i></p>
+                    </div>
+                    <div class="l-s-x clearfix" style="line-height: 30px;">
+                        <p class="left c_3"><span style="margin-right: 20px;">最低价(元)</span><input type="text" class="goods_inp_50 pro_complete_price_list_detail_lower_price" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" value="0"></p>
+                        <p class="left c_r">含税价（元）：<span class="pro_complete_price_list_detail_lower_price_a"></span><i class="c_9">（含增值税17%，税额：<span class="pro_complete_price_list_detail_lower_price_b"></span> 元）</i></p>
+                    </div>
+                    <span class="c_9 sp_price_lsjg val_dialogTop pro_history_adjust_price_complete_btn" style="line-height:50px;" name="sp_price_lsxsj">历史调价(元)<i class="b_b mark_gantan">!</i></span>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_complete_price_list_detail_save">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(function () {
+        $('.sp_price_show p').live('mouseenter',function(){
+            $(this).parent('.sp_price_show').children("div").show();
+        });
+        $('.sp_price_show').live('mouseleave',function(){
+            $(this).children("div").css('display','none');
+        })
+    });
+
+
+    //利润测算
+    $(".goods_tc_one").live("mouseenter",function () {
+        $(this).children(".work_vent_client_contMsgBox").show();
+    });
+    $(".goods_tcsp_lr").live("mouseleave",function () {
+        $(this).siblings(".work_vent_client_contMsgBox").hide();
+    });
+
+    //商品单价点击时候的效果
+    $('.goods_select_btn').live('click',function(){
+        $(this).siblings('.goods_select_ul').show();
+    });
+
+
+    //下拉菜单
+    $('.tanceng .xs_bjd_inp').live('click', function () {
+//        alert(111);
+        $(this).parent('.select_100').siblings('.xs_goods_select').show();
+    });
+
+
+    //应收欠款-滑动显示
+    $(".finance_khysqk1").live("mouseenter",function () {
+        //alert(1);
+        $(this).siblings(".work_vent_client_contMsgBox").show();
+    });
+    $(".cw_td").live("mouseleave",function () {
+        $(this).children(".work_vent_client_contMsgBox").hide();
+    });
+
+
+
+
+
+
+</script>
+<script src="static/goods/js/s_50.js"></script>
+</body>
+</html>

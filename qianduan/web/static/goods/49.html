@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品-整机商品</title>
+    <link rel="stylesheet" href="static/goods/goods.css">
+    <link rel="stylesheet" href="static/bargain/css/bargain_muban.css">
+</head>
+<body>
+<div class="finance_content">
+    <div class="lik_content_max_height_box">
+        <div class="contenthead con_header lik_cont_title">
+            <h2>整机商品 </h2>
+            <div class="right" id="pro_complete_create_nav" style="width: 320px;">
+                <button class="val_dialog but_blue" id="pro_complete_create_btn" name="sp_newpz_pz">新建整机商品</button>
+                <button class="val_dialog but_blue pro_complete_add_unit" name="goods_add_basedw">添加基本单位</button>
+                <div class="res pro_complete_list_refresh_btn" title="点击刷新"></div>
+            </div>
+        </div>
+        <div class="sbar second-level hr_left_bjbm lik_cont_position goods_left_list">
+            <!--<div class="goods_base_left_header">-->
+                <!--<div class="cont_search inline_block sp_base_search">-->
+                    <!--<input type="text" class="search_input pro_complete_cate_search_inp" value=""-->
+                           <!--onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">-->
+                    <!--<ul class="inp_add_list lik_complete_cate_inp_add_list">-->
+                        <!--&lt;!&ndash;<li style="margin-top: 1px;">机架式服务器 <i></i></li>&ndash;&gt;-->
+                    <!--</ul>-->
+                    <!--<button class="search_but but_blue pro_complete_cate_search_btn">搜索</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="goods_base_left_middle">
+                <div class="Sideslip_list ht_slid_list">
+                    <ul class="pro_complete_cate_list_ul">
+                        <!--<li class="Sideslip_list_on">
+                            <span>塔式服务器（0）</span>
+                        </li>
+                        <li>
+                            <span>机架式服务器（3）</span>
+                        </li>
+                        <li>
+                            <span>工作站（0）</span>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="sbar rightcontent lik_cont_position goods_right_list">
+            <div class="sp_right_con" style="padding-left:30px;padding-right: 20px">
+                <div class="con_right_head clearfix" style="border:none;">
+                    <div class="lik_content_head">
+                    <div class="cont_search inline_block sp_base_search">
+                        <input type="text" class="search_input pro_complete_list_search_inp" value="请输入整机商品名称/整机商品编号"
+                               onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                        <button class="search_but but_blue pro_complete_list_search_btn">搜索</button>
+                    </div>
+                    <button class="but_cancel but_small inline_block zkgjssBtn" name="sp_basegsxx_zkgjss">展开高级搜索</button>
+                    <div class="cont_search inline_block" style="margin-left:30px;width: inherit;">
+                        <label><input type="checkbox" class="pro_complete_list_noshow_invalid_btn"> 不显示停用商品</label>
+                    </div></div>
+                    <div class="right con_right_result right">
+                        <p class="left">搜索结果: <span class=" f_color pro_complete_search_num_total">0</span>条</p>
+                        <span class="btn_chooseItem ckx_btn" name="ckx_jbsp_bjpx"><i class="eyeIcon"></i>选择查看项</span>
+                    </div>
+                    <!--选择查看项-->
+                    <div class="t-z-list ckx_cont" name="ckx_jbsp_bjpx"
+                         style="display: none;right: 14px;line-height: 27px;top: 64px;">
+                        <i class="ckx_icon_right"></i>
+                        <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                        <ul class="sbar muban_addkey_list" id="pro_complete_list_look_field_ul">
+                            <li class="l-li-b">
+                                <input type="checkbox">
+                                <p class="z-d-l">基本单位</p>
+                            </li>
+                            <li class="l-li-b">
+                                <input type="checkbox">
+                                <p class="z-d-l">备注</p>
+                            </li>
+                        </ul>
+                        <!--  -->
+                        <div class="bot-btn">
+                            <button class="but_small but_blue" id="pro_complete_list_look_save">保存</button>
+                            <button class="but_small but_cancal" id="pro_complete_list_look_reset">恢复默认</button>
+                        </div>
+                    </div>
+                    <div class="closeckx_cont"></div>
+                    <!--/选择查看项-->
+                </div>
+                <div class="ht_base_msg">
+                    <div class="container lik_table_wrap">
+                        <div class="table-container lik_table_max_height" style="margin-bottom:0;">
+                            <table id="pro_complete_list_table">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <!--<th>整机商品编号</th>-->
+                                    <th>整机商品名称</th>
+                                    <th>整机类型</th>
+                                    <!--<th>基本单位</th>-->
+                                    <th>属性</th>
+                                    <th>备注</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="zkgjss_cont" name="sp_basegsxx_zkgjss">
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text"
+                                                   class="select_input block pro_complete_optional_search_inp"
+                                                   value="整机类型">
+                                            <i></i>
+                                            <ul class="select_list pro_complete_optional_search_ul">
+                                                <li comoptional="">全部</li>
+                                                <li comoptional="2">不可选配</li>
+                                                <li comoptional="1">可选配</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tbody class="pro_complete_list_tbody">
+                                <!--<tr>
+                                    <td>01</td>
+                                    <td>ZJ46465313</td>
+                                    <td>R430-A</td>
+                                    <td>不可选配</td>
+                                    <td>套</td>
+                                    <td>冷盘冷电/4背板</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="but_mix but_look r_sidebar_btn but_look" name="sp_zj_msg_no">查看</button>
+                                        <button class="but_mix but_exit val_dialog" name="sp_exitpz_pz">编辑</button>
+                                        <button class="but_mix but_r but_stop">停用</button>
+                                    </td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                            <div class="no_data_box none pro_complete_list_nodata_box">
+                                <div class="no_data">
+                                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                                </div>
+                                <div class="no_data_bottom"></div>
+                            </div>
+                        </div>
+                        <div class="handle pro_complete_list_handle">
+                            <div class="fenye_box pro_complete_list_page">
+                                <span>每页显示</span>
+                                <div class="inline_block select_mormal">
+                                    <input type="text" class="select_input" value="10">
+                                    <ul class="select_list select_list_to_top">
+                                        <li>5</li>
+                                        <li>10</li>
+                                        <li>15</li>
+                                        <li>20</li>
+                                    </ul>
+                                    <i></i>
+                                </div>
+                                <span>条数据</span>
+                                <div class="fenye_btn first_page_valid"><span></span></div>
+                                <div class="fenye_btn prev_page_valid"><span></span></div>
+                                <span class="page_box on">1</span>
+                                <span class="page_box">2</span>
+                                <span class="page_box">3</span>
+                                <span class="page_box">4</span>
+                                <div class="fenye_btn next_page_valid"><span></span></div>
+                                <div class="fenye_btn last_page_valid"><span></span></div>
+                                <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗-添加基本单位-->
+<div class="dialog">
+    <div class="dialog_box " name="goods_add_basedw">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="width: 580px;height: 340px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">基本单位设置</h3>
+            </div>
+            <div class="dialog_text sp_set_spbox sbar" style="padding-top: 25px;margin-top: 0;">
+                <div>
+                    <button class="val_dialogTop but_blue ht_but" name="goods_total_new_dw">新建基本单位</button>
+                    <!--<div class="cont_search inline_block sp_base_search">-->
+                    <!--<input type="text" class="search_input" value="搜索商品编号/商品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">-->
+                    <!--<button class="search_but but_blue">搜索</button>-->
+                    <!--</div>-->
+                    <div class="right con_right_result right" style="margin-right: 0;">
+                        <p class="left" style="margin-right: 0;">搜索结果: <span
+                            class=" f_color pro_complete_set_unit_num_total">0</span>条</p>
+                    </div>
+                </div>
+                <div class="container" name="takenote_a" style="padding:20px 0;">
+                    <div class="table-container" style="margin-bottom:60px">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>选项名称</th>
+                                <!--<th>排序</th>-->
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="pro_complete_set_unit_list_tbody">
+                            <!--<tr>
+                                <td>01</td>
+                                <td>台</td>
+                                <td><button class="but_mix">下移</button></td>
+                                <td>
+                                    <button class="but_mix but_exit val_dialogTop" name="goods_total_exit_dw">修改</button>
+                                    <button class="but_mix but_r val_dialogTop" name="pro_complete_del_sure_box">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>台</td>
+                                <td>
+                                    <button class="but_mix">上移</button>
+                                    <button class="but_mix">下移</button>
+                                </td>
+                                <td>
+                                    <button class="but_mix but_exit val_dialogTop" name="goods_total_exit_dw">修改</button>
+                                    <button class="but_mix but_r val_dialogTop" name="pro_complete_del_sure_box">删除</button>
+                                </td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-新建基本单位-->
+<div class="dialog">
+    <div class="dialog_box" name="goods_total_new_dw">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 220px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建基本单位</h3>
+            </div>
+            <div class="dialog_text" style="height: auto;margin-top: 40px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>名称</div>
+                    <div class="t_right"><input type="text" class="time_input pro_complete_unit_create_name_inp"
+                                                value="输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue pro_complete_unit_create_submit_btn">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-修改基本单位-->
+<div class="dialog">
+    <div class="dialog_box" name="goods_base_exit_sp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 220px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">修改基本单位</h3>
+            </div>
+            <div class="dialog_text" style="height: auto;margin-top: 40px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>名称</div>
+                    <div class="t_right"><input type="text" class="time_input pro_complete_unit_edit_name_inp"
+                                                value="输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue pro_complete_unit_edit_submit_btn">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--右侧-查看-->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar Sideslip" name="pro_complete_look">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left pro_complete_detail_name"></p>
+                <div class="slider_head_moreBox right">
+                    <span class="slider_head_but right slider_head_More">更多</span>
+                    <ul class="slider_head_list pro_complete_list_detail_more_ul">
+                        <li class="val_dialog" name="sp_exitpz_pz">编辑</li>
+                        <li>停用/启用</li>
+                        <li>删除</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="slider_head_msg_det">
+                创建日期：<span class="pro_complete_detail_created_at" style="margin-right: 16px;"></span>
+                创建人：<span class="pro_complete_detail_user_name"></span>
+            </p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="sp_base_right">基本信息</li>
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b goods" style="width: 434px;height: 100%;overflow: hidden;">
+            <div class="ht_base_msg sbar" name="xs_khgl_baseTaba" style="display: block;">
+                <div class="ht_base_msgCon sbar goods_base_ht" style="bottom:0;">
+                    <div class="d-r-t-h sbar">
+                        <h3 class="cont_title">基本信息</h3>
+                        <div class="sp_ck_img val_dialog pro_look_img_btn" style="position: relative;" name="sp_ck_img_look">
+                            <img class="pro_goods_list_detail_img" src="" alt="产品图片" title="这是产品图">
+                            <div class="sp_ck_img_box">
+                                共<sapn class="pro_goods_list_detail_img_num_total">0</sapn>张
+                            </div>
+                        </div>
+                        <p class="l-s-x">整机商品编号：<span class="pro_complete_detail_code_sn"></span></p>
+                        <p class="l-s-x">整机商品名称：<span class="pro_complete_detail_name"></span></p>
+                        <p class="l-s-x">整机类型：<span class="pro_complete_detail_is_optional"></span></p>
+                        <p class="l-s-x">属性：<span class="pro_complete_detail_attr_name"></span></p>
+                        <p class="l-s-x">备注：<span class="pro_complete_detail_remark"></span></p>
+                    </div>
+                    <div class="d-r-t-h sbar">
+                        <h3 class="cont_title">配件商品</h3>
+                        <!--不可选配-->
+                        <p class="l-s-x" style="position: relative;height: 30px;"><span
+                            style="position: absolute;top: 1px;left: -15px;"><button
+                            class="but_blue but_small val_dialog pro_complete_detail_info_btn"
+                            name="goods_total_pj_no">查看配件
+                        </button></span></p>
+                    </div>
+                    <div class="d-r-t-h sbar">
+                        <h3 class="cont_title">其他</h3>
+                        <p class="l-s-x">启用商品：<span class="pro_complete_detail_status"></span></p>
+                    </div>
+                    <div class="d-r-t-h sbar">
+                        <h3 class="cont_title">库存预警</h3>
+                        <p class="l-s-x">最低库存：<span class="pro_complete_detail_lower_limit"></span></p>
+                        <p class="l-s-x">最高库存：<span class="pro_complete_detail_top_limit"></span></p>
+                    </div>
+                    <div class="d-r-t-h">
+                        <h3 class="cont_title">期初信息</h3>
+                        <p class="l-s-x" style="color: #666;font-weight: bold;">期初库存数量</p>
+                        <div class="pro_complete_detail_warehouse_list"></div>
+                        <!--<p class="l-s-x">库房A：<span></span></p>
+                        <p class="l-s-x" style="margin-top: 8px;">库房B：<span></span></p>-->
+                        <p class="l-s-x" style="color: #333;font-weight: bold;margin-top: 8px;">总计：<span
+                            class="pro_complete_detail_qichu_total"></span></p>
+                        <p class="l-s-x" style="color: #666;font-weight: bold;margin-top: 36px;">期初采购单价</p>
+                        <p class="l-s-x">采购价（元）：<span class="pro_complete_detail_purchase_price"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="ht_base_msg sbar" name="sp_base_right">
+                <div class="ht_base_msgCon sbar" style="bottom:0;">
+                    <div class="d-r-t-h2">
+                        <h3 class="cont_title">基本信息</h3>
+                        <p class="l-s-x">整机商品编号：<span>ZJ16546798</span></p>
+                        <p class="l-s-x">整机商品名称：<span>R430-A</span></p>
+                        <p class="l-s-x">整机商品类型：<span>不可选配</span></p>
+                        <p class="l-s-x">属性：<span>冷盘冷电/4背板</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                    <div class="d-r-t-h2">
+                        <h3 class="cont_title">配件商品</h3>
+                        <!--不可选配-->
+                        <p class="l-s-x" style="position: relative;height: 30px;"><span
+                            style="position: absolute;top: 1px;left: -15px;"><button
+                            class="but_blue but_small val_dialog" name="goods_total_pj_no">查看配件
+                        </button></span></p>
+                        <!--可选配-->
+                        <p class="l-s-x none" style="position: relative;height: 30px;"><span
+                            style="position: absolute;top: 1px;left: -15px;"><button
+                            class="but_blue but_small val_dialog" name="goods_total_pj_yes">查看配件
+                        </button></span></p>
+                    </div>
+                    <div class="d-r-t-h2">
+                        <h3 class="cont_title">其他</h3>
+                        <p class="l-s-x">启用商品：<span>启用</span></p>
+                    </div>
+                    <div class="d-r-t-h2">
+                        <h3 class="cont_title">库存预警</h3>
+                        <p class="l-s-x">最低库存：<span>10</span></p>
+                        <p class="l-s-x">最高库存：<span>100</span></p>
+                    </div>
+                    <div class="d-r-t-h2">
+                        <h3 class="cont_title">期初信息</h3>
+                        <p class="l-s-x" style="color: #666;font-weight: bold;">期初库存数量</p>
+                        <p class="l-s-x">库房A：<span>50块</span></p>
+                        <p class="l-s-x">库房B：<span>100块</span></p>
+                        <p class="l-s-x" style="color: #333;font-weight: bold;">总计：<span>150块</span></p>
+                        <p class="l-s-x" style="color: #666;font-weight: bold;">期初采购单价</p>
+                        <p class="l-s-x">采购价（元）：<span>含税500.00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---右侧配件(不可选配)-->
+<div class="dialog">
+    <div class="dialog_box" name="goods_total_pj_no">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 700px;height: 560px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">查看配件</h3>
+                <button class="but_blue but_small but_print2 htmb_btnPrint1"
+                        style="position: absolute;right:36px;top:9px;"><i
+                    style="vertical-align: middle;margin-top:-2px;"></i>导出PDF或打印
+                </button>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 83%;">
+                <div class="dialog_text_con">
+                    <div class="d-r-t-h" style="padding-bottom: 0;">
+                        <p class="l-s-x c_3">整机商品编号：<span class="pro_complete_detail_info_code_sn"></span></p>
+                        <p class="l-s-x c_3">整机商品名称：<span class="pro_complete_detail_info_name"></span></p>
+                        <p class="l-s-x c_3">整机类型：<span class="pro_complete_detail_info_is_optional"></span></p>
+                        <p class="l-s-x c_3">备注：<span class="pro_complete_detail_info_remark"></span></p>
+                    </div>
+                    <div class="pro_complete_detail_info_goods_list_no"></div>
+                    <!--<div>
+                        <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r">*</i>商品<span>1</span>
+                            </div>
+                        </div>
+                        <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                            <div class="box_open_list goods_tc_toggle">
+                                <p class="box_open_head">
+                                    <span class="cont_title" style="padding-left: 0;">CPU</span>
+                                        <span class="box_open_btn" style="right: 13px;">收起 <i
+                                            class="right icon_show"></i></span>
+                                </p>
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th style="font-weight: 100;">属性</th>
+                                                <th style="width: 10px;font-weight: 100;">数量</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                <td>2块</td>
+                                            </tr>
+                                            <tr>
+                                                <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                <td>2块</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E5-2670 v3 2.3GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T (120W)
+                                                    最大内存 2133MHz
+                                                </td>
+                                                <td>2块</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r">*</i>商品<span>2</span>
+                            </div>
+                        </div>
+                        <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                            <div class="box_open_list goods_tc_toggle">
+                                <p class="box_open_head">
+                                    <span class="cont_title" style="padding-left: 0;">内存</span>
+                                        <span class="box_open_btn" style="right: 13px;">收起 <i
+                                            class="right icon_show"></i></span>
+                                </p>
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th style="font-weight: 100;">属性</th>
+                                                <th style="width: 10px;font-weight: 100;">数量</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>8GB RDIMM, 2400MT/s, 单列, x8 带宽</td>
+                                                <td>2块</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16GB RDIMM, 2400MT/s, 单列, x8 带宽</td>
+                                                <td>2块</td>
+                                            </tr>
+                                            <tr>
+                                                <td>32GB RDIMM, 2400MT/s, 单列, x8 带宽</td>
+                                                <td>2块</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r">*</i>商品<span>3</span>
+                            </div>
+                        </div>
+                        <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                            <div class="box_open_list goods_tc_toggle">
+                                <p class="box_open_head">
+                                    <span class="cont_title" style="padding-left: 0;">硬盘</span>
+                                        <span class="box_open_btn" style="right: 13px;">收起 <i
+                                            class="right icon_show"></i></span>
+                                </p>
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th style="font-weight: 100;">属性</th>
+                                                <th style="width: 10px;font-weight: 100;">数量</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                <td>2块</td>
+                                            </tr>
+                                            <tr>
+                                                <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                                <td>2块</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E5-2670 v3 2.3GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T (120W)
+                                                    最大内存 2133MHz
+                                                </td>
+                                                <td>2块</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!---右侧配件(可选配)-->
+<div class="dialog">
+    <div class="dialog_box" name="goods_total_pj_yes">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 700px;height: 560px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">查看配件</h3>
+                <button class="but_blue but_small but_print2 htmb_btnPrint1"
+                        style="position: absolute;right:36px;top:9px;"><i
+                    style="vertical-align: middle;margin-top:-2px;"></i>导出PDF或打印
+                </button>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 83%;">
+                <div class="dialog_text_con">
+                    <div class="d-r-t-h" style="padding-bottom: 0;">
+                        <p class="l-s-x c_3">整机商品编号：<span class="pro_complete_detail_info_code_sn"></span></p>
+                        <p class="l-s-x c_3">整机商品名称：<span class="pro_complete_detail_info_name"></span></p>
+                        <p class="l-s-x c_3">整机类型：<span class="pro_complete_detail_info_is_optional"></span></p>
+                        <p class="l-s-x c_3">备注：<span class="pro_complete_detail_info_remark"></span></p>
+                        <p class="l-s-x c_3" style="margin-bottom: 10px;">选配说明</p>
+                        <div class="goods_zjsp_xpsm">
+                            <p class="pro_complete_detail_info_introductions"></p>
+                        </div>
+                    </div>
+                    <div class="pro_complete_detail_info_goods_list_yes"></div>
+                    <!--<div>
+                        <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r">*</i>商品<span>1</span>
+                            </div>
+                        </div>
+                        <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                            <div class="box_open_list goods_tc_toggle">
+                                <p class="box_open_head">
+                                    <span class="cont_title" style="padding-left: 0;">CPU</span>
+                                        <span class="box_open_btn" style="right: 13px;">收起 <i
+                                            class="right icon_show"></i></span>
+                                </p>
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                            </tr>
+                                            <tr>
+                                                <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E5-2670 v3 2.3GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T (120W)
+                                                    最大内存 2133MHz
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r">*</i>商品<span>2</span>
+                            </div>
+                        </div>
+                        <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                            <div class="box_open_list goods_tc_toggle">
+                                <p class="box_open_head">
+                                    <span class="cont_title" style="padding-left: 0;">内存</span>
+                                        <span class="box_open_btn" style="right: 13px;">收起 <i
+                                            class="right icon_show"></i></span>
+                                </p>
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>8GB RDIMM, 2400MT/s, 单列, x8 带宽</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16GB RDIMM, 2400MT/s, 单列, x8 带宽</td>
+                                            </tr>
+                                            <tr>
+                                                <td>32GB RDIMM, 2400MT/s, 单列, x8 带宽</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r">*</i>商品<span>3</span>
+                            </div>
+                        </div>
+                        <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                            <div class="box_open_list goods_tc_toggle">
+                                <p class="box_open_head">
+                                    <span class="cont_title" style="padding-left: 0;">硬盘</span>
+                                        <span class="box_open_btn" style="right: 13px;">收起 <i
+                                            class="right icon_show"></i></span>
+                                </p>
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>属性</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                            </tr>
+                                            <tr>
+                                                <td>日立/机械硬盘/1T/3.5/SATA/12b/s/7200转/512E</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E5-2670 v3 2.3GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T (120W)
+                                                    最大内存 2133MHz
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗-新建整机商品-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_newpz_pz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2 sp_newpz_pz pro_complete_create_goods_dialog_content" style="width:650px;height: 90%;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建整机商品</h3>
+            </div>
+            <div class="dialog_text sbar sp_new_dt" style="padding:0;margin:0;height:88%;">
+                <div class="sp_unhead_box">
+                    创建人：<span class="m_right_10 pro_complete_create_uname"></span>
+                    创建日期：<span class="pro_complete_create_time"></span>
+                </div>
+                <div class="dialog_text_con" style="padding-bottom:20px;">
+                    <h2 class="cont_title">新建整机商品</h2>
+                    <div class="goods_pz_new_sp_inputbox">
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>编号</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 pro_complete_create_code_sn"
+                                                        value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput" style="height: 50px;">
+                            <div class="t_left"><i class="c_r">*</i>整机类型</div>
+                            <div class="t_right goods_zj_select_btn">
+                                <label style="margin-right: 25px;"><input class="pro_complete_create_bkxp" type="radio" name="goods_zjsp_radio"
+                                                                          checked="checked">不可选配</label>
+                                <label><input class="pro_complete_create_kxp" type="radio" name="goods_zjsp_radio">可选配</label>
+                                <p class="c_9">不可选配会有整机价格，报价不可选择配件；可选配无整机价格，报价可选择配件</p>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>名称</div>
+                            <div class="t_right"><input type="text" class="time_input pro_complete_create_name" value="请输入商品名称"
+                                                        onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                        style="color: rgb(204, 204, 204);">
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>商品分类</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 pro_complete_create_cate_name"
+                                                        value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r ">*</i>基本单位</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal select_100">
+                                    <input type="text" class="select_input pro_complete_create_choose_unit_btn" value="请选择基本单位">
+                                    <i></i>
+                                    <ul class="select_list pro_complete_create_choose_unit_list_ul">
+                                        <!--<li>件</li>
+                                        <li>块</li>
+                                        <li>个</li>
+                                        <li>条</li>
+                                        <li>公斤</li>
+                                        <li>只</li>
+                                        <li>台</li>
+                                        <li>米</li>
+                                        <li>箱</li>
+                                        <li>套</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput t_textarea">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>属性</div>
+                            <div class="t_right"><textarea class="txt_normal pro_complete_create_attr_name_textarea" onfocus="fn_focus(this);"
+                                                           onblur="fn_blur(this);"
+                                                           style="color: rgb(204, 204, 204);">请输入属性</textarea></div>
+                        </div>
+                        <div class="text_input">
+                            <div class="text_intext" style="width:15%;color:#333;"><i
+                                class="c_r v_hidden">*</i><span>添加图片</span></div>
+                            <div class="text_ininput" style="width:80%">
+                                <ul class="img_warp">
+                                    <cite><input class="addimg hide_input lik_pro_setting_create_addimg" type="file" name="imgurl"><span
+                                        class="icon-add"></span></cite>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="t_textinput t_textarea">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>备注</div>
+                            <div class="t_right"><textarea class="txt_normal pro_complete_create_remark_textarea" onfocus="fn_focus(this);"
+                                                           onblur="fn_blur(this);"
+                                                           style="color: rgb(204, 204, 204);">请输入备注</textarea></div>
+                        </div>
+                    </div>
+                    <h2 class="cont_title">配件商品</h2>
+
+
+                    <!--不可选配盒子-->
+                    <div class="sp_sppz_pt_box_no">
+                        <div class="pro_complete_create_goods_chosen_list_no"></div>
+                        <!--<div class="worksp_addbx none">
+                            <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                                <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                    class="c_r">*</i>商品<span>(<cite class="page_31_khlxrNum">4</cite>)</span></div>
+                            </div>
+                            <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                                <div class="box_open_list goods_tc_toggle">
+                                    <p class="box_open_head">
+                                            <span class="cont_title"
+                                                  style="padding-left: 0;margin-left: 0;">CPU处理器</span>
+                                    <span>
+                                        <button class="but_mix val_dialogTop" name="sp_set_tcNew">添加</button><button
+                                        class="but_r but_mix goods_tc_del val_dialogTop" name="pro_complete_del_sure_box">删除
+                                    </button>
+                                    </span>
+                                            <span class="box_open_btn" style="right: 13px;">收起 <i
+                                                class="right icon_show"></i></span>
+                                    </p>
+                                    <div class="div_1 container">
+                                        <div class="div_1 table-container">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>属性</th>
+                                                    <th>数量</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                                        (145W) 最大内存 2133MHz
+                                                    </td>
+                                                    <td>
+                                                        <div class="num_input inline_block num_input_new">
+                                                            <button class="but_blue but_opa_small inp_plus">+
+                                                            </button>
+                                                            <input type="text" value="1">
+                                                            <button
+                                                                class="but_blue but_opa_small radius_left_0 inp_reduce">
+                                                                -
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="but_mix but_r val_dialogTop"
+                                                                name="pro_complete_del_sure_box">删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E5-2680 v3 2.5GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T
+                                                        (120W) 最大内存 2133MHz
+                                                    </td>
+                                                    <td>
+                                                        <div class="num_input inline_block num_input_new">
+                                                            <button class="but_blue but_opa_small inp_plus">+
+                                                            </button>
+                                                            <input type="text" value="1">
+                                                            <button
+                                                                class="but_blue but_opa_small radius_left_0 inp_reduce">
+                                                                -
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="but_mix but_r val_dialogTop"
+                                                                name="pro_complete_del_sure_box">删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E5-2670 v3 2.3GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T
+                                                        (120W) 最大内存 2133MHz
+                                                    </td>
+                                                    <td>
+                                                        <div class="num_input inline_block num_input_new">
+                                                            <button class="but_blue but_opa_small inp_plus">+
+                                                            </button>
+                                                            <input type="text" value="1">
+                                                            <button
+                                                                class="but_blue but_opa_small radius_left_0 inp_reduce">
+                                                                -
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="but_mix but_r val_dialogTop"
+                                                                name="pro_complete_del_sure_box">删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="inline_block relative t_textinput">
+                            <button class="but_icon val_dialogTop sp_new_tjpjsp_btn pro_complete_create_choose_goods_btn" name="sp_new_tjpjsp"><i></i>添加配件商品
+                            </button>
+                        </div>
+                    </div>
+                    <!--可选配盒子-->
+                    <div class="sp_sppz_pt_box_yes none">
+                        <div class="pro_complete_create_goods_chosen_list_yes"></div>
+                        <!--<div class="worksp_addbx_a">
+                            <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                                <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                    class="c_r">*</i>商品<span>(<cite class="page_31_khlxrNum">4</cite>)</span></div>
+                            </div>
+                            <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                                <div class="box_open_list goods_tc_toggle">
+                                    <p class="box_open_head">
+                                            <span class="cont_title"
+                                                  style="padding-left: 0;margin-left: 0;">CPU处理器</span>
+                                    <span>
+                                        <button class="but_mix val_dialogTop" name="sp_set_tcNew">添加</button><button
+                                        class="but_r but_mix val_dialogTop" name="pro_complete_del_sure_box">删除
+                                    </button>
+                                    </span>
+                                            <span class="box_open_btn" style="right: 13px;">收起 <i
+                                                class="right icon_show"></i></span>
+                                    </p>
+                                    <div class="div_1 container">
+                                        <div class="div_1 table-container">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>属性</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                                        (145W) 最大内存 2133MHz
+                                                    </td>
+                                                    <button class="but_r but_mix val_dialogTop" name="pro_complete_del_sure_box">
+                                                        删除
+                                                    </button>
+                                                </tr>
+                                                <tr>
+                                                    <td>E5-2680 v3 2.5GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T
+                                                        (120W) 最大内存 2133MHz
+                                                    </td>
+                                                    <button class="but_r but_mix val_dialogTop" name="pro_complete_del_sure_box">
+                                                        删除
+                                                    </button>
+                                                </tr>
+                                                <tr>
+                                                    <td>E5-2670 v3 2.3GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T
+                                                        (120W) 最大内存 2133MHz
+                                                    </td>
+                                                    <button class="but_r but_mix val_dialogTop" name="pro_complete_del_sure_box">
+                                                        删除
+                                                    </button>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="inline_block relative t_textinput">
+                            <button class="but_icon val_dialogTop sp_new_tjpjsp_btn pro_complete_create_choose_goods_btn" name="sp_new_tjpjsp"><i></i>添加配件商品
+                            </button>
+                        </div>
+                        <div class="t_textinput t_textarea goods_pjsm">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>选配说明</div>
+                            <div class="t_right"><textarea class="txt_normal pro_complete_create_kxp_xpsm_textarea" onfocus="fn_focus(this);"
+                                                           onblur="fn_blur(this);"
+                                                           style="color: rgb(204, 204, 204);">请输入选配说明</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="finance_sz_ysqk" style="width: 1200px;">
+                    <div class="goods_zj_kfyj">
+                        <h2 class="cont_title">库存预警</h2>
+                        <div style="margin-top: 20px;overflow: hidden;">
+                            <div class="t_textinput" style="float: left;">
+                                <div class="t_left" style="width: 32%;"><i class="c_r v_hidden">*</i>最低库存</div>
+                                <div class="t_right" style="margin-left: 32%;"><input type="text" class="time_input pro_complete_create_lower_limit"
+                                                                                      value="请输入库存下限"
+                                                                                      onfocus="fn_focus(this);"
+                                                                                      onblur="fn_blur(this);">
+                                </div>
+                            </div>
+                            <div class="t_textinput" style="float: right;margin-right: 110px;">
+                                <div class="t_left" style="width: 32%;"><i class="c_r v_hidden">*</i>最高库存</div>
+                                <div class="t_right" style="margin-left: 32%;"><input type="text" class="time_input pro_complete_create_top_limit"
+                                                                                      value="请输入库存上限"
+                                                                                      onfocus="fn_focus(this);"
+                                                                                      onblur="fn_blur(this);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h2 class="cont_title">其他</h2>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width: 10em;margin-right: 20px;"><i class="c_r v_hidden">*</i>启用整机商品</div>
+                        <div class="muban_radio c_9">
+                            <label style="margin-right: 20px;margin-left: 10px;" class="c_3">
+                                <input type="radio" name="aa" class="pro_complete_create_qysp_up" checked="checked">启用
+                            </label>
+                            <label class="c_3">
+                                <input type="radio" class="pro_complete_create_qysp_down" name="aa">停用
+                            </label>
+                        </div>
+                    </div>
+                    <div class="goods_zj_qcxx">
+                        <h2 class="cont_title">期初信息<span class="c_r m_left_10">(重要)</span></h2>
+                        <p class="sp_underTitle c_9 m_bottom_10" style="line-height:18px;margin-top: 10px;">
+                            期初库存是您在启用本软件前仓库中已有的商品库存，录入期初库存可以使后续成本价、毛利等值的计算更准确</p>
+                        <div class="t_textinput relative">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r v_hidden">*</i>初期库存数量
+                            </div>
+                        </div>
+                        <div class="pro_complete_create_warehouse_list"></div>
+                        <!--<div class="t_textinput">
+                            <div class="t_left" style="width: 9%"><i class="c_r v_hidden">*</i>库房A</div>
+                            <div class="t_right" style="margin-left: 7%;"><input type="text"
+                                                                                 class="time_input goods_inp_32"
+                                                                                 value="请输入数量"
+                                                                                 onfocus="fn_focus(this);"
+                                                                                 onblur="fn_blur(this);">
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left" style="width: 9%"><i class="c_r v_hidden">*</i>库房B</div>
+                            <div class="t_right" style="margin-left: 7%;"><input type="text"
+                                                                                 class="time_input goods_inp_32"
+                                                                                 value="请输入数量"
+                                                                                 onfocus="fn_focus(this);"
+                                                                                 onblur="fn_blur(this);">
+                            </div>
+                        </div>-->
+                        <div class="t_textinput relative" style="height: 23px;line-height: 23px;">
+                            <div class="t_left" style="color:#333;font-weight: 600;max-width: 10em;"><i
+                                class="c_r v_hidden">*</i>总计：<span class="pro_complete_create_warehouse_num_total">0</span></div>
+                        </div>
+                        <div class="t_textinput goods_base_new_lfxx">
+                            <p class="c_r" style="padding-left: 10px;display: inline-block;">请在“库房管理”建立库房信息。</p>
+                        </div>
+                        <div class="t_textinput relative">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r v_hidden">*</i>初期采购单价
+                            </div>
+                        </div>
+                        <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>单价</div>
+                            <div class="t_right">
+                                <input type="text" class="time_input goods_inp_40 pro_complete_create_cost_one" value="请输入单价" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeydown="value = this.value.replace(/[^0-9\.]/g, '');" onkeyup="value = this.value.replace(/[^0-9\.]/g, '');"><i style="margin-left: 10px;">元</i>
+                            </div>
+                        </div>
+                        <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>税率</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal goods_selece_50">
+                                    <input type="text" class="select_input pro_complete_create_tax_one" value="含税率17%">
+                                    <i></i>
+                                    <ul class="select_list pro_complete_create_tax_ul">
+                                        <li>含税率17%</li>
+                                        <li>未税</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>采购价</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 goods_inp_40 pro_complete_create_cg_cost_one" value="0" readonly="true" ><i style="margin-left: 10px;">元</i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_complete_create_submit_btn">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--弹窗-编辑整机商品-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_exitpz_pz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2 sp_newpz_pz pro_complete_create_goods_dialog_content" style="width:900px;height: 90%;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑整机商品</h3>
+            </div>
+            <div class="dialog_text sbar sp_new_dt" style="padding:0;margin:0;height:88%;">
+                <div class="sp_unhead_box">
+                    创建人：<span class="m_right_10 pro_complete_create_uname"></span>
+                    创建日期：<span class="pro_complete_create_date"></span>
+                </div>
+                <div class="dialog_text_con" style="padding-bottom:20px;">
+                    <h2 class="cont_title">新建整机商品</h2>
+                    <div class="goods_pz_new_sp_inputbox">
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>编号</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 pro_complete_create_code_sn"
+                                                        value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput" style="height: 50px;">
+                            <div class="t_left"><i class="c_r">*</i>整机类型</div>
+                            <div class="t_right goods_zj_select_btn">
+                                <label style="margin-right: 25px;"><input class="pro_complete_create_bkxp" type="radio" name="goods_zjsp_radio"
+                                                                          checked="checked">不可选配</label>
+                                <label><input class="pro_complete_create_kxp" type="radio" name="goods_zjsp_radio">可选配</label>
+                                <p class="c_9">不可选配会有整机价格，报价不可选择配件；可选配无整机价格，报价可选择配件</p>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>名称</div>
+                            <div class="t_right"><input type="text" class="c_3 time_input pro_complete_create_name" value="请输入商品名称"
+                                                        onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                        style="color: rgb(204, 204, 204);">
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>商品分类</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 pro_complete_create_cate_name"
+                                                        value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r ">*</i>基本单位</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal select_100">
+                                    <input type="text" class="c_3 select_input pro_complete_create_choose_unit_btn" value="请选择基本单位">
+                                    <i></i>
+                                    <ul class="select_list pro_complete_create_choose_unit_list_ul">
+                                        <!--<li>件</li>
+                                        <li>块</li>
+                                        <li>个</li>
+                                        <li>条</li>
+                                        <li>公斤</li>
+                                        <li>只</li>
+                                        <li>台</li>
+                                        <li>米</li>
+                                        <li>箱</li>
+                                        <li>套</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput t_textarea">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>属性</div>
+                            <div class="t_right"><textarea class="c_3 txt_normal pro_complete_create_attr_name_textarea" onfocus="fn_focus(this);"
+                                                           onblur="fn_blur(this);"
+                                                           style="color: rgb(204, 204, 204);">请输入属性</textarea></div>
+                        </div>
+                        <div class="text_input">
+                            <div class="text_intext" style="width:15%;color:#333;"><i
+                                class="c_r v_hidden">*</i><span>添加图片</span></div>
+                            <div class="text_ininput" style="width:80%">
+                                <ul class="img_warp">
+                                    <cite><input class="addimg hide_input lik_pro_setting_create_addimg" type="file" name="imgurl"><span
+                                        class="icon-add"></span></cite>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="t_textinput t_textarea">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>备注</div>
+                            <div class="t_right"><textarea class="c_3 txt_normal pro_complete_create_remark_textarea" onfocus="fn_focus(this);"
+                                                           onblur="fn_blur(this);"
+                                                           style="color: rgb(204, 204, 204);">请输入备注</textarea></div>
+                        </div>
+                    </div>
+                    <h2 class="cont_title">配件商品</h2>
+
+
+                    <!--不可选配盒子-->
+                    <div class="sp_sppz_pt_box_no">
+                        <div class="pro_complete_create_goods_chosen_list_no"></div>
+                        <!--<div class="worksp_addbx none">
+                            <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                                <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                    class="c_r">*</i>商品<span>(<cite class="page_31_khlxrNum">4</cite>)</span></div>
+                            </div>
+                            <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                                <div class="box_open_list goods_tc_toggle">
+                                    <p class="box_open_head">
+                                            <span class="cont_title"
+                                                  style="padding-left: 0;margin-left: 0;">CPU处理器</span>
+                                    <span>
+                                        <button class="but_mix val_dialogTop" name="sp_set_tcNew">添加</button><button
+                                        class="but_r but_mix goods_tc_del val_dialogTop" name="pro_complete_del_sure_box">删除
+                                    </button>
+                                    </span>
+                                            <span class="box_open_btn" style="right: 13px;">收起 <i
+                                                class="right icon_show"></i></span>
+                                    </p>
+                                    <div class="div_1 container">
+                                        <div class="div_1 table-container">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>属性</th>
+                                                    <th>数量</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                                        (145W) 最大内存 2133MHz
+                                                    </td>
+                                                    <td>
+                                                        <div class="num_input inline_block num_input_new">
+                                                            <button class="but_blue but_opa_small inp_plus">+
+                                                            </button>
+                                                            <input type="text" value="1">
+                                                            <button
+                                                                class="but_blue but_opa_small radius_left_0 inp_reduce">
+                                                                -
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="but_mix but_r val_dialogTop"
+                                                                name="pro_complete_del_sure_box">删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E5-2680 v3 2.5GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T
+                                                        (120W) 最大内存 2133MHz
+                                                    </td>
+                                                    <td>
+                                                        <div class="num_input inline_block num_input_new">
+                                                            <button class="but_blue but_opa_small inp_plus">+
+                                                            </button>
+                                                            <input type="text" value="1">
+                                                            <button
+                                                                class="but_blue but_opa_small radius_left_0 inp_reduce">
+                                                                -
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="but_mix but_r val_dialogTop"
+                                                                name="pro_complete_del_sure_box">删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E5-2670 v3 2.3GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T
+                                                        (120W) 最大内存 2133MHz
+                                                    </td>
+                                                    <td>
+                                                        <div class="num_input inline_block num_input_new">
+                                                            <button class="but_blue but_opa_small inp_plus">+
+                                                            </button>
+                                                            <input type="text" value="1">
+                                                            <button
+                                                                class="but_blue but_opa_small radius_left_0 inp_reduce">
+                                                                -
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button class="but_mix but_r val_dialogTop"
+                                                                name="pro_complete_del_sure_box">删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="inline_block relative t_textinput">
+                            <button class="but_icon val_dialogTop sp_new_tjpjsp_btn pro_complete_create_choose_goods_btn" name="sp_new_tjpjsp"><i></i>添加配件商品
+                            </button>
+                        </div>
+                    </div>
+                    <!--可选配盒子-->
+                    <div class="sp_sppz_pt_box_yes none">
+                        <div class="pro_complete_create_goods_chosen_list_yes"></div>
+                        <!--<div class="worksp_addbx_a">
+                            <div class="t_textinput relative" style="margin: 10px 0 5px;">
+                                <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                    class="c_r">*</i>商品<span>(<cite class="page_31_khlxrNum">4</cite>)</span></div>
+                            </div>
+                            <div class="box_Open cg_cgbjd_newCon xs_shd_newCon page_108_shdSP">
+                                <div class="box_open_list goods_tc_toggle">
+                                    <p class="box_open_head">
+                                            <span class="cont_title"
+                                                  style="padding-left: 0;margin-left: 0;">CPU处理器</span>
+                                    <span>
+                                        <button class="but_mix val_dialogTop" name="sp_set_tcNew">添加</button><button
+                                        class="but_r but_mix val_dialogTop" name="pro_complete_del_sure_box">删除
+                                    </button>
+                                    </span>
+                                            <span class="box_open_btn" style="right: 13px;">收起 <i
+                                                class="right icon_show"></i></span>
+                                    </p>
+                                    <div class="div_1 container">
+                                        <div class="div_1 table-container">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>属性</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                                        (145W) 最大内存 2133MHz
+                                                    </td>
+                                                    <button class="but_r but_mix val_dialogTop" name="pro_complete_del_sure_box">
+                                                        删除
+                                                    </button>
+                                                </tr>
+                                                <tr>
+                                                    <td>E5-2680 v3 2.5GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T
+                                                        (120W) 最大内存 2133MHz
+                                                    </td>
+                                                    <button class="but_r but_mix val_dialogTop" name="pro_complete_del_sure_box">
+                                                        删除
+                                                    </button>
+                                                </tr>
+                                                <tr>
+                                                    <td>E5-2670 v3 2.3GHz,30M 缓存,9.60GT/s QPI,Turbo,HT,12C/24T
+                                                        (120W) 最大内存 2133MHz
+                                                    </td>
+                                                    <button class="but_r but_mix val_dialogTop" name="pro_complete_del_sure_box">
+                                                        删除
+                                                    </button>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="inline_block relative t_textinput">
+                            <button class="but_icon val_dialogTop sp_new_tjpjsp_btn pro_complete_create_choose_goods_btn" name="sp_new_tjpjsp"><i></i>添加配件商品
+                            </button>
+                        </div>
+                        <div class="t_textinput t_textarea goods_pjsm">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>选配说明</div>
+                            <div class="t_right"><textarea class="c_3 txt_normal pro_complete_create_kxp_xpsm_textarea" onfocus="fn_focus(this);"
+                                                           onblur="fn_blur(this);"
+                                                           style="color: rgb(204, 204, 204);">请输入选配说明</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="finance_sz_ysqk" style="width: 1200px;">
+                    <div class="goods_zj_kfyj">
+                        <h2 class="cont_title">库存预警</h2>
+                        <div style="margin-top: 20px;overflow: hidden;">
+                            <div class="t_textinput" style="float: left;">
+                                <div class="t_left" style="width: 32%;"><i class="c_r v_hidden">*</i>最低库存</div>
+                                <div class="t_right" style="margin-left: 32%;"><input type="text" class="c_3 time_input pro_complete_create_lower_limit"
+                                                                                      value="请输入库存下限"
+                                                                                      onfocus="fn_focus(this);"
+                                                                                      onblur="fn_blur(this);">
+                                </div>
+                            </div>
+                            <div class="t_textinput" style="float: right;margin-right: 110px;">
+                                <div class="t_left" style="width: 32%;"><i class="c_r v_hidden">*</i>最高库存</div>
+                                <div class="t_right" style="margin-left: 32%;"><input type="text" class="c_3 time_input pro_complete_create_top_limit"
+                                                                                      value="请输入库存上限"
+                                                                                      onfocus="fn_focus(this);"
+                                                                                      onblur="fn_blur(this);">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h2 class="cont_title">其他</h2>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width: 10em;margin-right: 20px;"><i class="c_r v_hidden">*</i>启用整机商品</div>
+                        <div class="muban_radio c_9">
+                            <label style="margin-right: 20px;margin-left: 10px;" class="c_3">
+                                <input type="radio" name="aa" class="pro_complete_create_qysp_up" checked="checked">启用
+                            </label>
+                            <label class="c_3">
+                                <input type="radio" class="pro_complete_create_qysp_down" name="aa">停用
+                            </label>
+                        </div>
+                    </div>
+                    <div class="goods_zj_qcxx">
+                        <h2 class="cont_title">期初信息<span class="c_r m_left_10">(重要)</span></h2>
+                        <p class="sp_underTitle c_9 m_bottom_10" style="line-height:18px;margin-top: 10px;">
+                            期初库存是您在启用本软件前仓库中已有的商品库存，录入期初库存可以使后续成本价、毛利等值的计算更准确</p>
+                        <div class="t_textinput relative">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r v_hidden">*</i>初期库存数量
+                            </div>
+                        </div>
+                        <div class="pro_complete_create_warehouse_list"></div>
+                        <!--<div class="t_textinput">
+                            <div class="t_left" style="width: 9%"><i class="c_r v_hidden">*</i>库房A</div>
+                            <div class="t_right" style="margin-left: 7%;"><input type="text"
+                                                                                 class="time_input goods_inp_32"
+                                                                                 value="请输入数量"
+                                                                                 onfocus="fn_focus(this);"
+                                                                                 onblur="fn_blur(this);">
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left" style="width: 9%"><i class="c_r v_hidden">*</i>库房B</div>
+                            <div class="t_right" style="margin-left: 7%;"><input type="text"
+                                                                                 class="time_input goods_inp_32"
+                                                                                 value="请输入数量"
+                                                                                 onfocus="fn_focus(this);"
+                                                                                 onblur="fn_blur(this);">
+                            </div>
+                        </div>-->
+                        <div class="t_textinput relative" style="height: 23px;line-height: 23px;">
+                            <div class="t_left" style="color:#333;font-weight: 600;max-width: 10em;"><i
+                                class="c_r v_hidden">*</i>总计：<span class="pro_complete_create_warehouse_num_total">0</span></div>
+                        </div>
+                        <div class="t_textinput goods_base_new_lfxx">
+                            <p class="c_r" style="padding-left: 10px;display: inline-block;">请在“库房管理”建立库房信息。</p>
+                        </div>
+                        <div class="t_textinput relative">
+                            <div class="t_left" style="color:#666;font-weight: 600;max-width: 10em;"><i
+                                class="c_r v_hidden">*</i>初期采购单价
+                            </div>
+                        </div>
+                        <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>单价</div>
+                            <div class="t_right">
+                                <input type="text" class="time_input goods_inp_40 pro_complete_create_cost_one" value="请输入单价" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeydown="value = this.value.replace(/[^0-9\.]/g, '');" onkeyup="value = this.value.replace(/[^0-9\.]/g, '');"><i style="margin-left: 10px;">元</i>
+                            </div>
+                        </div>
+                        <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>税率</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal goods_selece_50">
+                                    <input type="text" class="select_input pro_complete_create_tax_one" value="含税率17%">
+                                    <i></i>
+                                    <ul class="select_list pro_complete_create_tax_ul">
+                                        <li>含税率17%</li>
+                                        <li>未税</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>采购价</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 goods_inp_40 pro_complete_create_cg_cost_one" value="0" readonly="true" ><i style="margin-left: 10px;">元</i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_complete_create_submit_btn">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-选择商品-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_new_tjpjsp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1200px;max-height:700px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择商品</h3>
+            </div>
+            <div class="dialog_text">
+                <div class="sbar second-level hr_left_bjbm" style="top:46px;bottom:50px;">
+                    <div class="goods_base_left_header">
+                        <div class="cont_search inline_block sp_base_search">
+                            <input type="text" class="search_input pro_complete_create_choose_goods_cate_search_inp" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                            <ul class="inp_add_list pro_complete_create_choose_goods_inp_add_list">
+                                <!--<li style="margin-top: 1px;">硬盘 <i></i></li>-->
+                            </ul>
+                            <button class="search_but but_blue pro_complete_create_choose_goods_cate_search_btn">搜索</button>
+                        </div>
+                    </div>
+                    <div class="goods_base_left_middle">
+                        <div class="Sideslip_list ht_slid_list">
+                            <ul class="pro_complete_create_choose_goods_cate_list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="sbar second-level hr_left_bjbm" style="top:46px;bottom:50px;">
+                    <div class="hr_left_nav">
+                        <ul class="change pro_complete_create_choose_goods_sort_ul_list"><li class="hr_left_all" cussortid="0"><span>所有分类(<i class="ven_sell_quote_goods_sort_totals"></i>)</span></li>
+                            <i class="pro_complete_create_choose_goods_sort_list"></i>
+                            &lt;!&ndash;<ul class="hr_ul1">
+                                <li class="hr_left_1"><span>服务器(3)</span></li>
+                                <ul class="hr_ul3">
+                                    <li class="hr_left_2"><span>服务器1</span></li>
+                                    <li class="hr_left_2"><span>服务器2</span></li>
+                                    <li class="hr_left_2"><span>服务器3</span></li>
+                                </ul>
+                            </ul>
+                            <ul class="hr_ul1">
+                                <li class="hr_left_1"><span>交换器(1)</span></li>
+                                <ul class="hr_ul3">
+                                    <li class="hr_left_2"><span>交换器</span></li>
+                                </ul>
+                            </ul>&ndash;&gt;
+                        </ul>
+                    </div>
+                    <div class="allgoods" style="height: auto;">
+                    </div>
+                </div>-->
+                <div class="sbar rightcontent" style="top:46px;bottom:50px;">
+                    <div class="sp_right_con" style="padding-left:30px;padding-right: 20px">
+                        <div class="con_right_head clearfix" style="border:none;">
+                            <div class="cont_search inline_block"><input type="text"
+                                                                         class="search_input pro_complete_create_choose_goods_search_inp"
+                                                                         value="搜索商品编号/商品名称" onfocus="fn_focus(this);"
+                                                                         onblur="fn_blur(this);"
+                                                                         style="color: rgb(204, 204, 204);"><span
+                                class="search_but pro_complete_create_choose_goods_search_btn">搜索</span></div>
+                            <div style="display:inline-block;position:relative;">
+                                <button class="but_cancel but_small inline_block zkgjssBtn" name="sp_basegsxx_zkgjss1">
+                                    展开高级搜索
+                                </button>
+                                <i class="zkggss_sort_up zkgjss_cont" name="sp_basegsxx_zkgjss1"
+                                   style="top:38px;right: 51px;"></i>
+                            </div>
+                            <div class="con_right_result right">
+                                <p class="left">搜索结果: <span
+                                    class=" f_color pro_complete_create_choose_goods_totals">0</span>条</p>
+                            </div>
+                        </div>
+                        <!--展开高级搜索-->
+                        <div class="container zkgjss_cont zkgjss_content" name="sp_basegsxx_zkgjss1">
+                            <div class="lik_table_max_height">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="goods_attr_search_table">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="div_1 container lik_table_wrap">
+                            <div class="div_1 table-container" style="margin:0;">
+                                <table>
+                                    <thead class="pro_complete_create_choose_goods_list_thead">
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>商品编号</th>
+                                        <th>名称</th>
+                                        <th>基本单位</th>
+                                        <th>备注</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="pro_complete_create_choose_goods_list">
+                                    </tbody>
+                                </table>
+                                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                                <div class="no_data_box none pro_complete_create_choose_goods_nodata_box">
+                                    <div class="no_data">
+                                        <!--<span class="inline_block"></span>-->
+                                        <p class="c_9">抱歉，没有找到相关内容！</p>
+                                    </div>
+                                    <div class="no_data_bottom"></div>
+                                </div>
+                            </div>
+                            <div class="handle pro_complete_create_choose_goods_handle">
+                                <div class="fenye_box pro_complete_create_choose_goods_pagination">
+                                    <span>每页显示</span>
+                                    <div class="inline_block select_mormal">
+                                        <input type="text" class="select_input" value="10">
+                                        <ul class="select_list select_list_to_top">
+                                            <li>5</li>
+                                            <li>10</li>
+                                            <li>15</li>
+                                            <li>20</li>
+                                        </ul>
+                                        <i></i>
+                                    </div>
+                                    <span>条数据</span>
+                                    <div class="fenye_btn first_page_valid"><span></span></div>
+                                    <div class="fenye_btn prev_page_valid"><span></span></div>
+                                    <span class="page_box on">1</span>
+                                    <span class="page_box">2</span>
+                                    <span class="page_box">3</span>
+                                    <span class="page_box">4</span>
+                                    <div class="fenye_btn next_page_valid"><span></span></div>
+                                    <div class="fenye_btn last_page_valid"><span></span></div>
+                                    <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                    <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_complete_create_choose_goods_save_btn">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-整机商品分类-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_new_pzfl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">整机商品分类</h3>
+            </div>
+            <div class="dialog_text sp_new_pzsp">
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 30%"><i class="c_r ">*</i>配置分类名称</div>
+                    <div class="t_right" style="width: 69%;margin-left:30%;">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input c_3" value="处理器CUP">
+                            <i></i>
+                            <ul class="select_list" style="display: none;">
+                                <li>处理器CUP</li>
+                                <li>内存</li>
+                                <li>硬盘</li>
+                            </ul>
+                        </div>
+                        <div class="inline_block relative" style="margin-top:20px;">
+                            <button class="but_icon val_dialogTop" name="sp_new_pzadd"><i class="icon-add"></i>新建配置分类
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue val_dialogTop" name="sp_pz_xzsp">添加商品</button>
+                <button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-添加配置分类-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_new_pzadd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 230px;width: 460px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加配置分类</h3>
+            </div>
+            <div class="dialog_text sp_new_pzsp">
+                <div class="t_textinput" style=" margin-top: 30px;">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input" value="输入名称"
+                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                style="color: rgb(153, 153, 153);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue">确定</button>
+                <button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗-查看详情-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_ckxq_pz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 720px;height: 480px;">
+            <div class="dialog_title" style="position: relative">
+                <i class="dialog_close">关闭</i>
+                <button class="but_blue but_print but_mix" style="position: absolute;right: 30px;bottom: 8px;">导出PDF或打印
+                </button>
+                <h3 class="dialog_h3">服务器-7300 整机商品分类</h3>
+            </div>
+            <div class="dialog_text sbar sp_new_dt" style="padding:0 60px 30px;margin:0;">
+                <div class="t_textinput" style=" margin-top: 6px;">
+                    <div class="t_left"><i class="c_r">*</i>商品1</div>
+                </div>
+                <div class="sp_pz_xqCon">
+                    <h4 class="sp_pz_head c_3"> CPU处理器</h4>
+                    <ul class="sp_pz_xqList">
+                        <li>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W)最大内存2133MHz</li>
+                        <li>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存2322MHz</li>
+                        <li>E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W) 最大内存2133MHz</li>
+                    </ul>
+                </div>
+                <div class="t_textinput" style=" margin-top: 6px;">
+                    <div class="t_left"><i class="c_r">*</i>商品2</div>
+                </div>
+                <div class="sp_pz_xqCon">
+                    <h4 class="sp_pz_head c_3"> 内存</h4>
+                    <ul class="sp_pz_xqList">
+                        <li>8GB RDIMM, 2400MT/s, 单列, x8 带宽</li>
+                        <li>8GB RDIMM, 2400MT/s, 单列, x8 带宽</li>
+                        <li>8GB RDIMM, 2400MT/s, 单列, x8 带宽</li>
+                    </ul>
+                </div>
+                <div class="t_textinput" style=" margin-top: 6px;">
+                    <div class="t_left"><i class="c_r">*</i>商品3</div>
+                </div>
+                <div class="sp_pz_xqCon">
+                    <h4 class="sp_pz_head c_3"> 硬盘</h4>
+                    <ul class="sp_pz_xqList">
+                        <li>8GB RDIMM, 2400MT/s, 单列, x8 带宽 + 硬盘托架</li>
+                        <li>8GB RDIMM, 2400MT/s, 单列, x8 带宽 + 硬盘托架</li>
+                        <li>8GB RDIMM, 2400MT/s, 单列, x8 带宽 + 硬盘托架</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-选择商品-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_pz_xzsp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1070px;height:440px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择附件商品</h3>
+            </div>
+            <div class="dialog_text">
+                <div class="sbar second-level hr_left_bjbm" style="top:46px;bottom:50px;">
+                    <p class="c_b sp_qbdk"><i></i>全部展开</p>
+                    <div class="hr_left_nav">
+                        <ul>
+                            <li class="hr_left_all"><span>所有分类</span></li>
+                        </ul>
+                        <ul class="hr_ul1">
+                            <li class="hr_left_1"><span>服务器</span></li>
+                            <ul class="hr_ul3">
+                                <li class="hr_left_2"><span>貂蝉</span></li>
+                                <li class="hr_left_2"><span>吕布</span></li>
+                                <li class="hr_left_2"><span>杨文广</span></li>
+                            </ul>
+                        </ul>
+                        <ul class="hr_ul1">
+                            <li class="hr_left_1"><span>交换器</span></li>
+                            <ul class="hr_ul3">
+                                <li class="hr_left_2"><span>董卓</span></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="allgoods" style="height: auto;">
+                    </div>
+                </div>
+
+                <div class="sbar rightcontent" style="top:46px;bottom:50px;">
+                    <div class="sp_right_con" style="padding-left:30px;padding-right: 20px">
+                        <div class="con_right_head clearfix" style="border:none;">
+                            <div class="cont_search inline_block" style="width: 234px">
+                                <input type="text" class="muban_search" value="搜索成员／部门／手机等"
+                                       onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                       style="color: rgb(153, 153, 153);"><span class="search_but"
+                                                                                style="height: 31px;">搜索</span>
+                            </div>
+                            <div class="con_right_result right">
+                                <p class="left">搜索结果: <span class=" f_color">3</span>条</p>
+                            </div>
+                        </div>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" class="checkAll" name="sp_pzsp_xzspTab"></th>
+                                <th>数量</th>
+                                <th>商品名称</th>
+                                <th>基本单位</th>
+                                <th>规格</th>
+                                <th>属性</th>
+                                <th>状态</th>
+                                <th>备注</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="sp_pzsp_xzspTab"></td>
+                                <td>
+                                    <div class="num_input">
+                                        <button class="but_blue but_small inp_plus">+</button>
+                                        <input type="text" value="1"/>
+                                        <button class="but_blue but_small radius_left_0 inp_reduce">-</button>
+                                    </div>
+                                </td>
+                                <td>SP56461321</td>
+                                <td>硬盘</td>
+                                <td>块</td>
+                                <td>1T</td>
+                                <td><p>品牌：戴尔</p>
+                                    <p> 类型：固态硬盘</p></td>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="sp_pzsp_xzspTab"></td>
+                                <td>
+                                    <div class="num_input">
+                                        <button class="but_blue but_small inp_plus">+</button>
+                                        <input type="text" value="1"/>
+                                        <button class="but_blue but_small radius_left_0 inp_reduce">-</button>
+                                    </div>
+                                </td>
+                                <td>SP56461321</td>
+                                <td>硬盘</td>
+                                <td>块</td>
+                                <td>1T</td>
+                                <td><p>品牌：戴尔</p>
+                                    <p> 类型：固态硬盘</p></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="fenye_box" style="margin: 0;">
+                            <span>每页显示</span>
+                            <div class="inline_block select_mormal">
+                                <input type="text" class="select_input" value="10">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>5</li>
+                                    <li>10</li>
+                                    <li>15</li>
+                                    <li>20</li>
+                                </ul>
+                            </div>
+                            <span>条数据</span>
+                            <div class="fenye_btn" style="margin-left:1em"><span class="icon-start_arrow"></span>
+                            </div>
+                            <div class="fenye_btn"><span class="icon-left_arrow"></span></div>
+                            <span>当前在</span>
+                            <input type="text" class="inp_txt sel_normal_short fengye_input" value="1">
+                            <span>页</span>
+                            <div class="fenye_btn active"><span class="icon-right_arrow"></span></div>
+                            <div class="fenye_btn active"><span class="icon-next_arrow"></span></div>
+                            <span>共<cite class="f_color mLR_5">9</cite>条数据</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue">确定</button>
+                <button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-添加配置分类-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_pzset_addsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 350px;width: 520px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加配置分类</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="sp_unhead" style="margin-left: 0;">
+                    已添加的配置分类
+                </p>
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_right" style="width: 100%;margin-left: 0;"><input type="text"
+                                                                                    class="time_input c_3"
+                                                                                    value="CPU处理器" readonly="true"
+                                                                                    style="background: #fff;">
+                        <i class="sp_delete val_dialogTop" name="sp_pz_delect"></i>
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_right" style="width: 100%;margin-left: 0;"><input type="text"
+                                                                                    class="time_input c_3"
+                                                                                    value="HP" readonly="true"
+                                                                                    style="background: #fff;">
+                        <i class="sp_delete val_dialogTop" name="sp_pz_delect"></i>
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_right" style="width: 100%;margin-left: 0;"><input type="text"
+                                                                                    class="time_input c_3"
+                                                                                    value="HP" readonly="true"
+                                                                                    style="background: #fff;">
+                        <i class="sp_delete val_dialogTop" name="sp_pz_delect"></i>
+                    </div>
+                </div>
+                <div class="inline_block relative" style="margin-bottom: 20px;">
+                    <button class="but_icon val_dialogTop" name="sp_new_pzadd"><i class="icon-add"></i>添加配置分类
+                    </button>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue">确定</button>
+                <button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-删除基本单位-->
+<div class="dialog">
+    <div class="dialog_box" name="pro_complete_unit_del_dialog">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small pro_complete_unit_del_submit_btn">删除</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="pro_complete_del_sure_box">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small pro_complete_list_del_submit_btn">删除</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-确认删除-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_pz_sccg">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_4" style="height:240px;width:430px;">
+            <i class="dialog_close">关闭</i>
+            <em class="exportIcon"></em>
+            <p class="exportMsg">删除成功！</p>
+            <p class="remind_delect c_9">您已经永久删除了这条信息。</p>
+            <div class="dialog_submit" style="border: none;left:0;">
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--弹出层-选择整机商品-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_pz_xzpzsp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="width: 780px;height: 600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择整机商品</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <div style="margin-bottom: 25px;"> 为：<span class="f_color"> E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T (145W)最大内存2133MHz</span>选择搭配商品
+                </div>
+                <div class="sp_sppz_pt" style="margin-bottom: 30px;">
+                    <div class="sp_sppz_ptMAs">
+                        <div class="box_Open">
+                            <p class="box_open_head">
+                                CPU处理器
+                                    <span class="box_open_btn" style="right: 10px;">收起 <i
+                                        class="right icon_show"></i></span>
+                            </p>
+                            <ul class="box_open_list">
+                                <li><input type="checkbox">E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                    (145W) 最大内存2133MHz
+                                </li>
+                                <li><input type="checkbox">E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                    (145W) 最大内存2133MHz/li>
+                                <li><input type="checkbox">E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                    (145W) 最大内存2133MHz
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sp_sppz_ptMAs">
+                        <div class="box_Open">
+                            <p class="box_open_head">
+                                内存
+                                    <span class="box_open_btn" style="right: 10px;">收起 <i
+                                        class="right icon_show"></i></span>
+                            </p>
+                            <ul class="box_open_list">
+                                <li><input type="checkbox">8GB RDIMM, 2400MT/s, 单列, x8 带宽</li>
+                                <li><input type="checkbox">8GB RDIMM, 2400MT/s, 单列, x8 带宽</li>
+                                <li><input type="checkbox">8GB RDIMM, 2400MT/s, 单列, x8 带宽</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sp_sppz_ptMAs">
+                        <div class="box_Open">
+                            <p class="box_open_head">
+                                主板
+                                    <span class="box_open_btn" style="right: 10px;">收起 <i
+                                        class="right icon_show"></i></span>
+                            </p>
+                            <ul class="box_open_list">
+                                <li><input type="checkbox">E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                    (145W) 最大内存2133MHz
+                                </li>
+                                <li><input type="checkbox">E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                    (145W) 最大内存2133MHz
+                                </li>
+                                <li><input type="checkbox">E5-2699 v3 2.3GHz,45M 缓存,9.60GT/s QPI,Turbo,HT,18C/36T
+                                    (145W) 最大内存2133MHz
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue">保存</button>
+                <button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-删除商品大类-->
+<div class="dialog">
+    <div class="dialog_box" name="pro_complete_goods_parent_del_name">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small pro_complete_create_goods_parent_del_submit">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-删除子商品-->
+<div class="dialog">
+    <div class="dialog_box" name="pro_complete_goods_child_del_name">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small pro_complete_create_goods_child_del_submit">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--图片弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_ck_img_look">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content image_box_a">
+            <div class="image_box">
+                <div class="image_box_slider_head">
+                    <i class=""></i>
+                </div>
+                <div class="image_box_content lik_img_auto_box">
+                    <img src="" alt="" class="image_box_content_img">
+                </div>
+                <div class="noprint goods_icon_pre"><i></i></div>
+                <div class="noprint goods_icon_nxt"><i></i></div>
+                <div class="icon_page noprint goods_icon_page">1/3</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    //可选配与不可选配切换(库存预警等的消失和显示)
+    /*$('.tanceng .goods_zj_select_btn label:first-child input').live('click', function () {
+        $('.tanceng .goods_zj_kfyj').removeClass('none');
+        $('.tanceng .goods_zj_qcxx').removeClass('none');
+    });
+    $('.tanceng .goods_zj_select_btn label:nth-child(2) input').live('click', function () {
+        $('.tanceng .goods_zj_kfyj').addClass('none');
+        $('.tanceng .goods_zj_qcxx').addClass('none');
+    });
+
+    //添加配件商品
+    $('.tanceng .sp_set_zj_tcnew_save').live('click', function () {
+        goods_tc_arr = [];
+        if (goods_tc_arr.length == 0) {
+            $(".tanceng .sp_newpz_pz").width(640);
+        }
+    });*/
+    //选择商品保存之后，判断是否为可选配
+    /*$('.sp_set_zj_tcnew_save').live('click', function () {
+        $(this).closest('.dialog_box').remove();
+        if ($('.tanceng .goods_zj_select_btn label:nth-of-type(1) input').attr('checked') == 'checked') {
+            $('.tanceng .sp_sppz_pt_box').removeClass('none');
+            $('.tanceng .sp_sppz_pt_box_yes').addClass('none');
+
+            var html_a = $('.sp_sppz_pt_box .sp_new_tjpjsp_btn').parent(".t_textinput").siblings(".worksp_addbx").html();
+            $('.sp_sppz_pt_box .sp_new_tjpjsp_btn').parent(".t_textinput").before('<div class="worksp_addbx">' + html_a + '</div>');
+            xsadd_khlxr($('.sp_sppz_pt_box .sp_new_tjpjsp_btn'));
+            if ($.inArray($('.sp_sppz_pt_box .sp_new_tjpjsp_btn').index(), goods_tc_arr) == -1) {
+                goods_tc_arr.push($(this).index());
+            }
+            if (goods_tc_arr.length !== 0) {
+                $(".tanceng .sp_newpz_pz").width(900);
+                $(".tanceng .sp_newpz_pz .sp_sppz_pt_box").css({
+                    'padding': ' 0 40px',
+                    'background': '#f7f7f7',
+                    'margin': ' 0 -40px',
+                    'border': '1px solid #e6e6e6'
+                });
+                $(".tanceng .sp_newpz_pz .sp_sppz_pt_box .box_open_head").css({
+                    'background': '#fff',
+                    'border-radius': '3px'
+                });
+                $(".tanceng .sp_newpz_pz").find(".goods_pz_new_sp_inputbox").css('width', '50%');
+                $(".tanceng .sp_newpz_pz").find(".goods_zj_kfyj").css('width', '63%');
+            }
+//        }else if($('.tanceng .goods_zj_select_btn label:nth-of-type(2) input').attr('checked') == 'checked'){
+//            alert(2222);
+//            $('.tanceng .sp_sppz_pt_box').addClass('none');
+//            $('.tanceng .sp_sppz_pt_box_yes').removeClass('none');
+//            var html_b = $('.sp_sppz_pt_box_yes .sp_new_tjpjsp_btn').parent(".t_textinput").siblings(".worksp_addbx").html();
+//            $('.sp_sppz_pt_box_yes .sp_new_tjpjsp_btn').parent(".t_textinput").before('<div class="worksp_addbx">'+html_b+'</div>');
+//            xsadd_khlxr($('.sp_sppz_pt_box_yes .sp_new_tjpjsp_btn'));
+//            if($.inArray($('.sp_sppz_pt_box_yes .sp_new_tjpjsp_btn').index(), goods_tc_arr) == -1){
+//                goods_tc_arr.push($(this).index());
+//            }
+//            if(goods_tc_arr.length !== 0){
+//                $(".tanceng .sp_newpz_pz").width(900);
+//                $(".tanceng .sp_newpz_pz .sp_sppz_pt_box_yes").css('background','#f7f7f7');
+//                $(".tanceng .sp_newpz_pz .sp_sppz_pt_box_yes").css('margin',' 0 -40px');
+//                $(".tanceng .sp_newpz_pz .sp_sppz_pt_box_yes").css('padding',' 0 40px');
+//                $(".tanceng .sp_newpz_pz .sp_sppz_pt_box_yes").css('border','1px solid #e6e6e6');
+//                $(".tanceng .sp_newpz_pz").find(".goods_pz_new_sp_inputbox").css('width','50%');
+//                $('.tanceng .goods_pjsm').css('width','50%');
+//                $('.tanceng .goods_pjsm').css('margin-left','0');
+//            }
+        }
+
+    });*/
+
+
+    function xsadd_khlxr(obj) {
+        var num_khlxr = obj.parents(".dialog_text_con").children(".worksp_addbx").length;
+        for (var i = 0; i < num_khlxr; i++) {
+            obj.parents(".dialog_text_con").find(".worksp_addbx .page_31_khlxrNum").eq(i).html(i + 1);
+        }
+
+        $(".goods_setnewDel").live("click", function () {
+            var length = $(this).parents("tbody").children('tr').length;
+            //            console.log($(this).parents("tr").length);
+            if (length == 1) {
+                alert("请至少保持一个元素");
+            } else {
+                $(this).parents("tr").remove();
+            }
+        });
+    }
+    //    //删除
+    //    $('.tanceng .goods_tc_del').live('click',function(){
+    //    alert(111);
+    //    $(this).parents('.worksp_addbx').remove();
+    //    });
+
+</script>
+</div>
+
+</body>
+<script>
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+</script>
+<script src="static/goods/js/l_49.js"></script>
+</html>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品设置</title>
+    <link rel="stylesheet" href="static/goods/goods.css">
+    <link rel="stylesheet" href="static/system/css/system.css">
+    <script src="static/system/js/113.js"></script>
+</head>
+<body>
+<div class="finance_content">
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>商品设置</h2>
+    <!--<div class="right">
+        <div class="res" title="点击刷新"></div>
+    </div>-->
+</div>
+<!--第二行-->
+<div class="system_right clearfix sbar" style="height: 92.5%;">
+    <div class="system_right_left left">
+        <p class="system_p">模板导航</p>
+        <hr>
+        <div class="system_tabJr">
+            <ul class="tabtitle system_tabUl">
+               <!-- <li class="taba tabhover" name="system_gnsz_goods" id="zcj_gnsz_spsx_set_left_tab">商品属性设置</li>-->
+                <li class="taba tabhover" name="system_gnsz_goods" id="zcj_gnsz_jbdw_set_left_tab">基本单位设置</li>
+                <li class="taba" name="system_gnsz_goods" id="zcj_gnsz_spfl_set_left_tab">商品分类</li>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="tabcontent system_muban relative system_xzset " name="system_gnsz_goods" style="padding: 0;">
+        <div class="system_sp_tabJr clearfix">
+            <p class="system_p">商品属性设置</p>
+        </div>
+        <div class="system_work_mbdh clearfix sp_set_spbox sp_set_con sp_spsx_box">
+            <div class="zcj_sp_attr_set_list_show_dv zcj_goods_attr_setting_list_data">
+               &lt;!&ndash; <div class="t_textinput" style="margin: 0;">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>自定义属性1</div>
+                    <div class="t_right">
+                        <input type="text" class="c_3" value="品牌">
+                        <div class="inline_block sp_set_con">
+                            <label>
+                                <input type="checkbox">戴尔
+                            </label>
+                            <label>
+                                <input type="checkbox">HP
+                            </label>
+                            <button class="val_dialogTop but_mix" name="xt_gnsz_goodExitzd">编辑</button>
+                            <button class="val_dialogTop but_mix" name="xt_gnsz_goodAddzd">增加属性字段</button>
+                            <button class="val_dialogTop but_mix but_r" name="xt_gnsz_goodDeletezd">删除</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>自定义属性2</div>
+                    <div class="t_right">
+                        <input type="text" value="输入属性名" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <div class="inline_block sp_set_con">
+                            <button class="val_dialogTop but_mix" name="xt_gnsz_goodAddzd" style="margin-left:0;">增加属性字段</button>
+                            <button class="val_dialogTop but_mix but_r" name="xt_gnsz_goodDeletezd">删除</button>
+                        </div>
+                    </div>
+                </div>&ndash;&gt;
+            </div>
+            <hr style="margin:30px 0;">
+            <div class="t_textinput xt_xzset_conTC">
+                <button class="but_icon zcj_gnsz_add_sxzd_field"><i></i>添加自定义属性字段</button>
+            </div>
+        </div>
+        <div class="xt_xzset_submit">
+            <button class="but_small but_blue">确定</button>
+            <button class="but_small but_cancel">取消</button>
+        </div>
+    </div>-->
+    <div class="system_muban relative system_xzset" style="width: 78%;margin-top: 15px;">
+    <div class="tabcontent" name="system_gnsz_goods" style="padding: 0;background-color: #fff;">
+        <div class="system_sp_tabJr clearfix">
+            <p class="system_p">基本单位设置</p>
+        </div>
+        <div class="dialog_text sp_set_spbox sbar" style="padding-top: 25px;margin-top: 0;">
+            <div>
+                <button class="val_dialogTop but_blue ht_but" name="goods_base_new_sp">新建基本单位</button>
+                <!--<div class="cont_search inline_block sp_base_search">-->
+                <!--<input type="text" class="search_input" value="搜索商品编号/商品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">-->
+                <!--<button class="search_but but_blue">搜索</button>-->
+                <!--</div>-->
+                <div class="right con_right_result right" style="margin-right: 0;">
+                    <p class="left" style="margin-right: 0;">搜索结果: <span class=" f_color pro_goods_set_unit_num_total">0</span>条</p>
+                </div>
+            </div>
+            <div class="container" name="takenote_a" style="padding:20px 0;">
+                <div class="table-container lik_table_max_height">
+                    <table class="page_47_goods_unit_new_list_table" style="margin-bottom:50px;">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>单位名称</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="pro_goods_set_unit_list_tbody">
+                        <!--<tr>
+                            <td>01</td>
+                            <td>台</td>
+                            <td><button class="but_mix">下移</button></td>
+                            <td>
+                                <button class="but_mix but_exit val_dialogTop" name="goods_base_exit_sp">修改</button>
+                                <button class="but_mix but_r">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>台</td>
+                            <td>
+                                <button class="but_mix">上移</button>
+                                <button class="but_mix">下移</button>
+                            </td>
+                            <td>
+                                <button class="but_mix but_exit val_dialogTop" name="goods_base_exit_sp">修改</button>
+                                <button class="but_mix but_r">删除</button>
+                            </td>
+                        </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--<div class="system_work_mbdh clearfix system_gn_xsBox">
+            <div class="con_right_head clearfix" style="border:none;padding:10px 0 20px;">
+                <button class="but_blue val_dialogTop zcj_goods_unit_new_new_form" style="color: #fff;margin-left:0;" name="xt_gnsz_goodnewdw">新建基本单位</button>
+                <div class="cont_search inline_block sp_base_search"><input type="text" class="search_input" value="搜索商品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);"><button class="search_but but_blue">搜索</button>
+                </div>
+                <div class="con_right_result right">
+                    <p class="left">搜索结果: <span class=" f_color page_47_goods_unit_new_list_count">3</span>条</p>
+                </div>
+            </div>
+            <div class="div_1 container">
+                <div class="div_1 table-container">
+                    <table class="zcj_goods_unit_new_list_table">
+                &lt;!&ndash;<thead>
+                <tr>
+                    <th>序号</th>
+                    <th>单位名称</th>
+                    <th>排序</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>台</td>
+                    <td><button class="but_mix but_down">下移</button></td>
+                    <td><button class="but_mix val_dialogTop but_exit" name="xt_gnsz_goodExitdw">修改</button><button class="but_mix but_r val_dialogTop" name="xt_gnsz_goodDeletezd">删除</button></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>台</td>
+                    <td><button class="but_mix">上移</button><button class="but_mix">下移</button></td>
+                    <td><button class="but_mix but_exit val_dialogTop" name="xt_gnsz_goodExitdw">修改</button><button class="but_mix but_r val_diaogTop" name="xt_gnsz_goodDeletezd">删除</button></td>
+                </tr>
+                </tbody>&ndash;&gt;
+            </table>
+                </div>
+            </div>
+        </div>-->
+        <!--<div class="xt_xzset_submit">
+            <button class="but_small but_blue">确定</button>
+            <button class="but_small but_cancel">取消</button>
+        </div>-->
+    </div>
+    <!--<div class="tabcontent none" name="system_gnsz_goods" style="padding: 0;">
+        <div class="system_sp_tabJr clearfix">
+            <p class="system_p">客户分类</p>
+        </div>
+        <div class="sp_sort_conTit" style="background: #fff;">
+            <button class="but_small val_dialogTop zcj_goods_cate_add_btn" name="xt_gnsz_goodaddsort">添加分类</button>
+            <button class="but_small but_exit val_dialog page_51_goods_cate_edit_btn" name="xt_gnsz_goodExitsort">编辑分类</button>
+            <button class="but_small but_look goods_cate_edit_change_sort" data-action="up">上移</button>
+            <button class="but_small but_look goods_cate_edit_change_sort" data-action="down">下移</button>
+            <button class="but_small but_r val_dialogTop page_51_goods_cate_delete_btn" name="xt_gnsz_goodDeletezd">删除分类</button>
+        </div>
+        <div class="system_work_mbdh clearfix system_gn_xsBox page_51_goods_cate_edit_modal">
+            <div class="list_box" >
+                <div class="list_box_con sbar">
+                    <div class="left_nav">
+                        <ul class="list_box_level list_box_ulexit goods_cate_tree"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                           &lt;!&ndash; <ul class="ul1">
+                                <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                <ul class="ul3" style="display: none;">
+                                    <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                    <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                    <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                </ul>
+                            </ul>
+                            <ul class="ul1">
+                                <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                <ul class="ul3">
+                                    <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></span></li>
+                                </ul>
+                            </ul>&ndash;&gt;
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xt_xzset_submit">
+            <button class="but_small but_blue">确定</button>
+            <button class="but_small but_cancel">取消</button>
+        </div>
+    </div>-->
+        <!--************************************商品分类start************************************-->
+        <div class="tabcontent goods_sort_sp" name="system_gnsz_goods" style="padding:0;margin-top: 10px;">
+            <div class="sp_sort_con">
+                <div class="xs_ke_tabbox relative">
+                    <ul class="clearfix relative pro_category_nav_ul">
+                        <li class="tab_btn tabhover2 left" name="spSort_sort">商品分类</li>
+                        <li class="tab_btn left" name="spSort_sort">整机商品分类</li>
+                    </ul>
+                    <p class="line"></p>
+                </div>
+                <div class="tabcontent goods_sort_sp" name="spSort_sort" style="padding:0;">
+                    <div class="sp_sort_conTit clearfix" style="padding-left:0;">
+                        <button class="but_small val_dialog page_51_goods_cate_add_btn" name="sp_sort_tjfl"
+                                style="margin-left: 10px;"><i></i>添加分类
+                        </button>
+                        <button class="but_small val_dialog but_exit pro_category_goods_edit_btn" name="sp_sort_cate_edit">
+                            <i></i>编辑分类
+                        </button>
+                        <button class="but_small but_r page_51_goods_cate_delete_btn val_dialog pro_category_del_btn"
+                                name="">
+                            <i></i>删除分类
+                        </button>
+                        <button class="but_small pro_category_up_btn">
+                            <i></i>上移
+                        </button>
+                        <button class="but_small pro_category_down_btn">
+                            <i></i>下移
+                        </button>
+                    </div>
+                    <div class="list_box sp_sort_list_box sbar goods_sort_sp_list">
+                        <div class="goods_base_left_middle sbar">
+                            <div class="Sideslip_list ht_slid_list sbar" style="width: 100%;background: #fff;">
+                                <ul class="pro_category_goods_list_ul">
+                                    <!--<li class="Sideslip_list_on">
+                                        <span>CPU</span>
+                                    </li>
+                                    <li>
+                                        <span>硬盘</span>
+                                    </li>
+                                    <li>
+                                        <span>内存</span>
+                                    </li>
+                                    <li>
+                                        <span>电源</span>
+                                    </li>
+                                    <li>
+                                        <span>RAID卡</span>
+                                    </li>
+                                    <li>
+                                        <span>网卡</span>
+                                    </li>
+                                    <li>
+                                        <span>GPU</span>
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabcontent goods_sort_sp" name="spSort_sort" style="padding:0;display: none">
+                    <div class="sp_sort_conTit clearfix" style="padding-left:0;">
+                        <button class="but_small val_dialog page_51_goods_cate_add_btn" name="sp_sort_tjfl_zj"
+                                style="margin-left: 10px;"><i></i>添加分类
+                        </button>
+                        <button class="but_small val_dialog but_exit pro_category_setting_edit_btn" name="sp_sort_bjfl_zj">
+                            <i></i>编辑分类
+                        </button>
+                        <button
+                                class="but_small but_r page_51_goods_cate_delete_btn val_dialog pro_category_setting_del_btn"
+                                name="">
+                            <i></i>删除分类
+                        </button>
+                        <button class="but_small pro_category_up_btn">
+                            <i></i>上移
+                        </button>
+                        <button class="but_small pro_category_down_btn">
+                            <i></i>下移
+                        </button>
+                    </div>
+                    <div class="list_box sp_sort_list_box sbar goods_sort_sp_list">
+                        <div class="goods_base_left_middle sbar">
+                            <div class="Sideslip_list ht_slid_list sbar" style="width: 100%;">
+                                <ul class="pro_category_setting_list_ul">
+                                    <!--<li class="Sideslip_list_on">
+                                        <span>机架式服务器整出</span>
+                                    </li>
+                                    <li>
+                                        <span>塔式服务器</span>
+                                    </li>
+                                    <li>
+                                        <span>工作站</span>
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-添加分类-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_sort_tjfl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width:620px;height: 500px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加分类</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height:81%;">
+                <div class="dialog_text_con pro_category_tjfl_dialog_box" style="padding-bottom:20px;">
+                    <h2 class="cont_title">分类名称</h2>
+                    <div class="t_textinput" style="height: 52px;">
+                        <div class="t_left"><i class="c_r">*</i>分类名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_inputc pro_category_goods_create_name" value="请输入名称" onfocus="fn_focus(this);"
+                                   onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                            <p class="c_c">分类名称及商品名称</p>
+                        </div>
+                    </div>
+                    <hr class="finance_sz_ysqk" style="width: 1200px;">
+                    <h2 class="cont_title">商品属性</h2>
+                    <div class="worksp_addbx">
+                        <div class="t_textinput" style="height: auto;">
+                            <div class="t_left" style="max-width: 10em;"><i class="c_r">*</i>属性名称<span><cite
+                                    class="page_86_zjphNum">1</cite></span></div>
+                            <div class="t_right">
+                                <input type="text" class="time_input goods_inp_32" value="请输入字段"
+                                       onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                       style="color: rgb(153, 153, 153);">
+                                <label style="vertical-align: middle;margin-left: 30px;">
+                                    <input type="checkbox" checked="checked">标记必填
+                                </label>
+                                <label style="vertical-align: middle;margin-left: 20px;">
+                                    <button class="but_green but_mix goods_add_select_btn val_dialogTop"
+                                            name="goods_add_select_btn">添加选项
+                                    </button>
+                                </label>
+                                <label style="vertical-align: middle;">
+                                    <button class="but_r but_mix goods_sort_tjfl_del">删除</button>
+                                </label>
+
+                            </div>
+                            <div class="none goods_add_select_box" style="position: relative;">
+                                <i class="goods_sort_up"></i>
+                                <div class="goods_add_select_box_con" style="position: relative;">
+                                    <ul class="inp_add_list_3">
+                                        <!--<li style="margin-top: 1px;">硬盘 <i></i></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <button class="but_icon page_51_goods_attr_btn_add"><i></i>添加自定义属性</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_category_goods_create_submit_btn">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-编辑分类-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_sort_cate_edit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width:620px;height: 500px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑分类</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height:81%;">
+                <div class="dialog_text_con pro_category_tjfl_dialog_box" style="padding-bottom:20px;">
+                    <h2 class="cont_title">分类名称</h2>
+                    <div class="t_textinput" style="height: 52px;">
+                        <div class="t_left"><i class="c_r">*</i>分类名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_inputc pro_category_goods_create_name" value="请输入名称" onfocus="fn_focus(this);"
+                                   onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                            <p class="c_c">分类名称及商品名称</p>
+                        </div>
+                    </div>
+                    <hr class="finance_sz_ysqk" style="width: 1200px;">
+                    <h2 class="cont_title">商品属性</h2>
+                    <div class="worksp_addbx_list">
+                        <div class="worksp_addbx">
+                            <div class="t_textinput" style="height: auto;">
+                                <div class="t_left" style="max-width: 10em;"><i class="c_r">*</i>属性名称<span><cite
+                                        class="page_86_zjphNum">1</cite></span></div>
+                                <div class="t_right">
+                                    <input type="text" class="time_input goods_inp_32" value="请输入字段"
+                                           onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                           style="color: rgb(153, 153, 153);">
+                                    <label style="vertical-align: middle;margin-left: 30px;">
+                                        <input type="checkbox" checked="checked">标记必填
+                                    </label>
+                                    <label style="vertical-align: middle;margin-left: 20px;">
+                                        <button class="but_green but_mix goods_add_select_btn val_dialogTop"
+                                                name="goods_add_select_btn">添加选项
+                                        </button>
+                                    </label>
+                                    <label style="vertical-align: middle;">
+                                        <button class="but_r but_mix goods_sort_tjfl_del">删除</button>
+                                    </label>
+
+                                </div>
+                                <div class="none goods_add_select_box" style="position: relative;">
+                                    <i class="goods_sort_up"></i>
+                                    <div class="goods_add_select_box_con" style="position: relative;">
+                                        <ul class="inp_add_list_3">
+                                            <!--<li style="margin-top: 1px;">硬盘 <i></i></li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <button class="but_icon page_51_goods_attr_btn_add"><i></i>添加自定义属性</button>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_category_goods_edit_submit_btn">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-添加属性选项-->
+<div class="dialog">
+    <div class="dialog_box" name="goods_add_select_btn">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1 pro_category_goods_attr_option_dialog_content"
+             style="height: 200px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加选项</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin-top:0; padding:30px 0;">
+                <div class="dialog_text_con">
+                    <div class="worksp_bx1 pro_category_goods_add_option_list">
+                        <div class="t_textinput t_textarea" style="height:40px">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>名称 <span class="pro_category_goods_attr_option_num">1</span></div>
+                            <div class="t_right">
+                                <input type="text" class="time_input goods_inp_70" value="输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                <div class="xslc_setul_4 goods_sort_btn_yes">
+                                    <button class="goods_setulAddli but_green">+</button><button class="goods_setuldelli but_red">-</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue goods_sort_new_save">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--************************************商品分类end************************************-->
+<!--************************************整机商品分类start************************************-->
+<!--弹窗-添加分类-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_sort_tjfl_zj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width:450px;height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加分类</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height:81%;">
+                <div class="dialog_text_con" style="padding-bottom:20px;">
+                    <h2 class="cont_title">分类名称</h2>
+                    <div class="t_textinput" style="height: 52px;">
+                        <div class="t_left"><i class="c_r">*</i>分类名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input pro_category_create_setting_inp" value="请输入名称"
+                                   onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue pro_category_create_setting_submit_btn">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-编辑分类-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_sort_bjfl_zj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 250px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑分类</h3>
+            </div>
+            <div class="dialog_text" style="height: auto;margin-top: 50px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input c_3 pro_category_setting_edit_inp"
+                                                value="" onfocus="fn_focus(this);"
+                                                onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue pro_category_setting_edit_submit_btn">确定</button>
+                <button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--************************************整机商品分类end************************************-->
+<!-- 弹窗-删除分类，如果该分类下面有子分类提醒 -->
+ <div class="dialog">
+    <div class="dialog_box" name="sp_sort_delete_no">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">该商品分类下有商品，不允许删除，请先删除商品</p>
+            </div>
+            <div class="dialog_submit">
+              <!-- <button class="but_red but_small delete_anniu">删除</button>-->
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+ </div>
+<!--增加属性字段-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_goodAddzd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 250px;width: 480px;">
+            <div class="dialog_title">
+                <i class="dialog_close zcj_goods_attr_setting_new_second_attr_close">关闭</i>
+                <h3 class="dialog_h3">增加属性字段</h3>
+            </div>
+            <div class="dialog_text" style="height: auto;margin-top: 50px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>属性字段</div>
+                    <div class="t_right"><input type="text" class="time_input zcj_goods_attr_setting_new_second_attr" value="输入属性字段名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue zcj_goods_attr_setting_new_second_attr_sure">确定</button><button class="but_small normal_dialog zcj_goods_attr_setting_new_second_attr_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除字段提醒-->
+<div class="dialog">
+    <div class="dialog_box" name="sp_sort_delete">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small pro_category_del_submit_btn">删除</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-删除基本单位-->
+<div class="dialog">
+    <div class="dialog_box" name="pro_goods_unit_del_dialog">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu pro_goods_unit_del_submit_btn">删除</button>
+                <button class="but_cancel but_small zcj_qx_out_del">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--编辑字段-->
+ <div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_goodExitzd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 250px;width:480px;">
+            <div class="dialog_title">
+                <i class="dialog_close zcj_goods_attr_edit_second_attr_list_cancel_close">关闭</i>
+                <h3 class="dialog_h3">编辑增加属性字段</h3>
+            </div>
+            <div class="dialog_text zcj_goods_attr_edit_second_attr_list" style="padding-top:30px;margin:0;height:53%;">
+                <!--<div class="t_textinput" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>属性字段</div>
+                    <div class="t_right"><input type="text" class="time_input" value="戴尔" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <i class="sp_delete val_dialogTop" name="xt_gnsz_goodDeletezd">删除</i>
+                    </div>
+                </div>
+                <div class="t_textinput" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>属性字段</div>
+                    <div class="t_right"><input type="text" class="time_input" value="HP" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <i class="sp_delete val_dialogTop" name="xt_gnsz_goodDeletezd">删除</i>
+                    </div>
+                </div>-->
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue zcj_goods_attr_edit_second_attr_list_sure">确定</button><button class="but_small normal_dialog zcj_goods_attr_edit_second_attr_list_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-新建基本单位-->
+<div class="dialog">
+    <div class="dialog_box" name="goods_base_new_sp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 220px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建基本单位</h3>
+            </div>
+            <div class="dialog_text" style="height: auto;margin-top: 40px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>名称</div>
+                    <div class="t_right"><input type="text" class="time_input pro_goods_unit_create_name_inp" value="输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue pro_goods_unit_create_submit_btn">保存</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新建基本单位-->
+<!--<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_goodnewdw">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 220px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建基本单位</h3>
+            </div>
+            <div class="dialog_text" style="height: auto;margin-top: 40px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>名称</div>
+                    <div class="t_right">
+                        <input type="text" class="none" value="">
+                        <input type="text" class="time_input" value="输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <input type="text" class="none" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue page_47_goods_unit_new_new_form_sure">确定</button><button class="but_small normal_dialog page_47_goods_unit_new_new_form_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--编辑基本单位-->
+<!--<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_goodExitdw">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 220px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑基本单位</h3>
+            </div>
+            <div class="dialog_text" style="height: auto;margin-top: 40px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>名称</div>
+                    <div class="t_right"><input type="text" class="time_input" value="输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue">确定</button><button class="but_small normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--弹窗-修改基本单位-->
+<div class="dialog">
+    <div class="dialog_box" name="goods_base_exit_sp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 220px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">修改基本单位</h3>
+            </div>
+            <div class="dialog_text" style="height: auto;margin-top: 40px;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>名称</div>
+                    <div class="t_right"><input type="text" class="time_input pro_goods_unit_edit_name_inp" value="输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue pro_goods_unit_edit_submit_btn">保存</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加分类-->
+<!--<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_goodaddsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1 page_51_goods_cate_add_cate_modal" style="height: 280px;width:600px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建分类</h3></div>
+            <div class="dialog_text sbar" style="padding:30px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input fz_cate_name" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>上级分类</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input c_3 zcj_select_goods_up_fl_val_put" value="" readonly="true" style="background: #fff;">
+                        <i class="choose_input f_color val_dialogTop zcj_select_goods_up_btn" name="xt_gnsz_goodparentsort"><b>+</b>选择上级分类</i>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small fz_save">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--编辑分类-->
+<!--<div class="dialog">
+    <div class="dialog_box page_51_goods_cate_edit_cate_edit_modal" name="xt_gnsz_goodExitsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 280px;width:600px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建分类</h3></div>
+            <div class="dialog_text sbar" style="padding:30px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input fz_cate_name" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>上级分类</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input c_3 zcj_select_up_fl_val_show" value="" readonly="true" style="background: #fff;">
+                        <i class="choose_input f_color val_dialogTop zcj_edit_upfl_btn" name="xt_gnsz_goodparentsort"><b>+</b>选择上级分类</i>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small fz_save">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--选择上级分类-->
+<!--<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_goodparentsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择上级分类</h3></div>
+            <div class="dialog_text sbar clearfix zcj_bjfl_goods_select_list_tree">
+                <div class="list_box">
+                    <div class="list_box_con">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexitAll"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                &lt;!&ndash;<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></li>
+                                    </ul>
+                                </ul>&ndash;&gt;
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_sp_select_sjfl_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<script>
+//    $(function () {
+//        var sp_conH = $(".system_right").parent(".py_content").height()-60;
+//        $(".system_right").height(sp_conH);
+//        $(".system_muban").width($(".system_right").width()-360);
+//    });
+
+//添加自定义属性
+$('.tanceng .page_51_goods_attr_btn_add').die('click').live('click', function () {
+    var html_a = '<div class="worksp_addbx">\
+                        <div class="t_textinput" style="height: auto;">\
+                        <div class="t_left" style="max-width: 10em;"><i class="c_r">*</i>属性名称<span><cite class="page_86_zjphNum">1</cite></span></div>\
+                        <div class="t_right">\
+                        <input type="text" class="time_input goods_inp_32" value="请输入字段" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">\
+                        <label style="vertical-align: middle;margin-left: 30px;"><input type="checkbox" checked="checked">标记必填</label>\
+                        <label style="vertical-align: middle;margin-left: 20px;">\
+                        <button class="but_green but_mix goods_add_select_btn val_dialogTop" name="goods_add_select_btn">添加选项</button>\
+                        </label>\
+                        <label style="vertical-align: middle;">\
+                        <button class="but_r but_mix goods_sort_tjfl_del">删除</button>\
+                        </label>\
+                        </div>\
+                        <div class="none goods_add_select_box" style="position: relative;">\
+                        <i class="goods_sort_up"></i>\
+                        <div class="goods_add_select_box_con" style="position: relative;">\
+                        <ul class="inp_add_list_3">\
+                        </ul>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>';
+    $(this).parent(".t_textinput").before('<div class="worksp_addbx">' + html_a + '</div>');
+    tjfl_num();
+});
+/* $('.goods_sort_tjfl_del').die('click').live('click', function () {
+ if ($('.tanceng .dialog_text_con .worksp_addbx .t_textinput').length == 1) {
+ alert('最后一个不可删除');
+ return false;
+ }
+ $(this).parents('.t_textinput').remove();
+ tjfl_num();
+ });*/
+function tjfl_num() {
+    var tjfl_a = $('.dialog_text_con .worksp_addbx').length;
+    for (var i = 0; i < tjfl_a; i++) {
+        $('.dialog_text_con .worksp_addbx').find('.page_86_zjphNum').eq(i).html(i + 1);
+    }
+}
+
+//    添加选项按钮
+$('.goods_add_select_btn').die('click').live('click', function () {
+    $.each($('.tanceng .pro_category_tjfl_dialog_box .worksp_addbx'), function (i, v) {
+        $('.tanceng .pro_category_tjfl_dialog_box .worksp_addbx').eq(i).removeClass('cur_worksp_addbx');
+    });
+    $(this).closest('.worksp_addbx').addClass('cur_worksp_addbx');
+    tjxx_num_fn();
+});
+
+//    添加选项
+$('.goods_setulAddli').die('click').live('click', function () {
+    var html = '<div class="t_textinput t_textarea" style="height:40px">\
+                    <div class="t_left"><i class="c_r v_hidden">*</i>名称 <span class="pro_category_goods_attr_option_num">1</span></div>\
+                    <div class="t_right">\
+                    <input type="text" class="time_input goods_inp_70" value="输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">\
+                    <div class="xslc_setul_4 goods_sort_btn_yes">\
+                    <button class="goods_setulAddli but_green">+</button><button class="goods_setuldelli but_red">-</button></div>\
+                    </div>\
+                    </div>';
+    $(this).closest('.worksp_bx1').append(html);
+    tjxx_num_fn();
+});
+//    删除选项
+$('.goods_setuldelli').die('click').live('click', function () {
+    if ($('.tanceng .worksp_bx1>div').length == 1) {
+        alert('请至少保留一个选项');
+        return false;
+    }
+    $(this).closest('.t_textarea').remove();
+    tjxx_num_fn();
+});
+
+function tjxx_num_fn() {
+    var tjxx_a = $('.tanceng .worksp_bx1>div').length;
+    for (var i = 0; i < tjxx_a; i++) {
+        $('.tanceng .worksp_bx1 div').find('.pro_category_goods_attr_option_num').eq(i).html(i + 1);
+    }
+    $('.tanceng .pro_category_goods_attr_option_dialog_content').height(200 + 48 * (tjxx_a - 1));
+    if (tjxx_a > 6) {
+        $('.tanceng .pro_category_goods_attr_option_dialog_content').height(200 + 48 * 6);
+    }
+}
+
+//    编辑分类
+$('.pro_category_goods_edit_btn').live('click', function () {
+    tjfl_num();
+});
+//    添加基本商品分类
+$('.page_51_goods_cate_add_btn').live('click', function () {
+    tjfl_num();
+});
+</script>
+<!--<script src="static/goods/js/goods_api.js"></script>-->
+</body>
+</html>

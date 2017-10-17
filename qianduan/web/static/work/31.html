@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工作-工作汇报</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="css/work_common.css">
+    <link rel="stylesheet" href="css/work_report.css">
+    <script src="http://apps.bdimg.com/libs/jquery/1.8.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="content clearfix">
+    <div class="con_head">
+        <p class="con_head_con left">
+            我的工作汇报
+        </p>
+        <ul class="con_head_list right">
+            <li class="work_report_leaderBtn">
+                <em>写工作汇报</em>
+                <ul class="slider_head_more_list">
+                    <li>写日报</li>
+                    <li>写周报</li>
+                    <li>写月报</li>
+                    <li>写业绩</li>
+                </ul>
+            </li>
+            <li class="con_head_frash"></li>
+        </ul>
+    </div>
+    <!--<div class="work_report_m_cont">-->
+        <div class="work_report_conBox">
+            <div class="con_right_head">
+                <label class="inp_box clearfix left">
+                    <p class="inp_lP left">
+                        <em>选择时间</em>
+                    </p>
+                    <p class="left inp_boxadd">
+                        <input type="text" class="inp_half" value="开始时间" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <i class="inp_timeStrat"></i>
+                        <em class="inp_timehr"></em>
+                        <input type="text" class="inp_half right" value="结束时间" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <i class="inp_time"></i>
+                    </p>
+                </label>
+                <ul class="con_right_head_list right clearfix f_color">
+                    <li class="con_right_head_list_left con_right_head_list_on">全部</li>
+                    <li class="con_right_head_list_left ">日报</li>
+                    <li class="con_right_head_list_left ">周报</li>
+                    <li class="con_right_head_list_left ">月报</li>
+                    <li>业绩</li>
+                </ul>
+            </div>
+            <div class="work_report_Con">
+                <div class="work_report_exitBox work_report_date">
+                    <div class="work_report_head">
+                        <h3> <i class="left but_yellow"></i>日报 <span>10月11日</span></h3>
+                        <div class="work_report_headBtn">
+                            <button class="but_small but_cancel">编辑</button>
+                            <button class="but_small but_cancel">删除</button>
+                    </div>
+                    </div>
+                    <div class="work_report_det">
+                        <div class="work_report_detHead clearfix">
+                            <span class="left"></span>
+                            <div class="work_report_personMsg left">
+                                <p>张三</p>
+                                <p>5分钟前</p>
+                            </div>
+                        </div>
+                        <div class="work_report_detCon">
+                            <h3 class="cont_title">今日工作总结</h3>
+                            <p>
+                                1.到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争
+                            </p>
+                            <p>
+                                2.专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它
+                            </p>
+                            <h3 class="cont_title">明日工作总结</h3>
+                            <p>
+                                1.到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争
+                            </p>
+                            <p>
+                                2.专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它
+                            </p>
+                        </div>
+                        <div class="work_report_upload">
+                            <img src="images/report.png" alt="工作计划">
+                            <div class="work_report_uploadMsg clearfix">
+                                <em class="work_report_uploadMsg_icon"></em>
+                                <div>
+                                    <p>附件:687236487265.pdf<span>(2.30M)</span></p>
+                                    <em class="f_color">下载</em>
+                                    <em class="f_color normal_dialog">预览</em>
+                                    <div class="dialog_box">
+                                        <div class="dialog_screen"></div>
+                                        <img src="images/report.png" alt="工作计划">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--</div>-->
+</div>
+<script>
+    $(document).ready(function () {
+        $(".work_report_leaderBtn>em").click(function () {
+            $(this).next("ul").show();
+        });
+        $(".work_report_leaderBtn>ul>li").click(function () {
+            $(this).parent().hide();
+        });
+    });
+    $(function(){
+        $(".normal_dialog").click(function(){
+            $(this).next(".dialog_box").show(0);
+            $(this).next(".dialog_box .dialog_screen").show(0);
+            $(this).next(".dialog_box .dialog_content").fadeIn(0);
+            return false;
+        });
+
+        $(".dialog_screen").click(function(){
+            $(this).parent().hide();
+            return false;
+        });
+
+        $(".dialog_content i").click(function(){
+            $(this).parent().parent().hide();
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

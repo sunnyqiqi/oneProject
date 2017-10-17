@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr-办理离职</title>
+    <link rel="stylesheet" type="text/css" href="static/hr/css/hr_employeelist.css?v=20170314">
+    <script src="static/hr/js/zj_leave.js"></script>
+
+</head>
+
+<body>
+<div class="con_header contenthead">
+    <h2>办理离职</h2>
+    <div class="right" style="width: 77px;">
+        <div class="res zcj_yg_lz_dj_sx_btn" title="点击刷新"></div>
+    </div>
+</div>
+<!-- 页面菜单 -->
+<div class="sbar second-level hr_left_bjbm">
+    <div class="hr_left_nav">
+        <!--<ul class="change">
+            <li class="hr_left_all zj_allbtn"><span>所有成员<i class="zcj_allser_num"></i></span></li>-->
+            <ul class="hr_ul1">
+                <i class="nav_arrow"></i>
+                <li class="hr_left_1 z_entrybtn"><span>入职员工<i class="zcj_allrz_num"></i></span></li>
+                <ul class="hr_ul3 zcj_enter_licon">
+                    <!-- <li class="hr_left_bmyg2 hr_left_2"><span>高杨</span></li>
+                     <li class="hr_left_bmyg2 hr_left_2"><span>梁浩</span></li>-->
+                </ul>
+            </ul>
+            <ul class="hr_ul1 hr_lzry change">
+                <i class="nav_arrow"></i>
+                <li class="hr_left_1 z_lizhibtn"><span>离职员工<i class="zcj_allylz_num"></i></span></li>
+                <ul class="hr_ul3 zcj_leave_licon">
+                    <!-- <li class="hr_left_bmyg2 hr_left_2"><span>文康</span></li>
+                     <li class="hr_left_bmyg2 hr_left_2"><span>贺文</span></li>
+                     <li class="hr_left_bmyg2 hr_left_2"><span>永昌</span></li>
+                     <li class="hr_left_bmyg2 hr_left_2"><span>郭建</span></li>-->
+                </ul>
+            </ul>
+       <!-- </ul>-->
+    </div>
+ <div class="allgoods"  style="height: auto;">
+</div>
+</div>
+<!-- 页面菜单结束 -->
+<div class="sbar rightcontent" style="padding-right: 30px;padding-left: 30px;">
+
+
+
+
+        <div class="con_right_head clearfix" style="border:none;">
+       <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input zcj_searckval" value="搜索成员姓名" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                <button class="search_but but_blue zcj_btnsear" style="height: 30px;width: auto;">搜索</button>
+            </div>
+            <button class="but_small inline_block zkgjssBtn zcj_bllz_ser_gjss_btn" name="hr_blrz_zkgjss">展开高级搜索</button><div class="right con_right_result right">
+            <p class="left">所有成员(<span class=" c_r zcj_bllz_wbl_gs_num">1</span>个未办理，共<span class=" c_r zcj_bllz_zg_num">2</span>人)</p>
+            <!--<span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="hr_bmyg_xzckx">-->
+                <!--<i class="eyeIcon"></i>选择查看项</span>-->
+        </div>
+            <!--&lt;!&ndash;选择查看项&ndash;&gt;-->
+            <!--<div class="t-z-list ckx_cont" name="hr_bmyg_xzckx" style="right:43px; line-height: 27px; top: 64px; display: none;">-->
+                <!--<i class="ckx_icon_right"></i>-->
+                <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                <!--<ul class="sbar muban_addkey_list">-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                    <!--<li class="l-li-b">-->
+                        <!--<input type="checkbox">-->
+                        <!--<p class="z-d-l">字段1</p>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--&lt;!&ndash;  &ndash;&gt;-->
+                <!--<div class="bot-btn">-->
+                    <!--<button class="but_small but_blue">保存</button>-->
+                    <!--<button class="but_small but_cancal">恢复默认</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="closeckx_cont" style="display: none;"></div>-->
+        </div>
+        <div class="container lik_table_wrap">
+            <div class="lik_table_max_height table-container zj_leave_table_id">
+                <table>
+                    <thead>
+                    <tr>
+                        <!--<th><input type="checkbox" class="checkAll" name="hr_bllz_main"></th>-->
+                        <th>姓名</th>
+                        <th>工号</th>
+                        <th>部门</th>
+                        <th>岗位名称</th>
+                        <th>入职日期</th>
+                        <th>离职日期</th>
+                        <th class="order">在职时间<i class="price_icon"></i></th>
+                        <th>工作交接人员</th>
+                        <th>社保迁出时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="zkgjss_cont" name="hr_blrz_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="部门">
+                                <i></i>
+                                <ul class="select_list zcj_bllz_bm_list_display">
+                                    <li>产品</li>
+                                    <li>前台</li>
+                                    <li>后台</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="岗位名称">
+                                <i></i>
+                                <ul class="select_list zcj_bllz_gwmc_list_display">
+                                    <li>产品</li>
+                                    <li>前台</li>
+                                    <li>后台</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                    </tr>
+                   <!-- <tr>
+                        &lt;!&ndash;<td><input type="checkbox" name="hr_bllz_main"></td>&ndash;&gt;
+                        <td>张威</td>
+                        <td>001</td>
+                        <td>销售部</td>
+                        <td>总监</td>
+                        <td>1990-10-10</td>
+                        <td>男</td>
+                        <td>25个月</td>
+                        <td>张三</td>
+                        <td>1990-10-10</td>
+                        <td>
+                            <button class="but_mix but_red val_dialog" name="hr_bllz_Msg">办理离职</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        &lt;!&ndash;<td><input type="checkbox" name="hr_bllz_main"></td>&ndash;&gt;
+                        <td>李凯</td>
+                        <td>002</td>
+                        <td>销售部</td>
+                        <td>总监</td>
+                        <td>1990-10-10</td>
+                        <td>女</td>
+                        <td>25个月</td>
+                        <td>张三</td>
+                        <td>1990-10-10</td>
+                        <td>
+                            <button class="but_mix but_red val_dialog" name="hr_bllz_Msg">办理离职</button>
+                        </td>
+                    </tr>
+                    <tr class="grey">
+                        &lt;!&ndash;<td><input type="checkbox" name="hr_bllz_main"></td>&ndash;&gt;
+                        <td>赵旺杰</td>
+                        <td>003</td>
+                        <td>销售部</td>
+                        <td>总监</td>
+                        <td>1990-10-10</td>
+                        <td>男</td>
+                        <td>25个月</td>
+                        <td>张三</td>
+                        <td>1990-10-10</td>
+                        <td>
+                            <button class="but_mix but_look r_sidebar_btn" name="hr_bllz_look">查看</button><button class="but_mix but_r but_del val_dialog" name="hr_yglz_delete">删除</button>
+                        </td>
+                    </tr>-->
+                    </tbody>
+                    <tbody class="zcj_leave_info"></tbody>
+                </table>
+                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                <div class="no_data_box none zcj_no_data_show_company_leave">
+                    <div class="no_data">
+                        <!--<span class="inline_block"></span>-->
+                        <p class="c_9">抱歉，没有找到相关内容！</p>
+                    </div>
+                    <div class="no_data_bottom"></div>
+                </div>
+            </div>
+            <div class="handle">
+            <div class="fenye_box zcj_lzall_page">
+                <span>每页显示</span>
+                <div class="inline_block select_mormal">
+                    <input type="text" class="select_input" value="10">
+
+                    <ul class="select_list select_list_to_top">
+                        <li>5</li>
+                        <li>10</li>
+                        <li>15</li>
+                        <li>20</li>
+                    </ul>
+                    <i></i>
+                </div>
+                <span>条数据</span>
+                <div class="fenye_btn first_page_valid"><span></span></div>
+                <div class="fenye_btn prev_page_valid"><span></span></div>
+                <span class="page_box on">1</span>
+                <span class="page_box">2</span>
+                <span class="page_box">3</span>
+                <span class="page_box">4</span>
+                <div class="fenye_btn next_page_valid"><span></span></div>
+                <div class="fenye_btn last_page_valid"><span></span></div>
+                <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+            </div>
+        </div>
+        </div>
+
+    </div>
+<!-- 右侧弹窗-查看信息 -->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar hr_Sideslip" style="display: none" name="hr_bllz_look">
+    <div class="Sideslip-btn"><span class="slider_close hr_slider_close"></span></div>
+    <div class="Sideslip-head hr_emploeelist_Sideslip-head">
+        <div class="sides-img zcj_hr_ylz_bl_info_head">
+            <span></span>
+            <p class="msg-name zcj_person_name" style="margin-top: 10px;">貂蝉（女）</p>
+            <p class="msg-status" style="margin-top: 4px;">技术部-技术总监</p>
+        </div>
+    </div>
+    <!-- 基本信息 -->
+    <div class="sbar d-r-t j-bx-b zcj_hr_yg_ylz_jbxx_check" style="bottom:0px;">
+        <div class="d-r-t-h">
+            <h3 class="cont_title inline_block p_left_10" style="margin-left: -1em;">基本信息</h3>
+            <p class="l-s-x">姓名：<span>赵旺杰</span></p>
+            <p class="l-s-x">工号：<span>003</span></p>
+            <p class="l-s-x">性别：<span>男</span></p>
+            <p class="l-s-x">手机：<span>12345654234131</span></p>
+            <p class="l-s-x">部门：<span>技术部</span></p>
+            <p class="l-s-x">职位：<span>技术总监</span></p>
+            <p class="l-s-x">邮箱：<span>413928903@qq.com</span></p>
+            <p class="l-s-x">入职日期：<span>2016-10-10</span></p>
+        </div>
+        <hr/>
+        <div class="d-r-t-h">
+            <h3 class="cont_title inline_block p_left_10" style="margin-left: -1em;">离职信息</h3>
+            <p class="l-s-x">离职日期：<span class="zcj_lzhi_data">2016-10-10</span></p>
+            <p class="l-s-x">工作交接人员：<span class="zcj_work_connet_name">张三</span></p>
+            <p class="l-s-x">离职原因：<span zcj_lzhi_cause>生病</span></p>
+            <p class="l-s-x">社保迁出时间：<span class="zcj_shebao_out_time">2016-10-10</span></p>
+        </div>
+        <!--如有需要可以使用
+        <div class="d-r-t-h">
+            <h3 class="cont_title inline_block p_left_10" style="margin-left: -1em;">详细资料</h3>
+            <p class="l-s-x">毕业日期：<span>2012-07</span></p>
+            <p class="l-s-x">入职日期：<span>2014-05</span></p>
+            <p class="l-s-x">民族：<span>满族</span></p>
+            <p class="l-s-x">籍贯：<span>北京市朝阳区速度放缓速度放缓</span></p>
+            <p class="l-s-x">身份证号：<span>201315198805052456</span></p>
+            <p class="l-s-x">生日：<span>1988-05-05</span></p>
+            <p class="l-s-x">婚姻状况：<span>未婚</span></p>
+            <p class="l-s-x">家庭住址：<span>山东各地房管局</span></p>
+            <p class="l-s-x">紧急联系人：<span>李四</span></p>
+        </div>-->
+
+        </div>
+
+</div>
+<!-- 离职信息弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_bllz_Msg">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">离职人员</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;height: 89%;margin:0;">
+               <!--  <div class="hr_add_tx" style="height: 110px;">
+                    <div class="add_imgtx">
+                        <img class="inline_block tx add_tximgsrc" src="static/hr/images/sctx.png" style="top:-6px;">
+                        <input class="add_txBtn" type="file">
+                    </div>
+                </div> -->
+                <div class="hr_Msg_box">
+                    <h3 class="cont_title inline_block p_left_10">基本资料</h3>
+                    <div class="text_input">
+                     <div class="text_intext" style="width:13%;color:#333;"><i class="c_r v_hidden">*</i><span>头像</span></div>
+                     <div class="text_ininput" style="width:80%">
+                         <div class="add_imgtx">
+                          <img class="inline_block tx add_tximgsrc zj_leave_ry_icon_info" src="static/hr/images/touxiang.png">
+                            <!-- <input class="add_txBtn" type="file"> -->
+                         </div>
+                     </div>
+                 </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>姓名</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zj_name1_info" value="" readonly="true"></div>
+
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>工号</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zj_num1_info" value="" readonly="true"></div>
+
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>性别</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zj_sex1_info" value="" readonly="true"></div>
+
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>手机</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zj_mobile_info" value="" readonly="true"></div>
+
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>部门</div>
+                     <div class="t_right">
+                         <input type="text" class="time_input inp_noInput c_3 z_door_info" value=""  readonly="true">
+                          </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>职位</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zj_zhy_info" value="" readonly="true"></div>
+
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zj_mal_info"  value="" readonly="true"></div>
+
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>入职日期</div>
+                        <div class="t_right"><input class="time_input inp_noInput" value="" readonly="readonly"></div>
+                    </div>
+                    <h3 class="cont_title inline_block p_left_10">离职信息</h3>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>离职日期</div>
+                        <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zj_riq_info" id="hr_lzrq_start" readonly="readonly" onclick="laydate(hr_lzrq_start)" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>工作交接人员</div>
+                        <div class="t_right">
+                            <input type="hidden" id="zj_hid_hr_man_id"><input type="text" class="time_input zj_jao_info" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" readonly="readonly">
+
+                            <span class="inp_addBtn val_dialogTop zcj_hr_bllz_select_jjr_tc_btn" name="hr_bllz_xzjcry"><b>+</b>选择交接人</span>
+                        </div>
+                    </div>
+                    <div class="t_textinput t_textarea">
+                        <div class="t_left"><i class="c_r">*</i>离职原因</div>
+                        <div class="t_right"><textarea class="txt_normal zj_leave_reason_info" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入离职原因</textarea></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>社保迁出 时间</div>
+                        <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zj_qchu_data_info" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_out_dimission" name="">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择交接人弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_bllz_xzjcry">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择交接人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con list_box_uldx">
+                        <div class="left_nav">
+                            <ul class="list_box_level zcj_hr_yg_bllz_tree_list_show"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_hr_bllz_select_man_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_yglz_delete">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu zcj_del_ylz_yg_info_btn">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_yglz_leave_del">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1" style="padding-top: 30px"><span class="zcj_yglz_name_show"></span>已离职</p>
+                <p class="p2">此账号不会再登录系统，所产生的数据保留！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu zcj_yglz_info_end_btn">确认</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+
+    //提成时间
+    var hr_lzrq_start = {
+        elem: '#hr_lzrq_start',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            hr_sdgz_end.min = datas; //开始日选好后，重置结束日的最小日期
+            hr_sdgz_end.start = datas; //将结束日的初始值设定为开始日
+            //console.log(datas)
+        }
+    };
+    var hr_sdgz_end = {
+        elem: '#hr_sdgz_end',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            hr_sdgz_start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+    };
+</script>
+</body>
+</html>

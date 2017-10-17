@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>薪资设置</title>
+    <link rel="stylesheet" href="static/system/css/system.css">
+    <script src="static/system/js/53.js"></script>
+</head>
+<body>
+
+
+<div class="finance_content">
+    <!--第一行-->
+    <div class="con_header contenthead">
+        <h2>审批流程</h2>
+        <!--<div class="right">-->
+            <!--<div class="res" title="点击刷新"></div>-->
+        <!--</div>-->
+    </div>
+    <!--第二行-->
+    <div class="system_right clearfix sbar" style="height: 92.5%;">
+        <!--左边-->
+        <div class="system_right_left left" style="margin-top: 15px;">
+            <p class="system_p">模板导航</p>
+            <hr>
+            <div class="system_tabJr">
+                <ul class="tabtitle system_tabUl">
+                    <li class="taba tabhover" name="system_xzsz" id="zcj_wage_jjxz_set_tab">奖金薪资设定</li>
+                    <li class="taba" name="system_xzsz" id="zcj_wage_tc_set_tab">提成薪资设定</li>
+                    <li class="taba" name="system_xzsz" id="zcj_wage_jj_set_tab">计件薪资设定</li>
+                    <li class="taba" name="system_xzsz" id="zcj_wage_rw_set_tab">任务薪资设定</li>
+                </ul>
+            </div>
+        </div>
+        <!--右边-->
+        <div class="system_right_set right">
+            <!--奖金-->
+            <div class="tabcontent relative system_xzset" name="system_xzsz" style="padding: 0;width: 100%;">
+                <div class="system_sp_tabJr clearfix">
+                    <p class="system_p">奖金薪资设定</p>
+                </div>
+                <div class="system_work_mbdh clearfix zcj_bonus_xz_set_list_zs">
+                    <div class="t_textarea xt_xzset_choose">
+                        <label class="c_3"><input type="checkbox" class="zcj_is_open_jj_set" value=""/>开启奖金</label>
+                    </div>
+                    <div class="t_textinput xt_xzset_con left" style="">
+                        <div class="t_left"><i class="c_r">*</i>奖金</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_96 lik_input_number zcj_jj_price_num_put" value="请输入奖金(元为单位)" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            <i class="unit">元</i>
+                            <span class="xt_xzset_mune">金额</span>
+                            <p class="grey_input">工资组成不能超过总工资数额，若不存在的工资选项请输入0元</p>
+                        </div>
+                    </div>
+                    <div class="t_textinput xt_xzset_tijian left" style="">
+                        <div class="t_right">
+                            <i class="xt_xzset_mune">金额</i>
+                            <label><input type="checkbox" class="zcj_is_qq_set" value=""/>全勤</label>
+                            <label style="margin-left: 30px;"><input type="checkbox" class="zcj_is_wc_syrw_set" value=""/>完成所有任务</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="xt_xzset_submit">
+                    <button class="but_small but_blue zcj_jjxz_setjj_end_btn">确定</button>
+                    <button class="but_small but_cancel zcj_cancel_setjj_end_btn">取消</button>
+                </div>
+
+            </div>
+            <!--提成-->
+            <div class="tabcontent relative none system_xzset" name="system_xzsz" style="padding: 0;width: 100%;">
+                <div class="clearfix system_xzset_tabJr">
+                    <div class="muban_tabBox left">
+                        <ul class="tabtitle system_sp_tabUI">
+                            <li class="taba tabhover" name="system_xzset_ticheng" id="zcj_tc_set_list_tab">个人提成设定</li>
+                            <li class="taba" name="system_xzset_ticheng" id="zcj_td_tc_set_list_tab">团队提成设定</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--个人提成-->
+                <div class="tabcontent" name="system_xzset_ticheng" style="padding: 0;">
+                    <div class="system_work_mbdh system_work_mbdhTC clearfix" style="padding: 20px 0 30px 15px;">
+                        <button class="but_blue val_dialog zj_new_create" name="system_set_grtc" style="margin-bottom: 15px;">新建个人提成</button>
+                        <div class="container lik_table_wrap" style="position: relative;">
+                            <div class="table-container lik_table_max_height" style="margin: 0px; max-height: 646px;">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>提成名称</th>
+                                        <th>任务周期</th>
+                                        <th>任务核算方式</th>
+                                        <th>提成结算方式</th>
+                                        <th>提成比例1</th>
+                                        <th>提成比例2</th>
+                                        <th>提成比例3</th>
+                                        <th>超额完成比例</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="zcj_tc_wage_set_price_list_display">
+                                    <!--<tr>
+                                        <td>01</td>
+                                        <td>60万提成</td>
+                                        <td>按季度</td>
+                                        <td>按利润</td>
+                                        <td>按季度</td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td><button class="but_mix but_exit val_dialog">编辑</button><button class="but_mix but_r val_dialog">删除</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>60万提成</td>
+                                        <td>按季度</td>
+                                        <td>按利润</td>
+                                        <td>按季度</td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td><button class="but_mix but_exit val_dialog">编辑</button><button class="but_mix but_r val_dialog">删除</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>60万提成</td>
+                                        <td>按季度</td>
+                                        <td>按利润</td>
+                                        <td>按季度</td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td><button class="but_mix but_exit val_dialog">编辑</button><button class="but_mix but_r val_dialog">删除</button></td>
+                                    </tr>-->
+                                    </tbody>
+                                </table>
+                                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                                <div class="no_data_box none zj_xzset_no_data_show_div">
+                                    <div class="no_data">
+                                        <!--<span class="inline_block"></span>-->
+                                        <p class="c_9">抱歉，没有找到相关内容！</p>
+                                    </div>
+                                    <div class="no_data_bottom"></div>
+                                </div>
+                            </div>
+                            <div class="handle zj_header_td_page_show">
+                                <div class="fenye_box zj_td_tc_fy_page_show">
+                                    <span>每页显示</span>
+                                    <div class="inline_block select_mormal">
+                                        <input type="text" class="select_input" value="10">
+                                        <ul class="select_list select_list_to_top sbar">
+                                            <li>5</li>
+                                            <li>10</li>
+                                            <li>15</li>
+                                            <li>20</li>
+                                        </ul>
+                                        <i></i>
+                                    </div>
+                                    <span>条数据</span>
+                                    <div class="fenye_btn first_page_invalid"><span></span></div>
+                                    <div class="fenye_btn prev_page_invalid"><span></span></div>
+                                    <span class="page_box on" style="display: inline-block;">1</span>
+                                    <span class="page_box" style="display: none;">2</span>
+                                    <span class="page_box" style="display: none;">3</span>
+                                    <span class="page_box" style="display: none;">4</span>
+                                    <div class="fenye_btn next_page_invalid"><span></span></div>
+                                    <div class="fenye_btn last_page_invalid"><span></span></div>
+                                    <span>当前页面共<cite class="f_color mLR_5">2</cite>条数据</span>
+                                    <span class="m_left_10">共<cite class="f_color mLR_5">1</cite>页</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--团队提成-->
+                <div class="tabcontent" name="system_xzset_ticheng" style="padding: 0;display: none;">
+                    <div class="system_work_mbdh system_work_mbdhTC clearfix" style="padding: 20px 0 30px 15px;">
+                        <button class="but_blue val_dialog zcj_tdtc_xz_set_wc_end_btn" name="system_set_grtc" style="margin-bottom: 15px;">新建团队提成</button>
+                        <div class="container lik_table_wrap" style="position: relative;">
+                            <div class="table-container lik_table_max_height" style="margin: 0px; max-height: 646px;">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>提成名称</th>
+                                        <th>任务周期</th>
+                                        <th>任务核算方式</th>
+                                        <th>提成结算方式</th>
+                                        <th>提成比例1</th>
+                                        <th>提成比例2</th>
+                                        <th>提成比例3</th>
+                                        <th>超额完成比例</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="zcj_td_tcxz_set_list_team_show">
+                                   <!-- <tr>
+                                        <td>01</td>
+                                        <td>60万提成</td>
+                                        <td>按季度</td>
+                                        <td>按利润</td>
+                                        <td>按季度</td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td><button class="but_mix but_exit val_dialog">编辑</button><button class="but_mix but_r val_dialog">删除</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>60万提成</td>
+                                        <td>按季度</td>
+                                        <td>按利润</td>
+                                        <td>按季度</td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td><button class="but_mix but_exit val_dialog">编辑</button><button class="but_mix but_r val_dialog">删除</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>60万提成</td>
+                                        <td>按季度</td>
+                                        <td>按利润</td>
+                                        <td>按季度</td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td>80%-100%<br><span style="color: #000;">提成20%</span></td>
+                                        <td><button class="but_mix but_exit val_dialog">编辑</button><button class="but_mix but_r val_dialog">删除</button></td>
+                                    </tr>-->
+                                    </tbody>
+                                </table>
+                                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                                <div class="no_data_box none zj_tdtcset_no_data_show_div">
+                                    <div class="no_data">
+                                        <!--<span class="inline_block"></span>-->
+                                        <p class="c_9">抱歉，没有找到相关内容！</p>
+                                    </div>
+                                    <div class="no_data_bottom"></div>
+                                </div>
+                            </div>
+                            <div class="handle zj_table_header_no">
+                                <div class="fenye_box zj_xzset_td_tc_page">
+                                    <span>每页显示</span>
+                                    <div class="inline_block select_mormal">
+                                        <input type="text" class="select_input" value="10">
+                                        <ul class="select_list select_list_to_top sbar">
+                                            <li>5</li>
+                                            <li>10</li>
+                                            <li>15</li>
+                                            <li>20</li>
+                                        </ul>
+                                        <i></i>
+                                    </div>
+                                    <span>条数据</span>
+                                    <div class="fenye_btn first_page_invalid"><span></span></div>
+                                    <div class="fenye_btn prev_page_invalid"><span></span></div>
+                                    <span class="page_box on" style="display: inline-block;">1</span>
+                                    <span class="page_box" style="display: none;">2</span>
+                                    <span class="page_box" style="display: none;">3</span>
+                                    <span class="page_box" style="display: none;">4</span>
+                                    <div class="fenye_btn next_page_invalid"><span></span></div>
+                                    <div class="fenye_btn last_page_invalid"><span></span></div>
+                                    <span>当前页面共<cite class="f_color mLR_5">2</cite>条数据</span>
+                                    <span class="m_left_10">共<cite class="f_color mLR_5">1</cite>页</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--计件-->
+            <div class="tabcontent relative none system_xzset" name="system_xzsz" style="padding: 0;width: 100%;">
+                <div class="system_sp_tabJr clearfix">
+                    <p class="system_p">计件薪资设定</p>
+                </div>
+                <div class="system_work_mbdh clearfix">
+                    <div class="t_textarea xt_xzset_choose relative zcj_jjxz_div">
+                        <label class="c_3"><input type="checkbox" class="zcj_xz_is_open_jj_set" value=""/>计件设定</label>
+                        <p class="grey_input" style="font-size: 12px;">开启后针对配置商品备货时间计件</p>
+                    </div>
+                    <div class="zcj_jj_wage_set_list_display">
+                        <!--<div style="overflow: hidden;">
+                           <div class="left" style="width: 75%;">
+                             <div class="t_textarea xt_xzset_choose relative zcj_jjsd_set_is_open">
+                                <label class="c_3"><input type="checkbox" value=""/>计件设定</label>
+                                <p class="grey_input" style="font-size: 12px;">开启后针对配置商品备货时间计件</p>
+                             </div>
+
+                                <div class="xt_xzset_jijian relative">
+                                    <i class="sys_sp_close none"></i>
+                                    <div class="t_textinput xt_xzset_con">
+                                      <div class="t_left"><i class="c_r">*</i>计件<span class="page_53_tcNum">1</span>名称</div>
+                                      <div class="t_right">
+                                          <input type="text" class="time_input" value="请输入计件1名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                      </div>
+                                  </div>
+                                    <div class="t_textinput xt_xzset_con">
+                                      <div class="t_left"><i class="c_r">*</i>计件金额</div>
+                                      <div class="t_right">
+                                          <input type="text" class="time_input inp_96" value="请输入计件1名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                          <i class="unit">元</i>
+                                      </div>
+                                  </div>
+                                       &lt;!&ndash;<hr style="margin:30px 0;margin-left: 26px;"> &ndash;&gt;
+                                </div>
+                            </div>
+                             <div class="right" style="width: 25%;">
+
+                              <button class="but_mix but_exit val_dialog" name="system_exit_tjjjsd">编辑</button>
+                                    <button class="but_mix but_r">删除</button>
+                            </div>
+                        </div>
+                        <hr style="margin:30px 0;margin-left: 26px;">-->
+                    </div>
+                    <div class="t_textinput xt_xzset_conTC" style="margin-left: 26px;">
+                        <button class="but_icon val_dialog zcj_jjxz_set_tj_end_btn" name="system_exit_tjjjsd"><i></i>添加计件设定</button>
+                    </div>
+                </div>
+            </div>
+            <!--任务-->
+            <div class="tabcontent relative none system_xzset" name="system_xzsz" style="padding: 0;width: 100%;">
+                <div>
+                    <div class="system_sp_tabJr clearfix">
+                        <p class="system_p">任务薪资设定</p>
+                    </div>
+                    <div class="system_work_mbdh clearfix">
+                        <div class="t_textarea xt_xzset_choose relative zcj_rwxz_div">
+                            <label class="c_3"><input type="checkbox" class="zcj_xzset_is_kqrw_gz" value=""/>是否开启任务工资</label>
+                            <p class="grey_input" style="font-size: 12px;margin-left:20px;"><i class="c_r">*</i>开启后接到任务未按时完成的情况下会扣除绩效工资</p>
+                        </div>
+                        <div class="zcj_rwxz_set_list_dis_show">
+                            <!--<div style="overflow: hidden;">
+                                <div class="left" style="width: 75%;">
+                                    <div class="t_textarea xt_xzset_choose relative zcj_xzset_is_kqrw_gz">
+                                            <label class="c_3"><input type="checkbox">是否开启任务工资</label>
+                                            <p class="grey_input" style="font-size: 12px;margin-left:20px;"><i class="c_r">*</i>开启后接到任务未按时完成的情况下会扣除绩效工资</p>
+                                    </div>
+
+                                    <div class="xt_xzset_jijian relative">
+                                        <i class="sys_sp_close none"></i>
+                                        <div class="t_textinput xt_xzset_con xt_xzset_conTC">
+                                            <div class="t_left t_left_conrow"><i class="c_r">*</i>任务薪资<span class="page_53_tcNum">1</span>名称</div>
+                                            <div class="t_right">
+                                                <input type="text" class="time_input" value="请输入计件1名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                            </div>
+                                        </div>
+                                        <div class="t_textinput xt_xzset_con xt_xzset_conxw">
+                                            <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>未完成扣除金额</div>
+                                            <div class="t_right clearfix">
+                                                <div class="t_textinput inline_block left" style="width: 49%">
+                                                    <div class="t_right" style="">
+                                                        <input type="text" class="time_input c_3 inp_96" value="1">
+                                                        <i class="unit" style="right: -10px;">次</i>
+                                                    </div>
+                                                </div>
+                                                <div class="t_textinput inline_block right" style="width: 49%">
+                                                    <div class="t_right">
+                                                        <input type="text" class="time_input c_3 inp_96" value="100">
+                                                        <i class="unit" style="right: -10px;">元</i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right" style="width: 25%;">
+                                            <button class="but_exit but_mix val_dialog" name="system_exit_tjrwsd">编辑</button>
+                                            <button class="but_r but_mix">删除</button>
+
+                                 </div>
+
+                             </div>
+
+                               <hr style="margin:30px 0;margin-left: 26px;">-->
+                        </div>
+                        <div class="t_textinput xt_xzset_conTC" style="margin-left: 26px;">
+                            <button class="but_icon val_dialog zcj_tianjia_rw_wc_end_btn" name="system_exit_tjrwsd"><i></i>添加任务设定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--设定个人提成-->
+<div class="dialog">
+    <div class="dialog_box" name="system_set_grtc">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2 zcj_edit_xz_set_tc_table" style="width: 600px;height: 820px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">设定个人提成</h3>
+            </div>
+            <div class="dialog_text sbar work_t_left" style="padding: 5px 40px 5px 54px;height:90%;margin:0;">
+                <h2 class="cont_title">提成设定</h2>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>提成1名称</div>
+                    <div class="t_right" style="width: 65%;">
+                        <input type="text" class="time_input zcj_tc_name_show_val" value="请输入提成名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+                <div class="t_textinput system_t_textinput">
+                    <div class="t_left" style="position: relative;">
+                        <i class="c_r">*</i> 任务周期<i class="b_b t_mark_gantank system_t_mark_gantank">!</i>
+                        <div class="work_vent_client_contMsgBox" style="left: 5px; top: 30px; display: none;">
+                            <i class="work_vent_client_torr"></i>
+                            <div class="work_vent_client_contMsgBoxDet">
+                                是指任务金额的完成周期。年度按1月-12月计算；季度按1月-3月、4月-6月、7月-9月、10月-12月；月度按每月整月。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_right xt_xzset_tccheck zj_ct_lx_checked_state">
+                        <label><input type="radio" name="222" data-id="1" checked="checked" style="margin-right: 4px;">按年度</label>
+                        <label><input type="radio" name="222" data-id="2" style="margin-right: 4px;">按季度</label>
+                        <label><input type="radio" name="222" data-id="3" style="margin-right: 4px;">按月度</label>
+                    </div>
+                </div>
+                <div class="t_textinput system_t_textinput">
+                    <div class="t_left" style="position: relative;width: 17%;">
+                        <i class="c_r">*</i> 任务核算方式<i class="b_b t_mark_gantank system_t_mark_gantank" style="left: 92px;">!</i>
+                        <div class="work_vent_client_contMsgBox" style="left: 26px; top: 30px; display: none;">
+                            <i class="work_vent_client_torr"></i>
+                            <div class="work_vent_client_contMsgBoxDet">
+                                <p>按流水：销售订单总额-销售退款</p>
+                                <p>按利润：销售订单总额-商品成本价-销售退款</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_right xt_xzset_tccheck zj_rw_ks_fs_state">
+                        <label><input type="radio" name="333" data-id="2" checked="checked" style="margin-right: 4px;">按利润</label>
+                        <label><input type="radio" name="333" data-id="1" style="margin-right: 4px;">按流水</label>
+                    </div>
+                </div>
+                <div class="t_textinput system_t_textinput">
+                    <div class="t_left" style="position: relative;">
+                        <i class="c_r">*</i>提成结算<i class="b_b t_mark_gantank system_t_mark_gantank">!</i>
+                        <div class="work_vent_client_contMsgBox" style="left:5px; top: 30px; display: none;">
+                            <i class="work_vent_client_torr"></i>
+                            <div class="work_vent_client_contMsgBoxDet">
+                                <p>是指任务周期内所完成的任务金额，根据提成比例进行的阶段性提成结算</p>
+                                <p>年度按1月-12月结算一次；季度按1月-3月、4月-6月、7月-9月、10月-12月各结算一次；月度按每月整月结算一次。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_right xt_xzset_tccheck zj_rw_tc_js_state">
+                        <label><input type="radio" name="444" data-id="1" checked="checked" style="margin-right: 4px;">按年度</label>
+                        <label><input type="radio" name="444" data-id="2" style="margin-right: 4px;">按季度</label>
+                        <label><input type="radio" name="444" data-id="3" style="margin-right: 4px;">按月度</label>
+                    </div>
+                </div>
+                <h2 class="cont_title">提成比例</h2>
+                <div class="system_work_t_left">
+                    <!--提成1-->
+                    <div style="margin-bottom: 25px;">
+                        <div class="t_textinput system_t_textinput">
+                        <div class="t_left c_3" style="position: relative;">
+                            <i class="c_r">*</i> 提成比例1<i class="b_b t_mark_gantank system_t_mark_gantank" style="left: 75px;">!</i>
+                            <div class="work_vent_client_contMsgBox" style="left:5px; top: 30px; display: none;width: 500px;line-height: 20px;">
+                                <i class="work_vent_client_torr" style="left: 72px;"></i>
+                                <div class="work_vent_client_contMsgBoxDet">
+                                    <p class="system_set_p">例如：任务周期为年度；任务核算方式为按利润；提成结算方式为按季度</p>
+                                    <div style="margin-bottom: 10px;margin-top: 10px;">
+                                    <p>1、年任务80万每季度20万，提成符合80%是16万，提成百分比为10%，</p>
+                                    <p>应发：<span class="c_r">160000*0.1-实发工资*3-个人支出项*3</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                    <p>2、如果第一季度完不够16万净利润就顺延到第二季度，第二季提成符合80%是16万*2，提成百分比为10%，应发：<span class="c_r">160000*2*0.1-实发工资*6-个人支出项*6</span></p>
+                                    <p>应发：<span class="c_r">160000*2*0.1-实发工资*6-个人支出项*6</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                    <p>3、如果一二季度都完不成任务就顺延至第三季度，第三季度提成符合80%是16万*3，提成百分比为10%，</p>
+                                    <p>应发：<span class="c_r">160000*3*0.1-实发工资*9-个人支出项*9</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                    <p>4、如果一二三季度都完不成任务顺延至第四季度末，第四季度提成符合80%是16万*4，提成百分比为10%，</p>
+                                    <p>应发：<span class="c_r">160000*4*0.1-实发工资*12-个人支出项*12</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_right">
+                            <div class="t_textinput hr_setgz_sjBox">
+                                <div class="t_left work_t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                <div class="t_right">
+                                    <div class="t_textinput inline_block left system_xinzi">
+                                        <div class="t_right"><input type="text" class="time_input inp_noInput lik_input_number c_3 zcj_edit_tc1_startxz_set_val" value="0">%
+                                        </div>
+                                    </div>
+                                    <span class="inline_block left hr_setgz_line">-</span>
+                                    <div class="t_textinput inline_block right system_xinzi">
+                                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tc1_endxz_set_val" value="0">%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tc1_tcpercent_set_val system_xinzi1" value="0"/>%</div>
+                        </div>
+                    </div>
+                    <!--提成2-->
+                    <div style="margin-bottom: 25px;">
+                        <div class="t_textinput">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例2：</div>
+                            <div class="t_right clearfix">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left work_t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right clearfix">
+                                        <div class="t_textinput inline_block left system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tc2_startxz_set_val" value="0"/>%
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block right system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tc2_endxz_set_val" value="0"/>%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tc2_tcpercent_set_val system_xinzi1" value="0"/>%</div>
+                        </div>
+                    </div>
+                    <!--提成3-->
+                    <div style="margin-bottom: 25px;">
+                        <div class="t_textinput">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例3：</div>
+                            <div class="t_right">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right clearfix">
+                                        <div class="t_textinput inline_block left system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tc3_startxz_set_val" value="0"/>%
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block right system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tc3_endxz_set_val" value="0"/>%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tc3_tcpercent_set_val system_xinzi1" value="0"/>%</div>
+                        </div>
+                    </div>
+
+                    <div class="t_textinput">
+                        <div style="position: relative;font-size: 14px;" class="system_t_textinput">
+                            <input type="checkbox" style="width: 16px;height: 16px;" checked="checked" class="hr_checkbox3 zj_is_wc_bl_state"/>超额完成比例
+                            <i class="b_b t_mark_gantank system_t_mark_gantank" style="left: 109px;">!</i>
+                            <div class="work_vent_client_contMsgBox" style="left:5px; top: -375px; display: none;font-weight: 100;width: 500px;line-height: 20px;">
+                                <i class="system_worr"></i>
+                                <div class="work_vent_client_contMsgBoxDet" style="font-size: 12px;">
+                                    <p class="system_set_p">是指在以上比例之后，额外结算的提成部分。</p>
+                                    <p style="margin-top: 10px;">例如：</p>
+                                    <p>任务周期为年度；任务核算方式为按利润；提成结算方式为按季度</p>
+                                    <div style="margin-bottom: 10px;">
+                                    <p>1、年任务80万每季度20万，提成符合80%是16万，提成百分比为10%，超额完成提成符合90%，提成百分比为20%，</p>
+                                    <p>应发：<span class="c_r">160000*0.1+(超额完成净利润-160000)*0.2-实发工资*3-个人支出项*3</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                    <p>2、如果第一季度完不够16万净利润就顺延到第二季度，第二季提成符合80%是16万*2，提成百分比为10%，</p>
+                                    <p>应发：<span class="c_r">160000*2*0.1+(超额完成净利润-160000*2)*0.2-实发工资*6-个人支出项*6</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                    <p>3、如果一二季度都完不成任务就顺延至第三季度，第三季度提成符合80%是16万*3，提成百分比为10%，</p>
+                                    <p>应发：<span class="c_r">160000*3*0.1+(超额完成净利润-160000*3)*0.2-实发工资*9-个人支出项*9</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                    <p>4、如果一二三季度都完不成任务顺延至第四季度末，第四季度提成符合80%是16万*4，提成百分比为10%，</p>
+                                    <p>应发：<span class="c_r">160000*4*0.1-实发工资*12-个人支出项*12</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput hr_setgz_sjBox" style="margin-top: 14px;">
+                            <div class="t_left work_t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                            <div class="t_right">
+                                <div class="t_textinput inline_block left system_xinzi">
+                                    <div class="t_right"><input type="text" class="time_input c_3 lik_input_number zcj_edit_wcrw_startxz_set_val check_sygz_yes " value="0">%
+                                    </div>
+                                </div>
+                                <span class="inline_block left hr_setgz_line">-</span>
+                                <div class="t_textinput inline_block right system_xinzi">
+                                    <div class="t_right"><input type="text" class="time_input c_3 lik_input_number zcj_edit_wcrw_endxz_set_val check_sygz_yes" value="0">%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left" style="width: 18%;"><i class="c_r">*</i> 提成百分比</div>
+                            <div class="t_right" style="margin-left: 22%;width: 66%;"><input type="text" class="time_input inp_noInput c_3 lik_input_number zcj_edit_tcbfb_tcpercent_set_val system_xinzi1 check_sygz_yes" value="0"/>%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_tc_set_success_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--设定团队提成-->
+<!--
+<div class="dialog">
+    <div class="dialog_box" name="system_set_grtcTD">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2 zcj_edit_xz_set_tc_table" style="width: 600px;height: 820px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">设定团队提成</h3>
+            </div>
+            <div class="dialog_text sbar work_t_left" style="padding: 5px 40px 5px 54px;height:90%;margin:0;">
+                <h2 class="cont_title">提成设定</h2>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>提成1名称</div>
+                    <div class="t_right" style="width: 65%;">
+                        <input type="text" class="time_input zcj_tc_name_show_val" value="请输入提成名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+                <div class="t_textinput system_t_textinput">
+                    <div class="t_left" style="position: relative;">
+                        <i class="c_r">*</i> 任务周期<i class="b_b t_mark_gantank system_t_mark_gantank">!</i>
+                        <div class="work_vent_client_contMsgBox" style="left: 5px; top: 30px; display: none;">
+                            <i class="work_vent_client_torr"></i>
+                            <div class="work_vent_client_contMsgBoxDet">
+                                是指任务金额的完成周期。年度按1月-12月计算；季度按1月-3月、4月-6月、7月-9月、10月-12月；月度按每月整月。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_right xt_xzset_tccheck zcj_ct_lx_checked_state">
+                        <label><input type="radio" name="222" data-id="1" checked="checked" style="margin-right: 4px;">按年度</label>
+                        <label><input type="radio" name="222" data-id="2" style="margin-right: 4px;">按季度</label>
+                        <label><input type="radio" name="222" data-id="3" style="margin-right: 4px;">按月度</label>
+                    </div>
+                </div>
+                <div class="t_textinput system_t_textinput">
+                    <div class="t_left" style="position: relative;width: 17%;">
+                        <i class="c_r">*</i> 任务核算方式<i class="b_b t_mark_gantank system_t_mark_gantank" style="left: 92px;">!</i>
+                        <div class="work_vent_client_contMsgBox" style="left: 26px; top: 30px; display: none;">
+                            <i class="work_vent_client_torr"></i>
+                            <div class="work_vent_client_contMsgBoxDet">
+                                <p>按流水：销售订单总额-销售退款</p>
+                                <p>按利润：销售订单总额-商品成本价-销售退款</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_right xt_xzset_tccheck">
+                        <label><input type="radio" name="333" data-id="1" checked="checked" style="margin-right: 4px;">按利润</label>
+                        <label><input type="radio" name="333" data-id="2" style="margin-right: 4px;">按流水</label>
+                    </div>
+                </div>
+                <div class="t_textinput system_t_textinput">
+                    <div class="t_left" style="position: relative;">
+                        <i class="c_r">*</i>提成结算<i class="b_b t_mark_gantank system_t_mark_gantank">!</i>
+                        <div class="work_vent_client_contMsgBox" style="left:5px; top: 30px; display: none;">
+                            <i class="work_vent_client_torr"></i>
+                            <div class="work_vent_client_contMsgBoxDet">
+                                <p>是指任务周期内所完成的任务金额，根据提成比例进行的阶段性提成结算</p>
+                                <p>年度按1月-12月结算一次；季度按1月-3月、4月-6月、7月-9月、10月-12月各结算一次；月度按每月整月结算一次。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_right xt_xzset_tccheck">
+                        <label><input type="radio" name="444" data-id="1" checked="checked" style="margin-right: 4px;">按利润</label>
+                        <label><input type="radio" name="444" data-id="2" style="margin-right: 4px;">按流水</label>
+                    </div>
+                </div>
+                <h2 class="cont_title">提成比例</h2>
+                <div class="system_work_t_left">
+                    &lt;!&ndash;提成1&ndash;&gt;
+                    <div style="margin-bottom: 25px;">
+                        <div class="t_textinput system_t_textinput">
+                            <div class="t_left c_3" style="position: relative;">
+                                <i class="c_r">*</i> 提成比例1<i class="b_b t_mark_gantank system_t_mark_gantank" style="left: 75px;">!</i>
+                                <div class="work_vent_client_contMsgBox" style="left:5px; top: 30px; display: none;width: 500px;line-height: 20px;">
+                                    <i class="work_vent_client_torr" style="left: 72px;"></i>
+                                    <div class="work_vent_client_contMsgBoxDet">
+                                        <p class="system_set_p">例如：任务周期为年度；任务核算方式为按利润；提成结算方式为按季度</p>
+                                        <div style="margin-bottom: 10px;margin-top: 10px;">
+                                            <p>1、年任务800万每季度200万，提成符合80%是160万，提成百分比为10%</p>
+                                            <p>应发：<span class="c_r">1600000*0.1-团队实发工资*3-团队支出项*3</span></p>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <p>2、如果第一季度完不够160万净利润就顺延到第二季度，第二季提成符合80%是160万*2，提成百分比为10%</span></p>
+                                            <p>应发：<span class="c_r">1600000*2*0.1-团队实发工资*6-团队支出项*6</span></p>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <p>3、如果一二季度都完不成任务就顺延至第三季度，第三季度提成符合80%是160万*3，提成百分比为10%</p>
+                                            <p>应发：<span class="c_r">1600000*3*0.1-团队实发工资*9-团队支出项*9</span></p>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <p>4、如果一二三季度都完不成任务顺延至第四季度末，第四季度提成符合80%是160万*4，提成百分比为10%</p>
+                                            <p>应发：<span class="c_r">1600000*4*0.1-团队实发工资*12-团队支出项*12</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="t_right">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left work_t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right">
+                                        <div class="t_textinput inline_block left system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc1_startxz_set_val" value="80">%
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block right system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc1_endxz_set_val" value="100">%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc1_tcpercent_set_val system_xinzi1" value="20"/>%</div>
+                        </div>
+                    </div>
+                    &lt;!&ndash;提成2&ndash;&gt;
+                    <div style="margin-bottom: 25px;">
+                        <div class="t_textinput">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例2：</div>
+                            <div class="t_right clearfix">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left work_t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right clearfix">
+                                        <div class="t_textinput inline_block left system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc2_startxz_set_val" value="50"/>%
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block right system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc2_endxz_set_val" value="79"/>%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc2_tcpercent_set_val system_xinzi1" value="15"/>%</div>
+                        </div>
+                    </div>
+                    &lt;!&ndash;提成3&ndash;&gt;
+                    <div style="margin-bottom: 25px;">
+                        <div class="t_textinput">
+                            <div class="t_left c_3"><i class="c_r v_hidden">*</i> 提成比例3：</div>
+                            <div class="t_right">
+                                <div class="t_textinput hr_setgz_sjBox">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                                    <div class="t_right clearfix">
+                                        <div class="t_textinput inline_block left system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc3_startxz_set_val" value="30"/>%
+                                            </div>
+                                        </div>
+                                        <span class="inline_block left hr_setgz_line">-</span>
+                                        <div class="t_textinput inline_block right system_xinzi">
+                                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc3_endxz_set_val" value="49"/>%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc3_tcpercent_set_val system_xinzi1" value="10"/>%</div>
+                        </div>
+                    </div>
+
+                    <div class="t_textinput">
+                        <div style="position: relative;font-size: 14px;" class="system_t_textinput">
+                            <input type="checkbox" style="width: 16px;height: 16px;" checked="checked" class="hr_checkbox3 zj_is_wc_bl_state"/>超额完成比例
+                            <i class="b_b t_mark_gantank system_t_mark_gantank" style="left: 109px;">!</i>
+                            <div class="work_vent_client_contMsgBox" style="left:5px; top: -375px; display: none;font-weight: 100;width: 500px;line-height: 20px;">
+                                <i class="system_worr"></i>
+                                <div class="work_vent_client_contMsgBoxDet" style="font-size: 12px;">
+                                    <p class="system_set_p">是指在以上比例之后，额外结算的提成部分。</p>
+                                    <p style="margin-top: 10px;">例如：</p>
+                                    <p>任务周期为年度；任务核算方式为按利润；提成结算方式为按季度</p>
+                                    <div style="margin-bottom: 10px;">
+                                        <p>1、年任务800万每季度200万，提成符合80%是160万，提成百分比为10%，超额完成提成符合90%，提成百分比为20%，</p>
+                                        <p>应发：<span class="c_r">1600000*0.1+(超额完成净利润-1600000)*0.2-团队实发工资*3-团队支出项*3</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <p>2、如果第一季度完不够160万净利润就顺延到第二季度，第二季提成符合80%是160万*2，提成百分比为10%，</p>
+                                        <p>应发：<span class="c_r">1600000*2*0.1+(超额完成净利润-1600000*2)*0.2-团队实发工资*6-团队支出项*6</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <p>3、如果一二季度都完不成任务就顺延至第三季度，第三季度提成符合80%是160万*3，提成百分比为10%，</p>
+                                        <p>应发：<span class="c_r">1600000*3*0.1+(超额完成净利润-1600000*3)*0.2-团队实发工资*9-团队支出项*9</span></p>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <p>4、如果一二三季度都完不成任务顺延至第四季度末，第四季度提成符合80%是160万*4，提成百分比为10%，</p>
+                                        <p>应发：<span class="c_r">1600000*4*0.1+(超额完成净利润-1600000*4)*0.2-团队实发工资*12-团队支出项*12</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput hr_setgz_sjBox" style="margin-top: 14px;">
+                            <div class="t_left work_t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                            <div class="t_right">
+                                <div class="t_textinput inline_block left system_xinzi">
+                                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc1_startxz_set_val check_sygz_yes" value="80">%
+                                    </div>
+                                </div>
+                                <span class="inline_block left hr_setgz_line">-</span>
+                                <div class="t_textinput inline_block right system_xinzi">
+                                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc1_endxz_set_val check_sygz_yes" value="100">%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="width: 18%;"><i class="c_r">*</i> 提成百分比</div>
+                        <div class="t_right" style="margin-left: 22%;width: 66%;"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc2_tcpercent_set_val system_xinzi1" value="15"/>%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_tc_xz_end_wc_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+
+
+
+
+
+
+
+
+<!--编辑薪资设置-->
+<div class="dialog">
+    <div class="dialog_box" name="system_exit_xzsz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2 zcj_edit_xz_set_tc_table" style="width: 700px;height: 600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">设定工资</h3>
+            </div>
+            <div class="dialog_text sbar work_t_left" style="padding:5px 40px;height:83%;margin:0;">
+                <h2 class="cont_title">提成</h2>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>提成1名称</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input zcj_tc_name_show_val" value="请输入提成名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <div class="t_right xt_xzset_tccheck zcj_ct_lx_checked_state" style="margin-left:0;width: 100%">
+                            <label><input type="radio" name="222" data-id="1" checked="checked" style="margin-right: 4px;">按年度</label>
+                            <label><input type="radio" name="222" data-id="2" style="margin-right: 4px;">按季度</label>
+                            <label><input type="radio" name="222" data-id="3" style="margin-right: 4px;">按月度</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left" style="font-weight: 600;"><i class="c_r v_hidden">*</i>任务核算方式</div>
+                </div>
+                <div class="t_textinput xt_xzset_con">
+                    <div class="t_right hr_setgz_hsfs zcj_ct_xz_set_state_show" style="margin-left:0;width: 100%">
+                        <label><input type="radio" name="333" data-id="1" checked="checked" style="margin-right: 4px;">按流水</label>
+                        <label><input type="radio" name="333" data-id="2" style="margin-right: 4px;">按利润</label>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left c_3" style="font-weight: 600"><i class="c_r">*</i> 提成比例1：</div>
+                    <div class="t_right">
+                        <div class="t_textinput hr_setgz_sjBox">
+                            <div class="t_left work_t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                            <div class="t_right">
+                                <div class="t_textinput inline_block left" style="width: 45%">
+                                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc1_startxz_set_val" value="80%">
+                                    </div>
+                                </div>
+                                <span class="inline_block left hr_setgz_line">-</span>
+                                <div class="t_textinput inline_block right" style="width: 45%">
+                                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc1_endxz_set_val" value="100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i> 提成百分比</div>
+                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc1_tcpercent_set_val" value="20%"/></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left c_3" style="font-weight: 600;"><i class="c_r v_hidden">*</i> 提成比例2：</div>
+                    <div class="t_right clearfix">
+                        <div class="t_textinput hr_setgz_sjBox">
+                            <div class="t_left work_t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                            <div class="t_right clearfix">
+                                <div class="t_textinput inline_block left" style="width: 45%">
+                                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc2_startxz_set_val" value="50%"/>
+                                    </div>
+                                </div>
+                                <span class="inline_block left hr_setgz_line">-</span>
+                                <div class="t_textinput inline_block right" style="width: 45%">
+                                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc2_endxz_set_val" value="79%"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc2_tcpercent_set_val" value="15%"/></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left c_3" style="font-weight: 600"><i class="c_r v_hidden">*</i> 提成比例3：</div>
+                    <div class="t_right">
+                        <div class="t_textinput hr_setgz_sjBox">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>完成任务的</div>
+                            <div class="t_right clearfix">
+                                <div class="t_textinput inline_block left" style="width: 45%">
+                                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc3_startxz_set_val" value="30%"/>
+                                    </div>
+                                </div>
+                                <span class="inline_block left hr_setgz_line">-</span>
+                                <div class="t_textinput inline_block right" style="width: 45%">
+                                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc3_endxz_set_val" value="49%"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i> 提成百分比</div>
+                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 zcj_edit_tc3_tcpercent_set_val" value="10%"/></div>
+                </div>
+                <!--<div class="t_textinput relative" style="margin-bottom:30px;">
+                    <div class="t_left" style="color:#666;font-weight: 600;"><i class="c_r v_hidden">*</i>回款核算方式</div>
+                    <p class="input_tishi c_9" style="margin-left:0;top:30px;">超出周期扣除提成金额比例</p>
+                </div>
+                <div class="t_textinput hr_setgz_hkhsfs">
+                    <div class="t_textinput inline_block left" style="width: 45%">
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3" readonly="true" value="1天">
+                        </div>
+                    </div>
+                    <span class="inline_block left hr_setgz_line">-</span>
+                    <div class="t_textinput inline_block right" style="width: 45%">
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="-1%" readonly="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput hr_setgz_hkhsfs">
+                    <div class="t_textinput inline_block left" style="width: 45%">
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3" readonly="true" value="2天">
+                        </div>
+                    </div>
+                    <span class="inline_block left hr_setgz_line">-</span>
+                    <div class="t_textinput inline_block right" style="width: 45%">
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="-3%" readonly="true">
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_tc_xz_end_wc_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加任务设定-->
+<div class="dialog">
+    <div class="dialog_box" name="system_exit_tjrwsd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2 zcj_rwxz_set_table_info" style="width: 700px;height:330px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加任务设定</h3>
+            </div>
+            <div class="dialog_text sbar work_t_left" style="padding:5px 40px;height:83%;margin:0;">
+                <h2 class="cont_title">添加任务设定</h2>
+                <!--<div class="t_textarea xt_xzset_choose relative">
+                    <label class="c_3" style="font-size: 14px;"><input type="checkbox" class="zcj_rw_is_open_gz_set" value=""/>是否开启任务工资</label>
+                    <p class="grey_input" style="font-size: 12px;margin-left:20px;"><i class="c_r">*</i>开启后接到任务未按时完成的情况下会扣除绩效工资</p>
+                </div>-->
+                <div class="xt_xzset_jijian relative">
+                    <i class="sys_sp_close none"></i>
+                    <div class="t_textinput xt_xzset_con xt_xzset_conTC">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>任务薪资<span class="page_53_tcNum"></span>名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_rwxz_name_show_put" value="请输入任务薪资名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput xt_xzset_con xt_xzset_conxw">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>未完成扣除金额</div>
+                        <div class="t_right clearfix">
+                            <div class="t_textinput inline_block left" style="width: 49%">
+                                <div class="t_right" style="">
+                                    <input type="text" class="lik_input_number time_input inp_96 zcj_rwxz_cs_num_show_put" value="请输入次数" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                    <i class="unit" style="right: -10px;">次</i>
+                                </div>
+                            </div>
+                            <div class="t_textinput inline_block right" style="width: 49%">
+                                <div class="t_right">
+                                    <input type="text" class="lik_input_number time_input inp_96 zcj_rwxz_cs_price_show_put" value="请输入金额" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                    <i class="unit" style="right: -10px;">元</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit" style="z-index:1;">
+                <button class="but_blue but_small zcj_rwxz_set_end">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加计件设定-->
+<div class="dialog">
+    <div class="dialog_box" name="system_exit_tjjjsd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2 zcj_jjtc_add_table_info" style="width: 500px;height:330px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加计件设定</h3>
+            </div>
+            <div class="dialog_text sbar work_t_left" style="padding:5px 40px;height:83%;margin:0;">
+                <h2 class="cont_title">添加计件设定</h2>
+                <!--<div class="t_textarea xt_xzset_choose relative">
+                    <label class="c_3"><input type="checkbox" class="zcj_is_jj_set_open" value=""/>计件设定</label>
+                    <p class="grey_input" style="font-size: 12px;">开启后针对配置商品备货时间计件</p>
+                </div>-->
+                <div class="xt_xzset_jijian relative">
+                    <i class="sys_sp_close none"></i>
+                    <div class="t_textinput xt_xzset_con">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>计件<span class="page_53_tcNum"></span>名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_input_jj_name" value="请输入计件名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput xt_xzset_con">
+                        <div class="t_left"><i class="c_r">*</i>计件金额</div>
+                        <div class="t_right">
+                            <input type="text" class="lik_input_number time_input inp_96 zcj_input_jj_price_num" value="请输入计件金额" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            <i class="unit">元</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit" style="z-index:1;">
+                <button class="but_blue but_small zcj_jjxz_set_edit_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+ </div>
+<script>
+    $(function () {
+//        var sp_conH = $(".system_right").parent(".py_content").height()-60;
+//        $(".system_right").height(sp_conH);
+//        $(".system_muban").width($(".system_right").width()-360);
+        /*团队提成*/
+        $(".system_work_mbdhTC .xtSet_xzset_addbut").live("click",function () {
+            var tc_html = $(this).parent(".t_textinput").prev().find(".xt_xzset_ticbox").eq(0).html();
+           $(this).parent(".t_textinput").prev().append('<div class="xt_xzset_ticbox relative zcj_tc_xz_set_data_list_dis_show">'+tc_html+'</div>');
+            sys_xz_xztcnum($(this));
+        });
+        $(".xt_xzset_ticbox .sys_sp_close").live("click",function () {
+            $(this).parent(".xt_xzset_ticbox").remove();
+            sys_xz_xztcnum2();
+        });
+        function sys_xz_xztcnum(obj){
+            var add_tcnum = obj.parents(".tabcontent .system_work_mbdhTC").find(".xt_xzset_ticbox").length;
+            alert(add_tcnum);
+            for(var i = 0;i<add_tcnum;i++){
+                obj.parents(".tabcontent .system_work_mbdhTC").find(".page_53_tcNum").eq(i).html(i+1);
+            }
+            if(add_tcnum >1){
+                obj.parents(".tabcontent .system_work_mbdhTC").find(".xt_xzset_ticbox").children(".sys_sp_close").show();
+            }else{
+                obj.parents(".tabcontent .system_work_mbdhTC").find(".xt_xzset_ticbox").children(".sys_sp_close").hide();
+            }
+        }
+        function sys_xz_xztcnum2(){
+            var add_tcnum = $(".tabcontent .system_work_mbdhTC").find(".xt_xzset_ticbox").length;
+            alert(add_tcnum);
+            for(var i = 0;i<add_tcnum;i++){
+                $(".tabcontent .system_work_mbdhTC").find(".page_53_tcNum").eq(i).html(i+1);
+            }
+            if(add_tcnum >2){
+                $(".tabcontent .system_work_mbdhTC").find(".xt_xzset_ticbox").children(".sys_sp_close").show();
+            }else{
+                $(".tabcontent .system_work_mbdhTC").find(".xt_xzset_ticbox").children(".sys_sp_close").hide();
+            }
+        }
+        /*计件薪资*/
+        $(".system_work_mbdh .xtSet_xzsetjj_addbut").live("click",function () {
+            var jj_html = $(this).parent(".t_textinput").prev().find(".xt_xzset_jijian").eq(0).html();
+            $(this).parent(".t_textinput").prev().append('<div class="xt_xzset_jijian relative">'+jj_html+'</div>');
+            sys_xz_xzrwnum($(this));
+        });
+        $(".xt_xzset_jijian .sys_sp_close").live("click",function () {
+           /* alert('102');*/
+            var obj_but = $(this).closest(".system_work_mbdh");
+            $(this).parent(".xt_xzset_jijian").remove();
+            sys_xz_xzrwnum2(obj_but);
+        });
+        function sys_xz_xzrwnum(obj){
+            var add_rwnum = obj.parents(".tabcontent .system_work_mbdh").find(".xt_xzset_jijian").length;
+           /* alert(add_rwnum);*/
+            for(var i = 0;i<add_rwnum;i++){
+                obj.parents(".system_work_mbdh").find(".page_53_tcNum").eq(i).html(i+1);
+            }
+            if(add_rwnum >1){
+                obj.parents(".system_work_mbdh").find(".xt_xzset_jijian").children(".sys_sp_close").show();
+            }else{
+                obj.parents(".system_work_mbdh").find(".xt_xzset_jijian").children(".sys_sp_close").hide();
+            }
+        }
+        function sys_xz_xzrwnum2(obj){
+            var add_rwnum = obj.find(".xt_xzset_jijian").length;
+            /*alert(add_rwnum);*/
+            for(var i = 0;i<add_rwnum;i++){
+                obj.find(".xt_xzset_jijian .page_53_tcNum").eq(i).html(i+1);
+            }
+            if(add_rwnum >1){
+                obj.find(" .xt_xzset_jijian").children(".sys_sp_close").show();
+            }else{
+                obj.find(".xt_xzset_jijian").children(".sys_sp_close").hide();
+            }
+        }
+    });
+</script>
+<script>
+    $('.system_t_mark_gantank').live('mouseenter',function(){
+        $(this).siblings('.work_vent_client_contMsgBox').show();
+    });
+    $('.system_t_textinput').live('mouseleave',function(){
+//        alert(1111);
+        $(this).find('.work_vent_client_contMsgBox').hide();
+    });
+
+    //启用试用工资
+   /* $(".tanceng .hr_checkbox3").live("click",function(){
+        if($(".hr_checkbox3").attr('checked')==null){
+            $(".check_sygz_yes").attr('readonly','readonly');
+        }else if($(".hr_checkbox3").attr('checked')=='checked'){
+            $(".check_sygz_yes").attr('readonly','false');
+        }
+    });*/
+</script>
+</body>
+
+</html>

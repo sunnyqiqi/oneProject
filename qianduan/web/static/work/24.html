@@ -1,0 +1,2367 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>工作-审批-发起审批</title>
+		<link rel="stylesheet" href="static/work/css/work_sp.css">
+		<!--<link rel="stylesheet" href="static/js/tree/style.css">-->
+	</head>
+
+	<body>
+		<div class="finance_content">
+			
+		
+		<!--第一行-->
+		<div class="con_header contenthead">
+			<h2>发起审批</h2>
+		</div>
+		<!--第二行-->
+		<div class="con_m_box sbar" style="background-color: #fff;">
+			<div style="padding: 0 20px 20px;">
+				<div class="work_sp">
+					<div class="work_sp_title">
+						<h2>请假类</h2>
+					</div>
+					<div style="padding-left: 18px;">
+						<ul>
+							<li class="val_dialog" name="work_fqsp_qj" typeid="1">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_jj.png">
+									<div class="work_sp_con1">
+										<h3>请假</h3>
+										<p>您可以在此申请各种请假</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_cc" typeid="2">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_cc.png">
+									<div class="work_sp_con1">
+										<h3>出差</h3>
+										<p>您可以在此申请出差，审核通过后会按正常考勤统计</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_wc" typeid="3">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_wc.png">
+									<div class="work_sp_con1">
+										<h3>外出</h3>
+										<p>您可以在此申请外出，审核通过后会按正常考勤统计</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="work_sp">
+					<div class="work_sp_title">
+						<h2>款项类</h2>
+					</div>
+					<div style="padding-left: 18px;">
+						<ul>
+							<li class="val_dialog" name="work_fqsp_bx" typeid="4">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_bx.png">
+									<div class="work_sp_con1">
+										<h3>报销</h3>
+										<p>您可以在此申请您的报销款项</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_jk" typeid="5"> 
+								<div class="work_sp_qj">
+									<img src="static/images/sp_jk.png">
+									<div class="work_sp_con1">
+										<h3>借款</h3>
+										<p>您可以在此申请借款</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_fk" typeid="6">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_fk.png">
+									<div class="work_sp_con1">
+										<h3>付款</h3>
+										<p>您可以在此申请付款选项</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="work_sp">
+					<div class="work_sp_title">
+						<h2>人事类</h2>
+					</div>
+					<div style="padding-left: 18px;">
+						<ul>
+							<li class="val_dialog" name="work_fqsp_zp" style="margin-bottom: 14px;" typeid="7">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_zp.png">
+									<div class="work_sp_con1">
+										<h3>招聘</h3>
+										<p>您可以在此申请招聘需求，审批通过后会转换为任务</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_lz" typeid="8">
+								<div class="work_sp_qj lizhitc_btn_xxl">
+									<img src="static/images/sp_lz.png">
+									<div class="work_sp_con1">
+										<h3>离职</h3>
+										<p>您可以在此申请离职</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_zz" typeid="9">
+								<div class="work_sp_qj zztc_btn_xxl">
+									<img src="static/images/sp_zz.png">
+									<div class="work_sp_con1">
+										<h3>转正</h3>
+										<p>您可以在此申请转正</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_tx" typeid="10">
+								<div class="work_sp_qj txtc_btn_xxl">
+									<img src="static/images/sp_tx.png">
+									<div class="work_sp_con1">
+										<h3>调薪</h3>
+										<p>您可以在此申请调薪</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_bgcg" typeid="11">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_bg.png">
+									<div class="work_sp_con1">
+										<h3>办公采购</h3>
+										<p>您可以在此申请办公用品采购，审批通过后此采购信息会体现在办公费用</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_wply" typeid="12">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_wply.png">
+									<div class="work_sp_con1">
+										<h3>物品领用</h3>
+										<p>您可以在此申请领取办公物品、用品等</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="work_sp">
+					<div class="work_sp_title">
+						<h2>管理类</h2>
+					</div>
+					<div style="padding-left: 18px;">
+						<ul>
+							<li class="val_dialog" name="work_fqsp_gz" typeid="13">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_gz.png">
+									<div class="work_sp_con1">
+										<h3>公章</h3>
+										<p>您可以在此申请适用各类公章</p>
+									</div>
+								</div>
+							</li>
+							<li class="val_dialog" name="work_fqsp_ht" typeid="14">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_ht.png">
+									<div class="work_sp_con1">
+										<h3>合同</h3>
+										<p>您可以在此申请审批各类合同模板以外的合同事项</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="work_sp">
+					<div class="work_sp_title">
+						<h2>其他</h2>
+					</div>
+					<div style="padding-left: 18px;">
+						<ul>
+							<li class="val_dialog" name="work_fqsp_ptsp" typeid="15">
+								<div class="work_sp_qj">
+									<img src="static/images/sp_ptsp.png">
+									<div class="work_sp_con1">
+										<h3>普通审批</h3>
+										<p>您可以在此申请日常审批事项</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+			</div>
+		<!--1.请假弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_qj">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">请假</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>请假类型</div>
+							<div class="t_right">
+								<div class="inline_block select_mormal select_100">
+									<input type="text" class="select_input qjlx_xxl" value="请选择请假类型" />
+									<i></i>
+									<ul class="select_list qingjia_menu_list_xxl">
+										<li typeid="1">事假</li>
+										<li typeid="2">病假</li>
+										<li typeid="3">年假</li>
+										<li typeid="4">调休</li>
+										<li typeid="5">婚假</li>
+										<li typeid="6">产假</li>
+										<li typeid="7">陪护假</li>
+										<li typeid="8">其他</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>开始时间</div>
+							<div class="t_right"><input class="time_input laydate-icon qjxxl_start" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(qjxxl_start)" id="qjxxl_start"><i class="inp_time" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>结束时间</div>
+							<div class="t_right"><input class="time_input laydate-icon qjxxl_end" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(qjxxl_end)" id="qjxxl_end"><i class="inp_time" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>请假天数</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput" id="qjnum" value="0天" readonly="true"></div>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>请假事由</div>
+							<div class="t_right"><textarea id="qj_xxl_explain" class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入请假事由</textarea></div>
+						</div>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i></i>
+                        <em>交接人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 jjr_add_xxl" style="width: 100%;">
+                    	
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_jjr"></em>
+                            <!--<p class="box_addermsg">选择后步骤一需要交接人审批</p>-->
+                        </li>
+                    </ul>
+                </label>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl" style="width: 100%;">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl" style="width: 100%;">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small qjbtn_xxl" >提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--2.出差弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_cc">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height:600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">出差</h3></div>
+
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						
+						<div class="chuchai_xxl">
+							<div class="work_sp_fqsp_h3">
+								<h3 class="inline_block"><p>行程明细<span class="c_r">(1)</span></p></h3>
+
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>出差地点</div>
+								<div class="t_right"><input type="text" class="time_input ccaddressone ccaddress" value="如：北京、上海、杭州（必填）" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>开始时间</div>
+								<div class="t_right">
+									<input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input ccstarttimeone ccstarttime" readonly="readonly" id="start" onclick="laydate(start)" style="cursor: pointer;">
+								</div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>结束时间</div>
+								<div class="t_right">
+									<input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input ccendtimeone ccendtime" readonly="readonly" id="end" onclick="laydate(end)" style="cursor: pointer;">
+								</div>
+							</div>
+						</div>
+						
+						<div id="addchuchai"></div>
+						<div class="t_textinput t_textarea work_fqsp_zjxx">
+							<div class="t_left v_hidden"><i class="c_r">*</i>增加行程明细</div>
+							<button class="but_icon worksp_addccBtn" style="margin-left:19px;"><i></i>增加行程明细</button>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>出差天数</div>
+							<div class="t_right"><input type="text" id="cctime_xxl" class="time_input inp_noInput" value="0天" readonly="true" tians="0"/></div>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r v_hidden">*</i>出差事由</div>
+							<div class="t_right"><textarea class="txt_normal" id="cc_content" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入出差事由描述</textarea></div>
+						</div>
+
+						<div class="text_input">
+							<div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+							<div class="text_ininput" style="width:80%">
+								<ul class="img_warp">
+									<cite><input class="addimg hide_input" type="file" name="imgurl"/><span class="icon-add"></span></cite>
+								</ul>
+							</div>
+						</div>
+						<!--<div class="input_rightBtn text_input work_fqsp_tjfj">
+							<div class="text_intext work_fujian" style="width: 15%;margin-left: -5px;">
+								<i class="v_hidden">*</i>
+								<span>添加附件</span>
+							</div>
+							<div style="position: absolute;left: 79px;top:0;width:85%;">
+								<div class="rightinput_box work_rw_input">
+									<input type="text" class="time_input" value="输入附件名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" id="work_fb_field_cc">
+									<i class="work_sp_base_delete"></i>
+								</div>
+								<div class="text_ininput" style="position:relative;">
+									<button class="filea but_icon">
+                                <i></i>添加附件
+                                <input type="file" onchange="document.getElementById('work_fb_field_cc').value=this.value"/>
+                            </button>
+								</div>
+							</div>
+						</div>-->
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 chuchai_spr spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small ccbtn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--3.外出弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_wc">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 550px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">外出</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>开始时间</div>
+							<div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input wcstarttime" readonly="readonly" id="wcstart" onclick="laydate(wcstart)" style="cursor: pointer;"><i class="inp_time"></i></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>结束时间</div>
+							<div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input wcendtime" readonly="readonly" id="wcend" onclick="laydate(wcend)" style="cursor: pointer;"><i class="inp_time"></i></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>外出时间</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput wcnum" id="wcnum" value="0天" readonly="true"></div>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>外出事由</div>
+							<div class="t_right"><textarea class="txt_normal" id="wccontent" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入外出事由</textarea></div>
+						</div>
+						<div class="text_input">
+							<div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+							<div class="text_ininput" style="width:80%">
+								<ul class="img_warp">
+									<cite><input class="addimg hide_input" type="file" name="imgurl"/><span class="icon-add"></span></cite>
+								</ul>
+							</div>
+						</div>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 waichu_spr_xxl spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li class="">
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small wc_btn_xxl" >提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--4.报销弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_bx">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">报销</h3>
+					</div>
+
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						<div class="biaoxiaohtml">
+							<div class="work_sp_fqsp_h3">
+								<h3 class="inline_block"><p>报销明细<span class="c_r">(1)</span></p></h3>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>报销金额</div>
+								<div class="t_right"><input type="text" class="time_input inp_96 bx_je_xxlone bx_je_xxl lik_input_number" value="请输入报销金额" onfocus="fn_focus(this);" onblur="fn_blur(this);" /><i class="unit" style="right: 4px;">元</i></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>报销类别</div>
+								<div class="t_right"><input type="text" class="time_input bx_lb_xxlone bx_lb_xxl" value="请输入报销类别" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+							</div>
+							<div class="t_textinput t_textarea">
+								<div class="t_left"><i class="c_r v_hidden">*</i>费用明细</div>
+								<div class="t_right"><textarea class="txt_normal bx_fymx_xxlone bx_fymx_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入费用明细描述</textarea></div>
+							</div>
+						</div>
+						<div id="bx_html"></div>
+						<div class="t_textinput t_textarea work_fqsp_zjxx">
+							<div class="t_left t_left_conrow v_hidden"><i class="c_r">*</i>增加报销明细</div>
+							<button class="but_icon worksp_addbxBtn work_sp_but biaoxiaobtn"><i></i>增加报销明细</button>
+						</div>
+						<div class="text_input">
+							<div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+							<div class="text_ininput" style="width:80%">
+								<ul class="img_warp">
+									<cite><input class="addimg hide_input" type="file" name="imgurl"/><span class="icon-add"></span></cite>
+								</ul>
+							</div>
+						</div>
+						<!--<div class="input_rightBtn text_input work_fqsp_tjfj">
+							<div class="text_intext work_fujian" style="width: 15%;margin-left: -5px;">
+								<i class="v_hidden">*</i>
+								<span>添加附件</span>
+							</div>
+							<div style="position: absolute;left: 79px;top:0;width:85%;">
+								<div class="rightinput_box work_rw_input">
+									<input type="text" class="time_input" value="请添加附件" onfocus="fn_focus(this);" onblur="fn_blur(this);" id="work_fb_field_bx">
+									<i class="work_sp_base_delete"></i>
+								</div>
+								<div class="text_ininput" style="position:relative;">
+									<button class="filea but_icon">
+                                <i></i>添加附件
+                                <input type="file" name="fileurl" class="bx_shangchuan_wenjianxxl"/>
+                            </button>
+								</div>
+							</div>
+						</div>-->
+						 <div class="t_textinput" style="height:auto;">
+                        <div class="t_left"><i class="c_r">*</i>添加附件</div>
+                        <div class="t_right rightinput_box">
+                        	<div class="attachfield_file_upload bxtjiafujian_box_xxl">
+                        		
+                        	</div>
+                            <div class="attachfield_file_upload">
+                                <div class="attach_file_upload_btn">
+                                    <div class="webuploader_container">
+                                        <div class="text_ininput" style="position:relative;">
+                                            <button class="filea but_icon">
+                                                <i></i>添加附件
+                                                <input type="file" class="bx_shangchuan_wenjianxxl" name="fileurl"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 baoxiao_spr_xxl spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small bxbtn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--5.借款弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_jk">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 550px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">借款</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text">
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>借款事由</div>
+							<div class="t_right"><textarea class="txt_normal jksy_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入借款事由</textarea></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>借款金额</div>
+							<div class="t_right"><input type="text" class="time_input jkje_xxl" value="请输入金额" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);"/></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>借款方式</div>
+							<div class="t_right">
+								<div class="inline_block select_mormal select_100">
+									<input type="text" class="select_input jkfs_xxl" value="请选择借款方式" />
+									<i></i>
+									<ul class="select_list jiekuan_list_menu_xxl">
+										<li >现金</li>
+										<li >支票</li>
+										<li >电汇</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>支付日期</div>
+							<div class="t_right"><input class="time_input laydate-icon jkstart_tm" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(jk_start)" id="jk_start"><i class="inp_time" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>还款日期</div>
+							<div class="t_right"><input class="time_input laydate-icon jkend_tm" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(jk_end)" id="jk_end"><i class="inp_time" /></div>
+						</div>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 jiekuan_spr spr_add_xxl" >
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small jiekuan_btn">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--6.付款弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_fk">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">付款</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>付款事由</div>
+							<div class="t_right"><textarea class="txt_normal fukuan_content" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入付款事由</textarea></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>付款总额</div>
+							<div class="t_right"><input type="text" class="time_input fk_money" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入总额人民币（元）" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);"></div>
+
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>付款方式</div>
+							<div class="t_right">
+								<div class="inline_block select_mormal select_100">
+									<input type="text" class="select_input fk_type" value="现金" readonly="readonly" typeid="1"/>
+									<i></i>
+									<ul class="select_list fk_fkfstype_xxl">
+										<li typeid="1">现金</li>
+										<li typeid="2">支票</li>
+										<li typeid="3">电汇</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>支付日期</div>
+							<div class="t_right"><input class="time_input laydate-icon fkzf_tm" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate()"><i class="inp_time" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>支付名称</div>
+							<div class="t_right"><input type="text" class="time_input fkzf_name" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入支付名称"></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>开户行</div>
+							<div class="t_right"><input type="text" class="time_input fk_kaihu" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入开户行"></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>银行账户</div>
+							<div class="t_right"><input type="text" class="time_input fk_yhzh" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入银行账户" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);"></div>
+						</div>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li class="">
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small fukuan_btn">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--7.招聘弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_zp">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">招聘</h3>
+					</div>
+
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						<div class="zhaopinhtml">
+							<div class="work_sp_fqsp_h3">
+								<h3 class="inline_block"><p>招聘需求<span class="c_r">(1)</span></p></h3>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>岗位名称</div>
+								<div class="t_right"><input type="text" class="time_input zpgwmc_xxl_one zpgwmc_xxl" value="请输入岗位名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>岗位要求</div>
+								<div class="t_right"><input type="text" class="time_input zpgwyq_xxl_one zpgwyq_xxl" value="请输入岗位要求" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>招聘人数</div>
+								<div class="t_right"><input type="text" class="time_input zprs_xxl_one zprs_xxl" value="请输入招聘人数" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);"/></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>到岗时间</div>
+								<div class="t_right"><input class="time_input laydate-icon zpdgsj_xxl_one zpdgsj_xxl" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" style="cursor: pointer;" readonly="readonly" onclick="laydate({min: laydate.now()})"><i class="inp_time" /></div>
+							</div>
+							<div class="t_textinput t_textarea">
+								<div class="t_left"><i class="c_r v_hidden">*</i>岗位描述</div>
+								<div class="t_right"><textarea class="txt_normal zpgwms_xxl_one zpgwms_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入岗位或职责描述</textarea></div>
+							</div>
+							<!--<div class="input_rightBtn text_input work_fqsp_tjfj">
+								<div class="text_intext work_fujian" style="width: 15%;margin-left: -5px;">
+									<i class="v_hidden">*</i>
+									<span>添加附件</span>
+								</div>
+								<div style="position: absolute;left: 79px;top:0;width:85%;">
+									<div class="rightinput_box work_rw_input">
+										<input type="text" class="time_input zpfj_xxl_one zpfj_xxl" value="请添加附件" onfocus="fn_focus(this);" onblur="fn_blur(this);" id="work_sp_zp_field">
+										<i class="work_sp_base_delete"></i>
+									</div>
+									<div class="text_ininput" style="position:relative;">
+										<button class="filea but_icon">
+                                <i></i>添加附件
+                                <input type="file" onchange="document.getElementById('work_sp_zp_field').value=this.value"/>
+                            </button>
+									</div>
+								</div>
+							</div>-->
+							 <div class="t_textinput" style="height:auto;">
+                        <div class="t_left"><i class="c_r">*</i>添加附件</div>
+                        <div class="t_right rightinput_box">
+                        	<div class="attachfield_file_upload bxtjiafujian_box_xxl">
+                        		
+                        	</div>
+                            <div class="attachfield_file_upload">
+                                <div class="attach_file_upload_btn">
+                                    <div class="webuploader_container">
+                                        <div class="text_ininput" style="position:relative;">
+                                            <button class="filea but_icon">
+                                                <i></i>添加附件
+                                                <input type="file" class="bx_shangchuan_wenjianxxl" name="fileurl"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+							<hr class="work_sp_hr">
+						</div>
+						<div id="zp_html_xxl"></div>
+						<div class="t_textinput t_textarea work_fqsp_zjxx" style="margin-bottom: 14px;">
+							<div class="t_left v_hidden"><i class="c_r">*</i>增加招聘需求</div>
+							<button class="but_icon worksp_addzpBtn zhaopinbtn" style="margin-left: 19px;"><i></i>增加招聘需求</button>
+						</div>
+						<hr class="work_sp_hr">
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>执行人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 zhixing_add_ren">
+
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_zxr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small zhaopinbtn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--8.离职弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_lz">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height:550px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">离职</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text">
+
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>名字</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput lizhiname_xxl" value="" readonly="true" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>岗位名称</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput lizhigwmc_xxl" value="" readonly="true" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>入职日期</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput ruzhiriqi_xxl" value="" readonly="true"></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left t_left_conrow"><i class="c_r">*</i>申请离职日期</div>
+							<div class="t_right"><input class="time_input laydate-icon lizhiriqi_xxl" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" style="cursor: pointer;" readonly="readonly" onclick="laydate({min: laydate.now()})"><i class="inp_time"></i></div>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>离职原因</div>
+							<div class="t_right"><textarea class="txt_normal lizhiyy_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入离职原因描述</textarea></div>
+						</div>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small lizhibtn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--9.转正弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_zz">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height:550px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">转正</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text">
+
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>名字</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput zzname_xxl" value="" readonly="true" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>岗位名称</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput zzgwmc_xxl" value="" readonly="true" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>入职日期</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput zzrzriqi_xxl" value="" readonly="true"></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left t_left_conrow"><i class="c_r">*</i>申请转正日期</div>
+							<div class="t_right"><input class="time_input laydate-icon sqzzriqi_xxl" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" style="cursor: pointer;" readonly="readonly" onclick="laydate({min: laydate.now()})"><i class="inp_time"></i></div>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>转正申请</div>
+							<div class="t_right"><textarea class="txt_normal zzsqly_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入转正申请描述</textarea></div>
+						</div>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small zztj_btn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--10.调薪弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_tx">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3 ">调薪</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text">
+
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>名字</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput txname_xxl" value="" readonly="true"></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>岗位名称</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput txgwmc_xxl" value="" readonly="true"></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>当前薪资</div>
+							<div class="t_right"><input type="text" class="time_input inp_96 inp_noInput txdqxz_xxl" value="" readonly="true"><i class="unit">元</i></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>调薪薪资</div>
+							<div class="t_right"><input type="text" class="time_input inp_96 txqwxz_xxl lik_input_number" value="请输入调薪薪资" onfocus="fn_focus(this);" onblur="fn_blura(this);"><i class="unit">元</i></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left t_left_conrow"><i class="c_r">*</i>调薪生效日期</div>
+							<div class="t_right"><input class="time_input laydate-icon txsxriqi_xxl" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" style="cursor: pointer;" readonly="readonly" onclick="laydate({min: laydate.now()})"><i class="inp_time" /></div>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>调薪理由</div>
+							<div class="t_right"><textarea class="txt_normal txsqly_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入调薪理由</textarea></div>
+						</div>
+						<label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small txsq_btn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--11.办公采购-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_bgcg">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">办公采购</h3></div>
+
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>申请事由</div>
+							<div class="t_right"><input type="text" class="time_input bgcg_sqsy_xxl" value="请输入申请事由" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r v_hidden">*</i>采购类型</div>
+							<div class="t_right">
+								<div class="inline_block select_mormal select_100">
+									<input type="text" class="select_input cglx_xxl" value="请选择采购类型" readonly="readonly"/>
+									<i></i>
+									<ul class="select_list cglx_main_list_xxl">
+										<li typeid="1">物品</li>
+										<li typeid="2">办公</li>
+										<li typeid="3">其他</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left t_left_conrow"><i class="c_r">*</i>期望交付日期</div>
+							<div class="t_right"><input class="time_input laydate-icon cgjfrq_xxl" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" style="cursor: pointer;" readonly="readonly" onclick="laydate({min: laydate.now()})"><i class="inp_time" /></div>
+						</div>
+						<div class="cgmx_html_xxl">
+							<div class="work_sp_fqsp_h3">
+								<h3 class="inline_block"><p>采购明细<span class="c_r">(1)</span></p></h3>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>名称</div>
+								<div class="t_right"><input type="text" class="time_input cgmxmc_xxl" value="请输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>规格</div>
+								<div class="t_right"><input type="text" class="time_input cgmxgg_xxl" value="请输入规格" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>数量</div>
+								<div class="t_right"><input type="text" class="time_input cgmxsl_xxl" value="请输入数量" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);" /></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>单价</div>
+								<div class="t_right"><input type="text" class="time_input cgmxdj_xxl" value="请输入单价" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeyup="checkP(this);" onpaste="checkP(this);" oncut="checkP(this);" ondrop="checkP(this);" onchange="checkP(this);" /></div>
+							</div>
+							<div class="t_textinput" style="height:50px;">
+								<div class="t_left"><i class="c_r v_hidden">*</i>小计总价</div>
+								<div class="t_right"><input type="text" class="time_input cgmcxmoy_xxl" value="自动计算出价钱" readonly="true" /></div>
+								<p class="t_bottom c_9">如需采购多种产品，请点击“增加明细”</p>
+							</div>
+						</div>
+						<div id="bgcg_html_add"></div>
+						<div class="t_textinput t_textarea work_fqsp_zjxx">
+							<div class="t_left v_hidden"><i class="c_r">*</i>增加内容</div>
+							<button class="but_icon worksp_addcgmxBtn cgmczjbtn_xxl" style="margin-left:19px;"><i></i>增加内容</button>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r v_hidden">*</i>总价格</div>
+							<div class="t_right"><input type="text" class="time_input inp_noInput cgmx_max_num" value="自动计算出价钱" readonly="true" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r v_hidden">*</i>支付方式</div>
+							<div class="t_right">
+								<div class="inline_block select_mormal select_100">
+									<input type="text" class="select_input cgmx_zffs_xxl" value="电汇" readonly="readonly" typeid="1"/>
+									<i></i>
+									<ul class="select_list cg_zffs_list_xxl">
+										<li typeid="1">电汇</li>
+										<li typeid="2">现金</li>
+										<li typeid="3">支票</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r v_hidden">*</i>备注</div>
+							<div class="t_right"><textarea class="txt_normal cgmx_bz_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入备注内容</textarea></div>
+						</div>
+						<div class="text_input">
+							<div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+							<div class="text_ininput" style="width:80%">
+								<ul class="img_warp">
+									<cite><input class="addimg hide_input" type="file" name="imgurl"/><span class="icon-add"></span></cite>
+								</ul>
+							</div>
+						</div>
+
+						<label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small bangcgbtn_xxl" >提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--12.物品领用-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_wply">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">物品领用</h3></div>
+
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+
+						<div class="wupinmx_html">
+							<div class="work_sp_fqsp_h3">
+								<h3 class="inline_block"><p>物品明细<span class="c_r">(1)</span></p></h3>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>物品名称</div>
+								<div class="t_right"><input type="text" class="time_input wpmc_name_xxl" value="请输入物品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>物品用途</div>
+								<div class="t_right"><input type="text" class="time_input wpyt_yong_xxl" value="请输入物品用途" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+							</div>
+							<div class="t_textinput">
+								<div class="t_left"><i class="c_r">*</i>物品数量</div>
+								<div class="t_right"><input type="text" class="time_input wpsl_num_xxl" value="请输入物品数量" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);"/></div>
+							</div>
+						</div>
+						<div id="wplyhtml_add_xxl"></div>
+						<div class="t_textinput t_textarea work_fqsp_zjxx">
+							<div class="t_left v_hidden"><i class="c_r">*</i>增加物品明细</div>
+							<button class="but_icon worksp_addfdspBtn wupinadd_btn_xxl" style="margin-left:19px;"><i></i>增加物品明细</button>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>领取详情</div>
+							<div class="t_right"><textarea class="txt_normal wplqxq_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入详情</textarea></div>
+						</div>
+						<div class="text_input">
+							<div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+							<div class="text_ininput" style="width:80%">
+								<ul class="img_warp">
+									<cite><input class="addimg hide_input" type="file" name="imgurl"/><span class="icon-add"></span></cite>
+								</ul>
+							</div>
+						</div>
+						 <div class="t_textinput" style="height:auto;">
+                        <div class="t_left"><i class="c_r">*</i>添加附件</div>
+                        <div class="t_right rightinput_box">
+                        	<div class="attachfield_file_upload bxtjiafujian_box_xxl">
+                        		
+                        	</div>
+                            <div class="attachfield_file_upload">
+                                <div class="attach_file_upload_btn">
+                                    <div class="webuploader_container">
+                                        <div class="text_ininput" style="position:relative;">
+                                            <button class="filea but_icon">
+                                                <i></i>添加附件
+                                                <input type="file" class="bx_shangchuan_wenjianxxl" name="fileurl"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+						<label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small wupinly_btn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--13.公章弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_gz">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 550px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">公章</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						<div class="t_textinput t_textarea">
+							<div class="t_left t_left_conrow"><i class="c_r">*</i>借公章事由</div>
+							<div class="t_right"><textarea class="txt_normal jgzsy_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入借公章事由</textarea></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>公章类型</div>
+							<div class="t_right">
+								<div class="inline_block select_mormal select_100">
+									<input type="text" class="select_input gzlx_xxl" value="公章" readonly="readonly" typeid="1"/>
+									<i></i>
+									<ul class="select_list gzlx_mainlist_xxl">
+										<li typeid="1">公章</li>
+										<li typeid="2">合同章</li>
+										<li typeid="3">法人章</li>
+										<li typeid="4">财务章</li>
+										<li typeid="5">其他</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>用章日期</div>
+							<div class="t_right"><input class="time_input laydate-icon zongz_start_time" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(yongz_start)" id="yongzhang_start"><i class="inp_time" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>归还日期</div>
+							<div class="t_right"><input class="time_input laydate-icon yongz_end_time" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(yongz_end)" id="yongzhang_end"><i class="inp_time" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>文件名称</div>
+							<div class="t_right"><input type="text" class="time_input gz_wjmc_xxl" value="请输入所用公章文件名" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>文件份数</div>
+							<div class="t_right"><input type="text" class="time_input gz_wjnum_xxl" value="请输入所用公章份数" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);"/></div>
+						</div>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small gongzhang_btn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--14.合同弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_ht">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 600px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">合同</h3></div>
+
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>合同编号</div>
+							<div class="t_right"><input type="text" class="time_input htbh_xxl" value="请输入合同编号" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>合同名称</div>
+							<div class="t_right"><input type="text" class="time_input htmc_xxl" value="请输入合同名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>签约日期</div>
+							<div class="t_right"><input class="time_input laydate-icon htqyriqi_xxl" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate()"><i class="inp_time" /></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left t_left_conrow"><i class="c_r">*</i>甲方单位名称</div>
+							<div class="t_right"><input type="text" class="time_input ht_jfdwmc_xxl" value="请输入甲方单位名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>甲方负责人</div>
+							<div class="t_right"><input type="text" class="time_input htjffzr_xxl" value="请输入甲方负责人" onfocus="fn_focus(this);" onblur="fn_blur(this);"></i>
+							</div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left t_left_conrow"><i class="c_r">*</i>乙方单位名称</div>
+							<div class="t_right"><input type="text" class="time_input ht_yfdwmc_xxl" value="请输入乙方单位名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+						</div>
+						<div class="t_textinput">
+							<div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>乙方负责人</div>
+							<div class="t_right"><input type="text" class="time_input htyffzr_xxl" value="请输入乙方负责人" onfocus="fn_focus(this);" onblur="fn_blur(this);"></i>
+							</div>
+						</div>
+						<div class="hetonghtml"> 
+							<div class="work_sp_fqsp_h3">
+								<h3 class="inline_block"><p>合同内容<span class="c_r">(1)</span></p></h3>
+							</div>
+							<div class="t_textinput t_textarea">
+								<div class="t_left"><i class="c_r v_hidden">*</i>内容</div>
+								<div class="t_right"><textarea class="txt_normal htneirong_xxl" onfocus="fn_focus(this);" onblur="fnkong(this);">请输入合同内容</textarea></div>
+							</div>
+						</div>
+						<div id="hetong_add_xxl"></div>
+						<div class="t_textinput t_textarea work_fqsp_zjxx">
+							<div class="t_left v_hidden"><i class="c_r">*</i>增加内容</div>
+							<button class="but_icon worksp_addhtBtn hetong_btn_xxl" style="margin-left:19px;"><i></i>增加内容</button>
+						</div>
+						<div class="text_input">
+							<div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+							<div class="text_ininput" style="width:80%">
+								<ul class="img_warp">
+									<cite><input class="addimg hide_input" type="file" name="imgurl"/><span class="icon-add"></span></cite>
+								</ul>
+							</div>
+						</div>
+						<div class="t_textinput" style="height:auto;">
+                        <div class="t_left"><i class="c_r">*</i>添加附件</div>
+                        <div class="t_right rightinput_box">
+                        	<div class="attachfield_file_upload bxtjiafujian_box_xxl">
+                        		
+                        	</div>
+                            <div class="attachfield_file_upload">
+                                <div class="attach_file_upload_btn">
+                                    <div class="webuploader_container">
+                                        <div class="text_ininput" style="position:relative;">
+                                            <button class="filea but_icon">
+                                                <i></i>添加附件
+                                                <input type="file" class="bx_shangchuan_wenjianxxl" name="fileurl"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small httijiao_btn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--15.普通审批弹窗-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_ptsp">
+				<div class="dialog_screen"></div>
+				<div class="dialog_content dialog_content_3" style="height: 530px;">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">普通审批</h3></div>
+					<div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+						<div class="t_textinput">
+							<div class="t_left"><i class="c_r">*</i>申请内容</div>
+							<div class="t_right"><input type="text" class="time_input ptsp_sqnr_xxl" value="请输入申请内容" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+						</div>
+						<div class="t_textinput t_textarea">
+							<div class="t_left"><i class="c_r">*</i>申请详情</div>
+							<div class="t_right"><textarea class="txt_normal ptsp_sqxq_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入申请详情</textarea></div>
+						</div>
+
+						<div class="text_input">
+							<div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+							<div class="text_ininput" style="width:80%">
+								<ul class="img_warp">
+									<cite><input class="addimg hide_input" type="file" name="imgurl"/><span class="icon-add"></span></cite>
+								</ul>
+							</div>
+						</div>
+						<div class="t_textinput" style="height:auto;">
+                        <div class="t_left"><i class="c_r">*</i>添加附件</div>
+                        <div class="t_right rightinput_box">
+                        	<div class="attachfield_file_upload bxtjiafujian_box_xxl">
+                        		
+                        	</div>
+                            <div class="attachfield_file_upload">
+                                <div class="attach_file_upload_btn">
+                                    <div class="webuploader_container">
+                                        <div class="text_ininput" style="position:relative;">
+                                            <button class="filea but_icon">
+                                                <i></i>添加附件
+                                                <input type="file" class="bx_shangchuan_wenjianxxl" name="fileurl"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="c_r">*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl">
+                    	<i class="spqian_xxl"></i>
+                        <!--<li >
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤二</p>
+                        </li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_spr"></em>
+                        </li>-->
+                    </ul>
+                </label>
+						<label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small ptsp_btn_xxl">提交</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--交接人成员树结构-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_jjr">
+				<div class="dialog_screen"></div>
+
+				<div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">选择交接人</h3></div>
+					<div class="dialog_text sbar clearfix">
+						<div class="list_box">
+							<div class="list_box_con list_box_uldx">
+								<div class="left_nav">
+									<ul class="list_box_level">
+										<li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg fqsp_jiejrey_numcxxl">所有分类</span></li>
+										<i class="jiaojierenyuan"></i>
+										<!--<ul class="ul1">
+											<li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+											<ul class="ul3" style="display: none;">
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+											</ul>
+										</ul>
+										<ul class="ul1">
+											<li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+											<ul class="ul3">
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span>
+												</li>
+											</ul>
+										</ul>-->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small jjry_isok_xxl">确定</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--审批人成员树结构-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_spr">
+				<div class="dialog_screen"></div>
+
+				<div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">选择审批人</h3></div>
+					<div class="dialog_text sbar clearfix">
+						<div class="list_box">
+							<div class="list_box_con list_box_uldx">
+								<div class="left_nav">
+									<ul class="list_box_level">
+										<li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类</span></li>
+										<i class="spcy_tree_xxl"></i>
+										<!--<ul class="ul1">
+											<li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+											<ul class="ul3" style="display: none;">
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+											</ul>
+										</ul>
+										<ul class="ul1">
+											<li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+											<ul class="ul3">
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span>
+												</li>
+											</ul>
+										</ul>-->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small sprcy_btn_xxl">确定</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--抄送人成员树结构-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_csr">
+				<div class="dialog_screen"></div>
+
+				<div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">选择抄送人</h3></div>
+					<div class="dialog_text sbar clearfix">
+						<div class="list_box left">
+							<div class="list_box_title">
+								<div class="list_box_searchCon inline_block relative">
+									<!--<input type="text" class="time_input" value="搜索成员/部门/手机等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i>-->
+								</div>
+							</div>
+							<div class="list_box_con sbar">
+								<div class="left_nav">
+									<ul class="list_box_level list_box_ul csr_list_xxl">
+										<!--<li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span><span class="list_check"><em></em></span></li>
+										<ul class="ul1">
+											<li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+											<ul class="ul3" style="display: none;">
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">思思</span><span class="list_check"><em></em></span></li>
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span><span class="list_check"><em></em></span></li>
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span><span class="list_check"><em></em></span></li>
+											</ul>
+										</ul>
+										<ul class="ul1">
+											<li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span><span class="list_check"><em></em></span></li>
+											<ul class="ul3" style="display: none;">
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">思思</span><span class="list_check"><em></em></span></li>
+											</ul>
+										</ul>-->
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="list_chooseed right">
+							<div class="list_box_title">
+								<!--<h3>已选列表</h3>-->
+								<h3 class="dialog_h3">已选列表</h3>
+							</div>
+							<div class="list_conMsg">
+								<ul class="list_choose_list csr_renwulist_xxl">
+									<!--<li>
+										<span>张三</span>
+										<i class="list_choose_delete"> </i>
+									</li>
+									<li>
+										<span>张三</span>
+										<i class="list_choose_delete"> </i>
+									</li>-->
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small csr_btn_queding">确定</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--执行人成员树结构-->
+		<div class="dialog">
+			<div class="dialog_box" name="work_fqsp_zxr">
+				<div class="dialog_screen"></div>
+
+				<div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+					<div class="dialog_title"><i class="dialog_close">关闭</i>
+						<h3 class="dialog_h3">选择执行人</h3></div>
+					<div class="dialog_text sbar clearfix">
+						<div class="list_box left">
+							<div class="list_box_title">
+								<div class="list_box_searchCon inline_block relative">
+									<!--<input type="text" class="time_input" value="搜索成员/部门/手机等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i>-->
+								</div>
+							</div>
+							<div class="list_box_con sbar">
+								<div class="left_nav">
+									<ul class="list_box_level list_box_ul csr_list_xxl">
+										<!--<li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span><span class="list_check"><em></em></span></li>
+										<ul class="ul1">
+											<li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+											<ul class="ul3" style="display: none;">
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">思思</span><span class="list_check"><em></em></span></li>
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span><span class="list_check"><em></em></span></li>
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span><span class="list_check"><em></em></span></li>
+											</ul>
+										</ul>
+										<ul class="ul1">
+											<li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span><span class="list_check"><em></em></span></li>
+											<ul class="ul3" style="display: none;">
+												<li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">思思</span><span class="list_check"><em></em></span></li>
+											</ul>
+										</ul>-->
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="list_chooseed right">
+							<div class="list_box_title">
+								<!--<h3>已选列表</h3>-->
+								<h3 class="dialog_h3">已选列表</h3>
+							</div>
+							<div class="list_conMsg">
+								<ul class="list_choose_list zxr_renwulist_xxl">
+									<!--<li>
+										<span>张三</span>
+										<i class="list_choose_delete"> </i>
+									</li>
+									<li>
+										<span>张三</span>
+										<i class="list_choose_delete"> </i>
+									</li>-->
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="dialog_submit">
+						<button class="but_blue but_small zxr_btn_queding">确定</button><button class="but_cancel but_small">取消</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script>
+			//新增出差
+//			var worksp_addcc_num = 2;
+//			$(".worksp_addccBtn").live("click", function() {
+//				var worksp_addcchtml = '<div class="worksp_addbx">' + '<div class="work_sp_fqsp_h3"> <h3 class="inline_block"><p>行程明细<span class="c_r">(<cite class="addcc_num">' + worksp_addcc_num +
+//					'</cite>)</span></p></h3> <div class="work_fqsp_gb_img"> <img src="static/images/work_sp_gb.png" class="work_sp_gb"> </div> </div><div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>出差地点</div> <div class="t_right"><input type="text" class="time_input" value="如：北京、上海、杭州（必填）" onfocus="fn_focus(this);" onblur="fn_blur(this);"/></div> </div><div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>开始时间</div> <div class="t_right"><input type="date" class="time_input" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="inp_time"/></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>结束时间</div> <div class="t_right"><input type="date" class="time_input" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="inp_time"/></div> </div>';
+//				$(this).parent().before(worksp_addcchtml);
+//				++worksp_addcc_num;
+//			});
+//			//新增报销
+//			var worksp_addbx_num = 2;
+//			$(".worksp_addbxBtn").live("click", function() {
+//				var worksp_addbxhtml = '<div class="worksp_addbx">' + '<div class="work_sp_fqsp_h3"> <h3 class="inline_block"><p>报销明细<span class="c_r">(<cite>' + worksp_addbx_num +
+//					'</cite>)</span></p></h3> <div class="work_fqsp_gb_img"> <img src="static/images/work_sp_gb.png" class="work_sp_gb"> </div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>报销金额</div> <div class="t_right"><input type="text" class="time_input inp_96" value="请输入报销金额" onfocus="fn_focus(this);" onblur="fn_blur(this);"/><i class="unit" style="right: 4px;">元</i></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>报销类别</div> <div class="t_right"><input type="text" class="time_input" value="请输入报销类别" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div> <div class="t_textinput t_textarea"> <div class="t_left"><i class="c_r v_hidden">*</i>费用明细</div> <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入费用明细描述</textarea></div> </div>'
+//				$(this).parent().before(worksp_addbxhtml);
+//				++worksp_addbx_num;
+//			});
+//			//新增招聘
+//			var worksp_addzp_num = 2;
+//			$(".worksp_addzpBtn").live("click", function() {
+//				var worksp_addzphtml = '<div class="worksp_addbx">' + '<div class="work_sp_fqsp_h3"> <h3 class="inline_block"><p>招聘需求<span class="c_r">(<cite>' + worksp_addzp_num +
+//					'</cite>)</span></p></h3><div class="work_fqsp_gb_img"> <img src="static/images/work_sp_gb.png" class="work_sp_gb"> </div></div><div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>岗位名称</div> <div class="t_right"><input type="text" class="time_input" value="请输入岗位名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"/></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>岗位要求</div> <div class="t_right"><input type="text" class="time_input" value="请输入岗位要求" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>招聘人数</div> <div class="t_right"><input type="text" class="time_input" value="请输入招聘人数" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>到岗时间</div> <div class="t_right"><input type="date" class="time_input" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="inp_time"/></div> </div> <div class="t_textinput t_textarea"> <div class="t_left"><i class="c_r v_hidden">*</i>岗位描述</div> <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入岗位或职责描述</textarea></div> </div> <div class="input_rightBtn text_input work_fqsp_tjfj"> <div class="text_intext work_fujian" style="width: 15%;margin-left: -5px;"> <i class="v_hidden">*</i> <span>添加附件</span> </div> <div style="position: absolute;left: 79px;top:0;width:85%;"> <div class="rightinput_box work_rw_input"> <input type="text" class="time_input" value="输入附件名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" id="work_sp_field_zp"> <i class="work_sp_base_delete"></i> </div> <div class="text_ininput" style="position:relative;"> <button class="filea but_icon"> <i></i>添加附件 <input type="file"/></button></div> </div> </div><hr class="work_sp_hr"> </div> ';
+//				$(this).parent().before(worksp_addzphtml);
+//				++worksp_addzp_num;
+//			});
+//			//增加采购用品
+//			var worksp_addcgmx_num = 2;
+//			$(".worksp_addcgmxBtn").live("click", function() {
+//				var worksp_addcgmxhtml = '<div class="worksp_addbx">' + '<div class="work_sp_fqsp_h3"> <h3 class="inline_block"><p>采购明细<span class="c_r">(<cite>' + worksp_addcgmx_num +
+//					'</cite>)</span></p></h3> <div class="work_fqsp_gb_img"> <img src="static/images/work_sp_gb.png" class="work_sp_gb"> </div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>名称</div> <div class="t_right"><input type="text" class="time_input" value="请输入名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>规格</div> <div class="t_right"><input type="text" class="time_input" value="请输入规格" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>数量</div> <div class="t_right"><input type="text" class="time_input" value="请输入数量" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>单价</div> <div class="t_right"><input type="text" class="time_input" value="请输入单价" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div> <div class="t_textinput" style="height:50px;"> <div class="t_left"><i class="c_r v_hidden">*</i>小计总价</div> <div class="t_right"><input type="text" class="time_input" value="自动计算出价钱" readonly="true"/></div> <p class="t_bottom c_9">如需采购多种产品，请点击“增加明细”</p> </div>';
+//				$(this).parent().before(worksp_addcgmxhtml);
+//				++worksp_addcgmx_num;
+//			});
+//			//增加物品领用
+//			var worksp_addfdsp_num = 2;
+//			$(".worksp_addfdspBtn").live("click", function() {
+//				var worksp_addfdsphtml = '<div class="worksp_addbx">' + '<div class="work_sp_fqsp_h3"> <h3 class="inline_block"><p>物品明细<span class="c_r">(<cite>' + worksp_addfdsp_num +
+//					'</cite>)</span></p></h3> <div class="work_fqsp_gb_img"> <img src="static/images/work_sp_gb.png" class="work_sp_gb"> </div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>物品名称</div> <div class="t_right"><input type="text" class="time_input" value="请输入物品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div><div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>物品用途</div> <div class="t_right"><input type="text" class="time_input" value="请输入物品用途" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div> <div class="t_textinput"> <div class="t_left"><i class="c_r">*</i>物品数量</div> <div class="t_right"><input type="text" class="time_input" value="请输入物品数量" onfocus="fn_focus(this);" onblur="fn_blur(this);" /></div> </div>';
+//				$(this).parent().before(worksp_addfdsphtml);
+//				++worksp_addfdsp_num;
+//			});
+//			//新增合同内容
+//			var worksp_addht_num = 2;
+//			$(".worksp_addhtBtn").live("click", function() {
+//				var worksp_addhthtml = '<div class="worksp_addbx">' + '<div class="work_sp_fqsp_h3"> <h3 class="inline_block"><p>合同内容<span class="c_r">(<cite>' + worksp_addht_num +
+//					'</cite>)</span></p></h3> <div class="work_fqsp_gb_img"> <img src="static/images/work_sp_gb.png" class="work_sp_gb"> </div> </div> <div class="t_textinput t_textarea"> <div class="t_left"><i class="c_r v_hidden">*</i>内容</div> <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入合同内容</textarea></div> </div>'
+//				$(this).parent().before(worksp_addhthtml);
+//				++worksp_addht_num;
+//			});
+//
+//			//删除当前新增元素
+//			$(".work_sp_gb").live("click", function() {
+//				$(this).parent().parent().parent().remove();
+//				//worksp_addcc_num--;
+//			});
+//
+//			//添加附件
+//			$(".work_sp_base_delete").live("click", function() {
+//				$(this).prev().val("");
+//			});
+		</script>
+		<script>
+		function fnkong(ele){
+		if(ele!=''&&ele!='请输入合同内容'){
+			ele.style = "color:#333";
+			$('.hetong_btn_xxl').removeAttr("disabled");
+		}
+		
+	}
+		$('.work_list_delete').live('click',function(){
+        $(this).parents('.attachfield_file_upload').remove();
+    });
+    //请假日期
+			function diy_time(time1, time2) {
+				time1 = (new Date(time1)).getTime()
+				time2 = (new Date(time2)).getTime()
+				return time3 = Math.abs(parseInt((time2 - time1) / 1000 / 3600 / 24)+1) ;
+			}
+		//出差日期
+			var start = {
+				elem: '#start',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(), //设定最小日期为当前日期
+				max: '2099-06-16', //最大日期
+				istime: false,
+				istoday: false,
+				choose: function(datas) {
+					end.min = datas; //开始日选好后，重置结束日的最小日期
+					end.start = datas //将结束日的初始值设定为开始日
+					//console.log($('#end').val())
+					//$('#cctime_xxl').val((diy_time($('#end').val(),datas))+ '天').attr('tians',diy_time(end.start, datas));
+				}
+			};
+			var end = {
+				elem: '#end',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(),
+				max: '2099-06-16',
+				istime: false,
+				istoday: false,
+				choose: function(datas) {
+					start.max = datas; //结束日选好后，充值开始日的最大日期
+					if($('.tanceng .ccstarttimeone').val()==''||$('.tanceng .ccstarttimeone').val()=='请选择日期'){
+						alert('请先选择开始日期');
+						$('.tanceng .ccendtimeone').val('')
+					}else{
+						$('#cctime_xxl').val((diy_time(end.start, datas))+ '天').attr('tians',diy_time(end.start, datas));
+					}
+					
+				}
+			};
+			
+			var qjxxl_start = {
+				elem: '#qjxxl_start',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(), //设定最小日期为当前日期
+				max: '2099-06-16', //最大日期
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					qjxxl_end.min = datas; //开始日选好后，重置结束日的最小日期
+					qjxxl_end.start = datas; //将结束日的初始值设定为开始日
+					//console.log(datas)
+				}
+			};
+			var qjxxl_end = {
+				elem: '#qjxxl_end',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(),
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					qjxxl_start.max = datas; //结束日选好后，充值开始日的最大日期
+					if($('#qjxxl_start').val()==''||$('#qjxxl_start').val()=='选择日期'){//isNaN(diy_time(qjxxl_end.start, datas))
+						alert('请先选择开始日期');
+						//return false;
+//						$('#qjnum').val('0天')
+//						$('#qjnum').attr('num','0');
+						$('#qjxxl_end').val('')
+					}else{
+						$('#qjnum').val((diy_time(qjxxl_end.start, datas))+'天')
+						$('#qjnum').attr('num',diy_time(qjxxl_end.start, datas))
+					}
+					
+				}
+			};
+			$('#laydate_today').live('click',function(){
+				var kaishi = $('.tanceng .qjxxl_start').val();
+				var jieshu = $('.tanceng .qjxxl_end').val();
+				//console.log(diy_time(jieshu, kaishi))
+				if(kaishi>jieshu){
+					//alert('开始时间不能大于结束时间:请您重新选择开始结束时间');
+					$('#qjnum').val('0天');
+					$('#qjxxl_end').val('')
+				}else{
+					if(kaishi==''||jieshu==''||kaishi=='选择日期'||jieshu=='选择日期'){
+						$('#qjnum').val('0天');
+						$('#qjxxl_end').val('')
+					}else{
+						$('#qjnum').val((diy_time(jieshu, kaishi))+'天')
+						$('#qjnum').attr('num',diy_time(jieshu, kaishi))
+					}
+					
+				}
+				
+				
+			})
+			//外出日期
+			var wcstart = {
+				elem: '#wcstart',
+				format: 'YYYY-MM-DD hh:mm:ss',
+				min: laydate.now(), //设定最小日期为当前日期
+				max: '2099-06-16', //最大日期
+				istime: true,
+				istoday: false,
+				choose: function(datas) {
+					wcend.min = datas; //开始日选好后，重置结束日的最小日期
+					wcend.start = datas //将结束日的初始值设定为开始日
+
+				}
+			};
+			var wcend = {
+				elem: '#wcend',
+				format: 'YYYY-MM-DD hh:mm:ss',
+				min: laydate.now(),
+				max: '2099-06-16',
+				istime: true,
+				istoday: false,
+				choose: function(datas) {
+					wcstart.max = datas; //结束日选好后，充值开始日的最大日期
+					var date1 = new Date(wcend.start)
+					var date2 = new Date(datas)
+ 					var s1 = date1.getTime(),s2 = date2.getTime();
+					var total = (s2 - s1)/1000;
+					var day = parseInt(total / (24*60*60));//计算整数天数
+					var afterDay = total - day*24*60*60;//取得算出天数后剩余的秒数
+					var hour = parseInt(afterDay/(60*60));//计算整数小时数
+					var afterHour = total - day*24*60*60 - hour*60*60;//取得算出小时数后剩余的秒数
+					var min = parseInt(afterHour/60);//计算整数分
+					var afterMin = total - day*24*60*60 - hour*60*60 - min*60;//取得算出分后剩余的秒数
+					console.log(day+'::'+hour+'::'+min+'::'+afterMin)
+					if($('.tanceng .wcstarttime').val()==''||$('.tanceng .wcstarttime').val()=='请选择日期'){
+						alert('请先选择开始日期');
+						$('.tanceng .wcendtime').val('')
+					}else{
+						$('#wcnum').val(day+'天'+hour+'小时'+min+'分钟'+afterMin+'秒');
+						$('#wcnum').attr('num',day+'天'+hour+'小时'+min+'分钟'+afterMin+'秒')
+					}
+					
+				}
+			};
+			//借款
+			var jk_start = {
+				elem: '#jk_start',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(), //设定最小日期为当前日期
+				max: '2099-06-16', //最大日期
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					jk_end.min = datas; //开始日选好后，重置结束日的最小日期
+					jk_end.start = datas; //将结束日的初始值设定为开始日
+					//console.log(datas)
+				}
+			};
+			var jk_end = {
+				elem: '#jk_end',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(),
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					jk_start.max = datas; //结束日选好后，充值开始日的最大日期
+					
+				}
+			};
+			//用章日期
+			var yongz_start = {
+				elem: '#yongzhang_start',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(), //设定最小日期为当前日期
+				max: '2099-06-16', //最大日期
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					yongz_end.min = datas; //开始日选好后，重置结束日的最小日期
+					yongz_end.start = datas; //将结束日的初始值设定为开始日
+					//console.log(datas)
+				}
+			};
+			var yongz_end = {
+				elem: '#yongzhang_end',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(),
+				max: '2099-06-16',
+				istime: false,
+				istoday: true,
+				choose: function(datas) {
+					yongz_start.max = datas; //结束日选好后，充值开始日的最大日期
+					
+				}
+			};
+			//办公采购 价格计算自动函数
+			function checkInt(o) {
+				theV = isNaN(parseInt(o.value)) ? '' : parseInt(o.value);
+				if(theV != o.value) {
+					o.value = theV;
+				}else if(o.value <=0){
+					o.value = '';
+				}
+				for(var i=0;i<$('.tanceng .cgmx_html_xxl').length;i++){
+					
+					if($('.tanceng .cgmxdj_xxl').eq(i).val()==''||$('.tanceng .cgmxdj_xxl').eq(i).val()=='请输入单价'){
+						$('.tanceng .cgmxdj_xxl').eq(i).val('0')	
+					}
+					if($('.tanceng .cgmxsl_xxl').eq(i).val()==''||$('.tanceng .cgmxsl_xxl').eq(i).val()=='请输入数量'){
+						$('.tanceng .cgmxsl_xxl').eq(i).val('')
+					}
+					if($('.tanceng .cgmxsl_xxl').eq(i).val()!=''){
+						$('.tanceng .cgmcxmoy_xxl').eq(i).val(($('.tanceng .cgmxsl_xxl').eq(i).val() * $('.tanceng .cgmxdj_xxl').eq(i).val()).toFixed(2)).css('color','red')
+					}else{
+						$('.tanceng .cgmcxmoy_xxl').eq(i).val('0.00');
+					}
+					
+				}
+				if($('.tanceng .cgmcxmoy_xxl').length==1){
+						$('.tanceng .cgmx_max_num').val($('.tanceng .cgmcxmoy_xxl').val())
+					}else{
+						var subnumb = [];
+						for(var i=0;i<$('.tanceng .cgmcxmoy_xxl').length;i++){
+							subnumb.push($('.tanceng .cgmcxmoy_xxl').eq(i).val())
+						}
+						//console.log(subnum)
+						var maxnumsb = 0;
+						for(var i=0;i<subnumb.length;i++){
+							maxnumsb += parseFloat(subnumb[i])
+						}
+						$('.tanceng .cgmx_max_num').val((maxnumsb).toFixed(2))
+					}
+			}
+			
+			function checkP(o) {
+				theV = isNaN(parseFloat(o.value)) ? '' : parseFloat(o.value);
+				theV = parseInt(theV * 100) / 100;
+				if(theV != o.value) {
+					o.value = o.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'); //只能输入两个小数
+					o.value = theV;
+				}
+				//this.value=this.value.replace(/\D/gi,"")
+				for(var i=0;i<$('.tanceng .cgmx_html_xxl').length;i++){
+					if($('.tanceng .cgmxsl_xxl').eq(i).val()==''||$('.tanceng .cgmxsl_xxl').eq(i).val()=='请输入数量'){
+						$('.tanceng .cgmxsl_xxl').eq(i).val('')
+					}
+					if($('.tanceng .cgmxdj_xxl').eq(i).val()==''||$('.tanceng .cgmxdj_xxl').eq(i).val()=='请输入单价'){
+						$('.tanceng .cgmxdj_xxl').eq(i).val('')
+					}
+					if($('.tanceng .cgmxsl_xxl').eq(i).val()!=''&&$('.tanceng .cgmxdj_xxl').eq(i).val()!=''){
+						$('.tanceng .cgmcxmoy_xxl').eq(i).val(($('.tanceng .cgmxsl_xxl').eq(i).val() * $('.tanceng .cgmxdj_xxl').eq(i).val()).toFixed(2)).css('color','red');
+					}else{
+						$('.tanceng .cgmcxmoy_xxl').eq(i).val('0.00')
+					}
+					
+				}
+				if($('.tanceng .cgmcxmoy_xxl').length==1){
+						$('.tanceng .cgmx_max_num').val($('.tanceng .cgmcxmoy_xxl').val())
+					}else{
+						var subnuma = [];
+						for(var i=0;i<$('.tanceng .cgmcxmoy_xxl').length;i++){
+							subnuma.push($('.tanceng .cgmcxmoy_xxl').eq(i).val())
+						}
+						//console.log(subnum)
+						var maxnumsa = 0;
+						for(var i=0;i<subnuma.length;i++){
+							maxnumsa += parseFloat(subnuma[i])
+						}
+						//console.log(maxnums)
+						$('.tanceng .cgmx_max_num').val((maxnumsa).toFixed(2))
+					}
+			}
+		</script>
+	</body>
+<script src="js/work/24.js"></script>
+</html>

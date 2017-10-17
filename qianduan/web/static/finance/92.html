@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>财务-工资条</title>
+    <link rel="stylesheet" href="static/finance/css/finance.css">
+    <script src="static/finance/js/finance.js"></script>
+</head>
+<body>
+<div class="finance_content">
+    <div class="lik_content_max_height_box">
+        <!--第一行-->
+        <div class="finance_title">
+            <h2>工资条</h2>
+            <div class="right" style="width:134px;">
+                <button class="val_dialog but_blue ht_but" name="finance_hsgz_fxsz">发薪设置</button>
+                <div class="res fnc_my_salary_refresh_btn" title="点击刷新"></div>
+            </div>
+        </div>
+        <!--第二行-->
+        <div class="finance_title" style="padding: 0 30px;">
+            <div class="work_tabSp inline_block" style="margin-top: 16px;">
+                <ul class="tabtitle" id="fnc_salary_nav_ul">
+                    <li name="finance_gather_account_gather" class="taba tabhover">我的工资</li>
+                    <li name="finance_gather_account_gather" class="taba">发薪记录</li>
+                </ul>
+            </div>
+            <div class="fnc_my_salary_fxjl_box">
+                <div class="t_textinput inline_block" style="width: 230px;margin:0 30px;">
+                    <div class="t_left" style="width: 24%;max-width: 6em;">选择年月</div>
+                    <div class="t_right" style="margin-left: 27%;">
+                        <div class="inline_block select_lik_mormal select_100" style="position:relative;">
+                            <input type="text" class="select_lik_input fnc_my_salary_search_month_inp" value="2017-06">
+                            <i></i>
+                            <ul class="select_list_lik select_list_lik_a sbar">
+                                <li>2017</li>
+                                <li>2016</li>
+                                <li>2015</li>
+                                <li>2014</li>
+                                <li>2013</li>
+                                <li>2012</li>
+                                <li>2011</li>
+                                <li>2010</li>
+                            </ul>
+                            <ul class="select_list_lik select_list_lik_b sbar fnc_my_salary_choose_month_ul" style="">
+                                <li>01</li>
+                                <li>02</li>
+                                <li>03</li>
+                                <li>04</li>
+                                <li>05</li>
+                                <li>06</li>
+                                <li>07</li>
+                                <li>08</li>
+                                <li>09</li>
+                                <li>10</li>
+                                <li>11</li>
+                                <li>12</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <p class="left">搜索结果: <span class=" f_color fnc_my_salary_list_num_total">3</span>条</p>
+                </div>
+            </div>
+            <div class="fnc_my_salary_wdgz_box none">
+                <!--<button class="but_small inline_block zkgjssBtn" name="finance_fxjl_zkgjss_cg">展开高级搜索</button>-->
+                <div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;margin-left: 30px;">
+                    <div class="t_left" style="width: 23%;max-width: 6em;">选择年月</div>
+                    <div class="t_right" style="margin-left: 27%;">
+                        <div class="inline_block select_lik_mormal select_100" style="position:relative;">
+                            <input type="text" class="select_lik_input fnc_salary_total_search_month_inp"
+                                   value="2017-06">
+                            <i></i>
+                            <ul class="select_list_lik select_list_lik_a sbar">
+                                <li>2017</li>
+                                <li>2016</li>
+                                <li>2015</li>
+                                <li>2014</li>
+                                <li>2013</li>
+                                <li>2012</li>
+                                <li>2011</li>
+                                <li>2010</li>
+                            </ul>
+                            <ul class="select_list_lik select_list_lik_b sbar fnc_salary_total_choose_month_ul"
+                                style="">
+                                <li>01</li>
+                                <li>02</li>
+                                <li>03</li>
+                                <li>04</li>
+                                <li>05</li>
+                                <li>06</li>
+                                <li>07</li>
+                                <li>08</li>
+                                <li>09</li>
+                                <li>10</li>
+                                <li>11</li>
+                                <li>12</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <p class="left">搜索结果: <span class=" f_color fnc_salary_num_total"></span>条</p>
+        <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="finance_khysqk_xzckx"
+              style="margin: 15px 0px 0px 20px;">
+            <i class="eyeIcon"></i>选择查看项</span>
+                </div>
+                <!--选择查看项-->
+                <div class="t-z-list ckx_cont" name="finance_khysqk_xzckx"
+                     style="right: 28px;line-height: 27px;top: 116px;display: none;">
+                    <i class="ckx_icon_right"></i>
+                    <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                    <ul class="sbar muban_addkey_list" id="fnc_salary_look_field_ul">
+                        <li class="l-li-b">
+                            <input type="checkbox">
+                            <p class="z-d-l">发薪状态</p>
+                        </li>
+                        <li class="l-li-b">
+                            <input type="checkbox">
+                            <p class="z-d-l">结算账户</p>
+                        </li>
+                        <li class="l-li-b">
+                            <input type="checkbox">
+                            <p class="z-d-l">结算账目</p>
+                        </li>
+                        <li class="l-li-b">
+                            <input type="checkbox">
+                            <p class="z-d-l">发薪日期</p>
+                        </li>
+                        <li class="l-li-b">
+                            <input type="checkbox">
+                            <p class="z-d-l">发薪人</p>
+                        </li>
+                    </ul>
+                    <!--  -->
+                    <div class="bot-btn">
+                        <button class="but_small but_blue" id="fnc_salary_look_save">保存</button>
+                        <button class="but_small but_cancal" id="fnc_salary_look_reset">恢复默认</button>
+                    </div>
+                </div>
+                <div class="closeckx_cont" style="display: none;"></div>
+            </div>
+        </div>
+        <!--第三行-->
+        <div class="vend_client_right finance_right">
+            <div class="tabcontent" name="finance_gather_account_gather" style="padding: 0;">
+                <div class="container lik_table_wrap" style="margin-top:24px;">
+                    <div class="table-container lik_table_max_height">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>薪资月份</th>
+                                <th>工号</th>
+                                <th>姓名</th>
+                                <th>工资类型</th>
+                                <th>部门</th>
+                                <th>工资总额(元)</th>
+                                <th>核算状态</th>
+                                <th>发薪状态</th>
+                                <th>补发补扣</th>
+                                <th>核算时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="fnc_my_salary_total_list"></tbody>
+                            <tbody>
+                            <!--<tr>
+                                <td>01</td>
+                                <td>2016.10</td>
+                                <td>008</td>
+                                <td>张三</td>
+                                <td>基本工资+绩效+奖金</td>
+                                <td>销售部</td>
+                                <td>150000</td>
+                                <td>-</td>
+                                <td class="c_r">未发放</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>
+                                    <button class="but_mix val_dialog" name="finance_salary_look">查看</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>2016.10</td>
+                                <td>008</td>
+                                <td>张三</td>
+                                <td>基本工资+绩效+奖金</td>
+                                <td>销售部</td>
+                                <td>150000</td>
+                                <td class="c_g">已确定</td>
+                                <td class="c_r">未发放</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>
+                                    <button class="but_mix val_dialog" name="finance_salary_look">查看</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>2016.10</td>
+                                <td>008</td>
+                                <td>张三</td>
+                                <td>基本工资+绩效+奖金</td>
+                                <td>销售部</td>
+                                <td>150000</td>
+                                <td class="c_g">已确定</td>
+                                <td class="c_g">已发放</td>
+                                <td>-200</td>
+                                <td>2016.10.31</td>
+                                <td>
+                                    <button class="but_mix val_dialog" name="finance_salary_look">查看</button>
+                                </td>
+                            </tr>-->
+                            <tr class="table_total">
+                                <td>合计</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="fnc_my_salary_list_total">800000</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fnc_my_salary_list_bufa">-200</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                        <div class="no_data_box none fnc_my_salary_nodata_box">
+                            <div class="no_data">
+                                <!--<span class="inline_block"></span>-->
+                                <p class="c_9">抱歉，没有找到相关内容！</p>
+                            </div>
+                            <div class="no_data_bottom"></div>
+                        </div>
+                    </div>
+                    <div class="handle fnc_salary_list_handle">
+                        <div class="fenye_box fnc_salary_list_page">
+                            <span>每页显示</span>
+                            <div class="inline_block select_mormal">
+                                <input type="text" class="select_input fnc_my_salary_search_num_inp" value="10">
+                                <ul class="select_list select_list_to_top">
+                                    <li>5</li>
+                                    <li>10</li>
+                                    <li>15</li>
+                                    <li>20</li>
+                                </ul>
+                                <i></i>
+                            </div>
+                            <span>条数据</span>
+                            <div class="fenye_btn first_page_valid"><span></span></div>
+                            <div class="fenye_btn prev_page_valid"><span></span></div>
+                            <span class="page_box on">1</span>
+                            <span class="page_box">2</span>
+                            <span class="page_box">3</span>
+                            <span class="page_box">4</span>
+                            <div class="fenye_btn next_page_valid"><span></span></div>
+                            <div class="fenye_btn last_page_valid"><span></span></div>
+                            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tabcontent" name="finance_gather_account_gather" style="padding: 0;display: none;">
+                <div class="container lik_table_wrap" style="margin-top:24px;">
+                    <div class="table-container lik_table_max_height">
+                        <table id="fnc_salary_table">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>薪资月份</th>
+                                <th>总人数</th>
+                                <th>确定核算人数</th>
+                                <th class="order">工资总额(元)<i class="price_icon"></i></th>
+                                <th>发薪人数</th>
+                                <th class="order">已发薪总额(元)<i class="price_icon"></i></th>
+                                <th>发薪状态</th>
+                                <th>结算账户</th>
+                                <th>结算账目</th>
+                                <th>发薪日期</th>
+                                <th>发薪人</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="zkgjss_cont" name="finance_fxjl_zkgjss_cg">
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="发薪状态">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="发薪人">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody class="fnc_salary_total_list"></tbody>
+                            <!--<tr>
+                                <td>01</td>
+                                <td>2016.10</td>
+                                <td>30</td>
+                                <td>28</td>
+                                <td>300000</td>
+                                <td>28</td>
+                                <td>250000</td>
+                                <td class="c_y">部分支付</td>
+                                <td>北京纽沃德技术有限公司</td>
+                                <td>工资账目</td>
+                                <td>2016-10-10</td>
+                                <td>李丽</td>
+                                <td>
+                                    <button class="but_mix val_dialog" name="finance_fxjl_ysqk_ysk">核算工资</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>2016.10</td>
+                                <td>30</td>
+                                <td>28</td>
+                                <td>300000</td>
+                                <td>28</td>
+                                <td>250000</td>
+                                <td class="c_y">部分支付</td>
+                                <td>北京纽沃德技术有限公司</td>
+                                <td>工资账目</td>
+                                <td>2016-10-10</td>
+                                <td>李丽</td>
+                                <td>
+                                    <button class="but_mix val_dialog" name="finance_fxjl_ysqk_ysk">核算工资</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>2016.10</td>
+                                <td>30</td>
+                                <td>28</td>
+                                <td>300000</td>
+                                <td>28</td>
+                                <td>250000</td>
+                                <td>-</td>
+                                <td>北京纽沃德技术有限公司</td>
+                                <td>工资账目</td>
+                                <td>2016-10-10</td>
+                                <td>李丽</td>
+                                <td>
+                                    <button class="but_mix val_dialog" name="finance_fxjl_ysqk_ysk">核算工资</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>2016.10</td>
+                                <td>30</td>
+                                <td>28</td>
+                                <td>300000</td>
+                                <td>28</td>
+                                <td>250000</td>
+                                <td class="c_g">全部支付</td>
+                                <td>北京纽沃德技术有限公司</td>
+                                <td>工资账目</td>
+                                <td>2016-10-10</td>
+                                <td>李丽</td>
+                                <td>
+                                    <button class="but_mix val_dialog" name="finance_fxjl_ysqk_ysk">核算工资</button>
+                                </td>
+                            </tr>-->
+                            <tbody>
+                            <tr class="table_total">
+                                <td>合计</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="fnc_salary_total_list_total"></td>
+                                <td></td>
+                                <td class="fnc_salary_total_list_sendtotal"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                        <div class="no_data_box none fnc_salary_total_nodata_box">
+                            <div class="no_data">
+                                <!--<span class="inline_block"></span>-->
+                                <p class="c_9">抱歉，没有找到相关内容！</p>
+                            </div>
+                            <div class="no_data_bottom"></div>
+                        </div>
+                    </div>
+                    <div class="handle fnc_salary_list_handle">
+                        <div class="fenye_box fnc_salary_list_page_2">
+                            <span>每页显示</span>
+                            <div class="inline_block select_mormal">
+                                <input type="text" class="select_input fnc_my_salary_search_num_inp" value="10">
+                                <ul class="select_list select_list_to_top">
+                                    <li>5</li>
+                                    <li>10</li>
+                                    <li>15</li>
+                                    <li>20</li>
+                                </ul>
+                                <i></i>
+                            </div>
+                            <span>条数据</span>
+                            <div class="fenye_btn first_page_valid"><span></span></div>
+                            <div class="fenye_btn prev_page_valid"><span></span></div>
+                            <span class="page_box on">1</span>
+                            <span class="page_box">2</span>
+                            <span class="page_box">3</span>
+                            <span class="page_box">4</span>
+                            <div class="fenye_btn next_page_valid"><span></span></div>
+                            <div class="fenye_btn last_page_valid"><span></span></div>
+                            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="handle fnc_salary_list_handle">
+                <div class="fenye_box fnc_salary_list_page">
+                    <span>每页显示</span>
+                    <div class="inline_block select_mormal">
+                        <input type="text" class="select_input fnc_my_salary_search_num_inp" value="10">
+                        <ul class="select_list select_list_to_top">
+                            <li>5</li>
+                            <li>10</li>
+                            <li>15</li>
+                            <li>20</li>
+                        </ul>
+                        <i></i>
+                    </div>
+                    <span>条数据</span>
+                    <div class="fenye_btn first_page_valid"><span></span></div>
+                    <div class="fenye_btn prev_page_valid"><span></span></div>
+                    <span class="page_box on">1</span>
+                    <span class="page_box">2</span>
+                    <span class="page_box">3</span>
+                    <span class="page_box">4</span>
+                    <div class="fenye_btn next_page_valid"><span></span></div>
+                    <div class="fenye_btn last_page_valid"><span></span></div>
+                    <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                    <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+<!--发薪设置-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hsgz_fxsz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 444px;width:430px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">发薪设置</h3>
+            </div>
+            <div class="dialog_text sbar finance_zmgl_select" style="padding:0px 40px;margin-top: 0;">
+                <h2 class="cont_title">设置工资条推送日期</h2>
+                <div class="finance_fxjl_fxsz_ts">
+                    <p class="c_r">每月工资条推送日期说明：</p>
+                    <p>系统按每月1号至月底为一个周期结算，每月一号系统推送。</p>
+                </div>
+                <h2 class="cont_title">薪资结算账户</h2>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>选择账户</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input fnc_salary_fxsz_choose_account_company_btn" value="请选择账户">
+                            <i></i>
+                            <ul class="select_list fnc_salary_fxsz_choose_account_company_list_ul" style="display: none;">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>选择账目</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input fnc_salary_fxsz_choose_account_btn" value="请选择账目">
+                            <i></i>
+                            <ul class="select_list fnc_salary_fxsz_choose_account_list_ul" style="display: none;">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>支付方式</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input fnc_salary_fxsz_choose_zhifu_way_inp" value="请选择支付方式">
+                            <i></i>
+                            <ul class="select_list fnc_salary_fxsz_choose_zhifu_way_ul" style="display: none;">
+                                <li>现金</li>
+                                <li>电汇</li>
+                                <li>支票</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small fnc_salary_fxsz_submit_btn">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--***薪资记录***-->
+<!--申诉-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hsgz_ssfk">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_sp">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">申诉理由</h3>
+            </div>
+            <div class="work_sp_dialog_text">
+                <textarea class="fnc_my_salary_detail_ssly_textarea" onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                          style="color: rgb(204, 204, 204);">请输入申诉理由</textarea>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small val_dialogTop fnc_my_salary_detail_ssbf_btn" name="finance_hsgz_sscl">
+                    提交
+                </button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--申诉处理-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_xzjl_sscl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 1050px;height: 515px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">申诉处理</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:20px 40px 30px;margin-top: 0;">
+                <div class="con_right_head clearfix" style="border: none;padding: 0;">
+                    <div class="finance_tabJr">
+                        <ul class="tabtitle finance_tabUl">
+                            <li name="finance_hsgz_b" class="taba tabhover">我的申诉</li>
+                            <li name="finance_hsgz_b" class="taba" style="padding: 0 5px;">我处理的申诉</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr style="border-top: 6px solid #f5f6fa;width: 1200px;margin: 20px -60px;">
+                <div class="t_textinput inline_block" style="width: 230px;margin-bottom: 20px;">
+                    <div class="t_left" style="width: 24%;max-width: 6em;">选择月份</div>
+                    <div class="t_right" style="width: 65%;margin-left: 27%;">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input" value="2016年10月份工资"/>
+                            <i></i>
+                            <ul class="select_list">
+                                <li>全部</li>
+                                <li>2016年09月份工资</li>
+                                <li>2016年08月份工资</li>
+                                <li>2016年07月份工资</li>
+                                <li>2016年06月份工资</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabcontent" name="finance_hsgz_b" style="padding: 0;">
+                    <div class="div_1 container">
+                        <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>申诉理由</th>
+                                    <th>申诉处理反馈</th>
+                                    <th>发起时间</th>
+                                    <th>完成时间</th>
+                                    <th>状态</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>-</td>
+                                    <td>2016-10-11</td>
+                                    <td>-</td>
+                                    <td class="c_y">申诉中</td>
+                                </tr>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>2016-10-11</td>
+                                    <td>2016-10-12</td>
+                                    <td class="c_r">已拒绝</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabcontent" name="finance_hsgz_b" style="display: none;padding: 0;">
+                    <div class="div_1 container">
+                        <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>申诉理由</th>
+                                    <th>申诉处理反馈</th>
+                                    <th>发起时间</th>
+                                    <th>完成时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>2016-10-11</td>
+                                    <td>-</td>
+                                    <td class="c_y">待处理</td>
+                                    <td>
+                                        <button class="but_green but_mix val_dialogTop" name="finance_hsgz_shensu">同意
+                                        </button>
+                                        <button class="val_dialogTop but_red but_mix" name="finance_hsgz_shensu1">拒绝
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>2016-10-11</td>
+                                    <td>2016-10-12</td>
+                                    <td class="c_r">已拒绝</td>
+                                    <td>
+                                        <button class="but_mix1 but_grey1">同意</button>
+                                        <button class="but_mix1 but_grey1">拒绝</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--申诉反馈-->
+<!--补发-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hsgz_shensu">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 418px;height: 280px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">补发</h3>
+            </div>
+            <div class="dialod_text sbar" style="padding: 0;margin: 0;">
+                <div class="unhead_box">
+                    操作人：<span class="m_right_10">杨丽</span>
+                    操作时间：<span>2016-10-27</span>
+                </div>
+                <div class="dialog_text_con" style="padding:45px 40px 30px;">
+                    <div class="t_textinput">
+                        <div class="t_left" style="width: 24%;max-width: 10em;"><i class="c_r">*</i>补发金额(元)</div>
+                        <div class="t_right" style="margin-left: 26%;width: 68%;"><input type="text" class="time_input"
+                                                                                         onfocus="fn_focus(this);"
+                                                                                         onblur="fn_blur(this);"
+                                                                                         value="请输入补发金额"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--拒绝申诉-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hsgz_shensu1">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_sp">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">申诉处理反馈</h3>
+            </div>
+            <div class="work_sp_dialog_text">
+                <textarea onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                          style="color: rgb(204, 204, 204);">请输入申诉处理反馈</textarea>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">提交</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--核算工资-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_fxjl_ysqk_ysk">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 1050px;height: 540px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">核算工资</h3>
+                <button class="but_blue but_small val_dialogTop fnc_salary_fxjl_hsgz_fkjl_btn" name="finance_fxjl_fkjl"
+                        style="position: absolute;right:36px;top:9px;">付款记录
+                </button>
+            </div>
+            <div class="dialog_text sbar" style="padding:0 40px 30px;margin-top: 0;">
+                <h2 class="cont_title" style="margin-bottom: 20px;"><span class="fnc_salary_hsgz_month"></span> 工资条</h2>
+                <div class="con_right_head clearfix" style="border: none;padding: 0;">
+                    <div class="finance_tabJr">
+                        <ul class="tabtitle finance_tabUl fnc_salary_total_hsgz_nav_ul">
+                            <li name="finance_fxjl_b" class="taba tabhover">所有成员</li>
+                            <li name="finance_fxjl_b" class="taba" style="padding: 0 5px;">离职成员</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr style="border-top: 6px solid #f5f6fa;width: 1200px;margin: 30px -60px 0;">
+                <div class="tabcontent" name="finance_fxjl_b" style="padding: 0;">
+                    <div class="con_right_head clearfix" style="border: none;">
+                       <!-- <button class="but_cancel but_small inline_block zkgjssBtn" name="finance_fxjl_look_zkgjss">
+                            展开高级搜索
+                        </button>-->
+                        <button class="but_blue but_small inline_block" name="">导出</button>
+                        <div class="right con_right_result right">
+                            <p class="left">所有成员（ <span class=" f_color">1</span>个部门，共 <span class="f_color">2</span>人）
+                            </p>
+                            <span class="btn_chooseItem eyeIcon_eye ckx_btn but_cancel" name="finance_rcsr_ckx"><i
+                                class="eyeIcon"></i>选择查看项</span>
+                        </div>
+                        <div class="t-z-list ckx_cont" name="finance_rcsr_ckx"
+                             style="right: 13px; line-height: 27px; top: 64px;display: none;">
+                            <i class="ckx_icon_right"></i>
+                            <ul class="sbar muban_addkey_list fnc_salary_fxjl_look_field_ul" style="height:200px;">
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">工号</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">发薪人</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">核算时间</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">发薪日期</p>
+                                </li>
+                            </ul>
+                            <div class="bot-btn">
+                                <button class="but_small but_blue fnc_salary_fxjl_look_save">保存</button>
+                                <button class="but_small but_cancal fnc_salary_fxjl_look_reset">恢复默认</button>
+                            </div>
+                        </div>
+                        <div class="closeckx_cont"></div>
+                        <!--/选择查看项-->
+                    </div>
+                    <div class="div_1 container">
+                        <div class="div_1 table-container">
+                            <table class="fnc_salary_fxjl_table">
+                                <thead>
+                                <tr>
+                                    <th><input type="checkbox" class="checkAll" name="finance_fxjl_inp"></th>
+                                    <th>序号</th>
+                                    <th>薪资月份</th>
+                                    <th>工号</th>
+                                    <th>姓名</th>
+                                    <th>工资类型</th>
+                                    <th>部门</th>
+                                    <th class="order">工资总额<i class="price_icon"></i></th>
+                                    <th>核算状态</th>
+                                    <th>发薪状态</th>
+                                    <th>补发补扣</th>
+                                    <th>发薪人</th>
+                                    <th class="order">核算时间<i class="price_icon"></i></th>
+                                    <th class="order">发薪日期<i class="price_icon"></i></th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="zkgjss_cont" name="finance_fxjl_look_zkgjss">
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text" class="select_input block" value="核算状态">
+                                            <i></i>
+                                            <ul class="select_list">
+                                                <li>值一</li>
+                                                <li>值二</li>
+                                                <li>值三</li>
+                                                <li>值四</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text" class="select_input block" value="发薪状态">
+                                            <i></i>
+                                            <ul class="select_list">
+                                                <li>值一</li>
+                                                <li>值二</li>
+                                                <li>值三</li>
+                                                <li>值四</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text" class="select_input block" value="发薪人">
+                                            <i></i>
+                                            <ul class="select_list">
+                                                <li>值一</li>
+                                                <li>值二</li>
+                                                <li>值三</li>
+                                                <li>值四</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!--<tr>
+                                    <td><input type="checkbox" name="finance_fxjl_inp"></td>
+                                    <td>01</td>
+                                    <td>2016.10</td>
+                                    <td>001</td>
+                                    <td>张三</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>销售部</td>
+                                    <td>15000</td>
+                                    <td>-</td>
+                                    <td class="c_r">未发放</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="but_mix1 but_grey1" name="finance_fxjl_bjfx">标记发薪</button>
+                                        <button class="but_mix but_look val_dialogTop" name="finance_fxbj_look_salary">
+                                            查看工资条
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="finance_fxjl_inp"></td>
+                                    <td>02</td>
+                                    <td>2016.10</td>
+                                    <td>001</td>
+                                    <td>李四</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>销售部</td>
+                                    <td>15000</td>
+                                    <td class="c_g">已确定</td>
+                                    <td class="c_r">未发放</td>
+                                    <td>-</td>
+                                    <td>王艳</td>
+                                    <td>2016.08.31</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="but_mix but_look val_dialogTop" name="finance_fxjl_bjfx">标记发薪
+                                        </button>
+                                        <button class="but_mix but_look val_dialogTop" name="finance_fxbj_look_salary">
+                                            查看工资条
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="finance_fxjl_inp"></td>
+                                    <td>03</td>
+                                    <td>2016.10</td>
+                                    <td>001</td>
+                                    <td>李四</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>销售部</td>
+                                    <td>15000</td>
+                                    <td class="c_g">已确定</td>
+                                    <td class="c_g">已发放</td>
+                                    <td>+500</td>
+                                    <td>王艳</td>
+                                    <td>2016.08.31</td>
+                                    <td>2016.09.01</td>
+                                    <td>
+                                        <button class="but_mix1 but_grey1" name="finance_fxjl_bjfx">标记发薪</button>
+                                        <button class="but_mix but_look val_dialogTop" name="finance_fxbj_look_salary">
+                                            查看工资条
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="finance_fxjl_inp"></td>
+                                    <td>04</td>
+                                    <td>2016.10</td>
+                                    <td>001</td>
+                                    <td>王二麻</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>销售部</td>
+                                    <td>15000</td>
+                                    <td class="c_g">已确定</td>
+                                    <td class="c_g">已发放</td>
+                                    <td>-200</td>
+                                    <td>王艳</td>
+                                    <td>2016.08.31</td>
+                                    <td>2016.09.01</td>
+                                    <td>
+                                        <button class="but_mix1 but_grey1" name="finance_fxjl_bjfx">标记发薪</button>
+                                        <button class="but_mix but_look val_dialogTop" name="finance_fxbj_look_salary">
+                                            查看工资条
+                                        </button>
+                                    </td>
+                                </tr>-->
+                                </tbody>
+                                <tbody class="fnc_salary_hsgz_html_tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="handle" style="height: 57px;background: #f5f6fa;">
+                    <div class="hr_yidong">
+                        <button class="but_cancel val_dialogTop fnc_salary_fxjl_bjfx_btn" signnum="multi" name="finance_fxjl_bjfx"
+                                style="margin-left: -25px;">批量标记发薪
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--发薪记录-查看工资条-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_fxbj_look_salary">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1300px;height:260px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">工资条</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;height: 100%;">
+                <div class="dialog_text_con">
+                    <div class="div_1 container" style="width: 91%;border-bottom: 1px solid #e6e6e6;">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th rowspan="2">月份</th>
+                                    <th rowspan="2">姓名</th>
+                                    <th rowspan="2">类型</th>
+                                    <th rowspan="2">基本工资</th>
+                                    <th rowspan="2">出勤天数</th>
+                                    <th colspan="6" class="t_center">应发工资</th>
+                                    <th colspan="7" class="t_center">扣除工资</th>
+                                    <th colspan="2" class="t_center">其他</th>
+                                    <th rowspan="2">实发工资</th>
+                                    <th rowspan="2">核算人</th>
+                                </tr>
+                                <tr>
+                                    <th>基本工资</th>
+                                    <th>绩效工资</th>
+                                    <th>提成/团队/任务/计件</th>
+                                    <th>奖金</th>
+                                    <th>补助项</th>
+                                    <th>合计</th>
+                                    <th>未出勤</th>
+                                    <th>金融</th>
+                                    <th>绩效工资</th>
+                                    <th>扣税</th>
+                                    <th>保险</th>
+                                    <th>金额</th>
+                                    <th>合计</th>
+                                    <th>补发</th>
+                                    <th>补扣</th>
+                                </tr>
+                                </thead>
+                                <tbody class="fnc_my_salary_detail_list">
+                                <!--<tr>
+                                    <td>张三</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22元</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>20500元</td>
+                                    <td>张三</td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="finance_salary_active">
+                        <div class="finance_salary_active_one"><span>补充操作</span></div>
+                        <div style="line-height: 57px;">
+                            <button class="val_dialogTop but_mix but_lv" name="finance_hsgz_shensu">补发</button>
+                            <button class="val_dialogTop but_mix but_r" name="finance_hsgz_bk">补扣</button>
+                            <!--还有一种情况-->
+                            <!--<p>操作人：<span>李丽</span></p>-->
+                            <!--<p>操作时间：<span>2016.10.31</span></p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--补扣-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hsgz_bk">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 418px;height: 280px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">补扣</h3>
+            </div>
+            <div class="dialod_text sbar" style="padding: 0;margin: 0;">
+                <div class="unhead_box">
+                    操作人：<span class="m_right_10">杨丽</span>
+                    操作时间：<span>2016-10-27</span>
+                </div>
+                <div class="dialog_text_con" style="padding:45px 40px 30px;">
+                    <div class="t_textinput">
+                        <div class="t_left" style="width: 24%;max-width: 10em;"><i class="c_r">*</i>补扣金额(元)</div>
+                        <div class="t_right" style="margin-left: 26%;width: 68%;"><input type="text" class="time_input"
+                                                                                         onfocus="fn_focus(this);"
+                                                                                         onblur="fn_blur(this);"
+                                                                                         value="请输入补扣金额"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--标记发薪-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_fxjl_bjfx">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 700px;height: 540px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">标记发薪</h3>
+                <!--<button class="but_blue but_small but_print2 htmb_btnPrint1" style="position: absolute;right:36px;top:9px;"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button>-->
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 83%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">标记发薪</h2>
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                        <p class="l-s-x">付款单编号：<span class="fnc_salary_fxjl_bjfx_code_sn"></span></p>
+                        <p class="l-s-x">付款名称：<span class="fnc_salary_fxjl_bjfx_year_month"></span></p>
+                        <p class="l-s-x">结算账户：<span class="fnc_salary_fxjl_bjfx_company_account_name"></span></p>
+                        <p class="l-s-x">结算账目：<span class="fnc_salary_fxjl_bjfx_account_name"></span></p>
+                        <p class="l-s-x">付款方式：<span class="fnc_salary_fxjl_bjfx_way"></span></p>
+                        <p class="l-s-x">付款人：<span class="fnc_salary_fxjl_bjfx_uname"></span></p>
+                        <p class="l-s-x">付款日期：<span class="fnc_salary_fxjl_bjfx_create_time"></span></p>
+                    </div>
+                    <hr style="border-top: 6px solid #f5f6fa;width: 750px;margin: 30px -60px;">
+                    <div class="takenote_bg">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>应付款项(元)</th>
+                                        <th>本次付款(元)</th>
+                                        <th>大写实付款(元)</th>
+                                        <th style="width: 160px;">备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fnc_salary_fxjl_bjfx_total"></td>
+                                        <td class="fnc_salary_fxjl_bjfx_total"></td>
+                                        <td class="fnc_salary_fxjl_bjfx_total_upper"></td>
+                                        <td><input type="text" class="time_input c_3 fnc_salary_fxjl_bjfx_note"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit fnc_salary_fxjl_bjfx_submit_btn_list">
+                <button class="but_small but_blue fnc_salary_fxjl_bjfx_submit_btn">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--付款记录-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_fxjl_fkjl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 760px;height: 420px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">付款单</h3>
+                <!--<button class="but_blue but_small" style="position: absolute;right:36px;top:9px;">导出</button>-->
+            </div>
+
+            <div class="dialog_text sbar" style="margin-top: 0;">
+                <h2 class="cont_title" style="margin-bottom: 20px;"><span class="fnc_salary_hsgz_fkjl_year_month"></span> 工资付款记录</h2>
+                <div class="div_1 container" style="padding: 0;">
+                    <div class="div_1 table-container">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>付款单编号</th>
+                                <th>付款日期</th>
+                                <th>付款人</th>
+                                <th>实付款(元)</th>
+                                <th>备注</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="fnc_salary_fxjl_hsgz_fkjl_tbody"></tbody>
+                            <tbody>
+                            <!--<tr>
+                                <td>01</td>
+                                <td>FK46465987</td>
+                                <td>2016-10-09</td>
+                                <td>张三</td>
+                                <td>10000</td>
+                                <td>-</td>
+                                <td>
+                                    <button class="but_mix but_look val_dialogTop" name="finance_fxjl_look_salary">
+                                        查看付款单
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>FK46465987</td>
+                                <td>2016-10-09</td>
+                                <td>张三</td>
+                                <td>10000</td>
+                                <td>-</td>
+                                <td>
+                                    <button class="but_mix but_look" name="finance_fxjl_look_salary">查看抵销单</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>FK46465987</td>
+                                <td>2016-10-09</td>
+                                <td>张三</td>
+                                <td>10000</td>
+                                <td>-</td>
+                                <td>
+                                    <button class="but_mix but_look val_dialogTop" name="finance_fxjl_look_salary">
+                                        查看付款单
+                                    </button>
+                                </td>
+                            </tr>-->
+                            <tr class="table_total">
+                                <td>合计</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="c_r fnc_salary_fxjl_hsgz_fkjl_total"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <!--<button class="but_small but_green">确定核算</button>-->
+                <!--<button class="but_small but_blue val_dialogTop" name="finance_hsgz_ssfk">申诉补发</button>-->
+                <button class="but_small but_cancel">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看付款单-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_fxjl_look_salary">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 700px;height: 560px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">付款单</h3>
+                <button class="but_blue but_small but_print2 htmb_btnPrint1"
+                        style="position: absolute;right:36px;top:9px;"><i
+                    style="vertical-align: middle;margin-top:-2px;"></i>打印
+                </button>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 83%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">付款单</h2>
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                        <p class="l-s-x">付款单编号：<span class="fnc_fkjl_hsgz_fkd_detail_payfor_num"></span></p>
+                        <p class="l-s-x">付款名称：<span class="fnc_fkjl_hsgz_fkd_detail_payfor_name"></span></p>
+                        <p class="l-s-x">结算账户：<span class="fnc_fkjl_hsgz_fkd_detail_zhanghu"></span></p>
+                        <p class="l-s-x">结算账目：<span class="fnc_fkjl_hsgz_fkd_detail_zhangmu"></span></p>
+                        <p class="l-s-x">付款方式：<span class="fnc_fkjl_hsgz_fkd_detail_zhifu"></span></p>
+                        <p class="l-s-x">付款人：<span class="fnc_fkjl_hsgz_fkd_detail_send_people"></span></p>
+                        <p class="l-s-x">付款日期：<span class="fnc_fkjl_hsgz_fkd_detail_payfor_time"></span></p>
+                    </div>
+                    <hr style="border-top: 6px solid #f5f6fa;width: 750px;margin: 30px -60px;">
+                    <div class="takenote_bg">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>应付款项(元)</th>
+                                        <th>本次付款(元)</th>
+                                        <th>大写实付款(元)</th>
+                                        <th style="width: 160px;">备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fnc_fkjl_hsgz_fkd_detail_need_pay_money"></td>
+                                        <td class="fnc_fkjl_hsgz_fkd_detail_this_pay_money"></td>
+                                        <td class="fnc_fkjl_hsgz_fkd_detail_daxie"></td>
+                                        <td class="fnc_fkjl_hsgz_fkd_detail_note"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--***我的工资***-->
+<!--申诉处理-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_wdgz_sscl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 1050px;height: 410px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">申诉处理</h3>
+            </div>
+
+            <div class="dialog_text sbar" style="padding:0 40px 30px;">
+                <div class="con_right_head clearfix" style="border: none;padding-top: 0;">
+                    <div class="t_textinput inline_block" style="width: 230px;">
+                        <div class="t_left" style="width: 24%;max-width: 6em;">选择月份</div>
+                        <div class="t_right" style="width: 65%;margin-left: 27%;">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input" value="2016年10月份工资"/>
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>全部</li>
+                                    <li>2016年09月份工资</li>
+                                    <li>2016年08月份工资</li>
+                                    <li>2016年07月份工资</li>
+                                    <li>2016年06月份工资</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabcontent" name="finance_hsgz_b" style="padding: 0;">
+                    <div class="div_1 container">
+                        <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>薪资月份</th>
+                                    <th>申诉理由</th>
+                                    <th>申诉处理反馈</th>
+                                    <th>发起时间</th>
+                                    <th>完成时间</th>
+                                    <th>状态</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>2016.10</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>-</td>
+                                    <td>2016-10-11</td>
+                                    <td>-</td>
+                                    <td class="c_y">申诉中</td>
+                                </tr>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>2016.10</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>2016-10-11</td>
+                                    <td>2016-10-12</td>
+                                    <td class="c_r">已拒绝</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_salary_look">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1300px;height: 360px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">查看核算</h3>
+                <button class="but_blue but_small" style="position: absolute;right:36px;top:9px;">导出</button>
+            </div>
+            <div class="dialog_text sbar" style="margin-top: 0;">
+                <h2 class="cont_title" style="margin-bottom: 20px;"><span
+                    class="fnc_my_salary_detail_year_month"></span> 工资条</h2>
+                <div class="d-r-t-h" style="padding-top:0;">
+                    <p class="l-s-x">确定核算日期：<span
+                        class="c_9 fnc_my_salary_detail_hesuan_time">2016-10-27 14:48:13</span></p>
+                </div>
+                <div class="div_1 container" style="padding: 0;">
+                    <div class="div_1 table-container">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th rowspan="2">月份</th>
+                                <th rowspan="2">姓名</th>
+                                <th rowspan="2">类型</th>
+                                <th rowspan="2">基本工资</th>
+                                <th rowspan="2">出勤天数</th>
+                                <th colspan="6" class="t_center">应发工资</th>
+                                <th colspan="7" class="t_center">扣除工资</th>
+                                <th colspan="2" class="t_center">其他</th>
+                                <th rowspan="2">实发工资</th>
+                                <th rowspan="2">核算人</th>
+                            </tr>
+                            <tr>
+                                <th>基本工资</th>
+                                <th>绩效工资</th>
+                                <th>提成/团队/任务/计件</th>
+                                <th>奖金</th>
+                                <th>补助项</th>
+                                <th>合计</th>
+                                <th>未出勤</th>
+                                <th>金额</th>
+                                <th>绩效工资</th>
+                                <th>扣税</th>
+                                <th>保险</th>
+                                <th>金额</th>
+                                <th>合计</th>
+                                <th>补发</th>
+                                <th>补扣</th>
+                            </tr>
+                            </thead>
+                            <tbody class="fnc_my_salary_detail_list">
+                            <!--<tr>
+                                <td>9月</td>
+                                <td>张三</td>
+                                <td>基本工资+绩效+奖金</td>
+                                <td>8000元</td>
+                                <td>22元</td>
+                                <td>8000元</td>
+                                <td>2000元</td>
+                                <td>10000元</td>
+                                <td>0元</td>
+                                <td>1500元</td>
+                                <td>21500元</td>
+                                <td>0天</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>200</td>
+                                <td>四险</td>
+                                <td>500</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>20500元</td>
+                                <td>张三</td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_green fnc_my_salary_detail_qdhs_btn">确定核算</button>
+                <!--<button class="but_small but_blue val_dialogTop" name="finance_hsgz_ssfk">申诉补发</button>-->
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--核算工资-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_hsgz_hsgz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1300px;height:480px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">核算工资</h3>
+                <button class="but_blue but_small but_print2 val_dialogTop" name="finance_hsgz_dy"
+                        style="position: absolute;right:96px;top:9px;"><i
+                    style="vertical-align: middle;margin-top:-2px;"></i>打印
+                </button>
+                <button class="but_blue but_small  val_dialogTop" style="position: absolute;right:36px;top:9px;"
+                        name="finance_hsgz_dc">导出
+                </button>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 100%;">
+                <div class="unhead_box">
+                    核算人：<span class="m_right_10">张三</span>
+                    核算日期：<span class="m_right_10">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con">
+                    <div>
+                        <div class="t_textinput" style="width: 30%;margin-left: 0;margin-top: 20px;">
+                            <div class="t_left "><i class="c_r v_hidden">*</i>选择月份</div>
+                            <div class="t_right">
+                                <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期"
+                                       class="laydate-icon time_input" readonly="readonly" onclick="laydate()"
+                                       style="cursor: pointer;">
+                            </div>
+                        </div>
+                        <p class="right" style="margin-top: -36px;">所有成员(<span class="c_r">1</span>个部门，共 <span
+                            class="c_r">2</span>人)</p>
+                    </div>
+                    <div class="div_1 container" style="padding: 0;">
+                        <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th rowspan="2">
+                                        <input type="checkbox" class="checkAll" name="finance_yggz_qx">
+                                    </th>
+                                    <th rowspan="2">姓名</th>
+                                    <th rowspan="2">类型</th>
+                                    <th rowspan="2">基本工资</th>
+                                    <th rowspan="2">出勤天数</th>
+                                    <th colspan="6" class="t_center">应发工资</th>
+                                    <th colspan="7" class="t_center">扣除工资</th>
+                                    <th colspan="2" class="t_center">其他</th>
+                                    <th rowspan="2">实发工资</th>
+                                    <th rowspan="2">核算人</th>
+                                    <th rowspan="2">补充操作</th>
+                                </tr>
+                                <tr>
+                                    <th>基本工资</th>
+                                    <th>绩效工资</th>
+                                    <th>提成/团队/任务/计件</th>
+                                    <th>奖金</th>
+                                    <th>补助项</th>
+                                    <th>合计</th>
+                                    <th>未出勤</th>
+                                    <th>金融</th>
+                                    <th>绩效工资</th>
+                                    <th>扣税</th>
+                                    <th>保险</th>
+                                    <th>金额</th>
+                                    <th>合计</th>
+                                    <th>补发</th>
+                                    <th>补扣</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input type="checkbox" name="finance_yggz_qx"></td>
+                                    <td>张三</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22元</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>20500元</td>
+                                    <td>张三</td>
+                                    <td>
+                                        <button class="val_dialogTop but_mix but_lv" name="finance_hsgz_bf">补发</button>
+                                        <button class="val_dialogTop but_mix but_r" name="finance_hsgz_bk">补扣</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="finance_yggz_qx"></td>
+                                    <td>田七</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22元</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>20500元</td>
+                                    <td>张三</td>
+                                    <td>
+                                        <button class="but_mix1 but_grey1" name="finance_hsgz_bf">补发</button>
+                                        <button class="val_dialogTop but_mix but_r" name="finance_hsgz_bk">补扣</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="fenye_box">
+                        <span>每页显示</span>
+                        <div class="inline_block select_mormal">
+                            <input type="text" class="select_input" value="10">
+                            <i></i>
+                            <ul class="select_list">
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                            </ul>
+                        </div>
+                        <span>条数据</span>
+                        <div class="fenye_btn first_page_valid"><span></span></div>
+                        <div class="fenye_btn prev_page_valid"><span></span></div>
+                        <span class="page_box on">1</span>
+                        <span class="page_box">2</span>
+                        <span class="page_box">3</span>
+                        <span class="page_box">4</span>
+                        <div class="fenye_btn next_page_valid"><span></span></div>
+                        <div class="fenye_btn last_page_valid"><span></span></div>
+                        <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                        <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_green val_dialogTop" name="finance_hsgz_qdhsgz">确定核算工资</button>
+                <button class="but_small but_blue val_dialogTop" name="finance_yggz_hsts">推送</button>
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--单人推送-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_yggz_drhsts">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar takenote_scd">
+                <p class="p1" style="padding: 50px 12px 18px;font-size: 16px;"><span>9月工资，</span><span
+                    style="color:#008be4;">共30人，推送1人</span></p>
+                <p class="p2">是否推送给员工？</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">推送</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--确定核算工资-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hsgz_qdhsgz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar takenote_scd">
+                <p class="p1" style="padding: 60px 12px 18px;">确定核算工资后会生成员工工资</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-导出成功-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hsgz_dc">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_4" style="width: 320px;height: 200px;">
+            <i class="dialog_close_but">关闭</i>
+            <em class="exportIcon"></em>
+            <p class="exportMsg">导出成功，请点击下载</p>
+            <p class="exportFlie f_color">核算工资.doc</p>
+        </div>
+    </div>
+</div>
+<!--打印方式-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hsgz_dy">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择打印方式</h3>
+            </div>
+            <div style="padding: 55px 102px 30px;">
+                <input type="radio" name="finance_radio"><span
+                style="margin-left: 8px;margin-right: 5px;">选择组合列表打印</span>
+                <button class="but_look but_mix val_dialogTop" name="finance_hsgz_zhlb">预览</button>
+            </div>
+            <div style="padding: 0px 102px 30px;">
+                <input type="radio" checked="checked" name="finance_radio"><span
+                style="margin-left: 8px;margin-right: 5px;">选择单条列表打印</span>
+                <button class="but_look but_mix val_dialogTop" name="finance_hsgz_dtlb">预览</button>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--组合列表-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_hsgz_zhlb">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1300px;height:400px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览</h3>
+                <button class="but_blue but_small but_print2 htmb_btnPrint1"
+                        style="position: absolute;right:36px;top:9px;"><i
+                    style="vertical-align: middle;margin-top:-2px;"></i>打印
+                </button>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;">
+                <div class="unhead_box">
+                    核算人：<span class="m_right_10">张三</span>
+                    核算日期：<span class="m_right_10">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con" style="padding: 0 40px 20px;">
+                    <h2 class="cont_title">核算工资-9月工资</h2>
+                    <div class="div_1 container" style="padding: 0;">
+                        <div class="div_1 table-container">
+                            <table style="text-align: center;">
+                                <thead>
+                                <tr>
+                                    <th rowspan="2">月份</th>
+                                    <th rowspan="2">姓名</th>
+                                    <th rowspan="2">类型</th>
+                                    <th rowspan="2">基本工资</th>
+                                    <th rowspan="2">出勤天数</th>
+                                    <th colspan="6" class="t_center">应发工资</th>
+                                    <th colspan="7" class="t_center">扣除工资</th>
+                                    <th colspan="2" class="t_center">其他</th>
+                                    <th rowspan="2">实发工资</th>
+                                    <th rowspan="2">核算人</th>
+                                    <th rowspan="2">签字</th>
+                                </tr>
+                                <tr>
+                                    <th>基本工作</th>
+                                    <th>绩效工资</th>
+                                    <th>提成/团队/任务/计件</th>
+                                    <th>奖金</th>
+                                    <th>补助项</th>
+                                    <th>合计</th>
+                                    <th>未出勤</th>
+                                    <th>金融</th>
+                                    <th>绩效工资</th>
+                                    <th>扣税</th>
+                                    <th>保险</th>
+                                    <th>金额</th>
+                                    <th>合计</th>
+                                    <th>补发</th>
+                                    <th>补扣</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>9月</td>
+                                    <td>张三</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22天</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>20500元</td>
+                                    <td>张三</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>9月</td>
+                                    <td>田七</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22元</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td>500</td>
+                                    <td>500(补发8月)</td>
+                                    <td></td>
+                                    <td>21000元</td>
+                                    <td>张三</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--单条列表-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_hsgz_dtlb">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1300px;height:572px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览</h3>
+                <button class="but_blue but_small but_print2 htmb_btnPrint1"
+                        style="position: absolute;right:36px;top:9px;"><i
+                    style="vertical-align: middle;margin-top:-2px;"></i>打印
+                </button>
+            </div>
+
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;">
+                <div class="unhead_box">
+                    核算人：<span class="m_right_10">张三</span>
+                    核算日期：<span class="m_right_10">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con" style="padding: 0 40px 20px;">
+                    <h2 class="cont_title">核算工资-9月工资</h2>
+                    <div class="div_1 container" style="padding: 0;">
+                        <div class="div_1 table-container">
+                            <table style="text-align: center;">
+                                <thead>
+                                <tr>
+                                    <th rowspan="2">月份</th>
+                                    <th rowspan="2">姓名</th>
+                                    <th rowspan="2">类型</th>
+                                    <th rowspan="2">基本工资</th>
+                                    <th rowspan="2">出勤天数</th>
+                                    <th colspan="6" class="t_center">应发工资</th>
+                                    <th colspan="7" class="t_center">扣除工资</th>
+                                    <th colspan="2" class="t_center">其他</th>
+                                    <th rowspan="2">实发工资</th>
+                                    <th rowspan="2">核算人</th>
+                                    <th rowspan="2">签字</th>
+                                </tr>
+                                <tr>
+                                    <th>基本工作</th>
+                                    <th>绩效工资</th>
+                                    <th>提成/团队/任务/计件</th>
+                                    <th>奖金</th>
+                                    <th>补助项</th>
+                                    <th>合计</th>
+                                    <th>未出勤</th>
+                                    <th>金融</th>
+                                    <th>绩效工资</th>
+                                    <th>扣税</th>
+                                    <th>保险</th>
+                                    <th>金额</th>
+                                    <th>合计</th>
+                                    <th>补发</th>
+                                    <th>补扣</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>9月</td>
+                                    <td>张三</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22天</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>20500元</td>
+                                    <td>张三</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>9月</td>
+                                    <td>田七</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22元</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td>500</td>
+                                    <td>500(补发8月)</td>
+                                    <td></td>
+                                    <td>21000元</td>
+                                    <td>张三</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="div_1 container" style="padding: 0;">
+                        <div class="div_1 table-container">
+                            <table style="text-align: center;">
+                                <thead>
+                                <tr>
+                                    <th rowspan="2">月份</th>
+                                    <th rowspan="2">姓名</th>
+                                    <th rowspan="2">类型</th>
+                                    <th rowspan="2">基本工资</th>
+                                    <th rowspan="2">出勤天数</th>
+                                    <th colspan="6" class="t_center">应发工资</th>
+                                    <th colspan="7" class="t_center">扣除工资</th>
+                                    <th colspan="2" class="t_center">其他</th>
+                                    <th rowspan="2">实发工资</th>
+                                    <th rowspan="2">核算人</th>
+                                    <th rowspan="2">签字</th>
+                                </tr>
+                                <tr>
+                                    <th>基本工作</th>
+                                    <th>绩效工资</th>
+                                    <th>提成/团队/任务/计件</th>
+                                    <th>奖金</th>
+                                    <th>补助项</th>
+                                    <th>合计</th>
+                                    <th>未出勤</th>
+                                    <th>金融</th>
+                                    <th>绩效工资</th>
+                                    <th>扣税</th>
+                                    <th>保险</th>
+                                    <th>金额</th>
+                                    <th>合计</th>
+                                    <th>补发</th>
+                                    <th>补扣</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>9月</td>
+                                    <td>张三</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22天</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>20500元</td>
+                                    <td>张三</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>9月</td>
+                                    <td>田七</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22元</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td>500</td>
+                                    <td>500(补发8月)</td>
+                                    <td></td>
+                                    <td>21000元</td>
+                                    <td>张三</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--*****我的核算****-->
+<!--查看核算-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_wdhs_zhlb">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1300px;height:350px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览</h3>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;">
+                <div class="unhead_box">
+                    核算人：<span class="m_right_10">张三</span>
+                    核算日期：<span class="m_right_10">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con" style="padding: 0 40px 20px;">
+                    <h2 class="cont_title">核算工资-9月工资</h2>
+                    <div class="div_1 container" style="padding: 0;">
+                        <div class="div_1 table-container">
+                            <table style="text-align: center;">
+                                <thead>
+                                <tr>
+                                    <th rowspan="2">月份</th>
+                                    <th rowspan="2">姓名</th>
+                                    <th rowspan="2">类型</th>
+                                    <th rowspan="2">基本工资</th>
+                                    <th rowspan="2">出勤天数</th>
+                                    <th colspan="6" class="t_center">应发工资</th>
+                                    <th colspan="7" class="t_center">扣除工资</th>
+                                    <th colspan="2" class="t_center">其他</th>
+                                    <th rowspan="2">实发工资</th>
+                                    <th rowspan="2">核算人</th>
+                                    <th rowspan="2">签字</th>
+                                </tr>
+                                <tr>
+                                    <th>基本工作</th>
+                                    <th>绩效工资</th>
+                                    <th>提成/团队/任务/计件</th>
+                                    <th>奖金</th>
+                                    <th>补助项</th>
+                                    <th>合计</th>
+                                    <th>未出勤</th>
+                                    <th>金融</th>
+                                    <th>绩效工资</th>
+                                    <th>扣税</th>
+                                    <th>保险</th>
+                                    <th>金额</th>
+                                    <th>合计</th>
+                                    <th>补发</th>
+                                    <th>补扣</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>9月</td>
+                                    <td>张三</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22天</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>20500元</td>
+                                    <td>张三</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_blue">确定核算</button>
+                <button class="but_small but_yellow val_dialogTop" name="finance_hsgz_ssfk">申诉</button>
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--****员工工资*****-->
+<!--员工工资查看右侧弹窗-->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar Sideslip" name="finance_yggz_ck">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left">员工工资-9月</p>
+                <!--<div class="slider_head_moreBox right">-->
+                <!--<span class="slider_head_but right slider_head_More">更多</span>-->
+                <!--<ul class="slider_head_list">-->
+                <!--<li class="val_dialogTop" name="vendition_addxslc_exit">编辑</li>-->
+                <!--<li>作废</li>-->
+                <!--<li>删除</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+            </div>
+            <p class="slider_head_msg_det">
+                核算人：<span>张三</span>
+                核算日期：<span>2016-10-27 14:48:13</span>
+            </p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="finance_hsgz_base_right">基本信息</li>
+                <li name="finance_hsgz_base_right">历史记录</li>
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b" style="width: 434px;height: 100%;overflow: hidden;">
+            <!--基本信息-->
+            <div class="ht_base_msg sbar" name="finance_hsgz_base_right">
+                <div class="ht_base_msgCon sbar">
+                    <div class="d-r-t-h" style="border: none">
+                        <h3 class="cont_title">基本信息</h3>
+                        <div class="takenote_xq">
+                            <button class="but_small but_blue val_dialog" name="finance_yggz_fxxq">详情</button>
+                        </div>
+                        <p class="l-s-x">发薪编号：<span>GZ65454</span></p>
+                        <p class="l-s-x">核算人数：<span>30</span></p>
+                        <p class="l-s-x">薪资月份：<span>10月</span></p>
+                        <p class="l-s-x">工资总额(元)：<span>300000</span></p>
+                        <p class="l-s-x">已发薪总额(元)：<span>250000</span></p>
+                        <p class="l-s-x">未发薪总额(元)：<span>50000</span></p>
+                        <p class="l-s-x">核算日期：<span>2016-10-10</span></p>
+                        <p class="l-s-x">核算人：<span>李四</span></p>
+                        <p class="l-s-x">最新发薪日期：<span>2016-10-10</span></p>
+                        <p class="l-s-x">最新发薪操作人：<span>张三</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                </div>
+                <div class="pra-4-cent newpra-4-cent">
+                    <div class="alertBtn-te">
+                        <button class="val_dialogTop but_blue" name="finance_hsgz_fx">发薪</button>
+                    </div>
+                </div>
+            </div>
+            <!--历史记录 -->
+            <div class="ht_base_msg sbar" name="finance_hsgz_base_right">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i"
+                                 src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">王小二</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">发薪编号：<span>GZ65454</span></p>
+                        <p class="l-s-x">核算人数：<span>30</span></p>
+                        <p class="l-s-x">薪资月份：<span>10月</span></p>
+                        <p class="l-s-x">工资总额(元)：<span>300000</span></p>
+                        <p class="l-s-x">已发薪总额(元)：<span>250000</span></p>
+                        <p class="l-s-x">未发薪总额(元)：<span>50000</span></p>
+                        <p class="l-s-x">核算日期：<span>2016-10-10</span></p>
+                        <p class="l-s-x">核算人：<span>李四</span></p>
+                        <p class="l-s-x">最新发薪日期：<span>2016-10-10</span></p>
+                        <p class="l-s-x">最新发薪操作人：<span>张三</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                    <div class="d-r-t-h" style="border-top:1px solid #f5f5f5;border-bottom:none;">
+                        <div class="d-r-box">
+                            <img class="l-sl-i"
+                                 src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">大老板</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自电脑端</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">发薪编号：<span>GZ65454</span></p>
+                        <p class="l-s-x">核算人数：<span>30</span></p>
+                        <p class="l-s-x">薪资月份：<span>10月</span></p>
+                        <p class="l-s-x">工资总额(元)：<span>300000</span></p>
+                        <p class="l-s-x">已发薪总额(元)：<span>250000</span></p>
+                        <p class="l-s-x">未发薪总额(元)：<span>50000</span></p>
+                        <p class="l-s-x">核算日期：<span>2016-10-10</span></p>
+                        <p class="l-s-x">核算人：<span>李四</span></p>
+                        <p class="l-s-x">最新发薪日期：<span>2016-10-10</span></p>
+                        <p class="l-s-x">最新发薪操作人：<span>张三</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--发薪-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_hsgz_fx">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width:1300px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">发薪</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 83%;">
+                <div class="unhead_box">
+                    发薪人：<span class="m_right_10">张三</span>
+                    发薪日期：<span class="m_right_10">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">10月工资发薪</h2>
+                    <div class="t_textinput" style="line-height: 12px;height: 12px;width: 50%;margin-left: 0;">
+                        <div class="t_left">核算日期：</div>
+                        <div class="t_right" style="line-height: 12px;">2016-10-10</div>
+                    </div>
+                    <div class="t_textinput" style="line-height: 12px;height: 12px;width: 50%;margin-left: 0;">
+                        <div class="t_left">核算人：</div>
+                        <div class="t_right" style="line-height: 12px;">李四</div>
+                    </div>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left"><i class="c_r">*</i>发薪编号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_noInput" value="HK44681312" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left "><i class="c_r">*</i>选择账目</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input" value="请选择账目">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li>销售账目</li>
+                                    <li>采购账目</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="finance_sz_ysqk" style="width: 1300px;">
+                    <div class="takenote_bg" style="margin: 30px 0 20px;">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th rowspan="2">
+                                            <input type="checkbox" class="checkAll" name="finance_yggz_qx">
+                                        </th>
+                                        <th rowspan="2">姓名</th>
+                                        <th rowspan="2">类型</th>
+                                        <th rowspan="2">基本工资</th>
+                                        <th rowspan="2">出勤天数</th>
+                                        <th colspan="6" class="t_center">应发工资</th>
+                                        <th colspan="7" class="t_center">扣除工资</th>
+                                        <th colspan="2" class="t_center">其他</th>
+                                        <th rowspan="2">实发工资</th>
+                                        <th rowspan="2">核算人</th>
+                                        <th rowspan="2">操作人</th>
+                                    </tr>
+                                    <tr>
+                                        <th>基本工作</th>
+                                        <th>绩效工资</th>
+                                        <th>提成/团队/任务/计件</th>
+                                        <th>奖金</th>
+                                        <th>补助项</th>
+                                        <th>合计</th>
+                                        <th>未出勤</th>
+                                        <th>金融</th>
+                                        <th>绩效工资</th>
+                                        <th>扣税</th>
+                                        <th>保险</th>
+                                        <th>金额</th>
+                                        <th>合计</th>
+                                        <th>补发</th>
+                                        <th>补扣</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" name="finance_yggz_qx"></td>
+                                        <td>张三</td>
+                                        <td>基本工资+绩效+奖金</td>
+                                        <td>8000元</td>
+                                        <td>22元</td>
+                                        <td>8000元</td>
+                                        <td>2000元</td>
+                                        <td>10000元</td>
+                                        <td>0元</td>
+                                        <td>1500元</td>
+                                        <td>21500元</td>
+                                        <td>0天</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>200</td>
+                                        <td>四险</td>
+                                        <td>500</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>20500元</td>
+                                        <td>张三</td>
+                                        <td>
+                                            <button class="but_look val_dialogTop but_mix" name="finance_hx_xzysdj">
+                                                标记发薪
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="finance_yggz_qx"></td>
+                                        <td>田七</td>
+                                        <td>基本工资+绩效+奖金</td>
+                                        <td>8000元</td>
+                                        <td>22元</td>
+                                        <td>8000元</td>
+                                        <td>2000元</td>
+                                        <td>10000元</td>
+                                        <td>0元</td>
+                                        <td>1500元</td>
+                                        <td>21500元</td>
+                                        <td>0天</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>200</td>
+                                        <td>四险</td>
+                                        <td>500</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>20500元</td>
+                                        <td>张三</td>
+                                        <td>
+                                            <button class="but_grey1 but_mix1">标记发薪</button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="but_look val_dialogTop" name="finance_hx_xzysdj">批量标记发薪</button>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_blue">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--标记发薪-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_hx_xzysdj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar takenote_scd">
+                <p class="p1" style="padding: 60px 12px 18px;">标记后不能更改，确定标记发薪？</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--查看详情-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_yggz_fxxq">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1300px;height:330px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览</h3>
+                <button class="but_blue but_small but_print2 htmb_btnPrint1"
+                        style="position: absolute;right:36px;top:9px;"><i
+                    style="vertical-align: middle;margin-top:-2px;"></i>打印
+                </button>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;">
+                <div class="dialog_text_con" style="padding: 30px 40px 20px;">
+                    <!--<h2 class="cont_title">核算工资-9月工资</h2>-->
+                    <div class="div_1 container" style="padding: 0;">
+                        <div class="div_1 table-container">
+                            <table style="text-align: center;">
+                                <thead>
+                                <tr>
+                                    <th rowspan="2">姓名</th>
+                                    <th rowspan="2">类型</th>
+                                    <th rowspan="2">基本工资</th>
+                                    <th rowspan="2">出勤天数</th>
+                                    <th colspan="6" class="t_center">应发工资</th>
+                                    <th colspan="7" class="t_center">扣除工资</th>
+                                    <th colspan="2" class="t_center">其他</th>
+                                    <th rowspan="2">实发工资</th>
+                                    <th rowspan="2">核算人</th>
+                                </tr>
+                                <tr>
+                                    <th>基本工作</th>
+                                    <th>绩效工资</th>
+                                    <th>提成/团队/任务/计件</th>
+                                    <th>奖金</th>
+                                    <th>补助项</th>
+                                    <th>合计</th>
+                                    <th>未出勤</th>
+                                    <th>金融</th>
+                                    <th>绩效工资</th>
+                                    <th>扣税</th>
+                                    <th>保险</th>
+                                    <th>金额</th>
+                                    <th>合计</th>
+                                    <th>补发</th>
+                                    <th>补扣</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22天</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>20500元</td>
+                                    <td>张三</td>
+                                </tr>
+                                <tr>
+                                    <td>田七</td>
+                                    <td>基本工资+绩效+奖金</td>
+                                    <td>8000元</td>
+                                    <td>22元</td>
+                                    <td>8000元</td>
+                                    <td>2000元</td>
+                                    <td>10000元</td>
+                                    <td>0元</td>
+                                    <td>1500元</td>
+                                    <td>21500元</td>
+                                    <td>0天</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>200</td>
+                                    <td>四险</td>
+                                    <td>500</td>
+                                    <td>500</td>
+                                    <td>500(补发8月)</td>
+                                    <td></td>
+                                    <td>21000元</td>
+                                    <td>张三</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        //滑动显示
+        $(".vend_client_contact").live("mouseenter", function () {
+//            alert(1);
+            $(this).siblings(".vent_client_contMsgBox").show();
+        });
+        $(".vend_client_contact").live("mouseleave", function () {
+            $(this).siblings(".vent_client_contMsgBox").hide();
+        });
+    });
+</script>
+<script>
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 319);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 319);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+</script>
+</body>
+<script src="static/finance/js/92.js"></script>
+</html>

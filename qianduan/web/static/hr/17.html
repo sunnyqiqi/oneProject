@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr-公司费用</title>
+    <link rel="stylesheet" type="text/css" href="static/hr/css/hr_employeelist.css">
+    <script src="static/hr/js/zj_workcost.js"></script>
+
+    <style type="text/css">
+
+
+    </style>
+
+
+</head>
+<body>
+<div class="finance_content">
+    <div class="lik_content_max_height_box">
+        <div class="con_header contenthead">
+    <h2>公司费用</h2>
+    <div class="right" style="width: 77px;">
+        <div class="res zj_gsbg_zd_refish_res" title="点击刷新"></div>
+    </div>
+</div>
+        <!--第二行-->
+        <div class="con_right_head clearfix" style="border:none;padding:20px 30px;">
+            <div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;">
+                <div class="t_left" style="width: 35%;max-width: 6em;">查看时间</div>
+                <div class="t_right clearfix" style="width: 65%;margin-left: 35%;">
+                    <div class="inline_block select_mormal left select_100">
+                        <input type="text" class="select_input" value="选择日期">
+                        <i></i>
+                        <ul class="select_list zcj_bgfy_zdy_time_list" style="display: none;">
+                            <li>全部时间</li>
+                            <li class="val_dialog" name="xs_shd_chooseTime">自定义时间</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabcontent" style="padding-top: 0;">
+            <div class="container lik_table_wrap">
+                <div class="table-container lik_table_max_height">
+                <table>
+                <thead>
+                <tr>
+                    <th>名字</th>
+                    <th>类别</th>
+                    <th>日期</th>
+                   <!-- <th>数量</th>-->
+                    <th>总金额</th>
+                    <th>经手人</th>
+                </tr>
+                </thead>
+                <tbody class="zcj_bgfy_list">
+                <!--<tr>
+                    <td>办公文具</td>
+                    <td>办公用品</td>
+                    <td>2017-1-12</td>
+                    <td>20</td>
+                    <td class="c_r">1200元</td>
+                    <td>张三</td>
+                </tr>
+                <tr>
+                    <td>办公文具</td>
+                    <td>办公用品</td>
+                    <td>2017-1-12</td>
+                    <td>20</td>
+                    <td class="c_r">1200元</td>
+                    <td>李四</td>
+                </tr>
+                <tr>
+                    <td>办公文具</td>
+                    <td>办公用品</td>
+                    <td>2017-1-12</td>
+                    <td>20</td>
+                    <td class="c_r">1200元</td>
+                    <td>王五</td>
+                </tr>-->
+                </tbody>
+            </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <div class="no_data_box none zcj_no_data_show_company_fy">
+                        <div class="no_data">
+                            <!--<span class="inline_block"></span>-->
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>
+        </div>
+                <div class="handle">
+                    <div class="fenye_box zcj_bgfy_page">
+                        <span>每页显示</span>
+                        <div class="inline_block select_mormal">
+                            <input type="text" class="select_input" value="10">
+
+                            <ul class="select_list select_list_to_top">
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                            </ul>
+                            <i></i>
+                        </div>
+                        <span>条数据</span>
+                        <div class="fenye_btn first_page_valid"><span></span></div>
+                        <div class="fenye_btn prev_page_valid"><span></span></div>
+                        <span class="page_box on">1</span>
+                        <span class="page_box">2</span>
+                        <span class="page_box">3</span>
+                        <span class="page_box">4</span>
+                        <div class="fenye_btn next_page_valid"><span></span></div>
+                        <div class="fenye_btn last_page_valid"><span></span></div>
+                        <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                        <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--弹窗-筛选时间-->
+<div class="dialog">
+    <div class="dialog_box" name="xs_shd_chooseTime">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="height: 194px; width: 614px; padding: 0px; z-index: 2;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">自定义时间</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding-top: 12px; z-index: 2;">
+                <div class="t_textinput left" style="width: 45%; z-index: 1;">
+                    <div class="t_left" style="width: 25%; z-index: 1;"><i class="c_r v_hidden">*</i>开始时间</div>
+                    <div class="t_right" style="width: 75%; margin-left: 25%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(hr_gszd_start)" id="hr_gszd_start">
+
+                    </div>
+
+                </div>
+                <div class="t_textinput right" style="width: 45%; z-index: 2;">
+                    <div class="t_left" style="width: 25%; z-index: 1;"><i class="c_r v_hidden">*</i>结束时间</div>
+                    <div class="t_right" style="width: 75%; margin-left: 25%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(hr_gszd_end)" id="hr_gszd_end">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit" style="z-index: 3;">
+                <button class="but_blue but_small ven_after_order_look_record_zdysj_save zcj_select_bgfy_time_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script>
+    var hr_gszd_start = {
+        elem: '#hr_gszd_start',
+        format: 'YYYY-MM-DD',
+//        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            hr_gszd_end.min = datas; //开始日选好后，重置结束日的最小日期
+            hr_gszd_end.start = datas; //将结束日的初始值设定为开始日
+            //console.log(datas)
+        }
+    };
+    var hr_gszd_end = {
+        elem: '#hr_gszd_end',
+        format: 'YYYY-MM-DD',
+//        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            hr_gszd_start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+
+    };
+</script>
+<script>
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+</script>
+
+</body>
+</html>

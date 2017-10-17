@@ -1,0 +1,3430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合同管理-采购合同</title>
+    <link rel="stylesheet" href="static/bargain/css/bargain_muban.css">
+    <link rel="stylesheet" href="static/goods/goods.css">
+    <!--<script type="text/javascript" charset="utf-8" src="static/hr/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="static/hr/ueditor/ueditor.all.min.js"></script>-->
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <!--<script type="text/javascript" charset="utf-8" src="static/hr/ueditor/lang/zh-cn/zh-cn.js"></script>-->
+</head>
+<body>
+<div class="finance_content">
+    <div class="con_header contenthead lik_cont_title">
+        <h2>合同模板</h2>
+        <div class="right" style="width: 195px;">
+        <button name="ht_muban_new" class="val_dialog but_blue xjbtn_xxl" typeid='1'>新建合同模板</button>
+        <!--<button class="but_blue val_dialog" name="muban_in">导入</button><button class="but_blue val_dialog" name="ht_mban_out">导出</button>-->
+    <div class="res djsx" title="点击刷新"></div>
+</div>
+    </div>
+    <div class="finance_right">
+        <div class="con_right_head clearfix" style="border:none;">
+            <div class="muban_tabBox left">
+            <ul class="tabtitle">
+                <!--<li name="bargain_muban" typeid="" class="taba qiehuan tabhover">全部</li>-->
+                <li name="bargain_muban" typeid="1" class="taba qiehuan tabhover">销售合同</li>
+                <li name="bargain_muban" typeid="2" class="taba qiehuan">采购合同</li>
+                <li name="bargain_muban" typeid="3" class="taba qiehuan">员工合同</li>
+                <li name="bargain_muban" typeid="4" class="taba qiehuan">其他合同</li>
+            </ul>
+        </div>
+            <div class="lik_content_head">
+        <div class="cont_search inline_block"><input type="text" class="search_input sousuomc_xxl" value="搜索合同模板名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" ><button class="search_but but_blue sousuo_xxl">搜索</button></div>
+        <!--<button class="but_cancel but_small inline_block zkgjssBtn" name="hrgsxx_zkgjss">展开高级搜索</button>-->
+        <button class="but_cancel but_small inline_block zkgjssBtn"  name="ht_muban_zkgjss">展开高级搜索</button>
+        </div>
+            <div class="right con_right_result right">
+            <p class="left">共: <span class=" f_color htmb_ssnums_xxl">3</span>条</p>
+            <span class="btn_chooseItem eyeIcon_eye ckx_btn but_cancel" name="ckx_ht_htmb"><i class="eyeIcon"></i>选择查看项</span>
+        </div>
+            <div class="t-z-list ckx_cont" name="ckx_ht_htmb" style="right: 15px; line-height: 27px; top: 64px;display: none;">
+            <i class="ckx_icon_right"></i>
+            <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+            <ul class="sbar muban_addkey_list" id="mobanxzckx_xxl">
+                <!--<li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">创建日期</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">创建人</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">更新日期</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">更新人</p>
+                </li>-->
+            </ul>
+            <!--  -->
+            <div class="bot-btn">
+                <button class="but_small but_blue" id="mb_xzckx_baocun_xxl">保存</button>
+                <button class="but_small but_cancal" id="mb_hfmr_xxl">恢复默认</button>
+            </div>
+        </div>
+            <div class="closeckx_cont"></div>
+            <!--/选择查看项-->
+        </div>
+        <div class="muban_buy tabcontent" name="bargain_muban" style="padding: 0;">
+            <div class="container lik_table_wrap">
+                <div class="table-container">
+                <table id="mb_xzckx_xxl">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>合同模板名称</th>
+                        <!--<th>合同类型</th>-->
+                        <!--<th>适用部门</th>-->
+                        <th class="order">状态 </th>
+                        <!--<i class="price_icon"></i>-->
+                        <th class="order">创建日期</th>
+                        <!--<i class="price_icon"></i>-->
+                        <th>创建人</th>
+                        <th class="order">更新日期</th>
+                        <!--<i class="price_icon"></i>-->
+                        <th>更新人</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="zkgjss_cont" name="ht_muban_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block htlx_inp_xxl" value="合同类型">
+                                <i></i>
+                                <ul class="select_list gjss_htlx_xxl">
+                                    <li thytype="1">销售合同</li>
+                                    <li thytype="2">采购合同</li>
+                                    <li thytype="3">员工合同</li>
+                                    <li thytype="4">其他合同</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block sybm_inp_xxl" value="适用部门">
+                                <i></i>
+                                <ul class="select_list shiyongbumen_xxl">
+                                    <!--<li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>-->
+                                </ul>
+                            </div>
+                        </td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block cjr_inp_xxl" value="创建人">
+                                <i></i>
+                                <ul class="select_list cjr_xxl">
+                                    <!--<li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>-->
+                                </ul>
+                            </div>
+                        </td>
+                        <!--<td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>-->
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block gxr_inp_xxl" value="更新人">
+                                <i></i>
+                                <ul class="select_list gxr_xxl">
+                                    <!--<li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>-->
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td>01</td>
+                        <td>销售部员工合同</td>
+                        <td>员工合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_r">停用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog" name="muban_pre_yg">查看</button>
+                            <button class="but_mix but_exit val_dialog" name="ht_muban_exit">编辑</button>
+                            <button class="but_mix but_use but_lv">启用</button>
+                            <button class="but_mix but_r but_detele val_dialog" name="ht_muban_delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>服务器销售合同</td>
+                        <td>销售合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_g">启用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_xs">查看</button>
+                            <button class="but_mix but_stop but_r">停用</button>
+                        </td>
+                    </tr>-->
+
+                    </tbody>
+                  <tbody class="mobanhtmls"></tbody>
+                </table>
+
+                <div class="moban_err_html"></div>
+        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+        <!--<div class="no_data_box none">
+            <div class="no_data">
+                <span class="inline_block"></span>
+                <p class="c_9">抱歉，没有找到相关内容！</p>
+            </div>
+            <div class="no_data_bottom"></div>
+        </div>-->
+            </div>
+                <div class="handle">
+                 <div class="fenye_box moban_fenye_xxl">
+    <span>每页显示</span>
+        <div class="inline_block select_mormal">
+            <input type="text" class="select_input" value="10">
+            <i></i>
+            <ul class="select_list">
+                <li>5</li>
+                <li>10</li>
+                <li>15</li>
+                <li>20</li>
+            </ul>
+        </div>
+        <span>条数据</span>
+        <div class="fenye_btn first_page_valid"><span></span></div>
+        <div class="fenye_btn prev_page_valid"><span></span></div>
+        <span class="page_box on">1</span>
+        <span class="page_box">2</span>
+        <span class="page_box">3</span>
+        <span class="page_box">4</span>
+        <!--<span class="page_box_last" style="line-height:15px;">...</span>-->
+        <div class="fenye_btn next_page_valid"><span></span></div>
+        <div class="fenye_btn last_page_valid"><span></span></div>
+        <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+        <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+</div>
+            </div>
+            </div>
+        </div>
+    <!--<div class="muban_sale tabcontent" name="bargain_muban" style="display: none;">
+        <div class="div_1 container">
+            <div class="div_1 table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>合同模板名称</th>
+                        <th>合同类型</th>
+                        <th>适用部门</th>
+                        <th class="order">状态 <i class="price_icon"></i></th>
+                        <th class="order">创建日期<i class="price_icon"></i></th>
+                        <th>创建人</th>
+                        <th class="order">更新日期<i class="price_icon"></i></th>
+                        <th>更新人</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="zkgjss_cont" name="ht_muban_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="合同类型">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>销售合同</li>
+                                    <li>采购合同</li>
+                                    <li>员工合同</li>
+                                    <li>其他合同</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="适用部门">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="更新人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>服务器销售合同</td>
+                        <td>销售合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_r">停用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_xs">查看</button>
+                            <button class="but_mix but_exit val_dialog" name="ht_muban_exit">编辑</button>
+                            <button class="but_mix but_use but_lv">启用</button>
+                            <button class="but_mix but_r but_detele val_dialog" name="ht_muban_delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>服务器销售合同</td>
+                        <td>销售合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_g">启用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_xs">查看</button>
+                            <button class="but_mix but_stop but_r">停用</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+        <!--<div class="no_data_box none">
+            <div class="no_data">
+                <!--<span class="inline_block"></span>-->
+                <!--<p class="c_9">抱歉，没有找到相关内容！</p>
+            </div>
+            <div class="no_data_bottom"></div>
+        </div>
+            </div>
+        </div>
+    </div>-->
+    <!--<div class="muban_staff tabcontent" name="bargain_muban" style="display: none;">
+        <div class="div_1 container">
+            <div class="div_1 table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>合同模板名称</th>
+                        <th>合同类型</th>
+                        <th>适用部门</th>
+                        <th class="order">状态 <i class="price_icon"></i></th>
+                        <th class="order">创建日期<i class="price_icon"></i></th>
+                        <th>创建人</th>
+                        <th class="order">更新日期<i class="price_icon"></i></th>
+                        <th>更新人</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="zkgjss_cont" name="ht_muban_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="合同类型">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>销售合同</li>
+                                    <li>采购合同</li>
+                                    <li>员工合同</li>
+                                    <li>其他合同</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="适用部门">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="更新人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>服务器采购合同</td>
+                        <td>采购合同</td>
+                        <td>采购A部、采购B部</td>
+                        <td class="sp_base_state"><span class="c_r">停用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_cg">查看</button>
+                            <button class="but_mix but_exit val_dialog" name="ht_muban_exit">编辑</button>
+                            <button class="but_mix but_use but_lv">启用</button>
+                            <button class="but_mix but_r but_detele val_dialog" name="ht_muban_delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>服务器采购合同</td>
+                        <td>采购合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_g">启用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_cg">查看</button>
+                            <button class="but_mix but_stop but_r">停用</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+        <!--<div class="no_data_box none">
+            <div class="no_data">
+                <!--<span class="inline_block"></span>-->
+                <!--<p class="c_9">抱歉，没有找到相关内容！</p>
+            </div>
+            <div class="no_data_bottom"></div>
+        </div>
+            </div>
+        </div>
+    </div>-->
+    <!--<div class="muban_other tabcontent" name="bargain_muban" style="display: none;">
+        <div class="div_1 container">
+            <div class="div_1 table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>合同模板名称</th>
+                        <th>合同类型</th>
+                        <th>适用部门</th>
+                        <th class="order">状态 <i class="price_icon"></i></th>
+                        <th class="order">创建日期<i class="price_icon"></i></th>
+                        <th>创建人</th>
+                        <th class="order">更新日期<i class="price_icon"></i></th>
+                        <th>更新人</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="zkgjss_cont" name="ht_muban_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="合同类型">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>销售合同</li>
+                                    <li>采购合同</li>
+                                    <li>员工合同</li>
+                                    <li>其他合同</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="适用部门">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="更新人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>销售部员工合同</td>
+                        <td>员工合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_r">停用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_yg">查看</button>
+                            <button class="but_mix but_exit val_dialog" name="ht_muban_exit">编辑</button>
+                            <button class="but_mix but_use but_lv">启用</button>
+                            <button class="but_mix but_r but_detele val_dialog" name="ht_muban_delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>销售部员工合同</td>
+                        <td>员工合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_g">启用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_yg">查看</button>
+                            <button class="but_mix but_stop but_r">停用</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+        <!--<div class="no_data_box none">
+            <div class="no_data">
+                <!--<span class="inline_block"></span>-->
+                <!--<p class="c_9">抱歉，没有找到相关内容！</p>
+            </div>
+            <div class="no_data_bottom"></div>
+        </div>
+            </div>
+        </div>
+    </div>-->
+    <!--<div class="muban_other tabcontent" name="bargain_muban" style="display: none;">
+        <div class="div_1 container">
+            <div class="div_1 table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>合同模板名称</th>
+                        <th>合同类型</th>
+                        <th>适用部门</th>
+                        <th class="order">状态 <i class="price_icon"></i></th>
+                        <th class="order">创建日期<i class="price_icon"></i></th>
+                        <th>创建人</th>
+                        <th class="order">更新日期<i class="price_icon"></i></th>
+                        <th>更新人</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="zkgjss_cont" name="ht_muban_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="合同类型">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>销售合同</li>
+                                    <li>采购合同</li>
+                                    <li>员工合同</li>
+                                    <li>其他合同</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="适用部门">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="创建人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="更新人">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>房屋租赁合同</td>
+                        <td>其他合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_r">停用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_qt">查看</button>
+                            <button class="but_mix but_exit val_dialog" name="ht_muban_exit">编辑</button>
+                            <button class="but_mix but_use but_lv">启用</button><button class="but_mix but_r but_detele val_dialog" name="ht_muban_delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>房屋租赁合同</td>
+                        <td>其他合同</td>
+                        <td>销售A部、销售B部</td>
+                        <td class="sp_base_state"><span class="c_g">启用</span></td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-12-10</td>
+                        <td>张三</td>
+                        <td>
+                            <button class="but_mix but_look val_dialog " name="muban_pre_qt">查看</button>
+                            <button class="but_mix but_stop but_r">停用</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                <!--<div class="no_data_box none">
+                    <div class="no_data">
+                        <!--<span class="inline_block"></span>-->
+                        <!--<p class="c_9">抱歉，没有找到相关内容！</p>
+                    </div>
+                    <div class="no_data_bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    </div>
+</div>
+<!--弹窗-添加销售合同模板-->
+<div class="dialog">
+    <div class="dialog_box " name="ht_muban_new">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle4">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建合同模板</h3>
+            </div>
+
+            <div class="dialog_text sbar" style="height:94%;padding:0;margin:0;">
+                    <p class="unhead_box">
+                        创建人：<span style="margin-right:10px;" class="xjusername_xxl"></span>
+                         创建日期：<span style="margin-right:10px;" class="xjdata_xxl"></span>
+                    </p>
+                    <div class="dialog_text_con" style="padding:0 20px;">
+                       <!-- <div class="muban_add_taba clearfix"><button class="but_gray tabhover2 tab_btn left" name="muban_new">第一步 <span >设置基本信息</span></button><button class="but_gray tab_btn" name="muban_new">第二步 <span>选择适用范围</span></button></div>-->
+                        <div class="ht_dialog_text_box tabcontent"  style="display: block;padding: 0 20px 90px;" name="muban_new">
+                            <div class="dialog_text" style="margin:0;padding:0 10px;">
+                                <h2 class="cont_title ">新建合同模板</h2>
+                                <!--<div class="t_textinput " >
+                                    <div class="t_left"><i class="c_r">*</i>合同类型</div>
+                                    <div class="t_right">
+                                        <div class="inline_block select_mormal select_100">
+                                            <input type="text" class="select_input htmb_xj_htlx_xxl" value="销售合同" thetype="1">
+                                            <i></i>
+                                            <ul class="select_list htmb_lxlist_xxl_xj">
+                                                <li class="tab_btn tabhover2" name="ht_muban_termBox" thetype="1">销售合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="2">采购合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="3">员工合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="4">其他合同</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="t_textinput " >
+                                    <div class="t_left"><i class="c_r">*</i>模板名称</div>
+                                    <div class="t_right"><div class="inline_block ht_mb_name"><input type="text" class="time_input htmb_mbmc_xxl" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                        <!--<div class="muban_inp_right right">
+                                            <input type="checkbox" class="htmb_status_xxl">启用合同名称
+                                        </div>-->
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">合同条款</h2>
+
+                                <!--销售合同条款-->
+                                <div class="tabcontent" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop" style="color: #23a2f3" name="term_prev_base">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款<span>1</span>:付款方式</div>
+                                    <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_fkfs">预览</span>
+                                </div>
+                                    </li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款<span>2</span>:商品信息</div>
+                                </div></li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款<span>3</span>:供货日期及交付方式</div>
+                                    <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_ghrq">预览</span>
+                                </div></li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款<span>4</span>:发票信息</div>
+                                    <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_pre_fpxx">预览</span>
+                                </div></li>
+                                        <i class="htmb_zdy_list_html_xxl"></i>
+                                        <!--<li class="ht_mb_term">
+                                <div class="t_textinput">
+                                    <div class="muban_terms" style="width: 70%;">条款5：质量及保修</div>
+                                    <span class="t_right_span val_dialogTop but_blue" style="right:120px;" name="term_add_zdyyl">预览</span>
+                                    <span class="t_right_span val_dialogTop but_yellow" style="right:60px;border-radius: 3px;" name="term_add_zdy">编辑</span>
+                                    <span class="t_right_span but_red" style="border-radius: 3px;">删除</span>
+                                </div>
+                                           </li>-->
+                                    </ul>
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="签订信息" readonly="true">
+                                        <span class="t_right_span val_dialogTop" style="color: #23a2f3;" name="term_pre_qdtk">预览</span>
+                                    </div>
+                                <div class="t_textinput">
+                                    <button class="but_icon val_dialogTop xj_tjhttk_btn_xxlA" name="term_add"><i style="margin-top:-2px;"></i>添加合同条款</button>
+                                </div>
+                                <h2 class="cont_title ">设定条约</h2>
+                                <div class="t_textinput">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>签订地点</div>
+                                    <div class="t_right"><input type="text" class="time_input htmb_qddd_xj_xxl" value="请输入签订地点" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                </div>
+                                <div class="t_textinput">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>供货日期</div>
+                                    <div class="t_right c_3">合同签订
+                                        <input type="text" class="time_input muban_inp_short htmb_ghrq_xj_xxl bargin_inp" onfocus="fn_focus(this);" onblur="fn_blur(this);">天内
+                                    </div>
+                                </div>
+                                <div class="t_textinput">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>开具发票</div>
+                                    <div class="t_right c_3">收到全部货款后
+                                        <input type="text" class="time_input muban_inp_short htmb_kjfp_xj_xxl bargin_inp" onfocus="fn_focus(this);" onblur="fn_blur(this);">天内
+                                    </div>
+                                </div>
+                                </div>
+                                <!--采购合同条款-->
+                               <div class="tabcontent none" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop" style="color: #23a2f3" name="term_prev_basecg">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main" id="main1">
+                                                <div class="muban_terms">条款<span>1</span>:商品信息</div>
+                                            </div>
+                                        </li>
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main">
+                                                <div class="muban_terms">条款<span>2</span>:供货日期</div>
+                                                <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_ghrq_cg">预览</span>
+                                            </div>
+                                        </li>
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main">
+                                                <div class="muban_terms">条款<span>3</span>:交付方式</div>
+                                                <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_fkfsCG">预览</span>
+                                            </div>
+                                        </li>
+
+
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main">
+                                                <div class="muban_terms">条款<span>4</span>:结算方式</div>
+                                                <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_pre_fpxx_cg">预览</span>
+                                            </div>
+                                            </li>
+                                            <i class="htmb_zdy_list_html_xxl"></i>
+                                        <!--<li class="ht_mb_term">
+                                            <div class="t_textinput">
+                                                <div class="muban_terms" style="width: 70%;">条款5：自定义条款</div>
+                                                <span class="t_right_span val_dialogTop but_blue" style="right:120px;" name="term_add_zdy">预览</span>
+                                                <span class="t_right_span val_dialogTop but_yellow" style="right:60px;border-radius: 3px;" name="term_add_zdy">编辑</span>
+                                                <span class="t_right_span but_red" style="border-radius: 3px;">删除</span>
+                                            </div>
+                                        </li>-->
+                                    </ul>
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="签订信息" readonly="true">
+                                        <span class="t_right_span val_dialogTop but_blue" name="term_pre_qdtkcg">预览</span>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <button class="but_icon val_dialogTop xj_tjhttk_btn_xxlA" name="term_add"><i style="margin-top:-2px;"></i>添加合同条款</button>
+                                    </div>
+                                    <h2 class="cont_title ">设定条约</h2>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>签订地点</div>
+                                        <div class="t_right"><input type="text" class="time_input htmb_xj_cgqddd_xxl" value="请输入签订地点" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>供货日期</div>
+                                        <div class="t_right c_3">合同签订
+                                            <input type="text" class="time_input muban_inp_short htmb_xj_cgghrq_xxl" style="width:80px;padding:0 10px;">天内
+                                        </div>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>开具发票</div>
+                                        <div class="t_right c_3">收到全部货款后
+                                            <input type="text" class="time_input muban_inp_short htmb_xj_cgkjfp_xxl" style="width:80px;padding:0 10px;">天内
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--员工合同条款-->
+                                 <div class="tabcontent none" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="term_prev_baseYG">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main">
+                                                <div class="muban_terms">条款<span>1</span>:合同期限</div>
+                                                <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="htterm_pre_htqx">预览</span>
+                                            </div>
+                                        </li>
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput">
+                                                <div class="muban_terms">条款<span>2</span>:工资待遇</div> <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="htterm_pre_gzdy">预览</span>
+                                            </div></li>
+                                        <!--<li class="ht_mb_term">
+                                            <div class="t_textinput">
+                                                <div class="muban_terms" style="width: 70%;">条款3：自定义条款</div>
+                                                <span class="t_right_span val_dialogTop but_blue" style="right:120px;" name="term_add_zdy">预览</span>
+                                                <span class="t_right_span val_dialogTop but_yellow" style="right:60px;border-radius: 3px;" name="term_add_zdy">编辑</span>
+                                                <span class="t_right_span but_red" style="border-radius: 3px;">删除</span>
+                                            </div>
+                                        </li>-->
+                                        <i class="htmb_zdy_list_html_xxl"></i>
+                                    </ul>
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="签订信息" readonly="true">
+                                        <span class="t_right_span val_dialogTop but_blue" name="term_pre_qdtkYG">预览</span>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <button class="but_icon val_dialogTop xj_tjhttk_btn_xxlA" name="term_add"><i style="margin-top:-2px;"></i>添加合同条款</button>
+                                    </div>
+                                    <h2 class="cont_title ">设定条约</h2>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>签订地点</div>
+                                        <div class="t_right"><input type="text" class="time_input htmb_xj_ygqddd_xxl" value="请输入签订地点" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                    </div>
+                                </div>
+                                <!--其他合同条款-->
+                                <div class="tabcontent none" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="term_prev_baseQT">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <!--<li class="ht_mb_term">
+                                            <div class="t_textinput">
+                                                <div class="muban_terms" style="width: 70%;">条款1：自定义条款</div>
+                                                <span class="t_right_span val_dialogTop but_blue" style="right:120px;" name="term_add_zdy">预览</span>
+                                                <span class="t_right_span val_dialogTop but_yellow" style="right:60px;border-radius: 3px;" name="term_add_zdy">编辑</span>
+                                                <span class="t_right_span but_red" style="border-radius: 3px;">删除</span>
+                                            </div>
+                                        </li>-->
+                                        <i class="htmb_zdy_list_html_xxl"></i>
+
+                                    </ul>
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="签订信息" readonly="true">
+                                        <span class="t_right_span val_dialogTop but_blue" name="term_pre_qdtkQT">预览</span>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <button class="but_icon val_dialogTop xj_tjhttk_btn_xxlA" name="term_add"><i style="margin-top:-2px;"></i>添加合同条款</button>
+                                    </div>
+                                    <h2 class="cont_title ">设定条约</h2>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>签订地点</div>
+                                        <div class="t_right"><input type="text" class="time_input htmb_xj_qthtqddd_xxl" value="请输入签订地点" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog_text sbar" style="height: auto;margin:0;padding:0 10px;">
+                                <h2 class="cont_title ">选择适用范围</h2>
+                                <div class="input_rightBtn" style="margin-top: 50px;height: inherit;">
+                                    <p class="input_tishi_top" style="margin-left:0;">以下部门今后新增的销售机会将使用此销售流程，请选择该制度的适用部门</p>
+                                    
+                                    <div class="goods_add_select_box goods_add_select_box_a" style="position: relative;">
+                                        <span class="inp_addBtn val_dialogTop" name="ht_people" style="position: absolute;right: 10px;width: 68px;"><b>+</b>选择部门</span>
+                                        <div class="goods_add_select_box_con" style="overflow: hidden;background: none;width: 100%;">
+                                            <ul class="inp_add_list_3 mbxj_xzbmlist_xxl" style="width: 530px;">
+                                                <!--<li style="margin-top: 1px;">硬盘 <i></i></li>-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">其他</h2>
+                                <div class="t_textinput">
+                                    <div class="t_left" style="width: 100%;"><i class="c_r">*</i>启用模板</div>
+                                    <div class="muban_radio c_9">
+                                        <label style="    margin-right: 20px;">
+                                            <input type="radio" name="aa" checked="checked" status="0">启用
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="aa" status="1">停用
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog_submit ht_submit" style="border:none;width: 90%;">
+                                <!--需要根据查看合同的不同，改变name值-->
+                                <button class="but_small but_yellow val_dialogTop htmb_xj_yunlan_btn_xxl" name="muban_pre_xs" >预览合同</button>
+                                <button class="but_small but_blue htmb_xj_baocunbtn_xxl">保存</button>
+                                <button class="but_small htmb_xj_quxibtn_xxl">取消</button>
+                            </div>
+                        </div>
+                        <!--<div class="ht_dialog_text_box tabcontent" style="display: none" name="muban_new">-->
+                            
+                        <!--</div>-->
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+<!--弹窗-编辑销售合同模板-->
+<!--<div class="dialog">
+    <div class="dialog_box " name="ht_muban_exit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_7">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑合同模板</h3>
+            </div>
+            <div class="dialog_text sbar" style="height:86%;padding:0;margin:0;">
+                    <p class="unhead_box">
+                        创建人：<span style="margin-right:10px;" class="bj_cjrs_htmb_xxl">张三</span>&nbsp;&nbsp;
+                    </p>
+                    <div class="dialog_text_con" style="padding:0 20px;">
+                        <div class="muban_add_taba clearfix"><button class="but_gray tabhover2 tab_btn left" name="muban_new">第一步 <span >设置基本信息</span></button><button class="but_gray tab_btn" name="muban_new">第二步 <span>选择适用范围</span></button></div>
+                        <div class="ht_dialog_text_box tabcontent"  style="display: block" name="muban_new">
+                            <div class="dialog_text" style="margin:0;padding:0 10px;">
+                                <h2 class="cont_title">编辑合同模板</h2>
+                                <div class="t_textinput " >
+                                    <div class="t_left"><i class="c_r">*</i>合同类型</div>
+                                    <div class="t_right">
+                                        <div class="inline_block select_mormal select_100">
+                                            <input type="text" class="select_input bj_htlxmcs_xxl" value="销售合同" thetype="1">
+                                            <i></i>
+                                            <ul class="select_list bj_xzlxs_btns_xxl">
+                                                <li class="tab_btn tabhover2" name="ht_muban_termBox" thetype="1">销售合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="2">采购合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="3">员工合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="4">其他合同</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="t_textinput " >
+                                    <div class="t_left"><i class="c_r">*</i>模板名称</div>
+                                    <div class="t_right"><div class="inline_block ht_mb_name"><input type="text" class="time_input bj_mbmcss_xxl" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">合同条款</h2>
+
+
+                                <div class="tabcontent" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="term_prev_base">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款1：付款方式</div>
+                                    <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="htterm_pre_fkfs">预览</span>
+                                </div>
+                                            </li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款2：商品信息</div>
+                                </div></li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款3：供货日期及交付方式</div>
+                                    <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="htterm_pre_ghrq">预览</span>
+                                </div></li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款4：发票信息</div>
+                                    <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="term_pre_fpxx">预览</span>
+                                </div></li>
+
+                                            <li>销售部A <i></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">其他</h2>
+                                <div class="t_textinput">
+                                    <div class="t_left" style="width: 100%;"><i class="c_r">*</i>启用模板</div>
+                                    <div class="muban_radio c_9">
+                                        <label style="    margin-right: 20px;">
+                                            <input type="radio" name="aa" checked="checked" status="0">启用
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="aa" status="1">停用
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog_submit ht_submit" style="border:none;width: 90%;">
+
+                                <button class="but_small but_yellow val_dialogTop htmb_xj_yunlan_btn_xxl" name="muban_pre_xs" >预览合同</button>
+                                <button class="but_small but_blue htmb_xj_baocunbtn_xxl">保存</button>
+                                <button class="but_small htmb_xj_quxibtn_xxl">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>-->
+<!--弹窗-编辑销售合同模板-->
+<!--<div class="dialog">
+    <div class="dialog_box " name="ht_muban_exit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_7">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑合同模板</h3>
+            </div>
+            <div class="dialog_text sbar" style="height:86%;padding:0;margin:0;">
+                    <p class="unhead_box">
+                        创建人：<span style="margin-right:10px;" class="bj_cjrs_htmb_xxl">张三</span>&nbsp;&nbsp;
+                    </p>
+                    <div class="dialog_text_con" style="padding:0 20px;">
+                        <div class="muban_add_taba clearfix"><button class="but_gray tabhover2 tab_btn left" name="muban_new">第一步 <span >设置基本信息</span></button><button class="but_gray tab_btn" name="muban_new">第二步 <span>选择适用范围</span></button></div>
+                        <div class="ht_dialog_text_box tabcontent"  style="display: block" name="muban_new">
+                            <div class="dialog_text" style="margin:0;padding:0 10px;">
+                                <h2 class="cont_title">编辑合同模板</h2>
+                                <div class="t_textinput " >
+                                    <div class="t_left"><i class="c_r">*</i>合同类型</div>
+                                    <div class="t_right">
+                                        <div class="inline_block select_mormal select_100">
+                                            <input type="text" class="select_input bj_htlxmcs_xxl" value="销售合同" thetype="1">
+                                            <i></i>
+                                            <ul class="select_list bj_xzlxs_btns_xxl">
+                                                <li class="tab_btn tabhover2" name="ht_muban_termBox" thetype="1">销售合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="2">采购合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="3">员工合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="4">其他合同</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="t_textinput " >
+                                    <div class="t_left"><i class="c_r">*</i>模板名称</div>
+                                    <div class="t_right"><div class="inline_block ht_mb_name"><input type="text" class="time_input bj_mbmcss_xxl" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                        <div class="muban_inp_right right">
+                                            <input type="checkbox" class="bj_isname_htmb_xxl">启用合同名称
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">合同条款</h2>
+
+
+                                <div class="tabcontent" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="term_prev_base">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款1：付款方式</div>
+                                    <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="htterm_pre_fkfs">预览</span>
+                                </div>
+                                            </li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款2：商品信息</div>
+                                </div></li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款3：供货日期及交付方式</div>
+                                    <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="htterm_pre_ghrq">预览</span>
+                                </div></li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款4：发票信息</div>
+                                    <span class="t_right_span val_dialogTop but_blue" style="background: #23a2f3" name="term_pre_fpxx">预览</span>
+                                </div></li>
+
+                                            <li>销售部A <i></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">其他</h2>
+                                <div class="t_textinput">
+                                    <div class="t_left" style="width: 100%;"><i class="c_r">*</i>启用模板</div>
+                                    <div class="muban_radio c_9">
+                                        <label style="    margin-right: 20px;">
+                                            <input type="radio" name="aa" checked="checked" status="0">启用
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="aa" status="1">停用
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog_submit ht_submit" style="border:none;width: 90%;">
+
+                                <button class="but_small but_yellow val_dialogTop htmb_xj_yunlan_btn_xxl" name="muban_pre_xs" >预览合同</button>
+                                <button class="but_small but_blue htmb_xj_baocunbtn_xxl">保存</button>
+                                <button class="but_small htmb_xj_quxibtn_xxl">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>-->
+<!--</div>-->
+<!--弹窗-编辑销售合同模板-->
+<div class="dialog">
+    <div class="dialog_box " name="ht_muban_exit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_7">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑合同模板</h3>
+            </div>
+            <div class="dialog_text sbar" style="height:86%;padding:0;margin:0;">
+                    <p class="unhead_box">
+                    	<i>创建日期：</i><span style="margin-right:10px;" class="bj_cjriqidata_htmb_xxl">张三</span>&nbsp;&nbsp;
+                        <i class="htmb_bj_genxinren">创建人：</i><span style="margin-right:10px;" class="bj_cjrs_htmb_xxl">张三</span>&nbsp;&nbsp;
+                    </p>
+                    <div class="dialog_text_con" style="padding:0 20px;">
+                       <!-- <div class="muban_add_taba clearfix"><button class="but_gray tabhover2 tab_btn left" name="muban_new">第一步 <span >设置基本信息</span></button><button class="but_gray tab_btn" name="muban_new">第二步 <span>选择适用范围</span></button></div>-->
+                        <div class="ht_dialog_text_box tabcontent"  style="display: block" name="muban_new">
+                            <div class="dialog_text" style="margin:0;padding:0 10px;">
+                                <h2 class="cont_title">编辑合同模板</h2>
+                                <!--<div class="t_textinput " >
+                                    <div class="t_left"><i class="c_r">*</i>合同类型</div>
+                                    <div class="t_right">
+                                        <div class="inline_block select_mormal select_100">
+                                            <input type="text" class="select_input bj_htlxmcs_xxl" value="销售合同" thetype="1">
+                                            <i></i>
+                                            <ul class="select_list bj_xzlxs_btns_xxl">
+                                                <li class="tab_btn tabhover2" name="ht_muban_termBox" thetype="1">销售合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="2">采购合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="3">员工合同</li>
+                                                <li class="tab_btn" name="ht_muban_termBox" thetype="4">其他合同</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="t_textinput " >
+                                    <div class="t_left"><i class="c_r">*</i>模板名称</div>
+                                    <div class="t_right"><div class="inline_block ht_mb_name"><input type="text" class="time_input bj_mbmcss_xxl" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                        <!--<div class="muban_inp_right right">
+                                            <input type="checkbox" class="bj_isname_htmb_xxl">启用合同名称
+                                        </div>-->
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">合同条款</h2>
+
+                                <!--销售合同条款-->
+                                <div class="tabcontent" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_prev_base">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款1：付款方式</div>
+                                    <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_fkfs">预览</span>
+                                </div>
+                                            </li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款2：商品信息</div>
+                                </div></li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款3：供货日期及交付方式</div>
+                                    <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_ghrq">预览</span>
+                                </div></li>
+                                        <li class="ht_mb_term">
+                                <div class="t_textinput main">
+                                    <div class="muban_terms">条款4：发票信息</div>
+                                    <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_pre_fpxx">预览</span>
+                                </div></li>
+
+                                        <!--<li class="ht_mb_term">
+                                <div class="t_textinput">
+                                    <div class="muban_terms" style="width: 70%;">条款5：质量及保修</div>
+                                    <span class="t_right_span val_dialogTop but_blue" style="right:120px;" name="term_add_zdyyl">预览</span>
+                                    <span class="t_right_span val_dialogTop but_yellow" style="right:60px;border-radius: 3px;" name="term_add_zdy">编辑</span>
+                                    <span class="t_right_span but_red" style="border-radius: 3px;">删除</span>
+                                </div>
+                                           </li>-->
+                                           <i class="bj_zdylists_htmls_xxl"></i>
+                                    </ul>
+
+                                <div class="t_textinput">
+                                    <input type="text" class="time_input inp_noInput" value="签订信息" readonly="true">
+                                    <span class="t_right_span val_dialogTop" style="color: #23a2f3" name="term_pre_qdtk">预览</span>
+                                </div>
+                                <div class="t_textinput">
+                                    <button class="but_icon val_dialogTop xj_tjhttk_btn_xxlB" name="term_add"><i style="margin-top:-2px;"></i>添加合同条款</button>
+                                </div>
+                                <h2 class="cont_title ">设定条约</h2>
+                                <div class="t_textinput">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>签订地点</div>
+                                    <div class="t_right"><input type="text" class="time_input bj_xs_qddd_xxl" value="请输入签订地点" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                </div>
+                                <div class="t_textinput">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>供货日期</div>
+                                    <div class="t_right c_3">合同签订
+                                        <input type="text" class="time_input muban_inp_short bj_xs_gurq_xxl" style="width:80px;padding:0 10px;">天内
+                                    </div>
+                                </div>
+                                <div class="t_textinput">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>开具发票</div>
+                                    <div class="t_right c_3">收到全部货款后
+                                        <input type="text" class="time_input muban_inp_short bj_xs_kjfp_xxl" style="width:80px;padding:0 10px;">天内
+                                    </div>
+                                </div>
+                                </div>
+                                <!--采购合同条款-->
+                                <div class="tabcontent none" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop" style="color: #23a2f3" name="term_prev_basecg">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main" id="main1">
+                                                <div class="muban_terms">条款1：商品信息</div>
+                                            </div></li>
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main">
+                                                <div class="muban_terms">条款2：供货日期</div>
+                                                <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_ghrq_cg">预览</span>
+                                            </div></li>
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main">
+                                                <div class="muban_terms">条款3：交付方式</div>
+                                                <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_fkfsCG">预览</span>
+                                            </div>
+                                        </li>
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main">
+                                                <div class="muban_terms">条款4：结算方式</div>
+                                                <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_pre_fpxx_cg">预览</span>
+                                            </div></li>
+                                        <!--<li class="ht_mb_term">
+                                            <div class="t_textinput">
+                                                <div class="muban_terms" style="width: 70%;">条款5：自定义条款</div>
+                                                <span class="t_right_span val_dialogTop but_blue" style="right:120px;" name="term_add_zdy">预览</span>
+                                                <span class="t_right_span val_dialogTop but_yellow" style="right:60px;border-radius: 3px;" name="term_add_zdy">编辑</span>
+                                                <span class="t_right_span but_red" style="border-radius: 3px;">删除</span>
+                                            </div>
+                                        </li>-->
+                                        <i class="bj_zdylists_htmls_xxl"></i>
+                                    </ul>
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="签订信息" readonly="true">
+                                        <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_pre_qdtkcg">预览</span>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <button class="but_icon val_dialogTop xj_tjhttk_btn_xxlB" name="term_add"><i style="margin-top:-2px;"></i>添加合同条款</button>
+                                    </div>
+                                    <h2 class="cont_title ">设定条约</h2>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>签订地点</div>
+                                        <div class="t_right"><input type="text" class="time_input bj_cg_qddd_xxl" value="请输入签订地点" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>供货日期</div>
+                                        <div class="t_right c_3">合同签订
+                                            <input type="text" class="time_input muban_inp_short bj_cg_ghrq_xxl" style="width:80px;padding:0 10px;">天内
+                                        </div>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>开具发票</div>
+                                        <div class="t_right c_3">收到全部货款后
+                                            <input type="text" class="time_input muban_inp_short bj_cg_kjfp_xxl" style="width:80px;padding:0 10px;">天内
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--员工合同条款-->
+                                <div class="tabcontent none" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_prev_baseYG">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput main">
+                                                <div class="muban_terms">条款1：合同期限</div>
+                                                <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_htqx">预览</span>
+                                            </div>
+                                        </li>
+                                        <li class="ht_mb_term">
+                                            <div class="t_textinput">
+                                                <div class="muban_terms">条款2：工资待遇</div> <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="htterm_pre_gzdy">预览</span>
+                                            </div>
+                                            </li>
+                                        <!--<li class="ht_mb_term">
+                                            <div class="t_textinput">
+                                                <div class="muban_terms" style="width: 70%;">条款3：自定义条款</div>
+                                                <span class="t_right_span val_dialogTop but_blue" style="right:120px;" name="term_add_zdy">预览</span>
+                                                <span class="t_right_span val_dialogTop but_yellow" style="right:60px;border-radius: 3px;" name="term_add_zdy">编辑</span>
+                                                <span class="t_right_span but_red" style="border-radius: 3px;">删除</span>
+                                            </div>
+                                        </li>-->
+                                        <i class="bj_zdylists_htmls_xxl"></i>
+                                    </ul>
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="签订信息" readonly="true">
+                                        <span class="t_right_span val_dialogTop" style="color: #23a2f3" name="term_pre_qdtkYG">预览</span>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <button class="but_icon val_dialogTop xj_tjhttk_btn_xxlB" name="term_add"><i style="margin-top:-2px;"></i>添加合同条款</button>
+                                    </div>
+                                    <h2 class="cont_title ">设定条约</h2>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>签订地点</div>
+                                        <div class="t_right"><input type="text" class="time_input bj_yg_qddds_xxl" value="请输入签订地点" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                    </div>
+                                </div>
+                                <!--其他合同条款-->
+                                <div class="tabcontent none" name="ht_muban_termBox">
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="基本条款" readonly="true">
+                                        <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_prev_baseQT">预览</span>
+                                    </div>
+                                    <ul class="ht_mb_list">
+                                        <!--<li class="ht_mb_term">
+                                            <div class="t_textinput">
+                                                <div class="muban_terms" style="width: 70%;">条款3：自定义条款</div>
+                                                <span class="t_right_span val_dialogTop but_blue" style="right:120px;" name="term_add_zdy">预览</span>
+                                                <span class="t_right_span val_dialogTop but_yellow" style="right:60px;border-radius: 3px;" name="term_add_zdy">编辑</span>
+                                                <span class="t_right_span but_red" style="border-radius: 3px;">删除</span>
+                                            </div>
+                                        </li>-->
+                                        <i class="bj_zdylists_htmls_xxl"></i>
+
+                                    </ul>
+                                    <div class="t_textinput">
+                                        <input type="text" class="time_input inp_noInput" value="签订信息" readonly="true">
+                                        <span class="t_right_span val_dialogTop " style="color: #23a2f3" name="term_pre_qdtkQT">预览</span>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <button class="but_icon val_dialogTop xj_tjhttk_btn_xxlB" name="term_add"><i style="margin-top:-2px;"></i>添加合同条款</button>
+                                    </div>
+                                    <h2 class="cont_title ">设定条约</h2>
+                                    <div class="t_textinput">
+                                        <div class="t_left"><i class="c_r v_hidden">*</i>签订地点</div>
+                                        <div class="t_right"><input type="text" class="time_input bj_qt_qddds_xxl" value="请输入签订地点" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog_text sbar" style="height: auto;margin:0;padding:0 10px;">
+                                <h2 class="cont_title ">选择适用范围</h2>
+                                <div class="input_rightBtn" style="margin-top: 50px;">
+                                    <p class="input_tishi_top" style="margin-left:0;">以下部门今后新增的销售机会将使用此销售流程，请选择该制度的适用部门</p>
+                                    <div class="input_rightBtn_right" style="left:0;width: 100%">
+                                        <div class="rightinput_box">
+                                            <input type="text" class="c_3">
+                                            <span class="inp_addBtn val_dialogTop" name="ht_people"><b>+</b>选择部门</span>
+                                        </div>
+                                        <ul class="inp_add_list mbxj_xzbmlist_xxl">
+                                            <!--<li>销售部A <i></i></li>
+                                            <li>销售部A <i></i></li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">其他</h2>
+                                <div class="t_textinput">
+                                    <div class="t_left" style="width: 100%;"><i class="c_r">*</i>启用模板</div>
+                                    <div class="muban_radio c_9">
+                                        <label style="    margin-right: 20px;">
+                                            <input type="radio" name="aa" checked="checked" status="0">启用
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="aa" status="1">停用
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog_submit ht_submit" style="border:none;width: 90%;">
+                                <!--需要根据查看合同的不同，改变name值-->
+                                <button class="but_small but_yellow val_dialogTop bj_yunlan_btns_xxl" name="muban_pre_xs" >预览合同</button>
+                                <button class="but_small but_blue bj_listbaoc_btns_xxl">保存</button>
+                                <button class="but_small htmb_xj_quxibtn_xxl">取消</button>
+                            </div>
+                        </div>
+                        <!--<div class="ht_dialog_text_box tabcontent" style="display: none" name="muban_new">
+                            <div class="dialog_text sbar" style="height: auto;margin:0;padding:0 10px;">
+                                <h2 class="cont_title ">选择适用范围</h2>
+                                <div class="input_rightBtn" style="margin-top: 50px;">
+                                    <p class="input_tishi_top" style="margin-left:0;">以下部门今后新增的销售机会将使用此销售流程，请选择该制度的适用部门</p>
+                                    <div class="input_rightBtn_right" style="left:0;width: 100%">
+                                        <div class="rightinput_box">
+                                            <input type="text" class="c_3">
+                                            <span class="inp_addBtn val_dialogTop" name="ht_people"><b>+</b>选择部门</span>
+                                        </div>
+                                        <ul class="inp_add_list mbxj_xzbmlist_xxl">
+                                            <!--<li>销售部A <i></i></li>
+                                            <li>销售部A <i></i></li>-->
+                                        <!--</ul>
+                                    </div>
+                                </div>
+                                <h2 class="cont_title " style="margin-top:30px;margin-bottom: 20px;">其他</h2>
+                                <div class="t_textinput">
+                                    <div class="t_left" style="width: 100%;"><i class="c_r">*</i>启用模板</div>
+                                    <div class="muban_radio c_9">
+                                        <label style="    margin-right: 20px;">
+                                            <input type="radio" name="aa" checked="checked" status="0">启用
+                                        </label>
+                                        <label >
+                                            <input type="radio" name="aa" status="1">停用
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog_submit ht_submit" style="border:none;width: 90%;">-->
+                                <!--需要根据查看合同的不同，改变name值-->
+                                <!--<button class="but_small but_yellow val_dialogTop bj_yunlan_btns_xxl" name="muban_pre_xs" >预览合同</button>
+                                <button class="but_small but_blue bj_listbaoc_btns_xxl">保存</button>
+                                <button class="but_small htmb_xj_quxibtn_xxl">取消</button>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-销售合同预览-基本条款-->
+<div class="dialog">
+    <div class="dialog_box " name="term_prev_base">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 440px;width: 700px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同基本条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">基本条款</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span style="width: 200px;"></span>
+                        </li>
+                        <li>
+                            签订日期：<span style="width: 200px;"></span>
+                        </li>
+                        <li>
+                            签订地点：<span style="width: 200px;"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            需方名称(以下简称甲方)：<span></span>
+                        </li>
+                        <li>
+                            供方名称(以下简称乙方)：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>乙方向甲方销售<span></span>，为维护双方的合法权益，经甲、乙双方充分协商，根据《中华人民共和国合同法》之规定，达成以下协议：</p>
+
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-销售合同预览-付款方式-->
+<div class="dialog">
+    <div class="dialog_box " name="htterm_pre_fkfs">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:470px;width: 700px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览合同条款-付款方式</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">一、付款方式</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同总金额为：<span></span>元(小写)<span></span>(大写)。
+                        </li>
+                        <li>
+                            <i>甲方应于合同签订后</i>：<span></span><i>日内付</i><span></span><i>的合同货款</i><span></span><i>元;</i>
+                        </li>
+                        <li>
+                            <i>甲方应于合同签订后</i>：<span></span><i>日内付</i><span></span><i>的合同货款</i><span></span><i>元;</i>
+                        </li>
+                        <li>
+                            <i>合同剩余</i>：<span></span><i>余款</i><span></span><i>元，在合同签订后</i><span></span><i>日内一次性汇入乙方指定账户。</i>
+                        </li>
+                        <li>乙方指定账户信息为：</li>
+                        <li>开户名称：<span></span></li>
+                        <li>开户银行：<span></span></li>
+                        <li>汇款账号：<span></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-销售合同预览-供货日期及交付方式-->
+<div class="dialog">
+    <div class="dialog_box " name="htterm_pre_ghrq">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 340px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览合同条款-供货日期及交付方式</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">三、供货日期及交付方式</h2>
+                <div class="ht_msg">
+
+                    <ul class="ht_msg_list">
+                        <li>本合同签订后 <span style="width: 30px;"></span>个工作日内</li>
+                        <li>
+                            乙方将货物运送至甲方指定地点：<span></span>
+                        </li>
+                        <li>
+                            联系人：<span></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <!--<li>
+                            运费由：<span></span>承担。(或运费由 <span style="width: 30px;"></span>方承担。 <span style="border:none;">根据报价单运费状态</span>)
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-销售合同预览-发票信息-->
+<div class="dialog">
+    <div class="dialog_box " name="term_pre_fpxx">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 340px;width: 700px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览合同条款-发票信息</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">四、发票信息</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>乙方收到甲方全部货款后 <span></span>日内向甲方开具等额增值税发票。</li>
+                        <li>开票名称：<span></span></li>
+                        <li>开票银行：<span></span></li>
+                        <li>账户：<span></span></li>
+
+                        <li>注册地址电话：<span></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-销售合同预览-签订条款-->
+<div class="dialog">
+    <div class="dialog_box " name="term_pre_qdtk">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 400px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同签订条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">签订条款</h2>
+                <div class="ht_msg_bottom clearfix">
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">需方名称(甲方)(盖章)：</li>
+                        <li>
+                            签约人：<span></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <li>
+                            日期：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            地址：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            传真：<span></span>
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">供方名称(乙方)(盖章)：</li>
+                        <li>
+                            签约人：<span></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <li>
+                            传真：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            地址：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            日期：<span></span>
+                        </li>
+                        <li>
+                            审核人：<span style="border-color:#000;"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-销售合同预览-自定义条款-质量及保修-->
+<div class="dialog">
+    <div class="dialog_box htmb_zdy_yulan_wu_xxl" name="term_add_zdyyl">
+        <!--<div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 340px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览合同条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con" style="padding:20px 40px;">
+                <h2 class="muban_pre_h2">五、质量及保修</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>产品质量应符合合同设备品牌原厂/公司出厂标准。保修应遵守厂商售后规定,根据厂家售后条例执行。保修期后产品发生故障，乙方有优先服权乙方服务后有权收取成本费用。 </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>-->
+    </div>
+</div>
+<!--弹窗-采购合同预览-基本条款-->
+<div class="dialog">
+    <div class="dialog_box " name="term_prev_basecg">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 440px;width: 700px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同基本条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">基本条款</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span style="width: 200px;"></span>
+                        </li>
+                        <li>
+                            签订日期：<span style="width: 200px;"></span>
+                        </li>
+                        <li>
+                            签订地点：<span style="width: 200px;"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            采购单位(以下简称甲方)：<span></span>
+                        </li>
+                        <li>
+                            供货单位(以下简称乙方)：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>为了双方共同的利益，现双方经充分协商制定本合同，根据《中华人民共和国合同法》之规定，供双方共同遵守相互监督，产品信息如下（或详见附件设备清单）：</p>
+                    <!--<p>乙方向甲方销售<span></span>，为维护双方的合法权益，经甲、乙双方充分协商，根据《中华人民共和国合同法》之规定，达成以下协议：</p>-->
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-采购合同预览-供货日期-->
+<div class="dialog">
+        <div class="dialog_box " name="htterm_pre_ghrq_cg">
+            <div class="dialog_screen"></div>
+            <div class="dialog_content dialog_content_3" style="height: 210px;">
+                <div class="dialog_title">
+                    <i class="dialog_close">关闭</i>
+                    <h3 class="dialog_h3">预览合同条款-供货日期</h3>
+                </div>
+                <div class="dialog_text muban_pre_con">
+                    <h2 class="muban_pre_h2">二、供货日期及交付方式</h2>
+                    <div class="ht_msg">
+
+                        <ul class="ht_msg_list">
+                            <li>本合同签订后 <span style="width: 30px;"></span>个工作日内</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dialog_submit">
+                    <button class="but_small but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--弹窗-采购合同预览-交付方式-->
+<div class="dialog">
+    <div class="dialog_box " name="htterm_pre_fkfsCG">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:400px;width: 700px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览合同条款-交付方式</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">三、交付方式</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>乙方将货物运送至甲方指定地点：<span></span></li>
+                        <li>联系人：<span></span></li>
+                        <li>电话：<span></span></li>
+                        <!--<li>
+                            <i>运费由</i><span></span><i>方承担。（或，运费由</i><span></span><i>方承担。</i><i class="c_r">根据报价单运费状态</i>）
+                        </li>-->
+                        <li>交货方式：<span></span></li>
+                        <li>运输方式：<span></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗采购合同预览-结算方式-->
+<div class="dialog">
+        <div class="dialog_box " name="term_pre_fpxx_cg">
+            <div class="dialog_screen"></div>
+            <div class="dialog_content dialog_content_3" style="height: 400px;width: 700px;">
+                <div class="dialog_title">
+                    <i class="dialog_close">关闭</i>
+                    <h3 class="dialog_h3">预览合同条款-结算方式</h3>
+                </div>
+                <div class="dialog_text muban_pre_con">
+                    <h2 class="muban_pre_h2">四、结算方式</h2>
+                    <div class="ht_msg">
+                        <ul class="ht_msg_list">
+                            <li>甲方应于合同签订后 <span></span>日内一次性汇入乙方指定账户。</li>
+                            <li style="margin-top: 30px;">乙方指定账户信息为：</li>
+                            <li>本合同签订后 <span></span>个工作日内乙方向甲方开具发票。</li>
+                            <li>开户名称：<span></span></li>
+                            <li>开户银行：<span></span></li>
+                            <li>汇款账号：<span></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dialog_submit">
+                    <button class="but_small but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--弹窗-采购合同预览-签订条款-->
+<div class="dialog">
+    <div class="dialog_box " name="term_pre_qdtkcg">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 400px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同签订条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">签订条款</h2>
+                <div class="ht_msg_bottom clearfix">
+                    <ul class="ht_list_last left" style="width: 50%;">
+                        <!--<li class="ht_seal">需方名称(甲方)(盖章)：</li>-->
+                        <li>
+                            供货单位：<span></span>
+                        </li>
+                        <li>
+                            地址：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            开户银行：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            账号：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <li>
+                            委托代理人：(签字)<span></span>
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li>采购单位：<span></span></li>
+
+                        <li>
+                            地址：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            税号：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            账号：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <li>
+                            委托代理人：(签字)<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <!--<div class="t_textinput">-->
+                <!--供方名称(以下简称乙方)：-->
+                <!--<div class="inline_block"><input type="text" class="time_input inp_noInput c_3" value="联创万通(北京)科技有限公司" readonly="true"></div>-->
+                <!--</div>-->
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗-员工合同预览-基本条款-->
+<div class="dialog">
+    <div class="dialog_box " name="term_prev_baseYG">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 440px;width: 700px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同基本条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">基本条款</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span style="width: 200px;"></span>
+                        </li>
+                        <li>
+                            签订日期：<span style="width: 200px;"></span>
+                        </li>
+                        <li>
+                            签订地点：<span style="width: 200px;"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            用人单位(以下简称甲方)：<span></span>
+                        </li>
+                        <li>
+                            职工(以下简称乙方)：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>根据(中华人民共和国劳动法》和国家及省的有关规定，甲乙双方按照平等自愿、协商一致的原则订立本合同。</p>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-员工合同预览-合同期限-->
+<div class="dialog">
+    <div class="dialog_box " name="htterm_pre_htqx">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:330px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览合同条款-付款方式</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">一、合同期限：</h2>
+                <div class="ht_msg">
+                    <p></p>
+                    <p>双方同意按以下方式确定本合同期限:</p>
+                    <p>1、期限：从 <span style="width: 30px;"></span>年 <span style="width: 30px;"> </span> 月 <span style="width: 30px;"></span> 日起至<span style="width: 30px;">  </span >年 <span style="width: 30px;">  </span> 月 <span style="width: 30px;"> </span>日止(试用期 <span style="width: 30px;"></span>个月) </p>
+                    <p>2、合同终止后双方可以在平等自愿条件下商议续签。</p>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-员工合同预览-工资待遇-->
+<div class="dialog">
+    <div class="dialog_box " name="htterm_pre_gzdy">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:280px;width: 600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览合同条款-工资待遇</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">二、工资待遇：</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                    <li>乙方正常工作时间的工资按下列形式执行，不得低于当地最低工资标准。  基本工资： <span></span>元/月；绩效工资：<span></span>元/月，总计 <span></span>元/月</li></ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-员工合同预览-签订条款-->
+<div class="dialog">
+    <div class="dialog_box" name="term_pre_qdtkYG">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 400px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同签订条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">签订条款</h2>
+                <div class="ht_msg_bottom clearfix">
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">甲方(盖章)：</li>
+                        <li>
+                            <span style="width: 30px;min-width: 30px;"></span>年 <span style="width: 30px;min-width: 30px;"></span>月<span style="width: 30px;min-width: 30px;"></span>日
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">乙方(签名)：</li>
+                        <li style="margin-top:50px;">
+                            <span style="width: 30px;min-width: 30px;"></span>年 <span style="width: 30px;min-width: 30px;"></span>月<span style="width: 30px;min-width: 30px;"></span>日
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-其他合同预览-基本条款-->
+<div class="dialog">
+    <div class="dialog_box " name="term_prev_baseQT">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 440px;width: 700px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同基本条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">基本条款</h2>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span style="width: 200px;"></span>
+                        </li>
+                        <li>
+                            签订日期：<span style="width: 200px;"></span>
+                        </li>
+                        <li>
+                            签订地点：<span style="width: 200px;"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            甲方：<span></span>
+                        </li>
+                        <li>
+                            乙方：<span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-其他合同预览-签订条款-->
+<div class="dialog">
+    <div class="dialog_box" name="term_pre_qdtkQT">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 300px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同签订条款</h3>
+            </div>
+            <div class="dialog_text muban_pre_con">
+                <h2 class="muban_pre_h2">签订条款</h2>
+                <div class="ht_msg_bottom clearfix">
+                <ul class="ht_list_last left">
+                    <li class="ht_seal">甲方(盖章)：</li>
+                    <li>
+                        签约人：<span></span>
+                    </li>
+
+                    <li>
+                        <span style="width: 40px;min-width: 40px;"></span>年 <span style="width: 40px;min-width: 40px;"></span>月<span style="width: 40px;min-width: 40px;"></span>日
+                    </li>
+                </ul>
+                <ul class="ht_list_last left">
+                    <li class="ht_seal">乙方(盖章)：</li>
+                    <li>
+                        签约人：<span></span>
+                    </li>
+                    <li>
+                        <span style="width: 40px;min-width: 40px;"></span>年 <span style="width: 40px;min-width: 40px;"></span>月<span style="width: 40px;min-width: 40px;"></span>日
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-添加条款-编辑-->
+<div class="dialog">
+	
+    <div class="dialog_box " name="term_add_zdy">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 340px;">
+        	<i class="htnb_tjtk_bj_htmlxxl"></i>
+            
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue htmb_xjbj_tk_quedbtnxxl">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-添加条款-编辑-->
+<div class="dialog">
+    <div class="dialog_box " name="zuofei_tanchuang">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 250px;width:340px;">
+        	<h3 style="line-height: 200px;padding: 0 43px;">作废后将放入回收站，确认要作废吗</h1>
+            
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue htmb_zuofeibtn_xxl">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-添加条款-->
+<div class="dialog">
+	<!--<div class="dialog_box" name="term_add">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 800px;height: 550px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">在线编辑</h3>
+               
+            </div>
+            <div class="dialog_text" style="margin-top: 1%;">
+                
+                <div id="sample">
+                    <h1><input type="text" class="time_input htmb_val_tkmc_xxl inp_606" value="标题" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);"></h1>
+                   
+                    <div id="editor" style="width:722px;height:240px;margin-top:15px;"></div>
+                   
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small htmb_add_listxxl" >提交</button><button class="but_yellow val_dialogTop but_small zcj_preview_gs_zd_btn" name="hr_gszd_yl">预览</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+
+    </div>-->
+    <div class="dialog_box " name="term_add">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 340px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加合同条款</h3>
+            </div>
+            <div class="dialog_text" style="padding:20px 40px;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>条款名称</div>
+                    <div class="t_right"><input type="text" class="time_input htmb_val_tkmc_xxl" value="请输入条款名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput t_textarea">
+                    <div class="t_left"><i class="c_r ">*</i>条款内容</div>
+                    <div class="t_right ht_mb_right" style="height: 112px;"><textarea class="txt_normal htmb_val_tknr_xxl" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="height: 112px;">请输入条款内容</textarea></div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small normal_dialog but_blue htmb_add_listxxl">确定</button><button class="but_small normal_dialog but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-预览销售合同,只要是name值不同，同时改变按钮的name值-->
+<div class="dialog">
+    <div class="dialog_box" name="muban_pre_xs">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3 muban_pre_con ht_mbxsprint_box" style="height: 640px;">
+            <div class="dialog_title">
+                <i class="dialog_close noprint">关闭</i>
+                <h3 class="dialog_h3 ht_title1" style="text-align: center;font-size: 18px;font-weight: 600;">销售合同</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin:0;padding:3% 40px;">
+                    <!--<h3 class="ht_title1">销售合同</h3>-->
+                <div class="ht_msg ht_msg_tit">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span></span>
+                        </li>
+                        <li>
+                            签订日期：<span></span>
+                        </li>
+                        <li>
+                            签订地点：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg ht_msg_tit">
+                    <ul class="ht_msg_list">
+                        <li>
+                            需方名称(以下简称甲方)：<span></span>
+                        </li>
+                        <li>
+                            供方名称(以下简称乙方)：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>乙方向甲方销售<span></span>，为维护双方的合法权益，经甲、乙双方充分协商，根据《中华人民共和国合同法》之规定，达成以下协议：</p>
+                </div>
+                <div class="ht_msg">
+                    <p>一、付款方式：</p>
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同总金额为：<span></span>元(小写)<span></span>(大写)。
+                        </li>
+                        <li>
+                            <i>甲方应于合同签订后</i>：<span></span><i>日内付</i><span></span><i>的合同货款</i><span></span><i>元;</i>
+                        </li>
+                        <li>
+                            <i>甲方应于合同签订后</i>：<span></span><i>日内付</i><span></span><i>的合同货款</i><span></span><i>元;</i>
+                        </li>
+                        <li>
+                            <i>合同剩余</i>：<span></span><i>余款</i><span></span><i>元，在合同签订后</i><span></span><i>日内一次性汇入乙方指定账户。</i>
+                        </li>
+                        <li>乙方指定账户信息为：</li>
+                        <li>开户名称：<span></span></li>
+                        <li>开户银行：<span></span></li>
+                        <li>汇款账号：<span></span></li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>二、商品信息</p>
+                    <p>详见附件商品报价单</p>
+                </div>
+                <div class="ht_msg">
+                    <p>三、供货日期及交付方式：</p>
+                    <ul class="ht_msg_list">
+                        <li>本合同签订后 <span></span>个工作日内</li>
+                        <li>交互方式：</li>
+                        <li>
+                            乙方将货物运送至甲方指定地点：<span></span>
+                        </li>
+                        <li>
+                            联系人：<span></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <!--<li>
+                            运费由：<span></span>承担。(或运费由 <span style="width: 30px;"></span>方承担。 <span style="border:none;">根据报价单运费状态</span>)
+                        </li>-->
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>四、开具发票：</p>
+                    <ul class="ht_msg_list">
+                        <li>乙方收到甲方全部货款后 <span></span>日内向甲方开具等额增值税发票。</li>
+                        <li>开票名称：<span></span></li>
+                        <li>开票银行：<span></span></li>
+                        <li>账户：<span></span></li>
+
+                        <li>注册地址电话：<span></span></li>
+                    </ul>
+                </div>
+                <div class="ht_msg_bottom relative ht_msg_tit">
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">需方名称(甲方)(盖章)：</li>
+                        <li>
+                            签约人：<span></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <li>
+                            日期：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            地址：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            传真：<span></span>
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">供方名称(乙方)(盖章)：</li>
+                        <li>
+                            签约人：<span></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <li>
+                            传真：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            地址：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            日期：<span></span>
+                        </li>
+                        <li>
+                            审核人：<span style="border-color:#000;"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit noprint">
+               <button class="but_grey_a but_small but_zwpdf daochu"><i style="vertical-align: middle;margin-top:-2px;"></i>导出PDF或打印</button>
+              <!--<button class="but_blue but_small but_print2 htmb_btnPrint"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-预览采购合同-->
+<div class="dialog">
+    <div class="dialog_box" name="muban_pre_cg">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3 muban_pre_con ht_mbxsprint_box"  style="height: 640px;">
+            <div class="dialog_title">
+                <i class="dialog_close noprint">关闭</i>
+                <h3 class="dialog_h3" style="text-align: center;font-size: 18px;font-weight: 600;">采购合同</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin:0;padding:3% 40px;">
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span></span>
+                        </li>
+                        <li>
+                            签订日期：<span></span>
+                        </li>
+                        <li>
+                            签订地点：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            需方名称(以下简称甲方)：<span></span>
+                        </li>
+                        <li>
+                            供方名称(以下简称乙方)：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>乙方向甲方销售<span></span>，为维护双方的合法权益，经甲、乙双方充分协商，根据《中华人民共和国合同法》之规定，达成以下协议：</p>
+                </div>
+
+                <div class="ht_msg">
+                    <p>一、商品信息</p>
+                    <p>详见附件商品报价单</p>
+                </div>
+                <div class="ht_msg">
+                    <p>二、供货日期：</p>
+                    <p>本合同签订后 <span></span>个工作日内</p>
+                </div>
+                <div class="ht_msg">
+                    <p>三、交付方式：</p>
+                    <ul class="ht_msg_list">
+                        <li>
+                            乙方将货物运送至甲方指定地点：<span></span>
+                        </li>
+                        <li>
+                            联系人：<span></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <!--<li>
+                            运费由：<span></span>承担。(或运费由 <span style="width: 30px;"></span>方承担。 <span style="border:none;">根据报价单运费状态</span>)。
+                        </li>-->
+                        <li>
+                            交货方式：<span></span>
+                        </li>
+                        <li>
+                            运输方式：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>四、付款方式：</p>
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同总金额为：<span></span>元(小写)<span></span>(大写)。
+                        </li>
+                        <li>
+                            <i>甲方应于合同签订后</i>：<span></span><i>日内,甲方向乙方支付合同总价款：</i><span></span><i>元(人民币大写)</i><span></span><i>。</i>
+                        </li>
+                    </ul>
+                    <div class="ht_msg">
+                        <p>乙方指定账户信息为：</p>
+                        <p>本合同签订后 <span></span>个工作日内乙方向甲方开具发票</p>
+                        <p>开户名称：<span></span></p>
+                        <p>开户银行：<span></span></p>
+                        <p>汇款账号：<span></span></p>
+                    </div>
+                </div>
+
+                <div class="ht_msg_bottom clearfix">
+                    <ul class="ht_list_last left">
+                        <!--<li class="ht_seal">需方名称(甲方)(盖章)：</li>-->
+                        <li>
+                            采购单位：<span></span>
+                        </li>
+                        <li>
+                            委托代理人：(签字)<span></span>
+                        </li>
+                        <li>
+                            地址：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            开户银行：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            账号：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <li>
+                            签字：<span></span>
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li>供方单位：<span></span></li>
+                        <li>
+                            委托代理人：(签字)<span></span>
+                        </li>
+                        <li>
+                            地址：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            开户银行：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            账号：<span style="border-color:#000;"></span>
+                        </li>
+                        <li>
+                            电话：<span></span>
+                        </li>
+                        <li>
+                            签字：<span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit noprint">
+                <button class="but_grey_a but_small but_zwpdf daochu"><i style="vertical-align: middle;margin-top:-2px;"></i>导出PDF或打印</button>
+                <!--<button class="but_blue but_small but_print2 htmb_btnPrint"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-预览员工合同-->
+<div class="dialog">
+    <div class="dialog_box" name="muban_pre_yg">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3 muban_pre_con ht_mbxsprint_box" style="height: 640px;">
+            <div class="dialog_title">
+                <i class="dialog_close noprint">关闭</i>
+                <h3 class="dialog_h3" style="text-align: center;font-size: 18px;font-weight: 600;">员工合同</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin:0;padding:3% 40px;">
+
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span></span>
+                        </li>
+                        <li>签订日期：<span></span>
+                        </li>
+                        <li>
+                            签订地点：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            用人单位(以下简称甲方)：<span></span>
+                        </li>
+                        <li>
+                            职工(以下简称乙方)：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>根据(中华人民共和国劳动法》和国家及省的有关规定，甲乙双方按照平等自愿、协商一致的原则订立本合同。</p>
+                </div>
+                <div class="ht_msg">
+                    <p>一、合同期限：</p>
+                    <p>双方同意按以下方式确定本合同期限:</p>
+                    <p>1、期限：从 <span> </span>年 <span> </span> 月 <span></span> 日起至<span> </span>年 <span> </span> 月 <span></span>日止(试用期 <span></span>个月) </p>
+                    <p>合同终止后双方可以在平等自愿条件下商议续签。</p>
+                </div>
+                <div class="ht_msg">
+                    <p>二、工资待遇：</p>
+                    <p>乙方正常工作时间的工资按下列形式执行，不得低于当地最低工资标准。  基本工资： <span></span>元/月；绩效工资：<span></span>元/月，总计 <span></span>元/月</p>
+                </div>
+                <div class="ht_msg_bottom clearfix">
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">甲方(盖章)：</li>
+                        <li>
+                            <span style="width: 30px;min-width: 30px;"></span>年 <span style="width: 30px;min-width: 30px;"></span>月<span style="width: 30px;min-width: 30px;"></span>日
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">乙方(签字)：</li>
+                        <li>
+                            <span style="width: 30px;min-width: 30px;"></span>年 <span style="width: 30px;min-width: 30px;"></span>月<span style="width: 30px;min-width: 30px;"></span>日
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit noprint">
+               	<button class="but_grey_a but_small but_zwpdf daochu"><i style="vertical-align: middle;margin-top:-2px;"></i>导出PDF或打印</button>
+                <!--<button class="but_blue but_small but_print2 htmb_btnPrint"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-预览其他合同-->
+<div class="dialog">
+    <div class="dialog_box" name="muban_pre_qt">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3 muban_pre_con ht_mbxsprint_box" style="height: 640px;">
+            <div class="dialog_title">
+                <i class="dialog_close noprint">关闭</i>
+                <h3 class="dialog_h3 ht_title1" style="text-align: center;font-size: 18px;font-weight: 600;">其他合同</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span></span>
+                        </li>
+                        <li>
+                            签订日期：<span></span>
+                        </li>
+                        <li>
+                            签订地点：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            甲方：<span></span>
+                        </li>
+                        <li>
+                            乙方：<span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg_bottom clearfix">
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">甲方(盖章)：</li>
+                        <li>
+                            签约人：<span></span>
+                        </li>
+
+                        <li>
+                            <span style="width: 40px;min-width: 40px;"></span>年 <span style="width: 40px;min-width: 40px;"></span>月<span style="width: 40px;min-width: 40px;"></span>日
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">乙方(盖章)：</li>
+                        <li>
+                            签约人：<span></span>
+                        </li>
+                        <li>
+                            <span style="width: 40px;min-width: 40px;"></span>年 <span style="width: 40px;min-width: 40px;"></span>月<span style="width: 40px;min-width: 40px;"></span>日
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dialog_submit noprint">
+                <div class="dialog_submit noprint">
+                	<button class="but_grey_a but_small but_zwpdf daochu"><i style="vertical-align: middle;margin-top:-2px;"></i>导出PDF或打印</button>
+
+                   <!--<button class="but_small but_blue val_dialogTop ">导出PDF</button>-->
+                    <!--<button class="but_blue but_small but_print2 htmb_btnPrint"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button>-->
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-导入-->
+<div class="dialog">
+    <div class="dialog_box" name="muban_in">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_in">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">导入商品信息</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0; height: 68%;margin-top: 0;">
+                <div class="unhead_box">需按照官网导入模板(xlsx)修改表格，立即生效</div>
+                <div class="leadinBox" style="padding: 10px 10px 20px; z-index: 1;">
+                    <div class="leadinCon" style="padding-left: 55px; z-index: 2;">
+                        <p>第一步&nbsp;&nbsp;请根据导入模板的格式整理需要导入的数据</p>
+                        <p class="link-mu"><a href="javascripr:;">下载《合同导入模板》</a></p>
+                        <p>第二步&nbsp;&nbsp;请上传需要导入的文件</p>
+                        <div class="clearafter upload_con" style="overflow: hidden;">
+                            <span class="upload_fileadd warp_namebegin"></span>
+                            <span class="upload_choose_file hr_changeFile_but">选择文件</span>
+                            <input id="hr_changeFile" type="file" class="file_box add_inputbegin" style="top: 0;right: 50px;">
+                        </div>
+                        <span class="points">上传后可能需要等待一定时间，导入完成后将由消息通知你</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-导出成功-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_mban_out">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_out">
+            <i class="dialog_close_but">关闭</i>
+            <em class="exportIcon"></em>
+            <p class="exportMsg">导出成功，请点击下载</p>
+            <p class="exportFlie f_color">合同模板.doc</p>
+        </div>
+    </div>
+</div>
+<!--商品详情-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_muban_spxd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6" style="width: 1100px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">销售报价单</h3>
+                <button class="but_blue but_small but_print2" style="position: absolute;right:44px;top:9px;"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button>
+            </div>
+
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    制单日期：<span>2016-10-27 14:48:13</span>
+                    制单人：<span style="padding-right: 20px;">张三</span>
+                </div>
+                <div class="dialog_text_con" style="padding:0 60px 30px;">
+                    <h2 class="cont_title">销售报价单</h2>
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                        <p class="l-s-x">编号：<span>BJD1654654</span></p>
+                        <p class="l-s-x">销售机会：<span>-</span></p>
+                        <p class="l-s-x">选择客户：<span>今日头条</span></p>
+                        <p class="l-s-x">负责部门：<span>销售A部</span></p>
+                        <p class="l-s-x">负责人：<span>张三</span></p>
+                    </div>
+                    <h2 class="cont_title" style="margin-top: 30px;">商品</h2>
+                    <div class="box_Open cg_cgbjd_newCon" style="width:auto;">
+                        <p class="box_open_head" style="background: #fafafa;">
+                            一次报价
+                            <i class="inline_block c_9" style="font-size: 12px;">制单人：<span style="margin:0 16px 0 8px;">张三</span>制单日期：<span>2016-10-27 14:48:13</span></i>
+                            <span class="box_open_btn" style="right:10px;">收起<i class="right icon_show"></i></span>
+                        </p>
+                        <div class="box_open_list">
+                            <div class="table_t1">
+                                <h3 class="cont_title inline_block">商品报价</h3>
+                            </div>
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>商品名称/规格</th>
+                                            <th>商品编号</th>
+                                            <th>属性</th>
+                                            <th>计算单位</th>
+                                            <th>数量</th>
+                                            <th>单价</th>
+                                            <th>金额</th>
+                                            <th>含税率%</th>
+                                            <th>含税额(元)</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>硬盘/1t</td>
+                                            <td>sp4679872</td>
+                                            <td>
+                                                品牌：<span>戴尔</span>
+                                                类型：<span>固态硬盘</span>
+                                            </td>
+                                            <td>块</td>
+                                            <td>1</td>
+                                            <td>500(零售价)</td>
+                                            <td>500元</td>
+                                            <td>含17%税</td>
+                                            <td>85元</td>
+                                        </tr>
+                                        <tr>
+                                            <td>02</td>
+                                            <td>
+                                                硬盘/1t
+                                            </td>
+                                            <td>sp4679872</td>
+                                            <td>
+                                                品牌：<span>戴尔</span>
+                                                类型：<span>固态硬盘</span>
+                                            </td>
+                                            <td>块</td>
+                                            <td>1</td>
+                                            <td>500</td>
+                                            <td>500</td>
+                                            <td>含17%税</td>
+                                            <td>85</td>
+                                        </tr>
+                                        <tr class="table_total">
+                                            <td>合计</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="c_r">2</td>
+                                            <td></td>
+                                            <td><span class="c_r">1000元</span></td>
+                                            <td></td>
+                                            <td class="c_r">170元</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="box_open_list">
+                                <div class="table_t1">
+                                    <h3 class="cont_title inline_block">套餐商品报价</h3>
+                                </div>
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>序号</th>
+                                                <th>商品名称/规格</th>
+                                                <th>商品编号</th>
+                                                <th>数量</th>
+                                                <th>金额</th>
+                                                <th>含税额(元)</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>服务器10月超值套餐</td>
+                                                <td>TC4679872</td>
+                                                <td>1</td>
+                                                <td>500元</td>
+                                                <td>85</td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td>服务器10月超值套餐</td>
+                                                <td>TC4679872</td>
+                                                <td>1</td>
+                                                <td>500元</td>
+                                                <td>85</td>
+                                            </tr>
+                                            <tr class="table_total">
+                                                <td>合计</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="c_r">2</td>
+                                                <td><span class="c_r">1000元</span></td>
+                                                <td class="c_r">170元</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="table_t2">
+                                    包含商品
+                                </div>
+                                <!--<div class="table_t1">-->
+                                <!--<h3 class="cont_title inline_block">包含商品</h3>-->
+                                <!--</div>-->
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>商品名称/规格</th>
+                                                <th>商品编号</th>
+                                                <th>属性</th>
+                                                <th>计算单位</th>
+                                                <th>数量</th>
+                                                <th>金额</th>
+                                                <th>含税率%</th>
+                                                <th>含税额(元)</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>硬盘</td>
+                                                <td>SP4679872</td>
+                                                <td>品牌<span>戴尔</span>类型：<span>固态硬盘</span></td>
+                                                <td>块</td>
+                                                <td>1</td>
+                                                <td>500元</td>
+                                                <td>17</td>
+                                                <td>85</td>
+                                            </tr>
+                                            <tr>
+                                                <td>硬盘</td>
+                                                <td>SP4679872</td>
+                                                <td>品牌<span>戴尔</span>类型：<span>固态硬盘</span></td>
+                                                <td>块</td>
+                                                <td>1</td>
+                                                <td>500元</td>
+                                                <td>17</td>
+                                                <td>85</td>
+                                            </tr>
+                                            <tr class="table_total">
+                                                <td>合计</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="c_r">2</td>
+                                                <td><span class="c_r">1000元</span></td>
+                                                <td></td>
+                                                <td class="c_r">170元</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_open_list">
+                                <div class="box_open_list">
+                                    <div class="table_t1">
+                                        <h3 class="cont_title inline_block">配置商品报价</h3>
+                                    </div>
+                                    <div class="div_1 container">
+                                        <div class="div_1 table-container">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>序号</th>
+                                                    <th>配置商品名称</th>
+                                                    <th>配置商品编号</th>
+                                                    <th>数量</th>
+                                                    <th>金额</th>
+                                                    <th>含税额(元)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td>
+                                                        服务器7300
+                                                    </td>
+                                                    <td>PZ4679872</td>
+                                                    <td>1</td>
+                                                    <td>500元</td>
+                                                    <td>85元</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table_t2">
+                                    配置商品
+                                </div>
+                                <div class="div_1 container">
+                                    <div class="div_1 table-container">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>商品名称/规格</th>
+                                                <th>商品编号</th>
+                                                <th>属性</th>
+                                                <th>计算单位</th>
+                                                <th>数量</th>
+                                                <th>单价</th>
+                                                <th>金额</th>
+                                                <th>含税率%</th>
+                                                <th>含税额(元)</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr class="table_total">
+                                                <td>合计</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="min-height:170px; padding: 30px 10px 20px;">
+                                <div class="left" style="width: 50%;">
+                                    <div class="t_textinput">
+                                        <div class="t_left" style="width:50%;max-width: 10em;"><i class="c_r v_hidden">*</i>运费：<span>50</span>元</div>
+                                    </div>
+                                    <div class="t_textinput t_textarea" style="margin-top: 30px;">
+                                        <div class="t_left">
+                                            备注
+                                        </div>
+                                        <div class="t_right">
+                                            <textarea class="txt_normal" readonly="true" style="background: #f5f5f5;">不需要备注</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right cg_cgbjd_newright" style="width: 30%;">
+                                    <div class="t_textinput">
+                                        <div class="t_left">合计</div>
+                                        <div class="t_right">
+                                            <input type="text" class="inp_noInput" readonly="readonly" value="￥：0元">
+                                        </div>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <div class="t_left">
+                                            <div class="t_textinput relative">
+                                                <div class="t_right clearfix" style="width: 100%;margin-left: 0;">
+                                                    折扣率
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="t_right">
+                                            <input type="text" class="inp_noInput" readonly="readonly" value="￥：0元">
+                                        </div>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <div class="t_left">
+                                            折后税额
+                                        </div>
+                                        <div class="t_right">
+                                            <input type="text" class="inp_noInput" readonly="readonly" value="￥：0元">
+                                        </div>
+                                    </div>
+                                    <div class="t_textinput">
+                                        <div class="t_left">
+                                            其他费用
+                                        </div>
+                                        <div class="t_right">
+                                            <input type="text" readonly="readonly" value="￥：0元" class="inp_noInput">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cg_cgbjd_b">
+                                <p class="c_r" style="margin-right:50px;">总计金额：<span>￥0元</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog_submit">
+                    <button class="but_small but_blue but_cancel">确定</button><button class="but_small but_cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择成员树结构-->
+<div class="dialog">
+
+    <div class="dialog_box" name="ht_people">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left">
+                    <div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative">
+                        	<!--<input type="text" class="time_input" value="搜索成员/部门等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i>-->
+                        </div>
+                    </div>
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ul"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有部门</span><span class="list_check"><em></em></span></li>
+                            	<i class="mb_xj_dxbm_list_xxl"></i>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部A</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部B</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部C</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术部(1)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">技术部 </span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list mbxj_duoxuan_bm_xxllist zcj_right_add_zhidu_bm">
+                            <!--<li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small mbxj_duoxuan_quedbtn_xxl zcj_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_muban_delete">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu mb_scqueding_btn_xxl">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        //作废
+        $(".muban_next_btn").live("click",function(){
+//            alert(this);
+
+            if($(this).siblings(".muban_befr_btn").length == 0){
+
+                $(this).before('<button class="but_small but_blue muban_befr_btn" name="muban_new_first">上一步</button>');
+            }
+            $(this).html("保存");
+            $(this).removeClass("muban_next_btn").addClass('xjmb_bcbtn_xxl');
+            var name = $(this).attr("name");
+            $(this).parent(".ht_submit").prev(".dialog_text").children(".dialog_text_con").children(".ht_dialog_text_box[name='"+name+"']").fadeIn(100).siblings("div").hide();
+        });
+        $(".muban_befr_btn").live("click",function(){
+//            alert(1);
+            $(this).next().html("下一步");
+            $(this).next().addClass("muban_next_btn").removeClass('xjmb_bcbtn_xxl');
+            var name = $(this).attr("name");
+            $(this).parent(".ht_submit").prev(".dialog_text").children(".dialog_text_con").children(".ht_dialog_text_box[name='"+name+"']").fadeIn(100).siblings("div").hide();
+//            $(".muban_befr_btn").remove();
+            $(this).remove();
+        });
+
+//        打印
+        $(".htmb_btnPrint").die('click').live("click",function () {
+            $(this).parents('.ht_mbxsprint_box').jqprint({
+                debug: false,
+                importCSS: true,
+                printContainer: true,
+                operaSupport: false
+            });
+        });
+        $('.daochu').live('click',function(){
+        	$(this).parents('.ht_mbxsprint_box').jqprint();
+        })
+//		function daochu(){
+//
+//		}
+    });
+</script>
+
+
+</body>
+<script src="js/bargain/54.js"></script>
+</html>
+ <!--<script type="text/javascript">
+
+            //实例化编辑器
+            //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+            var ue = UE.getEditor('editor');
+
+
+            function isFocus(e) {
+                alert(UE.getEditor('editor').isFocus());
+                UE.dom.domUtils.preventDefault(e)
+            }
+            function setblur(e) {
+                UE.getEditor('editor').blur();
+                UE.dom.domUtils.preventDefault(e)
+            }
+            function insertHtml() {
+                var value = prompt('插入html代码', '');
+                UE.getEditor('editor').execCommand('insertHtml', value)
+            }
+            function createEditor() {
+                enableBtn();
+                UE.getEditor('editor');
+            }
+            function getAllHtml() {
+                alert(UE.getEditor('editor').getAllHtml())
+            }
+            function getContent() {
+                var arr = [];
+               /* arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+                arr.push("内容为：");*/
+                arr.push(UE.getEditor('editor').getContent());
+                return arr.join("\n");
+            }
+            function getPlainTxt() {
+                var arr = [];
+                arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+                arr.push("内容为：");
+                arr.push(UE.getEditor('editor').getPlainTxt());
+                alert(arr.join('\n'))
+            }
+//          function setContent(isAppendTo) {
+//              //var arr = [];
+//             /* arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");*/
+//              UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+//               //alert(arr.join("\n"));
+//          }
+            function setDisabled() {
+                UE.getEditor('editor').setDisabled('fullscreen');
+                disableBtn("enable");
+            }
+
+            function setEnabled() {
+                UE.getEditor('editor').setEnabled();
+                enableBtn();
+            }
+
+            function getText() {
+                //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+                var range = UE.getEditor('editor').selection.getRange();
+                range.select();
+                var txt = UE.getEditor('editor').selection.getText();
+                alert(txt)
+            }
+
+            function getContentTxt() {
+                var arr = [];
+                arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+                arr.push("编辑器的纯文本内容为：");
+                arr.push(UE.getEditor('editor').getContentTxt());
+                alert(arr.join("\n"));
+            }
+            function hasContent() {
+                var arr = [];
+                arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+                arr.push("判断结果为：");
+                arr.push(UE.getEditor('editor').hasContents());
+                alert(arr.join("\n"));
+            }
+            function setFocus() {
+                UE.getEditor('editor').focus();
+            }
+            function deleteEditor() {
+                disableBtn();
+                UE.getEditor('editor').destroy();
+            }
+            function disableBtn(str) {
+                var div = document.getElementById('btns');
+                var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+                for (var i = 0, btn; btn = btns[i++];) {
+                    if (btn.id == str) {
+                        UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+                    } else {
+                        btn.setAttribute("disabled", "true");
+                    }
+                }
+            }
+            function enableBtn() {
+                var div = document.getElementById('btns');
+                var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+                for (var i = 0, btn; btn = btns[i++];) {
+                    UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+                }
+            }
+
+            function getLocalData() {
+                alert(UE.getEditor('editor').execCommand("getlocaldata"));
+            }
+
+            function clearLocalData() {
+                UE.getEditor('editor').execCommand("clearlocaldata");
+                alert("已清空草稿箱")
+            }
+        </script>-->

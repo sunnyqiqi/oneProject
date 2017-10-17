@@ -1,0 +1,118 @@
+.company_box{
+    background: #f5f6fa;
+    padding: 25px 0;
+}
+.company_con{
+    width: 97%;
+    margin:0 26px;
+}
+.company_con_header{
+    height: 7%;
+}
+.company_box>.dialog_content{
+    position: relative;
+}
+.company_con .dialog_text_con{
+    /*width: 400px;*/
+}
+.company_dialog_text1 .cont_title{
+    display: block;
+    margin-bottom: 20px;
+    margin-left: -10px;
+    margin-top: 30px;
+}
+.company_information table th,.company_information table td{
+    word-break: break-all;
+    padding: 10px 5px;
+    white-space: inherit;
+}
+.company_text_ininput{
+    border: 1px solid transparent;
+    border-radius: 3px;
+    display: inline-block;
+}
+.company_text_ininput img{
+    width: 82px;
+    height: 82px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+.company_information .div_1{
+    max-height: 270px;
+}
+.company_con1 .dialog_text_con{
+    /*border-right: 4px solid #f5f6fa;*/
+    padding-bottom: 50px;
+    /*box-sizing: border-box;*/
+}
+.company_con1 .dialog_title .but_exit{
+    position: absolute;
+    top:12px;
+    right:40px;
+}
+.company_con1 .dialog_text_con input{
+    border:1px solid #e6e6e6;
+}
+.company_box>.company_con{
+    box-shadow: none;
+}
+.company_hr{
+    border-top: 5px solid #f7f7f7;
+    width: 2000px;
+    margin-left: -40px;
+    margin-top: 30px;
+}
+.company_selece_90{
+    width: 90%!important;
+    height: 30px;
+    box-sizing: border-box;
+}
+.company_inp_89{
+    width: 89%!important;
+}
+.company_t_right .t_mark_gantan{
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 1px;
+    position: absolute;
+    top: 7px;
+    left: 210px;
+    cursor: pointer;
+}
+.company_t_right .work_vent_client_contMsgBox {
+    width: 350px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    height: auto;
+    background: #fff;
+    position: absolute;
+    right: 109px;
+    z-index: 111;
+    border: 1px solid #ccc;
+    display: none;
+    box-shadow: 0 0 3px 1px #ccc;
+    border-radius: 3px;
+}
+.company_t_right .work_vent_client_torr {
+    width: 8px;
+    height: 5px;
+    position: absolute;
+    left: 62px;
+    top: -5px;
+    background: url(../images/sale_torr.png) no-repeat;
+    background-size: 100%;
+}
+.company_box .div_1{
+    min-height: 170px;
+}
+.company_dialog_text1 .t_right{
+    width: 60%;
+}

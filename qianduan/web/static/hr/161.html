@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr—公司制度</title>
+    <link rel="stylesheet" type="text/css" href="tool/css/main.css">
+    <link rel="stylesheet" type="text/css" href="tool/css/page.css">
+    <link rel="stylesheet" type="text/css" href="static/hr/css/hr_employeelist.css">
+    <link rel="stylesheet" type="text/css" href="static/hr/css/hr_companySystem.css">
+</head>
+<body>
+<div class="contenthead ng-scope">
+    <p>公司信息</p>
+    <ul class="contenthead-left">
+        <li>添加制度</li>
+        <li>草稿箱</li>
+        <li class="break"></li>
+    </ul>
+</div>
+<!-- 内容 -->
+<div class="rightcontent">
+    <div class="smnavigation">
+        <input type="text" placeholder="搜索成员／部门／手机等">
+        <span class="sm-search">搜索</span>
+        <div class="smnavigation-right">
+            <p class="">所有成员(1个部门，共2人)</p>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th width="15" style="border: none !important">
+                    <input type="checkbox"/>
+                </th>
+                <th>标题</th>
+                <th>发布日期 <i></i></th>
+                <th>适用部门</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="border-left: none !important">
+                        <input type="checkbox">
+                </td>
+                <td>员工手册</td>
+                <td>2016-02-01</td>
+                <td>所有成员</td>
+                <td>
+                    <div class="td-btn">查看</div>
+                    <div class="td-btn">编辑</div>
+                    <div class="td-btn">删除</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-left: none !important;border-bottom: 1px solid #dddddd;">
+                    <input type="checkbox">
+                </td>
+                <td style="border-bottom: 1px solid #dddddd;">员工手册</td>
+                <td style="border-bottom: 1px solid #dddddd;">2016-02-01</td>
+                <td style="border-bottom: 1px solid #dddddd;">所有成员</td>
+                <td style="border-bottom: 1px solid #dddddd;">
+                    <div class="td-btn">查看</div>
+                    <div class="td-btn">编辑</div>
+                    <div class="td-btn">删除</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="handle">
+            <div class="handle-left clearafter">
+                <div class="check-box left-box handle-left-top">
+                    <input type="checkbox">
+                    <label class="smlabel"></label>
+                </div>
+                <div  class="select2 clearafter">
+                    <span class="hr_compSystem_s-p-c" >批量删除</span>
+                    <span class="hr_compSystem_s-p-c" >批量导入</span>
+                </div>
+                <input name="" type="hidden" value="" id="container" class="container2">
+            </div>
+            <div class="handle-righ clearafter">
+                <span>每页显示</span>
+                <div id="select" class="select1">
+                    <cite class="p-s-u"></cite>
+                    <ul class="p-s-ul" style="display: none;">
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                    </ul>
+                </div>
+                <input name="" type="hidden" value="" id="container1" class="container">
+                <span>条数据</span>
+                <span class="pageD"></span>
+                <span>当前在</span>
+                <span class="C-page"></span>
+                <span>页</span>
+                <span class="pageU"></span>
+                <span>共</span>
+                <span class="C-num">2</span>
+                <span>条数据</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 弹窗-添加制度-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent addsysBox">
+        <div class="a-head">
+            <h4>添加制度</h4>
+            <span class="a-coy"></span>
+        </div>
+        <ul class="hr_compSystem_addsys clearfix clearafter">
+            <li class="hr_compSystem_exitCon">
+                <img src="../tool/images/exit.png" alt="在线编辑制度">
+                <p class="hr_compSystem_exitP">在线编辑公司制度</p>
+                <p class="hr_compSystem_exitmsg">您可以在线编辑制度</p>
+            </li>
+            <li class="line"></li>
+            <li class="hr_compSystem_uploadCon">
+                <img src="../tool/images/upload.png" alt="上传公司制度">
+                <p class="hr_compSystem_exitP">上传公司制度</p>
+                <p class="hr_compSystem_exitmsg">您可以将已有的公司制度通过doc,docx</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--弹窗-在线编辑-->
+<div class="par-alt" style="display: none">
+    <div class="sc-alertcantent">
+        <div class="a-head">
+            <h4>在线编辑</h4>
+            <span class="a-coy"></span>
+            <div class="a-choose">
+                <span> 选择使用部门</span>
+                <select class="hr_compSystem_exitchoose">
+                    <option value="?" selected="selected">
+                    </option><option value="number:1" label="销售部">销售部</option>
+                    <option value="number:2" label="销售部">销售部</option>
+                    <option value="number:3" label="销售部">销售部</option>
+                </select>
+            </div>
+        </div>
+        <div class="sc-3-cent">
+        </div>
+        <div class="sc-4-cent hr_compSystem_btnbox">
+            <div class="sc-4-cent-btn1">保存</div>
+            <div class="sc-4-cent-btn1 btnc">保存草稿</div>
+            <div class="sc-4-cent-btn1 btny">预览</div>
+            <div class="sc-4-cent-btn2">取消</div>
+        </div>
+    </div>
+</div>
+<!--弹窗-预览-->
+<div class="alpartent hr_compSystem_prevreadopaCon" style="display: none;">
+    <div class="alertcantent hr_compSystem_prevcon hr_compSystem_prevreadopaCon">
+        <div class="a-head">
+            <h4>预览</h4>
+            <span class="a-col"></span>
+            <p class="hr_compSystem_print">打印</p>
+        </div>
+        <div class="hr_compSystem_com-sys">
+            <h3>公司规章制度</h3>
+            <h4>一、公司形象</h4>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <h4>二、工作要求</h4>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+            <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+        </div>
+        <div class="hr_compSystem_readmum clearafter">
+            <h4>已阅读成员：</h4>
+            <ul class="clearafter hr_compSystem_readCon">
+                <li>
+                    <em></em>
+                    <p>木易</p>
+                </li>
+                <li>
+                    <em></em>
+                    <p>木易</p>
+                </li>
+                <li>
+                    <em></em>
+                    <p>木易</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--弹窗上传公司制度-->
+<div class="par-alt " style="display:none" >
+    <div class="pr-alertcantent upfilebox" style="height: 389px">
+        <div class="a-head">
+            <h4>上传公司制度</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_compSystem_upl-alt">
+            <h4><em></em>选择适用部门</h4>
+            <span>上级部门</span>
+            <span class="hr_compSystem_cho-dep">
+						<input type="text" placeholder="销售部">
+						<span class="hr_compSystem_cho-dep-con"><i>+ </i>选择部门</span>
+					</span>
+            <p class="prev-choose">在你上传之前，请选择该制度的适用部门</p>
+            <h4><em></em>上传公司制度</h4>
+            <p>你可以将已有的制度通过doc,docx上传</p>
+            <div class="clearafter hr_compSystem_up-con">
+                <span class="hr_compSystem_fileadd"></span>
+                <span class="hr_compSystem_cho-file">选择文件</span>
+            </div>
+            <p>上传后可能需要等待一定时间，导入完成后将由消息通知你</p>
+        </div>
+        <div class="pra-4-cent newpra-4-cent">
+            <div class="alertBtn-te">
+                <div class="pra-4-cent-btn1">保存</div>
+                <div class="pra-4-cent-btn2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-导出-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent ">
+        <div class="a-head">
+            <h4>导出制度</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_compSystem_export">
+            <p class="hr_compSystem_exptImg"></p>
+            <p class="hr_compSystem_done">导出成功，请点击下载</p>
+            <ul class="hr_compSystem_doclist">
+                <li><a href="javascript:;">员工手册.doc</a></li>
+                <li><a href="javascript:;">公司制度20160909.zip</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司信息</title>
+    <link rel="stylesheet" href="static/company/company.css">
+    <script src="static/company/js/company.js"></script>
+</head>
+<body>
+<div class="finance_content">
+    <!--<div class="lik_content_max_height_box" style="height: 100%;">-->
+        <div class="con_header contenthead company_con_header">
+            <h2>公司信息</h2>
+        </div>
+        <div class="con_m_box sbar company_box" style="height:87%;">
+             <div class="dialog_content company_con" style="height: 100%;">
+                 <div class="clearfix" style="margin:0;padding: 0;">
+                     <div class="dialog_text_con sbar company_dialog_text1">
+                            <h2 class="cont_title">基本信息</h2>
+                             <div class="company_basic zj_company_info_list_put">
+                                <!--<div class="t_textinput" style="">-->
+                                    <!--<div class="t_left" style="max-width:10em"><i class="c_r v_hidden">*</i>公司代码</div>-->
+                                    <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>-->
+                                <!--</div>-->
+                                 <!--<div class="t_textinput" style="">-->
+                                     <!--<div class="t_left" style="max-width:10em"><i class="c_r v_hidden">*</i>公司名称</div>-->
+                                     <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>-->
+                                 <!--</div>-->
+                                <!--<div class="t_textinput" style="">-->
+                                    <!--<div class="t_left" style="max-width:10em"><i class="c_r v_hidden">*</i>用户数</div>-->
+                                    <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>-->
+                                <!--</div>-->
+                                 <!--<div class="t_textinput" style="">-->
+                                     <!--<div class="t_left" style="max-width:10em"><i class="c_r v_hidden">*</i>管理员姓名</div>-->
+                                     <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>-->
+                                 <!--</div>-->
+                                <!--<div class="t_textinput" style="">-->
+                                    <!--<div class="t_left t_left_conrow" style="max-width:10em"><i class="c_r v_hidden">*</i>管理员账号</div>-->
+                                    <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>-->
+                                <!--</div>-->
+                                <!--<div class="t_textinput" style="">-->
+                                    <!--<div class="t_left" style="max-width:10em"><i class="c_r v_hidden">*</i>开户日期</div>-->
+                                    <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>-->
+                                <!--</div>-->
+                                <!--<div class="t_textinput" style="">-->
+                                    <!--<div class="t_left" style="max-width:10em"><i class="c_r v_hidden">*</i>到期日期</div>-->
+                                    <!--<div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>-->
+                                <!--</div>-->
+                                 <div class="container">
+                                     <div class="table-container">
+                                         <table>
+                                             <thead>
+                                             <tr>
+                                                 <th>公司代码</th>
+                                                 <th>公司名称</th>
+                                                 <th>用户数</th>
+                                                 <th>管理员姓名</th>
+                                                 <th>管理员账号</th>
+                                                 <th>开户日期</th>
+                                                 <th>到期日期
+                                                 </th>
+                                             </tr>
+                                             </thead>
+                                             <tbody class="zj_company_body_info">
+                                             <!--<tr>-->
+                                                 <!--<td></td>-->
+                                                 <!--<td></td>-->
+                                                 <!--<td></td>-->
+                                                 <!--<td></td>-->
+                                                 <!--<td></td>-->
+                                                 <!--<td></td>-->
+                                                 <!--<td></td>-->
+                                             <!--</tr>-->
+                                             </tbody>
+                                         </table>
+                                     </div>
+                                 </div>
+                             </div>
+                            <hr class="company_hr">
+                            <h2 class="cont_title">公司账户</h2>
+                            <div style="position: relative;">
+                                <div class="t_textinput left">
+                                    <button class="but_small but_blue val_dialog zcj_create_new_company_info" name="company_new">新建公司信息</button>
+                                </div>
+                                <div class="takenote_xzckx right" style="margin-right: 16px;">
+                                    <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="finance_khysqk_xzckx">
+                                        <i class="eyeIcon"></i>选择查看项</span>
+                                </div>
+                                <!--选择查看项-->
+                                <div class="t-z-list ckx_cont" name="finance_khysqk_xzckx" style="right: 16px; line-height: 27px; top: 39px; display: none;">
+                                    <i class="ckx_icon_right"></i>
+                                    <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                                    <ul class="sbar muban_addkey_list zcj_select_check_head_list" style="height: 150px;">
+                                        <li class="l-li-b">
+                                            <input type="checkbox">
+                                            <p class="z-d-l">电话</p>
+                                        </li>
+                                        <li class="l-li-b">
+                                            <input type="checkbox">
+                                            <p class="z-d-l">传真</p>
+                                        </li>
+                                        <li class="l-li-b">
+                                            <input type="checkbox">
+                                            <p class="z-d-l">邮箱</p>
+                                        </li>
+                                    </ul>
+                                    <!--  -->
+                                    <div class="bot-btn">
+                                        <button class="but_small but_blue zcj_check_save_btn">保存</button>
+                                        <button class="but_small but_cancal zcj_check_recover_mr">恢复默认</button>
+                                    </div>
+                                </div>
+                                <div class="closeckx_cont" style="display: none;"></div>
+                            </div>
+                             <!--<div class="company_information">-->
+                                 <!--<div class="table-container zcj_table_company_data_show" style="min-height: 0;">
+                                     <table>
+                                         <thead>
+                                         <tr>
+                                             <th width="4%">序号</th>
+                                             <th width="8%">公司名称</th>
+                                             <th width="10%">电话</th>
+                                             <th width="11%">传真</th>
+                                             <th width="14%">邮箱</th>
+                                             <th width="8%">开户银行</th>
+                                             <th width="15%">银行账号</th>
+                                             <th width="12%">税号</th>
+                                             <th width="18%">操作</th>
+                                         </tr>
+                                         </thead>
+
+                                     </table>
+                                 </div>-->
+                         <div class="tabcontent" style="padding: 0;">
+                                 <div class="container lik_table_wrap">
+                                     <div class="table-container lik_table_max_height" style="max-height: 270px;">
+                                         <table style="margin-bottom: 10px;" class="zcj_table_company_data_show">
+                                             <thead>
+                                             <tr>
+                                                 <th width="4%">序号</th>
+                                                 <th width="8%">公司名称</th>
+                                                 <th width="10%">电话</th>
+                                                 <th width="11%">传真</th>
+                                                 <th width="14%">邮箱</th>
+                                                 <th width="8%">开户银行</th>
+                                                 <th width="15%">银行账号</th>
+                                                 <th width="12%">税号</th>
+                                                 <th width="18%">操作</th>
+                                             </tr>
+                                             </thead>
+                                             <tbody class="zcj_company_info_content_list">
+                                             <!--<tr>
+                                                 <td width="4%">01</td>
+                                                 <td width="8%">纽沃特</td>
+                                                 <td width="10%">010-123456789</td>
+                                                 <td width="11%">010-987654321</td>
+                                                 <td width="14%">123456789@qq.comsss</td>
+                                                 <td width="8%">交通银行</td>
+                                                 <td width="15%">6217000340000351245</td>
+                                                 <td width="12%">522542233221122</td>
+                                                 <td width="18%">
+                                                     <button class="but_mix val_dialog" name="company_look">查看</button><button class="but_mix val_dialog but_exit" name="company_exit">编辑</button><button class="but_mix but_void but_r">作废</button>
+
+                                                 </td>
+                                             </tr>-->
+                                             </tbody>
+                                         </table>
+                                         <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                                         <div class="no_data_box none zcj_gs_info_no_data_show_div">
+                                             <div class="no_data">
+                                                 <!--<span class="inline_block"></span>-->
+                                                 <p class="c_9">抱歉，没有找到相关内容！</p>
+                                             </div>
+                                             <div class="no_data_bottom"></div>
+                                         </div>
+
+                                     </div>
+
+                               </div>
+                         </div>
+                       <!--</div>-->
+            </div>
+      </div>
+   </div>
+  </div>
+ </div>
+<!--弹窗-新建公司信息-->
+<div class="dialog">
+    <div class="dialog_box" name="company_new">
+        <div class="dialog_screen"></div>
+
+  <div class="dialog_content dialog_content_6 zcj_new_create_company_info_tc_show">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建公司信息</h3>
+            </div>
+            <div class="dialog_text sbar company_dialog_text zcj_company_info_content" style="margin:0;height: 88%;padding: 0;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title ">公司信息</h2><input type="hidden" class="zcj_add_new_create_table" value=""/>
+                    <div class="text_input">
+                        <div class="text_intext" style="width:15%;color:#333;">
+                            <i class="c_r v_hidden">*</i>
+                            <span style="margin-left: -5%;">公司LOGO</span></div>
+                        <div class="text_ininput" style="width:80%">
+
+                            <ul class="img_warp">
+
+                                <cite>
+                                    <input class="addimg hide_input zcj_img_add_face_upload" type="file" name="imgurl">
+                                    <span class="icon-add"></span>
+                                </cite>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="height: 50px;">
+                        <div class="t_left"><i class="c_r">*</i>公司名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_name" value="请输入公司名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            <p class="c_9">用于生成合同名称</p>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>所属行业</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input zcj_select_company_hy" value="请选择所属行业"/>
+                                <i></i>
+                                <ul class="select_list zcj_select_list_industry_ul">
+                                    <li data-id="1">电子通信</li>
+                                    <li data-id="2">IT</li>
+                                    <li data-id="3">会计</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>公司地址</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_url" value="请输入公司地址" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>电话</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_phone" value="请输入电话" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>传真</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_fax" value="请输入传真" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_email" value="请输入邮箱" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>公司网址</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_weburl" value="请输入公司网址" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <hr class="company_hr">
+                    <h2 class="cont_title ">公司账户</h2>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>账户名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_account_name" value="请输入账户名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>开户银行</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_account_bank" value="请输入开户银行" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>银行账号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_account_num" onkeyup="value=value.replace(/[^\d]/g,'')" value="请输入银行账号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <!--<div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>税号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_tax_no" value="请输入税号" onkeyup="value=value.replace(/[\W]/g,'')" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>-->
+                    <hr class="company_hr">
+                    <h2 class="cont_title ">发票设定</h2>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width:10em;"><i class="c_r">*</i>纳税人识别号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_tax_nsr_num" value="请输入纳税人识别号" onkeyup="value=value.replace(/[\W]/g,'')" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width:10em;"><i class="c_r">*</i>地址、电话</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_tax_adress_tel" value="请输入地址、电话" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width:10em;"><i class="c_r">*</i>开户行及账号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_company_tax_bank_zh" value="请输入开户行及账号" onkeyup="value=value.replace(/[\W]/g,'')" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left" style="max-width: 10em;width: 19%;"><i class="c_r">*</i>发票数量</div>
+                        <div class="t_right" style="margin-left: 30%;">
+                            <input type="text" class="time_input company_inp_89 lik_input_number zcj_company_invoice_num" value="请输入发票数量" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">
+                        </div>
+                    </div>
+                    <span style="float: left;margin-top: -36px;margin-left: 290px;color: #b3b3b3;">（每月账户下可用的发票数量）</span>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left t_left_conrow" style="width: 23%;"><i class="c_r">*</i>发票最大限额</div>
+                        <div class="t_right company_t_right" style="margin-left: 30%;">
+                            <div class="inline_block select_mormal company_selece_90">
+                                <input type="text" class="select_input zcj_select_invoice_price" value="请选择发票最大额">
+                                <i></i>
+                                <ul class="select_list zcj_select_list_price_show" style="">
+                                    <li data-id="1">万元版</li>
+                                    <li data-id="2">十万元版</li>
+                                    <li data-id="3">百万元版</li>
+                                </ul>
+                            </div>
+                            <i class="b_b t_mark_gantan finance_pay_rent_khysqk">!</i>
+                            <div class="work_vent_client_contMsgBox" style="left: 118px; top: 30px; display: none;">
+                                <i class="work_vent_client_torr" style="left: 100px;"></i>
+                                <div class="work_vent_client_contMsgBoxDet" style="padding: 10px 0 0;">
+                                    <p>万元版(最大限额:不含税金额 <span class="c_r">10000元</span>,含税金额 <span class="c_r">11700元</span>)</p>
+                                      <p>十万元版(最大限额:不含税金额<span class="c_r">100000元</span>,含税金额<span class="c_r">117000元</span>)</p>
+                                       <p>百万元版(最大限额:不含税金额<span class="c_r">1000000元</span>,含税金额<span class="c_r">1170000元</span>)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_right" style="width: 50%;margin-left: 0;">
+                            <label for=""><input type="checkbox" class="zcj_company_is_invoice_warning"/><span style="font-size: 14px;">启用发票预警</span></label>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left t_left_conrow" style="max-width: 10em;width: 19%;"><i class="c_r">*</i>下线预警数量</div>
+                        <div class="t_right" style="margin-left: 30%;">
+                            <input type="text" class="time_input company_inp_89 lik_input_number zcj_select_warning_num" value="请输入下线预警数量" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">
+                        </div>
+                    </div>
+                    <span style="float: left;margin-top: -36px;margin-left: 290px;color: #b3b3b3;">（当等于或小于数量时，系统提示预警通知）</span>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue zcj_save_company_info_btn">保存</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹窗-编辑公司信息-->
+<div class="dialog">
+    <div class="dialog_box" name="company_exit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑公司信息</h3>
+            </div>
+            <div class="dialog_text sbar company_dialog_text" style="margin:0;height: 90%;padding: 0;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title ">公司信息</h2>
+                    <div class="text_input">
+                        <div class="text_intext" style="width:15%;color:#333;">
+                            <i class="c_r v_hidden">*</i>
+                            <span style="margin-left: -5%;">公司LOGO</span></div>
+                        <div class="text_ininput" style="width: 84%;">
+                            <div class="company_text_ininput">
+                                <img src="static/images/hr_touxiang.png" alt="公司LOGO">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="height: 50px;">
+                        <div class="t_left"><i class="c_r">*</i>公司名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" value="请输入公司名称">
+                            <p class="c_9">用于生成合同名称</p>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>所属行业</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input c_3" value="请选择所属行业"/>
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>电子通信</li>
+                                    <li>IT</li>
+                                    <li>会计</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>公司地址</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" value="请输入公司地址" >
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>电话</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" value="请输入电话" >
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>传真</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" value="请输入传真" >
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" value="请输入邮箱"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>公司网址</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" value="请输入公司网址"/>
+                        </div>
+                    </div>
+                    <hr class="company_hr">
+                    <h2 class="cont_title ">公司账户</h2>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>账户名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" value="请输入账户名称"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>开户银行</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" value="请输入开户银行"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>银行账号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" onkeyup="value=value.replace(/[^\d]/g,'')" value="请输入银行账号"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>税号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3" onkeyup="value=value.replace(/[\W]/g,'')" value="请输入税号"/>
+                        </div>
+                    </div>
+                    <hr class="company_hr">
+                    <h2 class="cont_title ">发票设定</h2>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left" style="max-width: 10em;width: 19%;"><i class="c_r">*</i>发票数量</div>
+                        <div class="t_right" style="margin-left: 30%;">
+                            <input type="text" class="time_input company_inp_89 c_3" value="请输入发票数量" style="color: rgb(204, 204, 204);">
+                        </div>
+                    </div>
+                    <span style="float: left;margin-top: -36px;margin-left: 290px;color: #b3b3b3;">（每月账户下可用的发票数量）</span>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left t_left_conrow" style="width: 23%;"><i class="c_r">*</i>发票最大限额</div>
+                        <div class="t_right company_t_right" style="margin-left: 30%;">
+                            <div class="inline_block select_mormal company_selece_90">
+                                <input type="text" class="select_input c_3" value="万元版">
+                                <i></i>
+                                <ul class="select_list" style="">
+                                    <li>万元版</li>
+                                    <li>十万元版</li>
+                                </ul>
+                            </div>
+                            <i class="b_b t_mark_gantan finance_pay_rent_khysqk">!</i>
+                            <div class="work_vent_client_contMsgBox" style="left: 118px; top: 30px; display: none;">
+                                <i class="work_vent_client_torr" style="left: 100px;"></i>
+                                <div class="work_vent_client_contMsgBoxDet" style="padding: 10px 0 0;">
+                                    <p>万元版(最大限额：不含税金额 <span class="c_r">10000元</span>,含税金额 <span class="c_r">11700元</span>)</p>
+                                    <p>十万元版(最大限额：不含税金额<span class="c_r">100000元</span>,含税金额<span class="c_r">117000元</span>)</p>
+                                    <p>百万元版(最大限额：不含税金额<span class="c_r">1000000元</span>,含税金额<span class="c_r">1170000元</span>)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_right" style="width: 50%;margin-left: 0;">
+                            <label for=""><input type="checkbox" class="zcj_company_is_invoice_warning"/><span style="font-size: 14px;">启用发票预警</span></label>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left t_left_conrow" style="max-width: 10em;width: 19%;"><i class="c_r">*</i>下线预警数量</div>
+                        <div class="t_right" style="margin-left: 30%;">
+                            <input type="text" class="time_input company_inp_89 c_3" value="请输入发票数量" style="color: rgb(204, 204, 204);">
+                        </div>
+                    </div>
+                    <span style="float: left;margin-top: -36px;margin-left: 290px;color: #b3b3b3;">（当等于或小于数量时，系统提示预警通知）</span>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue">保存</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--弹窗-公司信息-->
+<div class="dialog">
+    <div class="dialog_box" name="company_look">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6 company_con1 zcj_check_edit_company_info_display">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">公司信息</h3>
+                <!--<button class="but_mix but_exit val_dialog" name="company_exit">编辑</button>-->
+            </div>
+            <div class="dialog_text sbar company_dialog_text zcj_company_info_input_con" style="margin:0;height: 88%;padding: 0;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title ">公司信息</h2>
+                    <div class="text_input">
+                        <div class="text_intext" style="width:15%;color:#333;">
+                            <i class="c_r v_hidden">*</i>
+                            <span style="margin-left: -5%;">公司LOGO</span></div>
+                        <div class="text_ininput" style="width: 84%;">
+                            <div class="company_text_ininput zcj_company_img_info">
+                                <img src="static/images/hr_touxiang.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="height: 50px;">
+                        <div class="t_left"><i class="c_r">*</i>公司名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                            <p class="c_9">用于生成合同名称</p>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>所属行业</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>公司地址</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>电话</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>传真</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>公司网址</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <hr class="company_hr">
+                    <h2 class="cont_title ">公司账户</h2>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>账户名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>开户银行</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>银行账号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                   <!-- <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>税号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" onkeyup="value=value.replace(/[\W]/g,'') " value="111222333444555" readonly="true">
+                        </div>
+                    </div>-->
+                    <hr class="company_hr">
+                    <h2 class="cont_title ">发票设定</h2>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width:10em;"><i class="c_r">*</i>纳税人识别号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_noInput" value="" readonly="true"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width:10em;"><i class="c_r">*</i>地址、电话</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width:10em;"><i class="c_r">*</i>开户行及账号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_noInput" value="" readonly="true"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left" style="max-width: 10em;width: 19%;"><i class="c_r">*</i>发票数量</div>
+                        <div class="t_right" style="margin-left: 30%;">
+                            <input type="text" class="time_input c_3 company_inp_89 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <span style="float: left;margin-top: -36px;margin-left: 290px;color: #b3b3b3;">（每月账户下可用的发票数量）</span>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left t_left_conrow" style="width: 23%;"><i class="c_r">*</i>发票最大限额</div>
+                        <div class="t_right" style="margin-left: 30%;">
+                            <input type="text" class="time_input c_3 company_inp_89 inp_noInput" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_right" style="width: 50%;margin-left: 0;">
+                            <label for=""><input type="checkbox" value="" class="type_checked_input"/><span style="font-size: 14px;">启用发票预警</span></label>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="width: 50%;margin-left: 0;">
+                        <div class="t_left t_left_conrow" style="max-width: 10em;width: 19%;"><i class="c_r">*</i>下线预警数量</div>
+                        <div class="t_right" style="margin-left: 30%;">
+                            <input type="text" class="time_input c_3 company_inp_89 inp_noInput" value="0" readonly="true">
+                        </div>
+                    </div>
+                    <span style="float: left;margin-top: -36px;margin-left: 290px;color: #b3b3b3;">（当等于或小于数量时，系统提示预警通知）</span>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_cancel but_small">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+    $(".company_logo_but").die("click").live("click",function () {
+//        alert(logo_length);
+        if(logo_length > 0){
+            $(".company_logo_ul").find("cite").hide();
+        }else{
+            $(".company_logo_ul").find("cite").show();
+        }
+        $(this).trigger();
+    });
+    $(".company_logo_ul").live("change",function () {
+        var logo_length = $(this).children("li").length;
+        if(logo_length > 0){
+            $(this).find("cite").hide();
+        }else{
+            $(this).find("cite").show();
+        }
+    });
+    $(".company_logo_ul li .del_img").live("click",function () {
+        $(".company_logo_ul").children("cite").show();
+    });
+    // 添加公司账户
+    $(".company_add_gszh").live("click",function(){
+    	var gszh_html = $(this).parent(".t_textinput").prev(".worksp_addbx").html();
+    	$(this).parent(".t_textinput").before('<div class="worksp_addbx">'+gszh_html+'</div>');
+    	fn_gszh($(this));
+    });
+    $(".company_gszh_delete").live("click",function(){
+        var new_this = $(this).closest(".company_dialog_text").find(".company_gszh_delete");
+    	$(this).parents(".worksp_addbx").remove();
+    	fn_gszh(new_this);
+    });
+    function fn_gszh(obj){
+    	var gszh_num = $(".company_dialog_text .worksp_addbx").length;
+        for(var i = 0;i<gszh_num;i++){
+            obj.parents(".company_dialog_text").find(".worksp_addbx .page_119_gszhNum").eq(i).html(i+1);
+        }
+    	console.log(gszh_num);
+    	if(gszh_num > 2){
+    		obj.parents(".company_dialog_text").find(".work_sp_fqsp_h3").show();
+    	}else{
+            obj.parents(".company_dialog_text").find(".work_sp_fqsp_h3").hide();
+    	}
+
+    }
+
+    //发票最大限额
+    $(".finance_pay_rent_khysqk").live("mouseenter",function () {
+        //alert(1);
+        $(this).siblings(".work_vent_client_contMsgBox").show();
+    });
+    $(".company_t_right").live("mouseleave",function () {
+        $(this).children(".work_vent_client_contMsgBox").hide();
+    });
+
+</script>
+</body>
+</html>

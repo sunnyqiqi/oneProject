@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hr-公司制度</title>
+    <link rel="stylesheet" type="text/css" href="static/hr/css/hr_employeelist.css">
+    <link rel="stylesheet" type="text/css" href="static/hr/css/hr_companySystem.css">
+    <script src="static/hr/js/zj_worksystem.js"></script>
+    <!--文本编辑器-->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" charset="utf-8" src="static/hr/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="static/hr/ueditor/ueditor.all.min.js"></script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="static/hr/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+<div class="finance_content">
+    <div class="lik_content_max_height_box">
+        <div class="con_header contenthead">
+            <h2>公司制度</h2>
+            <div class="right" style="width: 178px;">
+                <button class="but_blue val_dialog zcj_add_zd_system_gs" name="hr_gszd_xzsybm">添加制度</button><div class="res zcj_add_zd_sys_res_btn" title="点击刷新"></div>
+            </div>
+        </div>
+    <!--&lt;!&ndash;没有制度的时候&ndash;&gt;-->
+    <!--<div class="fixed_img">-->
+    <!--<img src="static/images/empty.png" style="z-index: -1;">-->
+    <!--<p style="margin-top: 30px;margin-left: 20px;color: #A8A8A9;font-weight: 500;z-index: -1;">目前还没有指定制度</p>-->
+    <!--</div>-->
+    <!--有制度-->
+        <!--<div class="con_m_box sbar" style="padding-left: 25px;padding-right: 22px;">-->
+        <div class="con_right_head clearfix" style="border:none;padding:20px 30px;">
+        <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input zcj_search_title" value="搜索标题" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+            <button class="search_but but_blue zcj_add_sear" style="height: 30px;width: auto;">搜索</button>
+        </div>
+    </div>
+        <div class="tabcontent" style="padding-top: 0;">
+            <div class="container lik_table_wrap">
+            <div class="lik_table_max_height table-container">
+                <table>
+                <thead>
+                <tr>
+                    <th>标题</th>
+                    <th>发布日期</th>
+                    <th>适用部门</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="zj_company">
+                <tr class="zkgjss_cont" name="hr_gszd_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="标题">
+                            <i></i>
+                            <ul class="select_list">
+                               <!-- <li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td><input style="padding: 1px;width: 100%;" type="date" class="time_input block" value="选择日期"></td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="试用部门">
+                            <i></i>
+                            <ul class="select_list">
+                               <!-- <li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td><div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                        <input type="text" class="select_input block" readonly="true">
+                    </div>
+                    </td>
+                </tr>
+
+                <!--<tr>
+                    <td><span>1员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>2员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>3员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>4员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>5员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>员工手册</span></td>
+                    <td>2017-1-12</td>
+                    <td>开发部</td>
+                    <td>
+                        <button class="but_look but_mix val_dialog" name="hr_gszd_yl">预览</button><button class="but_exit but_mix val_dialog" name="hr_gszd_zxbj">编辑</button><button class="but_mix but_lv val_dialog" name="hr_gszd_dc">导出</button><button class="but_mix but_r val_dialog but_del" name="hr_gszd_delete">删除</button>
+                    </td>
+                </tr>-->
+                </tbody>
+            </table>
+                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                <div class="no_data_box none zcj_no_data_show_company_zd">
+                    <div class="no_data">
+                        <!--<span class="inline_block"></span>-->
+                        <p class="c_9">抱歉，没有找到相关内容！</p>
+                    </div>
+                    <div class="no_data_bottom"></div>
+                </div>
+        </div>
+                <div class="handle">
+                    <div class="fenye_box zcj_gszd_page">
+                        <span>每页显示</span>
+                        <div class="inline_block select_mormal">
+                            <input type="text" class="select_input" value="10">
+                            <ul class="select_list select_list_to_top">
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                            </ul>
+                            <i></i>
+                        </div>
+                        <span>条数据</span>
+                        <div class="fenye_btn first_page_valid"><span></span></div>
+                        <div class="fenye_btn prev_page_valid"><span></span></div>
+                        <span class="page_box on">1</span>
+                        <span class="page_box">2</span>
+                        <span class="page_box">3</span>
+                        <span class="page_box">4</span>
+                        <div class="fenye_btn next_page_valid"><span></span></div>
+                        <div class="fenye_btn last_page_valid"><span></span></div>
+                        <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                        <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                    </div>
+                </div>
+        </div>
+
+</div>
+
+
+<!--添加制度-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_gszd_addzd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width:530px;height:342px">
+            <div class="dialog_title" style="border-bottom: none;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加制度</h3><hr/>
+            </div>
+            <div class="dialog_text" style="margin-top: -10px;">
+                <ul class="hr_compSystem_addsys clearfix clearafter">
+                    <li class="val_dialogTop hr_compSystem_exitCon" name="hr_gszd_xzsybm">
+                        <img src="static/images/exit.png" alt="在线编辑制度">
+                        <h3 class="block" style="margin:15px 0;">在线编辑公司制度</h3>
+                        <p>您可以在线编辑制度</p>
+                    </li>
+                    <li class="line" style="margin-top: 7px;"></li>
+                    <li class="val_dialogTop hr_compSystem_uploadCon" name="hr_gszd_scgszd">
+                        <img src="static/images/upload.png" alt="上传公司制度">
+                        <h3 class="block">上传公司制度</h3>
+                        <p>您可以将已有的公司制度通过doc,docx</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--选择部门弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_gszd_xzsybm">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="width:400px;height:300px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close zcj_bm_gb_btn">关闭</i>
+                <h3 class="dialog_h3">选择适用部门</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0; height: 68%;margin-top: 0;">
+                <div class="hr_unhead_box">在您上传之前，请选择该制度的适用部门</div>
+                 <div class="t_textinput" style="width: 76%;margin-left: 20px;margin-top: 30px;">
+                    <div class="t_left" style="max-width: 10em;width: 30%;"><i class="c_r v_hidden">*</i>选择使用部门</div>
+                    <div class="t_right" style="z-index: 1;margin-left: 30%;">
+                        <input type="hidden" id="hid_bm_id" value=""/><input type="text" readonly="readonly" class="time_input c_3 zcj_input_val" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);"/>
+                        <ul class="inp_add_list lik_inp_add_list zcj_select_bm_name_list" style="width: 180px"></ul>
+                        <span class="inp_addBtn val_dialogTop zcj_select_section" style="width: auto" name="hr_gszd_zxbjsybm"><b>+</b>选择部门</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_sybm_end val_dialogTop" name="hr_gszd_zxbj">确定</button><button class="but_cancel but_small zcj_qx_select_xzbm_btn">取消</button>
+                 
+            </div>
+        </div>
+    </div>
+</div>
+        <!--选择成员树结构-->
+        <div class="dialog">
+
+            <div class="dialog_box" name="hr_gszd_zxbjsybm">
+                <div class="dialog_screen"></div>
+
+                <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+                    <div class="dialog_title"><i class="dialog_close">关闭</i>
+                        <h3 class="dialog_h3">选择部门</h3></div>
+                    <div class="dialog_text sbar clearfix">
+                        <div class="list_box left">
+                            <div class="list_box_title">
+                                <div class="list_box_searchCon inline_block relative"><!--<input type="text" class="time_input zj_bm_input_search_val" value="搜索成员/部门等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search zj_bm_list_search"></i>--></div>
+                            </div>
+                            <div class="list_box_con sbar">
+                                <div class="left_nav">
+                                    <ul class="list_box_level list_box_ul zcj_gszd_bmlist">
+                                       <!-- <li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有部门</span><span class="list_check"><em></em></span></li>
+                                        <i class="mb_xj_dxbm_list_xxl"></i>-->
+                                        <!--<ul class="ul1">
+                                            <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                            <ul class="ul3" style="display: none;">
+                                                <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部A</span><span class="list_check"><em></em></span></li>
+                                                <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部B</span><span class="list_check"><em></em></span></li>
+                                                <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部C</span><span class="list_check"><em></em></span></li>
+                                            </ul>
+                                        </ul>
+                                        <ul class="ul1">
+                                            <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术部(1)</span><span class="list_check"><em></em></span></li>
+                                            <ul class="ul3">
+                                                <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">技术部 </span><span class="list_check"><em></em></span></li>
+                                            </ul>
+                                        </ul>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list_chooseed right">
+                            <div class="list_box_title">
+                                <!--<h3>已选列表</h3>-->
+                                <h3 class="dialog_h3">已选列表</h3>
+                            </div>
+                            <div class="list_conMsg">
+                                <ul class="list_choose_list zcj_right_add_zhidu_bm">
+                                    <!--<li>
+                                        <span>张三</span>
+                                        <i class="list_choose_delete"> </i>
+                                    </li>
+                                    <li>
+                                        <span>张三</span>
+                                        <i class="list_choose_delete"> </i>
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="dialog_submit">
+                        <button class="but_blue but_small zcj_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+<!--选择使用部门-->
+<!--<div class="dialog">
+    <div class="dialog_box" name="hr_gszd_zxbjsybm">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择适用部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left">
+                    <div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input" value="搜索成员/部门等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i></div>
+                    </div>
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_uldx zcj_gszd_bmlist">
+                                &lt;!&ndash;<li class="left_all"><span class="change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类</span><span class="list_check"><em></em></span></li>&ndash;&gt;
+                                &lt;!&ndash;<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部A</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部B</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部C</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术部(1)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">技术部 </span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>&ndash;&gt;
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        &lt;!&ndash;<h3>已选列表</h3>&ndash;&gt;
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list zcj_right_add_zhidu_bm">
+                            &lt;!&ndash;<li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>&ndash;&gt;
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>-->
+
+<!--在线编辑-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_gszd_zxbj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 800px;height: 550px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">在线编辑</h3>
+               
+            </div>
+            <div class="dialog_text" style="margin-top: 1%;">
+                <!-- <img src="static/hr/images/sdgg.png" alt="">
+                 <div id="simple-editor"></div>-->
+                <div id="sample">
+                    <h1><input type="text" class="time_input zcj_system_title_nr inp_606" value="标题" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);"></h1>
+                   <!-- <h1><input type="text" class="zcj_bt_text" value="标题"></h1>-->
+                    <!--<textarea name="textarea" class="zj_add_gszd_info">内或多或少很多时候看到双卡双待黑色短裤</textarea>-->
+                <!--<textarea name="area3" id="zj_add_gszd_info" style="width: 700px; height: 300px;">
+                         HTML content default in textarea
+                </textarea>-->
+                    <div id="editor" style="width:722px;height:240px;margin-top:15px;"></div>
+                    <!--<div id="btns">
+                        <div>
+                            <button onclick="getAllHtml()">获得整个html的内容</button>
+                            <button onclick="getContent()">获得内容</button>
+                            <button onclick="setContent()">写入内容</button>
+                            <button onclick="setContent(true)">追加内容</button>
+                            <button onclick="getContentTxt()">获得纯文本</button>
+                            <button onclick="getPlainTxt()">获得带格式的纯文本</button>
+                            <button onclick="hasContent()">判断是否有内容</button>
+                            <button onclick="setFocus()">使编辑器获得焦点</button>
+                            <button onmousedown="isFocus(event)">编辑器是否获得焦点</button>
+                            <button onmousedown="setblur(event)">编辑器失去焦点</button>
+
+                        </div>
+                        <div>
+                            <button onclick="getText()">获得当前选中的文本</button>
+                            <button onclick="insertHtml()">插入给定的内容</button>
+                            <button id="enable" onclick="setEnabled()">可以编辑</button>
+                            <button onclick="setDisabled()">不可编辑</button>
+                            <button onclick=" UE.getEditor('editor').setHide()">隐藏编辑器</button>
+                            <button onclick=" UE.getEditor('editor').setShow()">显示编辑器</button>
+                            <button onclick=" UE.getEditor('editor').setHeight(300)">设置高度为300默认关闭了自动长高</button>
+                        </div>
+
+                        <div>
+                            <button onclick="getLocalData()">获取草稿箱内容</button>
+                            <button onclick="clearLocalData()">清空草稿箱</button>
+                        </div>
+
+                    </div>
+                    <div>
+                        <button onclick="createEditor()">
+                            创建编辑器
+                        </button>
+                        <button onclick="deleteEditor()">
+                            删除编辑器
+                        </button>
+                    </div>-->
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_save_cg_btn" id="aa">保存</button><!--<button class="but_yellow val_dialogTop but_small zcj_preview_gs_zd_btn" name="hr_gszd_yl">预览</button>--><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--弹出层-预览公司制度-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_gszd_yl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width:590px;height:600px;">
+            <div class="dialog_title relative">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览</h3>
+                <button class="but_blue but_small but_print2 htmb_btnPrint1" style="position: absolute;right:36px;top:9px;"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="height: 75%;margin:0;padding: 0 15px 24px;">
+                <div class="hr_gszd_zhdl" style="padding: 0 14px;">
+                    <h3>公司规章制度</h3>
+                    <hr style="border-top: 2px solid #e6e6e6;width: 546px;margin-left: -10px;">
+                    <hr style="width: 546px;margin-left: -10px;">
+                    <h4>一、总则</h4>
+                    <p>1、为保证顺利完成各项生产任务、经营目标、管理目标而制定本规章制度。</p>
+                    <p>2、规章制度包括生产制度、卫生制度、考勤制度、奖惩制度、安全制度等。</p>
+                    <p>3、本规章制度适用本公司的各部门的每一个员工。</p>
+                    <p>4、根据公司实际运作情况，定期召开生产计划、产品质量、人员培训会议、质量检查、多大圣诞节啊大四。</p>
+                    <p>5、公司每一位员工必须按公司要求参加会议。</p>
+                    <p>6、生产、办公场所严禁吸烟。</p>
+                    <p>7、任何员工不能泄露公司的商业秘密和技术秘密。</p>
+                    <p>8、不说任何不利于公司和有损公司形象的话。</p>
+                    <h4>二、工作要求</h4>
+                    <p>1、为保证顺利完成各项生产任务、经营目标、管理目标而制定本规章制度。</p>
+                    <p>2、规章制度包括生产制度、卫生制度、考勤制度、奖惩制度、安全制度等。</p>
+                    <p>3、本规章制度适用本公司的各部门的每一个员工。</p>
+                    <p>4、根据公司实际运作情况，定期召开生产计划、产品质量、人员培训会议。</p>
+                    <p>5、公司每一位员工必须按公司要求参加会议。</p>
+                    <p>6、生产、办公场所严禁吸烟。</p>
+                    <p>7、任何员工不能泄露公司的商业秘密和技术秘密。</p>
+                    <p>8、不说任何不利于公司和有损公司形象的话。</p>
+                </div>
+            </div>
+            <div class="dialog_submit hr_compSystem_readmum clearafter">
+                <div class="clearfix" style="margin:0 13px;padding:0 15px;">
+                    <h4>已阅读成员：</h4>
+                    <ul class="clearafter hr_compSystem_readCon">
+                        <li>
+                            <em></em>
+                            <p style="margin-top: -4px;">木易</p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <p style="margin-top: -4px;">木易</p>
+                        </li>
+                        <li>
+                            <em></em>
+                            <p style="margin-top: -4px;">木易</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--上传公司制度弹窗-->
+<div class="dialog">
+
+    <div class="dialog_box" name="hr_gszd_scgszd">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content" style="width: 620px;height: 420px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">上传公司制度</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:5px 40px;">
+                <div class="hr_emploeelist_leadinBox" style="padding: 0 10px 20px 10px;">
+
+                    <div class="hr_emploeelist_leadinCon" style="padding-left: 55px">
+                        <h3 class="cont_title inline_block p_left_10" style="margin-left: -3em;">选择使用部门</h3>
+                        <div class="input_rightBtn" style="margin-bottom: 50px;margin-left: -112px;">
+                            <div class="input_rightBtn_right" style="left: 14%;">
+                                <div class="rightinput_box">
+                                    <input type="text" class="c_3" value="开发部" readonly="readonly">
+                                    <span class="val_dialogTop zcj_sczd_xz_bm_btn" name="hr_gszd_xzbm"><b>+</b>选择部门</span>
+                                </div>
+                            </div>
+                            <p class="input_tishi" style="margin-top: 14px;">在您上传之前，请选择该制度的适用部门</p>
+                        </div>
+
+                        <h3 class="cont_title inline_block p_left_10 block" style="margin-left: -3em;">上传公司制度</h3>
+                        <div class="clearafter hr_emploeelist_up-con" style="overflow: hidden;margin: 0px 0 9px -30px;">
+                            <span class="hr_emploeelist_fileadd warp_namebegin" style="width: 384px;"></span>
+                            <span class="hr_emploeelist_cho-file hr_changeFile_but" style="width: 77px;height: 33px;border: none;border-top-right-radius: 4px;">选择文件</span>
+                            <input id="hr_changeFile" type="file" class="file_box add_inputbegin" style="top:-5px;right:0;">
+                        </div>
+                        <p class="c_c block" style="margin-left: -30px;margin-top: 14px;">您可以将已有的制度通过doc/docx文件形式上传</p>
+
+                        <p class="c_3" style="margin-left: -30px;margin-top: 20px;">上传后可能需要等待一段时间</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">上传</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--选择部门-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_gszd_xzbm">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexit"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--弹出层-预览公司制度-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_gszd_ygscyl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width:700px;height:800px;">
+            <div class="dialog_title relative">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">预览</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 90%;margin:0;padding: 0 15px;">
+                <div class="hr_gszd_zhdl zcj_content_details" style="padding:0 14px;">
+                   <!-- <h3>公司规章制度</h3>
+                    <h4>一、公司形象</h4>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <h4>二、工作要求</h4>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>
+                    <p>1、员工必须清楚地了解公司的经营范围，并能向客户及外界正确地介绍公司业务。</p>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--导出弹框-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_gszd_dc">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_4 zcj_succeed" style=" width: 320px;height: 200px;">
+            <i class="dialog_close_but">关闭</i>
+            <em class="exportIcon"></em>
+            <p class="exportMsg">导出成功，请点击下载</p>
+            <!-- <p class="exportFlie f_color">员工手册.doc</p> -->
+        </div>
+    </div>
+</div>
+
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="hr_gszd_delete">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu zcj_gszd_del_scbtn">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#hr_bjpxgszd").live("click",function(){
+            $(".hr_bjpxgszd").show();
+        });
+        $(".hr_gsxxhide_btn").live("click",function(){
+            $(".hr_gsxxhide").show();
+            $(".fixed_img").hide();
+        });
+
+
+//打印
+        $(".htmb_btnPrint1").die("click").live("click",function () {
+//        alert(111);
+            $(this).parent().siblings(".ht_mbxsprint_box").jqprint({
+                debug: false,
+                importCSS: true,
+                printContainer: true,
+                operaSupport: false
+            });
+        });
+    });
+</script>
+<script>
+    var start = {
+        elem: '#start',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            end.min = datas; //开始日选好后，重置结束日的最小日期
+            end.start = datas //将结束日的初始值设定为开始日
+
+        }
+    };
+    var end = {
+        elem: '#end',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+    };
+
+</script>
+<script>
+        //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+</script>
+        <script type="text/javascript">
+
+            //实例化编辑器
+            //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+            var ue = UE.getEditor('editor');
+
+
+            function isFocus(e) {
+                alert(UE.getEditor('editor').isFocus());
+                UE.dom.domUtils.preventDefault(e)
+            }
+            function setblur(e) {
+                UE.getEditor('editor').blur();
+                UE.dom.domUtils.preventDefault(e)
+            }
+            function insertHtml() {
+                var value = prompt('插入html代码', '');
+                UE.getEditor('editor').execCommand('insertHtml', value)
+            }
+            function createEditor() {
+                enableBtn();
+                UE.getEditor('editor');
+            }
+            function getAllHtml() {
+                alert(UE.getEditor('editor').getAllHtml())
+            }
+            function getContent() {
+                var arr = [];
+               /* arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+                arr.push("内容为：");*/
+                arr.push(UE.getEditor('editor').getContent());
+                return arr.join("\n");
+            }
+            function getPlainTxt() {
+                var arr = [];
+                arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+                arr.push("内容为：");
+                arr.push(UE.getEditor('editor').getPlainTxt());
+                alert(arr.join('\n'))
+            }
+            function setContent(isAppendTo) {
+                var arr = [];
+               /* arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");*/
+                UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+                 alert(arr.join("\n"));
+            }
+            function setDisabled() {
+                UE.getEditor('editor').setDisabled('fullscreen');
+                disableBtn("enable");
+            }
+
+            function setEnabled() {
+                UE.getEditor('editor').setEnabled();
+                enableBtn();
+            }
+
+            function getText() {
+                //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+                var range = UE.getEditor('editor').selection.getRange();
+                range.select();
+                var txt = UE.getEditor('editor').selection.getText();
+                alert(txt)
+            }
+
+            function getContentTxt() {
+                var arr = [];
+                arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+                arr.push("编辑器的纯文本内容为：");
+                arr.push(UE.getEditor('editor').getContentTxt());
+                alert(arr.join("\n"));
+            }
+            function hasContent() {
+                var arr = [];
+                arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+                arr.push("判断结果为：");
+                arr.push(UE.getEditor('editor').hasContents());
+                alert(arr.join("\n"));
+            }
+            function setFocus() {
+                UE.getEditor('editor').focus();
+            }
+            function deleteEditor() {
+                disableBtn();
+                UE.getEditor('editor').destroy();
+            }
+            function disableBtn(str) {
+                var div = document.getElementById('btns');
+                var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+                for (var i = 0, btn; btn = btns[i++];) {
+                    if (btn.id == str) {
+                        UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+                    } else {
+                        btn.setAttribute("disabled", "true");
+                    }
+                }
+            }
+            function enableBtn() {
+                var div = document.getElementById('btns');
+                var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+                for (var i = 0, btn; btn = btns[i++];) {
+                    UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+                }
+            }
+
+            function getLocalData() {
+                alert(UE.getEditor('editor').execCommand("getlocaldata"));
+            }
+
+            function clearLocalData() {
+                UE.getEditor('editor').execCommand("clearlocaldata");
+                alert("已清空草稿箱")
+            }
+        </script>
+</body>
+
+</html>

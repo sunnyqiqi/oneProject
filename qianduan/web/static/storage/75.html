@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出入库-调拨商品</title>
+    <link rel="stylesheet" href="static/storage/css/storage.css">
+    <link rel="stylesheet" href="static/goods/goods.css">
+</head>
+<body>
+<div class="finance_content">
+    <div class="lik_content_max_height_box">
+<div class="con_header contenthead">
+    <h2>调拨商品</h2>
+    <div class="right" style="width: 180px;">
+        <button name="crk_tbsp_new" class="val_dialogTop but_blue but_title">新建调拨商品</button>
+        <div class="res tbsp_djsx_btn_xxl" title="点击刷新"></div>
+    </div>
+</div>
+<div class="con_m_box sbar" style="padding-left: 25px;padding-right: 22px;">
+    <div class="con_right_head clearfix" style="border:none;">
+        <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input dbsp_ss_value_xxl" value="商品编号/商品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" >
+            <button class="search_but but_blue dbsp_ss_btn_xxl" style="height: 30px;width: auto;">搜索</button>
+        </div>
+        <button class="but_cancel but_small inline_block zkgjssBtn" name="storage_tbsp_zkgjss">展开高级搜索</button>
+        <div class="inline_block" style="margin-left:30px;">
+            <input type="checkbox" class="dbsp_noshow_btn_xxl">不显示已作废
+        </div>
+        <div class="right con_right_result right">
+            <p class="left">搜索结果: <span class=" f_color dbsp_list_mainnums_xxl">3</span>条</p>
+            <!--<p class="left c_r">总计金额: <span>0.00</span>元</p>-->
+         <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="crk_tbsp_xzckx">
+                <i class="eyeIcon"></i>选择查看项</span>
+    </div>
+        <div class="t-z-list ckx_cont" name="crk_tbsp_xzckx" style="right: 16px; line-height: 27px; top: 57px; display: none;">
+            <i class="ckx_icon_right"></i>
+            <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+            <ul class="sbar muban_addkey_list" id="dbsp_xzckx_ul_xxl">
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">调拨人</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">创建人</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">备注</p>
+                </li>
+            </ul>
+            <div class="bot-btn">
+                <button class="but_small but_blue" id="dbsp_xzckx_baocun_btnxxl">保存</button>
+                <button class="but_small but_cancal" id="dbsp_xzckx_huifumoren_btn_xxl">恢复默认</button>
+            </div>
+        </div>
+        <div class="closeckx_cont" style="display: none;"></div>
+    </div>
+    <div class="container lik_table_wrap">
+        <div class="lik_table_max_height table-container">
+            <table id="dbsp_xzckx_table_xxl">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>调拨编号</th>
+                    <th>商品类型</th>
+                    <th class="order dbsp_dbnums_sjsxpl_xxl">调拨数量 <i class="price_icon"></i></th>
+                    <th>调出库房</th>
+                    <th>调入库房</th>
+                    <th>调拨人</th>
+                    <th class="order dbsp_cjrq_sortpx_xxl">创建日期<i class="price_icon"></i></th>
+                    <th>创建人</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="zkgjss_cont" name="storage_tbsp_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                   <td>
+                        <div class="inline_block select_mormal select_p">
+                        <input type="text" class="select_input block" value="商品类型">
+                        <i></i>
+                        <ul class="select_list dbsp_typelist_xxl">
+                            <li typeid="1">商品</li>
+                            <li typeid="3">配置商品</li>
+                        </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                        <input type="text" class="select_input block" value="调出库房">
+                        <i></i>
+                        <ul class="select_list dbsp_tckf_mainlist_xxl">
+                            <!--<li>库房A</li>
+                            <li>库房B</li>-->
+                        </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="调入库房">
+                            <i></i>
+                            <ul class="select_list dbsp_drkf_mainlist_xxl">
+                                <!--<li>库房B</li>
+                                <li>库房C</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block diaoboren_gjss_valuexxl" value="调拨人">
+                            <i></i>
+                            <ul class="select_list dbsp_dbr_mainlist_xxl">
+                                <!--<li>张三</li>
+                                <li>李四</li>
+                                <li>李四三</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: rgb(245, 245, 245); z-index: 1;">
+                            <input type="text" class="select_input block" readonly="true">
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!--<tr>
+                    <td>01</td>
+                    <td>TBD464654</td>
+                    <td>商品</td>
+                    <td>10</td>
+                    <td>库房A</td>
+                    <td>库房B</td>
+                    <td>张三</td>
+                    <td>2016-10-10</td>
+                    <td>李四</td>
+                    <td></td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn" name="crk_tbsp_lookBox">查看</button><button class="but_mix but_void but_r">作废</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>TBD464654</td>
+                    <td>配置商品</td>
+                    <td>10</td>
+                    <td>库房A</td>
+                    <td>库房B</td>
+                    <td>张三</td>
+                    <td>2016-10-10</td>
+                    <td>李四</td>
+                    <td></td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn" name="crk_tbsp_lookBox">查看</button><button class="but_mix but_void but_r">作废</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>TBD464654</td>
+                    <td>配置商品</td>
+                    <td>10</td>
+                    <td>库房A</td>
+                    <td>库房B</td>
+                    <td>张三</td>
+                    <td>2016-10-10</td>
+                    <td>李四</td>
+                    <td></td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn" name="crk_tbsp_lookBox">查看</button>
+                    </td>
+                </tr>
+                <tr class="grey">
+                    <td><span class="voidIcon">作废</span></td>
+                    <td>TBD464654</td>
+                    <td>配置商品</td>
+                    <td>10</td>
+                    <td>库房A</td>
+                    <td>库房B</td>
+                    <td>张三</td>
+                    <td>2016-10-10</td>
+                    <td>李四</td>
+                    <td></td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn" name="crk_tbsp_lookBox">查看</button>
+                    </td>
+                </tr>-->
+                </tbody>
+                <tbody class="dbsp_list_html_xxl"></tbody>
+            </table>
+            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+            <div class="no_data_box none dbsp_errhtml_xxl">
+                <div class="no_data">
+                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                </div>
+                <div class="no_data_bottom"></div>
+            </div>
+        </div>
+
+        <div class="handle">
+        <div class="fenye_box tbsp_fenye_list_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <ul class="select_list select_list_to_top">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+                <i></i>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+    </div>
+
+    </div>
+
+</div>
+    </div>
+</div>
+<!--新建-选择-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_tbsp_new">
+        <div class="dialog_screen"></div>
+<div class="dialog_content dialog_content_choose">
+    <i class="dialog_close_but">关闭</i>
+    <!--<div class="cg_cgbjd_inbox">-->
+    <ul class="clearfix">
+        <li class="val_dialogTop left dbsp_xj_xzdbdh_btn_xxl" name="crk_tbsp_new_sp">
+            <img src="static/images/cg_new_up.png" alt="商品调拨">
+            <h3 class="block">商品调拨</h3>
+        </li>
+        <li class="line left"></li>
+        <li class="val_dialogTop right dbsp_xj_peizhidbdh_btn_xxl" name="crk_tbsp_new_pz">
+            <img src="static/images/cg_new_cf.png" alt="整机商品调拨">
+            <h3 class="block" style="margin-left:0;margin-right: 0;">整机商品调拨</h3>
+        </li>
+    </ul>
+    <!--</div>-->
+</div>
+    </div>
+</div>
+<!--新建-商品调拨-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_tbsp_new_sp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6" style="width: 900px;height:590px !important">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建调拨商品</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    创建人：<span style="padding-right: 20px;" class="dbsp_xj_sp_cjr_xxl">张三</span>
+                    创建日期：<span class="dbsp_xj_sp_cjrq_xxl">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con" style="padding:0 60px 30px;">
+                    <h2 class="cont_title">新建调拨商品</h2>
+                    <div style="width:50%;">
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>调拨编号</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 dbsp_xj_sp_dbbhs_xxl" value="TBD44681312" readonly="true"></div>
+                        </div>
+
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>出库库房</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal select_100">
+                                    <input type="text" class="select_input dbsp_xjsp_val_xxl" value="选择库房">
+                                    <i></i>
+                                    <ul class="select_list dbsp_xj_sp_kflist_xxl">
+                                        <li>库房A</li>
+                                        <li>库房B</li>
+                                        <li>库房C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>入库库房</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal select_100">
+                                    <input type="text" class="select_input dbsp_xjsp_rkkf_val_xxl" value="选择库房">
+                                    <i></i>
+                                    <ul class="select_list dbsp_xj_rkkflist_html_xxl">
+                                        <li>库房A</li>
+                                        <li>库房B</li>
+                                        <li>库房C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>调拨人</div>
+                            <div class="t_right">
+                                <input type="text" class="time_input c_3 dbsp_xj_sp_dbr_xxl" value="">
+                                <!--<i class="inp_addBtn f_color val_dialogTop" name="crk_tbsp_dxPerson"><b>+</b>选择调拨人</i>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div_1 container" style="margin-top:24px;">
+                                <div class="div_1 table-container">
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>商品名称</th>
+                                            <th>商品编号</th>
+                                            <!--<th>规格型号</th>-->
+                                            <th>属性</th>
+                                            <th>计算单位</th>
+                                            <th>数量</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        	<tbody class="dbsp_xjsplist_a_html_xxl"></tbody>
+                                        <!--<tr>
+                                            <td>01</td>
+                                            <td>
+                                                硬盘/1t
+                                                <button class="but_small but_yellow val_dialogTop" name="crk_tbsp_xzsp">修改商品</button>
+                                            </td>
+                                            <td>SP321321321</td>
+                                            <td>750</td>
+                                            <td>
+                                                品牌：<span>戴尔</span>
+                                            </td>
+                                            <td>块</td>
+                                            <td>
+                                                <div class="num_input inline_block num_input_new"><button class="but_blue but_opa_small inp_plus">+</button><input type="text" value="1"><button class="but_blue but_opa_small radius_left_0 inp_reduce">-</button></div>
+                                            </td>
+
+                                            <td><button class="but_blue but_opa_small but_red">-</button></td>
+                                        </tr>-->
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <button class="but_small but_blue val_dialogTop dbsp_xj_xzsp_btn_xxl" name="crk_tbsp_xzsp">选择商品</button>
+                                            </td>
+                                            <td>
+                                                <!--<div class="t_textinput" style="margin:0;">
+                                                    <div class="t_right" style="margin-left:0;"><input type="text" class="time_input" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                                                    </div>
+                                                </div>-->
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <!--<td></td>-->
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                    <div class="t_textinput t_textarea tbsp_beizhu">
+                        <div class="t_left">
+                            备注
+                        </div>
+                        <div class="t_right">
+                            <textarea class="txt_normal dbsp_xjsp_beizhu_val_xxl"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue val_dialogTop dbsp_xj_spab_tjbtn_xxl" name="crk_tbsp_sctbp">提交</button><button class="but_small but_cancel">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--选择商品-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_tbsp_xzsp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1070px; height: 380px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择商品</h3>
+            </div>
+            <div class="dialog_text">
+                <div class="sbar second-level hr_left_bjbm" style="top: 46px; bottom: 50px;">
+                    <div class="hr_left_nav">
+
+                        <ul class="change">
+                        	<!--<li class="hr_left_all"><span>所有分类</span></li>-->
+                        	<ul class="dbsp_xj_sp_splist_xxl"></ul>
+                            <!--<ul class="hr_ul1">
+                                <li class="hr_left_1"><span>服务器(3)</span></li>
+                                <ul class="hr_ul3">
+                                    <li class="hr_left_2"><span>服务器1</span></li>
+                                    <li class="hr_left_2"><span>服务器2</span></li>
+                                    <li class="hr_left_2"><span>服务器3</span></li>
+                                </ul>
+                            </ul>
+                            <ul class="hr_ul1">
+                                <li class="hr_left_1"><span>交换器(1)</span></li>
+                                <ul class="hr_ul3">
+                                    <li class="hr_left_2"><span>交换器</span></li>
+                                </ul>
+                            </ul>-->
+                        </ul>
+
+                    </div>
+                    <div class="allgoods" style="height: auto;">
+                    </div>
+                </div>
+
+                <div class="sbar rightcontent" style="top: 46px; bottom: 50px;">
+                    <div class="sp_right_con" style="padding-left: 30px; padding-right: 20px;">
+                        <div class="con_right_head clearfix" style="border: none;">
+                            <div class="cont_search inline_block"><input type="text" class="search_input dbsp_splist_value_xxl" value="搜索商品编号/商品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" onkeyup="dbsp_splist_sousuo_now(this.value)"><span class="search_but dbsp_splist_ssbtn_xxl">搜索</span></div>
+                            <div class="con_right_result right">
+                                <p class="left">搜索结果: <span class="f_color dbsp_xjsplist_main_nums_xxl">0</span>条</p>
+                            </div>
+                        </div>
+                        <div class="div_1 container">
+                            <div class="div_1 table-container" style="margin: 0px;">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                    	<!--<input type="checkbox" class="checkAll" name="crk_tbsp_xzspAll">-->
+                                        <th></th>
+                                        <th>数量</th>
+                                        <th class="dbsp_splist_kfmc_xxl">库房A</th>
+                                        <th>商品名称</th>
+                                        <th>商品编号</th>
+                                        <th>基本单位</th>
+
+                                        <th>属性</th>
+                                        <th>备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="dbsp_xj_splist_htmlxxl">
+                                    <!--<tr>
+                                        <td><input type="checkbox" name="crk_tbsp_xzspAll"></td>
+                                        <td><div class="num_input inline_block num_input_new" style="z-index: 1;"><button class="but_blue but_opa_small inp_plus">+</button><input type="text" value="1"><button class="but_blue but_opa_small radius_left_0 inp_reduce">-</button></div></td>
+                                        <td>5</td>
+                                        <td>硬盘</td>
+                                        <td>块</td>
+                                        <td>1T</td>
+                                        <td>品牌：<span>戴尔</span>类型：<span>固态硬盘</span></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="crk_tbsp_xzspAll"></td>
+                                        <td><div class="num_input inline_block num_input_new" style="z-index: 1;"><button class="but_blue but_opa_small inp_plus">+</button><input type="text" value="1"><button class="but_blue but_opa_small radius_left_0 inp_reduce">-</button></div></td>
+                                        <td>10</td>
+                                        <td>硬盘</td>
+                                        <td>块</td>
+                                        <td>1T</td>
+                                        <td>品牌：<span>戴尔</span>类型：<span>固态硬盘</span></td>
+                                        <td></td>
+                                    </tr>-->
+                                    </tbody>
+                                </table>
+                                <div class="dbsp_xj_splist_errhtml_xxl"></div>
+                            </div>
+                        </div>
+                        <div class="fenye_box dbsp_xj_splist_fenyelist_xxl">
+                            <span>每页显示</span>
+                            <div class="inline_block select_mormal">
+                                <input type="text" class="select_input" value="10">
+                                <ul class="select_list select_list_to_top">
+                                    <li>5</li>
+                                    <li>10</li>
+                                    <li>15</li>
+                                    <li>20</li>
+                                </ul>
+                                <i></i>
+                            </div>
+                            <span>条数据</span>
+                            <div class="fenye_btn first_page_valid"><span></span></div>
+                            <div class="fenye_btn prev_page_valid"><span></span></div>
+                            <span class="page_box on">1</span>
+                            <span class="page_box">2</span>
+                            <span class="page_box">3</span>
+                            <span class="page_box">4</span>
+                            <div class="fenye_btn next_page_valid"><span></span></div>
+                            <div class="fenye_btn last_page_valid"><span></span></div>
+                            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue dbsp_xjsplist_spqueding_btnxxl">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新建-配置商品-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_tbsp_new_pz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6" style="width: 900px;height:590px !important;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建调拨整机商品</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    创建人：<span style="padding-right: 20px;" class="dbsp_xj_pzsp_cjr_xxl">张三</span>
+                    创建日期：<span class="dbsp_xj_pzsp_cjrqs_xxl">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con" style="padding:0 60px 30px;">
+                    <h2 class="cont_title">新建调拨商品</h2>
+                    <div style="width:50%;">
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>调拨编号</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 dbsp_xj_peizhisp_dbdh_xxl" value="TBD44681312" readonly="true"></div>
+                        </div>
+
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>出库库房</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal select_100">
+                                    <input type="text" class="select_input xj_peizhi_sp_ckkf_xxl" value="选择库房">
+                                    <i></i>
+                                    <ul class="select_list dbsp_xjpeizhi_ckkf_listhtml">
+                                        <li>库房A</li>
+                                        <li>库房B</li>
+                                        <li>库房C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>入库库房</div>
+                            <div class="t_right">
+                                <div class="inline_block select_mormal select_100">
+                                    <input type="text" class="select_input xj_peizhi_sp_rkhouse_xxl" value="选择库房">
+                                    <i></i>
+                                    <ul class="select_list dbsp_xjpeizhi_rkkf_htmlxxl">
+                                        <li>库房A</li>
+                                        <li>库房B</li>
+                                        <li>库房C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>调拨人</div>
+                            <div class="t_right">
+                                <input type="text" class="time_input c_3 dbsp_xj_peizhisp_dbr_xxl" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                               <!-- <i class="inp_addBtn f_color val_dialogTop" name="crk_tbsp_dxPerson"><b>+</b>选择调拨人</i>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div_1 container" style="margin-top:24px;">
+                        <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>整机商品名称</th>
+                                    <th>整机商品编号</th>
+                                   <!-- <th>规格型号</th>-->
+                                    <th>属性</th>
+                                    <th>计算单位</th>
+                                    <th>数量</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                	<tbody class="dbsp_xjpeizhisp_list_html_xxl"></tbody>
+                                <!--<tr>
+                                    <td>01</td>
+                                    <td>
+                                        7600
+                                        <button class="but_small but_yellow val_dialogTop" name="crk_tbsp_xzsp_pz">修改配置商品</button>
+                                    </td>
+                                    <td>PZ43424355</td>
+                                    <td>inter</td>
+                                    <td>
+                                        品牌：<span>戴尔</span>
+                                    </td>
+                                    <td>台</td>
+                                    <td>
+                                        <div class="num_input inline_block num_input_new"><button class="but_blue but_opa_small inp_plus">+</button><input type="text" value="1"><button class="but_blue but_opa_small radius_left_0 inp_reduce">-</button></div>
+                                    </td>
+                                    <td><button class="but_blue but_opa_small but_green">+</button><button class="but_blue but_opa_small but_red">-</button></td>
+                                </tr>-->
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button class="but_small but_blue val_dialogTop xj_peizhi_xzsp_btnxxl" name="crk_tbsp_xzsp_pz">选择整机商品</button>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <!--<td></td>-->
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="t_textinput t_textarea tbsp_beizhu">
+                        <div class="t_left">
+                            备注
+                        </div>
+                        <div class="t_right">
+                            <textarea class="txt_normal dbsp_xj_peizhisp_bz_xxl"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue val_dialogTop dbsp_xj_peizhisp_tjbtn_xxl" name="crk_tbsp_sctbp">提交</button><button class="but_small but_cancel">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--选择商品-配置商品-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_tbsp_xzsp_pz">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1070px; height: 380px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择整机商品</h3>
+            </div>
+            <div class="dialog_text">
+                <div class="sbar second-level hr_left_bjbm" style="top: 46px; bottom: 50px;">
+                    <div class="hr_left_nav">
+
+                        <ul class="change">
+                        	<!--<li class="hr_left_all"><span>所有分类(4)</span></li>-->
+                        	<ul class="dbsp_xj_peizhisp_splist_xxl"></ul>
+                            <!--<ul class="hr_ul1">
+                                <li class="hr_left_1"><span>服务器(3)</span></li>
+                                <ul class="hr_ul3">
+                                    <li class="hr_left_2"><span>服务器1</span></li>
+                                    <li class="hr_left_2"><span>服务器2</span></li>
+                                    <li class="hr_left_2"><span>服务器3</span></li>
+                                </ul>
+                            </ul>
+                            <ul class="hr_ul1">
+                                <li class="hr_left_1"><span>交换器(1)</span></li>
+                                <ul class="hr_ul3">
+                                    <li class="hr_left_2"><span>交换器</span></li>
+                                </ul>
+                            </ul>-->
+                        </ul>
+
+                    </div>
+                    <div class="allgoods" style="height: auto;">
+                    </div>
+                </div>
+
+                <div class="sbar rightcontent" style="top: 46px; bottom: 50px;">
+                    <div class="sp_right_con" style="padding-left: 30px; padding-right: 20px;">
+                        <div class="con_right_head clearfix" style="border: none;">
+                            <div class="cont_search inline_block"><input type="text" class="search_input dbsp_peizhisp_value_xxl" value="搜索商品编号/商品名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" onkeyup="dbsp_peizhisp_sousuo_now(this.value)"><span class="search_but dbsp_peizhisp_ssbtn_xxl">搜索</span></div>
+                            <div class="con_right_result right">
+                                <p class="left">搜索结果: <span class="dbsp_peizhisp_main_num_xxl f_color">0</span>条</p>
+                            </div>
+                        </div>
+                        <div class="div_1 container">
+                            <div class="div_1 table-container" style="margin: 0px;">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                    	<!--<input type="checkbox" class="checkAll" name="crk_tbsp_xzspAll1">-->
+                                        <th></th>
+                                        <th>数量</th>
+                                        <th class="dbsp_peizhisp_kfmc_xxl">库房A</th>
+                                        <th>整机商品编号</th>
+                                        <th>整机商品名称</th>
+                                        <th>基本单位</th>
+                                        <!--<th>规格</th>-->
+                                        <th>属性</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="dbsp_xj_peizhisp_htmlxxl">
+                                    <!--<tr>
+                                        <td><input type="checkbox" name="crk_tbsp_xzspAll1"></td>
+                                        <td><div class="num_input inline_block num_input_new" style="z-index: 1;"><button class="but_blue but_opa_small inp_plus">+</button><input type="text" value="1"><button class="but_blue but_opa_small radius_left_0 inp_reduce">-</button></div></td>
+                                        <td>5</td>
+                                        <td>PZ132165465</td>
+                                        <td>服务器7300</td>
+                                        <td>台</td>
+                                        <td>inter</td>
+                                        <td>品牌：<span>戴尔</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="crk_tbsp_xzspAll1"></td>
+                                        <td><div class="num_input inline_block num_input_new" style="z-index: 1;"><button class="but_blue but_opa_small inp_plus">+</button><input type="text" value="1"><button class="but_blue but_opa_small radius_left_0 inp_reduce">-</button></div></td>
+                                        <td>10</td>
+                                        <td>PZ132165465</td>
+                                        <td>服务器7300</td>
+                                        <td>台</td>
+                                        <td>AMD</td>
+                                        <td>品牌：<span>戴尔</span></td>
+                                    </tr>-->
+                                    </tbody>
+                                </table>
+                                 <div class="dbsp_xj_peizhisp_errhtml_xxl"></div>
+                            </div>
+                        </div>
+                        <div class="fenye_box dbsp_xj_peizhisp_fenyelist_xxl">
+                            <span>每页显示</span>
+                            <div class="inline_block select_mormal">
+                                <input type="text" class="select_input" value="10">
+                                <ul class="select_list select_list_to_top">
+                                    <li>5</li>
+                                    <li>10</li>
+                                    <li>15</li>
+                                    <li>20</li>
+                                </ul>
+                                <i></i>
+                            </div>
+                            <span>条数据</span>
+                            <div class="fenye_btn first_page_valid"><span></span></div>
+                            <div class="fenye_btn prev_page_valid"><span></span></div>
+                            <span class="page_box on">1</span>
+                            <span class="page_box">2</span>
+                            <span class="page_box">3</span>
+                            <span class="page_box">4</span>
+                            <div class="fenye_btn next_page_valid"><span></span></div>
+                            <div class="fenye_btn last_page_valid"><span></span></div>
+                            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue dbsp_peizhisp_queding_btnxxl">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--右侧查看-->
+<div class="right_sidebar_h" ></div>
+<div class="right_sidebar Sideslip" name="crk_tbsp_lookBox">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left">调拨商品</p>
+                <div class="slider_head_moreBox right dbsp_ck_genduo_btnxxl">
+                    <span class="slider_head_but right dbsp_ck_zuofei_btn_xxl">作废</span>
+                </div>
+            </div>
+            <p class="slider_head_msg_det">创建日期：<span style="margin-right:10px;" class="dbsp_ck_cjrq_xxl">2016-10-27 14:48:13</span></p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <!--right_sidebar_close-->
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="storage_rkgl_fpDoneright">基本信息</li>
+                <!--<li name="">历史记录</li>-->
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b" style="width: 434px;height: 100%;overflow: hidden;">
+            <!--基本信息-->
+            <div class="ht_base_msg sbar" name="storage_rkgl_fpDoneright">
+                <div class="ht_base_msgCon sbar" style="bottom:0;">
+                    <div class="d-r-t-h">
+                        <h3 class="cont_title">基本信息</h3>
+                        <div class="takenote_xq">
+                            <button class="but_small b_b but_blue val_dialog dbsp_ck_ckbtn_xxl" name="crk_tbsp_look" style="float: right;margin-right: 15px;">查看</button>
+                        </div>
+                        <p class="l-s-x">调拨编号：<span class="dbsp_ck_dbbh_xxl">TBD464654</span></p>
+                        <p class="l-s-x">调拨数量：<span class="dbsp_ck_dbnums_xxl">10</span></p>
+                        <p class="l-s-x">调出库房：<span class="dbsp_ck_dckf_xxl">库房A</span></p>
+                        <p class="l-s-x">调入库房：<span class="dbsp_ck_drkf_xxl">库房B</span></p>
+                        <p class="l-s-x">调拨人：<span class="dbsp_ck_dbr_xxl">张三</span></p>
+                        <p class="l-s-x">备注：<span class="dbsp_ck_beiz_xxl">-</span></p>
+                    </div>
+                </div>
+            </div>
+            <!--历史记录 -->
+            <div class="ht_base_msg sbar" name="storage_rkgl_fpDoneright">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">王小二</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">创建日期：<span>2016-10-08</span></p>
+                        <p class="l-s-x">关联单据编号：<span>XTH4654633</span></p>
+                        <p class="l-s-x">相关往来名称：<span>今日头条</span></p>
+                        <p class="l-s-x">分配库房：<span>未分配</span></p>
+                        <p class="l-s-x">入库人：<span>未分配</span></p>
+                        <p class="l-s-x">入库数量：<span>100</span></p>
+                        <p class="l-s-x">已分配数量：<span>0</span></p>
+                        <p class="l-s-x">下单人：<span>张三</span></p>
+                        <p class="l-s-x">分配人：<span>张三</span></p>
+                        <p class="l-s-x">状态：<span>张三</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                    <div class="d-r-t-h" style="border-top:1px solid #f5f5f5;border-bottom:none;">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">大老板</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自电脑端</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">状态：<span>停用</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_tbsp_look">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle1">
+            <div class="dialog_title relative">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">调拨商品详情</h3>
+                <button class="but_grey_a but_small but_print2" style="position: absolute;right:36px;top:9px;"><i style="vertical-align: middle;margin-top:-2px;"></i>导出PDF或打印</button>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    创建人：<span style="padding-right: 20px;" class="dbsp_xq_cjrss_xxl">张三</span>
+                    创建日期：<span class="dbsp_xq_cjrqss_xxl">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">调拨单</h2>
+                    <div style="width:50%;">
+                        <p class="l-s-x">调拨编号：<span class="dbsp_xq_dbbhss_xxl">TBD4654564</span></p>
+                        <!--<p class="l-s-x">调拨日期：<span>2016-10-10</span></p>-->
+                        <!--<p class="l-s-x">负责人：<span>张三</span></p>-->
+                        <p class="l-s-x">出库库房：<span class="dbsp_xq_ckkfss_xxl">库房A</span></p>
+                        <p class="l-s-x">入库库房：<span class="dbsp_xq_rukkfss_xxl">库房B</span></p>
+                        <p class="l-s-x">调拨人：<span class="dbsp_xq_dbrss_xxl">李丽</span></p>
+                    </div>
+                    <div class="div_1 container" style="margin-top:24px;">
+                        <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>商品名称</th>
+                                    <th>商品编号</th>
+                                    <!--<th>规格型号</th>-->
+                                    <th>属性</th>
+                                    <th>计算单位</th>
+                                    <th>数量</th>
+                                </tr>
+                                </thead>
+                                <tbody class="dbsp_xq_prolist_html_xxl">
+                                <!--<tr>
+                                    <td>01</td>
+                                    <td>硬盘</td>
+                                    <td>SP321321321</td>
+                                    <td>750</td>
+                                    <td>
+                                        品牌：<span>希捷</span>
+                                    </td>
+                                    <td>块</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td>硬盘</td>
+                                    <td>SP321321321</td>
+                                    <td>750</td>
+                                    <td>品牌：<span>希捷</span></td>
+                                    <td>块</td>
+                                    <td>5</td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                            <div class="dbsp_xq_proerr_html_xxl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--生成调拨单-->
+<div class="dialog">
+    <div class="dialog_box dbsp_scdbd_mainhtml_xxl" name="">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 300px; width: 400px;">
+            <div class="dialog_title" style="z-index: 1;"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">生成调拨单</h3>
+            </div>
+            <div class="dialog_text sbar" style="z-index: 2;">
+
+                <p class="cg_scd_succ c_3" style="margin-top: 22px;margin-bottom: 22px;">您的调拨单：<span class="f_color dbsp_scover_xxl">TBD6545646</span>已生成</p>
+                <!--<p class="cg_scd_succ c_3" style="margin-bottom:10px;font-size:14px;"></p>-->
+                <p class="cg_scd_succtip">1、入库信息已推送入库管理</p>
+                <p class="cg_scd_succtip">2、出库信息已推送出库管理</p>
+            </div>
+            <div class="dialog_submit" style="height: 45px; line-height: 45px; z-index: 3;">
+                <button class="but_blue but_small dbsp_tc_quedbtn_xxl">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择物流单-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_tbsp_xzwld">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_7" style="width: 1000px;height: 360px !important;" >
+            <div class="dialog_title relative">
+                <i class="dialog_close"></i>
+                <h3 class="dialog_h3">选择物流单</h3>
+            </div>
+            <div class="dialog_text sbar" style="height:86%;padding:0;margin:0;">
+                <div class="dialog_text_con">
+
+                    <div class="con_right_head clearfix" style="border:none;">
+                        <div class="cont_search inline_block"><input type="text" class="search_input" value="搜索物流编号/物流单号" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);"><span class="search_but">搜索</span></div>
+                        <div class="t_textinput inline_block" style="width: 30%;margin:0;margin-left: 20px;">
+                            <div class="t_left" style="width: 32%;max-width:7em;"><i class="c_r">*</i>选择创建日期</div>
+                            <div class="t_right" style="margin-left:32%;width: 68%;">
+                                <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div_1">
+                                <div class="div_1 table-container" style="margin:0;">
+                                    <table class="page_69_blrk_table">
+                                        <thead>
+                                        <tr>
+                                            <th>选择</th>
+                                            <th>序号</th>
+                                            <th>物流编号</th>
+                                            <th>物流单号</th>
+                                            <th>物流公司</th>
+                                            <th>物流金额(元)</th>
+                                            <th>发货时间</th>
+                                            <th>预计到货时间</th>
+                                            <th>制单人</th>
+                                            <th>创建日期</th>
+                                            <th>负责人</th>
+                                            <th>备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="radio" checked="checked" name="crk_ckgl_xzwldInp"></td>
+                                            <td>01</td>
+                                            <td>WLD798798</td>
+                                            <td>4654446464</td>
+                                            <td>顺丰</td>
+                                            <td>500</td>
+                                            <td>2016-10-10</td>
+                                            <td>2016-10-13</td>
+                                            <td>张三</td>
+                                            <td>2016-10-10</td>
+                                            <td>李四</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="crk_ckgl_xzwldInp"></td>
+                                            <td>02</td>
+                                            <td>WLD798798</td>
+                                            <td>4654446464</td>
+                                            <td>顺丰</td>
+                                            <td>500</td>
+                                            <td>2016-10-10</td>
+                                            <td>2016-10-13</td>
+                                            <td>张三</td>
+                                            <td>2016-10-10</td>
+                                            <td>李四</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="crk_ckgl_xzwldInp"></td>
+                                            <td>03</td>
+                                            <td>WLD798798</td>
+                                            <td>4654446464</td>
+                                            <td>顺丰</td>
+                                            <td>500</td>
+                                            <td>2016-10-10</td>
+                                            <td>2016-10-13</td>
+                                            <td>张三</td>
+                                            <td>2016-10-10</td>
+                                            <td>李四</td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择人员，单选-->
+<div class="dialog">
+    <div class="dialog_box" name="crk_tbsp_dxPerson">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择人员</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_uldx"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                            	<i class="dbsp_xzry_list_xxl"></i>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small dbsp_xzry_queding_btnxxl">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+	$('.table-container').scroll(function () {
+                       
+                        $('.dbsp_errhtml_xxl').css('padding-left', parseInt($(this).scrollLeft()))
+    })
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+</script>
+</body>
+<script src="js/storage/75.js"></script>
+</html>

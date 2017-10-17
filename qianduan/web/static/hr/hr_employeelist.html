@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>部门员工</title>
+    <link rel="stylesheet" type="text/css" href="../tool/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../tool/css/page.css">
+    <link rel="stylesheet" type="text/css" href="css/hr_employeelist.css">
+</head>
+<body>
+<div class="contenthead">
+    <P>新增部门和员工</P>
+    <ul class="contenthead-left">
+        <li>添加部门</li>
+        <li>添加成员</li>
+        <li>批量导入成员</li>
+        <li class="attributesettingbtn" >导出会员</li>
+        <li class="break"></li>
+        <div class="attributesetting">
+            <ul>
+                <li>商品属性设置</li>
+                <li>基本单位设置</li>
+                <li>商品分类设置</li>
+            </ul>
+        </div>
+    </ul>
+</div>
+<!-- 页面菜单 -->
+<div class="second-level">
+    <p class="hr_employeelist_title"><i></i>编辑部门</p>
+    <div class="allgoods"  style="height: auto;">
+        <p ><span class="file"></span>aa<span></span></p>
+        <ul class="secsul">
+            <li class="" ><i>bb</i>
+            </li>
+            <!-- 二级 -->
+            <li class="chird-mun">
+                <a>cc</a>
+            </li>
+        </ul>
+        <ul class="secsul">
+            <li class="" ><i>bb</i>
+            </li>
+            <!-- 二级 -->
+            <li class="chird-mun">
+                <a>cc</a>
+            </li>
+            <li class="chird-mun">
+                <a>cc</a>
+            </li>
+        </ul>
+    </div>
+    <div class="allgoods"  style="height: auto;">
+        <!--一级-->
+        <p ><span class="file"></span>aa<span></span></p>
+        <ul class="secsul">
+            <!-- 二级 -->
+            <li><i>bb</i>
+            </li>
+            <!-- 三级 -->
+            <li class="chird-mun">
+                <a>cc</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="rightcontent">
+    <div class="smnavigation">
+        <input type="text" name="" placeholder="搜索成员／部门／手机等">
+        <span class="sm-search">搜索</span>
+        <div class="smnavigation-right">
+            <p class="">搜索结果：<span>0</span> 条</p>
+            <div class="btn-blue">选择查看项</div>
+        </div>
+    </div>
+    <div class="t-z-list" style="display:none;">
+        <div class="b-j-p-x" >编辑排序</div>
+        <ul>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox" />
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox" />
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                 </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                 </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+            <li class="l-li-b">
+                <div class="check-box left-box">
+                    <input type="checkbox"/>
+                </div>
+                <p class="z-d-l">字段1</p>
+            </li>
+        </ul>
+        <!--  -->
+        <div class="bot-btn">
+            <div class="btn-sav">保存</div>
+            <div class="btn-g-al">恢复默认</div>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-bordered" >
+            <thead>
+            <tr>
+                <th  width="15"  style="border: none !important;border-top:1px solid #e6e6e6;">
+                    <input type="checkbox">
+                </th>
+                <th>名字</th>
+                <th>部门</th>
+                <th>岗位名称</th>
+                <th>职责</th>
+                <th>身份证</th>
+                <th>性别</th>
+                <th>出生日期 <i></i></th>
+                <th>住址</th>
+                <th>学历</th>
+                <th>借款状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+
+                <td style="border-left: none !important">
+                    <input type="checkbox">
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td ></td>
+                <td>
+                    <div class="td-btn">查看</div>
+                    <div class="td-btn">编辑</div>
+                    <div class="td-btn">删除</div>
+                </td>
+            </tr>
+            <tr >
+                <td style="border-left: none !important;border-bottom: 1px solid #dddddd;">
+                    <input type="checkbox">
+                </td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">test</td>
+                <td style="border-bottom: 1px solid #dddddd;">
+                    <div class="td-btn">查看</div>
+                    <div class="td-btn">编辑</div>
+                    <div class="td-btn">删除</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="handle">
+            <div class="handle-left clearafter">
+                <div class="check-box left-box handle-left-top">
+                    <input type="checkbox" id="checkboxFourInput6">
+                    <label class="smlabel" for="checkboxFourInput6"></label>
+                </div>
+                <div class="hr_emploeelist_select2 clearafter">
+                    <span class="hr_emploeelist_s-p-c">移动到</span>
+                </div>
+                <input type="hidden" id="container" class="container2">
+            </div>
+            <div class="handle-righ clearafter">
+                <span>每页显示</span>
+                <div id="select" class="select1">
+                    <cite class="p-s-u"></cite>
+                    <ul class="p-s-ul" style="display: none;">
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                        <li class="t-s-x"><a href="javascript:;"></a></li>
+                    </ul>
+                </div>
+                <input name="" type="hidden" value="" id="container1" class="container" />
+                <span>条数据</span>
+                <span class="pageD"></span>
+                <span>当前在</span>
+                <span class="C-page"></span>
+                <span>页</span>
+                <span class="pageU"></span>
+                <span>共</span>
+                <span class="C-num">2</span>
+                <span>条数据</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出编辑部门-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent editDep">
+        <div class="a-head">
+            <h4>编辑部门</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_emploeelist_add-dep">
+            <span>新建部门</span>
+            <span>编辑</span>
+            <span>上移</span>
+            <span>下移</span>
+            <span>删除</span>
+        </div>
+        <div class="exitdepCon">
+
+        </div>
+        <div class="pra-4-cent">
+            <div class="pra-4-cent-btn1">保存</div>
+            <div class="pra-4-cent-btn2">取消</div>
+        </div>
+    </div>
+</div>
+<!-- 弹窗添加成员-->-
+<div class=" par-alt"style="display: none">
+    <div class="hr_employeelist_mumberCon">
+        <div class="a-head">
+            <h4>添加成员</h4>
+            <span class="a-col"></span>
+        </div>
+        <div class="a-3-cent hr_employeelist_mumlist">
+            <div class="scrollbar" id="style-1">
+                <div class="hr_employeelist_photo">
+                    <span></span>
+                    <p>点击上传头像</p>
+                </div>
+
+                <h4 >基本信息</h4>
+                <p style="display: none;"></p>
+                <label>
+                    <em class="icon">*</em><p class="conP conPm msgP">姓名</p><input type="text" placeholder="请输入姓名" >
+                </label>
+                <label>
+                    <p class="conP msgP noicon">工号</p>
+                    <input type="text" placeholder="请输入工号" class="hr_emploeelist_inp">
+                </label>
+                <label>
+                    <p class="conP msgP">性别</p>
+                    <select class="munselect hr_emploeelist_inp">
+                        <option value="男" label="男" selected="selected">男</option>
+                        <option value="女" label="女">女</option></select>
+                </label>
+                <label>
+                    <em class="icon">*</em><p class="conP conPm msgP">手机</p><input type="text">
+                </label>
+                <label class="hr_emploeelist_apartmsg">
+                    <p class="conP msgP">部门</p><input type="text" value="所有部门">
+                    <span class="hr_emploeelist_chooseapart"><i>+ </i>选择部门</span>
+                </label>
+                <label>
+                    <p class="conP msgP">职位</p><input type="text" placeholder="请输入职位" >
+                </label>
+                <label>
+                    <p class="conP msgP">邮箱</p><input type="text" placeholder="请输入邮箱">
+                </label>
+
+                <h4>详细资料</h4>
+                <label >
+                    <p class="conP">毕业日期</p>
+                    <input type="date" >
+                </label>
+                <label >
+                    <p class="conP">任职日期</p>
+                    <input type="date" >
+                </label>
+
+                <label >
+                    <p class="conP">民族</p>
+                    <input type="text">
+                </label>
+                <label >
+                    <p class="conP">籍贯</p>
+                    <input type="text"  placeholder="请输入籍贯">
+                </label>
+                <label >
+                    <p class="conP">身份证号</p>
+                    <input type="text"  placeholder="请输入身份证号">
+                </label>
+                <label >
+                    <p class="conP">生日</p>
+                    <input type="text" placeholder="请选择日期">
+                </label>
+                <label >
+                    <p class="conP">婚姻状况</p>
+                    <input type="text" placeholder="请输入婚姻状况">
+                </label>
+                <label >
+
+                    <p class="conP">家庭住址</p>
+                    <input type="text" placeholder="请输入家庭地址">
+                </label>
+                <label >
+                    <p class="conP">紧急联系人</p>
+                    <input type="text" placeholder="请输入紧急联系人姓名">
+                </label>
+                <label>
+                    <p class="conP">紧急联系人电话</p>
+                    <input type="text" placeholder="请输入紧急联系人电话">
+                </label>
+
+            </div>
+            <div class="pra-4-cent newpra-4-cent">
+                <div class="alertBtn-te">
+                    <div class="pra-4-cent-btn1">提交</div>
+                    <div class="pra-4-cent-btn2">取消</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 弹窗添加部门 -->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent">
+        <div class="a-head">
+            <h4>添加部门</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_emploeelist_add-dep-con">
+            <label>
+                <p class="conP conPm">部门名称</p>
+                <input class="inp" type="text"  placeholder="输入部门名称">
+            </label>
+            <label>
+                <p class="conP conPm">所属上级</p>
+                <select class="inp inpS munselect">
+                    <option selected="selected">aa</option>
+                    <option>bb</option>
+                    <option>cc</option>
+                </select>
+            </label>
+
+            <!-- 		<label>
+                        <p class="conP conPm">部门主管</p>
+                            <select class="inp inpS munselect ng-pristine ng-untouched ng-valid">
+                                <option value="number:1" label="张三" selected="selected">张三</option>
+                                <option value="number:2" label="李四">李四</option>
+                            </select>
+                    </label> -->
+
+        </div>
+        <div class="pra-4-cent newpra-4-cent">
+            <div class="alertBtn-te">
+                <div class="pra-4-cent-btn1">保存</div>
+                <div class="pra-4-cent-btn2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 弹窗-查看信息 -->
+<div class="Sideslip" style="display: none">
+    <div class="Sideslip-head hr_emploeelist_Sideslip-head">
+        <span class="Sideslip-btn" ></span>
+        <div class="sides-img">
+            <span></span>
+            <p class="msg-name">路海波（男）</p>
+            <p class="msg-status">（未办理）</p>
+        </div>
+    </div>
+    <!-- 基本信息 -->
+    <div class="d-r-t j-bx-b">
+        <div class="d-r-t-h">
+            <h4>基本信息</h4>
+            <p class="l-s-x">姓名：<span>张三</span></p>
+            <p class="l-s-x">工号：<span>0089</span></p>
+            <p class="l-s-x">性别：<span>男</span></p>
+            <p class="l-s-x">手机：<span>18615321256</span></p>
+            <p class="l-s-x">部门：<span>技术部</span></p>
+            <p class="l-s-x">职位：<span>工程师</span></p>
+            <p class="l-s-x">邮箱：<span>18615321256@qq.com</span></p>
+        </div>
+        <div class="d-r-t-h">
+            <h4>详细资料</h4>
+            <p class="l-s-x">毕业日期：<span>2012-07</span></p>
+            <p class="l-s-x">入职日期：<span>2014-05</span></p>
+            <p class="l-s-x">民族：<span>满族</span></p>
+            <p class="l-s-x">籍贯：<span>北京市朝阳区速度放缓速度放缓</span></p>
+            <p class="l-s-x">身份证号：<span>201315198805052456</span></p>
+            <p class="l-s-x">生日：<span>1988-05-05</span></p>
+            <p class="l-s-x">婚姻状况：<span>未婚</span></p>
+            <p class="l-s-x">家庭住址：<span>山东各地房管局</span></p>
+            <p class="l-s-x">紧急联系人：<span>李四</span></p>
+        </div>
+        <div class="pra-4-cent newpra-4-cent">
+            <div class="alertBtn-te">
+                <div class="pra-4-cent-btn1">保存</div>
+                <div class="pra-4-cent-btn2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-移动到-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent">
+        <div class="a-head">
+            <h4>移动到</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="exitdepCon">
+        </div>
+        <div class="pra-4-cent">
+            <div class="pra-4-cent-btn1">保存</div>
+            <div class="pra-4-cent-btn2">取消</div>
+        </div>
+    </div>
+</div>
+<!--弹窗-批量导入成员-->
+<div class="par-alt" style="display: none">
+    <div class="pr-alertcantent leadin">
+        <div class="a-head">
+            <h4>批量导入成员</h4>
+            <span class="a-coy"></span>
+        </div>
+        <div class="hr_emploeelist_leadinBox">
+            <span class="points">需按照官网导入模板(xlsx)修改表格，立即生效</span>
+            <div class="hr_emploeelist_leadinCon">
+                <p>第一步&nbsp;&nbsp;请根据导入模板的格式整理需要导入的数据</p>
+                <p class="hr_emploeelist_link-mu"><a href="javascripr:;">下载《用户导入模板》</a></p>
+                <p>第二步&nbsp;&nbsp;请上传需要导入的文件</p>
+                <div class="clearafter hr_emploeelist_up-con">
+                    <span class="hr_emploeelist_fileadd"></span>
+                    <span class="hr_emploeelist_cho-file">选择文件</span>
+                </div>
+                <span class="points">导入只增加新成员信息，导入后将免费向新加入成员发送邀请短信</span>
+            </div>
+        </div>
+        <div class="pra-4-cent newpra-4-cent">
+            <div class="alertBtn-te">
+                <div class="pra-4-cent-btn1">保存</div>
+                <div class="pra-4-cent-btn2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

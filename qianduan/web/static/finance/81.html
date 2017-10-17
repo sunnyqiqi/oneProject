@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/finance/css/finance.css">
+    <script src="static/finance/js/finance.js"></script>
+    <title>财务-收支-账目管理</title>
+</head>
+<style>
+    @media screen and (max-width: 1366px) {
+        .finance_con_right_head1 {
+            height: 90px;
+        }
+
+        .finance_cont_search1 {
+            display: block;
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            margin-top: -25px;
+            margin-left: 0 !important;
+        }
+    }
+
+    @media screen and (min-width: 1366px) and (max-width: 1640px) {
+        .finance_con_right_head1 {
+            height: 90px;
+        }
+
+        .finance_cont_search1 {
+            display: block;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            margin-top: -25px;
+            margin-left: 0 !important;
+        }
+    }
+</style>
+<body>
+<div class="finance_content">
+    <div class="lik_content_max_height_box">
+        <!--第一行-->
+        <div class="finance_title">
+            <h2>账目管理</h2>
+            <div class="right" id="fnc_account_create_nav" style="width: 262px;">
+                <button class="but_blue ht_but val_dialog page_81_new_but" name="finance_new">新建账目</button><button class="but_blue ht_but val_dialog finance_temporary_increase_ticket" name="finance_temporary_increase_ticket">本月临时增票</button>
+                <div class="res page_81_reflash" title="点击刷新"></div>
+            </div>
+        </div>
+        <!--第二行-->
+        <div class="finance_right">
+            <div class="con_right_head clearfix finance_con_right_head1" style="border: none;">
+                <div class="cont_search inline_block">
+                    <input type="text" class="search_input page_81_search_account_name" value="搜索账目名称"
+                           onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    <span class="search_but page_81_search_account_Btn">搜索</span>
+                </div>
+                <!--<div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;">
+                    <div class="t_left" style="width: 24%;max-width: 6em;">查看时间</div>
+                    <div class="t_right clearfix" style="width: 65%;margin-left: 27%;">
+                        <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期"
+                               class="laydate-icon time_input page_81_search_time" readonly="readonly"
+                               onclick="laydate()" style="cursor: pointer;">
+                    </div>
+                </div>-->
+                <div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;">
+                    <div class="t_left" style="width: 24%;max-width: 6em;">选择公司</div>
+                    <div class="t_right clearfix" style="width: 65%;margin-left: 24%;">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input page_81_search_company_name" value="请选择公司账户"
+                                   readonly="readonly"/>
+                            <i></i>
+
+                            <ul class="select_list page_81_search_company_li">
+                                <li>全部</li>
+                                <li>纽沃德</li>
+                                <li>联创万通</li>
+                            </ul>
+                        </div>
+                        <span class="search_but finance_zmgl_look_account_statement" name="finance_zmgl_look_account_statement" style="width: 72px;right: -112px;height: 30px;margin-top: 1px;border-radius:3px;">查看账户流水</span>
+                    </div>
+                </div>
+                <div class="finance_cont_search1 finance_zmgl_button"
+                     style="display: inline-block;margin-left: 94px;vertical-align: middle;">
+                    <button class="but_small but_hr but_a"><span class="c_3">月发票数量：<sapn class="fnc_list_month_total_num">0</sapn></span></button>
+                    <button class="but_small but_hr but_a"><span class="c_3">月发票剩余数量：<sapn class="fnc_list_month_reamin_num">0</sapn> </span><!--<span class="but_red"
+                                                                                                   style="padding: 2px 4px;border-radius: 3px;">低</span>-->
+                    </button>
+                    <button class="but_small but_hr but_a"><span class="c_3">合计总金额：<sapn class="fnc_list_sum_total_money">0</sapn></span></button>
+                </div>
+                <div class="right con_right_result right">
+                    <p class="left">搜索结果: <span class=" f_color page_81_search_allNum">0</span>条</p>
+                </div>
+            </div>
+            <div class="container lik_table_wrap" name="takenote_a" style="padding: 0;">
+                <div class="table-container lik_table_max_height">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>公司名称</th>
+                            <th>账目名称</th>
+                            <th>账目类型</th>
+                            <th>收入总金额(元)</th>
+                            <th>支出总金额(元)</th>
+                            <th>状态</th>
+                            <th>备注</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="page_81_account_table"></tbody>
+                        <tbody>
+                        <!--<tr>
+                            <td>01</td>
+                            <td>纽沃德</td>
+                            <td>销售收入</td>
+                            <td>收入</td>
+                            <td>100000</td>
+                            <td>-</td>
+                            <td class="sp_base_state"><span class="c_g">启用</span></td>
+                            <td>-</td>
+                            <td>
+                                <button class="but_mix r_sidebar_btn but_look" name="finance_ck">查看</button><button class="but_mix but_stop but_r">停用</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>联创万通</td>
+                            <td>销售支出</td>
+                            <td>支出</td>
+                            <td>-</td>
+                            <td>100000</td>
+                            <td class="sp_base_state"><span class="c_g">启用</span></td>
+                            <td>-</td>
+                            <td>
+                                <button class="but_mix r_sidebar_btn but_look" name="finance_ck_zc">查看</button><button class="but_mix but_stop but_r">停用</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>纽沃德</td>
+                            <td>采购退款</td>
+                            <td>收入</td>
+                            <td>100000</td>
+                            <td>-</td>
+                            <td class="sp_base_state"><span class="c_g">启用</span></td>
+                            <td>-</td>
+                            <td>
+                                <button class="but_mix r_sidebar_btn but_look" name="finance_ck">查看</button><button class="but_mix but_stop but_r">停用</button>
+                            </td>
+                        </tr>
+                        <tr class="grey">
+                            <td>04</td>
+                            <td>联创万通</td>
+                            <td>采购支出</td>
+                            <td>支出</td>
+                            <td>-</td>
+                            <td>100000</td>
+                            <td><span>停用</span></td>
+                            <td>-</td>
+                            <td>
+                                <button class="but_mix r_sidebar_btn but_look" name="finance_ck_zc">查看</button><button class="but_mix but_stop but_lv">启用</button><button class="but_mix val_dialog but_exit" name="finance_new_bj">编辑</button><button class="but_mix but_r val_dialog" name="finance_sc">删除</button>
+                            </td>
+                        </tr>-->
+                        <tr class="table_total fnc_list_table_total">
+                            <td>合计</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="fnc_list_income_total_money">0</td>
+                            <td class="fnc_list_expend_total_money">0</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <div class="no_data_box none page_81_table_noData">
+                        <div class="no_data">
+                            <!--<span class="inline_block"></span>-->
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>
+                </div>
+                <div class="handle page_81_table_fenye">
+                    <div class="fenye_box page_81_table_fenyeBox">
+                        <span>每页显示</span>
+                        <div class="inline_block select_mormal">
+                            <input type="text" class="select_input page_81_table_fenye" value="10">
+                            <ul class="select_list select_list_to_top">
+                                <li>5</li>
+                                <li>10</li>
+                                <li>15</li>
+                                <li>20</li>
+                            </ul>
+                            <i></i>
+                        </div>
+                        <span>条数据</span>
+                        <div class="fenye_btn first_page_valid"><span></span></div>
+                        <div class="fenye_btn prev_page_valid"><span></span></div>
+                        <span class="page_box on">1</span>
+                        <span class="page_box">2</span>
+                        <span class="page_box">3</span>
+                        <span class="page_box">4</span>
+                        <div class="fenye_btn next_page_valid"><span></span></div>
+                        <div class="fenye_btn last_page_valid"><span></span></div>
+                        <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                        <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--本月临时增票-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_temporary_increase_ticket">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1" style="height: 240px;width:412px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">本月增票</h3>
+            </div>
+            <div class="dialog_text sbar finance_zmgl_select" style="padding:20px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height: 31px;">
+                    <div class="t_left"><i class="c_r">*</i>公司账户</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input finance_man_account_inp" value="请选择公司账户" readonly="readonly"/>
+                            <i></i>
+                            <ul class="select_list finance_man_account_ul">
+                                <li>纽沃德</li>
+                                <li>联创万通</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>增票数量</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input finance_increase_account_num_inp" value="请输入增票数量" onfocus="fn_focus(this);"
+                               onblur="fn_blur(this);"/>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small finance_increase_account_save">保存</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--新建账目-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_new">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 568px;height: 515px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建账目</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    创建人：<span class="m_right_10 fnc_zmgl_create_uname"></span>
+                    创建日期：<span class="fnc_zmgl_create_time"></span>
+                    <!--在创建的时候还没有保存，这个时候是没有创建日期的，点击保存后才会有创建日期-->
+                </div>
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">新建账目</h2>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>选择账户</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input page_81_new_choose_company_inp" value="请选择账户"
+                                       readonly="readonly"/>
+                                <i></i>
+                                <ul class="select_list page_81_new_choose_company">
+                                    <!--<li companyid="1">纽沃德111</li>
+                                    <li companyid="2">联创万通</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>账目类型</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input page_81_new_choose_type_inp" value="请选择账目类型"
+                                       readonly="readonly"/>
+                                <i></i>
+                                <ul class="select_list page_81_new_choose_type">
+                                    <li>收入</li>
+                                    <li>支出</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width: 6em;"><i class="c_r">*</i>账目名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input page_81_new_account_name_inp" onfocus="fn_focus(this);"
+                                   onblur="fn_blura(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="height: 52px;margin-bottom: 28px;">
+                        <div class="t_left ">备注</div>
+                        <div class="t_right">
+                            <textarea class="txt_normal page_81_new_account_note" onfocus="fn_focus(this);"
+                                      onblur="fn_blur(this);">请输入备注</textarea>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="line-height: 12px;height: 12px;margin-bottom: 28px;">
+                        <div class="t_left"><i class="c_r">*</i>是否启用</div>
+                        <div class="t_right page_81_new_create_value" style="line-height: 12px;">
+                            <input class="fnc_zmgl_create_qy" type="radio" checked="checked" name="finance_zmgl_radio"><span
+                            style="margin-left: 5px;margin-right: 10px;">启用</span>
+                            <input class="fnc_zmgl_create_ty" type="radio" name="finance_zmgl_radio"><span style="margin-left: 5px;">停用</span>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="line-height: 12px;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>默认账目</div>
+                        <div class="t_right" style="line-height: 12px;">
+                            <p class="c_6" style="margin-left:0;top:30px;"><input type="checkbox" checked="checked"
+                                                                                  class="page_81_new_set_default">选择为默认账目
+                            </p>
+                            <p class="c_9" style="margin-top: 10px;">（勾选后每次选择账目时默认为此账目，停用后在选择账目时不显示此账目）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_blue page_81_new_save">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--编辑账目-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_new_bj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 568px;height: 515px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑账目</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    创建人：<span class="m_right_10 page_81_edit_create_user">张三</span>
+                    创建日期：<span class="page_81_edit_create_Time">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">编辑账目</h2>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>选择账户</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input page_81_edit_company_name" value="请选择账户"
+                                       readonly="readonly"/>
+                                <i></i>
+                                <ul class="select_list page_81_edit_choose_company">
+                                    <li companyid="1">纽沃德</li>
+                                    <li companyid="2">联创万通</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>账目类型</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input page_81_edit_account_type" value="请选择账目类型"
+                                       readonly="readonly"/>
+                                <i></i>
+                                <ul class="select_list">
+                                    <li>收入</li>
+                                    <li>支出</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left" style="max-width: 6em;"><i class="c_r">*</i>账目名称</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input page_81_edit_account_name" onfocus="fn_focus(this);"
+                                   onblur="fn_blura(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="height: 52px;margin-bottom: 28px;">
+                        <div class="t_left ">备注</div>
+                        <div class="t_right">
+                            <textarea class="txt_normal page_81_edit_account_note" onfocus="fn_focus(this);"
+                                      onblur="fn_blur(this);">请输入备注</textarea>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="line-height: 12px;height: 12px;margin-bottom: 28px;">
+                        <div class="t_left"><i class="c_r">*</i>是否启用</div>
+                        <div class="t_right page_81_edit_account_use" style="line-height: 12px;">
+                            <input class="fnc_zmgl_create_qy" type="radio" checked="checked" name="finance_zmgl_radio2"><span
+                            style="margin-left: 5px;margin-right: 10px;">启用</span>
+                            <input class="fnc_zmgl_create_ty" type="radio" name="finance_zmgl_radio2"><span style="margin-left: 5px;">停用</span>
+                        </div>
+                    </div>
+                    <div class="t_textinput" style="line-height: 12px;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>默认账目</div>
+                        <div class="t_right" style="line-height: 12px;">
+                            <p class="c_6" style="margin-left:0;top:30px;"><input type="checkbox" checked="checked"
+                                                                                  class="page_81_edit_account_default">选择为默认账目
+                            </p>
+                            <p class="c_9" style="margin-top: 10px;">（勾选后每次选择账目时默认为此账目，停用后在选择账目时不显示此账目）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_blue page_81_edit_save_btn">保存</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--（全部）查看账户流水-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_zmgl_look_account_statement">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle2">
+            <div class="dialog_title">
+                <i class="dialog_close dialog_ckxq_close">关闭</i>
+                <h3 class="dialog_h3">账户流水</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 84%;">
+                <div class="dialog_text_con" style="padding-bottom: 0">
+                    <h2 class="cont_title finance_account_ckzhls_name"></h2>
+                    <div class="con_right_head clearfix" style="padding: 0 0 20px;">
+                        <div class="work_tabSp inline_block">
+                            <ul class="tabtitle finance_account_statement_ul">
+                                <li name="finance_zmgl_look_search" class="taba tabhover finance_account_statement_getall">全部</li>
+                                <li name="finance_zmgl_look_search" class="taba finance_account_statement_income">收入</li>
+                                <li name="finance_zmgl_look_search" class="taba finance_account_statement_output">支出</li>
+                            </ul>
+                        </div>
+                        <div class="cont_search inline_block hr_base_search" style="margin-right: 5px;">
+                            <input type="text" class="search_input finance_account_statement_search_inp" value="关联业务名称/单据编号/收支编号"  onfocus="fn_focus(this);"
+                                   onblur="fn_blur(this);">
+                            <button class="search_but but_blue finance_account_statement_search" style="height: 30px;width: auto;">搜索</button>
+                        </div>
+                        <!--<button class="but_small inline_block zkgjssBtn" name="finance_zmgl_zkgjss">展开高级搜索</button>-->
+                        <!--<div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;margin-left: 15px;">
+                            <div class="t_left" style="width: 24%;max-width: 6em;">查看时间</div>
+                            <div class="t_right clearfix" style="width: 65%;margin-left: 24%;">
+                                <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期"
+                                       class="laydate-icon time_input" readonly="readonly" onclick="laydate()"
+                                       style="cursor: pointer;margin-top: -2px;">
+                            </div>
+                        </div>-->
+                        <div class="con_right_result right">
+                            <p class="left">搜索结果: <span class=" f_color" id="finance_account_satament_search_list">3</span>条</p>
+                            <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="takenote_jrd_xzckx"><i
+                                class="eyeIcon"></i>选择查看项</span>
+                        </div>
+                        <!--选择查看项-->
+                        <div class="t-z-list ckx_cont" name="takenote_jrd_xzckx"
+                             style="right:14px;line-height: 27px; top: 39px; display: none;">
+                            <i class="ckx_icon_right"></i>
+                            <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                            <ul class="sbar muban_addkey_list fin_account_state_ul" style="height: 200px;">
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收付类型</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收付人</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收付方式</p>
+                                </li>
+                            </ul>
+                            <!--  -->
+                            <div class="bot-btn">
+                                <button class="but_small but_blue fin_account_state_save">保存</button>
+                                <button class="but_small but_cancal fin_account_state_reset">恢复默认</button>
+                            </div>
+                        </div>
+                        <div class="closeckx_cont" style="display: none;"></div>
+                    </div>
+                    <div class="tabcontent lik_table_wrap" name="finance_zmgl_look_search" style="padding: 0;">
+                        <div class="table-container" style="max-height: 333px;">
+                            <table class="finance_account_statement_table">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>收支编号</th>
+                                    <th class="order">收付日期<i class="price_icon"></i></th>
+                                    <th>单据编号</th>
+                                    <th>关联业务名称</th>
+                                    <th>收付类型</th>
+                                    <th>收支类型</th>
+                                    <th>收付人</th>
+                                    <th>结算账目</th>
+                                    <th>收付方式</th>
+                                    <th class="order">收入(元)<i class="price_icon"></i></th>
+                                    <th class="order">支出(元)<i class="price_icon"></i></th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="fin_account_statement_tobdy">
+                                <tr class="zkgjss_cont" name="finance_zmgl_zkgjss">
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text" class="select_input block" value="收付类型">
+                                            <i></i>
+                                            <ul class="select_list">
+                                                <li>值一</li>
+                                                <li>值二</li>
+                                                <li>值三</li>
+                                                <li>值四</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text" class="select_input block" value="收付人">
+                                            <i></i>
+                                            <ul class="select_list">
+                                                <li>值一</li>
+                                                <li>值二</li>
+                                                <li>值三</li>
+                                                <li>值四</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text" class="select_input block" value="结算账目">
+                                            <i></i>
+                                            <ul class="select_list">
+                                                <li>值一</li>
+                                                <li>值二</li>
+                                                <li>值三</li>
+                                                <li>值四</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p">
+                                            <input type="text" class="select_input block" value="收付方式">
+                                            <i></i>
+                                            <ul class="select_list">
+                                                <li>值一</li>
+                                                <li>值二</li>
+                                                <li>值三</li>
+                                                <li>值四</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                            <input type="text" class="select_input block" readonly="true">
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tbody>
+                                <tr class="table_total fnc_total_state_list_handle">
+                                    <td>合计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="c_r finance_account_sum_income_total_money">0</td>
+                                    <td class="c_r finance_account_sum_expend_total_money">0</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                            <div class="no_data_box none finance_table_nodata_box">
+                                <div class="no_data">
+                                    <!--<span class="inline_block"></span>-->
+                                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                                </div>
+                                <div class="no_data_bottom"></div>
+                            </div>
+                        </div>
+                        <div class="handle fnc_talbe_state_list_handle">
+                            <div class="fenye_box fnc_acc_state_list_page">
+                                <span>每页显示</span>
+                                <div class="inline_block select_mormal">
+                                    <input type="text" class="select_input fnc_my_salary_search_num_inp" value="10">
+                                    <ul class="select_list select_list_to_top">
+                                        <li>5</li>
+                                        <li>10</li>
+                                        <li>15</li>
+                                        <li>20</li>
+                                    </ul>
+                                    <i></i>
+                                </div>
+                                <span>条数据</span>
+                                <div class="fenye_btn first_page_valid"><span></span></div>
+                                <div class="fenye_btn prev_page_valid"><span></span></div>
+                                <span class="page_box on">1</span>
+                                <span class="page_box">2</span>
+                                <span class="page_box">3</span>
+                                <span class="page_box">4</span>
+                                <div class="fenye_btn next_page_valid"><span></span></div>
+                                <div class="fenye_btn last_page_valid"><span></span></div>
+                                <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看收款单-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_zmgl_look_gather">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 700px;height: 566px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">收款单详情</h3>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 84%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">收款单</h2>
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                        <p class="l-s-x">收款单编号：<span class="fnc_receipt_log_detail_receipt_code_sn"></span></p>
+                        <p class="l-s-x">客户名称：<span class="fnc_receipt_log_detail_cs_name"></span></p>
+                        <p class="l-s-x">销售单编号：<span class="fnc_receipt_log_detail_code_sn"></span></p>
+                        <p class="l-s-x">结算账户：<span class="fnc_receipt_log_detail_name"></span></p>
+                        <p class="l-s-x">结算账目：<span class="fnc_receipt_log_detail_choice_cuenta"></span></p>
+                        <p class="l-s-x">收款方式：<span class="fnc_receipt_log_detail_way"></span></p>
+                        <p class="l-s-x">收款人：<span class="fnc_receipt_log_detail_owner"></span></p>
+                        <p class="l-s-x">收款日期：<span class="fnc_receipt_log_detail_day"></span></p>
+                    </div>
+                    <hr style="border-top: 6px solid #f5f6fa;width: 750px;margin: 30px -60px;">
+                    <div class="takenote_bg">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>应收款项(元)</th>
+                                        <th>实收款(元)</th>
+                                        <th>大写实收款(元)</th>
+                                        <th style="width: 160px;">备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fnc_receipt_log_detail_no_pay_money"></td>
+                                        <td class="fnc_receipt_log_detail_already_pay_money"></td>
+                                        <td class="fnc_receipt_log_detail_already_pay_money_big"></td>
+                                        <td class="fnc_receipt_log_detail_note"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看付款单-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_zmgl_look_gather_fk">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 700px;height: 560px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">付款单详情</h3>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 84%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">付款单</h2>
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                        <p class="l-s-x">付款单编号：<span class="fnc_paying_log_detail_paying_code_sn"></span></p>
+                        <p class="l-s-x">供应商名称：<span class="fnc_paying_log_detail_cs_name"></span></p>
+                        <p class="l-s-x">采购订单编号：<span class="fnc_paying_log_detail_code_sn"></span></p>
+                        <p class="l-s-x">结算账户：<span class="fnc_paying_log_detail_name"></span></p>
+                        <p class="l-s-x">结算账目：<span class="fnc_paying_log_detail_choice_cuenta"></span></p>
+                        <p class="l-s-x">付款方式：<span class="fnc_paying_log_detail_way"></span></p>
+                        <p class="l-s-x">付款人：<span class="fnc_paying_log_detail_owner"></span></p>
+                        <p class="l-s-x">付款日期：<span class="fnc_paying_log_detail_day"></span></p>
+                    </div>
+                    <hr style="border-top: 6px solid #f5f6fa;width: 750px;margin: 30px -60px;">
+                    <div class="takenote_bg">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>应付款项(元)</th>
+                                        <th>实付款(元)</th>
+                                        <th>大写实付款(元)</th>
+                                        <th style="width: 160px;">备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fnc_paying_log_detail_no_pay_money"></td>
+                                        <td class="fnc_paying_log_detail_already_pay_money"></td>
+                                        <td class="fnc_paying_log_detail_already_pay_money_big"></td>
+                                        <td class="fnc_paying_log_detail_note"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看收入收款单-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_rcsr_dayin">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content finance_print fin_print_dialog_content" style="width: 500px;height: 575px;">
+            <!--logo-->
+            <div class="xs_bjd_header none">
+                <div class="xs_bjd_left p_left finance_print_left">
+                    <div class="xs_bjd_information finance_print_information">
+                        <p class="xs_bjd_information1">收款单</p>
+                        <p class="xs_bjd_information2"><span class="page_105_look_income_number"></span></p>
+                    </div>
+                </div>
+                <div class="p_right finance_print_p">
+                    <img src="static/images/lcwt_logo.png">
+                    <p>联创万通（北京）科技有限公司</p>
+                </div>
+            </div>
+            <div class="none finance_print_hr1">
+                <hr class="finance_print_hr">
+                <hr class="finance_print_hr">
+            </div>
+            <div class="dialog_title">
+                <i class="dialog_close noprint">关闭</i>
+                <h3 class="dialog_h3 noprint">收款单</h3>
+                <!--<button class="but_grey_a but_small but_print2 finance_printBut noprint" style="position: absolute;right:36px;top:9px;"><i style="vertical-align: middle;margin-top:-2px;"></i>打印-->
+                <!--</button>-->
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 100%;">
+                <div class="dialog_text_con dialog_print_text_con">
+                    <h2 class="cont_title noprint">收款单</h2>
+                    <button class="but_mix1 but_grey1 page_105_void_btn noprint" style="background: #b3b3b3;">作废</button>
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                        <p class="l-s-x finance_print_money" style="margin-top: 0;">收款金额：<span class="c_r page_105_look_incomeNum"></span></p>
+                        <p class="l-s-x">收款单编号：<span class="page_105_look_income_number"></span></p>
+                        <p class="l-s-x">收入类型：<span class="page_105_look_income_type"></span></p>
+                        <p class="l-s-x">公司名称：<span class="page_105_look_income_company_name"></span></p>
+                        <p class="l-s-x">收入名称：<span class="page_105_look_income_name"></span></p>
+                        <p class="l-s-x">收款负责人：<span class="page_105_look_owner"></span></p>
+                        <p class="l-s-x">结算账户：<span class="page_105_look_account_company"></span></p>
+                        <p class="l-s-x">结算账目：<span class="page_105_look_account_name"></span></p>
+                        <p class="l-s-x">收款方式：<span class="page_105_look_income_way"></span></p>
+                        <p class="l-s-x">收款人：<span class="page_105_look_user"></span></p>
+                        <p class="l-s-x">收款日期：<span class="page_105_look_day"></span></p>
+                        <p class="l-s-x">备注：<span class="page_105_look_note"></span></p>
+                    </div>
+                </div>
+                <div class="none finance_print_hr2">
+                    <hr class="finance_print_hr">
+                    <hr class="finance_print_hr">
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit noprint">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--打印-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_rczc_dayin">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 500px;height: 575px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">付款单</h3>
+                <!--<button class="but_grey_a but_small but_print2 htmb_btnPrint1"-->
+                <!--style="position: absolute;right:36px;top:9px;"><i-->
+                <!--style="vertical-align: middle;margin-top:-2px;"></i>打印-->
+                <!--</button>-->
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 100%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title" style="display: inline-block">付款单</h2>
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                        <p class="l-s-x" style="margin-top: 0;">付款金额：<span class="c_r fnc_expend_look_expendNum"></span></p>
+                        <p class="l-s-x">付款单编号：<span class="fnc_expend_look_expend_number"></span></p>
+                        <p class="l-s-x">支出类型：<span class="fnc_expend_look_expend_type"></span></p>
+                        <p class="l-s-x">公司名称：<span class="fnc_expend_look_expend_company_name"></span></p>
+                        <p class="l-s-x">支出名称：<span class="fnc_expend_look_expend_name"></span></p>
+                        <p class="l-s-x">结算账户：<span class="fnc_expend_look_account_company"></span></p>
+                        <p class="l-s-x">结算账目：<span class="fnc_expend_look_account_name"></span></p>
+                        <p class="l-s-x">支出负责人：<span class="fnc_expend_look_owner_name"></span></p>
+                        <p class="l-s-x">付款方式：<span class="fnc_expend_look_expend_way"></span></p>
+                        <p class="l-s-x">付款人：<span class="fnc_expend_look_user"></span></p>
+                        <p class="l-s-x">付款日期：<span class="fnc_expend_look_day"></span></p>
+                        <p class="l-s-x">备注：<span class="fnc_expend_look_note"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--（单个）查看账户流水（收入）-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_zmgl_look_one_account_statement">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle2">
+            <div class="dialog_title">
+                <i class="dialog_close dialog_ckxq_close">关闭</i>
+                <h3 class="dialog_h3">账户流水</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 87%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title finance_account_statement_person"></h2>
+                    <div class="d-r-t-h" style="padding:0;">
+                        <p class="l-s-x">账目：<span class="finance_account_statement_account"></span></p>
+                        <p class="l-s-x">账目类型：<span class="finance_account_statement_account_type">收入</span></p>
+                    </div>
+                    <div class="con_right_head clearfix" style="padding: 15px 0;">
+                        <div class="cont_search inline_block hr_base_search" style="margin-right: 6px;">
+                            <input type="text" class="search_input finance_account_statement_income_search_inp" value="关联业务名称/单据编号/收款编号" onfocus="fn_focus(this);"
+                                   onblur="fn_blur(this);">
+                            <button class="search_but but_blue finance_account_statement_income_search" style="height: 30px;width: auto;">搜索</button>
+                        </div>
+                        <!--<button class="but_small inline_block zkgjssBtn" name="finance_zmgl_one_zkgjss_zc">展开高级搜索</button>-->
+                        <!--<div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;margin-left: 26px;">
+                            <div class="t_left" style="width: 24%;max-width: 6em;">查看时间</div>
+                            <div class="t_right clearfix" style="width: 65%;margin-left: 27%;">
+                                <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期"
+                                       class="laydate-icon time_input" readonly="readonly" onclick="laydate()"
+                                       style="cursor: pointer;">
+                            </div>
+                        </div>-->
+                        <div class="con_right_result right">
+                            <p class="left">搜索结果: <span class=" f_color finance_account_satament_income_search_list">3</span>条</p>
+                            <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="takenote_jrd_xzckx"><i
+                                class="eyeIcon"></i>选择查看项</span>
+                        </div>
+                        <!--选择查看项-->
+                        <div class="t-z-list ckx_cont" name="takenote_jrd_xzckx"
+                             style="right: 13px; line-height: 27px; top: 39px; display: none;">
+                            <i class="ckx_icon_right"></i>
+                            <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                            <ul class="sbar muban_addkey_list fin_account_state_income_ul" style="height: 200px;">
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收款类型</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收款人</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收款方式</p>
+                                </li>
+                            </ul>
+                            <!--  -->
+                            <div class="bot-btn">
+                                <button class="but_small but_blue fin_account_state_income_save">保存</button>
+                                <button class="but_small but_cancal fin_account_state_income_reset">恢复默认</button>
+                            </div>
+                        </div>
+                        <div class="closeckx_cont" style="display: none;"></div>
+                    </div>
+                    <div class="table-container lik_table_wrap">
+                        <table class="fin_account_statement_income_table">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>收款编号</th>
+                                <th class="order">收款日期<i class="price_icon"></i></th>
+                                <th>单据编号</th>
+                                <th>关联业务名称</th>
+                                <th>收款类型</th>
+                                <th>收款人</th>
+                                <th>收款方式</th>
+                                <th class="order">实收款(元)<i class="price_icon"></i></th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="fin_account_statement_income_tobdy">
+                            <tr class="zkgjss_cont" name="finance_zmgl_one_zkgjss_zc">
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="收款类型">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="收款人">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="收款方式">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                            </tr>
+                            <!--<tr>-->
+                                <!--<td>01</td>-->
+                                <!--<td>SK4798764</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>XSD4654654</td>-->
+                                <!--<td>今日头条</td>-->
+                                <!--<td>销售收款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>现金</td>-->
+                                <!--<td>1000</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather">查看收款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>02</td>-->
+                                <!--<td>SK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>CGD4654654</td>-->
+                                <!--<td>戴尔中国</td>-->
+                                <!--<td>销售收款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>电汇</td>-->
+                                <!--<td>1000</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather">查看收款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>03</td>-->
+                                <!--<td>SK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>-</td>-->
+                                <!--<td>水费</td>-->
+                                <!--<td>采购退款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>支票</td>-->
+                                <!--<td>-</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather">查看收款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>04</td>-->
+                                <!--<td>SK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>-</td>-->
+                                <!--<td>房租</td>-->
+                                <!--<td>采购付款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>现金</td>-->
+                                <!--<td>20000</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather">查看收款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>05</td>-->
+                                <!--<td>SK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>XTH465746</td>-->
+                                <!--<td>今日头条</td>-->
+                                <!--<td>采购退款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>电汇</td>-->
+                                <!--<td>-</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather">查看收款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>06</td>-->
+                                <!--<td>SK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>CTH465746</td>-->
+                                <!--<td>戴尔中国</td>-->
+                                <!--<td>采购付款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>支票</td>-->
+                                <!--<td>10000</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather">查看收款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                            <tbody>
+                            <tr class="table_total fnc_total_state_list_handle">
+                                <td>合计</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="c_r ">0</td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                        <div class="no_data_box none finance_table_nodata_box">
+                            <div class="no_data">
+                                <!--<span class="inline_block"></span>-->
+                                <p class="c_9">抱歉，没有找到相关内容！</p>
+                            </div>
+                            <div class="no_data_bottom"></div>
+                        </div>
+                        <div class="handle fnc_talbe_state_list_handle">
+                            <div class="fenye_box fnc_acc_state_list_page">
+                                <span>每页显示</span>
+                                <div class="inline_block select_mormal">
+                                    <input type="text" class="select_input fnc_my_salary_search_num_inp" value="10">
+                                    <ul class="select_list select_list_to_top">
+                                        <li>5</li>
+                                        <li>10</li>
+                                        <li>15</li>
+                                        <li>20</li>
+                                    </ul>
+                                    <i></i>
+                                </div>
+                                <span>条数据</span>
+                                <div class="fenye_btn first_page_valid"><span></span></div>
+                                <div class="fenye_btn prev_page_valid"><span></span></div>
+                                <span class="page_box on">1</span>
+                                <span class="page_box">2</span>
+                                <span class="page_box">3</span>
+                                <span class="page_box">4</span>
+                                <div class="fenye_btn next_page_valid"><span></span></div>
+                                <div class="fenye_btn last_page_valid"><span></span></div>
+                                <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--（单个）查看账户流水（支出）-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_zmgl_look_one_account_statement_zc">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle2">
+            <div class="dialog_title">
+                <i class="dialog_close dialog_ckxq_close">关闭</i>
+                <h3 class="dialog_h3">账户流水</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 87%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title finance_account_statement_person"></h2>
+                    <div class="d-r-t-h" style="padding:0;">
+                        <p class="l-s-x">账目：<span class="finance_account_statement_account"></span></p>
+                        <p class="l-s-x">账目类型：<span>支出</span></p>
+                    </div>
+                    <div class="con_right_head clearfix" style="padding: 15px 0;">
+                        <div class="cont_search inline_block hr_base_search" style="margin-right: 6px;">
+                            <input type="text" class="search_input finance_account_statement_output_search_inp" value="关联业务名称/单据编号/付款编号" onfocus="fn_focus(this);"
+                                   onblur="fn_blur(this);">
+                            <button class="search_but but_blue finance_account_statement_output_search" style="height: 30px;width: auto;">搜索</button>
+                        </div>
+                        <!--<button class="but_small inline_block zkgjssBtn" name="finance_zmgl_one_zkgjss">展开高级搜索</button>-->
+                        <!--<div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;margin-left: 30px;">
+                            <div class="t_left" style="width: 24%;max-width: 6em;">查看时间</div>
+                            <div class="t_right clearfix" style="width: 65%;margin-left: 27%;">
+                                <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期"
+                                       class="laydate-icon time_input" readonly="readonly" onclick="laydate()"
+                                       style="cursor: pointer;">
+                            </div>
+                        </div>-->
+                        <div class="con_right_result right">
+                            <p class="left">搜索结果: <span class="f_color finance_account_satament_output_search_list">0</span>条</p>
+                            <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="takenote_jrd_xzckx"><i
+                                class="eyeIcon"></i>选择查看项</span>
+                        </div>
+                        <!--选择查看项-->
+                        <div class="t-z-list ckx_cont" name="takenote_jrd_xzckx"
+                             style="right: 13px; line-height: 27px; top: 39px; display: none;">
+                            <i class="ckx_icon_right"></i>
+                            <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                            <ul class="sbar muban_addkey_list fin_account_state_output_ul" style="height: 200px;">
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收款类型</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收款人</p>
+                                </li>
+                                <li class="l-li-b">
+                                    <input type="checkbox">
+                                    <p class="z-d-l">收款方式</p>
+                                </li>
+                            </ul>
+                            <!--  -->
+                            <div class="bot-btn">
+                                <button class="but_small but_blue fin_account_state_output_save">保存</button>
+                                <button class="but_small but_cancal fin_account_state_output_reset">恢复默认</button>
+                            </div>
+                        </div>
+                        <div class="closeckx_cont" style="display: none;"></div>
+                    </div>
+                    <div class="table-container lik_table_wrap">
+                        <table class="fin_account_statement_output_table">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>付款编号</th>
+                                <th class="order">付款日期<i class="price_icon"></i></th>
+                                <th>单据编号</th>
+                                <th>关联业务名称</th>
+                                <th>付款类型</th>
+                                <th>付款人</th>
+                                <th>付款方式</th>
+                                <th class="order">实付款(元)<i class="price_icon"></i></th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="zkgjss_cont" name="finance_zmgl_one_zkgjss">
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="收款类型">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="收款人">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p">
+                                        <input type="text" class="select_input block" value="收款方式">
+                                        <i></i>
+                                        <ul class="select_list">
+                                            <li>值一</li>
+                                            <li>值二</li>
+                                            <li>值三</li>
+                                            <li>值四</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                        <input type="text" class="select_input block" readonly="true">
+                                    </div>
+                                </td>
+                            </tr>
+                            <!--<tr>-->
+                                <!--<td>01</td>-->
+                                <!--<td>FK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>XSD4654654</td>-->
+                                <!--<td>今日头条</td>-->
+                                <!--<td>销售收款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>现金</td>-->
+                                <!--<td>1000</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather_fk">查看付款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>02</td>-->
+                                <!--<td>FK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>CGD4654654</td>-->
+                                <!--<td>戴尔中国</td>-->
+                                <!--<td>销售收款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>电汇</td>-->
+                                <!--<td>1000</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather_fk">查看付款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>03</td>-->
+                                <!--<td>FK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>-</td>-->
+                                <!--<td>水费</td>-->
+                                <!--<td>日常支出</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>支票</td>-->
+                                <!--<td>-</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather_fk">查看付款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>04</td>-->
+                                <!--<td>FK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>-</td>-->
+                                <!--<td>房租</td>-->
+                                <!--<td>日常支出</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>现金</td>-->
+                                <!--<td>20000</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather_fk">查看付款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>05</td>-->
+                                <!--<td>FK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>XTH465746</td>-->
+                                <!--<td>2016.07工资</td>-->
+                                <!--<td>工资支出</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>电汇</td>-->
+                                <!--<td>-</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather_fk">查看付款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>06</td>-->
+                                <!--<td>FK4798779</td>-->
+                                <!--<td>2016-10-10</td>-->
+                                <!--<td>CTH465746</td>-->
+                                <!--<td>戴尔中国</td>-->
+                                <!--<td>采购付款</td>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>支票</td>-->
+                                <!--<td>10000</td>-->
+                                <!--<td>-->
+                                    <!--<button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck"-->
+                                            <!--name="finance_zmgl_look_gather_fk">查看付款单-->
+                                    <!--</button>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                            <tbody class="fin_account_statement_output_tbody"></tbody>
+                            <tbody>
+                            <tr class="table_total fnc_total_state_list_handle">
+                                <td>合计</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="c_r finance_account_sum_expend_total_money">0</td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                        <div class="no_data_box none finance_table_nodata_box">
+                            <div class="no_data">
+                                <!--<span class="inline_block"></span>-->
+                                <p class="c_9">抱歉，没有找到相关内容！</p>
+                            </div>
+                            <div class="no_data_bottom"></div>
+                        </div>
+                        <div class="handle fnc_talbe_state_list_handle">
+                            <div class="fenye_box fnc_acc_state_list_page">
+                                <span>每页显示</span>
+                                <div class="inline_block select_mormal">
+                                    <input type="text" class="select_input fnc_my_salary_search_num_inp" value="10">
+                                    <ul class="select_list select_list_to_top">
+                                        <li>5</li>
+                                        <li>10</li>
+                                        <li>15</li>
+                                        <li>20</li>
+                                    </ul>
+                                    <i></i>
+                                </div>
+                                <span>条数据</span>
+                                <div class="fenye_btn first_page_valid"><span></span></div>
+                                <div class="fenye_btn prev_page_valid"><span></span></div>
+                                <span class="page_box on">1</span>
+                                <span class="page_box">2</span>
+                                <span class="page_box">3</span>
+                                <span class="page_box">4</span>
+                                <div class="fenye_btn next_page_valid"><span></span></div>
+                                <div class="fenye_btn last_page_valid"><span></span></div>
+                                <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看右侧弹窗（收入）--js调用此弹窗-->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar Sideslip" name="finance_ck">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left page_81_look_account_name">销售账目</p>
+                <div class="slider_head_moreBox right">
+                    <span class="slider_head_but right slider_head_More">更多</span>
+                    <ul class="slider_head_list page_81_look_more">
+                        <li class="val_dialog" name="finance_new_bj">编辑</li>
+                        <li>停用/启用</li>
+                        <li>删除</li>
+                    </ul>
+                    <!--<span class="slider_head_but right val_dialog" name="xs_xsjh_tx">提醒</span>-->
+                </div>
+            </div>
+            <p class="slider_head_msg_det">
+                创建日期：<span class="m_right_10 page_81_look_create_time">2016-10-27 14:48:13</span>
+                创建人：<span class="m_right_10 page_81_look_create_user">张三</span>
+            </p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="finance_base_right">基本信息</li>
+                <!--<li name="finance_base_right">历史记录</li>-->
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b" style="width: 434px;height: 100%;overflow: hidden;">
+            <!--基本信息-->
+            <div class="ht_base_msg sbar" name="finance_base_right">
+                <div class="ht_base_msgCon sbar" style="bottom:0;">
+                    <div class="d-r-t-h" style="border: none">
+                        <h3 class="cont_title">基本信息</h3>
+                        <p class="l-s-x">账户名称：<span class="page_81_look_company_name"></span></p>
+                        <p class="l-s-x">账目名称：<span class="page_81_look_account_name"></span></p>
+                        <p class="l-s-x">账目类型：<span class="page_81_look_account_type"></span></p>
+                        <p class="l-s-x">收入总金额（元）：<span class="page_81_look_get_all"></span></p>
+                        <p class="l-s-x">支出总金额（元）：<span class="page_81_look_pay_all">-</span></p>
+                        <p class="l-s-x">状态：<span class="page_81_look_account_status"></span></p>
+                        <p class="l-s-x">备注：<span class="page_81_look_account_note">-</span></p>
+                    </div>
+                    <div class="pra-4-cent newpra-4-cent">
+                        <div class="alertBtn-te">
+                            <button class="inline_block val_dialog but_blue finance_zmgl_look_one_account_statement"
+                                    name="">查看账目流水
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--历史记录 -->
+            <div class="ht_base_msg sbar" name="finance_base_right">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i"
+                                 src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">王小二</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">账户名称：<span>纽沃德</span></p>
+                        <p class="l-s-x">账目名称：<span>销售收入</span></p>
+                        <p class="l-s-x">账目类型：<span>收入</span></p>
+                        <p class="l-s-x">收入总金额（元）：<span>100000</span></p>
+                        <p class="l-s-x">支出总金额（元）：<span>-</span></p>
+                        <p class="l-s-x">状态：<span>启用</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i"
+                                 src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">大老板</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自电脑端</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">账户名称：<span>纽沃德</span></p>
+                        <p class="l-s-x">账目名称：<span>销售收入</span></p>
+                        <p class="l-s-x">账目类型：<span>收入</span></p>
+                        <p class="l-s-x">收入总金额（元）：<span>100000</span></p>
+                        <p class="l-s-x">支出总金额（元）：<span>-</span></p>
+                        <p class="l-s-x">状态：<span>启用</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看右侧弹窗（支出）-->
+<!--
+<div class="right_sidebar_h" ></div>
+<div class="right_sidebar Sideslip" name="finance_ck_zc">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left">销售账目</p>
+                <div class="slider_head_moreBox right">
+                    <span class="slider_head_but right slider_head_More">更多</span>
+                    <ul class="slider_head_list">
+                        <li class="val_dialog" name="finance_new_bj">编辑</li>
+                        <li>停用/启用</li>
+                        <li>删除</li>
+                    </ul>
+                    &lt;!&ndash;<span class="slider_head_but right val_dialog" name="xs_xsjh_tx">提醒</span>&ndash;&gt;
+                </div>
+            </div>
+            <p class="slider_head_msg_det">
+                创建日期：<span class="m_right_10">2016-10-27 14:48:13</span>
+                创建人：<span class="m_right_10">张三</span>
+            </p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="finance_base_right">基本信息</li>
+                <li name="finance_base_right">历史记录</li>
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b" style="width: 434px;height: 100%;overflow: hidden;">
+            &lt;!&ndash;基本信息&ndash;&gt;
+            <div class="ht_base_msg sbar" name="finance_base_right">
+                <div class="ht_base_msgCon sbar" style="bottom:0;">
+                    <div class="d-r-t-h" style="border: none">
+                        <h3 class="cont_title">基本信息</h3>
+                        <p class="l-s-x">账户名称：<span>纽沃德</span></p>
+                        <p class="l-s-x">账目名称：<span>采购付款</span></p>
+                        <p class="l-s-x">账目类型：<span>支出</span></p>
+                        <p class="l-s-x">收入总金额（元）：<span>-</span></p>
+                        <p class="l-s-x">支出总金额（元）：<span>100000</span></p>
+                        <p class="l-s-x">状态：<span>启用</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                    <div class="pra-4-cent newpra-4-cent">
+                        <div class="alertBtn-te">
+                            <button class="inline_block val_dialog but_blue" name="finance_zmgl_look_one_account_statement_zc">查看账目流水</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            &lt;!&ndash;历史记录 &ndash;&gt;
+            <div class="ht_base_msg sbar" name="finance_base_right">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">王小二</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">账户名称：<span>纽沃德</span></p>
+                        <p class="l-s-x">账目名称：<span>销售收入</span></p>
+                        <p class="l-s-x">账目类型：<span>收入</span></p>
+                        <p class="l-s-x">收入总金额（元）：<span>100000</span></p>
+                        <p class="l-s-x">支出总金额（元）：<span>-</span></p>
+                        <p class="l-s-x">状态：<span>启用</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">大老板</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自电脑端</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">账户名称：<span>纽沃德</span></p>
+                        <p class="l-s-x">账目名称：<span>销售收入</span></p>
+                        <p class="l-s-x">账目类型：<span>收入</span></p>
+                        <p class="l-s-x">收入总金额（元）：<span>100000</span></p>
+                        <p class="l-s-x">支出总金额（元）：<span>-</span></p>
+                        <p class="l-s-x">状态：<span>启用</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<!--收款人成员树结构-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_zmgl_skr">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择收款人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box">
+                    <div class="list_box_con list_box_uldx">
+                        <div class="left_nav">
+                            <ul class="list_box_level">
+                                <li class="left_all"><span class="icon_open change_ba"></span><span
+                                    class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i
+                                        class="list_before_span"></i><span class="icon_open"></span><span
+                                        class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i
+                                        class="list_before_span"></i><span class="icon_open"></span><span
+                                        class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--抄送人成员树结构-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_zmgl_csr">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择抄送人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left">
+                    <!--<div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input"
+                                                                                     value="搜索成员/部门/手机等"
+                                                                                     onfocus="fn_focus(this);"
+                                                                                     onblur="fn_blur(this);"><i
+                            class="list_search"></i></div>
+                    </div>-->
+                    <div class="list_box_con">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ul">
+                                <li class="left_all"><span class="icon_open change_ba"></span><span
+                                    class="icon_file"></span><span class="list_msg">所有分类(4)</span><span
+                                    class="list_check"><em></em></span></li>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i
+                                        class="list_before_span"></i><span class="icon_open"></span><span
+                                        class="icon_file"></span><span class="list_msg">销售部(3)</span><span
+                                        class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="list_msg">思思</span><span
+                                            class="list_check"><em></em></span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="list_msg">服务器1</span><span
+                                            class="list_check"><em></em></span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="list_msg">服务器12</span><span
+                                            class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i
+                                        class="list_before_span"></i><span class="icon_open"></span><span
+                                        class="icon_file"></span><span class="list_msg">交换器(1)</span><span
+                                        class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><i class="list_before_span"></i><i
+                                            class="list_before_span"></i><span class="list_msg">思思</span><span
+                                            class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list">
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+    //动态设置表格高度
+    if($(window).width() < 1640){
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 379);
+        $(window).resize(function () {
+            $('.lik_table_max_height').css('maxHeight', $('body').height() - 379);
+        });
+    }else{
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+        $(window).resize(function () {
+            $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+        });
+    }
+
+</script>
+<script src="static/finance/js/81.js"></script>
+</html>

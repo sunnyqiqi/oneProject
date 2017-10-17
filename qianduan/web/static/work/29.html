@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>工作-考勤-查看考勤</title>
+		<link rel="stylesheet" href="static/work/css/work_sp.css">
+		<link rel="stylesheet" href="static/work/css/work_common.css">
+		<link rel="stylesheet" href="static/work/css/work_checkAttendance.css">
+	</head>
+
+	<body>
+		<!--第一行-->
+		<div class="con_header contenthead">
+			<h2>查看考勤</h2>
+			<div class="right" style="width: 77px;">
+				<div class="res wk_ckkq_djsx_xxl" title="点击刷新"></div>
+			</div>
+		</div>
+		<!--第二行-->
+		<!-- 页面菜单 -->
+		<div class="sbar second-level hr_left_bjbm">
+			<div class="Sideslip_list ht_slid_list work_kq">
+				<ul style="padding-top:10px;" class="ckkq_bmlist_html_xxl">
+					<!--<li class="Sideslip_list_on" name="work_kq_ul" title="技术部、产品部、设计部"><span>技术部、产品部、设计部fhweifheuifhewhfwehfuwefew</span></li>
+					<li name="work_kq_ul" title="销售部、人事部"><span>销售部、人事部</span></li>-->
+				</ul>
+			</div>
+			<div class="allgoods" style="height: auto;"></div>
+		</div>
+		<!--第三行-->
+		<div class="sbar rightcontent" style="padding-right: 30px;padding-left: 30px;">
+			<div class="con_right_head clearfix" style="border:none;">
+				<div class="left" style="width: 450px;">
+					<div class="t_textinput left work_ckkq_time">
+						<div class="t_left"><i class="c_r v_hidden">*</i>选择日期</div>
+						<div class="t_right">
+							<input class="work_half laydate-icon" value="开始时间" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(kq_start)" id="kq_start">
+							<i class="inp_time"></i>
+							<em class="inp_timehr" style="left: 52%;"></em>
+							<input class="work_half right laydate-icon" value="结束时间" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(kq_end)" id="kq_end">
+							<i class="inp_time"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tabcontent div_1 container" name="work_kq_tabSp_v" style="padding: 0;">
+				<div class="div_1 table-container">
+					<table class="work_ckkq_tab">
+						<thead>
+							<tr>
+								<th rowspan="2">日期<i class="tab_time_icon"></i></th>
+								<th rowspan="2">星期</th>
+								<th colspan="4" class="t_center">上班</th>
+								<th colspan="4" class="t_center">下班</th>
+								<th></th>
+								<th></th>
+							</tr>
+							<tr>
+								<th class="ckkq_sbtime_xxl">准时</th>
+								<th>迟到</th>
+								<th>范围外</th>
+								<th>未签到</th>
+								<th class="ckkq_xbshijian_xxl">准时</th>
+								<th>早退</th>
+								<th>范围外</th>
+								<th>未签退</th>
+								<th>加班</th>
+								<th>请假</th>
+							</tr>
+						</thead>
+						<tbody class="work_ckkq_table wk_ckkq_list_html_xxl">
+							<!--<tr>
+								<td>2016-10-10</td>
+								<td>星期五</td>
+								<td class="f_color r_sidebar_btn" name="work_ckkq_zs">12</td>
+								<td class="f_color r_sidebar_btn" name="work_ckkq_cd">1</td>
+								<td class="f_color r_sidebar_btn" name="work_ckkq_fww">3</td>
+								<td class="f_color r_sidebar_btn" name="work_ckkq_wqd">1</td>
+								<td class="f_color r_sidebar_btn" name="work_ckkq_zs_xb">7</td>
+								<td class="r_sidebar_btn" name="work_ckkq_zaot_xb">0</td>
+								<td class="r_sidebar_btn" name="work_ckkq_fww_xb">0</td>
+								<td class="r_sidebar_btn" name="work_ckkq_wqt_xb">0</td>
+								<td class="f_color r_sidebar_btn" name="work_ckkq_jb">2</td>
+								<td class="f_color r_sidebar_btn" name="work_ckkq_qj">2</td>
+							</tr>
+							<tr>
+								<td>2016-10-10</td>
+								<td>星期五</td>
+								<td class="f_color">12</td>
+								<td class="f_color">1</td>
+								<td class="f_color">3</td>
+								<td class="f_color">1</td>
+								<td class="f_color">7</td>
+								<td>0</td>
+								<td class="f_color">3</td>
+								<td>0</td>
+								<td class="f_color">3</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td>2016-10-10</td>
+								<td>星期五</td>
+								<td>12</td>
+								<td>1</td>
+								<td class="f_color">3</td>
+								<td class="f_color">1</td>
+								<td class="f_color">7</td>
+								<td>0</td>
+								<td>0</td>
+								<td class="f_color r_sidebar_btn" name="work_ckkq_wqt">3</td>
+								<td>0</td>
+								<td>0</td>
+							</tr>
+							<tr>
+								<td class="work_ckkq_table1">2016-10-10</td>
+								<td class="work_ckkq_table1">星期五</td>
+								<td>12</td>
+								<td>1</td>
+								<td class="f_color">3</td>
+								<td class="f_color">1</td>
+								<td>7</td>
+								<td>0</td>
+								<td class="f_color">3</td>
+								<td>0</td>
+								<td>0</td>
+								<td class="f_color">3</td>
+							</tr>-->
+						</tbody>
+					</table>
+					<div class="wk_ckkq_errhtml_xxl"></div>
+				</div>
+				
+				
+			</div>
+			<div class="handle">
+				<div class="fenye_box wk_ckkq_fenye_list_xxl">
+				<span>每页显示</span>
+				<div class="inline_block select_mormal">
+					<input type="text" class="select_input" value="10">
+					<ul class="select_list select_list_to_top">
+						<li>5</li>
+						<li>10</li>
+						<li>15</li>
+						<li>20</li>
+					</ul>
+					<i></i>
+				</div>
+				<span>条数据</span>
+				<div class="fenye_btn first_page_valid"><span></span></div>
+				<div class="fenye_btn prev_page_valid"><span></span></div>
+				<span class="page_box on">1</span>
+				<span class="page_box">2</span>
+				<span class="page_box">3</span>
+				<span class="page_box">4</span>
+				<div class="fenye_btn next_page_valid"><span></span></div>
+				<div class="fenye_btn last_page_valid"><span></span></div>
+				<span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+				<span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+
+			</div>
+			</div>
+			
+		</div>
+
+		<!--右侧弹窗，未签到顶部有日期-->
+		<div class="right_sidebar_h"></div>
+		<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_wqd">
+			<div class="slider_head">
+				<!--right_sidebar_close-->
+				<div class="slider_head_con">
+					<p class="slider_head_msg_date wkkq_sbwqd_today_xxl">10月01号</p>
+					<p class="slider_head_msg_det">上班：<span class="wkkq_sbwqd_nums_xxl">未签到2人</span></p>
+				</div>
+				<i class="slider_close work_slider_close"></i>
+			</div>
+			<div class="ht_d_r_t sbar" style="line-height: 12px;">
+				<div class="work_ckkq_fww">
+					<table>
+						<thead>
+							<tr>
+								<th>姓名</th>
+								<th>部门</th>
+								<!--<th>备注</th>-->
+							</tr>
+						</thead>
+						<tbody class="wkkq_sbwqd_listhtml_xxl">
+							<!--<tr>
+								<td>张三</td>
+								<td>销售部</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>李四</td>
+								<td>销售部</td>
+								<td>忘记打卡</td>
+							</tr>-->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!--右侧弹窗，准时顶部有日期-->
+		<div class="right_sidebar_h"></div>
+		<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_zs">
+			<div class="slider_head">
+				<!--right_sidebar_close-->
+				<div class="slider_head_con">
+					<p class="slider_head_msg_date wkkq_cksbtime_xxl">10月01号</p>
+					<p class="slider_head_msg_det">上班：<span class="wkkq_cksb_zsnums_xxl">准时0人</span></p>
+				</div>
+				<i class="slider_close work_slider_close"></i>
+			</div>
+			<div class="ht_d_r_t sbar" style="line-height: 12px;">
+				<div class="work_ckkq_fww">
+				<table>
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>部门</th>
+							<th>时间</th>
+							<!--<th>备注</th>-->
+						</tr>
+					</thead>
+					<tbody class="wkkq_sbzhunshi_listhtml_xxl">
+						<!--<tr>
+							<td>张三</td>
+							<td>销售部</td>
+							<td>13:44</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>李四</td>
+							<td>销售部</td>
+							<td>13:44</td>
+							<td>忘记打卡</td>
+						</tr>-->
+					</tbody>
+				</table>
+				</div>
+			</div>
+		</div>
+
+		<!--右侧弹窗，迟到顶部有日期-->
+		<div class="right_sidebar_h"></div>
+		<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_cd">
+			<div class="slider_head">
+				<!--right_sidebar_close-->
+				<div class="slider_head_con">
+					<p class="slider_head_msg_date wkkq_sbcd_today_xxl">10月01号</p>
+					<p class="slider_head_msg_det">上班：<span class="wkkq_sncdnums_xxl">迟到2人</span></p>
+				</div>
+				<i class="slider_close work_slider_close"></i>
+			</div>
+			<div class="ht_d_r_t sbar" style="line-height: 12px;">
+				<div class="work_ckkq_fww">
+					<table>
+						<thead>
+							<tr>
+								<th>姓名</th>
+								<th>部门</th>
+								<th>时间</th>
+								<th>理由</th>
+							</tr>
+						</thead>
+						<tbody class="wkkq_sbcd_listhtml_xxl">
+							<!--<tr>
+								<td>张三</td>
+								<td>销售部</td>
+								<td>13:44</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>李四</td>
+								<td>销售部</td>
+								<td>13:44</td>
+								<td>忘记打卡</td>
+							</tr>-->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+<!--右侧弹窗，下班准时顶部有日期-->
+<div class="right_sidebar_h"></div>
+<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_zs_xb">
+    <div class="slider_head">
+        <!--right_sidebar_close-->
+        <div class="slider_head_con">
+            <p class="slider_head_msg_date wkckkq_xbzhunshi_rqxxl">10月01号</p>
+            <p class="slider_head_msg_det">下班：<span class="wkkq_xiaban_zsnums_xxl">准时2人</span></p>
+        </div>
+        <i class="slider_close work_slider_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar" style="line-height: 12px;">
+    <div class="work_ckkq_fww">
+        <table>
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>部门</th>
+                <th>时间</th>
+                <!--<th>备注</th>-->
+            </tr>
+            </thead>
+            <tbody class="wkkq_xiaban_listhtml_xxl">
+            <!--<tr>
+                <td>张三</td>
+                <td>销售部</td>
+                <td>13:44</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>销售部</td>
+                <td>13:44</td>
+                <td>忘记打卡</td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+		<!--右侧弹窗，未签退顶部有日期-->
+		<!--<div class="right_sidebar_h"></div>
+		<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_wqt">
+			<div class="slider_head">
+				
+				<div class="slider_head_con">
+					<p class="slider_head_msg_date wkkq_xiab_wqt_today_xxl">10月01号</p>
+					<p class="slider_head_msg_det">下班：<span class="wkkq_ckkq_xbwqtnums_xxl">未签退2人</span></p>
+				</div>
+				<i class="slider_close work_slider_close"></i>
+			</div>
+			<div class="work_ckkq_fww">
+				<table>
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>部门</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody class="wkkq_ckkq_qiabanwqt_listhtml_xxl">
+						
+					</tbody>
+				</table>
+			</div>
+		</div>-->
+
+		<!--右侧弹窗，范围外有理由-->
+		<div class="right_sidebar_h"></div>
+		<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_fww">
+			<div class="slider_head">
+				<!--right_sidebar_close-->
+				<div class="slider_head_con">
+					<p class="slider_head_msg_date wkkq_ckkq_sbfww_today_xxl">10月01号</p>
+					<p class="slider_head_msg_det">上班：<span class="wkkq_ckkq_snfwwnums_xxl">范围外2人</span></p>
+				</div>
+				<i class="slider_close work_slider_close"></i>
+			</div>
+			<div class="ht_d_r_t sbar" style="line-height: 12px;">
+			<div class="work_ckkq_fww">
+				<table>
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>部门</th>
+							<th>签到时间</th>
+							<th>地址</th>
+							<th>理由</th>
+						</tr>
+					</thead>
+					<tbody class="wkkq_ckkq_sbfww_html_xxl">
+						<!--<tr>
+							<td>张三</td>
+							<td>销售部</td>
+							<td>13:44</td>
+							<td class="work_address work_vend_client_contact">
+								<div class="text_line" style="width:56px;"><span class="ellipsis">北京市朝阳区酒仙桥</span></div>
+								<div class="work_vent_client_contMsgBox" style="display: none;">
+									<i class="work_vent_client_torr"></i>
+									<div class="work_vent_client_contMsgBoxDet">
+										<p>北京市朝阳区酒仙桥</p>
+									</div>
+								</div>
+							</td>
+							<td class="work_address work_vend_client_contact">
+								<div class="text_line" style="width:56px;"><span class="ellipsis"><i class="w_checkattd_slider_reason f_color">外勤</i>拜访客户</span></div>
+								<div class="work_vent_client_contMsgBox" style="display: none;">
+									<i class="work_vent_client_torr"></i>
+									<div class="work_vent_client_contMsgBoxDet">
+										<p><i class="w_checkattd_slider_reason f_color">外勤</i>拜访客户</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>张三</td>
+							<td>销售部</td>
+							<td>13:44</td>
+							<td class="work_address work_vend_client_contact">
+								<div class="text_line" style="width:56px;"><span class="ellipsis">北京市朝阳区酒仙桥</span></div>
+								<div class="work_vent_client_contMsgBox" style="display: none;">
+									<i class="work_vent_client_torr"></i>
+									<div class="work_vent_client_contMsgBoxDet">
+										<p>北京市朝阳区酒仙桥</p>
+									</div>
+								</div>
+							</td>
+							<td class="work_address work_vend_client_contact">
+								<div class="text_line" style="width:56px;"><span class="ellipsis"><i class="w_checkattd_slider_reason f_color">外勤</i>拜访客户</span></div>
+								<div class="work_vent_client_contMsgBox" style="display: none;">
+									<i class="work_vent_client_torr"></i>
+									<div class="work_vent_client_contMsgBoxDet">
+										<p><i class="w_checkattd_slider_reason f_color">外勤</i>拜访客户</p>
+									</div>
+								</div>
+							</td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+			</div>
+		</div>
+<!--右侧弹窗，下班早退顶部有日期-->
+<div class="right_sidebar_h"></div>
+<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_zaot_xb">
+    <div class="slider_head">
+        <!--right_sidebar_close-->
+        <div class="slider_head_con">
+            <p class="slider_head_msg_date wkkq_xbzaotui_today_xxl">10月01号</p>
+            <p class="slider_head_msg_det">下班：<span class="wkkq_xbzaotui_nums_xxl">早退2人</span></p>
+        </div>
+        <i class="slider_close work_slider_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar" style="line-height: 12px;">
+    <div class="work_ckkq_fww">
+        <table>
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>部门</th>
+                <th>时间</th>
+                <th>理由</th>
+            </tr>
+            </thead>
+            <tbody class="wkkq_ckzaotui_listhtml_xxl">
+            <!--<tr>
+                <td>张三</td>
+                <td>销售部</td>
+                <td>13:44</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>销售部</td>
+                <td>13:44</td>
+                <td>忘记打卡</td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<!--右侧弹窗，下班未签退顶部有日期-->
+<div class="right_sidebar_h"></div>
+<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_wqt_xb">
+    <div class="slider_head">
+        <!--right_sidebar_close-->
+        <div class="slider_head_con">
+            <p class="slider_head_msg_date wkkq_xiab_wqt_today_xxl">10月01号</p>
+            <p class="slider_head_msg_det">下班：<span class="wkkq_ckkq_xbwqtnums_xxl">未签退2人</span></p>
+        </div>
+        <i class="slider_close work_slider_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar" style="line-height: 12px;">
+    <div class="work_ckkq_fww">
+        <table>
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>部门</th>
+                <!--<th>备注</th>-->
+            </tr>
+            </thead>
+            <tbody class="wkkq_ckkq_qiabanwqt_listhtml_xxl">
+            <!--<tr>
+                <td>张三</td>
+                <td>销售部</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>销售部</td>
+                <td>忘记打卡</td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<!--右侧弹窗，下班范围外有理由-->
+<div class="right_sidebar_h"></div>
+<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_fww_xb">
+    <div class="slider_head">
+        <!--right_sidebar_close-->
+        <div class="slider_head_con">
+            <p class="slider_head_msg_date wkkq_ckkq_xbfww_today_xxl">10月01号</p>
+            <p class="slider_head_msg_det">下班：<span class="wkkq_kq_xbfww_nums_xxl">范围外2人</span></p>
+        </div>
+        <i class="slider_close work_slider_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar" style="line-height: 12px;">
+    <div class="work_ckkq_fww">
+        <table>
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>部门</th>
+                <th>签到时间</th>
+                <th>地址</th>
+                <th>理由</th>
+            </tr>
+            </thead>
+            <tbody class="wkkq_ckkq_xiaban_fwwhtml_xxl">
+            <!--<tr>
+                <td>张三</td>
+                <td>销售部</td>
+                <td>13:44</td>
+                <td class="work_address work_vend_client_contact">
+                    <div class="text_line" style="width:56px;padding:0;"><span class="ellipsis">北京市朝阳区酒仙桥</span></div>
+                    <div class="work_vent_client_contMsgBox" style="display: none;">
+                        <i class="work_vent_client_torr"></i>
+                        <div class="work_vent_client_contMsgBoxDet">
+                            <p>北京市朝阳区酒仙桥</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="work_address work_vend_client_contact">
+                    <div class="text_line" style="width:56px;padding:0;"><span class="ellipsis"><i class="w_checkattd_slider_reason f_color">外勤</i>拜访客户</span></div>
+                    <div class="work_vent_client_contMsgBox" style="display: none;">
+                        <i class="work_vent_client_torr"></i>
+                        <div class="work_vent_client_contMsgBoxDet">
+                            <p><i class="w_checkattd_slider_reason f_color">外勤</i>拜访客户</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>销售部</td>
+                <td>13:44</td>
+                <td class="work_address work_vend_client_contact">
+                    <div class="text_line" style="width:56px;padding:0;"><span class="ellipsis">北京市朝阳区酒仙桥</span></div>
+                    <div class="work_vent_client_contMsgBox" style="display: none;">
+                        <i class="work_vent_client_torr"></i>
+                        <div class="work_vent_client_contMsgBoxDet">
+                            <p>北京市朝阳区酒仙桥</p>
+                        </div>
+                    </div>
+                </td>
+                <td class="work_address work_vend_client_contact">
+                    <div class="text_line" style="width:56px;padding:0;"><span class="ellipsis"><i class="w_checkattd_slider_reason f_color">外勤</i>拜访客户</span></div>
+                    <div class="work_vent_client_contMsgBox" style="display: none;">
+                        <i class="work_vent_client_torr"></i>
+                        <div class="work_vent_client_contMsgBoxDet">
+                            <p><i class="w_checkattd_slider_reason f_color">外勤</i>拜访客户</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+
+		<!--右侧弹窗，加班顶部有日期-->
+		<div class="right_sidebar_h"></div>
+		<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_jb">
+			<div class="slider_head">
+				<!--right_sidebar_close-->
+				<div class="slider_head_con">
+					<p class="slider_head_msg_date wkkq_ckkq_jiaban_today_xxl">10月01号</p>
+					<p class="slider_head_msg_det">加班：<span class="wkkq_ckkq_jiabannums_xxl">2人</span></p>
+				</div>
+				<i class="slider_close work_slider_close"></i>
+			</div>
+			<div class="ht_d_r_t sbar" style="line-height: 12px;">
+			<div class="work_ckkq_fww">
+				<table>
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>部门</th>
+							<th>开始时间</th>
+							<th>结束时间</th>
+							<!--<th>备注</th>-->
+						</tr>
+					</thead>
+					<tbody class="wkkq_ckkqjiaban_listhtml_xxl">
+						<!--<tr>
+							<td>张三</td>
+							<td>销售部</td>
+							<td>13:44</td>
+							<td>18:00</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>李四</td>
+							<td>销售部</td>
+							<td>13:44</td>
+							<td>18:00</td>
+							<td>-</td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+			</div>
+		</div>
+
+		<!--右侧弹窗，请假顶部有日期-->
+		<div class="right_sidebar_h"></div>
+		<div class="slider_box right_sidebar work_ckkq_yck" name="work_ckkq_qj">
+			<div class="slider_head">
+				<!--right_sidebar_close-->
+				<div class="slider_head_con">
+					<p class="slider_head_msg_date wkkq_ckkq_qingjia_today_xxl">10月01号</p>
+					<p class="slider_head_msg_det">请假：<span class="wkkq_ckkq_qijianums_xxl">2人</span></p>
+				</div>
+				<i class="slider_close work_slider_close"></i>
+			</div>
+			<div class="ht_d_r_t sbar" style="line-height: 12px;">
+			<div class="work_ckkq_fww">
+				<table>
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>部门</th>
+							<th>开始时间</th>
+							<th>结束时间</th>
+							<th>请假类型</th>
+						</tr>
+					</thead>
+					<tbody class="wkkq_ckkq_qingjia_listhtml_xxl">
+						<!--<tr>
+							<td>张三</td>
+							<td>销售部</td>
+							<td>13:44</td>
+							<td>18:00</td>
+							<td>事假</td>
+						</tr>
+						<tr>
+							<td>李四</td>
+							<td>销售部</td>
+							<td>13:44</td>
+							<td>18:00</td>
+							<td>病假</td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function() {
+				$(".con_right_head_list li").click(function() {
+					var index = $(".con_right_head_list li").index(this) % 5;
+					$(this).addClass("con_right_head_list_on").siblings().removeClass("con_right_head_list_on");
+				});
+
+				$(".work_address").hover(function() {
+					$(this).children(".work_vent_client_contMsgBox").show();
+				}, function() {
+					$(this).children(".work_vent_client_contMsgBox").hide();
+				});
+			});
+			var kq_start = {
+				elem: '#kq_start',
+				format: 'YYYY-MM-DD',
+				//min: laydate.now(), //设定最小日期为当前日期
+				max: '2099-06-16', //最大日期
+				istime: false,
+				festival: true,
+				istoday: true,
+				choose: function(datas) {
+					kq_end.min = datas; //开始日选好后，重置结束日的最小日期
+					kq_end.start = datas; //将结束日的初始值设定为开始日
+					//console.log(datas)
+				}
+			};
+			var kq_end = {
+				elem: '#kq_end',
+				format: 'YYYY-MM-DD',
+				min: laydate.now(),
+				max: '2099-06-16',
+				istime: false,
+				festival: true,
+				istoday: true,
+				choose: function(datas) {
+					kq_start.max = datas; //结束日选好后，充值开始日的最大日期
+					//console.log(kq_end.start+'::::::'+datas)
+					wk_ckkq_data.start_time = kq_end.start;
+					wk_ckkq_data.end_time = datas;
+					wk_ckkq_ajax()
+				}
+			};
+		</script>
+	</body>
+	<script src="js/work/29.js"></script>
+
+</html>

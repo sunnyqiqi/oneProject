@@ -1,0 +1,141 @@
+.work_staicAttdce_table_title{
+    font-size: 12px;
+    line-height: 12px;
+    margin: 2px 0  16px;
+    display: block;
+    font-weight: 600;
+}
+.work_sA_dialog_content_title{
+    font: normal 18px/2em 'Microsofy Yahei';
+    display: block;
+    /*background: #f7f7f7;*/
+}
+.work_staicAtt_dlog_det{
+    max-width:1330px;
+    height: 420px;
+}
+.work_staicAtt2_dlog_det{
+    max-width:1330px;
+    height: 366px;
+}
+.work_staicAtt_dlog_detHead{
+    background: #f7f7f7;
+    height: 48px;
+}
+.work_staicAttdce_dialog_look_table{
+    margin-top:15px;
+}
+.f_color_red{
+    color:#ef4040;
+}
+.work_staicAttdce_tableBoxDiv{
+    padding:0 19px;
+    margin-top: 15px;
+    height: 289px;
+    border:1px solid #e6e6e6;
+    border-left:none;
+    line-height: 289px;
+}
+.work_staicAttdce_table_special{
+    border-bottom:1px solid #e6e6e6;
+}
+.work_staicAttdce_tableBox{
+    /*margin-left:137px;*/
+    width:auto;
+    overflow-y: auto;
+    margin: 0 0 1em 137px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.work_staicAtte_dialog_content_det{
+    width:90%;
+    height:30%;
+    margin: 0 auto;
+}
+.work_staicAtte_dialog_content{
+    width: 505px;
+    height: 394px;
+}
+.work_staicAtte_dialog_content h3{
+    display: block;
+}
+.work_dia_h3{
+    display: block;
+}
+.work_staicAtte_dialog_content>div>.inp_box{
+    padding-top: 15px;
+}
+
+.work_statcAttend2_pushBtn{
+    margin-top: 20px;
+}
+.but_grey{
+    background: #cccccc;
+    color: #ffffff;
+}
+.work_staicAttdce_state_normal{
+    display: inline-block;
+    width: 28px;
+    height:16px;
+    line-height: 16px;
+    text-align: center;
+    color: #ffffff;
+}
+.work_staicAttdce_stateBox{
+    position: relative;
+}
+.work_staicAttdce_state_change{
+    position: absolute;
+    left:78%;
+    top:30%;
+    width: 40px;
+    height: 20px;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    line-height: 20px;
+    background: #fff;
+    color:#666;
+    box-shadow: 0 0 3px 0 #ccc;
+}
+.work_SA_erportBox{
+    width: 448px;
+    height:260px;
+}
+.work_SA_exportIcon{
+    display: block;
+    margin:44px auto;
+    width: 68px;
+    height:68px;
+    background: url("../images/export.png") no-repeat;
+    background-size: 100%;
+}
+.work_SA_exportMsg{
+    line-height: 28px;
+    font-size: 20px;
+    text-align: center;
+}
+.work_SA_exportFlie{
+    text-align: center;
+    line-height:30px;
+    cursor: pointer;
+}
+.work_staicAtt_splist{
+    width: 70%;
+    margin-top:4px;
+}
+.saLook_dialog_text {
+    overflow: auto;
+    margin-top: 5px;
+}
+/*.fenye_box{*/
+    /*background: #fff;*/
+    /*border:none;*/
+/*}*/
+.work_half{
+    width: 40%;
+    height: 22px;
+}
+.work_sp_dialog_text{
+    padding: 30px 40px 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}

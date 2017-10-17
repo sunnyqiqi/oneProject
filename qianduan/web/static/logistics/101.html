@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物流</title>
+    <link rel="stylesheet" href="static/logistics/css/logistics.css">
+    <script src="static/logistics/js/101.js"></script>
+</head>
+<body>
+<div class="finance_content">
+    <!--第一行-->
+    <div class="logistics_title">
+        <h2>物流</h2>
+        <div class="right" style="width:130px;">
+            <button class="but_blue ht_but val_dialog zcj_newcrent_wl" name="logistics_new">新建</button>
+            <div class="res zcj_wl_refresh_ym" title="点击刷新"></div>
+        </div>
+    </div>
+    <!--第二行-->
+    <div class="vend_client_right logistics_right">
+        <div class="con_right_head clearfix" style="border: none;">
+            <div class="cont_search inline_block wl_search"><input type="text" class="search_input zcj_wl_input_val_search" value="搜索物流编号/物流单号/相关关联出库单/物流公司" onfocus="fn_focus(this);" onblur="fn_blur(this);"><button class="search_but but_blue zcj_wl_search_content_btn">搜索</button></div>
+            <button class="but_cancel but_small inline_block zkgjssBtn"  name="wl_wl_zkgjss">展开高级搜索</button>
+            <div class="inline_block" style="margin-left:30px;">
+                <input type="checkbox" class="zcj_wl_no_show_dh">不显示已到货
+            </div>
+            <div class="right con_right_result right">
+                <p class="left">搜索结果: <span class=" f_color zcj_wl_search_num">3</span>条</p>
+                <p class="left">总金额(元): <span class=" f_color zj_wl_head_zje_num">0.00</span>元</p>
+                <span class="btn_chooseItem eyeIcon_eye ckx_btn but_cancel" name="ckx_wl_wl"><i class="eyeIcon"></i>选择查看项</span>
+            </div>
+            <div class="t-z-list ckx_cont" name="ckx_wl_wl" style="right: 15px; line-height: 27px; top: 64px;display: none;">
+                <i class="ckx_icon_right"></i>
+                <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                <ul class="sbar muban_addkey_list zcj_select_wl_check_head">
+
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">发货时间</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">预计到货时间</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">创建人</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">创建日期</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">负责人</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">备注</p>
+                    </li>
+                </ul>
+                <!--  -->
+                <div class="bot-btn">
+                    <button class="but_small but_blue zcj_wl_bc_head_save_btn">保存</button>
+                    <button class="but_small but_cancal zcj_hfmr_head_wl_btn">恢复默认</button>
+                </div>
+            </div>
+            <div class="closeckx_cont"></div>
+            <!--/选择查看项-->
+        </div>
+        <div class="container tabcontent lik_table_wrap" style="padding: 0;">
+            <div class="table-container lik_table_max_height">
+                <table class="zcj_wl_table_content_info">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>物流编号</th>
+                        <th>物流单号</th>
+                        <th>物流公司</th>
+                        <th>相关业务编号</th>
+                        <th>相关关联出库单</th>
+                        <th>相关联业务名称</th>
+                        <th>物流方式</th>
+                        <!--<th>状态</th>-->
+                        <th>物流金额(元)</th>
+                        <th class="order">发货时间 <i class="price_icon"></i></th>
+                        <th class="order">预计到货时间<i class="price_icon"></i></th>
+                        <th>创建人</th>
+                        <th class="order">创建日期<i class="price_icon"></i></th>
+                        <th>负责人</th>
+                        <th>备注</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="zkgjss_cont" name="wl_wl_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p zcj_wl_sel_ul_li_val">
+                                <input type="text" class="select_input block zcj_wl_fhlx_ss" value="发货类型">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li val="1">快递</li>
+                                    <li val="2">陆运</li>
+                                    <li val="3">空运</li>
+                                    <li val="4">平邮</li>
+                                    <li val="5">海运</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p zcj_wl_fs_zt_ss">
+                                <input type="text" class="select_input block" value="状态">
+                                <i></i>
+                                <ul class="select_list">
+                                    <li val="1">未到货</li>
+                                    <li val="2">已到货</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td><div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div></td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block zcj_wl_cjr_val_ss" value="创建人">
+                                <i></i>
+                                <ul class="select_list zcj_create_person_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block zcj_wl_fzr_val_ss" value="负责人">
+                                <i></i>
+                                <ul class="select_list zcj_fzr_person_list">
+                                    <li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true" >
+                            </div>
+                        </td>
+                    </tr>
+                  <!--  <tr>
+                        <td>01</td>
+                        <td>WLD799887</td>
+                        <td>4654446464</td>
+                        <td>顺丰</td>
+                        <td>XSD7979879879</td>
+                        <td>陆运</td>
+                        <td>未到货</td>
+                        <td>500</td>
+                        <td>2016-10-10</td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-10-10</td>
+                        <td>李四</td>
+                        <td>-</td>
+                        <td>
+                            <button class="but_mix but_look r_sidebar_btn" name="logistics_ck">查看</button>
+                            <button class="but_mix but_grey1">编辑</button>
+                            <button class="but_mix but_grey1">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>WLD799887</td>
+                        <td>4654446464</td>
+                        <td>顺丰</td>
+                        <td>-</td>
+                        <td>空运</td>
+                        <td>已到货</td>
+                        <td>500</td>
+                        <td>2016-10-10</td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-10-10</td>
+                        <td>李四</td>
+                        <td>-</td>
+                        <td>
+                            <button class="but_mix but_look r_sidebar_btn" name="logistics_ck">查看</button>
+                            <button class="but_mix but_exit val_dialog" name="logistics_exit">编辑</button>
+                            <button class="but_mix but_r val_dialog" name="wl_wl_delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>WLD799887</td>
+                        <td>4654446464</td>
+                        <td>顺丰</td>
+                        <td>-</td>
+                        <td>平邮</td>
+                        <td>未到货</td>
+                        <td>500</td>
+                        <td>2016-10-10</td>
+                        <td>2016-10-10</td>
+                        <td>张三</td>
+                        <td>2016-10-10</td>
+                        <td>李四</td>
+                        <td>-</td>
+                        <td>
+                            <button class="but_mix but_look r_sidebar_btn" name="logistics_ck">查看</button>
+                            <button class="but_mix but_exit val_dialog" name="logistics_exit">编辑</button>
+                            <button class="but_mix but_r val_dialog" name="wl_wl_delete">删除</button>
+                        </td>
+                    </tr>
+                    <tr class="table_total">
+                        <td>合计</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1500</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>-->
+                    </tbody>
+                    <tbody class="zcj_wl_list_content_show"></tbody>
+                    <tbody class="zcj_wl_tj_je_num">
+                    <tr class="table_total">
+                        <td>合计</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="zj_wl_hj_znumber_num">0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                <div class="no_data_box none zcj_wl_no_data_show">
+                    <div class="no_data">
+                        <!--<span class="inline_block"></span>-->
+                        <p class="c_9">抱歉，没有找到相关内容！</p>
+                    </div>
+                    <div class="no_data_bottom"></div>
+                </div>
+            </div>
+            <div class="fenye_box zcj_wl_content_check_fy_page">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn nopage"><span class="page_left_b"></span></div>
+            <div class="fenye_btn page"><span class="page_left_a"></span>
+            </div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <!--<span class="page_box_last" style="line-height:15px;">...</span>-->
+            <div class="fenye_btn page"><span class="page_right_a"></span></div>
+            <div class="fenye_btn page"><span class="page_right_b"></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!--新建物流单-->
+<div class="dialog">
+    <div class="dialog_box" name="logistics_new">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6 takenote_muban">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建物流</h3>
+            </div>
+
+            <div class="dialog_text sbar zcj_new_create_wl_content_info" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                <!-- 新建时没有创建时间 -->
+                    创建人：<span style="padding-right: 20px;" class="zcj_wl_create_man_name">张三</span>
+                    <!-- 创建日期：<span>2016-10-27 14:48:13</span> -->
+                </div>
+                <div class="dialog_text_con" style="padding:0 60px 30px">
+                    <h2 class="cont_title">新建物流</h2>
+                    <div class="t_textinput">
+                        <div class="t_left ">
+                            <i class="c_r">*</i>物流编号
+                        </div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_noInput zcj_wl_bh_num" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>关联业务编号</div>
+
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_glyw_bh_num" value="请输入关联业务编号" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>物流方式</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input zcj_wl_fs_way" value="快递">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li>快递</li>
+                                    <li>陆运</li>
+                                    <li>空运</li>
+                                    <li>平邮</li>
+                                    <li>海运</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>发货时间</div>
+                        <div class="t_right">
+                            <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zcj_wl_time_val" id="wl_sdgz_start" readonly="readonly" onclick="laydate(wl_sdgz_start)" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>预计到货时间</div>
+                        <div class="t_right">
+                            <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zcj_wl_dh_time" id="wl_sdgz_end" readonly="readonly" onclick="laydate(wl_sdgz_end)" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>物流金额</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input inp_96 lik_input_number zcj_wl_price" value="请输入物流金额" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="unit">元</i>
+                    </div>
+                </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>负责人</div>
+                        <div class="t_right">
+                            <input type="hidden" id="hid_wl_fzr_id" value=""/><input type="text" class="time_input zcj_wl_fzr_name" value="请选择负责人" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                            <span class="inp_addBtn val_dialogTop zcj_select_fzr_bt" name="logistics_xzfzr"><b>+</b>选择负责人</span>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>负责部门</div>
+                        <div class="t_right">
+                            <input type="hidden" id="hid_wl_bm_id" value=""/><input type="text" class="time_input zcj_wl_bm_name" value="" disabled="true" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                            <!--<span class="inp_addBtn val_dialogTop zcj_select_bm_bt" name="logistics_xzbm"><b>+</b>选择部门</span>-->
+                        </div>
+                    </div>
+                <h2 class="cont_title">物流信息</h2>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>选择物流公司</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input zcj_wl_gs_name" value="顺丰">
+                            <i></i>
+                            <ul class="select_list zcj_wl_kd_list_show_name" style="display: none;">
+                               <!-- <li>顺丰快递</li>
+                                <li>申通快递</li>
+                                <li>韵达快递</li>
+                                <li>圆通快递</li>
+                                <li>EMS邮政速递</li>
+                                <li>中通快递</li>
+                                <li>宅急送</li>
+                                <li>天天快递</li>
+                                <li>中通快递</li>
+                                <li>百世汇通</li>
+                                <li>DHL速运</li>
+                                <li>德邦物流</li>
+                                <li>FedEx快递</li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>快递单号</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input zcj_wl_kddh_val" onkeyup="value=value.replace(/[\W]/g,'')" value="请输入快递单号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+
+                <h2 class="cont_title">收件人信息</h3>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>收件人</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input zcj_wl_sjr_name" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="收件人姓名">
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>收件人电话</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input zcj_wl_sjr_iphone" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="收件人电话">
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>收件地址</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input zcj_wl_sj_address" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="收件地址">
+                    </div>
+                </div>
+
+                <h2 class="cont_title">寄件人信息</h3>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>寄件人</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input zcj_wl_jj_man_name" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入寄件人姓名">
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>寄件人电话</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input zcj_wl_jj_moblie" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入寄件人电话">
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>寄件地址</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input zcj_wl_jj_addre" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入寄件地址">
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea" style="margin-top: 20px;">
+                    <div class="t_left">备注</div>
+                    <div class="t_right">
+                        <textarea class="zcj_wl_bz_sr" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入备注</textarea>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue zcj_wl_new_create_btn">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--编辑物流单-->
+<div class="dialog">
+    <div class="dialog_box " name="logistics_exit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑物流</h3>
+            </div>
+
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="unhead_box">
+                    创建人：<span style="padding-right: 20px;" class="zcj_wl_bj_cjr_name">张三</span>
+                    创建日期：<span class="zcj_wl_bj_cjrq_data">2016-10-27 14:48:13</span>
+                </div>
+                <div class="dialog_text_con zcj_wl_bj_edit_content" style="padding:0 60px 30px">
+                    <h2 class="cont_title">新建物流</h2>
+                    <div class="t_textinput">
+                        <div class="t_left ">
+                            <i class="c_r">*</i>物流编号
+                        </div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_noInput zcj_wl_bj_wlbh" value="WLD44681312" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>关联业务编号</div>
+
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_glyw_bj_num" value="请输入关联业务编号" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>物流方式</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input zcj_wl_bj_wlfs" value="陆运">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li>快递</li>
+                                    <li>陆运</li>
+                                    <li>空运</li>
+                                    <li>平邮</li>
+                                    <li>海运</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>发货时间</div>
+                        <div class="t_right">
+                            <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zcj_wl_bj_fh_time" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>预计到货时间</div>
+                        <div class="t_right">
+                            <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zcj_wl_bj_yjdh_time" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>物流金额</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input c_3 inp_96 zcj_wl_bj_je" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);"><i class="unit">元</i>
+                        </div>
+                    </div>
+
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>负责人</div>
+                        <div class="t_right">
+                            <input type="hidden" id="hid_wl_edit_fzr_id" value=""/><input type="text" class="time_input zcj_wl_bj_fzr" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                            <span class="inp_addBtn val_dialogTop zcj_wlbj_select_fzr" name="logistics_xzfzr"><b>+</b>选择负责人</span>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>负责部门</div>
+                        <div class="t_right">
+                            <input type="hidden" id="hid_wl_edit_bm_id" value=""/><input type="text" class="time_input zcj_wl_bj_fzbm" disabled="true" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                           <!-- <span class="inp_addBtn val_dialogTop zcj_wlbj_select_bm" name="logistics_xzbm"><b>+</b>选择部门</span>-->
+                        </div>
+                    </div>
+                    <h2 class="cont_title">物流信息</h2>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>选择物流公司</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input zcj_wl_bj_wlgs" value="顺丰快递">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li>顺丰快递</li>
+                                    <li>申通快递</li>
+                                    <li>韵达快递</li>
+                                    <li>圆通快递</li>
+                                    <li>EMS邮政速递</li>
+                                    <li>中通快递</li>
+                                    <li>宅急送</li>
+                                    <li>天天快递</li>
+                                    <li>中通快递</li>
+                                    <li>百世汇通</li>
+                                    <li>DHL速运</li>
+                                    <li>德邦物流</li>
+                                    <li>FedEx快递</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>快递单号</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_bj_kddh" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+
+                    <h2 class="cont_title">收件人信息</h2>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>收件人</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_bj_sjr_name" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="收件人姓名" >
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>收件人电话</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_bj_sjr_moblie" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="收件人电话">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>收件地址</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_bj_sjdz" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="收件地址">
+                        </div>
+                    </div>
+
+                    <h2 class="cont_title">寄件人信息</h2>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>寄件人</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_bj_jjr_name" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入寄件人姓名">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>寄件人电话</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_bj_jjr_phone" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入寄件人电话">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>寄件地址</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_wl_bj_jjdz_addre" onfocus="fn_focus(this);" onblur="fn_blur(this);" value="请输入寄件地址">
+                        </div>
+                    </div>
+                    <div class="t_textinput t_textarea" style="margin-top: 20px;">
+                        <div class="t_left">备注</div>
+                        <div class="t_right">
+                            <textarea class="zcj_wl_bj_beizhu">请输入备注</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue zcj_wl_bj_lr_end">确定</button>
+                <button class="but_small but_cancel zcj_wl_bj_qx">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--查看-右侧弹窗-->
+<div class="right_sidebar_h" ></div>
+<div class="right_sidebar Sideslip" name="logistics_ck">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left zcj_wl_glyw_name_show">今日头条-销售出货</p>
+                <div class="slider_head_moreBox right">
+                    <span class="slider_head_but right val_dialog zcj_check_edit_wl_info_btn" name="logistics_exit">编辑</span>
+                </div>
+            </div>
+            <p class="slider_head_msg_det">创建人：<span style="margin-right:10px;" class="zcj_wk_xq_cjr_name">张丹峰</span>创建日期：<span style="margin-right:10px;" class="wl_xq_cjrq_time">2016-10-27 14:48:13</span></p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="logistics_base_right">基本信息</li>
+               <!-- <li name="logistics_base_right">历史记录</li>-->
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b zcj_wl_xq_info_content" style="width: 434px;height: 100%;overflow: hidden;">
+            <!--基本信息-->
+            <div class="ht_base_msg sbar" name="logistics_base_right">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h zcj_wl_info_check_xq_show" style="border: none;">
+                        <h3 class="cont_title">基本信息</h3>
+                        <p class="l-s-x">物流编号：<span></span></p>
+                        <p class="l-s-x">物流方式：<span></span></p>
+                        <p class="l-s-x">相关业务编号：<span></span></p>
+                        <p class="l-s-x">发货时间：<span></span></p>
+                        <p class="l-s-x">预计到货时间：<span></span></p>
+                        <p class="l-s-x">物流金额：<span></span></p>
+                        <p class="l-s-x">负责人：<span></span></p>
+                        <p class="l-s-x">负责人部门：<span></span></p>
+                        <h3 class="cont_title">物流信息</h3>
+                        <p class="l-s-x">物流公司：<span></span></p>
+                        <p class="l-s-x">物流单号：<span></span></p>
+                        <p class="l-s-x">收件人：<span></span></p>
+                        <p class="l-s-x">收件人电话：<span></span></p>
+                        <p class="l-s-x">收件人地址：<span></span></p>
+                        <p class="l-s-x">寄件人：<span></span></p>
+                        <p class="l-s-x">寄件人电话：<span></span></p>
+                        <p class="l-s-x">寄件人地址：<span></span></p>
+                        <p class="l-s-x">备注：<span></span></p>
+
+                    </div>
+                </div>
+            </div>
+            <!--历史记录 -->
+            <div class="ht_base_msg sbar" name="logistics_base_right">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">王小二</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">物流编号：<span>SDF64561</span></p>
+                        <p class="l-s-x">物流单号：<span>2016-10-10</span></p>
+                        <p class="l-s-x">物流公司：<span>审批中</span></p>
+                        <p class="l-s-x">相关关联出库单：<span>XSD7979879879</span></p>
+                        <p class="l-s-x">发货类型：<span>销售出货</span></p>
+                        <p class="l-s-x">状态：<span>未发货</span></p>
+                        <p class="l-s-x">物流金额(元)：<span>500</span></p>
+                        <p class="l-s-x">发货时间：<span>2017-04-20</span></p>
+                        <p class="l-s-x">预计到货时间：<span>2017-04-22</span></p>
+                        <p class="l-s-x">创建人：<span>张三</span></p>
+                        <p class="l-s-x">创建日期：<span>2017-04-20</span></p>
+                        <p class="l-s-x">负责人：<span>李四</span></p>
+                        <p class="l-s-x">备注：<span>-</span></p>
+                    </div>
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">大老板</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自电脑端</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">修改单位：<span>块、箱(1箱=6块)</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--选择部门-->
+<div class="dialog">
+
+    <div class="dialog_box" name="logistics_xzbm">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexit zcj_wl_bn_sel_list_info"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有部门(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部A</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部B</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部C</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">采购部</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_wl_bm_end_but">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--选择成员-->
+<div class="dialog">
+
+    <div class="dialog_box" name="logistics_xzfzr">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择人员</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_uldx zcj_wl_bm_person_sel"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_wl_preson_end_but">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="wl_wl_delete">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu zcj_delete_anniu_del">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导出弹框-->
+<div class="dialog">
+    <div class="dialog_box" name="logistics_dc">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_out">
+            <i class="dialog_close_but">关闭</i>
+            <em class="exportIcon"></em>
+            <p class="exportMsg">导出成功，请点击下载</p>
+            <p class="exportFlie f_color">合同模板.doc</p>
+        </div>
+    </div>
+</div>
+<script>
+    //提成时间
+    var wl_sdgz_start = {
+        elem: '#wl_sdgz_start',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            wl_sdgz_end.min = datas; //开始日选好后，重置结束日的最小日期
+            wl_sdgz_end.start = datas; //将结束日的初始值设定为开始日
+            //console.log(datas)
+        }
+    };
+    var wl_sdgz_end = {
+        elem: '#wl_sdgz_end',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            wl_sdgz_start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+    };
+    $(document).ready(function() {
+        //关闭按钮
+        $(".slider_close").live("click", function () {
+            $(this).parent().parent().hide();
+            $(".right_sidebar_h").hide();
+        });
+        $(".wl_xzzm_list li").live("click",function () {
+            var wl_name = $(this).attr("name");
+//            alert(wl_name);
+//            alert( $(this).parents(".t_textinput").next(".t_textinput").children(".t_right").children(".wl_list_msg").length);
+            $(this).parents(".t_textinput").next(".t_textinput").children(".t_right").children(".wl_list_msg[name='"+wl_name+"']").fadeIn(100).siblings("div").hide();
+        });
+
+    });
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+</script>
+</body>
+</html>

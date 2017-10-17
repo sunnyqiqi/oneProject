@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出入库设置</title>
+    <link rel="stylesheet" href="static/system/css/system.css">
+    <script src="static/system/js/114.js"></script>
+</head>
+<body>
+<div class="finance_content" >
+    <!--第一行-->
+    <div class="con_header contenthead">
+        <h2>出入库设置</h2>
+    </div>
+    <!--第二行-->
+    <div class="system_right clearfix sbar" style="height: 92.5%;">
+        <div class="system_right_left left">
+            <p class="system_p">模板导航</p>
+            <hr>
+            <div class="system_tabJr">
+                <ul class="tabtitle system_tabUl">
+                    <li class="taba tabhover" id="zcj_finance_rkr_set_remind" name="system_mbdh_cw1">设置入库人</li>
+                    <li class="taba" id="zcj_finance_ckr_set_remind" name="system_mbdh_cw1">设置出库人</li>
+                    <li class="taba" id="zcj_finance_kc_set_alert" name="system_mbdh_cw1">库存预警</li>
+                </ul>
+            </div>
+        </div>
+        <div class="system_muban relative system_xzset" style="width: 78%;margin-top: 15px;">
+            <!--设置入库人-->
+            <div class="tabcontent" name="system_mbdh_cw1" style="padding: 0;">
+                <div class="system_sp_tabJr clearfix">
+                    <p class="system_p">设置入库人</p>
+                </div>
+                <div class="system_work_mbdh clearfix">
+                    <label class="inp_box clearfix work_jjr">
+                        <p class="inp_lP left">
+                            <i class="v_hidden">*</i>
+                            <em>分配人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl zj_select_csr_icon_show" style="width: 100%;">
+                           <!-- <li><i class="del_img_1">-</i><em class="icon_personBtn icon_personBtn_msg"></em><em class="icon_adderBtn"></em><p class="box_adderName">魏俊芬 </p></li>-->
+                            <!--<li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                            </li>-->
+                            <li class="zj_xz_spr_li_btn">
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop zj_kf_set_select_enter_person" name="xt_sp_dxry"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <!--设置出库人-->
+            <div class="tabcontent" name="system_mbdh_cw1" style="padding: 0;display: none;">
+                <div class="system_sp_tabJr clearfix">
+                    <p class="system_p">设置出库人</p>
+                </div>
+                <div class="system_work_mbdh clearfix">
+                    <label class="inp_box clearfix work_jjr">
+                        <p class="inp_lP left">
+                            <i class="v_hidden">*</i>
+                            <em>分配人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl zj_select_ckr_list_show" style="width: 100%;">
+                            <!--<li><i class="del_img_1">-</i><em class="icon_personBtn icon_personBtn_msg"></em><em class="icon_adderBtn"></em><p class="box_adderName">魏俊芬 </p></li>-->
+                            <!--<li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                            </li>-->
+                            <li class="zj_xz_ckr_li_btn">
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop zj_kf_set_select_ckr_enter_person" name="xt_sp_dxry"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <!--库存预警-->
+            <div class="tabcontent" name="system_mbdh_cw1" style="padding: 0;display: none;">
+                <div class="system_sp_tabJr clearfix">
+                    <p class="system_p">库存预警</p>
+                </div>
+                <div class="system_work_mbdh clearfix">
+                    <label class="inp_box clearfix work_jjr">
+                        <p class="inp_lP left">
+                            <i class="v_hidden">*</i>
+                            <em>提醒人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl zj_select_kcyj_list_show" style="width: 100%;">
+                            <!--<li><i class="del_img_1">-</i><em class="icon_personBtn icon_personBtn_msg"></em><em class="icon_adderBtn"></em><p class="box_adderName">魏俊芬 </p></li>-->
+                            <!--<li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                            </li>-->
+                            <li class="zj_xz_kcyj_ckr_li_btn">
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop zj_kf_set_select_kcyj_enter_person" name="xt_sp_dxry"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--设置入库人、出库人-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_dxry">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择人员</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_uldx zcj_rkr_spr_tc_tree_list"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_select_rkr_person_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

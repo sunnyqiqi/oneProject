@@ -1,0 +1,22 @@
+/*ul.oth:before,
+span.oth:before{
+	background:none!important;
+}*/
+ul.oth:before,
+.left_nav>ul span.other{
+	background:none!important;
+}
+.btn_dis_none{
+	display:none;
+}
+.grey .f_color{
+	color:#ccc!important;
+}
+.loca_sel{
+	width:120px;
+    height: 30px;
+    padding: 0 10px;
+    color:#aaa;
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+}

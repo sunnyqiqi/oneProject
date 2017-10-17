@@ -1,0 +1,40 @@
+/*ul.oth:before,
+span.oth:before{
+	background:none!important;
+}*/
+ul.oth:before,
+.left_nav>ul span.other{
+	background:none!important;
+}
+.btn_dis_none{
+	display:none;
+}
+.grey .f_color{
+	color:#ccc!important;
+}
+.loca_sel{
+	width:120px;
+    height: 30px;
+    padding: 0 10px;
+    color:#aaa;
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+}
+/*XX人头像删除*/
+.ven_sell_quote_create_flow_del_btn {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #ff6c60;
+    color: #fff;
+    left: 28px;
+    top: -5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 11px;
+    width: 14px;
+    height: 14px;
+    font-size: 18px;
+}

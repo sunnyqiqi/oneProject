@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工作-发起的任务</title>	
+<<<<<<< .mine
+	<link rel="stylesheet" href="static/work/css/work_sp.css">
+||||||| .r713
+    <style>
+        html,body{height:100%;}
+        .work_content{
+            overflow: auto;
+            background: #eee;
+            height: 100%;
+        }
+        .work_title{
+            line-height: 60px;
+            height: 60px;
+            background: #fff;
+            border-bottom: 1px solid #e6e6e6;
+            padding: 0 25px;
+        }
+        .res{
+            display: inline;
+            border: 1px solid #e6e6e6;
+            padding: 10px 18px;
+            background: url("static/images/break.png") no-repeat;
+            background-position: center center;
+            background-size: 16px 16px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+        }
+        .work_con1{
+            padding: 25px;
+        }
+        .sel_boxadd{
+            width: 50px
+        }
+        .inp_txt{
+            width: 30px;
+        }
+		.dialog_h3{
+			font: normal 18px/2em 'Microsofy Yahei';
+			display: block;
+		}
+    </style>
+=======
+	<link rel="stylesheet" href="static/work/css/work_sp.css">  
+>>>>>>> .r982
+</head>
+<body >
+    <div class="work_content" id="work_21_page" >
+        <div class="work_title">
+            <h2>发起任务</h2>
+            <div class="right"><button name="work_fbrw" class="val_dialog but_blue">发布任务</button><div class="res" titile="点击刷新"  id="21_refreshlist"></div></div>
+        </div>
+        <div class="work_con1">
+            <table>
+                <thead>
+                    <tr>
+                        <th>任务内容</th>
+                        <th>截止日期</th>
+                        <th>发起人</th>
+                        <th>任务成员</th>
+                        <th>任务状态</th>
+                    </tr>
+                </thead>
+                <tbody id="21_list">
+                    <tr>
+                        <td><span>11月份销售部门的总营业额达到1一个亿</span></td>
+                        <td>2017-1-12</td>
+                        <td>李总</td>
+                        <td>全体成员</td>
+                        <td><span class="c_y">进行中</span></td>
+                    </tr>
+                    <tr>
+                        <td>11月份销售部门的总营业额达到1一个亿</td>
+                        <td>2017-1-12</td>
+                        <td>王总</td>
+                        <td>全体成员</td>
+                        <td><span class="c_r">未完成</span></td>
+                    </tr>
+                    <tr>
+                        <td>11月份销售部门的总营业额达到1一个亿</td>
+                        <td>2017-1-12</td>
+                        <td>王总</td>
+                        <td>全体成员</td>
+                        <td><span class="c_g">已完成</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="fenye_box">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list" id="limit_21_number">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+					<li>20</li>
+                </ul>
+            </div>
+			<span>条数据</span>
+			<div class="fenye_btn" id="21_first"><span class="icon-start_arrow"></span></div><div id="21_after" class="fenye_btn"><span class="icon-left_arrow"></span></div>
+			<span>当前在</span>
+			<input type="text" id="21_page_number" class="inp_txt sel_normal_short fengye_input" value="1">
+			<span>页</span>
+			<div class="fenye_btn active" id="21_next"><span class="icon-right_arrow"></span></div><div class="fenye_btn active" id="21_last"><span class="icon-next_arrow"></span></div>
+			<span>共<cite class="f_color mLR_5" id="21_listlength">9</cite>条数据</span>
+        </div>
+    </div>
+
+	<!--发布任务弹窗-->
+	<div class="dialog" id="add_pwork_21">
+
+		<div class="dialog_box" name="work_fbrw">
+			<div class="dialog_screen"></div>
+			<div class="dialog_content dialog_content_2">
+				<div class="dialog_title"><i class="dialog_close">关闭</i>
+				<h3 class="dialog_h3">发布任务</h3><hr/></div>
+				<div class="dialog_text">
+				
+					<div class="text_input">
+						<div class="text_intext"><span>名称</span></div>
+						<div class="text_ininput"><textarea id="add_21_work" class="" onfocus="fn_focus(this);" value="" onblur="fn_blur(this);">输入部门名称</textarea></div>
+					</div>
+					<form>
+					<div class="text_input">
+						<div class="text_intext"><span>添加图片</span></div>
+<<<<<<< .mine
+						<div class="text_ininput">
+							<ul class="img_warp">
+								<!--生成代码格式<li>
+									<input class="hide_input" type="file" id="upimgFile_0"/>
+									<img class="img_src" id="imgShow_0"/>
+								</li>-->
+								<cite><input class="addimg hide_input" type="file" name=""/><span class="icon-add"></span></cite>
+							</ul>
+							
+						
+						</div>
+						<div class="text_ininput"><cite><span class="icon-add"></span></cite></div>
+||||||| .r713
+						<div class="text_ininput"><cite><span class="icon-add"></span></cite></div>
+=======
+						<div class="text_ininput">
+							<ul class="img_warp">
+							
+							
+							
+							
+								
+								<cite><input class="addimg hide_input" id="img_url_21" type="file" name=""/><span class="icon-add"></span></cite>
+							</ul>
+							
+						
+						</div>
+						
+>>>>>>> .r982
+					</div>
+					<div class="text_input m_bottom_20">
+						<div class="text_intext"><span>选择附件</span></div>
+						<div class="text_ininput" style="position:relative;"><button class="but_icon"><i class="icon-add"></i>选择文件</button><input class="add_input hide_input" type="file" id="" name=""/><i class="warp_name"></i></div>
+					</div>
+					</form>
+					<div class="text_input">
+						<div class="text_intext"><span>截止日期</span></div>
+<<<<<<< .mine
+<<<<<<< .mine
+						<div class="text_ininput"><p class="left inp_boxadd w_p100"><input id='dt' type="date" class="inp_normal w_p100 input"><i class="inp_time" style="right: -10px;"></i>
+||||||| .r699
+						<div class="text_ininput"><p class="left inp_boxadd w_p100"><input type="text" id="dt" class="inp_normal input w_p100" value="0"><i class="inp_time" style="right: -10px;"></i>
+=======
+						<div class="text_ininput"><p class="left inp_boxadd w_p100"><input type="datetime-local" id="addpwork_date_21" class="inp_normal input w_p100" ><i class="inp_time" style="right: -10px;"></i>
+||||||| .r713
+						<div class="text_ininput"><p class="left inp_boxadd w_p100"><input type="datetime-local" id="addpwork_date_21" class="inp_normal input w_p100" ><i class="inp_time" style="right: -10px;"></i>
+=======
+						<div class="text_ininput"><p class="left inp_boxadd w_p100"><input  id="add_wdate_21" type="date" class="inp_normal w_p100 input" value=""><i class="inp_time" style="right: -10px;"></i>
+>>>>>>> .r982
+>>>>>>> .r706
+            </p></div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext"><span>任务成员</span></div>
+						<div class="text_ininput"><p onclick="res_person()" class="left inp_boxadd w_p100"><input type="text" id="addwork_21_arryname" class="c_3 inp_normal w_p100"><input type="hidden" id="addwork_21_arryid"><i name="work_addcy1" class="val_dialogTop   inp_addperson" style="right: -10px;"></i>
+            </p></div>
+					</div>
+
+				</div>
+				<div class="dialog_submit">
+					<button class="but_blue" onclick="add_pworksubmit_21()">确定发布</button><button class="but_cancel">取消</button>
+				</div>
+			</div>
+		
+		</div>
+
+	
+	</div>
+	<!--编辑任务弹窗-->
+	<div class="dialog">
+		<div class="dialog_box" name="work_bjrw">
+			<div class="dialog_screen"></div>
+			<div class="dialog_content dialog_content_2">
+				<div class="dialog_title"><i class="dialog_close">关闭</i>
+				<h3 class="dialog_h3">编辑任务</h3><hr/></div>
+				<div class="dialog_text">
+				
+					<div class="text_input">
+						<div class="text_intext"><span>名称</span></div>
+						<div class="text_ininput"><textarea id="change_21_work" class="" onfocus="fn_focus(this);" onblur="fn_blur(this);">输入部门名称</textarea></div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext"><span>修改图片</span></div>
+						<div class="text_ininput">
+							<ul class="img_warp">
+								<cite><input class="addimg hide_input" type="file" name=""/><span class="icon-add"></span></cite>
+							</ul>
+							
+						</div>
+						
+					</div>
+
+<<<<<<< .mine
+	<!--编辑任务弹窗-->
+	<div class="dialog">
+
+		<div class="dialog_box" name="work_bjrw">
+			<div class="dialog_screen"></div>
+			<div class="dialog_content dialog_content_2">
+				<div class="dialog_title"><i class="dialog_close">关闭</i>
+				<h3 class="dialog_h3">编辑任务</h3><hr/></div>
+				<div class="dialog_text">
+				
+					<div class="text_input">
+						<div class="text_intext"><span>名称</span></div>
+						<div class="text_ininput"><textarea class="" onfocus="fn_focus(this);" onblur="fn_blur(this);">输入部门名称</textarea></div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext"><span>修改图片</span></div>
+						<div class="text_ininput">
+							<ul class="img_warp">
+								<!--生成代码格式<li>
+									<input class="hide_input" type="file" id="upimgFile_0"/>
+									<img class="img_src" id="imgShow_0"/>
+								</li>-->
+								<cite><input class="addimg hide_input" type="file" name=""/><span class="icon-add"></span></cite>
+							</ul>
+							
+						</div>
+						
+					</div>
+
+
+					<div class="text_input m_bottom_20">
+						<div class="text_intext"><span>修改附件</span></div>
+						<div class="text_ininput" style="position:relative;"><button class="but_icon"><i class="icon-add"></i>选择文件</button><input class="add_input hide_input" type="file" id="" name=""/><i class="warp_name"></i></div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext"><span>截止日期</span></div>
+						<div class="text_ininput"><p class="left inp_boxadd w_p100"><input id='dt' type="date" class="inp_normal w_p100 input"><i class="inp_time" style="right: -10px;"></i>
+            </p></div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext"><span>任务成员</span></div>
+						<div class="text_ininput"><p class="left inp_boxadd w_p100"><input type="text" class="c_3 inp_normal w_p100"><i class="inp_addperson" style="right: -10px;"></i>
+            </p></div>
+					</div>
+
+				</div>
+				<div class="dialog_submit">
+					<button class="but_blue">确定发布</button><button class="but_cancel">取消</button>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+
+||||||| .r713
+=======
+
+					<div class="text_input m_bottom_20">
+						<div class="text_intext"><span>修改附件</span></div>
+						<div class="text_ininput" style="position:relative;"><button class="but_icon"><i class="icon-add"></i>选择文件</button><input class="add_input hide_input" type="file" id="" name=""/><i class="warp_name"></i></div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext"><span>截止日期</span></div>
+						<div class="text_ininput"><p class="left inp_boxadd w_p100"><input id='changewdate_21' type="date" class="inp_normal w_p100 input"><i class="inp_time" style="right: -10px;"></i>
+            </p></div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext"><span>任务成员</span></div>
+						<div class="text_ininput"><p onclick="res_person()"  class="left inp_boxadd w_p100"> <input type="hidden" id="changework_21_arryid"><input type="text" id="changework_21_arryname" class="c_3 inp_normal w_p100"><i name="work_addcy2" class="val_dialogTop inp_addperson" style="right: -10px;"></i>
+            </p></div>
+					</div>
+
+				</div>
+				<div class="dialog_submit">
+					<button class="but_blue" onclick="change_pworksubmit_21()">确定发布</button><button class="but_cancel">取消</button>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+>>>>>>> .r982
+	<!--右侧详情栏-->
+<<<<<<< .mine
+	<div class="right_sidebar_h"></div>
+	<div class="sbar right_sidebar" id="work_details_21">
+||||||| .r713
+	<div class="right_sidebar" id="work_details_21">
+=======
+	<div class="right_sidebar_h"></div><!--遮罩层-->
+	<div class="right_sidebar" name="workfqrw_table" id="work_details_21">
+	
+>>>>>>> .r982
+		<div class="right_sidebar_title">
+			<input type="hidden" id="add_workid_21" value="">
+			<h2 class="inline_block">任务详情</h2>
+			
+		</div>
+		<div class="right_sidebar_cont">
+			<div class="right_sidebar_cont1">
+				<img class="inline_block tx" src="static/images/touxiang.png">
+				<div class="right_txsm inline_block">
+					<span id="work_dename_21" class="c_3">木易</span></br>
+					<span id="work_addtime_21" class="">于2017.01.20发起任务</span>
+				</div>
+				<div class="right_btn right">
+<<<<<<< .mine
+					<button class="but_cancel but_small val_dialog" name="work_bjrw">编辑</button>
+					<button class="but_cancel but_small">删除</button>
+||||||| .r713
+					<button class="but_cancel but_small">编辑</button>
+					<button class="but_cancel but_small">删除</button>
+=======
+					<button class="but_cancel but_small val_dialog" name="work_bjrw" id="change_pwork_21">编辑</button>
+					<button class="but_cancel but_small" id="delete_pwork_21">删除</button>
+>>>>>>> .r982
+					<button class="but_cancel but_small" id="finish_pwork_21">完成任务</button>
+				</div>
+			</div>
+			
+			<div class="right_sidebar_cont2">
+				<h3 class="block m_bottom_20">2月份的营业额达到一个亿</h3>
+				<div class="rsc2_imglist">
+					<img class="inline_block val_dialog" name="work_imglist" src="">
+				</div>
+			</div>
+			<div class="right_sidebar_cont3">
+				<div class="rsc3_img left m_right_10">
+					<img src="static/images/fileicon.png">
+				</div>
+				<div class="rsc3_text">
+					<p class="filename">附件:454542424.pdf</p>
+					<p><a href="#"  class="m_right_20 download">下载</a><a href="#">预览</a></p>
+				</div>
+			</div>
+			<div class="right_sidebar_cont3">
+				<p>负责人:<span class="c_3 m_left_5 executor" >张三</span></p>
+				<p>截止日期:<span class="c_3 m_left_5 end_time">2017.01.25</span></p>
+			</div>
+			<div class="right_sidebar_cont4">
+				<div class="rsc4_title">
+					<h3 class="inline_block">子任务</h3>
+					<button id="button_cworksubmit_21" class="right m_top_10 but_cancel but_small val_dialog" name="work_addzrw">添加子任务</button>
+				</div>
+				<div class="rsc4_cont">
+					<div class="rsc4_contbox">
+						<span>于2017.02.12发起任务</span>
+						<button class="but_icon but_icon_nob right"><i class="icon-add"></i>完成任务</button>
+					</div>
+					<h3 class="block m_bottom_20">李四负责30%的销售额</h3>
+					<div class="rsc4_contbox">
+						<p>负责人:<span class="c_3 m_left_5 m_bottom_5">张三</span></p>
+						<p>截止日期:<span class="c_3 m_left_5">2017.01.25</span></p>
+					</div>				
+			</div>
+		</div>
+
+		<div class="right_sidebar_ping">
+			<div class="right_ping_title"><h3 id="work_21_commitn" class="cont_title block m_right_0">评论(1)</h3></div>
+			<div class="rsp_cont">
+				<div class="rsp_item">
+					<img class="tx" src="static/images/person_msg.png">
+					<div class="rsp_text">
+						<p><span class="c_3 m_right_10">'+work_detaile_commitlist[""]+'</span>1分钟</p>
+						<div class="rsp_items">
+							<h3 class="inline_block m_right_20">好的，知道了</h3>
+							<button class="but_normal right">删除</button>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="right_sidebar_btnb">
+			<div class="rsp_send">
+				<input type="text" id="work_21_content" class="inp_normal inline_block" value="写评轮" onfocus="fn_focus(this);" onblur="fn_blur(this);"><button class="but_blue" onclick="add_comments_21()">发送</button>
+			</div>
+		</div>
+	</div>
+
+	
+	<!--添加子任务弹窗-->
+	<div class="dialog">
+
+		<div class="dialog_box" name="work_addzrw">
+			<div class="dialog_screen"></div>
+			<div class="dialog_content dialog_content_3">
+				<div class="dialog_title"><i class="dialog_close">关闭</i>
+				<h3 class="dialog_h3">添加子任务</h3></div>
+				<div class="dialog_text" style="padding:30px 40px;">
+				
+					<div class="text_input">
+						<div class="text_intext text_intext2"><i>*</i><span>任务内容</span></div>
+						<div class="text_ininput text_ininput2"><textarea class="" id="add_21_cwork" onfocus="fn_focus(this);" onblur="fn_blur(this);">请输入任务详情</textarea></div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext text_intext2"><span>负责人</span></div>
+						<div class="text_ininput text_ininput2">
+							<div class="inline_block select_mormal select_p100">
+								<input type="text" class="select_input" value="张三">
+								<i></i>
+								<ul class="select_list">
+									<li>李四</li>
+									<li>王五</li>
+									<li>赵六</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="text_input">
+						<div class="text_intext text_intext2"><span>截止日期</span></div>
+						<div class="text_ininput text_ininput2"><p class="left inp_boxadd w_p100"><input id="add_cwdate_21" type="date" class="inp_normal w_p100"><i class="inp_time" style="right: -10px;"></i></p></div>
+					</div>
+
+				</div>
+				<div class="dialog_submit">
+					<button class="but_blue" onclick="add_cworksubmit_21()">保存</button><button class="but_cancel">取消</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+		<!--图片弹窗-->
+	<div class="dialog">
+
+		<div class="dialog_box" name="work_imglist">
+			<div class="dialog_screen"></div>
+			<div class="dialog_content dialog_content_4">
+				<i class="dialog_close">关闭</i>
+				<img id="img_box_21" class="zsy_img" src="static/images/task.png">
+			</div>
+		</div>
+
+	</div>
+<!--添加任务成员树结构-->
+	<div class="dialog">
+
+<<<<<<< .mine
+	<script>
+	$(document).ready(function(){
+		//右侧详情
+		$(".work_con1 tr").click(function(){
+			$(".right_sidebar").animate({
+				width: "600px"
+			},function(){
+				$(".right_sidebar_h").show();
+			});
+		});
+		$(".right_sidebar_h").click(function(){ 
+			$(this).hide();
+			$(".right_sidebar").hide(); //隐藏DIV
+		});
+	});	
+||||||| .r713
+	<script>
+$(document).ready(function(){
+	$(".work_con1 tr").click(function(){
+		$(".right_sidebar").show(500);
+	});
+
+	$(".right_sidebar_close").click(function(){
+		$(".right_sidebar").hide(500);
+	});
+});
+	
+
+	
+
+=======
+		<div class="dialog_box person_box" name="work_addcy1" >
+			<div class="dialog_screen"></div>
+			
+			<div class="dialog_content dialog_content_1">
+				<div class="dialog_title">
+					<i class="dialog_close">关闭</i>
+					<h3 class="dialog_h3">添加任务成员</h3>
+				</div>
+				<div class="dialog_text sbar" style="padding:5px 40px;height:68%;">
+					<div id="" class="tree_box">
+						<dl class="res_person_box">
+							<dt><div class="tree_icon"></div>所有部门</dt>
+							<dd>
+								<dl>
+									<dt><div class="tree_icon"></div>设计部</dt>
+									<dd>
+										<dl>
+											<dt><div class="tree_icon"></div>设计部三级</dt>
+											<dd class="cite">设计部三级一</dd>
+											<dd class="cite">设计部三级二</dd>
+										</dl>
+									</dd>
+									<dd class="cite">设计部二</dd>
+								</dl>
+							</dd>
+							<dd>
+								<dl>
+									<dt><div class="tree_icon"></div>销售部</dt>
+									<dd class="cite">销售部一</dd>
+									<dd class="cite">销售部二</dd>
+								</dl>
+							</dd>
+							<dd>
+								<dl>
+									<dt><div class="tree_icon"></div>人力资源</dt>
+									<dd class="cite">人力一</dd>
+									<dd class="cite">人力二</dd>
+								</dl>
+							</dd>
+							<dd class="cite">技术部</dd>
+						</dl>
+					</div>
+
+				</div>
+				<div class="dialog_submit">
+					<button class="but_blue" onclick="addwork_person_21()">确定</button><button class="but_cancel">取消</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+>>>>>>> .r982
+	<!--编辑任务成员树结构-->
+	<div class="dialog">
+
+		<div class="dialog_box" name="work_addcy2">
+			<div class="dialog_screen"></div>
+			
+			<div class="dialog_content dialog_content_1">
+				<div class="dialog_title">
+					<i class="dialog_close">关闭</i>
+					<h3 class="dialog_h3">编辑任务成员</h3>
+				</div>
+				<div class="dialog_text sbar" style="padding:5px 40px;height:68%;">
+					<div id="" class="tree_box">
+						<dl class="res_person_box">
+							<dt><div class="tree_icon"></div>所有部门</dt>
+							
+						</dl>
+					</div>
+
+				</div>
+				<div class="dialog_submit">
+					<button class="but_blue" onclick="changework_person_21()">确定</button><button class="but_cancel">取消</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</script>
+	 <script src="js/work/21.js"></script>
+<<<<<<< .mine
+
+||||||| .r713
+    <script src="static/js/common.js"></script>
+
+=======
+	  <script src="js/public/public_js.js"></script>
+>>>>>>> .r982
+  </body>
+</html>

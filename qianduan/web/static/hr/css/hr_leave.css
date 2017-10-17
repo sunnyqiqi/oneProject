@@ -1,0 +1,81 @@
+.btn-exam{
+    padding-left:230px;
+    padding-right:240px;
+}
+.hr_leave_mumlist em{
+    float:left;
+    margin-top:4px;
+}
+.hr_leave_mumlist p{
+    float:left;
+}
+.conP{
+    line-height:30px;
+}
+.hr_leave_mumlist h4{
+    margin-bottom:30px;
+    border-left:2px solid #23a2f3;
+    text-indent:10px;
+}
+.hr_leave_apartmsg>.hr_leave_chooseapart{
+    font-style: normal;
+    top:3px;
+    right: 12px;
+}
+.hr_leave_conP-last{
+    line-height:15px;
+}
+.a-3-cent>div>label{
+    margin-right:60px;
+}
+.a-3-cent>div>label>input {
+    margin-left: 24px;
+}
+.scrollbar
+{
+    width: 100%;
+    float: left;
+    height: 420px;
+    overflow-y: scroll;
+
+}
+#style-1::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: #e6e6e6;
+}
+#style-1::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #e6e6e6;
+}
+#style-1::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #b2b2b2;
+}
+.alertBtn-te {
+    height:38px;
+}
+.hr_leave_leaveBox{
+    height:563px;
+/*margin-top:-293px;*/
+}
+@media screen and (min-width: 961px){
+    .hr_leave_leaveBox{
+        width:774px;
+    }
+    .a-3-cent>div>label>input {
+        width: 534px;
+    }
+}
+@media screen and (max-width: 960px){
+
+    .hr_leave_leaveBox{
+        width:664px;
+    }
+
+    .a-3-cent>div>label>input {
+        width: 424px;
+    }
+}

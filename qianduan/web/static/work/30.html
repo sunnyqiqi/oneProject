@@ -1,0 +1,2273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工作-考勤-考勤管理</title>
+    <link rel="stylesheet" href="static/work/css/work_common.css">
+    <link rel="stylesheet" href="static/work/css/work_statisticalAttendance_1.css">
+    <style>
+        .vent_client_contMsgBox {
+            width: 184px;
+            padding-left: 16px;
+            padding-bottom: 16px;
+            height: auto;
+            background: #fff;
+            position: absolute;
+            left: 510px;
+            top: 257px;
+            z-index: 111;
+            border: 1px solid #ccc;
+            display: none;
+            box-shadow: 0 0 3px 1px #ccc;
+        }
+        .vent_client_torr {
+            width: 8px;
+            height: 5px;
+            position: absolute;
+            left: 62px;
+            top: -5px;
+            background: url(static/images/sale_torr.png) no-repeat;
+            background-size: 100%;
+        }
+        .vend_client_contact{
+            cursor: pointer;
+            position: relative;
+        }
+        .vent_client_contMsgBox>div>h3 {
+            margin: 15px 0 5px;
+            display: block;
+        }
+        .work_kqgl_shijian{
+            margin-right:30px;
+        }
+        .work_kqgl_shijian li {
+            display: inline-block;
+            float: right;
+
+        }
+        .work_kqgl_shijian li input{
+            width:50px;
+            margin: 15px 2px;
+        }
+    </style>
+</head>
+<body>
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>考勤管理</h2>
+    <div class="right" style="width: 178px;">
+        <!--<button class="but_blue val_dialog" name="work_kq_dc">导出考勤</button>--><button class="but_blue val_dialog zcj_appeal_chuli_list_btn" name="work_kqtj_sscl">申诉处理(2)</button><div class="res wk_tjkq_djsx_btn_xxl" title="点击刷新"></div>
+    </div>
+</div>
+<!--第二行-->
+<!-- 页面菜单 -->
+<div class="sbar second-level hr_left_bjbm">
+    <div class="Sideslip_list ht_slid_list work_kq">
+        <ul style="padding-top:10px;" class="tjkq_bmlist_xxl">
+            <!--<li class="Sideslip_list_on" name="work_kq_ul" title="技术部、产品部、设计部"><span>技术部、产品部、设计部fhweifheuifhewhfwehfuwefew</span></li>
+            <li name="work_kq_ul" title="销售部、人事部"><span>销售部、人事部</span></li>-->
+        </ul>
+    </div>
+    <div class="allgoods"  style="height: auto;"></div>
+</div>
+<!--第三行、右边-->
+<div class="sbar rightcontent" style="padding-right: 30px;padding-left: 30px;">
+    <div class="con_right_head clearfix" style="border:none;padding-bottom: 5px;">
+        <div class="work_tabSp inline_block">
+            <ul class="tabtitle">
+                <li name="work_kq_table" class="taba tabhover" id="zcj_kqtj_hdkq_list_data_show">核对考勤</li>
+                <li name="work_kq_table" id="zcj_kqtj_mykq_list_data_show" class="taba">我的考勤</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tabcontent div_1 container" name="work_kq_table" style="padding: 0;">
+        <div class="con_right_head clearfix" style="border:none;padding:20px 30px;">
+            <div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;margin-left: -2%;">
+                <div class="t_left" style="width: 35%;max-width: 6em;">查看时间</div>
+                <div class="t_right clearfix" style="width: 65%;margin-left: 35%;">
+                    <div class="inline_block select_mormal left select_100">
+                        <input type="text" class="select_input" value="选择日期">
+                        <i></i>
+                        <ul class="select_list zcj_all_time_data_day_show" style="display: none;">
+                            <li>全部时间</li>
+                            <li class="val_dialog" name="xs_shd_chooseTime">自定义时间</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-container zcj_30_kq_list_show_data lik_table_max_height">
+            <table>
+                <thead>
+                <tr >
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th colspan="9" class="t_center">合计</th>
+                    <th></th>
+                   <!-- <th></th>-->
+                </tr>
+                <tr >
+                   <!-- <th><input type="checkbox" class="checkAll" name="work_kq_check"></th>-->
+                    <th>考勤日期</th>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>到岗天数</th>
+                    <th>迟到</th>
+                    <th>早退</th>
+                    <th>未签到</th>
+                    <th>未签退</th>
+                    <th>范围外</th>
+                    <th>加班</th>
+                    <th>请假</th>
+                    <th>处理结果</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="zj_hdkq_tbody_info_list_content">
+                <!--<tr>
+                    <td><input type="checkbox" name="work_kq_check"></td>
+                    <td>2016-10</td>
+                    <td>张三</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>未确定考勤</td>
+                    <td>
+                        <button class="but_mix val_dialog but_look" name="work_kqtj_ck">查看</button><button class="but_mix but_look" name="hr_addcyad_bj">推送核对</button><button class="but_mix but_yellow val_dialog" name="work_kqgl_clsp">处理申诉</button></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="work_kq_check"></td>
+                    <td>2016-10</td>
+                    <td>李四</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>未确定考勤</td>
+                    <td>
+                        <button class="but_mix but_look val_dialog" name="work_kqtj_ck">查看</button><button class="but_mix but_look" name="hr_addcyad_bj">推送核对</button><button class="but_mix but_yellow val_dialog" name="work_kqgl_clsp">处理申诉</button></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="work_kq_check"></td>
+                    <td>2016-10</td>
+                    <td >张三</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>未确定考勤</td>
+                    <td>
+                        <button class="but_mix val_dialog but_look" name="work_kqtj_ck">查看</button><button class="but_mix but_look">推送核对</button><button class="but_mix but_yellow val_dialog" name="work_kqgl_clsp">处理申诉</button></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="work_kq_check"></td>
+                    <td>2016-10</td>
+                    <td >张三</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="f_color">确定考勤</td>
+                    <td><button class="but_mix but_look val_dialog" name="work_kqtj_ck">查看</button><button class="but_mix1 but_grey1">已推送</button></td></td>
+                </tr>-->
+                </tbody>
+            </table>
+            <!--<div class="tjkq_errhtml_xxl">
+                &lt;!&ndash;<div class="no_data_box"><div class="no_data"><p class="c_9">抱歉，没有找到相关内容！</p></div><div class="no_data_bottom"></div></div>&ndash;&gt;
+            </div>-->
+            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+            <div class="no_data_box none tjkq_errhtml_xxl zj_hdkq_no_data_show_div">
+                <div class="no_data">
+                    <!--<span class="inline_block"></span>-->
+                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                </div>
+                <div class="no_data_bottom"></div>
+            </div>
+        </div>
+
+        <div class="fenye_box tjkq_fenye_list_xxl zcj_fy_tjkq_page_show">
+        	<!--<div style="float: left;margin-left: 15px;">
+                <button class="but_cancel val_dialog" name="work_kqgl_plts" style="margin-left: -25px;" disabled="disabled">批量推送</button>
+            </div>-->
+				<span>每页显示</span>
+				<div class="inline_block select_mormal">
+					<input type="text" class="select_input" value="10">
+					<ul class="select_list select_list_to_top">
+						<li>5</li>
+						<li>10</li>
+						<li>15</li>
+						<li>20</li>
+					</ul>
+					<i></i>
+				</div>
+				<span>条数据</span>
+				<div class="fenye_btn first_page_valid"><span></span></div>
+				<div class="fenye_btn prev_page_valid"><span></span></div>
+				<span class="page_box on">1</span>
+				<span class="page_box">2</span>
+				<span class="page_box">3</span>
+				<span class="page_box">4</span>
+				<div class="fenye_btn next_page_valid"><span></span></div>
+				<div class="fenye_btn last_page_valid"><span></span></div>
+				<span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+				<span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+
+			</div>
+    </div>
+    <div class="tabcontent div_1 container" name="work_kq_table" style="display:none;padding: 0;">
+        <div class="t_textinput" style="margin-top: 10px;">
+            <div class="t_left" style="width: 10%;"><i class="c_r v_hidden">*</i>选择日期</div>
+            <div class="t_right" style="margin-left: 1%;display: inline;">
+                <div class="inline_block select_mormal select_100 work_month" style="width: 15%">
+                    <input type="text" class="select_input zcj_search_data_time_show_input" value="全部"/>
+                    <i></i>
+                    <ul class="select_list zcj_search_data_time_list_select">
+                        <li>全部</li>
+                        <!--<li>2017年3月</li>
+                        <li>2017年2月</li>
+                        <li>2017年1月</li>-->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="div_1 table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th colspan="8" class="t_center">合计</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>考勤日期</th>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>到岗天数</th>
+                    <th>迟到</th>
+                    <th>早退</th>
+                    <th>未签到</th>
+                    <th>未签退</th>
+                    <th>范围外</th>
+                    <th>加班</th>
+                    <th>请假</th>
+                    <th>申诉状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="zcj_my_kq_list_data_show">
+               <!-- <tr>
+                    <td>2016-10</td>
+                    <td>张三</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>-</td>
+                    <td>
+                        <button class="but_mix  val_dialog but_look" name="work_kq_ck">查看</button><button class="but_mix but_blue val_dialogTop" name="work_kqgl_qdkq_a">确定考勤</button><button class="but_mix val_dialog" name="work_ckgl_ss">申诉</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2016-09</td>
+                    <td>张三</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="c_y">申诉中</td>
+                    <td>
+                        <button class="but_mix  val_dialog but_look" name="work_kq_ck">查看</button><button class="but_mix but_blue val_dialogTop" name="work_kqgl_qdkq_a">确定考勤</button><button class="but_mix val_dialog" name="work_ckgl_ss">申诉</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2016-07</td>
+                    <td>张三</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="c_r">驳回申诉</td>
+                    <td>
+                        <button class="but_mix val_dialog but_look" name="work_kq_ck">查看</button><button class="but_mix but_blue val_dialogTop" name="work_kqgl_qdkq_a">确定考勤</button><button class="but_mix val_dialog" name="work_ckgl_ss">申诉</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2016-08</td>
+                    <td>张三</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="c_g">申诉通过</td>
+                    <td>
+                        <button class="but_mix val_dialog but_look" name="work_kq_ck">查看</button><button class="but_mix but_blue val_dialogTop" name="work_kqgl_qdkq_a">确定考勤</button><button class="but_mix val_dialog" name="work_ckgl_ss">申诉</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2016-06</td>
+                    <td>张三</td>
+                    <td>销售部</td>
+                    <td>22</td>
+                    <td>0</td>
+                    <td class="c_r">1</td>
+                    <td class="c_r">1</td>
+                    <td>0</td>
+                    <td >0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="c_g">申诉通过</td>
+                    <td>
+                        <button class="but_mix val_dialog but_look" name="work_kq_ck">查看</button><button class="but_mix1 but_grey1" name="work_kqgl_qdkq_a">确定考勤</button><button class="but_mix val_dialog" name="work_ckgl_ss">申诉</button>
+                    </td>
+                </tr>-->
+                </tbody>
+            </table>
+            <div class="tjkq_errhtml_xxl none zcj_no_data_show_ts_dv">
+                 <div class="no_data_box"><div class="no_data"><p class="c_9">抱歉，没有找到相关内容！</p></div><div class="no_data_bottom"></div></div>
+            </div>
+        </div>
+        <div class="fenye_box wk_ckkq_fenye_list_xxl zcj_my_kq_fy_page_show">
+				<span>每页显示</span>
+				<div class="inline_block select_mormal">
+					<input type="text" class="select_input" value="10">
+					<ul class="select_list select_list_to_top">
+						<li>5</li>
+						<li>10</li>
+						<li>15</li>
+						<li>20</li>
+					</ul>
+					<i></i>
+				</div>
+				<span>条数据</span>
+				<div class="fenye_btn first_page_valid"><span></span></div>
+				<div class="fenye_btn prev_page_valid"><span></span></div>
+				<span class="page_box on">1</span>
+				<span class="page_box">2</span>
+				<span class="page_box">3</span>
+				<span class="page_box">4</span>
+				<div class="fenye_btn next_page_valid"><span></span></div>
+				<div class="fenye_btn last_page_valid"><span></span></div>
+				<span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+				<span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+
+			</div>
+    </div>
+
+    </div>
+
+<!--弹窗-筛选时间-->
+<div class="dialog">
+    <div class="dialog_box" name="xs_shd_chooseTime">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="height: 194px; width: 614px; padding: 0px; z-index: 2;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">自定义时间</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding-top: 12px; z-index: 2;">
+                <div class="t_textinput left" style="width: 45%; z-index: 1;">
+                    <div class="t_left" style="width: 25%; z-index: 1;"><i class="c_r v_hidden">*</i>开始时间</div>
+                    <div class="t_right" style="width: 75%; margin-left: 25%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp zcj_select_start_time_val" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(work_kqgl_start)" id="work_kqgl_start">
+
+                    </div>
+                </div>
+                <div class="t_textinput right" style="width: 45%; z-index: 2;">
+                    <div class="t_left" style="width: 25%; z-index: 1;"><i class="c_r v_hidden">*</i>结束时间</div>
+                    <div class="t_right" style="width: 75%; margin-left: 25%; z-index: 2;"><input class="time_input laydate-icon ven_after_order_look_record_zdysj_start_inp zcj_select_end_time_val" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blura(this);" readonly="readonly" style="cursor: pointer;" onclick="laydate(work_kqgl_end)" id="work_kqgl_end">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit" style="z-index: 3;">
+                <button class="but_blue but_small ven_after_order_look_record_zdysj_save">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--核对考勤-申诉处理-->
+<div class="dialog">
+    <div class="dialog_box " name="work_kqtj_sscl">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 1050px;height: 410px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">申诉处理</h3>
+            </div>
+
+            <div class="dialog_text sbar" style="padding:0 40px 30px;">
+                <div class="con_right_head clearfix" style="border: none;padding: 0;">
+                    <div class="t_textinput" style="float: right;margin-right: 20px;width:220px;margin-left: 20px;">
+                        <div class="t_left" style="width: 22%;">选择月份</div>
+                       <div class="t_right" style="margin-left:23%;">
+                           <div class="inline_block select_mormal select_100">
+                               <input type="text" class="select_input zcj_search_data_time_show_input" value="全部"/>
+                               <i></i>
+                               <ul class="select_list zcj_search_data_time_list_select">
+                               <li>全部</li>
+                               <!--<li>2017年3月</li>
+                               <li>2017年2月</li>
+                               <li>2017年1月</li>-->
+                               </ul>
+                               </div>
+                        </div>
+                    </div>
+
+                    <div class="finance_tabJr">
+                        <ul class="tabtitle finance_tabUl">
+                            <li name="work_hdkq_a" class="taba tabhover" id="zcj_my_ss_wdss_manage">我的申诉</li>
+                            <li name="work_hdkq_a" class="taba" id="zcj_my_ss_complain_manage" style="padding: 0 5px;">我处理的申诉</li>
+                        </ul>
+                    </div>
+
+                    <div class="t_textinput" style="float: right;width: 219px;">
+                        <div class="t_left" style="width: 24%;"><i class="c_r v_hidden">*</i>选择日期</div>
+                        <div class="t_right" style="margin-left: 26%;width: 72%;">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input" value="全部"/>
+                                <i></i>
+                                <ul class="select_list zcj_select_data_time_list">
+                                    <li>全部</li>
+                                    <li>2017年3月</li>
+                                    <li>2017年2月</li>
+                                    <li>2017年1月</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tabcontent" name="work_hdkq_a" style="padding: 0;">
+                    <div class="div_1 container">
+                        <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>申诉理由</th>
+                                    <th>发起时间</th>
+                                    <th>完成时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="zcj_client_contact_list_data_myss">
+                                <!--<tr>
+                                    <td>张三</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>2016-10-11</td>
+                                    <td>-</td>
+                                    <td class="c_y">申诉中</td>
+                                    <td><button class="but_look but_mix val_dialogTop" name="work_kqwdss_ck">查看</button></td>
+                                </tr>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>2016-10-11</td>
+                                    <td>2016-10-12</td>
+                                    <td class="c_r">已拒绝</td>
+                                    <td><button class="but_look but_mix val_dialogTop" name="work_kqwdss_ck">查看</button></td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                 <div class="tabcontent" name="work_hdkq_a" style="display: none;padding: 0;">
+                    <div class="div_1 container" >
+                        <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>申诉理由</th>
+                                    <th>发起时间</th>
+                                    <th>完成时间</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="zcj_client_contact_list_data_mycl_manage">
+                                <!--<tr>
+                                    <td>张三</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>2016-10-11</td>
+                                    <td>-</td>
+                                    <td class="c_y">待处理</td>
+                                    <td>
+                                        <button class="but_look but_mix val_dialogTop" name="work_kqgl_clsp">查看</button><button class="but_green but_mix val_dialogTop" name="work_kqtj_xiugai">通过</button><button class="val_dialogTop but_red but_mix" name="finance_hsgz_shensu1">驳回</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>
+                                        <p>圣诞节福利就死定<br>圣诞节福利就死定了节福利考试及 <br>圣诞法律考死定了放假了涉及到法律考试及 <br>圣诞节福</p>
+                                    </td>
+                                    <td>2016-10-11</td>
+                                    <td>2016-10-12</td>
+                                    <td class="c_r">已驳回</td>
+                                    <td>
+                                        <button class="but_look but_mix val_dialogTop" name="work_kqgl_clsp">查看</button><button class="but_mix1 but_grey1">通过</button><button class="but_mix1 but_grey1">驳回</button>
+                                    </td>
+                                </tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--我的申诉-查看弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kqwdss_ck">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content  work_staicAtt_dlog_det zcj_my_ss_ckkq_tc_check" style="height: 440px;">
+            <div class="dialog_title work_staicAtt_dlog_detHead" style="z-index: 1;">
+                <i class="dialog_close_zsy">关闭</i>
+                <h3 class="dialog_h3">张三考勤详情</h3>
+            </div>
+            <div class="saLook_dialog_text clearfix work_staicAtt_spc_dialog">
+                <div class="work_staicAttdce_tableBoxDiv left">张三</div>
+                <div class="work_staicAttdce_tableBoxDiv left">销售部</div>
+                <div class="work_kqgl_table_3">
+                    <table>
+                        <tr class="table_total">
+                            <th>日期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <th>星期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <td>上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td style="height:31px;">请假</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="div_1 table-container work_staicAttdce_tableBox">
+                    <div class="div_1 container ">
+                        <table class="work_staicAttdce_dialog_look_table ">
+                            <tbody>
+                            <thead>
+                            <tr class="table_total">
+                                <th>10月1号</th>
+                                <th>10月2号</th>
+                                <th>10月3号</th>
+                                <th>10月4号</th>
+                                <th>10月5号</th>
+                                <th>10月6号</th>
+                                <th>10月7号</th>
+                                <th>10月8号</th>
+                                <th>10月9号</th>
+                                <th>10月10号</th>
+                                <th>10月11号</th>
+                                <th>10月12号</th>
+                                <th>10月13号</th>
+                                <th>10月14号</th>
+                                <th>10月15号</th>
+                                <th>10月16号</th>
+                                <th>10月17号</th>
+                                <th>10月18号</th>
+                                <th>10月19号</th>
+                                <th>10月20号</th>
+                                <th>10月21号</th>
+                                <th>10月22号</th>
+                                <th>10月23号</th>
+                                <th>10月24号</th>
+                                <th>10月25号</th>
+                                <th>10月26号</th>
+                                <th>10月27号</th>
+                                <th>10月28号</th>
+                                <th>10月29号</th>
+                                <th>10月30号</th>
+                                <th>10月31号</th>
+                            </tr>
+                            <tr class="table_total">
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>8:30</td>
+                                <td>-</td>
+                                <td>未签到</td>
+                                <td class="f_color_red">迟 09：20</td>
+                                <td class="f_color">范围外</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>未签退</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="f_color_red">事假</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+               <button class="but_small but_cancel">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导出弹框-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kq_dc">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_4" style=" width: 320px;height:200px;">
+            <i class="dialog_close_but">关闭</i>
+            <em class="exportIcon"></em>
+            <p class="exportMsg">导出成功，请点击下载</p>
+            <p class="exportFlie f_color">全部成员10月考勤记录20161102.xlsx</p>
+        </div>
+    </div>
+</div>
+<!--考勤统计-->
+<!--考勤详情核对-->
+<!--查看-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kqtj_ck">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content  work_staicAtt_dlog_det zcj_kq_xq_show_list_data_display" style="height: 440px;">
+           <!-- <div class="dialog_title work_staicAtt_dlog_detHead" style="z-index: 1;">
+                <i class="dialog_close_zsy">关闭</i>
+                <h3 class="dialog_h3">张三考勤详情</h3>
+            </div>
+            <div class="saLook_dialog_text clearfix work_staicAtt_spc_dialog">
+                <div class="work_staicAttdce_tableBoxDiv left">张三</div>
+                <div class="work_staicAttdce_tableBoxDiv left">销售部</div>
+                <div class="work_kqgl_table_3">
+                    <table>
+                        <tr class="table_total">
+                            <th>日期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <th>星期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <td>上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td style="height:31px;">请假</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="div_1 table-container work_staicAttdce_tableBox">
+                    <div class="div_1 container ">
+                        <table class="work_staicAttdce_dialog_look_table ">
+                            <tbody>
+                            <thead>
+                            <tr class="table_total">
+                                <th>10月1号</th>
+                                <th>10月2号</th>
+                                <th>10月3号</th>
+                                <th>10月4号</th>
+                                <th>10月5号</th>
+                                <th>10月6号</th>
+                                <th>10月7号</th>
+                                <th>10月8号</th>
+                                <th>10月9号</th>
+                                <th>10月10号</th>
+                                <th>10月11号</th>
+                                <th>10月12号</th>
+                                <th>10月13号</th>
+                                <th>10月14号</th>
+                                <th>10月15号</th>
+                                <th>10月16号</th>
+                                <th>10月17号</th>
+                                <th>10月18号</th>
+                                <th>10月19号</th>
+                                <th>10月20号</th>
+                                <th>10月21号</th>
+                                <th>10月22号</th>
+                                <th>10月23号</th>
+                                <th>10月24号</th>
+                                <th>10月25号</th>
+                                <th>10月26号</th>
+                                <th>10月27号</th>
+                                <th>10月28号</th>
+                                <th>10月29号</th>
+                                <th>10月30号</th>
+                                <th>10月31号</th>
+                            </tr>
+                            <tr class="table_total">
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>8:30</td>
+                                <td>-</td>
+                                <td>未签到</td>
+                                <td class="f_color_red">迟 09：20</td>
+                                <td class="f_color">范围外</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>未签退</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="f_color_red">事假</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>-->
+        </div>
+    </div>
+</div>
+<!--处理申诉-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kqgl_clsp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content work_staicAtt_dlog_det" style="height: 486px;">
+            <div class="dialog_title work_staicAtt_dlog_detHead" style="z-index: 1;">
+                <i class="dialog_close_zsy">关闭</i>
+                <h3 class="dialog_h3">处理考勤申诉</h3>
+            </div>
+            <div class="saLook_dialog_text clearfix work_staicAtt_spc_dialog zcj_tjkq_manage_kq_data_show_list">
+                <div class="work_staicAttdce_tableBoxDiv left">张三</div>
+                <div class="work_staicAttdce_tableBoxDiv left">销售部</div>
+                <div class="work_kqgl_table_3">
+                    <table>
+                        <tr class="table_total">
+                            <th>日期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <th>星期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <td>上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td style="height:31px;">请假</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="div_1 table-container work_staicAttdce_tableBox">
+                    <div class="div_1 container ">
+                        <table class="work_staicAttdce_dialog_look_table ">
+                            <tbody>
+                            <thead>
+                            <tr class="table_total">
+                                <th>10月1号</th>
+                                <th>10月2号</th>
+                                <th>10月3号</th>
+                                <th>10月4号</th>
+                                <th>10月5号</th>
+                                <th>10月6号</th>
+                                <th>10月7号</th>
+                                <th>10月8号</th>
+                                <th>10月9号</th>
+                                <th>10月10号</th>
+                                <th>10月11号</th>
+                                <th>10月12号</th>
+                                <th>10月13号</th>
+                                <th>10月14号</th>
+                                <th>10月15号</th>
+                                <th>10月16号</th>
+                                <th>10月17号</th>
+                                <th>10月18号</th>
+                                <th>10月19号</th>
+                                <th>10月20号</th>
+                                <th>10月21号</th>
+                                <th>10月22号</th>
+                                <th>10月23号</th>
+                                <th>10月24号</th>
+                                <th>10月25号</th>
+                                <th>10月26号</th>
+                                <th>10月27号</th>
+                                <th>10月28号</th>
+                                <th>10月29号</th>
+                                <th>10月30号</th>
+                                <th>10月31号</th>
+                            </tr>
+                            <tr class="table_total">
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>8:30</td>
+                                <td>-</td>
+                                <td>未签到</td>
+                                <td class="f_color_red">迟 09：20</td>
+                                <td class="f_color">范围外</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>未签退</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="f_color_red">事假</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="wokr_kqgl_ssnr">
+                    <h3>申诉内容：</h3>
+                    <p>10月5日已经跟经理说明不来的原因了，请修改正常考勤。</p>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small zcj_appeal_bh_back_btn">驳回</button><button class="but_green val_dialogTop but_small zcj_appeal_pass_change_btn" name="work_kqtj_xiugai">通过并修改考勤</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--通过并修改考勤弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kqtj_xiugai">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content  work_staicAtt_dlog_det zcj_check_amend_pass_xq_list_show" style="height: 498px;">
+            <div class="dialog_title work_staicAtt_dlog_detHead" style="z-index: 1;">
+                <i class="dialog_close_zsy">关闭</i>
+                <h3 class="dialog_h3">张三考勤详情</h3>
+            </div>
+            <div class="saLook_dialog_text clearfix work_staicAtt_spc_dialog">
+                <div class="work_staicAttdce_tableBoxDiv left" style="height: 299px;line-height: 299px;">张三</div>
+                <div class="work_staicAttdce_tableBoxDiv left" style="height: 299px;line-height: 299px;">销售部</div>
+                <div class="work_kqgl_table_3 work_kqgl_table_4">
+                    <table>
+                        <tbody><tr class="table_total">
+                            <th>日期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <th>星期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <td>上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td style="height:33px;">请假</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="div_1 table-container work_staicAttdce_tableBox">
+                    <div class="div_1 container ">
+                        <table class="work_staicAttdce_dialog_look_table ">
+                            <tbody>
+                            <thead>
+                            <tr class="table_total">
+                            <th>10月1号</th>
+                            <th>10月2号</th>
+                            <th>10月3号</th>
+                            <th>10月4号</th>
+                            <th>10月5号</th>
+                            <th>10月6号</th>
+                            <th>10月7号</th>
+                            <th>10月8号</th>
+                            <th>10月9号</th>
+                            <th>10月10号</th>
+                            <th>10月11号</th>
+                            <th>10月12号</th>
+                            <th>10月13号</th>
+                            <th>10月14号</th>
+                            <th>10月15号</th>
+                            <th>10月16号</th>
+                            <th>10月17号</th>
+                            <th>10月18号</th>
+                            <th>10月19号</th>
+                            <th>10月20号</th>
+                            <th>10月21号</th>
+                            <th>10月22号</th>
+                            <th>10月23号</th>
+                            <th>10月24号</th>
+                            <th>10月25号</th>
+                            <th>10月26号</th>
+                            <th>10月27号</th>
+                            <th>10月28号</th>
+                            <th>10月29号</th>
+                            <th>10月30号</th>
+                            <th>10月31号</th>
+                        </tr>
+                            <tr class="table_total">
+                            <th>星期六</th>
+                            <th>星期天</th>
+                            <th>星期一</th>
+                            <th>星期二</th>
+                            <th>星期三</th>
+                            <th>星期四</th>
+                            <th>星期五</th>
+                            <th>星期六</th>
+                            <th>星期天</th>
+                            <th>星期一</th>
+                            <th>星期二</th>
+                            <th>星期三</th>
+                            <th>星期四</th>
+                            <th>星期五</th>
+                            <th>星期六</th>
+                            <th>星期天</th>
+                            <th>星期一</th>
+                            <th>星期二</th>
+                            <th>星期三</th>
+                            <th>星期四</th>
+                            <th>星期五</th>
+                            <th>星期六</th>
+                            <th>星期天</th>
+                            <th>星期天</th>
+                            <th>星期一</th>
+                            <th>星期二</th>
+                            <th>星期三</th>
+                            <th>星期四</th>
+                            <th>星期五</th>
+                            <th>星期六</th>
+                            <th>星期天</th>
+                        </tr>
+                            </thead>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>8:30</td>
+                                <td class="c_c">未签到 <button class="but_blue work_kqgl_but">修改</button></td>
+                                <td><span class="c_g">正常</span><button class="but_red work_kqgl_but">撤回</button></td>
+                                <td class="f_color_red">迟 09：20</td>
+                                <td class="f_color_red work_staicAttdce_stateBox"> 迟 09：20 <button class="but_blue work_kqgl_but">修改</button></td>
+                                <td class="work_staicAttdce_stateBox"><span class="c_g">正常</span><button class="but_red work_kqgl_but">撤回</button></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="f_color">范围外</td>
+                                <td class="f_color">范围外<button class="but_blue work_kqgl_but">修改</button></td>
+                                <td><span class="c_g">正常</span><button class="but_red work_kqgl_but">撤回</button></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td style="color: #CCCCCC">未签退<button class="but_blue work_kqgl_but">修改</button></td>
+                                <td><span class="c_g">正常</span><button class="but_red work_kqgl_but">撤回</button></td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td class="work_kqgl_xgCon relative">
+                                    22:00 <button class="but_blue work_kqgl_but work_kqgl_xg">修改</button>
+                                    <div class="cg_ghs_contMsgBox" style="display: none;width: 186px;">
+                                        <i class="vent_client_torr"></i>
+                                        <ul class="cg_ghs_contMsgBoxDet work_kqgl_shijian clearfix">
+                                            <!--<ul class="work_kqgl_shijian clearfix">-->
+                                            <li><input type="text"></li>
+                                            <li><input type="text">:</li>
+                                            <!--</ul>-->
+                                        </ul>
+                                        <div class="cg_ghs_contMsgBoxDet">
+                                            <button class="but_blue">确定</button><button>取消</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="c_g">正常</span><button class="but_red work_kqgl_but work_kqgl_gai">撤回</button></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td class="work_kqgl_xgCon relative">
+                                    22:00 <button class="but_blue work_kqgl_but work_kqgl_xg">修改</button>
+                                    <div class="cg_ghs_contMsgBox" style="display: none;width: 186px;">
+                                        <i class="vent_client_torr"></i>
+                                        <ul class="cg_ghs_contMsgBoxDet work_kqgl_shijian clearfix">
+                                            <!--<ul class="work_kqgl_shijian clearfix">-->
+                                            <li><input type="text"></li>
+                                            <li><input type="text">:</li>
+                                            <!--</ul>-->
+                                        </ul>
+                                        <div class="cg_ghs_contMsgBoxDet">
+                                            <button class="but_blue">确定</button><button>取消</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="c_g">正常</span><button class="but_red work_kqgl_but work_kqgl_gai">撤回</button></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="f_color_red">事假<button class="but_blue work_kqgl_but">修改</button></td>
+                                <td><span class="c_g">正常</span><button class="but_red work_kqgl_but">撤回</button></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="wokr_kqgl_ssnr">
+                    <h3>申诉内容：</h3>
+                    <p>10月5日已经跟经理说明不来的原因了，请修改正常考勤。</p>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_tg_xg_kq_pass_amend_btn">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--弹出层-批量处理-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kqgl_plts">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar hr_content_delete">
+                <p class="p1">本次核对20人，是否确认推送核对考勤？</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹出层-确定考勤-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kqgl_qdkq_a">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar hr_content_delete">
+                <p class="p1">是否确定本次考勤？</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_qr_end_confirm_kq_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--my考勤-->
+<!--查看弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kq_ck">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content  work_staicAtt_dlog_det zcj_my_kq_xq_infor_data_show" style="height: 440px;">
+            <div class="dialog_title work_staicAtt_dlog_detHead" style="z-index: 1;">
+                <i class="dialog_close_zsy">关闭</i>
+                <h3 class="dialog_h3">张三考勤详情</h3>
+            </div>
+            <div class="saLook_dialog_text clearfix work_staicAtt_spc_dialog">
+                <div class="work_staicAttdce_tableBoxDiv left">张三</div>
+                <div class="work_staicAttdce_tableBoxDiv left">销售部</div>
+                <div class="work_kqgl_table_3">
+                    <table>
+                        <tr class="table_total">
+                            <th>日期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <th>星期</th>
+                        </tr>
+                        <tr class="table_total">
+                            <td>上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班上班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td>加班下班</td>
+                        </tr>
+                        <tr class="table_total">
+                            <td style="height:31px;">请假</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="div_1 table-container work_staicAttdce_tableBox">
+                    <div class="div_1 container ">
+                        <table class="work_staicAttdce_dialog_look_table ">
+                            <tbody>
+                            <thead>
+                            <tr class="table_total">
+                                <th>10月1号</th>
+                                <th>10月2号</th>
+                                <th>10月3号</th>
+                                <th>10月4号</th>
+                                <th>10月5号</th>
+                                <th>10月6号</th>
+                                <th>10月7号</th>
+                                <th>10月8号</th>
+                                <th>10月9号</th>
+                                <th>10月10号</th>
+                                <th>10月11号</th>
+                                <th>10月12号</th>
+                                <th>10月13号</th>
+                                <th>10月14号</th>
+                                <th>10月15号</th>
+                                <th>10月16号</th>
+                                <th>10月17号</th>
+                                <th>10月18号</th>
+                                <th>10月19号</th>
+                                <th>10月20号</th>
+                                <th>10月21号</th>
+                                <th>10月22号</th>
+                                <th>10月23号</th>
+                                <th>10月24号</th>
+                                <th>10月25号</th>
+                                <th>10月26号</th>
+                                <th>10月27号</th>
+                                <th>10月28号</th>
+                                <th>10月29号</th>
+                                <th>10月30号</th>
+                                <th>10月31号</th>
+                            </tr>
+                            <tr class="table_total">
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                                <th>星期天</th>
+                                <th>星期一</th>
+                                <th>星期二</th>
+                                <th>星期三</th>
+                                <th>星期四</th>
+                                <th>星期五</th>
+                                <th>星期六</th>
+                                <th>星期天</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>8:30</td>
+                                <td>-</td>
+                                <td>未签到</td>
+                                <td class="f_color_red">迟 09：20</td>
+                                <td class="f_color">范围外</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>未签退</td>
+                                <td>18:30</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>22:00</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>22:00</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td class="f_color_red">事假</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small val_dialogTop zcj_end_kq_ck_check_btn" name="work_kqgl_qdkq_a">确定考勤</button><button class="but_yellow but_small val_dialogTop" name="work_ckgl_ss">申诉</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--申诉弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="work_ckgl_ss">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 480px;height: 350px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">申诉</h3>
+            </div>
+            <div class="dialog_text sbar work_sp_dialog_text">
+                <div class="t_textinput" style="height: 120px;">
+                    <div class="t_left" style="width: 13%;"><i class="v_hidden">*</i>申诉意见</div>
+                    <div class="t_right">
+                        <textarea cols="50" rows="5" onfocus="fn_focus(this);" class="zcj_complain_yj_client_contact" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">请输入申诉意见</textarea>
+                    </div>
+                </div>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>处理人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 zcj_select_person_show_list_data">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop zcj_manage_person_tc_btn" name="work_kqgl_clr"></em>
+                        </li>
+                    </ul>
+                </label>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_complain_success_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--处理人弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="work_kqgl_clr">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择处理人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con list_box_uldx">
+                        <div class="left_nav">
+                            <ul class="list_box_level zcj_xz_select_manage_person_tree"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_select_manage_person_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $(".dialog_close_zsy").live("click",function(){
+            $(".tanceng").removeClass("dialog_change_box");
+            $(".tanceng").addClass("dialog_change_box");
+            $(".dialog_change_box").hide();
+            $(".tanceng").removeClass("dialog_change_box");
+        });
+        $(".con_right_head_list li").click(function() {
+            var index = $(".con_right_head_list li").index(this) % 5;
+            $(this).addClass("con_right_head_list_on").siblings().removeClass("con_right_head_list_on");
+        });
+        //选择时间
+        $(".work_kqgl_xg").live("click",function(){
+            $(this).next().show();
+        });
+        $(".work_kqgl_xgCon").live("mouseleave",function(){
+            $(this).children("div").hide();
+        });
+
+    });
+</script>
+<script>
+    var work_kqgl_start = {
+        elem: '#work_kqgl_start',
+        format: 'YYYY-MM-DD',
+//        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            work_kqgl_end.min = datas; //开始日选好后，重置结束日的最小日期
+            work_kqgl_end.start = datas; //将结束日的初始值设定为开始日
+            //console.log(datas)
+        }
+    };
+    var work_kqgl_end = {
+        elem: '#work_kqgl_end',
+        format: 'YYYY-MM-DD',
+//        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            work_kqgl_start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+
+    };
+//    //日期范围限制
+//
+//    var work_kqgl_start = {
+//
+//        elem: '#work_kqgl_start',
+//
+//        format: 'YYYY-MM',
+//
+//        /*  min: laydate.now(),*/ //设定最小日期为当前日期
+//
+//        max: '2099-06-16', //最大日期
+//
+//        istime: false,
+//        istoday: true,
+//        choose: function(datas) {
+//            work_kqgl_end.min = datas; //开始日选好后，重置结束日的最小日期
+//            work_kqgl_end.start = datas //将结束日的初始值设定为开始日
+//
+//        }
+//
+//    };
+//    var work_kqgl_end = {
+//        elem: '#work_kqgl_end',
+//        format: 'YYYY-MM',
+//
+//        /* min: laydate.now(),*/
+//
+//        max: '2099-06-16',
+//
+//        istime: false,
+//        istoday: true,
+//        choose: function(datas) {
+//            work_kqgl_start.max = datas; //结束日选好后，充值开始日的最大日期
+//            /* console.log(datas,hr_gszd_end.start)*/
+//        }
+//
+//    };
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 304);
+    });
+
+</script>
+</body>
+<script src="js/work/30.js"></script>
+</html>

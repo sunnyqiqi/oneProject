@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>财务设置</title>
+    <link rel="stylesheet" href="static/system/css/system.css">
+    <script src="static/system/js/115.js"></script>
+</head>
+<body>
+<div class="finance_content" >
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>财务设置</h2>
+</div>
+<!--第二行-->
+<div class="system_right clearfix sbar" style="height: 92.5%;">
+    <div class="system_right_left left">
+        <p class="system_p">模板导航</p>
+        <hr>
+        <div class="system_tabJr">
+            <ul class="tabtitle system_tabUl">
+                <li class="taba tabhover" id="zcj_finance_tsr_tx_remind" name="system_mbdh_cw">设置推送人</li>
+                <li class="taba" id="zcj_finance_sk_tx_remind" name="system_mbdh_cw">收款提醒</li>
+                <li class="taba" id="zcj_finance_fk_remind" name="system_mbdh_cw">付款提醒</li>
+                <li class="taba" id="zcj_finance_fp_set" name="system_mbdh_cw">付票设置</li>
+                <li class="taba" id="zcj_finance_fx_set" name="system_mbdh_cw">发薪设置</li>
+            </ul>
+        </div>
+    </div>
+    <div class="system_muban relative system_xzset" style="width: 78%;margin-top: 15px;">
+        <!--设置推送人-->
+        <div class="tabcontent" name="system_mbdh_cw" style="padding: 0;">
+            <div class="system_sp_tabJr clearfix">
+                <p class="system_p">设置推送人</p>
+            </div>
+            <div class="system_work_mbdh clearfix">
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>收款推送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl zj_sk_sktsr_list_icon_show" style="width: 100%;">
+                        <!--<li><i class="del_img_1">-</i><em class="icon_personBtn icon_personBtn_msg"></em><em class="icon_adderBtn"></em><p class="box_adderName">魏俊芬 </p></li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                        </li>-->
+                        <li class="zj_sktsr_list_li_show">
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop zj_sk_sktsr_add_person_btn" name="xt_sp_dxry"></em>
+                        </li>
+                    </ul>
+                </label>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>付款推送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl zj_sk_fktsr_list_icon_show" style="width: 100%;">
+                       <!-- <li><i class="del_img_1">-</i><em class="icon_personBtn icon_personBtn_msg"></em><em class="icon_adderBtn"></em><p class="box_adderName">魏俊芬 </p></li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                        </li>-->
+                        <li class="zj_fktsr_list_li_show">
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop zj_sk_fktsr_add_person_btn" name="xt_sp_dxry"></em>
+                        </li>
+                    </ul>
+                </label>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>销项发票推送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl zj_sk_xfptsr_list_icon_show" style="width: 100%;">
+                        <!--<li><i class="del_img_1">-</i><em class="icon_personBtn icon_personBtn_msg"></em><em class="icon_adderBtn"></em><p class="box_adderName">魏俊芬 </p></li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                        </li>-->
+                        <li class="zj_xfptsr_list_li_show">
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop zj_sk_xfptsr_add_person_btn" name="xt_sp_dxry"></em>
+                        </li>
+                    </ul>
+                </label>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>进项发票推送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl zj_sk_jxfptsr_list_icon_show" style="width: 100%;">
+                        <!--<li><i class="del_img_1">-</i><em class="icon_personBtn icon_personBtn_msg"></em><em class="icon_adderBtn"></em><p class="box_adderName">魏俊芬 </p></li>-->
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                        </li>-->
+                        <li class="zj_jxfptsr_list_li_show">
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop zj_sk_jxfptsr_add_person_btn" name="xt_sp_dxry"></em>
+                        </li>
+                    </ul>
+                </label>
+            </div>
+        </div>
+        <!--收款提醒-->
+        <div class="tabcontent" name="system_mbdh_cw" style="padding: 0;">
+            <div class="system_sp_tabJr clearfix">
+                <p class="system_p">收款提醒</p>
+            </div>
+            <div class="system_work_mbdh clearfix">
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 22%;max-width: 7em;">
+                        <input type="checkbox" class="zcj_is_open_kq_tx"><i class="c_r v_hidden">*</i>收款提醒：
+                    </div>
+                    <div class="t_right" style="margin-left: 9%;">
+                        <span style="margin-right: 14px;">提前</span><input type="text" class="c_3 time_input system_100_px lik_input_number zcj_tq_day_num" value="天数" onfocus="fn_focus(this);" onblur="fn_blur(this);"><span style="margin-left: 10px;">天</span>
+                    </div>
+                </div>
+            </div>
+            <div class="xt_xzset_submit">
+                <button class="but_small but_blue zcj_sk_tx_set_end_btn">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+
+        </div>
+        <!--付款提醒-->
+        <div class="tabcontent" name="system_mbdh_cw" style="padding: 0;display: none;">
+            <div class="system_sp_tabJr clearfix">
+                <p class="system_p">付款提醒</p>
+            </div>
+            <div class="system_work_mbdh clearfix">
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 22%;max-width: 7em;">
+                        <input type="checkbox" class="zcj_fk_tx_if_open"><i class="c_r v_hidden">*</i>付款提醒：
+                    </div>
+                    <div class="t_right" style="margin-left: 9%;">
+                        <span style="margin-right: 14px;">提前</span><input type="text" class="c_3 time_input system_100_px lik_input_number zcj_fktx_day_num" value="天数" onfocus="fn_focus(this);" onblur="fn_blur(this);"><span style="margin-left: 10px;">天</span>
+                    </div>
+                </div>
+            </div>
+            <div class="xt_xzset_submit">
+                <button class="but_small but_blue zcj_fktx_end_btn">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+
+        </div>
+        <!--付票设置-->
+        <div class="tabcontent" name="system_mbdh_cw" style="padding: 0;display: none;">
+            <div class="system_sp_tabJr clearfix">
+                <p class="system_p">付票设置</p>
+            </div>
+            <div class="system_work_mbdh clearfix">
+                <h2 class="cont_title">限制设置</h2>
+                <div class="t_textinput" style="height: 58px;">
+                    <div class="t_left" style="max-width: 7em;width: 22%;">
+                        <i class="c_r v_hidden">*</i><input type="checkbox" checked="checked" class="zcj_fp_set_is_open"/>付票限制：
+                    </div>
+                    <div class="t_right" style="margin-left: 9%;">
+                        <span style="margin-right: 8px;">每月</span> <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="c_3 laydate-icon time_input system_100_px zcj_fpset_day_statr" readonly="readonly" onclick="laydate()" style="cursor: pointer;"> <span style="margin: 0 5px;">至</span> <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="c_3 laydate-icon time_input system_100_px zcj_fpset_day_end_time" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                        <p class="c_9" style="margin-top: 5px;">设置后，每月设置的日期不能付票</p>
+                    </div>
+                </div>
+                <h2 class="cont_title">提醒设置</h2>
+                <div class="t_textinput">
+                    <div class="t_left" style="max-width: 7em;width: 20%;">
+                        <i class="c_r v_hidden">*</i><input type="checkbox" checked="checked" class="zcj_fp_tx_set_isopen"/>付票提醒：
+                    </div>
+                    <div class="t_right" style="margin-left: 9%;">
+                        <span style="margin-right: 8px;">提前</span><input type="text" class="c_3 time_input system_100_px lik_input_number zcj_fp_ts_num_day_val" value="天数" onfocus="fn_focus(this);" onblur="fn_blur(this);"><span style="margin-left: 5px;">天</span>
+                    </div>
+                </div>
+            </div>
+            <div class="xt_xzset_submit">
+                <button class="but_small but_blue zcj_fp_wcset_end_btn">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+
+        </div>
+        <!--发薪设置-->
+        <div class="tabcontent" name="system_mbdh_cw" style="padding: 0;display: none;">
+            <div class="system_sp_tabJr clearfix">
+                <p class="system_p">发薪设置</p>
+            </div>
+            <div class="system_work_mbdh clearfix system_finance_fx">
+                <h2 class="cont_title">设置工资条推送日期</h2>
+                <div class="finance_fxjl_fxsz_ts">
+                    <p class="c_r">每月工资条推送日期说明：</p>
+                    <p>系统按每月1号至月底为一个周期结算，每月一号系统推送。</p>
+                </div>
+                <h2 class="cont_title" style="margin-bottom: 20px;">薪资结算账户</h2>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>选择账户</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input fnc_salary_fxsz_choose_account_company_btn" value="请选择账户">
+                            <i></i>
+                            <ul class="select_list sbar fnc_salary_fxsz_choose_account_company_list_ul" style="display: none;">
+                                <!--<li>北京联创万通科技有限公司</li>
+                                <li>北京纽沃德科技有限公司</li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>选择账目</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input fnc_salary_fxsz_choose_account_btn" value="请选择账目">
+                            <i></i>
+                            <ul class="select_list sbar fnc_salary_fxsz_choose_account_list_ul" style="display: none;">
+                                <!--<li>销售账目</li>
+                                <li>采购账目</li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>支付方式</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input fnc_salary_fxsz_choose_zhifu_way_inp" value="请选择支付方式">
+                            <i></i>
+                            <ul class="select_list sbar fnc_salary_fxsz_choose_zhifu_way_ul" style="display: none;">
+                                <li>现金</li>
+                                <li>支票</li>
+                                <li>电汇</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xt_xzset_submit">
+                <button class="but_small but_blue zcj_fx_set_accomplish_end_btn">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+<!--设置入库人、出库人-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_dxry">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3 zj_tc_content_addry_box">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择人员</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_uldx zcj_xz_tsr_tc_tree_list"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_select_spr_person_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/finance/css/finance.css">
+    <script src="static/finance/js/finance.js"></script>
+    <title>财务-物流付款</title>
+</head>
+<body>
+<div class="finance_content">
+    <!--第一行-->
+    <div class="finance_title">
+        <h2>物流付款</h2>
+        <div class="right finance_wlfy_xj" style="width: 32px;">
+           <div class="res" title="点击刷新"></div>
+        </div>
+    </div>
+    <!--第二行-->
+    <div class="finance_title">
+        <div class="right finance_khysqk_xj">
+            <button class="ht_but finance_khyfqp_sqtj but_look">收起统计</button>
+        </div>
+    </div>
+    <!--第三行-->
+    <div class="finance_three87 finance_khyfqp_sqtj1">
+        <div>
+            <p>应付款</p>
+            <p class="finance_fontsize1 c_r">￥<span class="fnc_logistics_list_no_pay_money">0</span></p>
+        </div>
+        <div class="finance_fontsize">
+            <p>=</p>
+            <p></p>
+        </div>
+        <div>
+            <p>总应付款(元)</p>
+            <p class="finance_fontsize1">￥<span class="fnc_logistics_list_need_money">0</span></p>
+        </div>
+        <div class="finance_fontsize">
+            <p>-</p>
+            <p></p>
+        </div>
+        <div>
+            <p>实付款(元)</p>
+            <p class="finance_fontsize1">￥<span class="fnc_logistics_list_pay_money">0</span></p>
+        </div>
+    </div>
+    <!--第四行-->
+    <div class="vend_client_right finance_right">
+        <div class="con_right_head clearfix" style="border: none;">
+            <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input" value="搜索物流公司" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                <button class="search_but but_blue" style="height: 30px;width: auto;">搜索</button>
+            </div>
+            <div class="con_right_result right" style="line-height: 42px;">
+                <p class="left">搜索结果: <span class=" f_color fnc_logistics_list_num_total">0</span>条</p>
+            </div>
+        </div>
+        <div class="div_1 container">
+            <div class="div_1 table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>物流公司</th>
+                        <th class="order">应付款(元)<i class="price_icon"></i></th>
+                        <th class="order">实付款(元)<i class="price_icon"></i></th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="fnc_logistics_list"></tbody>
+                    <tbody>
+                    <!--<tr>
+                        <td>01</td>
+                        <td>顺丰</td>
+                        <td>40000</td>
+                        <td>10000</td>
+                        <td>
+                            <button class="but_mix val_dialog" name="finance_wlfy_ckxq">付款详情</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>圆通</td>
+                        <td>40000</td>
+                        <td>10000</td>
+                        <td>
+                            <button class="but_mix val_dialog" name="finance_wlfy_ckxq">付款详情</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>申通</td>
+                        <td>40000</td>
+                        <td>10000</td>
+                        <td>
+                            <button class="but_mix val_dialog" name="finance_wlfy_ckxq">付款详情</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>韵达</td>
+                        <td>40000</td>
+                        <td>10000</td>
+                        <td>
+                            <button class="but_mix val_dialog" name="finance_wlfy_ckxq">付款详情</button>
+                        </td>
+                    </tr>-->
+                    <tr class="table_total fnc_logistics_list_table_total">
+                        <td>合计</td>
+                        <td></td>
+                        <td class="c_r fnc_logistics_list_need_money">160000</td>
+                        <td class="c_r fnc_logistics_list_pay_money">40000</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                <div class="no_data_box none fnc_logistics_list_nodata_box">
+                    <div class="no_data">
+                        <!--<span class="inline_block"></span>-->
+                        <p class="c_9">抱歉，没有找到相关内容！</p>
+                    </div>
+                    <div class="no_data_bottom"></div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="fenye_box">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>-->
+    </div>
+</div>
+
+<!--付款详情-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_wlfy_ckxq">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 1200px;height: 525px;">
+            <div class="dialog_title">
+                <i class="dialog_close dialog_ckxq_close">关闭</i>
+                <h3 class="dialog_h3">付款详情</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 82%;">
+                <div class="dialog_text_con">
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 28px;">
+                        <p class="l-s-x c_3" style="font-size: 14px;margin-top: 30px;">物流公司：<span class="fnc_logistics_detail_name"></span></p>
+                        <div class="work_tabSp inline_block" style="margin-top: 16px;margin-bottom: 20px;">
+                            <ul class="tabtitle fnc_logistics_pay_nav_ul">
+                                <li name="finance_logistics_pay" class="taba tabhover">未付款</li>
+                                <li name="finance_logistics_pay" class="taba">已付款</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr style="width:1300px;border-top: 6px solid #f5f6fa;margin: 20px -60px;">
+                    <div class="tabcontent" name="finance_logistics_pay" style="padding: 0;">
+                        <div class="con_right_head clearfix" style="padding: 0;">
+                            <div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;">
+                                <div class="t_left" style="width: 24%;max-width: 6em;">查看时间</div>
+                                <div class="t_right clearfix" style="width: 65%;margin-left: 24%;">
+                                    <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                                </div>
+                            </div>
+                            <div class="con_right_result right">
+                                <p class="left">搜索结果: <span class=" f_color fnc_logistics_detail_nopay_list_num_total">0</span>条</p>
+                            </div>
+                        </div>
+                        <div class="div_1 table-container" style="margin-top: 25px;">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th><input type="checkbox" class="checkAll" name="finance_logistics_inp"></th>
+                                    <th>序号</th>
+                                    <th>物流编号</th>
+                                    <th>负责人</th>
+                                    <th>创建日期</th>
+                                    <th>应付款(元)</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="fnc_logistics_detail_nopay_list"></tbody>
+                                <tbody>
+                                <!--<tr>
+                                    <td><input type="checkbox" name="finance_logistics_inp"></td>
+                                    <td>01</td>
+                                    <td class="finance_pay_rent_list f_color">WLD798798</td>
+                                    <td>张三</td>
+                                    <td>XSD4654654</td>
+                                    <td>1000</td>
+                                    <td>
+                                        <button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck" name="finance_logistics_pay">付款</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="finance_logistics_inp"></td>
+                                    <td>02</td>
+                                    <td class="finance_pay_rent_list f_color">WLD798798</td>
+                                    <td>李四</td>
+                                    <td>XSD4654654</td>
+                                    <td>1000</td>
+                                    <td>
+                                        <button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck" name="finance_logistics_pay">付款</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="finance_logistics_inp"></td>
+                                    <td>03</td>
+                                    <td class="finance_pay_rent_list f_color">WLD798798</td>
+                                    <td>王五</td>
+                                    <td>XSD4654654</td>
+                                    <td>1000</td>
+                                    <td>
+                                        <button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck" name="finance_logistics_pay">付款</button>
+                                    </td>
+                                </tr>-->
+                                <tr class="table_total fnc_logistics_detail_nopay_table_total">
+                                    <td>合计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="c_r fnc_logistics_detail_nopay_list_money_total">31000</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                            <div class="no_data_box none fnc_logistics_detail_nopay_list_nodata_box">
+                                <div class="no_data">
+                                    <!--<span class="inline_block"></span>-->
+                                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                                </div>
+                                <div class="no_data_bottom"></div>
+                            </div>
+                        </div>
+                        <div class="handle fnc_logistics_detail_nopay_handle" style="height: 57px;background: #f5f6fa;">
+                            <div class="hr_yidong">
+                                <button class="but_cancel val_dialogTop fnc_logistics_detail_more_pay_btn" name="finance_logistics_pay" style="margin-left: -25px;">批量付款</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabcontent" name="finance_logistics_pay" style="padding: 0;display:none;">
+                        <div class="con_right_head clearfix" style="padding: 0;">
+                            <div class="t_textinput inline_block" style="width: 230px;margin-bottom:0;">
+                                <div class="t_left" style="width: 24%;max-width: 6em;">查看时间</div>
+                                <div class="t_right clearfix" style="width: 65%;margin-left: 24%;">
+                                    <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                                </div>
+                            </div>
+                            <div class="con_right_result right">
+                                <p class="left">搜索结果: <span class=" f_color fnc_logistics_yes_pay_list_num_total">0</span>条</p>
+                                <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="takenote_jrd_xzckx"><i class="eyeIcon"></i>选择查看项</span>
+                            </div>
+                            <!--选择查看项-->
+                            <div class="t-z-list ckx_cont" name="takenote_jrd_xzckx" style="right: 13px; line-height: 27px; top: 38px; display: none;">
+                                <i class="ckx_icon_right"></i>
+                                <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                                <ul class="sbar muban_addkey_list fnc_logistics_yes_look_field_ul" style="height:200px;">
+                                    <li class="l-li-b">
+                                        <input type="checkbox">
+                                        <p class="z-d-l">结算账户</p>
+                                    </li>
+                                    <li class="l-li-b">
+                                        <input type="checkbox">
+                                        <p class="z-d-l">结算账目</p>
+                                    </li>
+                                    <li class="l-li-b">
+                                        <input type="checkbox">
+                                        <p class="z-d-l">付款方式</p>
+                                    </li>
+                                    <li class="l-li-b">
+                                        <input type="checkbox">
+                                        <p class="z-d-l">备注</p>
+                                    </li>
+                                </ul>
+                                <!--  -->
+                                <div class="bot-btn">
+                                    <button class="but_small but_blue fnc_logistics_yes_look_save">保存</button>
+                                    <button class="but_small but_cancal fnc_logistics_yes_look_reset">恢复默认</button>
+                                </div>
+                            </div>
+                            <div class="closeckx_cont" style="display: none;"></div>
+                        </div>
+                        <div class="div_1 table-container" style="margin-top: 25px;">
+                            <table class="fnc_logistics_yes_table">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>付款单编号</th>
+                                    <th>物流编号</th>
+                                    <th>付款人</th>
+                                    <th>付款日期</th>
+                                    <th>应付款(元)</th>
+                                    <th>实付款(元)</th>
+                                    <th>结算账户</th>
+                                    <th>结算账目</th>
+                                    <th>支付方式</th>
+                                    <th>备注</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="fnc_logistics_yes_pay_list"></tbody>
+                                <tbody>
+                                <!--<tr>
+                                    <td>01</td>
+                                    <td>FK4798764</td>
+                                    <td class="finance_pay_rent_list f_color">WLD798798</td>
+                                    <td>张杰</td>
+                                    <td>2016-10-10</td>
+                                    <td>2000</td>
+                                    <td>2000 <span class="c_y">【批付】</span></td>
+                                    <td>北京纽沃德</td>
+                                    <td>销售账目</td>
+                                    <td>电汇</td>
+                                    <td>1000</td>
+                                    <td>
+                                        <button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck" name="finance_logistics_pay_detail">付款详情</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td>FK4798764</td>
+                                    <td class="finance_pay_rent_list f_color">WLD798798</td>
+                                    <td>张杰</td>
+                                    <td>2016-10-10</td>
+                                    <td>2000</td>
+                                    <td>2000 <span class="c_y">【批付】</span></td>
+                                    <td>北京纽沃德</td>
+                                    <td>销售账目</td>
+                                    <td>电汇</td>
+                                    <td>1000</td>
+                                    <td>
+                                        <button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck" name="finance_logistics_pay_detail">付款详情</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>03</td>
+                                    <td>FK4798764</td>
+                                    <td class="finance_pay_rent_list f_color">WLD798798</td>
+                                    <td>张杰</td>
+                                    <td>2016-10-10</td>
+                                    <td>2000</td>
+                                    <td>2000</td>
+                                    <td>北京纽沃德</td>
+                                    <td>销售账目</td>
+                                    <td>电汇</td>
+                                    <td>1000</td>
+                                    <td>
+                                        <button class="but_mix r_sidebar_btn val_dialogTop finance_wlfy_ck" name="finance_logistics_pay_detail">付款详情</button>
+                                    </td>
+                                </tr>-->
+                                <tr class="table_total fnc_logistics_detail_yespay_table_total">
+                                    <td>合计</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="c_r fnc_logistics_yes_pay_list_pay_total">0</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                            <div class="no_data_box none fnc_logistics_detail_yespay_list_nodata_box">
+                                <div class="no_data">
+                                    <!--<span class="inline_block"></span>-->
+                                    <p class="c_9">抱歉，没有找到相关内容！</p>
+                                </div>
+                                <div class="no_data_bottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--***未付款***-->
+<!--付款-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_logistics_pay">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 640px;height: 600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">付款单</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 86%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">付款单</h2>
+                    <div class="d-r-t-h" style="padding-top:0;">
+                        <p class="l-s-x">物流公司名称：<span class="fnc_logistics_detail_create_one_pay_name"></span></p>
+                        <p class="l-s-x">物流单编号：<span class="fnc_logistics_detail_create_one_pay_code_sn"></span></p>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow">
+                            <i class="c_r">*</i>付款单编号
+                        </div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_noInput fnc_logistics_detail_create_one_pay_ticket_code_sn" value="" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>结算账户</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input fnc_logistics_detail_create_pay_company_account_btn" value="请选择结算账户">
+                                <i></i>
+                                <ul class="select_list sbar fnc_logistics_detail_create_pay_company_account_ul" style="display: none;">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>选择账目</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input fnc_logistics_detail_create_pay_account_btn" value="请选择账目">
+                                <i></i>
+                                <ul class="select_list fnc_logistics_detail_create_pay_account_ul" style="display: none;">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>付款方式</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input fnc_logistics_detail_create_pay_way" value="请选择付款方式">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li>现金</li>
+                                    <li>支票</li>
+                                    <li>电汇</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="finance_sz_ysqk">
+                    <div class="d-r-t-h" style="padding-top:0;">
+                        <p class="l-s-x">付款人：<span class="fnc_logistics_detail_create_one_pay_uname"></span></p>
+                        <p class="l-s-x">付款时间：<span class="fnc_logistics_detail_create_one_pay_time"></span></p>
+                    </div>
+                    <div class="div_1 container">
+                        <div class="div_1 table_container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>应付款项(元)</th>
+                                        <th>实付款(元)</th>
+                                        <th>实付款大写(元)</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fnc_logistics_detail_create_one_pay_need_pay"></td>
+                                        <td class="fnc_logistics_detail_create_one_pay_need_pay"></td>
+                                        <td class="fnc_logistics_detail_create_one_pay_need_pay_upper"></td>
+                                        <td>
+                                            <div class="t_textinput" style="margin:0;">
+                                                <div class="t_right" style="margin-left:0;"><input type="text" class="time_input fnc_logistics_detail_create_one_pay_note" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <label class="inp_box clearfix">
+                        <p class="inp_lP left" style="width: 12%;">
+                            <i class="c_r v_hidden">*</i>
+                            <em>抄送人：</em>
+                        </p>
+                        <ul class="box_adderCon clearfix fnc_logistics_detail_create_pay_add_copy_list">
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop fnc_logistics_detail_create_pay_choose_copy_btn" name="finance_wlfy_csr"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_blue fnc_logistics_detail_create_pay_submit_btn">保存</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--批量付款-->
+<div class="dialog">
+    <div class="dialog_box " name="finance_logistics_much_pay">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 580px;height: 600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">付款单</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:0;margin:0;height: 88%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">付款单</h2>
+                    <div class="d-r-t-h" style="padding-top:0;">
+                        <p class="l-s-x">物流公司名称：<span class=""></span></p>
+                        <p class="l-s-x">物流单编号：<span style="margin-left: 6.5em;margin-top: -20px;"></span></p>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow">
+                            <i class="c_r">*</i>付款单编号
+                        </div>
+                        <div class="t_right">
+                            <input type="text" class="time_input inp_noInput" value="HK44681312" readonly="true">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>结算账户</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input" value="请选择结算账户">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li>北京纽沃德科技有限公司</li>
+                                    <li>北京联创万通科技有限公司</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>选择账目</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input" value="请选择账目">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li>销售账目</li>
+                                    <li>采购账目</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>付款方式</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input" value="请选择付款方式">
+                                <i></i>
+                                <ul class="select_list" style="display: none;">
+                                    <li>现金</li>
+                                    <li>支票</li>
+                                    <li>电汇</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="finance_sz_ysqk">
+                    <div class="d-r-t-h" style="padding-top:0;">
+                        <p class="l-s-x">付款人：<span class=""></span></p>
+                        <p class="l-s-x">付款时间：<span class=""></span></p>
+                    </div>
+                    <div class="div_1 container">
+                        <div class="div_1 table_container">
+                            <table>
+                                <thead>
+                                   <tr>
+                                       <th>应付款项(元)</th>
+                                       <th>本次付款(元)</th>
+                                       <th>实付金额(元)</th>
+                                       <th>备注</th>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10000</td>
+                                        <td>10000</td>
+                                        <td>壹万元整</td>
+                                        <td>
+                                            <div class="t_textinput" style="margin:0;">
+                                                <div class="t_right" style="margin-left:0;"><input type="text" class="time_input" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <label class="inp_box clearfix">
+                        <p class="inp_lP left" style="width: 12%;">
+                            <i class="c_r v_hidden">*</i>
+                            <em>抄送人：</em>
+                        </p>
+                        <ul class="box_adderCon clearfix">
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="finance_wlfy_csr"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_blue">保存</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--***已付款***-->
+
+<!--付款详情-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_logistics_pay_detail">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 700px;height: 600px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">付款单</h3>
+            </div>
+            <div class="dialog_text sbar ht_mbxsprint_box" style="padding:0;margin:0;height: 100%;">
+                <div class="dialog_text_con">
+                    <h2 class="cont_title">付款单</h2>
+                    <div class="d-r-t-h" style="padding-top:0;padding-bottom: 0;">
+                        <p class="l-s-x">付款单编号：<span class="fnc_logistics_pay_detail_logistics_payment_no"></span></p>
+                        <p class="l-s-x">物流公司名称：<span class="fnc_logistics_pay_detail_logistics_company"></span></p>
+                        <p class="l-s-x">物流单编号：<span class="fnc_logistics_pay_detail_number"></span></p>
+                        <p class="l-s-x">结算账户：<span class="fnc_logistics_pay_detail_zhanghu"></span></p>
+                        <p class="l-s-x">结算账目：<span class="fnc_logistics_pay_detail_accounts_name"></span></p>
+                        <p class="l-s-x">付款方式：<span class="fnc_logistics_pay_detail_zhifu"></span></p>
+                    </div>
+                    <hr style="border-top: 6px solid #f5f6fa;width: 750px;margin: 30px -60px;">
+                    <p class="l-s-x">付款人：<span class="fnc_logistics_pay_detail_payment_name"></span></p>
+                    <p class="l-s-x" style="margin-bottom: 20px;">付款日期：<span class="fnc_logistics_pay_detail_payment_date"></span></p>
+                    <div class="takenote_bg">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>应付款项(元)</th>
+                                        <th>实付款(元)</th>
+                                        <th>实付款大写(元)</th>
+                                        <th style="width: 160px;">备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fnc_logistics_pay_detail_need_pay_money"></td>
+                                        <td><span class="fnc_logistics_pay_detail_this_pay_money"></span><span class="c_y none fnc_logistics_pay_detail_more_post">【批付】</span></td>
+                                        <td class="fnc_logistics_pay_detail_daxie"></td>
+                                        <td class="fnc_logistics_pay_detail_description"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_cancel">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--付款人成员树结构-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_wlfy_fkr">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择付款人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con list_box_uldx">
+                        <div class="left_nav">
+                            <ul class="list_box_level"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--抄送人-->
+<div class="dialog">
+    <div class="dialog_box" name="finance_wlfy_csr">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择人员</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left sbar" style="overflow:hidden;">
+                    <!--<div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input" value="搜索成员/部门/手机等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i></div>
+                    </div>-->
+                    <div class="list_box_con sbar" style="overflow-x:hidden;">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ul"><li class="left_all"><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">所有分类</span><span class="list_check"><em></em></span></li>
+                                <i class="fnc_logistics_detail_create_pay_choose_copy_list"></i>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list fnc_logistics_detail_create_pay_copy_chosen_list">
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small fnc_logistics_detail_create_pay_choose_copy_save">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function(){
+//        //选择查看项
+//        $(".btn_chooseItem").toggle(function(){
+//            $(this).next().show();
+//        },function() {
+//            $(this).next().hide();
+//        });
+        $(".muban_next_btn").live("click",function(){
+            //  alert(this);
+            $(this).html("保存");
+            $(this).removeClass("muban_next_btn");
+            $(this).before('<button class="but_small but_blue muban_befr_btn" name="muban_new_first">上一步</button>');
+            var name = $(this).attr("name");
+            $(".ht_dialog_text_box[name='"+name+"']").fadeIn(100).siblings("div").hide();
+        });
+        $(".muban_befr_btn").live("click",function(){
+            //  alert(1);
+            $(this).next().html("下一步");
+            $(this).next().addClass("muban_next_btn");
+            var name = $(this).attr("name");
+            $(".ht_dialog_text_box[name='"+name+"']").fadeIn(100).siblings("div").hide();
+            $(".muban_befr_btn").remove();
+        });
+
+
+    });
+</script>
+
+</body>
+<script src="static/finance/js/89.js"></script>
+</html>

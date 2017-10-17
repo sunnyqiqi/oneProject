@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工合同</title>
+    <link rel="stylesheet" href="static/bargain/css/bargain_muban.css">
+</head>
+<body>
+<div class="finance_content">
+    <div class="con_header contenthead lik_cont_title">
+    <h2>员工合同</h2>
+    <div class="right" style="width: 138px;">
+        <button class="val_dialog but_blue yg_xinjian_btn_xxl" name="contact_member_new">新建</button>
+        <div class="res yg_djshuxin_btn_xxl" title="点击刷新"></div>
+    </div>
+
+</div>
+    <div class="finance_right">
+        <div class="con_right_head clearfix" style="border:none;">
+        <div class="muban_tabBox left">
+            <ul class="tabtitle yght_qhlist_menu_xxl">
+                <li name="ht_yght_main" class="taba tabhover yg_qieh_list_xxl" thetype="1">我发起的</li>
+                <li name="ht_yght_main" class="taba yg_qieh_list_xxl" thetype="2">待我审批</li>
+                <li name="ht_yght_main" class="taba yg_qieh_list_xxl" thetype="3">抄送我的</li>
+            </ul>
+
+        </div>
+        <div class="lik_content_head">
+        <div class="cont_search inline_block"><input type="text" class="search_input yght_ssval_xxl" value="搜索合同编号/成员名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" ><button class="search_but but_blue yght_ssbtn_xxxl">搜索</button></div>
+        <button class="but_cancel but_small inline_block zkgjssBtn" thetype="1" name="ht_yght_zkgjss">展开高级搜索</button><div class="inline_block" style="margin-left:30px;">
+        <input type="checkbox" class="yght_bxszf_btn_xxl">不显示已作废
+    </div>
+    </div>
+        <div class="right con_right_result right">
+            <p class="left">搜索结果: <span class=" f_color yght_list_nums_xxl">3</span>条</p>
+            <span class="btn_chooseItem eyeIcon_eye ckx_btn but_cancel" name="ckx_ht_yghtmb"><i class="eyeIcon"></i>选择查看项</span>
+        </div>
+        <div class="t-z-list ckx_cont" name="ckx_ht_yghtmb" style="right: 15px; line-height: 27px; top: 64px;display: none;">
+            <i class="ckx_icon_right"></i>
+            <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+            <ul class="sbar muban_addkey_list" id="yght_xzlist_status_xxl">
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">审核状态</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">审核人</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">创建日期</p>
+                </li>
+                <li class="l-li-b">
+                    <input type="checkbox">
+                    <p class="z-d-l">创建人</p>
+                </li>
+            </ul>
+            <!--  -->
+            <div class="bot-btn">
+                <button class="but_small but_blue" id="yg_xzckx_baocun_btn_xxl">保存</button>
+                <button class="but_small but_cancal" id="yg_xzckx_huifmrs_btn_xxl">恢复默认</button>
+            </div>
+        </div>
+        <div class="closeckx_cont"></div>
+        <!--/选择查看项-->
+    </div>
+        <div class="tabcontent" name="ht_yght_main" style="padding: 0;">
+            <div class="container lik_table_wrap">
+                <div class="table-container">
+                    <table id="yg_tables_list_xxl">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>合同编号</th>
+                            <th>合同名称</th>
+                            <th>成员姓名</th>
+                            <th>合同期限</th>
+                            <th>审批状态</th>
+                            <th>审批人</th>
+                            <th class="order yg_cjrq_sjpx_btn_xxl" thetype="1">创建日期 <i class="price_icon"></i></th>
+                            <th>创建人</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="zkgjss_cont" name="ht_yght_zkgjss">
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block yg_gjss_shzt_val_xxl" value="审核状态">
+                                    <i></i>
+                                    <ul class="select_list yght_gjss_spztlist_xxl">
+                                        <li status="1">审批中</li>
+                                        <li status="3">通过</li>
+                                        <li status="2">未通过</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block yg_gjss_shr_val_xxl" value="审核人">
+                                    <i></i>
+                                    <ul class="select_list yght_shrlist_xxl">
+                                        <!--<li>审批中</li>
+                                        <li>通过</li>
+                                        <li>未通过</li>-->
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block yg_gjss_cjr_val_xxl" value="创建人">
+                                    <i></i>
+                                    <ul class="select_list yg_ht_cjrlist_xxl">
+                                        <!--<li>审批中</li>
+                                        <li>通过</li>
+                                        <li>未通过</li>-->
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                        </tr>
+                        <!--<tr>
+                            <td>01</td>
+                            <td>YHT46546464</td>
+                            <td>销售部员工合同</td>
+                            <td>王二麻</td>
+                            <td>2016.02.03-2017.02.03</td>
+                            <td><span class="c_g">通过审核</span></td>
+                            <td>李四</td>
+                            <td>2016-10-10</td>
+                            <td>张丹</td>
+                            <td>
+                                <button class="but_mix but_look r_sidebar_btn" name="ht_yght_right">查看</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>YHT46546464</td>
+                            <td>销售部员工合同</td>
+                            <td>王二麻</td>
+                            <td>2016.02.03-2017.02.03</td>
+                            <td class="c_y">审批中</td>
+                            <td>李四</td>
+                            <td>2016-10-10</td>
+                            <td>张丹</td>
+                            <td>
+                                <button class="but_mix but_look r_sidebar_btn" name="ht_yght_right">查看</button><button class="but_mix but_void but_r">作废</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>YHT46546464</td>
+                            <td>销售部员工合同</td>
+                            <td>王二麻</td>
+                            <td>2016.02.03-2017.02.03</td>
+                            <td><span class="c_r">未通过</span></td>
+                            <td>李四</td>
+                            <td>2016-10-10</td>
+                            <td>张丹</td>
+                            <td>
+                                <button class="but_mix but_look r_sidebar_btn" name="ht_yght_right">查看</button>
+                                <button class="but_mix but_exit val_dialog" name="contact_member_exit">编辑</button>
+                                <button class="but_mix but_void but_r">作废</button>
+                            </td>
+                </tr>
+                        <tr class="grey">
+                            <td><span class="voidIcon">作废</span></td>
+                            <td>YHT46546464</td>
+                            <td>销售部员工合同</td>
+                            <td>王二麻</td>
+                            <td>2016.02.03-2017.02.03</td>
+                            <td><span class="c_r">未通过</span></td>
+                            <td>李四</td>
+                            <td>2016-10-10</td>
+                            <td>张丹</td>
+                            <td>
+                                <button class="but_mix but_look r_sidebar_btn" name="ht_yght_right">查看</button><button class="but_mix1 but_grey1">编辑</button>
+                            </td>
+                        </tr>-->
+                </tbody>
+                <tbody class="yght_list_htmls_xxl" thetype="1"></tbody>
+            </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <div class="yg_htlist_html_xxl"></div>
+                    <!--<div class="no_data_box none">
+                        <div class="no_data">
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>-->
+                </div>
+                <div class="handle">
+                	 <div class="fenye_box yght_fenye_list_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <!--<span class="page_box_last" style="line-height:15px;">...</span>-->
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!--<div class="tabcontent" name="ht_yght_main" style="display: none;">
+
+            <div class="div_1 container">
+                <div class="div_1 table-container">
+                    <table>
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>合同编号</th>
+                    <th>合同名称</th>
+                    <th>成员姓名</th>
+                    <th>合同期限</th>
+                    <th>审批状态</th>
+                    <th>审批人</th>
+                    <th class="order">创建日期 <i class="price_icon"></i></th>
+                    <th>创建人</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="zkgjss_cont" name="ht_yght_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="审核状态">
+                            <i></i>
+                            <ul class="select_list">
+                                <li>审批中</li>
+                                <li>通过</li>
+                                <li>未通过</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="审核人">
+                            <i></i>
+                            <ul class="select_list">
+                                <li>审批中</li>
+                                <li>通过</li>
+                                <li>未通过</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block" value="创建人">
+                            <i></i>
+                            <ul class="select_list">
+                                <li>审批中</li>
+                                <li>通过</li>
+                                <li>未通过</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>YHT46546464</td>
+                    <td>销售部员工合同</td>
+                    <td>王二麻</td>
+                    <td>2016.02.03-2017.02.03</td>
+                    <td><span class="c_g">通过审核</span></td>
+                    <td>李四</td>
+                    <td>2016-10-10</td>
+                    <td>张丹</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn" name="ht_yght_sqright" >查看</button><button class="but_mix but_grey1" >审批</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>YHT46546464</td>
+                    <td>销售部员工合同</td>
+                    <td>王二麻</td>
+                    <td>2016.02.03-2017.02.03</td>
+                    <td class="c_y">审批中</td>
+                    <td>李四</td>
+                    <td>2016-10-10</td>
+                    <td>张丹</td>
+                    <td>
+                        <button class="but_mix but_look r_sidebar_btn" name="ht_yght_sqright" >查看</button><button class="but_mix but_look val_dialog" name="ht_yght_prevSP" >审批</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>YHT46546464</td>
+                    <td>销售部员工合同</td>
+                    <td>王二麻</td>
+                    <td>2016.02.03-2017.02.03</td>
+                    <td>未通过</td>
+                    <td>李四</td>
+                    <td>2016-10-10</td>
+                    <td>张丹</td>
+                    <td>
+                       <button class="but_mix but_look r_sidebar_btn" name="ht_yght_sqright" >查看</button><button class="but_mix1 but_grey1" name="ht_yght_prevSP" >审批</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <!--<div class="no_data_box none">
+                        <div class="no_data">
+
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!--<div class="tabcontent" name="ht_yght_main" style="display: none;">
+
+            <div class="div_1 container">
+                <div class="div_1 table-container">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>合同编号</th>
+                            <th>合同名称</th>
+                            <th>成员姓名</th>
+                            <th>合同期限</th>
+                            <th>审批状态</th>
+                            <th>审批人</th>
+                            <th class="order">创建日期 <i class="price_icon"></i></th>
+                            <th>创建人</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="zkgjss_cont" name="ht_yght_zkgjss">
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block" value="审核状态">
+                                    <i></i>
+                                    <ul class="select_list">
+                                        <li>审批中</li>
+                                        <li>通过</li>
+                                        <li>未通过</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block" value="审核人">
+                                    <i></i>
+                                    <ul class="select_list">
+                                        <li>审批中</li>
+                                        <li>通过</li>
+                                        <li>未通过</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p">
+                                    <input type="text" class="select_input block" value="创建人">
+                                    <i></i>
+                                    <ul class="select_list">
+                                        <li>审批中</li>
+                                        <li>通过</li>
+                                        <li>未通过</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                    <input type="text" class="select_input block" readonly="true" >
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>YHT46546464</td>
+                            <td>销售部员工合同</td>
+                            <td>王二麻</td>
+                            <td>2016.02.03-2017.02.03</td>
+                            <td><span class="c_g">通过审核</span></td>
+                            <td>李四</td>
+                            <td>2016-10-10</td>
+                            <td>张丹</td>
+                            <td>
+                                <button class="but_mix but_look r_sidebar_btn"  name="ht_yght_csright">查看</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>YHT46546464</td>
+                            <td>销售部员工合同</td>
+                            <td>王二麻</td>
+                            <td>2016.02.03-2017.02.03</td>
+                            <td>审批中</td>
+                            <td>李四</td>
+                            <td>2016-10-10</td>
+                            <td>张丹</td>
+                            <td>
+                                <button class="but_mix but_look r_sidebar_btn"  name="ht_yght_csright">查看</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>YHT46546464</td>
+                            <td>销售部员工合同</td>
+                            <td>王二麻</td>
+                            <td>2016.02.03-2017.02.03</td>
+                            <td>-</td>
+                            <td>李四</td>
+                            <td>2016-10-10</td>
+                            <td>张丹</td>
+                            <td>
+                                <button class="but_mix but_look r_sidebar_btn"  name="ht_yght_csright">查看</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <!--<div class="no_data_box none">
+                        <div class="no_data">
+
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</div>
+<!--弹窗-新建合同-->
+<div class="dialog">
+    <div class="dialog_box" name="contact_member_new">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_7">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建合同</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin: 0;padding:0;height:86%;">
+                <div class="unhead_box">
+                    创建人：<span style="margin-right:10px;" class="yg_xj_cjr_xxl">张三</span>&nbsp;&nbsp;
+                    创建日期：<span class="yg_xj_cjrq_xxl">2016-10-11 15:00:09</span>
+                </div>
+                <div class="dialog_text_con sbar">
+                <h2 class="cont_title ">新建合同</h2>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>员工合同编号</div>
+                    <div class="t_right"><input type="text" class="time_input inp_noInput c_3 yg_xj_htbhs_xxl" value="" readonly="true"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>选择合同模板</div>
+                    <div class="t_right">
+                        <div class="inline_block select_mormal select_100">
+                            <input type="text" class="select_input yg_xj_xzhtmb_valxxl" value="选择合同模板">
+                        </div>
+                        <span class="inp_addBtn val_dialogTop yg_xj_xzhtmb_btn_xxl" name="ht_yght_xzhtmb"><b>+</b>选择合同模板</span>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>员工合同名称</div>
+                    <div class="t_right"><input type="text" class="time_input yg_xj_htmcs_xxl" value="员工合同" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    </div>
+                </div>
+                <div class="input_rightBtn">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>选择入职成员</div>
+                    <div class="input_rightBtn_right" style="width: 85%;left:15%;">
+                        <div class="rightinput_box">
+                            <input type="text" class="c_3 yg_xj_xzcy_xxl" value="">
+                            <span class="inp_addBtn val_dialogTop" name="ht_yght_people_cy"><b>+</b>选择成员</span>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="cont_title">基本条款</h2>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>签订时间</div>
+                    <div class="t_right">
+                        <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择开始日期" class="laydate-icon time_input yg_xj_qdrq_xxl" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>签订地点</div>
+                    <div class="t_right"><input type="text" class="time_input c_3 yg_xj_qddd_xxl" value="" ></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>用人单位</div>
+                    <div class="t_right">
+                    	<div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input yg_xj_yrdw_xxl" value="">
+                                <i></i>
+                                <ul class="select_list yght_xzyongrendanwei_listxxl">
+                                    <!--<li>A账户</li>
+                                    <li>B账户</li>-->
+                                </ul>
+                            </div>
+
+                    </div>
+                </div>
+                <h2 class="cont_title">合同期限</h2>
+                <div class="t_textinput hr_setgz_sjBox">
+                        <div class="t_left"><i class="c_r">*</i>期限</div>
+                    <div class="t_right clearfix">
+                        <div class="t_textinput inline_block left" style="width: 45%">
+                            <div class="t_right" style="width: 100%;margin-left: 0"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择开始日期" class="laydate-icon time_input yg_xj_kssj_xxl" readonly="readonly" onclick="laydate(htyght_start)" id="htyght_start" style="cursor: pointer;">
+                            </div>
+                        </div>
+                        <span class="inline_block left ht_time_line">-</span>
+                        <div class="t_textinput inline_block right" style="width: 45%">
+                            <div class="t_right" style="width: 100%;margin-left: 0"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择截止日期" class="laydate-icon time_input yg_xj_jzrq_xxl" readonly="readonly" onclick="laydate(htyght_end)" id="htyght_end" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left "><i class="c_r">*</i>试用期</div>
+                    <div class="t_right" >
+                        <div class="inline_block" style="width: 40px;margin-right:10px;"><input type="text" class="time_input c_3 yg_xj_syq_xxl" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>月
+                    </div>
+                </div>
+                    <!--关联成员办理入职-->
+                <h2 class="cont_title">工资待遇</h2>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>基本工资</div>
+                    <div class="t_right"><input type="text" class="time_input inp_96 yg_xj_jbgz_xxl" value="" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="unit">元</i></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>绩效工资</div>
+                    <div class="t_right"><input type="text" class="time_input inp_96 yg_xj_jxgz_xxl" value="" onkeyup="checkInt(this);" onpaste="checkInt(this);" oncut="checkInt(this);" ondrop="checkInt(this);" onchange="checkInt(this);" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="unit">元</i></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>合计工资</div>
+                    <div class="t_right"><input type="text" class="time_input inp_96 yg_xj_hjgz_xxl" value="" readonly="readonly"><i class="unit">元</i></div>
+                </div>
+                <label class="inp_box clearfix" style="margin-top:20px;">
+                    <p class="inp_lP left">
+                        <i>*</i>
+                        <em>审批人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl" style="width: 100%;">
+                        <!--<li class="yg_spqian_list_xxl">
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>-->
+                        <!--<li class="yg_spqian_list_xxl">
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="ht_yght_people"></em>
+                        </li>-->
+                    </ul>
+                </label>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i>*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                        <!--<li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                        </li>-->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="ht_yght_peoples"></em>
+                        </li>
+                    </ul>
+                </label>
+            </div>
+            </div>
+            <div class="dialog_submit">
+            	<!--val_dialogTop ht_member_pre-->
+                <button class="but_small but_yellow yght_xjyunlan_btnxxl">预览</button>
+                <button class="but_small but_blue yg_xinjian_tjspbtn_xxl">提交审批</button>
+                <button class="but_small but_cancal yg_bj_quxiao_btn_xxl">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-编辑合同-->
+<div class="dialog">
+    <div class="dialog_box" name="contact_member_exit">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">编辑合同</h3>
+            </div>
+            <div class="dialog_text sbar" style="margin: 0;padding:0;height:86%;">
+                <div class="unhead_box">
+                    创建人：<span style="margin-right:10px;" class="yg_ckbj_cjr_xxl">张三</span>&nbsp;&nbsp;
+                    创建日期：<span class="yg_ckbj_cjrqs_xxl">2016-10-11 15:00:09</span>
+                </div>
+                <div class="dialog_text_con sbar">
+                    <h2 class="cont_title">编辑合同</h2>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>员工合同编号</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput c_3 yg_ckbjs_yghtbh_xxl" value="HK44681312" readonly="true"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>选择合同模板</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input yg_ckbj_xzhtmb_val_xxl" value="选择合同模板">
+                            </div>
+                            <span class="inp_addBtn val_dialogTop yg_ckbj_xzhtmb_btn_xxl" name="ht_yght_xzhtmb"><b>+</b>选择合同模板</span>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>员工合同名称</div>
+                        <div class="t_right"><input type="text" class="time_input yg_ckbj_yghtmc_xxl" value="员工合同" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="input_rightBtn">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>选择入职成员</div>
+                        <div class="input_rightBtn_right" style="width: 85%;left:15%;">
+                            <div class="rightinput_box">
+                                <input type="text" class="c_3 yg_ckbj_xzcy_val_xxl" value="开发部">
+                                <span class="inp_addBtn val_dialogTop" name="ht_yght_people_cy"><b>+</b>选择成员</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="cont_title ">基本条款</h2>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>签订时间</div>
+                        <div class="t_right">
+                            <input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择开始日期" class="laydate-icon time_input yg_ckbjs_qdsj_xxl" readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>签订地点</div>
+                        <div class="t_right"><input type="text" class="time_input c_3 yg_ckbj_qddds_xxl" value="北京" ></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>用人单位</div>
+                        <div class="t_right"><input type="text" class="time_input c_3 yg_ckbj_yrdw_xxl" value="联创万通"></div>
+                    </div>
+                    <h2 class="cont_title">合同期限</h2>
+                    <div class="t_textinput hr_setgz_sjBox">
+                        <div class="t_left"><i class="c_r">*</i>期限</div>
+                        <div class="t_right clearfix">
+                            <div class="t_textinput inline_block left" style="width: 45%">
+                                <div class="t_right" style="width: 100%;margin-left: 0"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择开始日期" class="laydate-icon time_input yg_ckbj_htqx_stars_xxl" readonly="readonly" onclick="laydate(htyght_start)" id="htyght_start" style="cursor: pointer;">
+                                </div>
+                            </div>
+                            <span class="inline_block left ht_time_line">-</span>
+                            <div class="t_textinput inline_block right" style="width: 45%">
+                                <div class="t_right" style="width: 100%;margin-left: 0"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择截止日期" class="laydate-icon time_input yg_ckbj_htqx_ends_xxl" readonly="readonly" onclick="laydate(htyght_end)" id="htyght_end" style="cursor: pointer;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r">*</i>试用期</div>
+                        <div class="t_right" >
+                            <div class="inline_block" style="width: 40px;margin-right:10px;"><input type="text" class="time_input c_3 yg_ckbj_syq_xxl" value="3" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>月
+                        </div>
+                    </div>
+                    <h2 class="cont_title">工资待遇</h2>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>基本工资</div>
+                        <div class="t_right"><input type="text" class="time_input inp_96 yg_ckbj_jbgzs_xxl" value="8000" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeyup="checkInts(this);" onpaste="checkInts(this);" oncut="checkInts(this);" ondrop="checkInts(this);" onchange="checkInts(this);"><i class="unit">元</i></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>绩效工资</div>
+                        <div class="t_right"><input type="text" class="time_input inp_96 yg_ckbj_jxgz_xxl" value="2000" onfocus="fn_focus(this);" onblur="fn_blur(this);" onkeyup="checkInts(this);" onpaste="checkInts(this);" oncut="checkInts(this);" ondrop="checkInts(this);" onchange="checkInts(this);"><i class="unit">元</i></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>合计工资</div>
+                        <div class="t_right"><input type="text" class="time_input inp_96 yg_ckbj_hjgz_xxl" value="10000" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="unit">元</i></div>
+                    </div>
+                    <label class="inp_box clearfix" style="margin-top:20px;">
+                        <p class="inp_lP left">
+                            <i>*</i>
+                            <em>审批人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2 spr_add_xxl" style="width: 100%;">
+                            <!--<li class="yg_spqian_list_xxl">
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                                <p class="box_addermsg">步骤一</p>
+                            </li>
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                                <p class="box_addermsg">步骤二</p>
+                            </li>
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="ht_yght_people"></em>
+                            </li>-->
+                        </ul>
+                    </label>
+                    <label class="inp_box clearfix">
+                        <p class="inp_lP left">
+                            <i>*</i>
+                            <em>抄送人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2 csr_add_xxl">
+                            <!--<li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                            </li>-->
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="ht_yght_peoples"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <!--<button class="but_small but_yellow val_dialogTop" name="ht_member_pre">预览</button>-->
+                <button class="but_small normal_dialog but_blue yg_ckbjs_tjsp_btn_xxl">提交审批</button>
+                <button class="but_small normal_dialog bjht_yg_quxiao_btn_xxl">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择成员-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_yght_people_cy">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择人员</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_uldx"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                            	<i class="spcy_tree_xxl"></i>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small yg_xzcy_btnqd_xxl">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-选择人员-单选-->
+
+<div class="dialog">
+    <div class="dialog_box" name="ht_yght_people">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择人员</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_uldx"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                            	<i class="spcy_tree_xxl"></i>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small yg_spry_qued_btn_xxl">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-选择人员-多选-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_yght_peoples">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">添加跟进人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left">
+                    <div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input" value="搜索成员/部门/手机等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i></div>
+                    </div>
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ul csr_list_xxl">
+                            	<!--<li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span><span class="list_check"><em></em></span></li>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部A</span><span class="list_check"><em></em></span></li>
+                                        <ul class="ul3 person_left_nav" style="display: none;">
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">卡萨丁</span><span class="list_check"><em></em></span></li>
+                                        </ul>
+                                    </ul>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部B</span><span class="list_check"><em></em></span></li>
+
+                                        <ul class="ul3 person_left_nav" style="display: none;">
+                                            <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">而思思</span><span class="list_check"><em></em></span></li>
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">都思思</span><span class="list_check"><em></em></span></li>
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">郭思思</span><span class="list_check"><em></em></span></li>
+                                        </ul>
+                                    </ul>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部C</span><span class="list_check"><em></em></span></li>
+                                        <ul class="ul3 person_left_nav" style="display: none;">
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">范丹</span><span class="list_check"><em></em></span></li>
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">范丹</span><span class="list_check"><em></em></span></li>
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">范丹</span><span class="list_check"><em></em></span></li>
+                                        </ul>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部(1)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部1</span><span class="list_check"><em></em></span></li>
+                                        <ul class="ul3">
+                                            <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部A1</span><span class="list_check"><em></em></span></li>
+                                            <ul class="ul3 person_left_nav">
+                                                <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">呵呵</span><span class="list_check"><em></em></span></li>
+
+
+                                            </ul>
+                                        </ul>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list csr_renwulist_xxl_yg">
+                            <!--<li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small yg_csr_qud_btn_xxl">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择部门树结构-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_yght_dept">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexit"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有部门(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部A</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部B</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部C</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">采购部</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--弹窗-上传合同-->
+<div class="dialog">
+    <div class="dialog_box" name="contact_mumber_upload">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6" style="">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">上传员工合同</h3>
+            </div>
+            <div class="dialog_text sbar" style="height:86%;margin:0 auto;padding:0;">
+                <div class="unhead_box">
+                    制单人：<span style="margin-right: 10px;">张三</span>&nbsp;&nbsp;
+                    制单日期：<span>2016-10-11 15:00:09</span>
+                </div>
+                <div class="dialog_text_con">
+                    <h2 class="cont_title ">上传合同信息</h2>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>员工合同编号</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput" value="HK44681312" readonly="true"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>员工合同名称</div>
+                        <div class="t_right"><input type="text" class="time_input" value="员工合同" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>选择合同模板</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input" value="选择合同模板">
+                            </div>
+                            <span class="inp_addBtn val_dialogTop" name="ht_yght_xzhtmb"><b>+</b>选择合同模板</span>
+                        </div>
+                    </div>
+                    <div class="input_rightBtn">
+                        <div class="t_left t_left_conrow"><i class="c_r">*</i>选择入职成员</div>
+                        <div class="input_rightBtn_right" style="width: 85%;left:15%;">
+                            <div class="rightinput_box">
+                                <input type="text" class="c_3" value="开发部">
+                                <span class="inp_addBtn val_dialogTop" name="ht_yght_people"><b>+</b>选择成员</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="cont_title ">上传员工合同</h2>
+                    <div class="input_rightBtn" style="margin-top: 50px;margin-bottom:20px;">
+                        <p class="input_tishi_top" style="margin-left:0;">上传审核通过后方可申请公章</p>
+                        <div class="clearafter upload_con ht_upload_con" style="overflow: hidden;">
+                            <span class="upload_fileadd warp_namebegin" style="width: 342px;"></span>
+                            <span class="upload_choose_file hr_changeFile_but">选择文件</span>
+                            <input id="hr_changeFile" type="file" class="file_box add_inputbegin" style="top: -5px;right: 70px;">
+
+                            <button class="but_grey1 but_small ht_uploadFile_but">上传</button>
+                            <!--上传按钮默认为灰色，选择文件后，按钮为蓝色。(删除but_grey1,添加but_blue)-->
+                        </div>
+                    </div>
+                    <label class="inp_box clearfix" style="margin-top:20px;">
+                        <p class="inp_lP left">
+                            <i class="v_hidden">*</i>
+                            <em>审批人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2">
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                                <p class="box_addermsg">步骤一</p>
+                            </li>
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                                <p class="box_addermsg">步骤二</p>
+                            </li>
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="ht_yght_people"></em>
+                            </li>
+                        </ul>
+                    </label>
+                    <label class="inp_box clearfix">
+                        <p class="inp_lP left">
+                            <i class="v_hidden">*</i>
+                            <em>抄送人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2">
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+                            </li>
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="ht_yght_peoples"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_yellow val_dialogTop" name="ht_buy_pre">预览</button>
+                <button class="but_small but_blue">提交审批</button>
+                <button class="but_small but_green">保存草稿</button>
+                <button class="but_small but_cancal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-导出成功-->
+<div class="dialog">
+    <div class="dialog_box" name="contact_member_out">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_out">
+            <i class="dialog_close_but">关闭</i>
+            <em class="exportIcon"></em>
+            <p class="exportMsg">导出成功，请点击下载</p>
+            <p class="exportFlie f_color">销售合同.doc</p>
+        </div>
+    </div>
+</div>
+<!--发起右侧-查看-->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar Sideslip" name="ht_yght_right" style="width: 766px;">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left yg_tits_xxl">今日头条-员工合同</p>
+                <div class="slider_head_moreBox right yg_ck_genduo_btn_xxl">
+                    <!--<span class="slider_head_but right">作废</span>-->
+                    <span class="slider_head_but right slider_head_More">更多</span>
+                    <ul class="slider_head_list">
+                        <li class="val_dialog yg_ck_bjbtns_xxl" name="contact_member_exit">编辑</li>
+                        <li class="yg_ckzf_btn_xxl">作废</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="slider_head_msg_det">创建日期：<span style="margin-right:10px;" class="yg_ck_cjrq_xxl">2016-10-27 14:48:13</span> 创建人：<span class="yg_ck_cjr_xxl">张丹峰</span></p>
+        </div>
+
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="ht_yght_slider">基本信息</li>
+                <!--<li name="ht_yght_slider">历史记录</li>-->
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b sbar" style="width: 600px;height: 100%;overflow: hidden;">
+            <!--基本信息-->
+            <div class="ht_base_msg sbar" name="ht_yght_slider" >
+                <div class="ht_base_msgCon sbar" style="bottom:0;">
+                    <div class="d-r-t-h relative">
+                        <!--审批通过-->
+                        <i class="ht_sp_pass yg_sp_pass_xxl"></i>
+                        <!--审批未通过-->
+                        <i class="ht_sp_pass no yg_sp_nopass_xxl"></i>
+                        <h3 class="cont_title">基本信息</h3>
+                        <p class="l-s-x">合同编号：<span class="yg_wfqd_htbhs_xxl">YHT46546464</span></p>
+                        <p class="l-s-x" style="position: relative">合同名称：<span class="yg_wfqd_htmcs_xxl">员工合同</span><button class="but_blue but_small val_dialog yg_ckyulan_btn_xxl" name="ht_member_pre" style=" float: right;margin-top: -4px;margin-right: 20px;">预览</button></p>
+                        <p class="l-s-x">成员姓名：<span class="yght_wfqd_cyxm_xxl">王二麻</span>
+                        </p>
+                        <p class="l-s-x">合同期限：<span yg_wfqd_htqx_xxl>2016.02.03-2017.02.03</span></p>
+                        <p class="l-s-x">审核状态：<span class="yg_wfqds_shzt_xxl">-</span></p>
+                        <p class="l-s-x">审核人：<span class="yg_wfqds_shr_xxl">王二麻</span></p>
+                    </div>
+                    <div class="work_spiliubox yg_wfqd_spyjlist_xxl_html">
+                            <!--<div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_b"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">张三</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class=" f_color">发起审批</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_h"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">我</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3>资料是否带齐</h3>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_y"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">李四</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class="c_b" style="color:  #f8ac59;">进行中</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_g"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">李四</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class="c_b" style="color:  #f8ac59;">进行中</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>-->
+                    </div>
+                </div>
+            </div>
+            <!-- 历史记录 ht_yght_slider-->
+            <div class="ht_base_msg sbar" name="">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i yg_wfqd_lsjl_img_xxl" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t yg_wfqd_lsjl_cjr">王小二</p>
+                                <p class="t-s-p yg_wfqd_lsjl_cjrq_xxl">2016-10-27 14:48:13 <span class="sala_customer_msgcome yg_wfqd_lsjl_laiyuan_xxl">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">合同编号：<span class="yg_wfqd_lsjl_htbh_xxl">YHT46546464</span></p>
+                        <p class="l-s-x" style="position: relative">合同名称：<span class="yg_wfqd_lsjl_htmc_xxl">员工合同</span><!--<button class="but_blue but_small val_dialog yg_ckyulan_btn_xxl" name="ht_member_pre" style=" float: right;margin-top: -4px;margin-right: 20px;">预览</button>--></p>
+                        <p class="l-s-x">成员姓名：<span class="yg_wfqd_lsjl_cyxm_xxl">王二麻</span>
+                        </p>
+                        <p class="l-s-x">合同期限：<span class="yg_wfqd_lsjl_htqx_xxl">2016.02.03-2017.02.03</span></p>
+                        <p class="l-s-x">审核状态：<span class="yght_wfqd_lsjl_shzt_xxl">-</span></p>
+                        <p class="l-s-x">审核人：<span class="yg_wfqd_lsjl_shr_xxl">王二麻</span></p>
+                    </div>
+                    <i class="yg_wfqd_lsjl_html_xxl"></i>
+                    <!--<div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">大老板</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="f_color">来自电脑端</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">修改单位：<span>块、箱(1箱=6块)</span></p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--审批右侧-查看-->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar Sideslip yg_dwsp_youce_chakan_boxxxl" style="width: 766px;" name="ht_yght_sqright">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left yg_dwsp_cktit_xxl">今日头条-员工合同</p>
+            </div>
+            <p class="slider_head_msg_det">创建日期：<span style="margin-right:10px;" class="yg_dwsp_ckcjrq_xxl">2016-10-27 14:48:13</span> 创建人：<span class="yg_dwsp_cjrs_xxl">张丹峰</span></p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="ht_yght_slidersp">基本信息</li>
+                <!--<li name="ht_yght_slidersp">历史记录</li>-->
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b sbar" style="width: 600px;height: 100%;overflow: hidden;">
+            <!--基本信息-->
+            <div class="ht_base_msg sbar" name="ht_yght_slidersp">
+                <div class="ht_base_msgCon sbar" style="bottom: 0;">
+                <div class="d-r-t-h relative">
+                    <!--审批通过-->
+                    <i class="ht_sp_pass yg_dwsp_status_xxl"></i>
+                    <!--审批未通过-->
+                    <i class="ht_sp_pass no yg_dwsp_status_no_xxl"></i>
+                    <h3 class="cont_title">基本信息</h3>
+                    <p class="l-s-x">合同编号：<span class="yg_dwsp_htbh_xxl">YHT46546464</span></p>
+                        <p class="l-s-x" style="position: relative">合同名称：<span class="yg_dwsp_ckhtmc_xxl">员工合同</span><button class="but_blue but_small val_dialog yg_dwsp_yulanbtn_xxl" name="ht_member_pre" style=" float: right;margin-top: 40px;margin-right: 60px;">预览</button></p>
+                        <p class="l-s-x">成员姓名：<span class="yg_dwsp_cyxm_xxl">王二麻</span>
+                        </p>
+                        <p class="l-s-x">合同期限：<span class="yg_dwsp_htqxs_xxl">2016.02.03-2017.02.03</span></p>
+                        <p class="l-s-x">审核状态：<span class="yg_dwsp_shzts_xxl">-</span></p>
+                        <p class="l-s-x">审核人：<span class="yg_dwsp_shr_xxls">王二麻</span></p>
+                </div>
+                <div class="work_spiliubox yg_dwsp_spyjlist_xxl">
+                            <!--<div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_b"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">张三</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class=" f_color">发起审批</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_h"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">我</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3>资料是否带齐</h3>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_y"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">李四</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class="c_b" style="color:  #f8ac59;">进行中</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_g"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">李四</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class="c_b" style="color:  #f8ac59;">进行中</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>-->
+                </div>
+                </div>
+                <!--<div class="pra-4-cent newpra-4-cent">
+                    <div class="alertBtn-te">
+                        <button class="val_dialog but_red yg_dwsp_ck_juejbtn_xxl" name="contact_yght_spyj">拒绝通过</button><button class="val_dialogTop but_green yg_dwsp_ck_tongguo_btn_xxl" name="contact_yght_spyj">通过审批</button>
+                    </div>
+                </div>-->
+            </div>
+            <!-- 历史记录 ht_yght_slidersp-->
+            <div class="ht_base_msg sbar" name="">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i yg_wfqd_lsjl_img_xxl" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t yg_wfqd_lsjl_cjr">王小二</p>
+                                <p class="t-s-p yg_wfqd_lsjl_cjrq_xxl">2016-10-27 14:48:13 <span class="sala_customer_msgcome yg_wfqd_lsjl_laiyuan_xxl">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">合同编号：<span class="yg_wfqd_lsjl_htbh_xxl">YHT46546464</span></p>
+                        <p class="l-s-x">合同名称：<span class="yg_wfqd_lsjl_htmc_xxl">员工合同</span</p>
+                        <p class="l-s-x">成员姓名：<span class="yg_wfqd_lsjl_cyxm_xxl">王二麻</span>
+                        </p>
+                        <p class="l-s-x">合同期限：<span class="yg_wfqd_lsjl_htqx_xxl">2016.02.03-2017.02.03</span></p>
+                        <p class="l-s-x">审核状态：<span class="yght_wfqd_lsjl_shzt_xxl">-</span></p>
+                        <p class="l-s-x">审核人：<span class="yg_wfqd_lsjl_shr_xxl">王二麻</span></p>
+                    </div>
+                    <i class="yg_wfqd_lsjl_html_xxl"></i>
+                    <!--<div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">王小二</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="sala_customer_msgcome">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!--<div class="d-r-t-h">
+                        <p class="l-s-x">合同编号：<span>DFS3483493</span></p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--抄送右侧-查看-->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar Sideslip" style="width: 766px;" name="ht_yght_csright">
+    <div class="slider_head">
+        <div class="slider_head_con">
+            <div class="silder_top clearfix">
+                <p class="slider_head_name left yg_cswd_nametit_xxl">今日头条-员工合同</p>
+            </div>
+            <p class="slider_head_msg_det">创建日期：<span style="margin-right:10px;" class="yg_cswd_cjrq_xxl">2016-10-27 14:48:13</span> 创建人：<span class="yg_cswd_cjr_xxl">张丹峰</span></p>
+        </div>
+        <i class="slider_head_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar">
+        <div class="Sideslip_list ht_slid_list">
+            <ul style="padding-top:10px;">
+                <li class="Sideslip_list_on" name="ht_yght_slidercs">基本信息</li>
+                <!--<li name="ht_yght_slidercs">历史记录</li>-->
+            </ul>
+        </div>
+        <div class="d-r-t j-bx-b sbar" style="width: 600px;height: 100%;overflow: hidden;">
+            <!--基本信息-->
+            <div class="ht_base_msg sbar" name="ht_yght_slidercs">
+                <div class="ht_base_msgCon sbar" style="bottom:0;">
+                    <div class="d-r-t-h" style="position: relative;">
+                        <!--审批通过-->
+                        <i class="ht_sp_pass yg_cswd_sptg_img_xxl"></i>
+                        <!--审批未通过-->
+                        <i class="ht_sp_pass no yg_cswd_spjuej_img_xxl"></i>
+                        <h3 class="cont_title">基本信息</h3>
+                        <p class="l-s-x">合同编号：<span class="yght_cswd_htbh_xxl">YHT46546464</span></p>
+                        <p class="l-s-x" style="position: relative">合同名称：<span class="yg_cswd_htmc_xxl">员工合同</span><button class="but_blue but_small val_dialog yg_cswd_yulanbtn_xxl" name="ht_member_pre" style=" float: right;margin-top: -4px;margin-right: 20px;">预览</button></p>
+                        <p class="l-s-x">成员姓名：<span class="yg_cswd_cyxm_xxl">王二麻</span>
+                        </p>
+                        <p class="l-s-x">合同期限：<span class="yg_cswd_htqx_xxl">2016.02.03-2017.02.03</span></p>
+                        <p class="l-s-x">审核状态：<span class="yg_cswd_shzt_xxl">-</span></p>
+                        <p class="l-s-x">审核人：<span class="yg_cswd_shr_xxl">王二麻</span></p>
+                    </div>
+                    <div class="work_spiliubox yg_cswd_spyjlist_xxl">
+                            <!--<div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_b"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">张三</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class=" f_color">发起审批</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_h"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">我</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3>资料是否带齐</h3>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_y"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">李四</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class="c_b" style="color:  #f8ac59;">进行中</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>
+                            <div class="work_spiliu">
+                                <div class="work_spiliu_items">
+                                    <div class="left" style="position: relative;">
+                                        <img class="inline_block tx" src="static/images/touxiang.png">
+                                        <cite class="b_g"></cite>
+                                    </div>
+                                    <div class="right auto_height">
+                                        <img src="static/images/work_jiantou.png">
+                                        <div class="sp_cont">
+                                            <div><h3 class="c_3">李四</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                                            <h3 class="c_b" style="color:  #f8ac59;">进行中</h3>
+                                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                                        </div>
+                                    </div>
+                                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                                </div>
+                            </div>-->
+                    </div>
+                </div>
+            </div>
+            <!-- 历史记录 ht_yght_slidercs-->
+            <div class="ht_base_msg sbar" name="">
+                <div class="ht_base_msgCon sbar" style="bottom:0;width: 100%">
+                    <div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i yg_wfqd_lsjl_img_xxl" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t yg_wfqd_lsjl_cjr">王小二</p>
+                                <p class="t-s-p yg_wfqd_lsjl_cjrq_xxl">2016-10-27 14:48:13 <span class="sala_customer_msgcome yg_wfqd_lsjl_laiyuan_xxl">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">合同编号：<span class="yg_wfqd_lsjl_htbh_xxl">YHT46546464</span></p>
+                        <p class="l-s-x">合同名称：<span class="yg_wfqd_lsjl_htmc_xxl">员工合同</span></p>
+                        <p class="l-s-x">成员姓名：<span class="yg_wfqd_lsjl_cyxm_xxl">王二麻</span>
+                        </p>
+                        <p class="l-s-x">合同期限：<span class="yg_wfqd_lsjl_htqx_xxl">2016.02.03-2017.02.03</span></p>
+                        <p class="l-s-x">审核状态：<span class="yght_wfqd_lsjl_shzt_xxl">-</span></p>
+                        <p class="l-s-x">审核人：<span class="yg_wfqd_lsjl_shr_xxl">王二麻</span></p>
+                    </div>
+                    <i class="yg_wfqd_lsjl_html_xxl"></i>
+                    <!--<div class="d-r-t-h">
+                        <div class="d-r-box">
+                            <img class="l-sl-i" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4100865709,3166339148&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG">
+                            <div class="d-r-r">
+                                <p class="u-id-t">王小二</p>
+                                <p class="t-s-p">2016-10-27 14:48:13 <span class="sala_customer_msgcome">来自手机端</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-r-t-h">
+                        <p class="l-s-x">合同编号：<span>DFS3483493</span></p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-审批意见-->
+<div class="dialog">
+    <div class="dialog_box" name="contact_yght_spyj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_sp">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">审批意见</h3>
+            </div>
+            <div class="dialog_text sbar work_sp_dialog_text ">
+                <textarea onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" class="yg_dwsp_yjval_xxl">请输入审批意见</textarea>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small yg_dwsp_quedbtn_xxl">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-审批查看详情-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_yght_prevSP">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle4 muban_pre_con bargin_print">
+            <div class="dialog_title relative">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3" style="text-align: center;font-size: 18px;font-weight: 600;">员工合同</h3>
+                <!-- <button class="but_blue but_small but_print2" style="position: absolute;right:44px;top:9px;"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button> -->
+            </div>
+            <div class="unhead_box bargin_unhead_box noprint">
+                <span class="">提示：红色下滑线代表有修改的条款内容；蓝色代表有添加的条款内容</span>
+            </div>
+            <div class="dialog_text sbar yg_sp_yulanhtml_xxl" style="margin:0;padding:3% 40px;">
+                <!--<div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span>XHT1321321</span>
+                        </li>
+                        <li>签订日期：<span>2016-10-10</span>
+                        </li>
+                        <li>
+                            签订地点：<span>填写</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            用人单位(以下简称甲方)：<span>联创万通(北京)科技有限公司</span>
+                        </li>
+                        <li>
+                            职工(以下简称乙方)：<span>关联客户信息</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>根据(中华人民共和国劳动法》和国家及省的有关规定，甲乙双方按照平等自愿、协商一致的原则订立本合同。</p>
+                </div>
+                <div class="ht_msg">
+                    <p>一、合同期限：</p>
+                    <p>双方同意按以下方式确定本合同期限:</p>
+                    <p>1、期限：从 <span>2016（关联入职信息） </span>年 <span> 10 （关联入职信息） </span> 月 <span>10 （关联入职信息）</span> 日起至<span> 2017（关联入职信息） </span>年 <span> 10（关联入职信息） </span> 月 <span>10 （关联入职信息） </span>日止(试用期 <span>3（关联入职信息）</span>个月) </p>
+                    <p>合同终止后双方可以在平等自愿条件下商议续签。</p>
+                </div>
+                <div class="ht_msg">
+                    <p>二、工资待遇：</p>
+                    <p>乙方正常工作时间的工资按下列形式执行，不得低于当地最低工资标准。  基本工资： <span>8000（关联入职信息）</span>元/月；绩效工资：<span>2000（关联入职信息）</span>元/月，总计 <span>10000（关联入职信息）</span>元/月</p>
+                </div>
+                <!--<div class="ht_msg">
+                    <p>三、交付方式：</p>
+                    &lt;!&ndash;<ul class="ht_msg_list">
+                        <li>
+                            乙方将货物运送至甲方指定地点：<span>关联客户信息的地址</span>
+                        </li>
+                        <li>
+                            联系人：<span>关联客户联系人</span>
+                        </li>
+                        <li>
+                            电话：<span>关联客户联系人</span>
+                        </li>
+                        <li>
+                            运费由：<span>甲</span>承担。(或运费由 <span style="width: 30px;">乙</span>方承担。 <span style="border:none;">根据报价单运费状态</span>)
+                        </li>
+                    </ul>&ndash;&gt;
+                </div>-->
+
+                <!--<div class="ht_msg_bottom clearfix">
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">甲方(盖章)：</li>
+                        <li>
+                            法人代表：<span></span>
+                        </li>
+                        <li>
+                            <span style="width: 30px;min-width: 30px;"></span>年 <span style="width: 30px;min-width: 30px;"></span>月<span style="width: 30px;min-width: 30px;"></span>日
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">乙方(盖章)：</li>
+                        <li style="margin-top: 36px;">
+                            <span style="width: 30px;min-width: 30px;"></span>年 <span style="width: 30px;min-width: 30px;"></span>月<span style="width: 30px;min-width: 30px;"></span>日
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+            <div class="dialog_submit ht_submit">
+                <button class="but_small but_red val_dialogTop yg_dwsp_jjbtn_xxl" name="contact_yght_spyj">拒绝通过</button><button class="but_small but_green val_dialogTop yg_dwsp_tguosp_btn_xxl" name="contact_yght_spyj">通过审批</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择成员树结构-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_people">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_1">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择成员</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:5px 40px;height:68%;">
+                <div class="tree_box">
+                    <dl>
+                        <dt><div class="tree_icon"></div>所有部门</dt>
+                        <dd>
+                            <dl>
+                                <dt><div class="tree_icon"></div>设计部</dt>
+                                <dd>
+                                    <dl>
+                                        <dt><div class="tree_icon"></div>设计部三级</dt>
+                                        <dd class="cite">设计部三级一</dd>
+                                    </dl>
+                                </dd>
+                                <dd class="cite">设计部二</dd>
+                            </dl>
+                        </dd>
+                        <dd>
+                            <dl>
+                                <dt><div class="tree_icon"></div>销售部</dt>
+                                <dd class="cite">销售部一</dd>
+                            </dl>
+                        </dd>
+                        <dd>
+                            <dl>
+                                <dt><div class="tree_icon"></div>人力资源</dt>
+                                <dd class="cite">人力一</dd>
+                            </dl>
+                        </dd>
+                        <dd class="cite">技术部</dd>
+                    </dl>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue">确定</button><button class="but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--弹出层-预览合同-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_member_pre">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content_middle4 muban_pre_con bargin_print" id="ht_yght_print">
+            <div class="dialog_title">
+                <i class="dialog_close noprint">关闭</i>
+                <h3 class="dialog_h3 ht_title1" style="text-align: center;font-size: 18px;font-weight: 600;">员工合同</h3>
+            </div>
+            <div class="unhead_box bargin_unhead_box noprint">
+                <span class="">提示：红色下滑线代表有修改的条款内容；蓝色代表有添加的条款内容</span>
+            </div>
+            <div class="dialog_text sbar yg_yulan_htmls_xxl" style="margin:0;padding:3% 40px;">
+                <!--<div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            合同编号：<span>XHT1321321</span>
+                        </li>
+                        <li>签订日期：<span>2016-10-10</span>
+                        </li>
+                        <li>
+                            签订地点：<span>填写</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <ul class="ht_msg_list">
+                        <li>
+                            用人单位(以下简称甲方)：<span>联创万通(北京)科技有限公司</span>
+                        </li>
+                        <li>
+                            职工(以下简称乙方)：<span>关联客户信息</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ht_msg">
+                    <p>根据(中华人民共和国劳动法》和国家及省的有关规定，甲乙双方按照平等自愿、协商一致的原则订立本合同。</p>
+                </div>
+                <div class="ht_msg">
+                    <p>一、合同期限：</p>
+                    <p>双方同意按以下方式确定本合同期限:</p>
+                    <p>1、期限：从 <span>2016（关联入职信息） </span>年 <span> 10 （关联入职信息） </span> 月 <span>10 （关联入职信息）</span> 日起至<span> 2017（关联入职信息） </span>年 <span> 10（关联入职信息） </span> 月 <span>10 （关联入职信息） </span>日止(试用期 <span>3（关联入职信息）</span>个月) </p>
+                    <p>合同终止后双方可以在平等自愿条件下商议续签。</p>
+                </div>
+                <div class="ht_msg">
+                    <p>二、工资待遇：</p>
+                    <p>乙方正常工作时间的工资按下列形式执行，不得低于当地最低工资标准。  基本工资： <span>8000（关联入职信息）</span>元/月；绩效工资：<span>2000（关联入职信息）</span>元/月，总计 <span>10000（关联入职信息）</span>元/月</p>
+                </div>
+                <div class="ht_msg_bottom clearfix">
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">甲方(盖章)：</li>
+                        <li>
+                            法人代表：<span></span>
+                        </li>
+                        <li>
+                            <span style="width: 30px;min-width: 30px;"></span>年 <span style="width: 30px;min-width: 30px;"></span>月<span style="width: 30px;min-width: 30px;"></span>日
+                        </li>
+                    </ul>
+                    <ul class="ht_list_last left">
+                        <li class="ht_seal">乙方(盖章)：</li>
+                        <li style="margin-top: 36px;">
+                            <span style="width: 30px;min-width: 30px;"></span>年 <span style="width: 30px;min-width: 30px;"></span>月<span style="width: 30px;min-width: 30px;"></span>日
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+            <div class="dialog_submit noprint">
+            	<button class="but_grey_a but_small but_zwpdf daochu_yg"><i style="vertical-align: middle;margin-top:-2px;"></i>导出PDF或打印</button>
+                <!--<button class="but_blue but_small but_print2" id="ht_yght_printBut"><i style="vertical-align: middle;margin-top:-2px;"></i>打印</button>-->
+                <button class="val_dialogTop but_red yg_dwsp_ck_juejbtn_xxl" name="contact_yght_spyj">拒绝通过</button><button class="val_dialogTop but_green yg_dwsp_ck_tongguo_btn_xxl" name="contact_yght_spyj">通过审批</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_yght_delete">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-选择合同模板-->
+<div class="dialog" >
+    <div class="dialog_box" name="ht_yght_xzhtmb" >
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_2" style="width: 1070px;height:400px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择合同模板</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 72%;margin:0;">
+                <div class="con_right_head clearfix" style="border:none;">
+                    <div class="cont_search inline_block"><input type="text" class="search_input yg_sshtmb_val_xxl" value="搜索合同模板名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);" onkeyup="yg_xzmb_ssnow_xxl(this.value)"><span class="search_but yg_mbss_btn_xxl">搜索</span>
+                    </div>
+                    <div class="con_right_result right">
+                        <p class="left">搜索结果: <span class=" f_color yg_htmbnums_xxl">2</span>条</p>
+                    </div>
+                </div>
+                <div class="div_1">
+                    <div class="div_1 table-container" style="margin:0;">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>选择</th>
+                                <th>合同模板名称</th>
+                                <th>合同类型</th>
+                                <th>适用部门</th>
+                                <th>创建日期</th>
+                                <th>创建人</th>
+                                <th>更新日期</th>
+                                <th>更新人</th>
+                            </tr>
+                            </thead>
+                            <tbody class="yg_htmn_listhtml_xxl">
+                            <!--<tr>
+                                <td><input type="radio" name="ht_cght_xzcghtmbinp"></td>
+                                <td>服务器采购合同模板</td>
+                                <td>采购合同</td>
+                                <td>采购A部</td>
+                                <td>2016-10-10</td>
+                                <td>张三</td>
+                                <td>2016-10-10</td>
+                                <td>刘思</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="ht_cght_xzcghtmbinp" checked="checked"></td>
+                                <td>服务器采购合同模板</td>
+                                <td>采购合同</td>
+                                <td>采购A部</td>
+                                <td>2016-10-10</td>
+                                <td>张三</td>
+                                <td>2016-10-10</td>
+                                <td>刘思</td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                        <div class="yg_htmb_errhtml_xxl"></div>
+                    </div>
+                </div>
+                <div class="fenye_box yg_htmb_fenye_htmlxxl">
+                     <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <!--<span class="page_box_last" style="line-height:15px;">...</span>-->
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_small but_blue yg_xzhtmb_qued_btn_xxl">确定</button><button class="but_small but_cancal yg_bj_quxiao_btn_xxl">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+$('.table-container').scroll(function () {
+
+                        $('.no_data_box').css('padding-left', parseInt($(this).scrollLeft()))
+    })
+        $(".slider_head_more").toggle(function () {
+            $(this).next(".slider_head_more_list").show();
+        },function () {
+            $(this).next(".slider_head_more_list").hide();
+        });
+//        右侧弹窗内，选项卡
+        $(".ht_slid_list ul li").live("click",function () {
+            var index = $(this).index();
+            $(this).attr('class',"Sideslip_list_on").siblings().attr('class','');
+            var name_x = $(this).attr("name");
+            $(".ht_base_msg[name='"+name_x+"']").eq(index).fadeIn(100).siblings(".ht_base_msg[name='"+name_x+"']").hide();
+        });
+        //    打印
+        $("#ht_yght_printBut").die('click').live("click",function () {
+            $("#ht_yght_print").jqprint({
+                debug: false,
+                importCSS: true,
+                printContainer: true,
+                operaSupport: false
+            });
+        })
+        $('.tanceng .daochu_yg').die('click').live('click',function(){
+        	document.title='员工合同'+$(this).attr('htbh');
+        	$("#ht_yght_print").jqprint()
+        })
+    });
+    var htyght_start = {
+        elem: '#htyght_start',
+        format: 'YYYY-MM-DD',
+//        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            htyght_end.min = datas; //开始日选好后，重置结束日的最小日期
+            htyght_end.start = datas; //将结束日的初始值设定为开始日
+            //console.log(datas)
+        }
+    };
+    var htyght_end = {
+        elem: '#htyght_end',
+        format: 'YYYY-MM-DD',
+//        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: true,
+        choose: function(datas) {
+            htyght_start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+
+    };
+	function checkInt(o) {
+				theV = isNaN(parseInt(o.value)) ? 0 : parseInt(o.value);
+				if(theV != o.value) {
+					o.value = theV;
+				}
+				if($('.tanceng .yg_xj_jbgz_xxl').val()==''||isNaN($('.tanceng .yg_xj_jbgz_xxl').val())){
+					$('.tanceng .yg_xj_hjgz_xxl').val('')
+				}else if($('.tanceng .yg_xj_jxgz_xxl').val()==''||isNaN($('.tanceng .yg_xj_jxgz_xxl').val())){
+					$('.tanceng .yg_xj_hjgz_xxl').val('')
+				}else{
+					$('.tanceng .yg_xj_hjgz_xxl').val(parseInt($('.tanceng .yg_xj_jbgz_xxl').val()) + parseInt($('.tanceng .yg_xj_jxgz_xxl').val())).css('color','red')
+				}
+
+
+
+			}
+	function checkInts(o) {
+				theV = isNaN(parseInt(o.value)) ? 0 : parseInt(o.value);
+				if(theV != o.value) {
+					o.value = theV;
+				}
+				if($('.tanceng .yg_ckbj_jbgzs_xxl').val()==''||isNaN($('.tanceng .yg_ckbj_jbgzs_xxl').val())){
+					$('.tanceng .yg_ckbj_hjgz_xxl').val('')
+				}else if($('.tanceng .yg_ckbj_jxgz_xxl').val()==''||isNaN($('.tanceng .yg_ckbj_jxgz_xxl').val())){
+					$('.tanceng .yg_ckbj_hjgz_xxl').val('')
+				}else{
+					$('.tanceng .yg_ckbj_hjgz_xxl').val(parseInt($('.tanceng .yg_ckbj_jbgzs_xxl').val()) + parseInt($('.tanceng .yg_ckbj_jxgz_xxl').val())).css('color','red')
+				}
+
+
+
+			}
+
+</script>
+</body>
+<script src="js/bargain/61.js"></script>
+</html>

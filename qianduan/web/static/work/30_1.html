@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工作-查看考勤(员工)</title>
+    <link rel="stylesheet" href="static/work/css/work_common.css">
+    <link rel="stylesheet" href="static/work/css/work_statisticalAttendance_1.css">
+</head>
+<body>
+<div class="content clearfix">
+    <div class="con_head">
+        <p class="con_head_con left">
+            统计考勤
+        </p>
+        <ul class="con_head_list right">
+            <li class="con_head_frash"></li>
+        </ul>
+    </div>
+    <div class="m_cont">
+        <div class="con_left left">
+            <div class="con_left_con">
+                <p class="menu_first"><span class="menu_icon_file"></span>所有成员<span></span></p>
+                <ul class="menu_second">
+                    <li class="">技术部
+                    </li>
+                    <!-- 三级 -->
+                    <li class="menu_third menu_third_person">
+                        成员aa
+                    </li>
+                    <li class="menu_third menu_third_person menu_btn_on">
+                        成员aaa
+                    </li>
+                </ul>
+                <ul class="menu_second">
+                    <li class="">销售部
+                    </li>
+                    <!-- 三级 -->
+                    <li class="menu_third menu_third_person">
+                        成员B
+                    </li>
+                    <li class="menu_third menu_third_person">
+                        成员C
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="con_right">
+            <div class="con_right_head">
+                <label class="inp_box clearfix left">
+                    <p class="inp_lP left">
+                        <em>选择时间</em>
+                    </p>
+                    <p class="left inp_boxadd">
+                        <input type="text" class="inp_half" value="开始时间" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <i class="inp_timeStrat"></i>
+                        <em class="inp_timehr"></em>
+                        <input type="text" class="inp_half right" value="结束时间" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        <i class="inp_time"></i>
+                    </p>
+                </label>
+                <ul class="con_right_head_list right clearfix f_color">
+                    <li class="con_right_head_list_left ">考勤统计</li>
+                    <li class="con_right_head_list_on">核对考勤</li>
+                </ul>
+            </div>
+            <div class="con_right_tableBox">
+                <h3 class="work_staicAttdce_table_title">核对考勤</h3>
+                <table>
+                    <thead>
+                    <tr >
+                        <th colspan="12" class="t_center">合并</th>
+                        <th rowspan="2"></th>
+                    </tr>
+                    <tr >
+                        <th><input type="checkbox"></th>
+                        <th>姓名</th>
+                        <th>部门</th>
+                        <th>到岗天数</th>
+                        <th>迟到</th>
+                        <th>早退</th>
+                        <th>未签到</th>
+                        <th>未签退</th>
+                        <th>范围外</th>
+                        <th>加班</th>
+                        <th>请假</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td >张三</td>
+                        <td>销售部</td>
+                        <td>22</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td >0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>
+                            <button class="but_small but_cancel normal_dialog">查看</button>
+                            <!--查看弹窗-->
+                            <div class="dialog_box">
+                                    <div class="dialog_screen"></div>
+                                    <div class="dialog_content work_staicAtt_dlog_det">
+                                        <div class="work_staicAtt_dlog_detHead">
+                                            <i class="dialog_close">关闭</i>
+                                            <h3 class="work_sA_dialog_content_title">编辑部门</h3>
+                                        </div>
+                                        <hr/>
+                                        <div class="dialog_text clearfix work_staicAtt_spc_dialog">
+                                            <div class="work_staicAttdce_tableBoxDiv left">张三</div>
+                                            <div class="work_staicAttdce_tableBoxDiv left">销售部</div>
+                                            <div class="div_1 table-container work_staicAttdce_tableBox">
+                                                <div class="div_1 container ">
+                                                    <table class="work_staicAttdce_dialog_look_table ">
+                                                        <tbody>
+                                                        <thead>
+                                                        <tr class="table_total">
+                                                            <th>日期</th>
+                                                            <th>10月1号</th>
+                                                            <th>10月2号</th>
+                                                            <th>10月3号</th>
+                                                            <th>10月4号</th>
+                                                            <th>10月5号</th>
+                                                            <th>10月6号</th>
+                                                            <th>10月7号</th>
+                                                            <th>10月8号</th>
+                                                            <th>10月9号</th>
+                                                            <th>10月10号</th>
+                                                            <th>10月11号</th>
+                                                            <th>10月12号</th>
+                                                            <th>10月13号</th>
+                                                            <th>10月14号</th>
+                                                            <th>10月15号</th>
+                                                        </tr>
+                                                        <tr class="table_total">
+                                                            <th>星期</th>
+                                                            <th>星期六</th>
+                                                            <th>星期天</th>
+                                                            <th>星期一</th>
+                                                            <th>星期二</th>
+                                                            <th>星期三</th>
+                                                            <th>星期四</th>
+                                                            <th>星期五</th>
+                                                            <th>星期六</th>
+                                                            <th>星期天</th>
+                                                            <th>星期一</th>
+                                                            <th>星期二</th>
+                                                            <th>星期三</th>
+                                                            <th>星期四</th>
+                                                            <th>星期五</th>
+                                                            <th>星期六</th>
+                                                        </tr>                                                  </thead>
+                                                        <tr><th>上班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>8:30</td>
+                                                            <td>-</td>
+                                                            <td>未签到</td>
+                                                            <td class="f_color_red">迟 09：20</td>
+                                                            <td class="f_color">范围外</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>下班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>18:30</td>
+                                                            <td>-</td>
+                                                            <td>未签退</td>
+                                                            <td>18:30</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>加班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>22:00</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>                                          <tr>
+                                                        <th class="work_staicAttdce_table_special">请假</th>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td class="f_color_red">事假</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="fenye_box">
+                                            <span>每页显示</span>
+                                            <div class="inline_block select_mormal">
+                                                <input type="text" class="select_input" value="10">
+                                                <i></i>
+                                                <ul class="select_list">
+                                                    <li>5</li>
+                                                    <li>10</li>
+                                                    <li>15</li>
+                                                    <li>20</li>
+                                                </ul>
+                                            </div>
+                                            <span>条数据</span>
+                                            <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                                            <span>当前在</span>
+                                            <input type="text" class="inp_txt sel_normal_short fengye_input" value="1">
+                                            <span>页</span>
+                                            <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                                            <span>共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                        </div>
+                                        <div class="dialog_submit">
+                                            <em><button class="normal_dialog but_yellow work_staicAttdce_appealBtn" name="work_staicAttdce_AppealBox">申诉</button>
+
+                                            </em>
+                                            <button class="normal_dialog">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            <button class="but_small but_cancel work_staicAttdce_appealBtn" name="work_staicAttdce_AppealBox">申诉</button>
+                            <button class="but_small but_yellow normal_dialog">申诉中</button>
+                            <!--取消申诉-->
+                            <div class="dialog_box">
+                                    <div class="dialog_screen"></div>
+                                    <div class="dialog_content work_staicAtt_dlog_det">
+                                        <div class="work_staicAtt_dlog_detHead">
+                                            <i class="dialog_close">关闭</i>
+                                            <h3 class="work_sA_dialog_content_title">张三考勤详情</h3>
+                                        </div>
+                                        <hr/>
+                                        <div class="dialog_text clearfix work_staicAtt_spc_dialog">
+                                            <div class="work_staicAttdce_tableBoxDiv left">张三</div>
+                                            <div class="work_staicAttdce_tableBoxDiv left">销售部</div>
+                                            <div class="div_1 table-container work_staicAttdce_tableBox">
+                                                <div class="div_1 container ">
+                                                    <table class="work_staicAttdce_dialog_look_table ">
+                                                        <tbody>
+                                                        <thead>
+                                                        <tr class="table_total">
+                                                            <th>日期</th>
+                                                            <th>10月1号</th>
+                                                            <th>10月2号</th>
+                                                            <th>10月3号</th>
+                                                            <th>10月4号</th>
+                                                            <th>10月5号</th>
+                                                            <th>10月6号</th>
+                                                            <th>10月7号</th>
+                                                            <th>10月8号</th>
+                                                            <th>10月9号</th>
+                                                            <th>10月10号</th>
+                                                            <th>10月11号</th>
+                                                            <th>10月12号</th>
+                                                            <th>10月13号</th>
+                                                            <th>10月14号</th>
+                                                            <th>10月15号</th>
+                                                        </tr>
+                                                        <tr class="table_total">
+                                                            <th>星期</th>
+                                                            <th>星期六</th>
+                                                            <th>星期天</th>
+                                                            <th>星期一</th>
+                                                            <th>星期二</th>
+                                                            <th>星期三</th>
+                                                            <th>星期四</th>
+                                                            <th>星期五</th>
+                                                            <th>星期六</th>
+                                                            <th>星期天</th>
+                                                            <th>星期一</th>
+                                                            <th>星期二</th>
+                                                            <th>星期三</th>
+                                                            <th>星期四</th>
+                                                            <th>星期五</th>
+                                                            <th>星期六</th>
+                                                        </tr>                                                  </thead>
+                                                        <tr><th>上班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>8:30</td>
+                                                            <td>-</td>
+                                                            <td>未签到</td>
+                                                            <td class="f_color_red">迟 09：20</td>
+                                                            <td class="f_color">范围外</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>下班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>18:30</td>
+                                                            <td>-</td>
+                                                            <td>未签退</td>
+                                                            <td>18:30</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>加班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>22:00</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>                                          <tr>
+                                                        <th class="work_staicAttdce_table_special">请假</th>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td class="f_color_red">事假</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="fenye_box">
+                                            <span>每页显示</span>
+                                            <div class="inline_block select_mormal">
+                                                <input type="text" class="select_input" value="10">
+                                                <i></i>
+                                                <ul class="select_list">
+                                                    <li>5</li>
+                                                    <li>10</li>
+                                                    <li>15</li>
+                                                    <li>20</li>
+                                                </ul>
+                                            </div>
+                                            <span>条数据</span>
+                                            <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                                            <span>当前在</span>
+                                            <input type="text" class="inp_txt sel_normal_short fengye_input" value="1">
+                                            <span>页</span>
+                                            <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                                            <span>共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                        </div>
+                                        <div class="dialog_submit">
+                                            <button class=" but_red ">取消申诉</button>
+                                            <button class="normal_dialog">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            <button class="but_small but_red normal_dialog">驳回申诉</button>
+                            <!--重新申诉-->
+                            <div class="dialog_box">
+                                <div class="dialog_screen"></div>
+                                <div class="dialog_content work_staicAtt_dlog_det">
+                                    <div class="work_staicAtt_dlog_detHead">
+                                        <i class="dialog_close">关闭</i>
+                                        <h3 class="work_sA_dialog_content_title">张三考勤详情</h3>
+                                    </div>
+                                    <hr/>
+                                    <div class="dialog_text clearfix work_staicAtt_spc_dialog">
+                                        <div class="work_staicAttdce_tableBoxDiv left">张三</div>
+                                        <div class="work_staicAttdce_tableBoxDiv left">销售部</div>
+                                        <div class="div_1 table-container work_staicAttdce_tableBox">
+                                            <div class="div_1 container ">
+                                                <table class="work_staicAttdce_dialog_look_table ">
+                                                    <tbody>
+                                                    <thead>
+                                                    <tr class="table_total">
+                                                        <th>日期</th>
+                                                        <th>10月1号</th>
+                                                        <th>10月2号</th>
+                                                        <th>10月3号</th>
+                                                        <th>10月4号</th>
+                                                        <th>10月5号</th>
+                                                        <th>10月6号</th>
+                                                        <th>10月7号</th>
+                                                        <th>10月8号</th>
+                                                        <th>10月9号</th>
+                                                        <th>10月10号</th>
+                                                        <th>10月11号</th>
+                                                        <th>10月12号</th>
+                                                        <th>10月13号</th>
+                                                        <th>10月14号</th>
+                                                        <th>10月15号</th>
+                                                    </tr>
+                                                    <tr class="table_total">
+                                                        <th>星期</th>
+                                                        <th>星期六</th>
+                                                        <th>星期天</th>
+                                                        <th>星期一</th>
+                                                        <th>星期二</th>
+                                                        <th>星期三</th>
+                                                        <th>星期四</th>
+                                                        <th>星期五</th>
+                                                        <th>星期六</th>
+                                                        <th>星期天</th>
+                                                        <th>星期一</th>
+                                                        <th>星期二</th>
+                                                        <th>星期三</th>
+                                                        <th>星期四</th>
+                                                        <th>星期五</th>
+                                                        <th>星期六</th>
+                                                    </tr>                                                  </thead>
+                                                    <tr><th>上班</th>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>8:30</td>
+                                                        <td>-</td>
+                                                        <td>未签到</td>
+                                                        <td class="f_color_red">迟 09：20</td>
+                                                        <td class="f_color">范围外</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>下班</th>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>18:30</td>
+                                                        <td>-</td>
+                                                        <td>未签退</td>
+                                                        <td>18:30</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>加班</th>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>22:00</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr>                                          <tr>
+                                                    <th class="work_staicAttdce_table_special">请假</th>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td class="f_color_red">事假</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fenye_box">
+                                        <span>每页显示</span>
+                                        <div class="inline_block select_mormal">
+                                            <input type="text" class="select_input" value="10">
+                                            <i></i>
+                                            <ul class="select_list">
+                                                <li>5</li>
+                                                <li>10</li>
+                                                <li>15</li>
+                                                <li>20</li>
+                                            </ul>
+                                        </div>
+                                        <span>条数据</span>
+                                        <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                                        <span>当前在</span>
+                                        <input type="text" class="inp_txt sel_normal_short fengye_input" value="1">
+                                        <span>页</span>
+                                        <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                                        <span>共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                    </div>
+                                    <div class="dialog_submit">
+                                        <button class=" but_yellow ">重新申诉</button>
+                                        <button class="normal_dialog">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="but_small but_green normal_dialog">通过申诉</button>
+                            <!--通过申诉-->
+                            <div class="dialog_box">
+                                    <div class="dialog_screen"></div>
+                                    <div class="dialog_content work_staicAtt_dlog_det">
+                                        <div class="work_staicAtt_dlog_detHead">
+                                            <i class="dialog_close">关闭</i>
+                                            <h3 class="work_sA_dialog_content_title">张三考勤详情</h3>
+                                        </div>
+                                        <hr/>
+                                        <div class="dialog_text clearfix work_staicAtt_spc_dialog">
+                                            <div class="work_staicAttdce_tableBoxDiv left">张三</div>
+                                            <div class="work_staicAttdce_tableBoxDiv left">销售部</div>
+                                            <div class="div_1 table-container work_staicAttdce_tableBox">
+                                                <div class="div_1 container ">
+                                                    <table class="work_staicAttdce_dialog_look_table ">
+                                                        <tbody>
+                                                        <thead>
+                                                        <tr class="table_total">
+                                                            <th>日期</th>
+                                                            <th>10月1号</th>
+                                                            <th>10月2号</th>
+                                                            <th>10月3号</th>
+                                                            <th>10月4号</th>
+                                                            <th>10月5号</th>
+                                                            <th>10月6号</th>
+                                                            <th>10月7号</th>
+                                                            <th>10月8号</th>
+                                                            <th>10月9号</th>
+                                                            <th>10月10号</th>
+                                                            <th>10月11号</th>
+                                                            <th>10月12号</th>
+                                                            <th>10月13号</th>
+                                                            <th>10月14号</th>
+                                                            <th>10月15号</th>
+                                                        </tr>
+                                                        <tr class="table_total">
+                                                            <th>星期</th>
+                                                            <th>星期六</th>
+                                                            <th>星期天</th>
+                                                            <th>星期一</th>
+                                                            <th>星期二</th>
+                                                            <th>星期三</th>
+                                                            <th>星期四</th>
+                                                            <th>星期五</th>
+                                                            <th>星期六</th>
+                                                            <th>星期天</th>
+                                                            <th>星期一</th>
+                                                            <th>星期二</th>
+                                                            <th>星期三</th>
+                                                            <th>星期四</th>
+                                                            <th>星期五</th>
+                                                            <th>星期六</th>
+                                                        </tr>                                                  </thead>
+                                                        <tr><th>上班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>8:30</td>
+                                                            <td>-</td>
+                                                            <td>未签到</td>
+                                                            <td class="f_color_red">迟 09：20 <em class=" work_staicAttdce_state_normal but_green">正常</em></td>
+                                                            <td class="f_color">范围外</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>下班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>18:30</td>
+                                                            <td>-</td>
+                                                            <td>未签退</td>
+                                                            <td>18:30</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>加班</th>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>22:00</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                            <td>-</td>
+                                                        </tr>                                          <tr>
+                                                        <th class="work_staicAttdce_table_special">请假</th>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td class="f_color_red">事假</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="fenye_box">
+                                            <span>每页显示</span>
+                                            <div class="inline_block select_mormal">
+                                                <input type="text" class="select_input" value="10">
+                                                <i></i>
+                                                <ul class="select_list">
+                                                    <li>5</li>
+                                                    <li>10</li>
+                                                    <li>15</li>
+                                                    <li>20</li>
+                                                </ul>
+                                            </div>
+                                            <span>条数据</span>
+                                            <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                                            <span>当前在</span>
+                                            <input type="text" class="inp_txt sel_normal_short fengye_input" value="1">
+                                            <span>页</span>
+                                            <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                                            <span>共<cite class="f_color mLR_5">9</cite>条数据</span>
+                                        </div>
+                                        <div class="dialog_submit">
+                                            <button class=" but_blue ">确定</button>
+                                            <button class="normal_dialog">取消</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="fenye_box">
+                    <span>每页显示</span>
+                    <div class="inline_block select_mormal">
+                        <input type="text" class="select_input" value="10">
+                        <i></i>
+                        <ul class="select_list">
+                            <li>5</li>
+                            <li>10</li>
+                            <li>15</li>
+                            <li>20</li>
+                        </ul>
+                    </div>
+                    <span>条数据</span>
+                    <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                    <span>当前在</span>
+                    <input type="text" class="inp_txt sel_normal_short fengye_input" value="1">
+                    <span>页</span>
+                    <div class="fenye_btn"></div><div class="fenye_btn"></div>
+                    <span>共<cite class="f_color mLR_5">9</cite>条数据</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--申诉弹窗-->
+<div name="work_staicAttdce_AppealBox" class="dialog_box">
+    <div class="dialog_screen"></div>
+    <div class="dialog_content dialog_content_1 work_staicAtte_dialog_content">
+        <i class="dialog_close">关闭</i>
+        <h3 >申诉内容</h3><hr/>
+        <div class="dialog_text">
+              <textarea class="work_staicAtte_dialog_content_det" onfocus="fn_focus(this);" onblur="fn_blur(this);">输入部门名称</textarea>
+            <label class="inp_box clearfix">
+                <p class="inp_lP left">
+                    <em>审批人</em>
+                </p>
+                <ul class="box_adderCon left clearfix work_staicAtt_splist">
+                    <li>
+                        <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                        <em class="icon_adderBtn"></em>
+                        <p class="box_adderName">张三</p>
+                        <p class="box_addermsg">步骤一</p>
+                    </li>
+                    <li>
+                        <em class="icon_personBtn icon_personBtn_add normal_dialog" name="work_SA_addperson"></em>
+                    </li>
+                </ul>
+            </label>
+        </div>
+        <div class="dialog_submit">
+            <button class="normal_dialog but_blue">确定</button><button class="normal_dialog">取消</button>
+        </div>
+    </div>
+</div>
+<!--添加审批人-->
+<div class="dialog_box" name="work_SA_addperson">
+    <div class="dialog_screen"></div>
+    <div class="dialog_content dialog_content_1">
+        <i class="dialog_close">关闭</i>
+        <h3 class="work_dia_h3">选择审批人</h3><hr/>
+        <div class="dialog_text">这里是内容</div>
+        <div class="dialog_submit">
+            <button class="normal_dialog but_blue">确定</button><button class="normal_dialog">取消</button>
+        </div>
+    </div>
+</div>
+<!--弹出层js-->
+<script>
+        $(function(){
+            $(".normal_dialog").click(function(){
+                $(this).next(".dialog_box").show(0);
+                $(this).next(".dialog_box .dialog_screen").show(0);
+                $(this).next(".dialog_box .dialog_content").fadeIn(0);
+                return false;
+            });
+
+            $(".dialog_screen").click(function(){
+                $(this).parent().hide();
+                return false;
+            });
+        $(".work_staicAttdce_appealBtn").click(function(){
+            var name_AppealBox =  $(this).attr("name");
+            alert(name_AppealBox);
+            $(".dialog_box[name='"+name_AppealBox+"']").show(0);
+            return false;
+        });
+        $('.dialog_close').click(function(){
+            $(this).parent().parent().hide();
+        });
+            $(".icon_personBtn_add").click(function(){
+
+                var name_AppealBox =  $(this).attr("name");
+                //alert(name_AppealBox);
+                $(".dialog_box[name='"+name_AppealBox+"']").show(0);
+                return false;
+            });
+    });
+</script>
+</body>
+</html>

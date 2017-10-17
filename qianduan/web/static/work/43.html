@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工作-工作汇报</title>
+    <link rel="stylesheet" href="static/work/css/work_common.css">
+    <link rel="stylesheet" href="static/work/css/work_report.css">
+    <link rel="stylesheet" href="static/work/css/work_sp.css">
+</head>
+<body>
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>我的工作汇报</h2>
+    <div class="right" style="width: 194px;">
+        <div style="position: relative;display: inline-block;">
+            <button class="but_blue sp_setting">写工作汇报</button>
+            <ul class="slider_head_more_list sp_setting_list" style="top: 47px; right: 5px; display: none;">
+                <li class="work_report_Exitdate val_dialog" name="work_wdgzhb_date">写日报</li>
+                <li class="work_report_Exitdate val_dialog" name="work_wdgzhb_week">写周报</li>
+                <li class="work_report_Exitdate val_dialog" name="work_wdgzhb_month">写月报</li>
+                <li class="work_report_Exitdate val_dialog" name="work_wdgzhb_yeji">写业绩</li>
+            </ul>
+        </div>
+        <div class="res" title="点击刷新"></div>
+    </div>
+</div>
+<!--第二行-->
+<div class="contenthead con_header_1">
+    <div class="left">
+        <ul class="tabtitle">
+            <li name="report_all" class="taba tabhover">全部</li>
+            <li name="report_all" class="taba zj_ribao_btn">日报</li>
+            <li name="report_all" class="taba zj_zhoubao_btn">周报</li>
+            <li name="report_all" class="taba zj_yuebao_btn">月报</li>
+            <li name="report_all" class="taba zj_yeji_btn">业绩</li>
+        </ul>
+    </div>
+    <!--<div class="t_textinput left" style="width: 340px;margin-left: 30px;">-->
+        <!--<div class="t_left">选择日期</div>-->
+        <!--<div class="t_right" style="margin-left: 18%;">-->
+                   <!--<input id="time_input1" onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期..." class="laydate-icon time_input" readonly="readonly" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" style="cursor: pointer;">-->
+                <!--</div>-->
+    <!--</div>-->
+</div>
+<!--第三行-->
+<div class="work_report_Con sbar tabcontent">
+    <div name="report_all" class="tabcontent zcj_all_paper_list" style="padding: 0;">
+        <div class="work_report_exitBox work_report_date work_wdgzhb_title select tabcontent">
+            <div class="zcj_paper_list">
+                <div class="work_report_head">
+                    <h3> <i class="left but_yellow"></i>日报 <span>10月11日</span></h3>
+                    <div class="work_report_headBtn">
+                        <button class="but_small val_dialog but_exit" name="work_wdgzhb_date">编辑</button>
+                        <button class="but_small but_r val_diglog" name="work_wdgzhb_imglist">删除</button>
+                    </div>
+                </div>
+                <div class="work_report_det">
+                    <div class="work_report_detHead clearfix">
+                        <span class="left"></span>
+                        <div class="work_report_personMsg left">
+                            <p>张三</p>
+                            <p>5分钟前</p>
+                        </div>
+                    </div>
+                    <div class="work_report_detCon work_report_detCon_p">
+                        <h3 class="cont_title">今日工作总结</h3>
+                        <p>
+                            1.到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争
+                        </p>
+                        <p>
+                            2.专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它
+                        </p>
+                        <h3 class="cont_title">明日工作总结</h3>
+                        <p>
+                            1.到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争
+                        </p>
+                        <p>
+                            2.专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它
+                        </p>
+                    </div>
+
+                    <div class="work_report_upload" style="margin:0 20px;">
+                        <img src="static/work/images/report.png" alt="工作计划" class="val_dialog" name="work_wdgzhb_prv" style="border-radius: 3px;">
+                        <div class="right_sidebar_cont3" style="border-radius: 3px;margin: 14px 0 0 0 ;">
+                            <div>
+                                <img src="static/images/work_fujian.png" style="margin-top: -5px;padding-right: 10px;">
+                                <span style="color: #000;">附件:454542424.pdf <span style="color: #CCCCCC;margin-left: 5px;">(2.30M)</span></span>
+                                    <span style="float: right;">
+                                    <a href="#" class="m_right_20">下载</a>
+                                    <a href="#" name="work_wdgzhb_imglist" class="val_dialog">预览</a>
+                                    </span>
+                            </div>
+                        </div>
+                        <!--<div class="work_report_uploadMsg clearfix">-->
+                        <!--<em class="work_report_uploadMsg_icon"></em>-->
+                        <!--<div>-->
+                        <!--<p>附件:687236487265.pdf<span>(2.30M)</span></p>-->
+                        <!--<em class="f_color">下载</em>-->
+                        <!--<em class="f_color val_dialog" name="gzhb_prv">预览</em>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="work_report_comment" style="margin:0 20px;">
+                        <div class="work_report_commentBtn" >
+                            <button class="but_small but_cancel right work_report_Comment" name="work_wdgzhb_report_Comment1">评论 <i>(1)</i></button>
+                            <button class="but_small but_cancel right work_report_Visitor but_exit" name="work_wdgzhb_report_Comment1">谁看过 <i>(1)</i></button>
+                        </div>
+                        <div class="work_report_commentConBox">
+                            <!--评论-->
+                            <div class="work_report_commentCon" name="work_wdgzhb_report_Comment1" style="display: none;">
+                                <em class="work_report_comment_icon"></em>
+                                <label class="inp_box clearfix">
+                                    <input type="text" class="work_report_commentInp left" value="写评论" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                    <button class="work_report_commentBut but_blue">发送</button>
+                                </label>
+                                <ul class="work_report_comment_listBox">
+                                    <li>
+                                        <div class="work_report_detHead clearfix">
+                                            <span class="left"></span>
+                                            <div class="work_report_ComtpersonMsg left">
+                                                <p>
+                                                    <em>木易</em>
+                                                    <em class="time">2016-10-11 17:00</em>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <ul class="work_report_comment_list">
+                                            <li>好的，知道了
+                                                <em>
+                                                    删除
+                                                </em>
+                                            </li>
+                                            <li>好的，知道了
+                                                <em>
+                                                    删除
+                                                </em>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--谁看过-->
+                            <div class="work_report_commentCon" name="work_wdgzhb_report_Comment1" style="display: none">
+                                <em class="work_report_comment_icon work_report_comment_icon2"></em>
+                                <ul class="box_adderCon clearfix">
+                                    <li>
+                                        <em class="icon_personBtn icon_personBtn_msg"></em>
+                                        <p class="box_adderName">张三</p>
+                                    </li>
+                                    <li>
+                                        <em class="icon_personBtn icon_personBtn_msg"></em>
+                                        <em class="icon_adderBtn"></em>
+                                        <p class="box_adderName">李四</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="work_report_exitBox work_report_week work_wdgzhb_title select tabcontent">
+            <div class="zcj_weekly_list">
+                <div class="work_report_head">
+                    <h3> <i class="left but_green"></i>周报 <span>10月5日(一期)</span></h3>
+                    <div class="work_report_headBtn">
+                        <button class="but_small val_dialog but_exit" name="work_wdgzhb_week">编辑</button>
+                        <button class="but_small but_r val_diglog" name="work_wdgzhb_imglist">删除</button>
+                    </div>
+                </div>
+                <div class="work_report_det">
+                    <div class="work_report_detHead clearfix">
+                        <span class="left"></span>
+                        <div class="work_report_personMsg left">
+                            <p>张三</p>
+                            <p>5分钟前</p>
+                        </div>
+                    </div>
+                    <div class="work_report_upload" style="margin:0 20px;">
+                        <p class="work_gz_p">专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它</p>
+                        <img src="static/work/images/report.png" alt="工作计划" class="val_dialog" name="work_wdgzhb_prv" style="border-radius: 3px;">
+                        <div class="right_sidebar_cont3" style="border-radius: 3px;margin: 14px 0 0 0 ;">
+                            <div>
+                                <img src="static/images/work_fujian.png" style="margin-top: -5px;padding-right: 10px;">
+                                <span style="color: #000;">附件:454542424.pdf <span style="color: #CCCCCC;margin-left: 5px;">(2.30M)</span></span>
+                                    <span style="float: right;">
+                                    <a href="#" class="m_right_20">下载</a>
+                                    <a href="#" name="work_wdgzhb_imglist" class="val_dialog">预览</a>
+                                    </span>
+                            </div>
+                        </div>
+                        <!--<div class="work_report_uploadMsg clearfix">-->
+                        <!--<em class="work_report_uploadMsg_icon"></em>-->
+                        <!--<div>-->
+                        <!--<p>附件:687236487265.pdf<span>(2.30M)</span></p>-->
+                        <!--<em class="f_color">下载</em>-->
+                        <!--<em class="f_color val_dialog" name="gzhb_prv">预览</em>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="work_report_comment" style="margin:0 20px;">
+                        <div class="work_report_commentBtn" >
+                            <button class="but_small but_cancel right work_report_Comment" name="work_wdgzhb_report_Comment2">评论 <i>(1)</i></button>
+                            <button class="but_small but_cancel right work_report_Visitor but_exit" name="work_wdgzhb_report_Comment2">谁看过 <i>(1)</i></button>
+                        </div>
+                        <div class="work_report_commentConBox">
+                            <!--评论-->
+                            <div class="work_report_commentCon" name="work_wdgzhb_report_Comment2" style="display: none;">
+                                <em class="work_report_comment_icon"></em>
+                                <label class="inp_box clearfix">
+                                    <input type="text" class="work_report_commentInp left" value="写评论" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                    <button class="work_report_commentBut but_blue">发送</button>
+                                </label>
+                                <ul class="work_report_comment_listBox">
+                                    <li>
+                                        <div class="work_report_detHead clearfix">
+                                            <span class="left"></span>
+                                            <div class="work_report_ComtpersonMsg left">
+                                                <p>
+                                                    <em>木易</em>
+                                                    <em class="time">2016-10-11 17:00</em>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <ul class="work_report_comment_list">
+                                            <li>好的，知道了
+                                                <em>
+                                                    删除
+                                                </em>
+                                            </li>
+                                            <li>好的，知道了
+                                                <em>
+                                                    删除
+                                                </em>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--谁看过-->
+                            <div class="work_report_commentCon" name="work_wdgzhb_report_Comment2" style="display: none">
+                                <em class="work_report_comment_icon work_report_comment_icon2"></em>
+                                <ul class="box_adderCon clearfix">
+                                    <li>
+                                        <em class="icon_personBtn icon_personBtn_msg"></em>
+                                        <p class="box_adderName">张三</p>
+                                    </li>
+                                    <li>
+                                        <em class="icon_personBtn icon_personBtn_msg"></em>
+                                        <em class="icon_adderBtn"></em>
+                                        <p class="box_adderName">李四</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="work_report_exitBox work_report_month work_wdgzhb_title select tabcontent">
+            <div class="zcj_monthly_list">
+                <div class="work_report_head">
+                    <h3> <i class="left" style="background: #58c9f3;"></i>月报 <span>10月</span></h3>
+                    <div class="work_report_headBtn">
+                        <button class="but_small val_dialog but_exit" name="work_wdgzhb_month">编辑</button>
+                        <button class="but_small but_r work_delete">删除</button>
+                    </div>
+                </div>
+                <div class="work_report_det">
+                    <div class="work_report_detHead clearfix">
+                        <span class="left"></span>
+                        <div class="work_report_personMsg left">
+                            <p>张三</p>
+                            <p>5分钟前</p>
+                        </div>
+                    </div>
+                    <div class="work_report_upload" style="margin:0 20px;">
+                        <p class="work_gz_p">专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它</p>
+                        <img src="static/work/images/report.png" alt="工作计划" class="val_dialog" name="work_wdgzhb_prv" style="border-radius: 3px;">
+                        <div class="right_sidebar_cont3" style="border-radius: 3px;margin: 14px 0 0 0 ;">
+                            <div>
+                                <img src="static/images/work_fujian.png" style="margin-top: -5px;padding-right: 10px;">
+                                <span style="color: #000;">附件:454542424.pdf <span style="color: #CCCCCC;margin-left: 5px;">(2.30M)</span></span>
+                                    <span style="float: right;">
+                                    <a href="#" class="m_right_20">下载</a>
+                                    <a href="#" name="work_wdgzhb_imglist" class="val_dialog">预览</a>
+                                    </span>
+                            </div>
+                        </div>
+                        <!--<div class="work_report_uploadMsg clearfix">-->
+                        <!--<em class="work_report_uploadMsg_icon"></em>-->
+                        <!--<div>-->
+                        <!--<p>附件:687236487265.pdf<span>(2.30M)</span></p>-->
+                        <!--<em class="f_color">下载</em>-->
+                        <!--<em class="f_color val_dialog" name="gzhb_prv">预览</em>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="work_report_comment" style="margin:0 20px;">
+                        <div class="work_report_commentBtn" >
+                            <button class="but_small but_cancel right work_report_Comment" name="work_wdgzhb_report_Comment3">评论 <i>(1)</i></button>
+                            <button class="but_small but_cancel right work_report_Visitor but_exit" name="work_wdgzhb_report_Comment3">谁看过 <i>(1)</i></button>
+                        </div>
+                        <div class="work_report_commentConBox">
+                            <!--评论-->
+                            <div class="work_report_commentCon" name="work_wdgzhb_report_Comment3" style="display: none;">
+                                <em class="work_report_comment_icon"></em>
+                                <label class="inp_box clearfix">
+                                    <input type="text" class="work_report_commentInp left" value="写评论" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                    <button class="work_report_commentBut but_blue">发送</button>
+                                </label>
+                                <ul class="work_report_comment_listBox">
+                                    <li>
+                                        <div class="work_report_detHead clearfix">
+                                            <span class="left"></span>
+                                            <div class="work_report_ComtpersonMsg left">
+                                                <p>
+                                                    <em>木易</em>
+                                                    <em class="time">2016-10-11 17:00</em>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <ul class="work_report_comment_list">
+                                            <li>好的，知道了
+                                                <em>
+                                                    删除
+                                                </em>
+                                            </li>
+                                            <li>好的，知道了
+                                                <em>
+                                                    删除
+                                                </em>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--谁看过-->
+                            <div class="work_report_commentCon" name="work_wdgzhb_report_Comment3" style="display: none">
+                                <em class="work_report_comment_icon work_report_comment_icon2"></em>
+                                <ul class="box_adderCon clearfix">
+                                    <li>
+                                        <em class="icon_personBtn icon_personBtn_msg"></em>
+                                        <p class="box_adderName">张三</p>
+                                    </li>
+                                    <li>
+                                        <em class="icon_personBtn icon_personBtn_msg"></em>
+                                        <em class="icon_adderBtn"></em>
+                                        <p class="box_adderName">李四</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="work_report_exitBox work_report_results select tabcontent work_wdgzhb_title">
+            <div class="zcj_performance_list">
+                <div class="work_report_head">
+                    <h3> <i class="left but_red"></i>业绩 <span>10月</span></h3>
+                    <div class="work_report_headBtn">
+                        <button class="but_small val_dialog but_exit" name="work_wdgzhb_yeji">编辑</button>
+                        <button class="but_small but_r work_delete">删除</button>
+                    </div>
+                </div>
+                <div class="work_report_det">
+                    <div class="work_report_detHead clearfix">
+                        <span class="left"></span>
+                        <div class="work_report_personMsg left">
+                            <p>张三</p>
+                            <p>29天前</p>
+                        </div>
+                    </div>
+                    <div class="work_report_detCon work_report_detCon_p">
+                        <h3 class="cont_title">今日营业额</h3>
+                        <p class="f_red">
+                            200000元
+                        </p>
+                        <h3 class="cont_title">今日客户数</h3>
+                        <p class="f_color">
+                            26人
+                        </p>
+                        <h3 class="cont_title">业绩总结</h3>
+                        <p>
+                            到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争对手易趣而成为中国第一大C2C电子商务网站，作为广告专业的我们，有 副本到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争对手易趣而成为中国第到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争对手易趣而成为中国第一大C2C电子商务网站，作为广告专业的我们，有 副本到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争对手易趣而成为中国第
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="work_report_exitBox work_report_date work_wdgzhb_title tabcontent zcj_paper_list" name="report_all">
+        <div>
+            <div class="work_report_head">
+                <h3> <i class="left but_yellow"></i>日报 <span>10月11日</span></h3>
+                <div class="work_report_headBtn">
+                    <button class="but_small val_dialog but_exit" name="work_wdgzhb_date">编辑</button>
+                    <button class="but_small but_r val_diglog" name="work_wdgzhb_imglist">删除</button>
+                </div>
+            </div>
+            <div class="work_report_det">
+                <div class="work_report_detHead clearfix">
+                    <span class="left"></span>
+                    <div class="work_report_personMsg left">
+                        <p>张三</p>
+                        <p>5分钟前</p>
+                    </div>
+                </div>
+                <div class="work_report_detCon work_report_detCon_p">
+                    <h3 class="cont_title">今日工作总结</h3>
+                    <p>
+                        1.到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争
+                    </p>
+                    <p>
+                        2.专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它
+                    </p>
+                    <h3 class="cont_title">明日工作总结</h3>
+                    <p>
+                        1.到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争
+                    </p>
+                    <p>
+                        2.专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它
+                    </p>
+                </div>
+
+                <div class="work_report_upload" style="margin:0 20px;">
+                    <img src="static/work/images/report.png" alt="工作计划" class="val_dialog" name="work_wdgzhb_prv" style="border-radius: 3px;">
+                    <div class="right_sidebar_cont3" style="border-radius: 3px;margin: 14px 0 0 0 ;">
+                        <div>
+                            <img src="static/images/work_fujian.png" style="margin-top: -5px;padding-right: 10px;">
+                            <span style="color: #000;">附件:454542424.pdf <span style="color: #CCCCCC;margin-left: 5px;">(2.30M)</span></span>
+                                    <span style="float: right;">
+                                    <a href="#" class="m_right_20">下载</a>
+                                    <a href="#" name="work_wdgzhb_imglist" class="val_dialog">预览</a>
+                                    </span>
+                        </div>
+                    </div>
+                    <!--<div class="work_report_uploadMsg clearfix">-->
+                    <!--<em class="work_report_uploadMsg_icon"></em>-->
+                    <!--<div>-->
+                    <!--<p>附件:687236487265.pdf<span>(2.30M)</span></p>-->
+                    <!--<em class="f_color">下载</em>-->
+                    <!--<em class="f_color val_dialog" name="gzhb_prv">预览</em>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="work_report_comment" style="margin:0 20px;">
+                    <div class="work_report_commentBtn" >
+                        <button class="but_small but_cancel right work_report_Comment" name="work_wdgzhb_report_Comment4">评论 <i>(1)</i></button>
+                        <button class="but_small but_cancel right work_report_Visitor but_exit" name="work_wdgzhb_report_Comment4">谁看过 <i>(1)</i></button>
+                    </div>
+                    <div class="work_report_commentConBox">
+                        <!--评论-->
+                        <div class="work_report_commentCon" name="work_wdgzhb_report_Comment4" style="display: none;">
+                            <em class="work_report_comment_icon"></em>
+                            <label class="inp_box clearfix">
+                                <input type="text" class="work_report_commentInp left" value="写评论" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                <button class="work_report_commentBut but_blue">发送</button>
+                            </label>
+                            <ul class="work_report_comment_listBox">
+                                <li>
+                                    <div class="work_report_detHead clearfix">
+                                        <span class="left"></span>
+                                        <div class="work_report_ComtpersonMsg left">
+                                            <p>
+                                                <em>木易</em>
+                                                <em class="time">2016-10-11 17:00</em>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <ul class="work_report_comment_list">
+                                        <li>好的，知道了
+                                            <em>
+                                                删除
+                                            </em>
+                                        </li>
+                                        <li>好的，知道了
+                                            <em>
+                                                删除
+                                            </em>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--谁看过-->
+                        <div class="work_report_commentCon" name="work_wdgzhb_report_Comment4" style="display: none">
+                            <em class="work_report_comment_icon work_report_comment_icon2"></em>
+                            <ul class="box_adderCon clearfix">
+                                <li>
+                                    <em class="icon_personBtn icon_personBtn_msg"></em>
+                                    <p class="box_adderName">张三</p>
+                                </li>
+                                <li>
+                                    <em class="icon_personBtn icon_personBtn_msg"></em>
+                                    <em class="icon_adderBtn"></em>
+                                    <p class="box_adderName">李四</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="work_report_exitBox work_report_week work_wdgzhb_title tabcontent zcj_weekly_list" name="report_all">
+        <div>
+            <div class="work_report_head">
+                <h3> <i class="left but_green"></i>周报 <span>10月5日(一期)</span></h3>
+                <div class="work_report_headBtn">
+                    <button class="but_small val_dialog but_exit" name="work_wdgzhb_week">编辑</button>
+                    <button class="but_small but_r val_diglog" name="work_wdgzhb_imglist">删除</button>
+                </div>
+            </div>
+            <div class="work_report_det">
+                <div class="work_report_detHead clearfix">
+                    <span class="left"></span>
+                    <div class="work_report_personMsg left">
+                        <p>张三</p>
+                        <p>5分钟前</p>
+                    </div>
+                </div>
+                <div class="work_report_upload" style="margin:0 20px;">
+                    <p class="work_gz_p">专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它</p>
+                    <img src="static/work/images/report.png" alt="工作计划" class="val_dialog" name="work_wdgzhb_prv" style="border-radius: 3px;">
+                    <div class="right_sidebar_cont3" style="border-radius: 3px;margin: 14px 0 0 0 ;">
+                        <div>
+                            <img src="static/images/work_fujian.png" style="margin-top: -5px;padding-right: 10px;">
+                            <span style="color: #000;">附件:454542424.pdf <span style="color: #CCCCCC;margin-left: 5px;">(2.30M)</span></span>
+                                    <span style="float: right;">
+                                    <a href="#" class="m_right_20">下载</a>
+                                   <a href="#" name="work_wdgzhb_imglist" class="val_dialog">预览</a>
+                                    </span>
+                        </div>
+                    </div>
+                    <!--<div class="work_report_uploadMsg clearfix">-->
+                    <!--<em class="work_report_uploadMsg_icon"></em>-->
+                    <!--<div>-->
+                    <!--<p>附件:687236487265.pdf<span>(2.30M)</span></p>-->
+                    <!--<em class="f_color">下载</em>-->
+                    <!--<em class="f_color val_dialog" name="gzhb_prv">预览</em>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="work_report_comment" style="margin:0 20px;">
+                    <div class="work_report_commentBtn" >
+                        <button class="but_small but_cancel right work_report_Comment" name="work_wdgzhb_report_Comment5">评论 <i>(1)</i></button>
+                        <button class="but_small but_cancel right work_report_Visitor but_exit" name="work_wdgzhb_report_Comment5">谁看过 <i>(1)</i></button>
+                    </div>
+                    <div class="work_report_commentConBox">
+                        <!--评论-->
+                        <div class="work_report_commentCon" name="work_wdgzhb_report_Comment5" style="display: none;">
+                            <em class="work_report_comment_icon"></em>
+                            <label class="inp_box clearfix">
+                                <input type="text" class="work_report_commentInp left" value="写评论" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                <button class="work_report_commentBut but_blue">发送</button>
+                            </label>
+                            <ul class="work_report_comment_listBox">
+                                <li>
+                                    <div class="work_report_detHead clearfix">
+                                        <span class="left"></span>
+                                        <div class="work_report_ComtpersonMsg left">
+                                            <p>
+                                                <em>木易</em>
+                                                <em class="time">2016-10-11 17:00</em>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <ul class="work_report_comment_list">
+                                        <li>好的，知道了
+                                            <em>
+                                                删除
+                                            </em>
+                                        </li>
+                                        <li>好的，知道了
+                                            <em>
+                                                删除
+                                            </em>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--谁看过-->
+                        <div class="work_report_commentCon" name="work_wdgzhb_report_Comment5" style="display: none">
+                            <em class="work_report_comment_icon work_report_comment_icon2"></em>
+                            <ul class="box_adderCon clearfix">
+                                <li>
+                                    <em class="icon_personBtn icon_personBtn_msg"></em>
+                                    <p class="box_adderName">张三</p>
+                                </li>
+                                <li>
+                                    <em class="icon_personBtn icon_personBtn_msg"></em>
+                                    <em class="icon_adderBtn"></em>
+                                    <p class="box_adderName">李四</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="work_report_exitBox work_report_month work_wdgzhb_title tabcontent zcj_monthly_list" name="report_all">
+        <div>
+            <div class="work_report_head">
+                <h3> <i class="left" style="background: #58c9f3;"></i>月报 <span>10月</span></h3>
+                <div class="work_report_headBtn">
+                    <button class="but_small val_dialog but_exit" name="work_wdgzhb_month">编辑</button>
+                    <button class="but_small but_r val_diglog" name="work_wdgzhb_imglist">删除</button>
+                </div>
+            </div>
+            <div class="work_report_det">
+                <div class="work_report_detHead clearfix">
+                    <span class="left"></span>
+                    <div class="work_report_personMsg left">
+                        <p>张三</p>
+                        <p>5分钟前</p>
+                    </div>
+                </div>
+                <div class="work_report_upload" style="margin:0 20px;">
+                    <p class="work_gz_p">专业的我们，有必要思考和学习淘宝网的成功策略，以及发现它</p>
+                    <img src="static/work/images/report.png" alt="工作计划" class="val_dialog" name="work_wdgzhb_prv" style="border-radius: 3px;">
+                    <div class="right_sidebar_cont3" style="border-radius: 3px;margin: 14px 0 0 0 ;">
+                        <div>
+                            <img src="static/images/work_fujian.png" style="margin-top: -5px;padding-right: 10px;">
+                            <span style="color: #000;">附件:454542424.pdf <span style="color: #CCCCCC;margin-left: 5px;">(2.30M)</span></span>
+                                    <span style="float: right;">
+                                    <a href="#" class="m_right_20">下载</a>
+                                    <a href="#" name="work_wdgzhb_imglist" class="val_dialog">预览</a>
+                                    </span>
+                        </div>
+                    </div>
+                    <!--<div class="work_report_uploadMsg clearfix">-->
+                    <!--<em class="work_report_uploadMsg_icon"></em>-->
+                    <!--<div>-->
+                    <!--<p>附件:687236487265.pdf<span>(2.30M)</span></p>-->
+                    <!--<em class="f_color">下载</em>-->
+                    <!--<em class="f_color val_dialog" name="gzhb_prv">预览</em>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="work_report_comment" style="margin:0 20px;">
+                    <div class="work_report_commentBtn" >
+                        <button class="but_small but_cancel right work_report_Comment" name="work_wdgzhb_report_Comment6">评论 <i>(1)</i></button>
+                        <button class="but_small but_cancel right work_report_Visitor but_exit" name="work_wdgzhb_report_Comment6">谁看过 <i>(1)</i></button>
+                    </div>
+                    <div class="work_report_commentConBox">
+                        <!--评论-->
+                        <div class="work_report_commentCon" name="work_wdgzhb_report_Comment6" style="display: none;">
+                            <em class="work_report_comment_icon"></em>
+                            <label class="inp_box clearfix">
+                                <input type="text" class="work_report_commentInp left" value="写评论" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                <button class="work_report_commentBut but_blue">发送</button>
+                            </label>
+                            <ul class="work_report_comment_listBox">
+                                <li>
+                                    <div class="work_report_detHead clearfix">
+                                        <span class="left"></span>
+                                        <div class="work_report_ComtpersonMsg left">
+                                            <p>
+                                                <em>木易</em>
+                                                <em class="time">2016-10-11 17:00</em>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <ul class="work_report_comment_list">
+                                        <li>好的，知道了
+                                            <em>
+                                                删除
+                                            </em>
+                                        </li>
+                                        <li>好的，知道了
+                                            <em>
+                                                删除
+                                            </em>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--谁看过-->
+                        <div class="work_report_commentCon" name="work_wdgzhb_report_Comment6" style="display: none">
+                            <em class="work_report_comment_icon work_report_comment_icon2"></em>
+                            <ul class="box_adderCon clearfix">
+                                <li>
+                                    <em class="icon_personBtn icon_personBtn_msg"></em>
+                                    <p class="box_adderName">张三</p>
+                                </li>
+                                <li>
+                                    <em class="icon_personBtn icon_personBtn_msg"></em>
+                                    <em class="icon_adderBtn"></em>
+                                    <p class="box_adderName">李四</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="work_report_exitBox work_report_results tabcontent work_wdgzhb_title zcj_performance_list" name="report_all">
+        <div>
+            <div class="work_report_head">
+                <h3> <i class="left but_red"></i>业绩 <span>10月</span></h3>
+                <div class="work_report_headBtn">
+                    <button class="but_small but_exit val_dialog" name="work_wdgzhb_yeji">编辑</button>
+                    <button class="but_small but_r val_diglog" name="work_wdgzhb_imglist">删除</button>
+                </div>
+            </div>
+            <div class="work_report_det">
+                <div class="work_report_detHead clearfix">
+                    <span class="left"></span>
+                    <div class="work_report_personMsg left">
+                        <p>张三</p>
+                        <p>29天前</p>
+                    </div>
+                </div>
+                <div class="work_report_detCon work_report_detCon_p">
+                    <h3 class="cont_title">今日营业额</h3>
+                    <p class="f_red">
+                        200000元
+                    </p>
+                    <h3 class="cont_title">今日客户数</h3>
+                    <p class="f_color">
+                        26人
+                    </p>
+                    <h3 class="cont_title">业绩总结</h3>
+                    <p>
+                        到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争对手易趣而成为中国第一大C2C电子商务网站，作为广告专业的我们，有 副本到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争对手易趣而成为中国第到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争对手易趣而成为中国第一大C2C电子商务网站，作为广告专业的我们，有 副本到底是什么原因能让淘宝网在这么短的时间内就超越优势明显的竞争对手易趣而成为中国第
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--预览内容-->
+<div class="dialog">
+    <div class="dialog_box" name="work_wdgzhb_prv">
+        <div class="dialog_screen" ></div>
+        <img src="static/work/images/report.png" alt="工作计划" class="dialog_content">
+    </div>
+</div>
+
+<!--弹窗-写日报-->
+<div class="dialog">
+    <div class="dialog_box" name="work_wdgzhb_date">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 600px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">写日报</h3>
+            </div>
+            <div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>选择日期</div>
+                    <div class="t_right"><input type="date" class="time_input" value="选择日期" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="inp_time"></i>
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea">
+                    <div class="t_left"><i class="c_r">*</i>今日工作总结</div>
+                    <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">输入今日工作总结</textarea></div>
+                </div>
+                <div class="t_textinput t_textarea">
+                    <div class="t_left"><i class="c_r">*</i>明日工作计划</div>
+                    <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">输入明日工作计划</textarea></div>
+                </div>
+                <div class="text_input">
+                    <div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+                    <div class="text_ininput" style="width:80%">
+                        <ul class="img_warp">
+                            <cite><input class="addimg hide_input" type="file" name=""/><span class="icon-add"></span></cite>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input_rightBtn text_input work_fqsp_tjfj">
+                    <div class="text_intext work_fujian" style="width: 15%;margin-left: -5px;">
+                        <i class="v_hidden">*</i>
+                        <span>添加附件</span>
+                    </div>
+                    <div style="position: absolute;left: 79px;top:0;width:85%;">
+                        <div class="rightinput_box work_rw_input">
+                            <input type="text" class="time_input" value="输入附件名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" id="work_wdgzsp_field_rb">
+                            <i class="work_sp_base_delete"></i>
+                        </div>
+                        <div class="text_ininput" style="position:relative;">
+                            <button class="filea but_icon">
+                                <i></i>添加附件
+                                <input type="file" onchange="document.getElementById('work_wdgzsp_field_rb').value=this.value"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>汇报人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_wdgzhb_hbr"></em>
+                        </li>
+                    </ul>
+                </label>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_wdgzhb_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+            </div>
+            <div class="dialog_submit">
+                <button class="normal_dialog but_blue">确定</button><button class="normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+    </div>
+<!--弹窗-写周报-->
+<div class="dialog">
+    <div class="dialog_box" name="work_wdgzhb_week">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 600px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">写周报</h3>
+            </div>
+            <div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+            	<div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>开始日期</div>
+                    <div class="t_right">
+                        <input class="time_input laydate-icon" value="起始日期" onclick="laydate(zb_start)" onfocus="fn_focus(this);" onblur="fn_blura(this);" id="zb_start" readonly="readonly" style="cursor: pointer;" >
+                        <i class="inp_time"></i>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>结束日期</div>
+                    <div class="t_right">
+                        <input class="time_input laydate-icon" value="结束日期" onclick="laydate(zb_end)" onfocus="fn_focus(this);" onblur="fn_blura(this);" id="zb_end" readonly="readonly" style="cursor: pointer;" >
+                        <i class="inp_time"></i>
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea">
+                    <div class="t_left"><i class="c_r">*</i>内容</div>
+                    <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">请输入内容</textarea></div>
+                </div>
+                <div class="text_input">
+                    <div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+                    <div class="text_ininput" style="width:80%">
+                        <ul class="img_warp">
+                            <cite><input class="addimg hide_input" type="file" name=""/><span class="icon-add"></span></cite>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input_rightBtn text_input work_fqsp_tjfj">
+                    <div class="text_intext work_fujian" style="width: 15%;margin-left: -5px;">
+                        <i class="v_hidden">*</i>
+                        <span>添加附件</span>
+                    </div>
+                    <div style="position: absolute;left: 79px;top:0;width:85%;">
+                        <div class="rightinput_box work_rw_input">
+                            <input type="text" class="time_input" value="输入附件名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" id="work_wdgzsp_field_zb">
+                            <i class="work_sp_base_delete"></i>
+                        </div>
+                        <div class="text_ininput" style="position:relative;">
+                            <button class="filea but_icon">
+                                <i></i>添加附件
+                                <input type="file" onchange="document.getElementById('work_wdgzsp_field_zb').value=this.value"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>汇报人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_wdgzhb_hbr"></em>
+                        </li>
+                    </ul>
+                </label>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_wdgzhb_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+            </div>
+            <div class="dialog_submit">
+                <button class="normal_dialog but_blue">确定</button><button class="normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-写月报-->
+<div class="dialog">
+    <div class="dialog_box" name="work_wdgzhb_month">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 600px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">写月报</h3>
+            </div>
+            <div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>选择日期</div>
+                    <div class="t_right"><input type="date" class="time_input" value="请选择截止日期" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="inp_time"></i>
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea">
+                    <div class="t_left"><i class="c_r">*</i>内容</div>
+                    <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">请输入内容</textarea></div>
+                </div>
+                <div class="text_input">
+                    <div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+                    <div class="text_ininput" style="width:80%">
+                        <ul class="img_warp">
+                            <cite><input class="addimg hide_input" type="file" name=""/><span class="icon-add"></span></cite>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input_rightBtn text_input work_fqsp_tjfj">
+                    <div class="text_intext work_fujian" style="width: 15%;margin-left: -5px;">
+                        <i class="v_hidden">*</i>
+                        <span>添加附件</span>
+                    </div>
+                    <div style="position: absolute;left: 79px;top:0;width:85%;">
+                        <div class="rightinput_box work_rw_input">
+                            <input type="text" class="time_input" value="输入附件名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" id="work_wdgzsp_field_yb">
+                            <i class="work_sp_base_delete"></i>
+                        </div>
+                        <div class="text_ininput" style="position:relative;">
+                            <button class="filea but_icon">
+                                <i></i>添加附件
+                                <input type="file" onchange="document.getElementById('work_wdgzsp_field_yb').value=this.value"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>汇报人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_wdgzhb_hbr"></em>
+                        </li>
+                    </ul>
+                </label>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_wdgzhb_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+            </div>
+            <div class="dialog_submit">
+                <button class="normal_dialog but_blue">确定</button><button class="normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-写业绩-->
+<div class="dialog">
+    <div class="dialog_box work_report_ConExit" name="work_wdgzhb_yeji">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height: 600px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">写业绩</h3>
+            </div>
+            <div class="dialog_text sbar work_sp_dialog_text" style="height: 76%;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>选择日期</div>
+                    <div class="t_right"><input type="text" class="time_input" value="请选择截止日期" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="inp_time"></i>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>今日营业额</div>
+                    <div class="t_right"><input type="text" class="time_input inp_96" value="今日营业额" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="unit">元</i>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left t_left_conrow"><i class="c_r">*</i>今日客户数</div>
+                    <div class="t_right"><input type="text" class="time_input inp_96" value="今日客户数" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="unit">人</i>
+                    </div>
+                </div>
+                <div class="t_textinput t_textarea">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>内容</div>
+                    <div class="t_right"><textarea class="txt_normal" onfocus="fn_focus(this);" onblur="fn_blur(this);" style="color: rgb(204, 204, 204);">请输入内容</textarea></div>
+                </div>
+                <div class="text_input">
+                    <div class="text_intext" style="width:15%;color:#333;"><i class="c_r v_hidden">*</i><span>添加图片</span></div>
+                    <div class="text_ininput" style="width:80%">
+                        <ul class="img_warp">
+                            <cite><input class="addimg hide_input" type="file" name=""/><span class="icon-add"></span></cite>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input_rightBtn text_input work_fqsp_tjfj">
+                    <div class="text_intext work_fujian" style="width: 15%;margin-left: -5px;">
+                        <i class="v_hidden">*</i>
+                        <span>添加附件</span>
+                    </div>
+                    <div style="position: absolute;left: 79px;top:0;width:85%;">
+                        <div class="rightinput_box work_rw_input">
+                            <input type="text" class="time_input" value="输入附件名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" id="work_wdgzsp_field_yj">
+                            <i class="work_sp_base_delete"></i>
+                        </div>
+                        <div class="text_ininput" style="position:relative;">
+                            <button class="filea but_icon">
+                                <i></i>添加附件
+                                <input type="file" onchange="document.getElementById('work_wdgzsp_field_yj').value=this.value"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>汇报人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+                            <p class="box_addermsg">步骤一</p>
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_wdgzhb_hbr"></em>
+                        </li>
+                    </ul>
+                </label>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_wdgzhb_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+            </div>
+            <div class="dialog_submit">
+                <button class="normal_dialog but_blue">确定</button><button class="normal_dialog">取消</button>
+            </div>
+        </div>
+    </div>
+    </div>
+<!--汇报人结构-->
+<div class="dialog">
+    <div class="dialog_box" name="work_wdgzhb_hbr">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择汇报人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left">
+                    <div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input" value="搜索成员/部门/手机等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i></div>
+                    </div>
+                    <div class="list_box_con">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ul"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span><span class="list_check"><em></em></span></li>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">思思</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list">
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--抄送人结构-->
+<div class="dialog">
+    <div class="dialog_box" name="work_wdgzhb_csr">
+        <div class="dialog_screen"></div>
+
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择抄送人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left">
+                    <div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input" value="搜索成员/部门/手机等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i></div>
+                    </div>
+                    <div class="list_box_con">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ul"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span><span class="list_check"><em></em></span></li>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">思思</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list">
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--图片弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="work_wdgzhb_imglist">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 242px;height: 180px;">
+            <span><i class="work_dialog_close dialog_close" style="z-index: 111;">关闭</i></span>
+            <img src="static/work/images/report.png" alt="工作计划" class="dialog_content">
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        //工作汇报
+        $(".sp_setting").live("click",function () {
+            $(this).next(".slider_head_more_list").show();
+        });
+        $(".sp_setting_list").live("mouseleave",function () {
+            $(this).hide();
+        });
+        $(".slider_head_more").live("click",function () {
+            $(this).next(".slider_head_more_list").show();
+        });
+
+
+        $(".work_report_leaderBtn>em").click(function () {
+            $(this).next(".work_report_leaderBtn>ul").show();
+        });
+        $(".work_report_leaderBtn>ul>li").click(function () {
+            $(this).parent().hide();
+        });
+        //评论选项卡小三角
+        $(".work_report_commentBtn button").click(function () {
+            var i = $(".work_report_commentBtn button").index(this)%2;
+            if( i == 0){
+                $(".work_report_comment_icon").css("right","36px");
+            }else{
+                $(".work_report_comment_icon").css("right","124px");
+            }
+        });
+        //评论选项卡
+        $(".work_report_commentBtn button").live("click",function () {
+            var index = $(this).index();
+            var name_x = $(this).attr("name");
+            // alert(name_x);
+            $(".work_report_commentCon[name='"+name_x+"']").eq(index).fadeIn(100).siblings(".work_report_commentCon[name='"+name_x+"']").hide();
+        });
+        //添加附件
+        $(".work_sp_base_delete").live("click",function () {
+            $(this).prev().val("");
+        });
+
+
+        //未完全解决
+        //删除按钮效果
+        $(".work_delete").live("click",function(){
+            $(this).parent().parent().parent().parent().hide();
+            $(this).parent().parent().parent().remove();
+
+        });
+    });
+    var zb_start = {
+			elem: '#zb_start',
+			format: 'YYYY-MM-DD',
+			min: laydate.now(), //设定最小日期为当前日期
+			max: '2099-06-16', //最大日期
+			istime: true,
+			istoday: true,
+			choose: function(datas) {
+				zb_end.min = datas; //开始日选好后，重置结束日的最小日期
+				zb_end.start = datas; //将结束日的初始值设定为开始日
+
+			}
+		};
+		var zb_end = {
+			elem: '#zb_end',
+			format: 'YYYY-MM-DD',
+			min: laydate.now(),
+			max: '2099-06-16',
+			istime: true,
+			istoday: true,
+			choose: function(datas) {
+				zb_start.max = datas; //结束日选好后，充值开始日的最大日期
+			}
+		};
+</script>
+</body>
+<script src="js/work/43.js"></script>
+</html>

@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工作-抄送我的</title>
+    <link rel="stylesheet" href="static/work/css/work_sp.css">
+    <script src="js/work/download.js"></script>
+</head>
+<body>
+	<div class="finance_content">
+		<div class="lik_content_max_height_box">
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>抄送我的</h2>
+    <div class="right" style="width: 77px;">
+        <div class="res wk_cswd_djsx_btn_xxl" title="点击刷新"></div>
+    </div>
+</div>
+
+<!--第二行-->
+<div class="con_m_box sbar" style="padding-left: 25px;padding-right: 22px;">
+        <div class="con_right_head clearfix" style="border:none;">
+            <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input wk_cswd_ssvalue_xxl" value="搜索审批名称" onfocus="fn_focus(this);" onblur="fn_blur(this);" >
+                <button class="search_but but_blue wk_cswd_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+            </div>
+            <button class="but_small inline_block zkgjssBtn" name="work_dwsp_zkgjss">展开高级搜索</button>
+        </div>
+        <div class="container lik_table_wrap">
+            <div class="lik_table_max_height table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>审批名称</th>
+                        <th>审批内容</th>
+                        <th>审批类型</th>
+                        <th>发起人</th>
+                        <th class="order">发起时间</th>
+                        <th class="order">完成时间</th>
+                        <th>审批状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="zkgjss_cont" name="work_dwsp_zkgjss">
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="审批名称" readonly="true">
+                                <!--<i></i>
+                                <ul class="select_list cswd_spmc_list">
+                                   
+                                </ul>-->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block" value="审批内容" readonly="true">
+                                <!--<i></i>
+                                <ul class="select_list cswd_spnr_list">
+                                    
+                                </ul>-->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block cswd_spleix_valuexxl" value="审批类型">
+                                <i></i>
+                                <!-- //分类id(1请假,2出差,3外出,4报销,5借款,6付款,7,招聘,8离职,9转正,10,调薪,11,办公采购,12物品领用,13公章,14合同,15普通审批)-->
+                                <ul class="select_list cswd_splx_xxl">
+                                    <li typeid="1">请假</li>
+                                    <li typeid="2">出差</li>
+                                    <li typeid="3">外出</li>
+                                    <li typeid="4">报销</li>
+                                    <li typeid="5">借款</li>
+                                    <li typeid="6">付款</li>
+                                    <li typeid="7">招聘</li>
+                                    <li typeid="8">离职</li>
+                                    <li typeid="9">转正</li>
+                                    <li typeid="10">调薪</li>
+                                    <li typeid="11">办公采购</li>
+                                    <li typeid="12">物品领用</li>
+                                    <li typeid="13">公章</li>
+                                    <li typeid="14">合同</li>
+                                    <li typeid="15">普通审批</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p">
+                                <input type="text" class="select_input block cswd_faqir_valuexxl" value="发起人">
+                                <i></i>
+                                
+                                <ul class="select_list cswd_fqr">
+                                    <!--<li>值一</li>
+                                    <li>值二</li>
+                                    <li>值三</li>
+                                    <li>值四</li>-->
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                                <input type="text" class="select_input block" readonly="true">
+                            </div>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td>张三的请假</td>
+                        <td>
+                            <p>请假类型:事假</p>
+                            <p>开始时间:2016-10-12</p>
+                            <p>结束时间:2016-10-13</p>
+                            <p>请假天数:2天</p>
+                        </td>
+                        <td>请假</td>
+                        <td>全体成员</td>
+                        <td>2017-1-12</td>
+                        <td>2017-1-12</td>
+                        <td><span class="c_y">进行中</span></td>
+                        <td>
+                            <button class="but_mix but_look r_sidebar_btn but_look" name="work_cswd_ck">查看</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>张三的出差</td>
+                        <td>
+                            <p>出差地点:上海</p>
+                            <p>开始时间:2016-10-12</p>
+                            <p>结束时间:2016-10-13</p>
+                            <p>请假天数:2天</p>
+                            <p>出差事由：拜访客服</p>
+                        </td>
+                        <td>请假</td>
+                        <td>全体成员</td>
+                        <td>2017-1-12</td>
+                        <td>2017-1-12</td>
+                        <td><span class="c_r">未完成</span></td>
+                        <td>
+                            <button class="but_mix but_look r_sidebar_btn but_look" name="work_cswd_ck">查看</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>张三的报销</td>
+                        <td>
+                            <p>报销金额(元):100元</p>
+                            <p>报销类别:交通费</p>
+                            <p>费用明细:10号的交通费</p>
+                            <p>总报销金额(元):200元</p>
+                        </td>
+                        <td>请假</td>
+                        <td>全体成员</td>
+                        <td>2017-1-12</td>
+                        <td>2017-1-12</td>
+                        <td><span class="c_g">已完成</span></td>
+                        <td>
+                            <button class="but_mix but_look r_sidebar_btn but_look" name="work_cswd_ck">查看</button>
+                        </td>
+                    </tr>-->
+                    </tbody>
+                    <tbody id="cswd_listhtml_xxl"></tbody>
+                </table>
+                <div class="cswd_errhtml_xxl"></div>
+            </div>
+             <div class="handle">
+        <div class="fenye_box cswd_fy_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <ul class="select_list select_list_to_top">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+                <i></i>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+    </div>
+            
+        </div>
+        
+            <!--<div class="fenye_box cswd_fy_xxl">
+                  <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+            </div>-->
+           
+       
+    </div>
+	</div>
+</div>
+
+<!--右侧-查看-->
+<div class="right_sidebar_h"></div>
+<div class="right_sidebar Sideslip" name="work_cswd_ck">
+    <div class="right_sidebar_title">
+        <h2 style="display: inline-block;" class="wk_cswd_tit_xxl">张三的出差</h2>
+        <i class="slider_close work_slider_close"></i>
+    </div>
+    <div class="ht_d_r_t sbar" style="top:70px;">
+        <div class="work_right_sidebar_cont1">
+            <img class="inline_block tx wk_cswd_fqrtx_img_xxl" src="static/images/touxiang.png" style="width: 54px;height: 54px;">
+            <div class="right_txsm inline_block">
+                <span class="c_3 wk_cswd_fqrname_xxl" style="font-size: 14px;">张三（销售部）</span></br>
+                <span style="color:#23a2f3;">抄送我的</span>
+            </div>
+        </div>
+        <hr>
+        <div style="border-bottom: 6px solid #F7F7F7;" class="wk_cswd_mxlist_html_xxl">
+            <!--<div class="right_sidebar_cont3 work_right_sidebar_cont3">
+                <div class="work_fqrw_zrw_bt">
+                    <h3 class="inline_block cont_title">行程明细<span class="c_r">（1）</span></h3>
+                </div>
+            </div>
+            <div class="right_sidebar_cont3_1">
+                <p>出差地点：<span class="m_left_5" style="color: #000;">上海</span></p>
+                <p>开始时间：<span class="m_left_5" style="color: #000;">2016-10-12</span></p>
+                <p>结束时间：<span class="m_left_5" style="color: #000;">2016-10-13</span></p>
+            </div>
+            <div class="right_sidebar_cont3 work_right_sidebar_cont3">
+                <div class="work_fqrw_zrw_bt">
+                    <h3 class="inline_block cont_title">行程明细<span class="c_r">（2）</span></h3>
+                </div>
+            </div>
+            <div class="right_sidebar_cont3_1">
+                <p>出差地点：<span class="m_left_5" style="color: #000;">云南</span></p>
+                <p>开始时间：<span class="m_left_5" style="color: #000;">2016-10-12</span></p>
+                <p>结束时间：<span class="m_left_5" style="color: #000;">2016-10-13</span></p>
+            </div>-->
+        </div>
+        <div class="right_sidebar_cont3_1 wk_cswd_mctwo_html_xxl">
+            <!--<p>出差天数：<span class="m_left_5" style="color: #000;">3天</span></p>
+            <p>出差事由：<span class="m_left_5" style="color: #000;">拜访客户</span></p>
+            <p class="work_sp_tp">
+                <span>图片:</span>
+                <span class="c_3 m_left_5">
+                    <img class="inline_block val_dialog work_inlin_blockimg" name="work_cswd_img" src="static/images/task.png">
+                </span>
+            </p>-->
+        </div>
+        <hr>
+        <div class="work_spiliubox cswd_spyj_listxxl">
+            <!--<div class="work_spiliu">
+                <div class="work_spiliu_items">
+                    <div class="left" style="position: relative;">
+                        <img class="inline_block tx" src="static/images/touxiang.png">
+                        <cite class="b_b"></cite>
+                    </div>
+                    <div class="right auto_height">
+                        <img src="static/images/work_jiantou.png">
+                        <div class="sp_cont">
+                            <div><h3 class="c_3">张三</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                            <h3 class=" f_color">发起审批</h3>
+                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                        </div>
+                    </div>
+                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                </div>
+            </div>
+            <div class="work_spiliu">
+                <div class="work_spiliu_items">
+                    <div class="left" style="position: relative;">
+                        <img class="inline_block tx" src="static/images/touxiang.png">
+                        <cite class="b_h"></cite>
+                    </div>
+                    <div class="right auto_height">
+                        <img src="static/images/work_jiantou.png">
+                        <div class="sp_cont">
+                            <div><h3 class="c_3">我</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                            <h3>资料是否带齐</h3>
+                        </div>
+                    </div>
+                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                </div>
+            </div>
+            <div class="work_spiliu">
+                <div class="work_spiliu_items">
+                    <div class="left" style="position: relative;">
+                        <img class="inline_block tx" src="static/images/touxiang.png">
+                        <cite class="b_y"></cite>
+                    </div>
+                    <div class="right auto_height">
+                        <img src="static/images/work_jiantou.png">
+                        <div class="sp_cont">
+                            <div><h3 class="c_3">李四</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                            <h3 class="c_b" style="color:  #f8ac59;">进行中</h3>
+                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                        </div>
+                    </div>
+                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                </div>
+            </div>
+            <div class="work_spiliu">
+                <div class="work_spiliu_items">
+                    <div class="left" style="position: relative;">
+                        <img class="inline_block tx" src="static/images/touxiang.png">
+                        <cite class="b_g"></cite>
+                    </div>
+                    <div class="right auto_height">
+                        <img src="static/images/work_jiantou.png">
+                        <div class="sp_cont">
+                            <div><h3 class="c_3">李四</h3><span class="c_9 m_left_5">2017.01.25</span></div>
+                            <h3 class="c_b" style="color:  #f8ac59;">进行中</h3>
+                            <p class="c_3 work_sp_p">我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字我是一段挺长的文字</p>
+                        </div>
+                    </div>
+                    <div style="clear: both;height: 0;font-size: 1px;line-height: 0px;"></div>
+                </div>
+            </div>-->
+        </div>
+</div>
+
+
+<!--图片弹窗-->
+<div class="dialog">
+    <div class="dialog_box" name="work_cswd_img">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 399px;height: 267px;">
+            <span><i class="work_dialog_close dialog_close">关闭</i></span>
+            <img class="zsy_img cswd_bigimg_showxxl" src="">
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+	$('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+</script>
+<script src="js/work/40.js"></script>
+</html>

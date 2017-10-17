@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合同备案</title>
+    <link rel="stylesheet" href="static/bargain/css/bargain_muban.css">
+    <link rel="stylesheet" href="static/goods/goods.css">
+    <style>
+    	.ss_div_headxxl{display: inline-block;}
+    </style>
+</head>
+<body>
+<div class="finance_content">
+<div class="con_header contenthead">
+    <h2>合同备案</h2>
+    <div class="right" style="width:60px;">
+        <div class="res htban_dianjisx_btn_xxl" title="点击刷新"></div>
+    </div>
+</div>
+    <div class="finance_right">
+        <div class="con_header contenthead xxl_sshead_showtabdiv">
+	<div class="ss_div_headxxl">
+		<div class="cont_search inline_block"><input type="text" class="search_input htba_xsht_ssval_xxl" value="搜索合同编号/合同名称/客户名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+            <button class="search_but but_blue htba_xsht_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+        	</div>
+            <button class="but_cancel but_small inline_block zkgjssBtn" name="ht_htban_zkgjss">展开高级搜索</button>
+            <div class="inline_block" style="margin-left:30px;">
+                <input type="checkbox" class="htban_xsht_noshow_btn_xxl" thetype="1">不显示已作废
+            </div>
+	</div>
+	<div class="ss_div_headxxl" style="display: none;">
+		 <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input htban_cght_ssval_xxl" value="搜索合同编号/合同名称/供应商名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                <button class="search_but but_blue htban_cght_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+            </div>
+            <button class="but_cancel but_small inline_block zkgjssBtn" name="ht_htban_zkgjss">展开高级搜索</button>
+            <div class="inline_block" style="margin-left:30px;">
+                <input type="checkbox" class="htban_xsht_noshow_btn_xxl" thetype="2">不显示已作废
+            </div>
+	</div>
+	<div class="ss_div_headxxl" style="display: none;">
+        		 <div class="cont_search inline_block"><input type="text" class="search_input htban_yght_ssval_xxl" value="搜索合同编号/成员名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                <button class="search_but but_blue htban_yght_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+            </div>
+            <button class="but_cancel but_small inline_block zkgjssBtn" name="ht_htban_zkgjss">展开高级搜索</button>
+            <div class="inline_block" style="margin-left:30px;">
+                <input type="checkbox" class="htban_xsht_noshow_btn_xxl" thetype="3">不显示已作废
+            </div>
+        	</div>
+        	<div class="ss_div_headxxl" style="display: none;">
+        		<div class="cont_search inline_block hr_base_search"><input type="text" class="search_input htban_qtht_val_xxl" value="搜索合同编号/合同名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                <button class="search_but but_blue htban_qtht_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+            </div>
+            <button class="but_cancel but_small inline_block zkgjssBtn" name="ht_htban_zkgjss">展开高级搜索</button>
+            <div class="inline_block" style="margin-left:30px;">
+                <input type="checkbox" class="htban_xsht_noshow_btn_xxl" thetype="4">不显示已作废
+            </div>
+        	</div>
+
+</div>
+        <div class="con_right_head clearfix" style="border:none;">
+            <div class="muban_tabBox left ">
+                <ul class="tabtitle htmb_list htban_qiehuan_list_menu_xxl">
+                    <li name="bargain_ban" class="taba tabhover" thetype="1">销售合同</li>
+                    <li name="bargain_ban" class="taba" thetype="2">采购合同</li>
+                    <li name="bargain_ban" class="taba" thetype="3">员工合同</li>
+                    <li name="bargain_ban" class="taba" thetype="4">其他合同</li>
+                </ul>
+            </div>
+            <div class="htmb_ckxzxBox">
+               <div class="ss_div_headxxl">
+            <div class="cont_search inline_block"><input type="text" class="search_input htba_xsht_ssval_xxl" value="搜索合同编号/合同名称/客户名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                <button class="search_but but_blue htba_xsht_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+                </div>
+                <button class="but_cancel but_small inline_block zkgjssBtn" name="ht_htban_zkgjss">展开高级搜索</button>
+                <div class="inline_block" style="margin-left:30px;">
+                    <input type="checkbox" class="htban_xsht_noshow_btn_xxl" thetype="1">不显示已作废
+                </div>
+        </div>
+                <div class="right con_right_result right">
+                <p class="left">搜索结果: <span class=" f_color htban_list_mainnums_xxl">0</span>条</p>
+                <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="htmb_xzckx1">
+                    <i class="eyeIcon"></i>选择查看项</span>
+            </div>
+            </div>
+            <div class="htmb_ckxzxBox" style="display: none;">
+                <div class="ss_div_headxxl">
+                    <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input htban_cght_ssval_xxl" value="搜索合同编号/合同名称/供应商名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    <button class="search_but but_blue htban_cght_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+                </div>
+                <button class="but_cancel but_small inline_block zkgjssBtn" name="ht_htban_zkgjss">展开高级搜索</button>
+                <div class="inline_block" style="margin-left:30px;">
+                    <input type="checkbox" class="htban_xsht_noshow_btn_xxl" thetype="2">不显示已作废
+                </div>
+                </div>
+
+                <div class="right con_right_result right htmb_ckxzxBox" >
+                    <p class="left">搜索结果: <span class=" f_color htban_list_mainnums_xxl">3</span>条</p>
+                    <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="htmb_xzckx2">
+                        <i class="eyeIcon"></i>选择查看项</span>
+                </div>
+            </div>
+            <div class="htmb_ckxzxBox" style="display: none;">
+                <div class="ss_div_headxxl">
+                     <div class="cont_search inline_block"><input type="text" class="search_input htban_yght_ssval_xxl" value="搜索合同编号/成员名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    <button class="search_but but_blue htban_yght_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+                </div>
+                <button class="but_cancel but_small inline_block zkgjssBtn" name="ht_htban_zkgjss">展开高级搜索</button>
+                <div class="inline_block" style="margin-left:30px;">
+                    <input type="checkbox" class="htban_xsht_noshow_btn_xxl" thetype="3">不显示已作废
+                </div>
+                </div>
+
+                <div class="right con_right_result right" >
+                    <p class="left">搜索结果: <span class=" f_color htban_list_mainnums_xxl">3</span>条</p>
+                    <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="htmb_xzckx3">
+                    <i class="eyeIcon"></i>选择查看项</span>
+                </div>
+            </div>
+            <div class="htmb_ckxzxBox" style="display: none;">
+                <div class="ss_div_headxxl">
+                    <div class="cont_search inline_block hr_base_search"><input type="text" class="search_input htban_qtht_val_xxl" value="搜索合同编号/合同名称" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                    <button class="search_but but_blue htban_qtht_ssbtn_xxl" style="height: 30px;width: auto;">搜索</button>
+                </div>
+                <button class="but_cancel but_small inline_block zkgjssBtn" name="ht_htban_zkgjss">展开高级搜索</button>
+                <div class="inline_block" style="margin-left:30px;">
+                    <input type="checkbox" class="htban_xsht_noshow_btn_xxl" thetype="4">不显示已作废
+                </div>
+                </div>
+
+                <div class="right con_right_result right htmb_ckxzxBox" >
+                    <p class="left">搜索结果: <span class=" f_color htban_list_mainnums_xxl">3</span>条</p>
+                    <span class="btn_chooseItem ckx_btn but_cancel eyeIcon_eye" name="htmb_xzckx4">
+                        <i class="eyeIcon"></i>选择查看项</span>
+                </div>
+            </div>
+            <!--选择查看项-->
+            <div class="t-z-list ckx_cont" name="htmb_xzckx1" style="right:16px; line-height: 27px; top: 57px; display: none;">
+                <i class="ckx_icon_right"></i>
+                <!--<div class="b-j-p-x f_color">编辑排序</div>-->
+                <ul class="sbar muban_addkey_list crk_ckgl_dfpck" id="htban_xsht_xzckx_xzlist_xxl">
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">上传人</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">负责部门</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">负责人</p>
+                    </li>
+                </ul>
+                <!--  -->
+                <div class="bot-btn">
+                    <button class="but_small but_blue" id="htbann_xzckx_baocun_btn_xxl">保存</button>
+                    <button class="but_small but_cancal" id="htban_xzckx_hfmoren_btn_xxl">恢复默认</button>
+                </div>
+            </div>
+            <div class="t-z-list ckx_cont" name="htmb_xzckx2" style="right:16px; line-height: 27px; top: 57px; display: none;">
+                <i class="ckx_icon_right"></i>
+                <ul class="sbar muban_addkey_list crk_ckgl_dfpck" id="htban_cght_xzckx_xz_list_xxl">
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">上传人</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">负责部门</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">负责人</p>
+                    </li>
+                </ul>
+                <div class="bot-btn">
+                    <button class="but_small but_blue" id="htban_cght_xzckx_baocun_btnxxl">保存</button>
+                    <button class="but_small but_cancal" id="htban_cght_xzckx_huifmoren_btnxxl">恢复默认</button>
+                </div>
+            </div>
+            <div class="t-z-list ckx_cont" name="htmb_xzckx3" style="right: 16px; line-height: 27px; top: 57px; display: none;">
+                <i class="ckx_icon_right"></i>
+                <ul class="sbar muban_addkey_list" id="htban_yght_xzckx_xzlist_xxl">
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">上传人</p>
+                    </li>
+                </ul>
+                <div class="bot-btn">
+                    <button class="but_small but_blue" id="htban_xzckx_yght_baocun_btnxxl">保存</button>
+                    <button class="but_small but_cancal" id="htban_xzckx_yght_hfmoredn_btnxxl">恢复默认</button>
+                </div>
+            </div>
+            <div class="t-z-list ckx_cont" name="htmb_xzckx4" style="right:16px; line-height: 27px; top: 57px; display: none;">
+                <i class="ckx_icon_right"></i>
+                <ul class="sbar muban_addkey_list crk_ckgl_dfpck" id="htban_qtht_xzckx_xzlist_xxl">
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">上传人</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">负责部门</p>
+                    </li>
+                    <li class="l-li-b">
+                        <input type="checkbox">
+                        <p class="z-d-l">负责人</p>
+                    </li>
+                </ul>
+
+                <div class="bot-btn">
+                    <button class="but_small but_blue" id="htban_qtht_baocun_btn_xxl">保存</button>
+                    <button class="but_small but_cancal" id="htban_qtht_hfmoren_btn_xxl">恢复默认</button>
+                </div>
+            </div>
+            <div class="closeckx_cont" style="display: none;"></div>
+        </div>
+        <div class="tabcontent" name="bargain_ban" style="padding: 0;">
+            <div class="container lik_table_wrap">
+                <div class="table-container">
+                    <table id="htban_xsht_tabxzckx_xxl">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>合同编号</th>
+                    <th>合同名称</th>
+                    <th>合同类型</th>
+                    <!--<th>缩略图</th>-->
+                    <th>客户</th>
+                    <th class="order htban_xshtcjrq_paixu">创建日期 <i class="price_icon"></i></th>
+                    <th class="order htban_xshtscrq_paixu">上传日期<i class="price_icon"></i></th>
+                    <th>上传人</th>
+                    <th>负责部门</th>
+                    <th>负责人</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="zkgjss_cont" name="ht_htban_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_xsht_scrvalue_xxl" value="上传人">
+                            <i></i>
+                            <ul class="select_list htba_xsht_scrlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_xsht_fzbmvalue_xxl" value="负责部门">
+                            <i></i>
+                            <ul class="select_list htban_xsht_fzbmlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_xsht_fzrvalue_xxl" value="负责人">
+                            <i></i>
+                            <ul class="select_list htban_xsht_fzrlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                </tr>
+
+                <!--<tr>
+                    <td>01</td>
+                    <td>232323434343</td>
+                    <td>服务器采购</td>
+                    <td>销售合同</td>
+                    <td>
+                        <span class="cantact_img val_dialog" name="cantact_other_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span><span class="cantact_img val_dialog" name="cantact_other_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span></td>
+                    <td>今日头条</td>
+                    <td>2016-10-10</td>
+                    <td>2016-10-10</td>
+                    <td>张三</td>
+                    <td>销售A部</td>
+                    <td>李四</td>
+                    <td>
+                        <button class="but_mix but_look val_dialog ht_copy_lookBUT" name="ht_copy_look">查看</button>
+                        <button class="but_mix but_exit val_dialog" name="contact_copy_upload">上传</button>
+
+                    </td>
+                </tr>
+                <tr class="c_c"><td><span class="voidIcon">作废</span></td>
+                    <td>232323434343</td>
+                    <td>服务器采购</td>
+                    <td>销售合同</td>
+                    <td>
+                        <span class="cantact_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span><span class="cantact_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span></td>
+                    <td>今日头条</td>
+                    <td>2016-10-10</td>
+                    <td>2016-10-10</td>
+                    <td>张三</td>
+                    <td>销售A部</td>
+                    <td>李四</td>
+                    <td>
+                        <button class="but_mix but_grey1">查看</button>
+                        <button class="but_mix but_grey1">上传</button>
+                    </td></tr>-->
+                </tbody>
+                <tbody class="htba_list_html_xxl"></tbody>
+            </table>
+            <div class="htba_err_html_xxl"></div>
+                    <!--表格中没有数据的时候，显示此处内容(将类名none删除即可)，同时，对应分页隐藏-->
+                    <!--<div class="no_data_box none">
+                        <div class="no_data">
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>-->
+                </div>
+                <div class="handle">
+                <div class="fenye_box htba_fenye_xiaoshouht_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <!--<span class="page_box_last" style="line-height:15px;">...</span>-->
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+        </div>
+
+            </div>
+        </div>
+        <div class="tabcontent" name="bargain_ban" style="padding: 0;display: none">
+            <div class="container lik_table_wrap">
+                <div class="table-container">
+                    <table id="htban_cght_tabxzckx_xxl">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>合同编号</th>
+                    <th>合同名称</th>
+                    <th>合同类型</th>
+                    <!--<th>缩略图</th>-->
+                    <th>供货商</th>
+                    <th class="order htban_cght_cjrqpaixu_xxl">创建日期 <i class="price_icon"></i></th>
+                    <th class="order htban_cght_scrqpaixu_xxl">上传日期<i class="price_icon"></i></th>
+                    <th>上传人</th>
+                    <th>负责部门</th>
+                    <th>负责人</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="zkgjss_cont" name="ht_htban_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_cght_scrvalue_xxl" value="上传人">
+                            <i></i>
+                            <ul class="select_list htban_cght_scrlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_cght_fzbmvalue_xxl" value="负责部门">
+                            <i></i>
+                            <ul class="select_list htban_cght_fzbmlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_cght_fzrvalue_xxl" value="负责人">
+                            <i></i>
+                            <ul class="select_list htban_cght_fzrlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                </tr>
+                <!--<tr>
+                    <td>01</td>
+                    <td>232323434343</td>
+                    <td>服务器采购</td>
+                    <td>采购合同</td>
+                    <td>
+                        <span class="cantact_img val_dialog" name="cantact_other_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span><span class="cantact_img val_dialog" name="cantact_other_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span></td>
+                    <td>今日头条</td>
+                    <td>2016-10-10</td>
+                    <td>2016-10-10</td>
+                    <td>张三</td>
+                    <td>销售A部</td>
+                    <td>李四</td>
+                    <td>
+                        <button class="but_mix but_cancal val_dialog" name="ht_copy_look">查看</button>
+                        <button class="but_mix but_exit val_dialog" name="contact_copy_upload">上传</button>
+                    </td>
+                </tr>
+                 <tr class="c_c">
+                    <td><span class="voidIcon">作废</span></td>
+                    <td>232323434343</td>
+                    <td>服务器采购</td>
+                    <td>采购合同</td>
+                    <td>
+                        <span class="cantact_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span><span class="cantact_img ">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span></td>
+                    <td>今日头条</td>
+                    <td>2016-10-10</td>
+                    <td>2016-10-10</td>
+                    <td>张三</td>
+                    <td>销售A部</td>
+                    <td>李四</td>
+                    <td>
+                        <button class="but_mix but_grey1">查看</button>
+                        <button class="but_mix but_grey1">上传</button>
+                    </td>
+                </tr>-->
+                </tbody>
+                <tbody class="htba_list_html_xxl"></tbody>
+            </table>
+            <div class="htba_err_html_xxl"></div>
+                    <!--<div class="no_data_box none">
+                        <div class="no_data">
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>-->
+                </div>
+                <div class="handle">
+                	 <div class="fenye_box htba_fenye_caigouhetong_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <!--<span class="page_box_last" style="line-height:15px;">...</span>-->
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tabcontent" name="bargain_ban" style="padding: 0;display: none">
+            <div class="container lik_table_wrap">
+                <div class="table-container">
+                    <table id="htban_yght_tabxzckx_xxl">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>合同编号</th>
+                    <th>合同名称</th>
+                    <th>成员名称</th>
+                    <th>合同类型</th>
+                    <th>合同期限</th>
+                   <!-- <th>缩略图</th>-->
+                    <th class="order htban_yght_cjrqpaixu_xxl">创建日期 <i class="price_icon"></i></th>
+                    <th class="order htban_yght_scrqpaixu_xxl">上传日期<i class="price_icon"></i></th>
+                    <th>上传人</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="zkgjss_cont" name="ht_htban_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_yght_scrvalue_xxl" value="上传人">
+                            <i></i>
+                            <ul class="select_list htban_yght_scrlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                </tr>
+                <!--<tr>
+                    <td>01</td>
+                    <td>YHT131316546</td>
+                    <td>服务器采购</td>
+                    <td>张三</td>
+                    <td>员工合同</td>
+                    <td>2016.02.03-2017.02.03</td>
+                    <td>-</td>
+                    <td>2016-10-10</td>
+                    <td>2016-10-10</td>
+                    <td>李四</td>
+                    <td>
+                        <button class="but_mix but_look val_dialog" name="ht_copy_look">查看</button>
+                        <button class="but_mix but_exit val_dialog" name="contact_copy_upload">上传</button>
+
+                    </td>
+                </tr>
+                <tr class="c_c"><td><span class="voidIcon">作废</span></td>
+                    <td>YHT131316546</td>
+                    <td>服务器采购</td>
+                    <td>张三</td>
+                    <td>员工合同</td>
+                    <td>2016.02.03-2017.02.03</td>
+                    <td><span class="cantact_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span><span class="cantact_img ">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span></td>
+                    <td>2016-10-10</td>
+                    <td>2016-10-10</td>
+                    <td>李四</td>
+                    <td>
+                        <button class="but_mix but_grey1">查看</button>
+                        <button class="but_mix but_grey1">上传</button>
+
+                    </td></tr>-->
+                </tbody>
+                <tbody class="htba_list_html_xxl"></tbody>
+            </table>
+            <div class="htba_err_html_xxl"></div>
+                    <!--<div class="no_data_box none">
+                        <div class="no_data">
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>-->
+                </div>
+                <div class="handle">
+                	 <div class="fenye_box htba_fenye_yghtlist_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <!--<span class="page_box_last" style="line-height:15px;">...</span>-->
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tabcontent" name="bargain_ban" style="padding: 0;display: none">
+            <div class="container lik_table_wrap">
+                <div class="table-container">
+                    <table id="htban_qtht_xzckx_tab_xxl">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>合同编号</th>
+                    <th>合同名称</th>
+                    <th>合同类型</th>
+                   <!-- <th>缩略图</th>-->
+                    <th class="order htban_qtht_cjrqpaixu_xxl">创建日期 <i class="price_icon"></i></th>
+                    <th class="order htban_qtht_scrqpaixu_xxl">上传日期<i class="price_icon"></i></th>
+                    <th>上传人</th>
+                    <th>负责部门</th>
+                    <th>负责人</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="zkgjss_cont" name="ht_htban_zkgjss">
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_qtht_scrvalue_xxl" value="上传人">
+                            <i></i>
+                            <ul class="select_list htban_qtht_scrlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_qtht_fzbmvalue_xxl" value="负责部门">
+                            <i></i>
+                            <ul class="select_list htban_qtht_fzbmlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p">
+                            <input type="text" class="select_input block htban_qtht_fzrvalue_xxl" value="负责人">
+                            <i></i>
+                            <ul class="select_list htban_qtht_fzrlist_xxl">
+                                <!--<li>值一</li>
+                                <li>值二</li>
+                                <li>值三</li>
+                                <li>值四</li>-->
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="inline_block select_mormal select_p" style="background: #f5f5f5">
+                            <input type="text" class="select_input block" readonly="true" >
+                        </div>
+                    </td>
+                </tr>
+                <!--<tr>
+                    <td>01</td>
+                    <td>QHT131316546</td>
+                    <td>服务器采购</td>
+                    <td>其他合同</td>
+                    <td>
+                        <span class="cantact_img val_dialog" name="cantact_other_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span><span class="cantact_img val_dialog" name="cantact_other_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span></td>
+                    <td>2016-10-10</td>
+                    <td>2016-10-10</td>
+                    <td>张三</td>
+                    <td>销售A部</td>
+                    <td>李四</td>
+                    <td>
+                        <button class="but_mix but_look val_dialog" name="ht_copy_look">查看</button>
+                        <button class="but_mix but_exit val_dialog" name="contact_copy_upload">上传</button>
+
+                    </td>
+                </tr>
+                <tr class="c_c">
+                    <td><span class="voidIcon">作废</span></td>
+                    <td>QHT131316546</td>
+                    <td>服务器采购</td>
+                    <td>其他合同</td>
+                    <td>
+                        <span class="cantact_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span><span class="cantact_img">
+                            <img src="static/bargain/images/u28576.jpg" alt="合同图片">
+                            </span></td>
+                    <td>2016-10-10</td>
+                    <td>2016-10-10</td>
+                    <td>张三</td>
+                    <td>销售A部</td>
+                    <td>李四</td>
+                    <td>
+                        <button class="but_mix but_grey1">查看</button>
+                        <button class="but_mix but_grey1">上传</button>
+
+                    </td>
+                </tr>-->
+                </tbody>
+                <tbody class="htba_list_html_xxl"></tbody>
+            </table>
+                  <div class="htba_err_html_xxl"></div>
+                    <!--<div class="no_data_box none">
+                        <div class="no_data">
+                            <p class="c_9">抱歉，没有找到相关内容！</p>
+                        </div>
+                        <div class="no_data_bottom"></div>
+                    </div>-->
+                </div>
+                <div class="handle">
+                	 <div class="fenye_box htba_fenye_list_xxl">
+            <span>每页显示</span>
+            <div class="inline_block select_mormal">
+                <input type="text" class="select_input" value="10">
+                <i></i>
+                <ul class="select_list">
+                    <li>5</li>
+                    <li>10</li>
+                    <li>15</li>
+                    <li>20</li>
+                </ul>
+            </div>
+            <span>条数据</span>
+            <div class="fenye_btn first_page_valid"><span></span></div>
+            <div class="fenye_btn prev_page_valid"><span></span></div>
+            <span class="page_box on">1</span>
+            <span class="page_box">2</span>
+            <span class="page_box">3</span>
+            <span class="page_box">4</span>
+            <!--<span class="page_box_last" style="line-height:15px;">...</span>-->
+            <div class="fenye_btn next_page_valid"><span></span></div>
+            <div class="fenye_btn last_page_valid"><span></span></div>
+            <span>当前页面共<cite class="f_color mLR_5">9</cite>条数据</span>
+            <span class="m_left_10">共<cite class="f_color mLR_5">9</cite>页</span>
+        </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-上传合同-->
+<div class="dialog">
+    <div class="dialog_box" name="contact_copy_upload">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="min-height:290px;">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">上传合同电子版</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding: 5px 40px;position: relative;height: 68%">
+                <p class="upload_tishi">请将扫描合同的原件上传</p>
+                <div class="input_rightBtn" style="margin-top: 50px;">
+                    <p class="input_tishi_top">上传后可能需要等待一定时间，导入完成后将由消息通知你</p>
+                    <p class="upload_tishi" style="top: 10px;left: 14%;">添加合同备案图片（电子扫描图片）</p>
+                </div>
+
+                <div class="text_input" style="position: relative;margin-left:15%;">
+                    <div class="text_ininput" style="width:80%" style="margin-left:0;">
+                        <ul class="img_warp">
+                            <cite class="htban_shangchuan_imgshow_xxl"><input class="addimg hide_input" type="file" name="imgurl"><span class="icon-add"></span></cite>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+            	<!--contact_copy_uploadxq-->
+                <button class="but_blue but_small val_dialogTop htban_sc_queding_btnxxl" name="">上传</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-上传合同详情-->
+<div class="dialog">
+    <div class="dialog_box" name="contact_copy_uploadxq">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="min-height:290px;width: 550px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">上传合同电子版</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 68%;margin:0;">
+                <ul class="clearfix ht_htmb_list">
+                    <li><img src="static/images/ht_htba_img1.png" alt="合同">
+<div class="ht_htba_bar relative"><span style="width: 30%;"></span>
+
+</div><p class="ht_htba_barMSG">正在上传</p>
+                    </li>
+                    <li><img src="static/images/ht_htba_img1.png" alt="合同">
+                        <div class="ht_htba_bar relative"><span style="width: 0%;"></span>
+
+                        </div><p class="ht_htba_barMSG">等待上传</p>
+                    </li>
+                    <li><img src="static/images/ht_htba_img1.png" alt="合同">
+                        <div class="ht_htba_bar relative"><span style="width: 0%;"></span>
+
+                        </div><p class="ht_htba_barMSG">等待上传</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹窗-查看合同图片-->
+<div class="dialog">
+    <div class="dialog_box" name="ht_copy_look">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content image_box_a">
+            <div class="image_box">
+                <div class="image_box_slider_head">
+                    <i class=""></i>
+                </div>
+                <div class="image_box_content lik_img_auto_box">
+                    <img src="" alt="" class="image_box_content_img">
+                </div>
+                <div class="noprint goods_icon_pre"><i></i></div>
+                <div class="noprint goods_icon_nxt"><i></i></div>
+                <div class="icon_page noprint goods_icon_page">0/0</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<div class="dialog">-->
+    <!--<div class="dialog_box" name="ht_copy_look">-->
+        <!--<div class="dialog_screen"></div>-->
+        <!--&lt;!&ndash;id="ht_htba_print"&ndash;&gt;-->
+        <!--<div class="dialog_content dialog_content_3" style="width: 520px;height:600px;">-->
+                <!--<i class="dialog_close_but noprint">关闭</i>-->
+            <!--<div class="dialog_text sbar " style="padding: 5px 40px;background: #c4c4c4;margin:40px;position: relative">-->
+                <!--<div class="ht_htbanLOOK">-->
+                <!--<div class="icon_pre noprint" style="left:10px;display: none;"><i></i></div>-->
+                <!--<div class="icon_nxt noprint" style="right:10px;display: none;"><i></i></div>-->
+               <!--&lt;!&ndash;//<div class="ht_look_box">&ndash;&gt;-->
+                    <!--<ul class="ht_look_list htban_cktupian_html_xxl" id="ht_htba_print">-->
+                        <!--&lt;!&ndash;<li><img src="static/bargain/images/2229.png" alt=""></li>-->
+                        <!--<li><img src="static/bargain/images/3333.png" alt=""></li>-->
+                        <!--<li><img src="static/bargain/images/4449.png" alt=""></li>&ndash;&gt;-->
+                    <!--</ul>-->
+               <!--&lt;!&ndash; </div>&ndash;&gt;-->
+                <!--<div class="icon_page noprint"><span class="htban_imgluobo_danqiannumxxl">1</span>/<span class="htban_imgluobo_mainnumxxl">3</span></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="dialog_submit noprint">-->
+                <!--<button class="but_small but_grey_no but_print2" id="ht_htba_printBut"><i></i>打印</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--弹窗-缩略图详情-->
+<div class="dialog">
+    <div class="dialog_box" name="cantact_other_img">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content cantact_other_imgBox">
+            <i class="dialog_close_but">关闭</i>
+            <img src="static/bargain/images/u28576.jpg" alt="合同图片" class="htban_yulantupian_show_xxl">
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    $(function () {
+        $(".cantact_img").hover(function () {
+            $(this).children(".cantact_img_big").fadeIn();
+        },function () {
+            $(this).children(".cantact_img_big").hide();
+        });
+        //        打印
+        $("#ht_htba_printBut").live("click",function () {
+        	//$('.tanceng .htban_cktupian_html_xxl').css('width','100%').children().find('img').css('width','100%')
+            $("#ht_htba_print").jqprint({
+                importCSS: true,
+                printContainer: true,
+                operaSupport: false
+            });
+        });
+
+
+		var _width = $(window).width();
+
+        if(_width<1350){
+        	$('.htmb_ckxzxBox .ss_div_headxxl').hide();
+        	$('.xxl_sshead_showtabdiv').show().children('div').css('margin-left','-60px');
+        	$(".htmb_list li").live("click",function () {
+            var ckgl_index = $(this).index();
+            $(".xxl_sshead_showtabdiv").children(".ss_div_headxxl").eq(ckgl_index).show().siblings(".ss_div_headxxl").hide();
+            $(".xxl_sshead_showtabdiv").children(".ss_div_headxxl").eq(ckgl_index).children('.cont_search').css('width','290px')
+        });
+        }else{
+        	$('.htmb_ckxzxBox .ss_div_headxxl').show();
+        	$('.xxl_sshead_showtabdiv').hide();
+        	$(".htmb_list li").live("click",function () {
+            var ckgl_index = $(this).index();
+            $(this).parents(".con_right_head").children(".htmb_ckxzxBox").eq(ckgl_index).show().siblings(".htmb_ckxzxBox").hide();
+            if(ckgl_index == 1){
+                $(this).parents(".con_right_head").children(".htmb_bxsBox").show();
+            }else{
+                $(this).parents(".con_right_head").children(".htmb_bxsBox").hide();
+            }
+        });
+        }
+
+//      $('.tanceng .image_box_slider_head>i').live('click',function(){
+////            alert(111);
+//          $(this).closest('.dialog_box').remove();
+//          $(".tanceng").css('display','none');
+//      });
+//        轮播图（未完成）
+ // $(".ht_copy_lookBUT").live("click",function () {
+////        alert(111);
+//  var htLook_box = $(".tanceng .ht_htbanLOOK");//
+//    var oPrev=$(".tanceng .icon_pre");
+//    var oNext=$(".tanceng .icon_nxt");
+//      var oUl=htLook_box.children(".tanceng .ht_look_list");
+
+        //alert(oUl.children('li').eq(1).width())
+        //var aLi=oUl.children();
+//      /!*  alert(aLi.length);*!/
+//        /!*var aLi_first = $(oUl).children[0];*!/
+        //var n = 0;
+       // var timer =null;
+        //alert(aLi.eq(1).css("width"));
+      //alert(aLi.eq(1).width());
+//        alert(aLi.length);
+//      $(oUl).html($(oUl).html()+$(oUl).html());
+//      $(oUl).width(aLi.eq(0).width()*aLi.length);
+//      $(htLook_box).live("mouseover",function(){
+//          oPrev.css("display","block");
+//          oNext.css("display","block");
+//      });
+//      $(htLook_box).live("mouseout",function(){
+//          oPrev.css("display","none");
+//          oNext.css("display","none");
+//      });
+//
+//      function tab(){
+//          oUl.css("left",-n*aLi.eq(0).width());
+//          startmove(oUl,-n*aLi.eq(0).width());
+//
+//      }
+//
+//      oPrev.live("click",function () {
+////            alert(n);
+//          n--;
+//          tab();
+//          document.title=n;
+//      });
+//      oNext.live("click",function () {
+////            alert(n);
+//          n++;
+//          tab();
+//      });
+//      var left = 0;
+//      var w = oUl.css("width")/2;
+//      function startmove(obj,target){
+//          clearInterval(timer);
+//          var start = left;
+//          var dis = target-start;
+//          var count = Math.floor(500/30);
+//          var i = 0;
+//          timer=setInterval(function(){
+//              i++;
+//              var a = i/count;
+//              var cur = start+dis*a*a*a;
+//              left=cur;
+//              obj.css("left",(left%w-w)%w+'px');
+//              if(i==count){
+//                  clearInterval(timer)
+//              }
+//          },30);
+//      }
+     // });
+  });
+
+</script>
+</body>
+<script src="js/bargain/63.js"></script>
+</html>

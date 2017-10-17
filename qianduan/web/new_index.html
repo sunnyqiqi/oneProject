@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SoWork</title>
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/images/icon-sowork.png"/>
+    <link rel="stylesheet" type="text/css" href="static/common.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/fonts.css">
+    <link rel="stylesheet" href="static/css/print.css" media="print">
+    <script src="static/js/layui.js"></script>
+    <script src="static/js/layui.all.js"></script>
+    <link rel="stylesheet" href="static/css/layui.css">
+    <link rel="stylesheet" href="static/css/layui.mobile.css">
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="sbar sbarx">
+<!--个人中心-->
+<div class="Personal_con_screen none"></div>
+<div class="Personal_con none zcj_user_register_info_show">
+    <div class="user_msg_box clearfix">
+        <span class="user_picture left"></span>
+        <div class="user_name_con left">
+            <p class="userName c_3 zcj_person_name">张三 <span class="right c_9"><i></i><span
+                    class="zcj_person_post">销售经理</span></span></p>
+            <p class="user_depat zcj_person_depat">销售部</p>
+        </div>
+        <div class="user_change right">
+            <button class="but_small but_icon val_dialog zcj_amend_my_info_btn" name="user_change_msg">修改个人信息</button>
+            <br>
+            <button class="but_small but_icon val_dialog zcj_edit_amend_password" name="user_change_psd">修改密码</button>
+        </div>
+    </div>
+    <!--<ul class="user_integral_box clearfix">
+        <li>
+            <p class="user_integral_name">我的积分</p>
+            <span class="user_integral_num c_3 val_dialog zcj_person_integral" name="user_integr_total">100</span>
+        </li>
+        <li class="clearfix">
+            <i class="left"></i>
+            <p class="user_integral_name">当前任务</p>
+            <span class="user_integral_num c_3 zcj_person_task">3</span>
+            <i class="right"></i>
+        </li>
+        <li>
+            <p class="user_integral_name">个人统计项</p>
+            <span class="user_integral_num c_3 zcj_person_tj_num">100</span>
+        </li>
+    </ul>-->
+    <div class="user_exit_box">
+        <button class="but_red exit_btn" onclick="logout()" href="javascript:window.opener=null; window.close();">
+            <i></i>安全退出
+        </button>
+        <!--<button class="but_red exit_btn">-->
+        <!--<i></i>安全退出-->
+        <!--</button>-->
+    </div>
+</div>
+<!--消息通知-->
+<div class="Notice_con_screen"></div>
+<div class="Notice_con none">
+    <div class="Notice_con_box sbar">
+        <div class="Notice_con_msg Notice_con_msg_approval">
+            <h3 class="Notice_con_header">审批通知<span class="c_r">（<span class="Notice_con_msg_approval_total"></span>）</span></h3>
+            <ul class="Notice_con_detail">
+                <!--<li>
+                    <h4 class="Notice_con_detail_title">日常审批</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批事项</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">考勤处理</h4>
+                    <p class="c_c">您有<span class="c_r">1</span>条考勤处理</p>
+                    <p class="c_c">您有<span class="c_r">1</span>条考勤处理结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">销售报价单</h4>
+                    <p class="c_c">您有<span class="c_r">1</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">1</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">销售退换货</h4>
+                    <p class="c_c">您有<span class="c_r">1</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">1</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">销售合同</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">采购合同</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">员工合同</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">其他合同</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">采购报价单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">借入单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">借出单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条待审批</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条审批结果</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">核算工资处理</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>条核算工资待处理</p>
+                    <p class="c_c">您有<span class="c_r">4</span>条核算工资处理结果</p>
+                </li>-->
+            </ul>
+        </div>
+        <div class="Notice_con_msg Notice_con_msg_task">
+            <h3 class="Notice_con_header">任务通知<span class="c_r">（<span class="Notice_con_msg_task_total"></span>）</span></h3>
+            <ul class="Notice_con_detail">
+                <!--<li>
+                    <h4 class="Notice_con_detail_title">我发起的任务</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项任务执行</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">售后单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项售后待接收</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">售后单分配</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项售后待分配</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">入库管理</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项入库事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">分配入库单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>分配入库单</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">出库管理</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项出库事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">分配出库单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项出库单执行</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">客户应收欠款</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项客户应收欠款事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">客户应付退款</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项客户应付退款事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">供应商应付欠款</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项供应商应付欠款事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">供应商应收退款</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项供应商应收退款事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">物流费用</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项物流费用事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">客户应付欠票</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项客户应付欠票事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">客户应到退票</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项客户应到退票事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">供应商应到欠票</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项供应商应到欠票事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">供应商应付退票</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项供应商音符退票事项</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">物流发票</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项物流发票事项</p>
+                </li>-->
+            </ul>
+        </div>
+        <!--<div class="Notice_con_msg Notice_con_msg_copy">
+            <h3 class="Notice_con_header">抄送通知<span class="c_r">（<span class="Notice_con_msg_copy_total"></span>）</span></h3>
+            <ul class="Notice_con_detail">
+                <li>
+                    <h4 class="Notice_con_detail_title">日常审批</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">销售机会</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">销售订单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">销售合同</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">采购合同</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">员工合同</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">其他合同</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">采购订单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">借出单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">借入单</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">借出归还</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">借入归还</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">日常收支</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">应收客户欠款单</h4>
+                    <p class="c_c val_dialog" name="index_get_curstomer">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">应付客户退款单</h4>
+                    <p class="c_c val_dialog" name="index_pay_curstomer">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">应付供应商欠款单</h4>
+                    <p class="c_c val_dialog" name="index_pay_supply">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">应收供应商退款单</h4>
+                    <p class="c_c val_dialog" name="index_get_supply">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">抵销</h4>
+                    <p class="c_c val_dialog" name="index_dixiao">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">物流付款单</h4>
+                    <p class="c_c val_dialog" name="index_pay_wuliu">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">应付客户欠票单</h4>
+                    <p class="c_c val_dialog" name="index_payfor_customer">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">应收客户退票单</h4>
+                    <p class="c_c val_dialog" name="index_getby_customer">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">应到供应商欠票单</h4>
+                    <p class="c_c val_dialog" name="index_back_supply">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">应付供应商退票单</h4>
+                    <p class="c_c val_dialog" name="index_payfor_supply_back">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">物流收票单</h4>
+                    <p class="c_c val_dialog" name="index_get_wuliu">您有<span class="c_r">4</span>项抄送通知</p>
+                </li>
+            </ul>
+        </div>
+        <div class="Notice_con_msg Notice_con_msg_sys">
+            <h3 class="Notice_con_header">系统通知<span class="c_r">（<span class="Notice_con_msg_sys_total"></span>）</span></h3>
+            <ul class="Notice_con_detail">
+                <li>
+                    <h4 class="Notice_con_detail_title val_dialog" name="notice_add">添加新员工通知<i>1</i></h4>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title val_dialog" name="notice_ruzhi">入职通知<i>1</i></h4>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title val_dialog" name="notice_lizhi">离职通知<i>1</i></h4>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">执行任务结果通知</h4>
+                    <p class="c_c">您有<span class="c_r">1</span>项任务完成</p>
+                    <p class="c_c">您有<span class="c_r">1</span>笔即将在<span class="c_r">3</span>天后收款</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">售后单</h4>
+                    <p class="c_c">您有<span class="c_r">1</span>项售后完成</p>
+                    <p class="c_c">您有<span class="c_r">1</span>项售后分配给 <span>李丽</span></p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">商品调价通知</h4>
+                    <p class="c_c">有<span class="c_r">1</span>种商品调价</p>
+                    <p class="c_c">您有<span class="c_r">1</span>种套餐商品调价</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">入库通知</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项采购入库信息</p>
+                    <p class="c_c">您有<span class="c_r">4</span>项换货入库信息</p>
+                    <p class="c_c">您有<span class="c_r">4</span>项退货入库信息</p>
+                    <p class="c_c">您有<span class="c_r">4</span>项退货入库信息</p>
+                    <p class="c_c">您有<span class="c_r">4</span>项借入入库信息</p>
+                    <p class="c_c">您有<span class="c_r">4</span>项借出归还入库信息</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">出库通知</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>项销售入库信息</p>
+                    <p class="c_c">您有<span class="c_r">4</span>项换货入库信息</p>
+                    <p class="c_c">您有<span class="c_r">4</span>项借出入库信息</p>
+                    <p class="c_c">您有<span class="c_r">4</span>项借入归还入库信息</p>
+                </li>
+            </ul>
+        </div>
+        <div class="Notice_con_msg Notice_con_msg_wran">
+            <h3 class="Notice_con_header">预警消息<span class="c_r">（<span class="Notice_con_msg_wran_total"></span>）</span></h3>
+            <ul class="Notice_con_detail">
+                <li>
+                    <h4 class="Notice_con_detail_title">销售机会预警</h4>
+                    <p class="c_c">您有<span class="c_r">4</span>个阶段停留<span class="c_r">3</span>天未执行</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">客户应收欠款预警</h4>
+                    <p class="c_c">您有<span class="c_r">1</span>笔客户应收欠款超过回款日</p>
+                    <p class="c_c">您有<span class="c_r">1</span>笔即将在<span class="c_r">3</span>天后收款</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">发票预警</h4>
+                    <p class="c_c">您的纽沃德账目发票仅剩<span class="c_r">20</span>低于下限数量</p>
+                    <p class="c_c">预计使用票数已超出票数范围</p>
+                </li>
+                <li>
+                    <h4 class="Notice_con_detail_title">库存预警</h4>
+                    <p class="c_c">您有<span class="c_r">1</span>种商品库存低于下限</p>
+                    <p class="c_c">您有<span class="c_r">1</span>种商品超过上线</p>
+                </li>
+            </ul>
+        </div>-->
+    </div>
+</div>
+<div class="tanceng"></div>
+
+<!--系统头部-->
+<div id="top_header_box" class="header clearfix">
+    <h3 class="company_name">联创万通（北京）科技有限公司</h3>
+    <div class="msg_box right">
+        <div class="left notice_box">
+            <span class="notice"></span>
+            <span class="relative">通知 <i class="msg_num none"></i></span>
+        </div>
+        <div class="left Personal_box relative zcj_user_name_info">
+            <span class="Personal_img"></span>
+            <span class="user_name"><span class="zcj_user_name_show"></span><i class="right"></i></span>
+        </div>
+        <!--<div class="left">-->
+        <!--<span class="help"></span>-->
+        <!--<span class="relative">帮助</span>-->
+        <!--</div>-->
+        <div class="left" style="line-height: 56px;">
+            <!--<span class="help"></span>-->
+            <span class="relative new_guide">业务流程</span>
+        </div>
+    </div>
+</div>
+<!--主体部分外盒-->
+<div class="main_box">
+
+    <div id="left_list_box" class="left_list sbar sbary">
+        <!--<div class="left_search">
+            <input id="left_search" class="search" type="text" placeholder="功能搜索">
+            <span class="searchbtn"></span>
+        </div>-->
+        <!--左侧树形菜单-->
+
+        <div class="listbox" id="left_list">
+
+        </div>
+
+        <!--/左侧树形菜单-->
+    </div>
+
+    <!--内容窗口-->
+    <div class="content_box sbar">
+        <div class="content_box_in">
+            <!--选项卡标签-->
+            <div class="right_list_box">
+                <div id="right_title" class="headBox">
+                    <ul class="headlist clearfix">
+
+                    </ul>
+                    <div class="right_title_more">
+                        <span class="drop"></span>
+                        <ul class="droplist">
+                            <li id="Alldelete_title_index">关闭全部</li>
+                            <li id="oTdelete_title_index">关闭其他</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--数据内容-->
+            <div class="py_content_box">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改密码-->
+<div class="dialog">
+    <div class="dialog_box" name="user_change_psd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width: 450px;height: 280px;">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">修改密码</h3>
+            </div>
+            <div class="dialog_text sbar hr_mima">
+                <div class="t_textinput" style="margin-top: 20px;">
+                    <div class="t_left">
+                        <i class="c_r">*</i>原密码
+                    </div>
+                    <div class="t_right">
+                        <input type="password" class="time_input zcj_former_pass_word" onfocus="fn_focus(this);"
+                               onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>新密码</div>
+                    <div class="t_right">
+                        <input type="password" class="time_input zcj_mew_pass_word" onfocus="fn_focus(this);"
+                               onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>确认密码</div>
+                    <div class="t_right">
+                        <input type="password" class="time_input zcj_end_pass_word" onfocus="fn_focus(this);"
+                               onblur="fn_blur(this);" style="color: rgb(153, 153, 153);">
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_xg_edit_amend_end_btn">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改个人信息-->
+<div class="dialog">
+    <div class="dialog_box" name="user_change_msg">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6 zcj_check_look_my_info_xq">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">修改个人信息</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 88%;margin:0;padding: 0;">
+                <!--<div class="hr_add_tx">-->
+                <!--<div class="add_imgtx">-->
+                <!--<img class="inline_block tx add_tximgsrc zcj_look_icon" src="static/hr/images/touxiang.png">-->
+                <!--<button class="but_cancel but_look">点击上传头像</button>-->
+                <!--<input class="add_txBtn_sctx add_txBtn zcj_edit_xgtp_up_btn" type="file">-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="dialog_text_con">
+                    <h3 class="cont_title inline_block p_left_10">基本资料</h3>
+                    <div class="text_input">
+                        <div class="text_intext" style="width:13%;color:#333;">
+                            <i class="c_r v_hidden">*</i>
+                            <span style="margin-left: -5%;">头像</span>
+                        </div>
+                        <div class="text_ininput" style="width:80%">
+                            <div class="add_imgtx">
+                                <img class="inline_block tx add_tximgsrc zcj_look_icon"
+                                     src="static/hr/images/touxiang.png">
+                            </div>
+                            <div style="position: relative;">
+                                <button class="right but_cancel but_look hr_add_img_btn">上传头像</button>
+                                <input class="right add_txBtn_sctx add_txBtn zcj_edit_xgtp_up_btn hr_add_txBtn"
+                                       type="file" name="imgurl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>姓名</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_input_user_name"
+                                                    disabled="disabled" value="" onfocus="fn_focus(this);"
+                                                    onblur="fn_blur(this);"/></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>工号</div>
+                        <div class="t_right"><input type="text" class="time_input inp_noInput zcj_input_user_job"
+                                                    value="" readonly="readonly"/></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r v_hidden">*</i>性别</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="select_input inp_noInput zcj_input_user_sex"
+                                       readonly="readonly" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                <!--<i></i>
+                                <ul class="select_list sbar" style="display: none;">
+                                    <li>男</li>
+                                    <li>女</li>
+                                </ul>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>手机</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_input_user_mobile"
+                                                    disabled="disabled" value="" onfocus="fn_focus(this);"
+                                                    onblur="fn_blur(this);"/></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>部门</div>
+                        <div class="t_right">
+                            <input type="text" class="time_input zcj_input_user_depet" data-depetid=""
+                                   disabled="disabled" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                            <!-- <span class="inp_addBtn val_dialogTop zcj_select_depet_tc_add_btn" name="user_depet_choose"><b>+</b>选择部门</span>-->
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r">*</i>职位</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_input_user_post"
+                                                    disabled="disabled" value="" onfocus="fn_focus(this);"
+                                                    onblur="fn_blur(this);"/></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                        <div class="t_right"><input type="text" class="time_input zcj_input_user_mail"
+                                                    disabled="disabled" value="" onfocus="fn_focus(this);"
+                                                    onblur="fn_blur(this);"/></div>
+                    </div>
+                    <h3 class="cont_title inline_block p_left_10">详细资料</h3>
+                    <!-- <div class="t_textinput">
+                         <div class="t_left">毕业日期</div>
+                         <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zcj_input_user_by_time" readonly="readonly" onclick="laydate()" style="cursor: pointer;"></div>
+                     </div>
+                     <div class="t_textinput">
+                         <div class="t_left"><i class="c_r v_hidden">*</i>入职日期</div>
+                         <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value="请选择日期" class="laydate-icon time_input zcj_input_user_entry_time" readonly="readonly" onclick="laydate()" style="cursor: pointer;"></div>
+                     </div>-->
+                    <div class="t_textinput">
+                        <div class="t_left">学历</div>
+                        <div class="t_right"><input class="c_3 time_input zcj_edit_input_education" value=""
+                                                    onfocus="fn_focus(this);" onblur="fn_blura(this);"
+                                                    style="cursor: pointer;"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>民族</div>
+                        <div class="t_right"><input type="text" class="c_3 time_input zcj_input_user_nation"
+                                                    onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>籍贯</div>
+                        <div class="t_right"><input type="text" class="c_3 time_input zcj_input_user_native" value=""
+                                                    onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>身份证号</div>
+                        <div class="t_right"><input type="text" class="c_3 time_input zcj_input_user_card" value=""
+                                                    onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left">生日</div>
+                        <div class="t_right"><input onfocus="fn_focus(this);" onblur="fn_blura(this);" value=""
+                                                    class="c_3 laydate-icon time_input zcj_input_user_birthday"
+                                                    readonly="readonly" onclick="laydate()" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left "><i class="c_r v_hidden">*</i>婚姻状况</div>
+                        <div class="t_right">
+                            <div class="inline_block select_mormal select_100">
+                                <input type="text" class="c_3 select_input zcj_input_user_marry" value="">
+                                <i></i>
+                                <ul class="select_list sbar" style="display: none;">
+                                    <li>已婚</li>
+                                    <li>未婚</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>家庭住址</div>
+                        <div class="t_right"><input type="text" class="c_3 time_input zcj_input_user_address" value=""
+                                                    onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>紧急联系人</div>
+                        <div class="t_right"><input type="text" class="c_3 time_input zcj_input_user_urgency_man" value=""
+                                                    onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+                    </div>
+                    <div class="t_textinput">
+                        <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>紧急人联系电话</div>
+                        <div class="t_right"><input type="text" class="c_3 time_input zcj_input_user_urgency_phone" value=""
+                                                    onfocus="fn_focus(this);" onblur="fn_blur(this)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_input_user_save">保存</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择部门-->
+<div class="dialog">
+    <div class="dialog_box" name="user_depet_choose">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box">
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ulexit zcj_add_dept_tree_list_ul">
+                                <li class="left_all"><span class="icon_open"></span><span class="icon_file"></span><span
+                                        class="list_msg">所有部门(4)</span></li>
+                                <!-- <ul class="ul1" style="display: none;">
+                                     <li class="left_1 on"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em class="on"></em></span></li>
+                                     <ul class="ul3" style="display: block;">
+                                         <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部A</span></li>
+                                         <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部B</span></li>
+                                         <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部C</span></li>
+                                     </ul>
+                                 </ul>
+
+                                 <ul class="ul1" style="display: none;">
+                                     <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部(1)</span></li>
+                                     <ul class="ul3" style="display: none;">
+                                         <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部A</span></li>
+                                         <ul class="ul4" style="display: none;">
+                                             <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售A</span></li>
+                                         </ul>
+                                     </ul>
+                                 </ul>
+                                 <ul class="ul1" style="display: none;">
+                                     <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">后勤部(1)</span></li>
+                                     <ul class="ul3" style="display: none;">
+                                         <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">后勤</span></li>
+                                         <ul class="ul4" style="display: none;">
+                                             <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售A</span></li>
+                                         </ul>
+                                     </ul>
+                                 </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_end_xzbm_an_btn">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--历史积分-->
+<div class="dialog">
+    <div class="dialog_box" name="user_integr_total">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6" style="width:500px;">
+            <div class="dialog_title relative jifen_head">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">历史积分</h3>
+                <button class="but_blue but_small val_dialogTop" name="jifen_rule">积分规则</button>
+            </div>
+            <div class="dialog_text sbar" style="padding:20px;margin:0;height: 80%;">
+                <h2 class="jifen_name c_3">总积分</h2>
+                <p class="jifen_number c_r">100</p>
+                <div class="jifen_detail">
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">2017-03-20</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>完成执行的任务</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成执行的任务</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>全勤考勤</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成销售机会</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成1次客户拜访</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>审核通过1次采购订单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>处理完成1次售后单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">2017-03-19</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>按期回款</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>审核通过1次采购订单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成1次入库单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成1次出库单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成1次盘点</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_cancel but_small">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--积分规则-->
+<div class="dialog">
+    <div class="dialog_box" name="jifen_rule">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6" style="width:500px;">
+            <div class="dialog_title relative jifen_head">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">积分规则</h3>
+                <button class="but_blue but_small val_dialogTop" name="jifen_rule_setting">设置积分</button>
+            </div>
+            <div class="dialog_text sbar" style="padding:20px;margin:0;height: 80%;">
+                <div class="jifen_detail">
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">工作</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>完成执行的任务</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成执行的任务</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>全勤考勤</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">销售</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>完成销售机会</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成1次客户拜访</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>审核通过1次销售订单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>处理完成1次售后单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>按期回款</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">采购</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>审核通过1次采购订单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">出入库</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>完成1次入库单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成1次出库单</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        <tr>
+                            <td>完成1次盘点</td>
+                            <td class="c_g">+1</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_cancel but_small">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--设置积分-->
+<div class="dialog">
+    <div class="dialog_box" name="jifen_rule_setting">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_6" style="width:500px;">
+            <div class="dialog_title relative jifen_head">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">积分</h3>
+            </div>
+            <div class="dialog_text sbar" style="padding:20px;margin:0;height: 80%;">
+                <div class="jifen_detail">
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">工作</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>完成执行的任务</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>全勤考勤</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">销售</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>完成销售机会</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>完成1次客户拜访</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>处理完成1次销售订单</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>处理完成1次售后单</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>按期回款</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">采购</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>审核通过1次采购订单</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                        <th colspan="2" class="c_3">出入库</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>完成1次入库单</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>完成1次出库单</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>完成1次盘点</td>
+                            <td>
+                                <div class="t_textinput">
+                                    <div class="t_right"><input type="text" class="time_input" value=""
+                                                                onfocus="fn_focus(this);" onblur="fn_blur(this);"
+                                                                style="color: rgb(153, 153, 153);">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加新成员-->
+<div class="dialog">
+    <div class="dialog_box" name="notice_add">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">通知</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <!--<p class="p1">确定后将彻底删除，是否确定删除？</p>-->
+                <p class="notice_tip c_3">您已开通 <span class="f_color">“埃尔法公司”</span>系统账户，初始密码为 <span
+                        class="c_r">“123456”</span>。<span style="color:#30619e;">【仅自己可见】</span></p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu">删除</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--入职通知-->
+<div class="dialog">
+    <div class="dialog_box" name="notice_ruzhi">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">通知</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <!--<p class="p1">确定后将彻底删除，是否确定删除？</p>-->
+                <p class="notice_tip c_3">您办理入职，具体入职信息请前往 <span class="c_r">“办理入职”</span>查看。</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu">删除</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--离职通知-->
+<div class="dialog">
+    <div class="dialog_box" name="notice_lizhi">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">通知</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <!--<p class="p1">确定后将彻底删除，是否确定删除？</p>-->
+                <p class="notice_tip c_3" style="text-align: center">您已从<span class="f_color">“阿尔法公司”</span>系统账户退出。</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu">删除</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-删除-->
+<div class="dialog">
+    <div class="dialog_box" name="index_delete_sure">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title" style="z-index: 1;">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small">删除</button>
+                <button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹出层-加载中-->
+<div class="dialog">
+    <div class="dialog_box ajax_submit_loading_dialog_box" name="ajax_submit_img">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content" style="width:380px;height:300px;">
+            <div class="dialog_text" style="padding:0;margin:0;width:100%;height:100%;">
+                <img src="static/images/loading.gif" style="width:100%;height:100%;" alt="loading...">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="static/js/jquery-1.8.1.min.js"></script>
+<script src="static/js/ddsort.min.js"></script>
+<script src="static/js/likTool.js"></script>
+</html>
+<!--[if lt IE 10]>
+<script src="static/js/jquery-1.4.4.min.js"></script>
+<![endif]-->
+<script src="static/js/jquery.jqprint-0.3.js"></script>
+<!--文件上传-->
+<script src="static/js/jquery-upload2.js"></script>
+<script src="static/js/jquery.cookie.js"></script>
+<script src="list_left.js"></script>
+<script src="laydate/laydate.js"></script>
+<!--[if lt IE 9]>
+<script src="static/js/json2.js"></script>
+<![endif]-->
+<script>
+    var zoom=function(e){
+        var e = e || window.event;
+        if(e.wheelDelta && event.ctrlKey){
+            event.returnValue = false
+        }else if(e.detail){
+            event.returnValue = false;
+        }
+    }
+    if(document.addEventListener){
+        document.addEventListener('DOMMouseScroll' , zoom , false);
+    }
+    window.onmousewheel = document.onmousewheel = zoom;
+</script>
+<script type="text/javascript">
+    //选项卡更多项
+    $('.drop').click(function () {
+        $(this).nextAll().slideDown(300);
+    });
+    $('.drop').nextAll().mouseleave(function () {
+        $(this).slideUp(300);
+    });
+
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('#left_list p').each(function () {
+                if ($(this).text() == '供应商') {
+                    $(this).click();
+                }
+            });
+        }, 500)
+    });
+    laydate.skin('molv');
+    var loginUserInfo = JSON.parse(localStorage.getItem('user_info'));
+</script>
+<script src="static/js/SERVER_URL.js"></script>
+<script src="static/js/common.js"></script>
+<script src="static/js/index.js"></script>
+<script src="static/js/new_index.js"></script>

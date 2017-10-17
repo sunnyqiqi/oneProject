@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>采购设置</title>
+    <link rel="stylesheet" href="static/system/css/system.css">
+    <script src="static/system/js/112.js"></script>
+</head>
+<body>
+<div class="finance_content">
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>采购设置</h2>
+    <!--<div class="right">
+        <div class="res" title="点击刷新"></div>
+    </div>-->
+</div>
+<!--第二行-->
+<div class="system_right clearfix sbar" style="height: 92.5%;">
+    <div class="system_right_left left">
+        <p class="system_p">模板导航</p>
+        <hr>
+        <div class="system_tabJr">
+            <ul class="tabtitle system_tabUl">
+                <li class="taba tabhover" name="system_gnsz_cg" id="zcj_cg_set_gys_supplier_tab">供应商设置</li>
+                <!--<li class="taba" name="system_gnsz_cg" id="zcj_cg_set_gys_fl_tab">供应商分类</li>-->
+            </ul>
+        </div>
+    </div>
+    <!--弹窗-供货商设置-->
+    <!--<div class="dialog">
+        <div class="dialog_box" name="cg_gys_setghs">
+            <div class="dialog_screen"></div>
+            <div class="dialog_content pur_sup_setting_dialog" style="width: 484px;height:300px!important;max-height:80%;">
+                <div class="dialog_title">
+                    <i class="dialog_close">关闭</i>
+                    <h3 class="dialog_h3">供应商属性设置</h3>
+                </div>
+                <div class="dialog_text sbar" style="padding:0 60px;margin:0;height:84%;">
+                    <h2 class="cont_title m_top_15">新建供应商信息自定义字段</h2>
+                    <div class="pur_sup_setting_field_list pur_sup_setting_info_field_new_list">
+                        <div class="m_bottom_10" style="clear:both">
+                            <div class="t_textinput left" style="width: 75%;">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                                <div class="t_right clearfix">
+                                    <div class="inline_block select_mormal select_100 left">
+                                        <input type="text" class="select_input pur_sup_setting_info_field_new"
+                                               value="如QQ号"
+                                               onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cg_ghs_setul" style="width:20%">
+                                <button class="but_green page64_gysszAdd" style="margin-left:0;">+</button>
+                                <button class="but_red page31_khsxDelete" style="margin-left:0;">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="cont_title">供应商联系人信息</h2>
+                    <div class="pur_sup_setting_field_list pur_sup_setting_cont_field_new_list">
+                        <div class="m_bottom_10">
+                            <div class="t_textinput left" style="width: 75%;">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                                <div class="t_right clearfix">
+                                    <div class="inline_block select_mormal select_100 left">
+                                        <input type="text" class="select_input pur_sup_setting_info_field_new"
+                                               value="如QQ号"
+                                               onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cg_ghs_setul" style="width:20%">
+                                <button class="but_green page64_gysszAdd" style="margin-left:0;">+</button>
+                                <button class="but_red page31_khsxDelete" style="margin-left:0;">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog_submit">
+                    <button class="but_small but_blue pur_sup_setting_save_btn">确定</button>
+                    <button class="but_small but_cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="system_muban relative system_xzset" style="width: 78%;margin-top: 15px;">
+        <div class="tabcontent page_64_supplier_config_modal" name="system_gnsz_cg" style="padding: 0;">
+            <div class="system_sp_tabJr clearfix">
+                <p class="system_p">供应商设置</p>
+            </div>
+            <div class="system_work_mbdh clearfix system_gn_xsBox">
+                <h2 class="cont_title">新建供应商信息自定义字段</h2>
+               <!-- <div class="cg_ghs_setCon">
+                    <div class="box_Open">
+                        <p class="box_open_head f_color">
+                            查看已有字段
+                            <span class="box_open_btn" style="right:10px;">收起 <i class="right icon_show"></i></span>
+                        </p>
+                       &lt;!&ndash; <div class="box_open_list">
+                            <div class="t_textinput">
+                                <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>供应商名称</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                            </div>
+                            <div class="t_textinput">
+                                <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>供应商来源</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                            </div>
+                            <div class="t_textinput">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>公司电话</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="010-45625584" readonly="true" style="color: rgb(153, 153, 153);"></div>
+                            </div>
+                            <div class="t_textinput cg_addBox">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>地区</div>
+                                <div class="t_right clearfix">
+                                    <div class="inline_block select_mormal select_25 left">
+                                        <input type="text" class="select_input c_3 inp_noInput" readonly="true" value="">
+                                    </div>
+                                    <div class="inline_block select_mormal select_25 left">
+                                        <input type="text" class="select_input inp_noInput c_3" value="" readonly="true">
+                                    </div>
+                                    <div class="inline_block select_mormal select_25 left">
+                                        <input type="text" class="select_input c_3 inp_noInput" value="" readonly="true">
+                                    </div>
+                                    <div class="inline_block select_mormal select_25 left">
+                                        <input type="text" class="select_input inp_noInput c_3" value="" readonly="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="t_textinput">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>详细地址</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                            </div>
+                            <div class="t_textinput">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>初期欠款</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3 inp_96" value="" readonly="true"><i class="unit">元</i></div>
+                            </div>
+                            <div class="page_64_db_user_defined_supplier_fields cg_gys_64">
+                                &lt;!&ndash;<div class="t_textinput">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                                    <div class="t_right clearfix">
+                                        <input type="text" class="time_input inp_noInput" value="15332188" readonly="true">
+                                        <span class="t_right_span val_dialogTop cg_gys_delete" style="background:#ff6c60;">删除</span>
+                                    </div>
+                                </div>&ndash;&gt;
+                            </div>
+                        </div>&ndash;&gt;
+                    </div>
+                </div>-->
+                <div class="pur_sup_setting_field_list zj_page_user_defined_supplier_fields cg_gys_add" style="overflow: hidden;">
+                   <!-- <div class="m_bottom_10 clearfix">
+                        <div class="t_textinput left" style="width: 85%;">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                            <div class="t_right clearfix">
+                                <div class="inline_block select_mormal select_25 left">
+                                    <input type="text" class="select_input supplier_field" value="如QQ号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                </div>
+                                <div class="inline_block select_mormal select_75 right">
+                                    <input type="text" class="select_input inp_noInput" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cg_ghs_setul"><button class="but_green sys_xsset_butAdd">+</button><button class="but_red sys_xsset_butDelete">-</button></div>
+                    </div>-->
+                </div>
+
+                <h2 class="cont_title">供应商联系人信息</h2>
+               <!-- <div class="cg_ghs_setCon">
+                    <div class="box_Open">
+                        <p class="box_open_head f_color">
+                            查看已有字段
+                            <span class="box_open_btn" style="right:10px;">收起 <i class="right icon_show"></i></span>
+                        </p>
+                        <div class="box_open_list">
+                            <div class="t_textinput">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>联系人</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                            </div>
+                            <div class="t_textinput">
+                                <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>联系人电话</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                            </div>
+                            <div class="t_textinput">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>职务</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true" style="color: rgb(153, 153, 153);">
+                                </div>
+                            </div>
+
+                            <div class="t_textinput">
+                                <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                                <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true" style="color: rgb(153, 153, 153);"></div>
+                            </div>
+                            <div class="page_64_db_user_defined_contacts_fields cg_gys_64">
+                                <div class="t_textinput">
+                                    <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                                    <div class="t_right clearfix">
+                                        <input type="text" class="time_input inp_noInput" value="" readonly="true">
+                                        <span class="t_right_span val_dialogTop cg_gys_delete" style="background:#ff6c60;">删除</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="pur_sup_setting_field_list zj_user_defined_contact_fields cg_gys_add">
+                    <!--<div class="m_bottom_10 clearfix">
+                        <div class="t_textinput left" style="width: 85%;">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                            <div class="t_right clearfix">
+                                <div class="inline_block select_mormal select_25 left">
+                                    <input type="text" class="select_input contact_field" value="如QQ号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                                </div>
+                                <div class="inline_block select_mormal select_75 right">
+                                    <input type="text" class="select_input inp_noInput" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cg_ghs_setul">
+                            <button class="but_green sys_xsset_butAdd">+</button>
+                            <button class="but_red sys_xsset_butDelete">-</button>
+                        </div>
+                    </div>-->
+                </div>
+
+                <!-- <h2 class="cont_title ">其他设定</h2>
+                <div class="t_textinput t_height">
+                    <div class="t_left" style="max-width:6em;"><i class="c_r v_hidden">*</i><input type="checkbox">付款周期
+                    </div>
+                    <div class="t_right"><input type="text" class="time_input" value="" style="width:100px;margin-right: 10px;">天内
+                    </div>
+                    <p class="grey_input">当信用限定金额设定后，超出金额销售报价单需要全部审批</p>
+                </div>
+                <div class="t_textinput t_height">
+                    <div><input type="checkbox">需供应商承担运费</div>
+                    <p class="grey_input" style="margin-top:0;width: 20em;">勾选后供应商承担运费此条件审批则自动通过</p>
+                </div>-->
+            </div>
+            <div class="xt_xzset_submit">
+                <button class="but_small but_blue fz_sure zj_pur_sup_setting_save_btn">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+        <div class="tabcontent none" name="system_gnsz_cg" style="padding: 0;">
+            <div class="system_sp_tabJr clearfix">
+                <p class="system_p">供应商分类</p>
+            </div>
+            <div class="sp_sort_conTit" style="background: #fff;">
+                <button class="but_small val_dialogTop zcj_cg_add_gys_fl_btn" name="xt_gnsz_cgaddsort">添加分类</button>
+                <button class="but_small but_exit val_dialog zcj_cg_edit_gys_fl_btn" name="xt_gnsz_cgExitsort">编辑分类</button>
+                <button class="but_small but_look zj_sort_supplier_cate_up">上移</button>
+                <button class="but_small but_look zj_sort_supplier_cate_down">下移</button>
+                <button class="but_small but_r val_dialogTop zcj_cg_del_gys_fl_btn" name="xt_gnsz_cgDeletesort">删除分类</button>
+            </div>
+            <div class="system_work_mbdh clearfix system_gn_xsBox">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav zcj_cggys_name_cate_edit_modal">
+                            <ul class="list_box_level list_box_ulexit zcj_cg_set_select_up_fl_list"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xt_xzset_submit">
+                <button class="but_small but_blue">确定</button>
+                <button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+<!--添加分类-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_cgaddsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1 zcj_cg_gys_cate_add_cate_modal" style="height: 280px;width:600px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建分类</h3></div>
+            <div class="dialog_text sbar" style="padding:30px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input fz_cate_name" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>上级分类</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input c_3 zcj_select_cggys_up_fl_val_put" value="" readonly="true" style="background: #fff;">
+                        <i class="choose_input f_color val_dialogTop zcj_select_cggys_fl_up_btn" name="xt_gnsz_cgparentsort"><b>+</b>选择上级分类</i>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small fz_save">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--编辑分类-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_cgExitsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1 zcj_cggys_tc_cate_edit_modal" style="height: 280px;width:600px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建分类</h3></div>
+            <div class="dialog_text sbar" style="padding:30px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input fz_cate_name" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>上级分类</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input c_3 zcj_cggys_up_fl_name_val_show" value="" readonly="true" style="background: #fff;">
+                        <i class="choose_input f_color val_dialogTop zcj_select_cg_edit_sjfl_tc_btn" name="xt_gnsz_cgparentsort"><b>+</b>选择上级分类</i>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small fz_save">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除分类-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_cgDeletesort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu zcj_gys_unit_new_delete_sure">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择上级分类-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_cgparentsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择上级分类</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box">
+                    <div class="list_box_con">
+                        <div class="left_nav zcj_upfl_gys_list_tree">
+                            <ul class="list_box_level list_box_ulexitAll"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_kh_select_cggys_fl_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+       /* var sp_conH = $(".system_right").parent(".py_content").height()-60;
+        $(".system_right").height(sp_conH);
+        $(".system_muban").width($(".system_right").width()-360);*/
+        $(".sys_xsset_butAdd").die('click').live("click", function () {
+            var add_html = '<div class="m_bottom_10" style="clear:both">\
+                            <div class="t_textinput left" style="width: 75%;">\
+                            <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>\
+                            <div class="t_right clearfix">\
+                            <div class="inline_block select_mormal select_100 left">\
+                            <input type="text" class="select_input pur_sup_setting_info_field_new" value="如QQ号" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>\
+                            </div>\
+                            </div>\
+                            </div>\
+                            <div class="cg_ghs_setul" style="width:20%">\
+                                <button class="but_green sys_xsset_butAdd" style="margin-left:0;">+</button>\
+                                <button class="but_red sys_xsset_butDelete" style="margin-left:0;">-</button>\
+                            </div>\
+                        </div>';
+            $(this).closest(".pur_sup_setting_field_list").append(add_html);
+            //dialogBoxAutoHeight('.page_64_supplier_config_modal', $('.pur_sup_setting_field_list>div').length - 2);
+        });
+        $(".sys_xsset_butDelete").die().live("click", function () {
+            var butbox_num = $(this).parents(".m_bottom_10").siblings(".m_bottom_10").length;
+            if (butbox_num > 0) {
+                $(this).parents(".m_bottom_10").remove();
+            } else {
+                alert("自定义属性至少要有一个，不能删除!");
+            }
+            //dialogBoxAutoHeight('.page_64_supplier_config_modal', $('.pur_sup_setting_field_list>div').length - 2);
+        });
+        //                客户信息已有自定义字段删除
+        $('.pur_sup_setting_field_del').die().live('click', function () {
+            $(this).closest('.m_bottom_10').remove();
+        })
+//        $(".sys_xsset_butAdd").die().live("click",function () {
+//           /* alert(124);*/
+//            var add_html = $(this).parents(".m_bottom_10").html();
+//            $(this).parents(".m_bottom_10").after('<div class="m_bottom_10 clearfix sys_xsset_butBox">'+add_html+'</div>');
+//        });
+       /* $(".sys_xsset_butDelete").live("click",function () {
+            /!*alert(125);*!/
+            $(this).parents(".m_bottom_10").remove();
+        });*/
+//        $(".sys_xsset_butDelete").die().live("click",function () {
+//            var butbox_num = $(this).parents(".m_bottom_10").siblings(".m_bottom_10").length;
+//            if(butbox_num>0){
+//                $(this).parents(".m_bottom_10").remove();
+//            }else{
+//                alert("自定义属性至少要有一个，不能删除!");
+//            }
+//        });
+    });
+</script>
+<!--<script src="static/purchase/js/purchase_api.js"></script>-->
+</body>
+</html>

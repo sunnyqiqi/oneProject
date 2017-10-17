@@ -1,0 +1,245 @@
+html,body{
+    height:100%;
+    /*overflow-y: hidden;*/
+}
+.work_report_leaderBtn{
+    position: relative;
+}
+.work_report_conBox{
+    height: 100%;
+    position: relative;
+    /*overflow-y: hidden;*/
+}
+.work_report_Con{
+    background: #f5f6fa;
+    overflow-y: auto;
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    top: 121px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+.work_report_exitBox{
+    max-width: 849px;
+    margin:0 5px;
+    background: #ffffff;
+    padding-bottom: 26px;
+    margin-bottom: 20px;
+    display: none;
+}
+.work_report_head{
+    /*border-top:4px solid #e7eaec;*/
+    border-bottom:1px solid #e7eaec;
+    height:54px;
+}
+.work_report_head>h3{
+    line-height: 54px;
+    color: #666;
+}
+.work_report_head>h3>i{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 22px;
+    margin-left: 20px;
+    margin-right: 12px;
+}
+.work_report_head>h3>span{
+    color: #999999;
+    font-size: 12px;
+    margin-left:12px;
+}
+.work_report_headBtn{
+    float: right;
+    margin-top: 12px;
+    margin-right: 20px;
+}
+.work_report_det{
+    width: 810px;
+    margin: 0 auto;
+}
+.work_report_detHead{
+    border-bottom:1px solid #f2f2f2;
+    /*padding:20px 0;*/
+    margin: 0 20px 0 20px;
+}
+.work_report_detHead>span{
+    width: 54px;
+    height: 54px;
+    background: url("../../images/testimg.png") no-repeat;
+    background-size: 100%;
+}
+.work_report_personMsg{
+    padding:7px 0;
+    margin-left:20px;
+}
+.work_report_personMsg>p:nth-child(1){
+    color:#333;
+    line-height: 20px;
+}
+.work_report_personMsg>p:nth-child(2){
+    color:#999;
+    line-height: 20px;
+}
+.work_report_detCon{
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom:20px;
+}
+/*.work_report_detCon>.cont_title{*/
+    /*margin:25px 0 16px;*/
+    /*display: block;*/
+/*}*/
+.work_report_detCon>p{
+    line-height: 21px;
+    color:#333;
+    padding-left: 1em;
+    width: 80%;
+}
+.work_report_upload{
+    padding-top:20px;
+}
+.work_report_uploadMsg{
+    margin-top: 16px;
+    line-height: 12px;
+}
+.work_report_uploadMsg_icon{
+    float: left;
+    width: 31px;
+    height: 32px;
+    background: url(../../images/fileicon.png);
+    background-size: 100%;
+    margin-right: 12px;
+}
+.work_report_uploadMsg>div>p{
+    color:#333;
+    margin-bottom: 7px;
+}
+.work_report_uploadMsg>div>p>span{
+    color: #999999;
+    margin-left: 4px;
+}
+.work_report_uploadMsg>div>em{
+    cursor: pointer;
+    margin-right: 14px;
+}
+.work_report_comment{
+    /*height: 200px;*/
+    padding-top: 20px;
+}
+.work_report_commentCon{
+    background: #f5f6fa;
+    border:1px solid #f0f0f0;
+    padding:14px 20px ;
+    position: relative;
+    border-radius: 3px;
+}
+.work_report_commentBtn{
+    height: 30px;
+    margin-bottom: 15px;
+}
+.work_report_comment_icon{
+    position: absolute;
+    right:38px;
+    top:-9px;
+    width: 13px;
+    height:9px;
+    background: url("../images/back_targal.png") no-repeat;
+    background-size: 100%;
+}
+
+.work_report_commentCon>.inp_box{
+    margin-bottom:0;
+    line-height: 31px;
+}
+.work_report_commentInp{
+    width: 620px;
+}
+.work_report_commentBut{
+    padding:9px 20px;
+    font-size: 12px;
+    margin-left:20px;
+    line-height: 12px;
+}
+.work_report_comment_listBox>li>.work_report_detHead{
+    padding-bottom:0;
+}
+.work_report_ComtpersonMsg>p{
+    margin-left: 12px;
+    line-height: 50px;
+    color:#333;
+}
+.work_report_ComtpersonMsg>p>em:nth-child(2){
+    color:#999;
+    margin-left:15px;
+}
+.work_report_comment_list{
+    margin-left:85px;
+    line-height: 28px;
+}
+.work_report_comment_list>li{
+    color: #333;
+    border-bottom: 1px solid #e6e6e6;
+}
+.work_report_comment_list>li>em{
+    float: right;
+    color:#999;
+    margin-right:32px;
+    cursor: pointer;
+}
+.work_report_Exit{
+    width: 716px;
+    height: 700px;
+}
+.work_report_Exit>.dialog_text{
+    padding: 3.5% 7%;
+}
+.work_report_Exit>h3,.work_report_Exit>div>label{
+    display: block;
+}
+.work_report_Exit .inp_box {
+    height: 34px;
+}
+.work_report_Exit .inp_textBox{
+    margin-bottom: 15px;
+}
+.work_report_Exit .inp_boxadd .work_report_inp2{
+    margin-top: 2px;
+    margin-right: -3px;
+}
+.work_report_weekInp>.inp_timeStrat{
+    left: 43%;
+}
+.f_red{
+   color:#ff6c60;
+}
+.work_report_comment_icon{
+    right:140px;
+}
+.select{
+    display: block;
+}
+/*关闭按钮*/
+.work_dialog_close{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    margin: auto;
+    background: url('../../images/work_gb.png') no-repeat;
+    background-size: 100%;
+    font-size: 0;
+    cursor: pointer;
+}
+.work_zsy_img{
+    position: absolute;
+    top: 300px;
+    left: 300px;
+}
+.work_wdgzhb .work_wdgzhb_title{
+    padding: 0;
+}
+

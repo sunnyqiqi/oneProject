@@ -1,0 +1,116 @@
+.guide_con_header{
+    height:54px;
+}
+.guide_con_header h2{
+    color: #333;
+    font-weight: bold;
+}
+.guide_main{
+    width: 99%;
+    height: 94%;
+     background: #f5f6fa;
+    margin: 0 auto;
+}
+.guide_main_ul{
+    background: url(../guide/images/guide_tabline.png) bottom repeat-x;
+    height: 32px;
+}
+.guide_table1:hover{
+    background: #f5f6fa;
+}
+.guide_main_ul ul li{
+    float: left;
+    width: 97px;
+    text-align: center;
+    padding: 0 6px 0 4px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+.guide_content{
+    background: #fff;
+    width:100%;
+    height: 100%;
+    /* padding: 0; */
+    margin-top: -10px;
+}
+.guide_vend_content {
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+.guide_table_aaa {
+    height: 89%;
+    padding: 30px 0 0;
+    overflow-x: auto;
+}
+.guide_table_tr_one tr td{
+    width: 120px;
+    padding: 0;
+    padding-right: 4px;
+    border: 1px solid transparent;
+}
+.guide_table_tr_one{
+    width: 1000px!important;
+}
+.guide_content table:hover,.guide_content table tr:hover,.guide_content table tr td:hover{
+    background: #fff!important;
+}
+.none{
+    display: none;
+}
+.right{
+    float: right;
+}
+.guide_vend_content .guide_con_header h2 {
+    font-size: 22px;
+    font-weight: 100;
+}
+.guide_table_aaa .guide_table_tr_one td{
+    position: relative;
+}
+.guide_contMsgBox{
+   position: absolute;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    /* opacity: 0.7; */
+    padding: 4px 10px;
+    /* border: 1px solid coral; */
+    border-radius: 3px;
+    top: 44px;
+    left: 87px;
+    z-index: 999;
+}
+.guide_contMsgBox>.work_vent_client_torr{
+       width: 4px;
+    height: 8px;
+    position: absolute;
+    left: -4px;
+    top: 8px;
+    background: url(../images/xs_good_left_omg.png) no-repeat;
+    background-size: 100%;
+}
+.guide_work_vent_client p{
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    max-width: 150px;
+    line-height: 20px;
+    width: 120px;
+}
+.guide_table_aaa table{
+    margin-left: 40px;
+}
+.guide_liu_ul li i{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: 100% 100%;
+    vertical-align: sub;
+    margin-right: 3px;
+}

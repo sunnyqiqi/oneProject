@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="renderer" content="webkit" charset="UTF-8">
+    <title>SoWork</title>
+    <link rel="icon" href="static/images/icon-sowork.png"/>
+    <link rel="stylesheet" href="static/common.css">
+    <link rel="stylesheet" href="static/css/login.css">
+    <script src="static/js/jquery-1.8.1.min.js"></script>
+    <!--[if lt IE 10]>
+    <script src="static/js/jquery-1.4.4.min.js"></script>
+    <![endif]-->
+</head>
+<body class="sbar">
+
+<div class="login_wrap">
+    <div class="download clearfix">
+        <a href="https://www.pgyer.com/68nV" class="download_a"><p class="d-left"><i></i>iPhone版下载</p></a>
+        <a href="http://www.sowork.top/appdownload/android.apk" class="download_a download_b"><p class="d-right"><i></i>Android版下载</p></a>
+    </div>
+
+    <div class="logBox clearfix" style="width:820px;">
+        <h3>网页登录</h3>
+        <ul class="conTent clearfix">
+            <li class="log-left" style="width:40%;">
+                <h5>使用账户密码登录</h5>
+                <p class="user"><em></em><input type="text" value="请输入用户名" class="time_input" onfocus="fn_focus(this);"
+                                                onblur="fn_blur(this);" id="user_login_but"></p>
+                <p class="pwd"><em></em>
+                    <input type="text" class="time_input c_c" value="请输入用户密码" id="user_login_pwdshow" name="pwdbox">
+                    <input type="password" class="time_input none c_3" value="" name="pwdshow" id="user_login_pwd">
+                </p>
+                <a class="loginBtn" id="login_btn">登录</a>
+                <div class="remeber">
+                    <div class="check-box left-box left">
+                        <input id="66" type="checkbox" name='checkbox' class="">
+                        <label class="smlabel" for="66"></label>记住密码
+                    </div>
+                    <!--<span>忘记密码？</span>-->
+                </div>
+            </li>
+            <li class="middle" style="width:20%;margin:0;">
+                <p class="lineT"></p>
+                OR
+                <p class="lineB"></p>
+            </li>
+            <li class="log-right relative use_QR" style="width:40%;">
+                <h5>扫描二维码登录</h5>
+                <input id="text" type="hidden" value="http://101.200.53.37:9082/admin/login"/>
+                <div class="QRbox" id="qrcode">
+                    <!--<img src="./static/images/sunm.png" alt="">-->
+                </div>
+                <p>使用手机APP，扫描二维码登录 <i class="ask_icon inline_block"></i>
+                </p>
+                <img class="sao_sao" src="static/images/ask_sao.png" alt="扫一扫">
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        if (window.navigator.userAgent.indexOf('compatible') != -1) {
+//            alert('您的浏览器当前为兼容模式，为了更完美的体验，请切换至极速模式！');
+            alert('如使用QQ、360、搜狗等浏览器无法正常登陆，请开启极速模式或下载360极速浏览器');
+        }
+        $("#user_login_but").die().live("click", function () {
+            if ($(this).val() == '请输入用户名') {
+                $(this).val('');
+            }
+        });
+//        密码框的显示隐藏
+        $("#user_login_pwdshow[name=pwdbox]").focus(function () {
+            $(this).hide();
+            $(this).next("#user_login_pwd").show().die("focus").focus(function () {
+                $(this).val('');
+            });
+            $("#user_login_pwd").trigger('focus');
+        });
+        $("#user_login_pwd[name=pwdshow]").blur(function () {
+            if ($(this).val() == "") {
+                $(this).prev().show();
+                $(this).hide();
+            }
+        });
+        /*存密码*/
+
+        var storage = window.localStorage;
+        var unames = localStorage.getItem('uname');
+        var pasds = localStorage.getItem('pasd');
+        var ranking = localStorage.getItem('ranking');
+        var deptname = localStorage.getItem('department_name');
+        var department_id = localStorage.getItem('department_id');
+        var company_admin = localStorage.getItem('company_admin');
+        console.log(unames, pasds);
+        if (unames == null && pasds == null) {
+//            alert(123);
+            $("#user_login_but").val("请输入用户名");
+            $("#user_login_pwd").val("请输入用户密码");
+        } else {
+//            alert(321);
+            $("#user_login_but").val(unames);
+            $("#user_login_pwd").val(pasds);
+        }
+//        console.log(storage.getItem('checked'));
+        if (storage.getItem('checked') == 1) {
+            $("#user_login_but").addClass("c_3");
+            $("#user_login_pwdshow[name=pwdbox]").hide();
+            $("#user_login_pwd[name=pwdshow]").show();
+        } else {
+            $("#user_login_but").removeClass("c_3");
+        }
+        /*点击提交*/
+        $("#login_btn").click(function () {
+            var uname = $("#user_login_but").val();
+            var pasd = $("#user_login_pwd").val();
+            console.log(uname, pasd);
+            var url = SERVER_URL + "/admin/login";
+            var checked = $("[name='checkbox']:checked");
+            if (checked && checked.length > 0) {
+                storage.setItem("uname", uname);
+                storage.setItem("pasd", pasd);
+                storage.setItem('checked', 1);
+            } else {
+                storage.setItem("uname", "请输入用户名");
+                $("#user_login_pwdshow[name=pwdbox]").show();
+                $("#user_login_pwd[name=pwdshow]").hide();
+//                storage.setItem("pasd","请输入用户密码");
+                storage.setItem('checked', 0);
+            }
+            $.ajax({
+                type: 'post',
+                url: url,
+                data: {
+                    username: uname,
+                    password: pasd
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    if (data.code == 0) {
+                        location.href = 'new_index.html';
+                        localStorage.setItem("token", data.userinfo.token);
+                        localStorage.setItem("usercompany_id", data.userinfo.usercompany_id);
+                        localStorage.setItem("uid", data.userinfo.uid);
+                        localStorage.setItem("userface", data.userinfo.userface);
+                        localStorage.setItem("username", data.userinfo.username);
+                        localStorage.setItem("usercompanyadmin", data.userinfo.usercompany_admin);
+                        localStorage.setItem("ranking", data['userinfo']['ranking']);
+                        localStorage.setItem("deptname", data['userinfo']['department_name']);
+                        localStorage.setItem("department_id", data['userinfo']['department_id']);
+                        localStorage.setItem("company_admin", data['userinfo']['company_admin']);
+                        localStorage.setItem("user_info_url", JSON.stringify(data['userinfo']['powerUrls']));
+                        localStorage.setItem("user_info", JSON.stringify(data['userinfo']));
+                    } else {
+                        alert(data.msg)
+                    }
+                }
+
+            });
+        });
+    });
+    //    按下回车键提交
+    var SubmitOrHidden = function (evt) {
+        evt = window.event || evt;
+        if (evt.keyCode == 13) {//如果取到的键值是回车
+            $("#login_btn").trigger('click');
+        }
+    };
+    window.document.onkeydown = SubmitOrHidden;//当有键按下时执行函数
+    $(".ask_icon").mouseenter(function () {
+//        $(this).parent("p").next().animate({opacity:1,right:-300},300);
+        $(this).parent("p").next().addClass('sao_sao_hover').removeClass('sao_sao');
+    });
+    $(".ask_icon").mouseleave(function () {
+//        $(this).parent("p").next().animate({opacity:0,right:-400},300);
+        $(this).parent("p").next().removeClass('sao_sao_hover').addClass('sao_sao');
+    });
+
+    //    记住密码的选中状态
+    if (localStorage.getItem('checked') == 1) {
+        $('#66').attr('checked', 'checked');
+    } else {
+        $('#66').attr('checked', null);
+    }
+    //判断是否存在token
+    if (localStorage.getItem("token") != null && localStorage.getItem("token") != '') {
+        window.location = 'new_index.html';
+    }
+
+
+</script>
+<script src="static/js/SERVER_URL.js"></script>
+<!--生成二维码-->
+<script type="text/javascript" src="static/js/qrcode.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        url: SERVER_URL + '/scripts/qr',
+        type: 'POST',
+        data: {},
+        dataType: 'json',
+        success: function (oE) {
+            console.log(oE);
+            $('#text').val(oE.code);
+            var qrCode = oE.code;
+            makeCode();
+            setInterval(function () {
+                $.ajax({
+                    url: SERVER_URL + '/scripts/check-login',
+                    type: 'POST',
+                    data: {
+                        QR: qrCode
+                    },
+                    dataType: 'json',
+                    success: function (oE) {
+                        if (oE && oE.msg == '获取成功') {
+                            $.ajax({
+                                type: 'post',
+                                url: SERVER_URL + "/admin/login",
+                                data: {
+                                    QR: 1,
+                                    username: oE.code.mobile,
+                                    password: oE.code.pass
+                                },
+                                dataType: 'json',
+                                success: function (data) {
+                                    console.log(data);
+                                    if (data.code == 0) {
+                                        location.href = 'new_index.html';
+                                        localStorage.setItem("token", data.userinfo.token);
+                                        localStorage.setItem("usercompany_id", data.userinfo.usercompany_id);
+                                        localStorage.setItem("uid", data.userinfo.uid);
+                                        localStorage.setItem("userface", data.userinfo.userface);
+                                        localStorage.setItem("username", data.userinfo.username);
+                                        localStorage.setItem("usercompanyadmin", data.userinfo.usercompany_admin);
+                                        localStorage.setItem("ranking", data['userinfo']['ranking']);
+                                        localStorage.setItem("deptname", data['userinfo']['department_name']);
+                                        localStorage.setItem("department_id", data['userinfo']['department_id']);
+                                        localStorage.setItem("company_admin", data['userinfo']['company_admin']);
+                                        localStorage.setItem("user_info_url", JSON.stringify(data['userinfo']['powerUrls']));
+                                        localStorage.setItem("user_info", JSON.stringify(data['userinfo']));
+                                    } else {
+//                                        alert(data.msg)
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    error: function (e) {
+                        console.log(e);
+                    }
+                });
+            }, 3000);
+        },
+        error: function (e) {
+            alert(e.msg);
+            console.log(e);
+        }
+    });
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 100,
+        height: 100
+    });
+
+    function makeCode() {
+        var elText = document.getElementById("text");
+
+        if (!elText.value) {
+//		alert("Input a text");
+            elText.focus();
+            return;
+        }
+
+        qrcode.makeCode(elText.value);
+    }
+
+    $("#text").on("blur", function () {
+        makeCode();
+    }).on("keydown", function (e) {
+        if (e.keyCode == 13) {
+            makeCode();
+        }
+    });
+</script>
+<script src="static/js/common.js"></script>
+</body>
+</html>

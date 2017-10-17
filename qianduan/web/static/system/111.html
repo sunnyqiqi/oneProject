@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>销售设置</title>
+    <link rel="stylesheet" href="static/system/css/system.css">
+    <script src="static/system/js/111.js"></script>
+</head>
+<body>
+<div class="finance_content">
+<!--第一行-->
+<div class="con_header contenthead">
+    <h2>销售设置</h2>
+    <!--<div class="right">
+        <div class="res" title="点击刷新"></div>
+    </div>-->
+</div>
+<!--第二行-->
+<div class="system_right clearfix sbar" style="height: 92.5%;">
+    <div class="system_right_left left">
+        <p class="system_p">模板导航</p>
+        <hr>
+        <div class="system_tabJr">
+            <ul class="tabtitle system_tabUl">
+                <li class="taba tabhover" name="system_gnsz_xs" id="zcj_xsset_kh_set_left_tab">客户设置</li>
+               <!-- <li class="taba" name="system_gnsz_xs" id="zcj_xsset_kh_fl_left_tab">客户分类</li>-->
+                <li class="taba" name="system_gnsz_xs" id="zcj_xsset_xsjh_left_tab">销售机会设置</li>
+                <li class="taba" name="system_gnsz_xs" id="zcj_xsset_shd_set_left_tab">售后单设置</li>
+            </ul>
+        </div>
+    </div>
+    <div class="system_muban relative system_xzset" style="width: 78%;margin-top: 15px;">
+    <div class="tabcontent" name="system_gnsz_xs" style="padding: 0;">
+        <div class="system_sp_tabJr clearfix">
+            <p class="system_p">客户设置</p>
+        </div>
+        <div class="dialog_text sbar" style="padding:0 60px;margin:0;height:84%;background-color: #fff;">
+            <h2 class="cont_title m_top_15">新建客户信息自定义字段</h2>
+            <!--<div class="cg_ghs_setCon">
+                <div class="box_Open">
+                    <p class="box_open_head f_color">
+                        查看已有字段
+                        <span class="box_open_btn" style="right:10px;">收起 <i class="right icon_show"></i></span>
+                    </p>
+                    <div class="box_open_list" style="border:none;">
+                        &lt;!&ndash;<div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>负责人</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>客户名称</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput xs_kh_hybox">
+                            <div class="t_left"><i class="c_r">*</i>行业</div>
+                            <div class="t_right clearfix">
+                                <div class="inline_block select_mormal select_50 left" style="border:none;">
+                                    <input type="text" class="time_input inp_noInput c_3" value="" readonly="true">
+                                </div>
+                                <div class="inline_block select_mormal select_50 right" style="border:none;">
+                                    <input type="text" class="time_input inp_noInput c_3" value="" readonly="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>客户来源</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>客户级别</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>初期欠款</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>公司电话</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput xs_ht_addBox">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>地区</div>
+                            <div class="t_right clearfix">
+                                <div class="inline_block select_mormal select_25 left">
+                                    <input type="text" class="select_input c_3 inp_noInput" readonly="true" value="">
+                                </div>
+                                <div class="inline_block select_mormal select_25 left">
+                                    <input type="text" class="select_input inp_noInput c_3" value="" readonly="true">
+                                </div>
+                                <div class="inline_block select_mormal select_25 left">
+                                    <input type="text" class="select_input c_3 inp_noInput" value="" readonly="true">
+                                </div>
+                                <div class="inline_block select_mormal select_25 left">
+                                    <input type="text" class="select_input inp_noInput c_3" value="" readonly="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>详细地址</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                        </div>&ndash;&gt;
+                        <div class="ven_custom_setting_info_field_old_list">
+                            &lt;!&ndash;<div class="t_textinput">
+                                <div class="t_left"><i class="c_r v_hidden">*</i><span class="ven_custom_setting_info_field_old">传真</span></div>
+                                <div class="t_right clearfix">
+                                    <input type="text" class="time_input inp_noInput" value="" readonly="true">
+                                    <span class="t_right_span val_dialogTop ven_custom_setting_field_del" style="background:#ff6c60;">删除</span>
+                                </div>
+                            </div>&ndash;&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="ven_custom_setting_field_list_kh ven_custom_setting_info_field_new_list_khset">
+                <!--<div class="m_bottom_10" style="clear:both">
+                    <div class="t_textinput left" style="width: 67%;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                        <div class="t_right clearfix">
+                            <div class="inline_block select_mormal select_100 left">
+                                <input type="text" class="select_input c_3 ven_custom_setting_info_field_new" value="微信">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cg_ghs_setul">
+                        <button class="but_green page31_khsxAdd">+</button>
+                        <button class="but_red page31_khsxDelete">-</button>
+                    </div>
+                </div>-->
+                <div class="m_bottom_10 zcj_kh_vale_v" style="clear:both">
+                    <div class="t_textinput left" style="width: 67%;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                        <div class="t_right clearfix">
+                            <div class="inline_block select_mormal select_100 left">
+                                <input type="text" class="select_input ven_custom_setting_info_field_new" value="如QQ号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cg_ghs_setul">
+                        <button class="but_green page31_khsxAdd">+</button>
+                        <button class="but_red page31_khsxDelete">-</button>
+                    </div>
+                </div>
+            </div>
+            <h2 class="cont_title">客户联系人信息</h2>
+            <!--<div class="cg_ghs_setCon">
+                <div class="box_Open">
+                    <p class="box_open_head f_color">
+                        查看已有字段
+                                <span class="box_open_btn" style="right:10px;">收起 <i
+                                    class="right icon_show"></i></span>
+                    </p>
+                    <div class="box_open_list">
+                        &lt;!&ndash;<div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>联系人</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3"
+                                                        value="" onfocus="fn_focus(this);"
+                                                        onblur="fn_blur(this);" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left t_left_conrow"><i class="c_r v_hidden">*</i>联系人电话</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3"
+                                                        value="" onfocus="fn_focus(this);"
+                                                        onblur="fn_blur(this);" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>职务</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3"
+                                                        value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>邮箱</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3"
+                                                        value="" readonly="true"></div>
+                        </div>&ndash;&gt;
+                        <div class="ven_custom_setting_cont_field_old_list">
+                            &lt;!&ndash;<div class="t_textinput">
+                                <div class="t_left"><i class="c_r v_hidden">*</i><span class="ven_custom_setting_info_field_old">QQ</span></div>
+                                <div class="t_right clearfix">
+                                    <input type="text" class="time_input inp_noInput" value=""
+                                           readonly="true">
+                                    <span class="t_right_span val_dialogTop ven_custom_setting_field_del"
+                                          style="background:#ff6c60;">删除</span>
+                                </div>
+                            </div>&ndash;&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="ven_custom_setting_field_list_kh ven_custom_setting_cont_field_new_list_khset">
+               <!-- <div class="m_bottom_10" style="clear:both">                                                    <div class="t_textinput left" style="width: 67%;">
+                <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                <div class="t_right clearfix">
+                    <div class="inline_block select_mormal select_100 left">
+                        <input type="text" class="select_input c_3 ven_custom_setting_info_field_new" value="22">
+                    </div>
+                </div>
+            </div>
+                    <div class="cg_ghs_setul">
+                        <button class="but_green page31_khsxAdd">+</button>
+                        <button class="but_red page31_khsxDelete">-</button>
+                    </div>
+               </div>
+                <div class="m_bottom_10" style="clear:both">
+                    <div class="t_textinput left" style="width: 67%;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                        <div class="t_right clearfix">
+                            <div class="inline_block select_mormal select_100 left">
+                                <input type="text" class="select_input c_3 ven_custom_setting_info_field_new" value="qq">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cg_ghs_setul">
+                        <button class="but_green page31_khsxAdd">+</button>
+                        <button class="but_red page31_khsxDelete">-</button>
+                    </div>
+                </div> -->
+                <div class="m_bottom_10 zcj_lxr_vale_v">
+                    <div class="t_textinput left" style="width: 67%;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                        <div class="t_right clearfix">
+                            <div class="inline_block select_mormal select_100 left">
+                                <input type="text" class="select_input ven_custom_setting_info_field_new" value="如QQ号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cg_ghs_setul">
+                        <button class="but_green page31_khsxAdd">+</button>
+                        <button class="but_red page31_khsxDelete">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="xt_xzset_submit">
+            <button class="but_small but_blue ven_custom_setting_save_btn">确定</button>
+            <button class="but_small but_cancel">取消</button>
+        </div>
+    </div>
+    <!--<div class="tabcontent system_muban relative system_xzset none" name="system_gnsz_xs" style="padding: 0;">
+        <div class="system_sp_tabJr clearfix">
+            <p class="system_p">客户分类</p>
+        </div>
+        <div class="sp_sort_conTit" style="background: #fff;">
+            <button class="but_small val_dialogTop zcj_addfl_cate_add_btn" name="xt_gnsz_xsaddsort">添加分类</button>
+            <button class="but_small but_exit val_dialog zcj_khfl_cate_edit_btn" name="xt_gnsz_xsExitsort">编辑分类</button>
+            <button class="but_small but_look">上移</button>
+            <button class="but_small but_look">下移</button>
+            <button class="but_small but_r val_dialogTop zcj_khfl_del_cate_delete_btn" name="xt_gnsz_xsDeletesort">删除分类</button>
+        </div>
+        <div class="system_work_mbdh clearfix system_gn_xsBox">
+            <div class="list_box" >
+                <div class="list_box_con sbar">
+                    <div class="left_nav zcj_kefl_name_cate_edit_modal">
+                        <ul class="list_box_level list_box_ulexit zcj_sy_kh_fl_list_show"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+
+                            &lt;!&ndash;<ul class="ul1">
+                                <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                <ul class="ul3" style="display: none;">
+                                    <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                    <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                    <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                </ul>
+                            </ul>
+                            <ul class="ul1">
+                                <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                <ul class="ul3">
+                                    <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></span></li>
+                                </ul>
+                            </ul>&ndash;&gt;
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xt_xzset_submit">
+            <button class="but_small but_blue">确定</button>
+            <button class="but_small but_cancel">取消</button>
+        </div>
+    </div>-->
+    <div class="tabcontent none" name="system_gnsz_xs" style="padding: 0;">
+        <div class="system_sp_tabJr clearfix">
+            <p class="system_p">销售机会设置</p>
+        </div>
+        <div class="dialog_text sbar" style="padding:0 60px;margin:0;height:84%;background-color: #fff;">
+            <h2 class="cont_title m_top_15">新建销售机会自定义字段</h2>
+            <div class="ven_sell_chance_setting_oldlist"></div>
+            <div class="ven_custom_setting_field_list_xs ven_custom_setting_info_field_new_list">
+                <div class="m_bottom_10" style="clear:both">
+                    <div class="t_textinput left" style="width: 67%;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                        <div class="t_right clearfix">
+                            <div class="inline_block select_mormal select_100 left">
+                                <input type="text" class="select_input ven_custom_setting_info_field_new" value=""
+                                       onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cg_ghs_setul">
+                        <button class="but_green page34_khsxAdd">+</button>
+                        <button class="but_red page34_khsxDelete">-</button>
+                    </div>
+                </div>
+            </div>
+            <h2 class="cont_title">未成交反馈原因</h2>
+
+            <div class="t_textinput">
+                <label><input type="checkbox" class="ven_sell_chance_setting_fail_reason_btn">开启</label>
+            </div>
+
+            <div class="ven_sell_chance_setting_wcjyy_field_old_list"></div>
+            <div class="ven_custom_setting_field_list_xs ven_sell_chance_setting_wcjyy_field_new_list">
+                <div class="m_bottom_10">
+                    <div class="t_textinput left" style="width: 67%;">
+                        <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                        <div class="t_right clearfix">
+                            <div class="inline_block select_mormal select_100 left">
+                                <input type="text" class="select_input ven_sell_chance_setting_fail_reason_inp" value=""
+                                       onfocus="fn_focus(this);" onblur="fn_blur(this);" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cg_ghs_setul">
+                        <button class="but_green page34_failReasonAdd">+</button>
+                        <button class="but_red page34_failReasonDelete">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- <div class="system_work_mbdh clearfix system_gn_xsBox">
+            <h2 class="cont_title m_top_15">新建销售机会自定义字段</h2>
+            <div class="cg_ghs_setCon">
+                <div class="box_Open">
+                    <p class="box_open_head f_color">
+                        查看已有字段
+                        <span class="box_open_btn" style="right:10px;">收起 <i class="right icon_show"></i></span>
+                    </p>
+                    <div class="box_open_list">
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>选择客户</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true" style="color: rgb(153, 153, 153);"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>销售阶段</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left t_left_conrow"><i class="c_r">*</i>预计成交日期</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true" style="color: rgb(153, 153, 153);"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>预计金额</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3 inp_96" value="" readonly="true" style="color: rgb(153, 153, 153);"><i class="unit">元</i></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>负责部门</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true" style="color: rgb(153, 153, 153);"></div>
+                        </div>
+                        <div class="t_textinput">
+                            <div class="t_left"><i class="c_r">*</i>跟进人</div>
+                            <div class="t_right"><input type="text" class="time_input inp_noInput c_3" value="" readonly="true" style="color: rgb(153, 153, 153);"></div>
+                        </div>
+                        <div class="ven_sell_chance_setting_oldlist">
+                            &lt;!&ndash; <div class="t_textinput">
+                            <div class="t_left"><i class="c_r v_hidden">*</i>QQ号</div>
+                            <div class="t_right clearfix">
+                                <input type="text" class="time_input inp_noInput" value="" readonly="true">
+                                <span class="t_right_span val_dialogTop" style="background:#ff6c60;">删除</span>
+                            </div>
+                            </div>&ndash;&gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m_bottom_10 clearfix ven_sell_chance_setting_newlist">
+                <div class="t_textinput left" style="width: 85%;">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>
+                    <div class="t_right clearfix">
+                        <div class="inline_block select_mormal select_25 left">
+                            <input type="text" class="select_input ven_sell_chance_setting_newlist_field_inp" value="如QQ号" onfocus="fn_focus(this);" onblur="fn_blur(this);">
+                        </div>
+                        <div class="inline_block select_mormal select_75 right">
+                            <input type="text" class="select_input inp_noInput" readonly="readonly">
+                        </div>
+                    </div>
+                </div>
+                <div class="cg_ghs_setul"><button class="but_green sys_xsset_butAdd">+</button><button class="but_red sys_xsset_butDelete">-</button></div></div>
+        </div>-->
+        <div class="xt_xzset_submit">
+            <button class="but_small but_blue ven_sell_chance_setting_submit">确定</button>
+            <button class="but_small but_cancel">取消</button>
+        </div>
+    </div>
+    <!--时长设置-->
+    <div class="tabcontent none" name="system_gnsz_xs" style="padding: 0;">
+        <div class="system_sp_tabJr clearfix">
+            <p class="system_p">客户设置</p>
+        </div>
+        <div class="system_work_mbdh clearfix system_gn_xsBox">
+            <h2 class="cont_title m_top_15">时长设置</h2>
+            <div class="t_textinput xt_xzset_conTC">
+                <div class="t_left"><i class="c_r v_hidden">*</i>提醒时隔</div>
+                <div class="t_right"><input type="text" class="c_3 time_input m_right_10 lik_input_number after_order_setting_txsg" value="" style="width:100px;">分钟
+                </div>
+            </div>
+            <div class="t_textinput xt_xzset_conTC">
+                <div class="t_left"><i class="c_r v_hidden">*</i>重新分配时隔</div>
+                <div class="t_right"><input type="text" class="c_3 time_input m_right_10 lik_input_number after_order_setting_cxfpsg" value="" style="width:100px;">分钟
+                </div>
+            </div>
+            <div class="t_textinput c_3" style="margin-top:25px;margin-bottom:5px;"><input type="checkbox" class="after_order_setting_checkbox">开启自动分配 <span style="color:#ccc;">（根据售后接单量自动分配）</span>
+
+            </div>
+            <div class="t_textinput xt_xzset_conTC">
+                <div class="t_left"><i class="c_r v_hidden">*</i>少于</div>
+                <div class="t_right"><input type="text" class="c_3 time_input m_right_10 lik_input_number after_order_setting_zdfp_inp" value="" style="width:100px;">售后单会自动分配
+                </div>
+            </div>
+        </div>
+        <div class="xt_xzset_submit">
+            <button class="but_small but_blue after_order_setting_submit">确定</button>
+            <button class="but_small but_cancel">取消</button>
+        </div>
+    </div>
+        </div>
+</div>
+    </div>
+<!--添加分类-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_xsaddsort">
+        <div class="dialog_screen"></div>
+<div class="dialog_content dialog_content_1 zcj_add_cate_add_cate_modal" style="height: 280px;width:600px;">
+    <div class="dialog_title"><i class="dialog_close">关闭</i>
+        <h3 class="dialog_h3">新建分类</h3></div>
+    <div class="dialog_text sbar" style="padding:30px 40px;height: 50%;">
+        <div class="t_textinput t_textarea" style="height:40px">
+            <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+            <div class="t_right"><input type="text" class="time_input fz_cate_name" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+        </div>
+        <div class="t_textinput">
+            <div class="t_left"><i class="c_r">*</i>上级分类</div>
+            <div class="t_right">
+                <input type="text" class="time_input c_3 zcj_select_kh_up_fl_val_put" value="" readonly="true" style="background: #fff;">
+                <i class="choose_input f_color val_dialogTop zcj_select_khfl_up_btn" name="xt_gnsz_xsparentsort"><b>+</b>选择上级分类</i>
+            </div>
+        </div>
+    </div>
+    <div class="dialog_submit">
+        <button class="but_blue but_small fz_save">保存</button><button class="but_cancel but_small">取消</button>
+    </div>
+</div>
+    </div>
+</div>
+<!--编辑分类-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_xsExitsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_1 zcj_kh_cate_edit_cate_edit_modal" style="height: 280px;width:600px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建分类</h3></div>
+            <div class="dialog_text sbar" style="padding:30px 40px;height: 50%;">
+                <div class="t_textinput t_textarea" style="height:40px">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>分类名称</div>
+                    <div class="t_right"><input type="text" class="time_input fz_cate_name" value="请填写分类名称" onfocus="fn_focus(this);" onblur="fn_blur(this);"></div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r">*</i>上级分类</div>
+                    <div class="t_right">
+                        <input type="text" class="time_input c_3 zcj_select_up_fl_name_val_show" value="" readonly="true" style="background: #fff;">
+                        <i class="choose_input f_color val_dialogTop zcj_select_kh_edit_sjfl_tc_btn" name="xt_gnsz_xsparentsort"><b>+</b>选择上级分类</i>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small fz_save">保存</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除分类-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_xsDeletesort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete zcj_cate_name_delfl_modal">
+            <div class="dialog_title">
+                <i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">提示</h3>
+            </div>
+            <div class="dialog_text sbar">
+                <p class="p1">确定后将彻底删除，是否确定删除？</p>
+                <p class="p2">删除后将无法恢复，请慎重操作！</p>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_red but_small delete_anniu zcj_kh_unit_new_delete_sure">删除</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--选择上级分类-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_gnsz_xsparentsort">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择上级分类</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box">
+                    <div class="list_box_con">
+                        <div class="left_nav zcj_upfl_select_list_tree">
+                            <ul class="list_box_level list_box_ulexitAll"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span></li>
+                               <!-- <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">服务器(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1111</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器1</span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">服务器12</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">交换器(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">交换器</span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_kh_select_sjfl_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+       /* var sp_conH = $(".system_right").parent(".py_content").height()-60;
+        $(".system_right").height(sp_conH);
+        $(".system_muban").width($(".system_right").width()-360);*/
+        $(".sys_xsset_butAdd").live("click",function () {
+           /* alert(124);*/
+            var add_html = $(this).parents(".m_bottom_10").html();
+            $(this).parents(".m_bottom_10").after('<div class="m_bottom_10 clearfix sys_xsset_butBox">'+add_html+'</div>');
+        });
+       /* $(".page34_sxjhzdyDelete").live("click",function () {
+            alert(125);
+            $(this).parents(".m_bottom_10").remove();
+        });*/
+    });
+
+   /* $(".page31_khsxAdd").live("click",function () {
+        var add_html = $(this).parents(".m_bottom_10").html();
+        $(this).parents(".m_bottom_10").after('<div class="m_bottom_10" style="clear:both">'+add_html+'</div>');
+    });*/
+//    $(".sys_xsset_butDelete").live("click",function () {
+//        var butbox_num = $(this).parents(".m_bottom_10").siblings(".m_bottom_10").length;
+//        if(butbox_num>0){
+//            $(this).parents(".m_bottom_10").remove();
+//        }else{
+//            alert("自定义属性至少要有一个，不能删除!");
+//        }
+//    });
+    //                客户信息已有自定义字段删除
+//    $('.ven_custom_setting_field_del').live('click', function(){
+//        $(this).closest('.t_textinput').remove();
+//    })
+
+    $(".page31_khsxAdd").live("click", function () {
+        var add_html = '<div class="m_bottom_10" style="clear:both">\
+                            <div class="t_textinput left" style="width: 67%;">\
+                            <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>\
+                            <div class="t_right clearfix">\
+                            <div class="inline_block select_mormal select_100 left">\
+                            <input type="text" class="select_input ven_custom_setting_info_field_new" value="如QQ号" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>\
+                            </div>\
+                            </div>\
+                            </div>\
+                            <div class="cg_ghs_setul">\
+                            <button class="but_green page31_khsxAdd">+</button>\
+                        <button class="but_red page31_khsxDelete">-</button>\
+                        </div>\
+                        </div>';
+        $(this).closest(".ven_custom_setting_field_list_kh").append(add_html);
+        dialogBoxAutoHeight('.ven_custom_setting_dialog', $('.ven_custom_setting_field_list_kh>div').length - 2);
+    });
+    //弹窗高度适应
+    function dialogBoxAutoHeight(className, numTotal){
+        if(numTotal>7){
+            numTotal = 7;
+            return;
+        }
+        $(className).css('minHeight', 300+45*numTotal)
+    }
+    $(".page31_khsxDelete").die().live("click", function () {
+        var butbox_num = $(this).parents(".m_bottom_10").siblings(".m_bottom_10").length;
+
+        if (butbox_num > 0) {
+            $(this).parents(".m_bottom_10").remove();
+        } else {
+            alert("自定义属性至少要有一个，不能删除!");
+        }
+        dialogBoxAutoHeight('.ven_custom_setting_dialog', $('.ven_custom_setting_field_list_kh>div').length - 2);
+    });
+    //                客户信息已有自定义字段删除
+    $('.ven_custom_setting_field_del').live('click', function () {
+        $(this).closest('.t_textinput').remove();
+    })
+
+    /******************销售机会设置*************/
+    $(".page34_khsxAdd").live("click", function () {
+        var add_html = '<div class="m_bottom_10" style="clear:both">\
+                            <div class="t_textinput left" style="width: 67%;">\
+                            <div class="t_left"><i class="c_r v_hidden">*</i>自定义</div>\
+                            <div class="t_right clearfix">\
+                            <div class="inline_block select_mormal select_100 left">\
+                            <input type="text" class="select_input ven_custom_setting_info_field_new_chance" value="" onfocus="fn_focus(this);" onblur="fn_blur(this);"/>\
+                            </div>\
+                            </div>\
+                            </div>\
+                            <div class="cg_ghs_setul">\
+                            <button class="but_green page34_khsxAdd">+</button>\
+                        <button class="but_red page34_khsxDelete">-</button>\
+                        </div>\
+                        </div>';
+        $(this).closest(".ven_custom_setting_field_list_xs").append(add_html);
+        dialogBoxAutoHeight('.ven_sell_chance_setting_dialog', $('.ven_sell_chance_setting_dialog div.m_bottom_10').length - 2);
+    });
+    $(".page34_failReasonAdd").live("click", function () {
+        var add_html = $(this).closest('.m_bottom_10').html();
+        $(this).closest(".ven_custom_setting_field_list_xs").append('<div class="m_bottom_10" style="clear:both">'+add_html+'</div>');
+        dialogBoxAutoHeight('.ven_sell_chance_setting_dialog', $('.ven_sell_chance_setting_dialog div.m_bottom_10').length - 2);
+    });
+    //弹窗高度适应
+//    function dialogBoxAutoHeight(className, numTotal){
+//        if(numTotal>7){
+//            numTotal = 7;
+//            return;
+//        }
+//        $(className).css('minHeight', 330+45*numTotal)
+//    }
+    $(".page34_khsxDelete").live("click", function () {
+        var butbox_num = $(this).parents(".m_bottom_10").siblings(".m_bottom_10").length;
+        if (butbox_num > 0) {
+            $(this).parents(".m_bottom_10").remove();
+        } else {
+            alert("自定义属性至少要有一个，不能删除!");
+        }
+        dialogBoxAutoHeight('.ven_sell_chance_setting_dialog', $('.ven_sell_chance_setting_dialog div.m_bottom_10').length - 2);
+    });
+    $(".page34_failReasonDelete").live("click", function () {
+        var butbox_num = $(this).parents(".m_bottom_10").siblings(".m_bottom_10").length;
+        if (butbox_num > 0) {
+            $(this).parents(".m_bottom_10").remove();
+        } else {
+            alert("自定义属性至少要有一个，不能删除!");
+        }
+        dialogBoxAutoHeight('.ven_sell_chance_setting_dialog', $('.ven_sell_chance_setting_dialog div.m_bottom_10').length - 2);
+    });
+    function xsadd_xsjhlxr(obj) {
+        var num_khlxr = obj.parents(".add_box_menu").children(".xs_xsjh_faliReason").length;
+        for (var i = 0; i < num_khlxr; i++) {
+            obj.parents(".dialog_text").find(".xs_xsjh_faliReason .page34_set_faliNum").eq(i).html(i + 1);
+        }
+    }
+</script>
+</body>
+</html>

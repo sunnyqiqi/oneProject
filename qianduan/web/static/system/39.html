@@ -1,0 +1,3619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>审批流程</title>
+    <link rel="stylesheet" href="static/system/css/system.css">
+    <script src="static/system/js/39.js"></script>
+</head>
+<body>
+<!--<div class="system_content" >-->
+    <!--第一行-->
+    <div class="con_header contenthead">
+        <h2>审批流程</h2>
+        <!--<div class="right">
+            <div class="res" title="点击刷新"></div>
+        </div>-->
+    </div>
+    <!--第二行-->
+
+    <div class="system_right clearfix sbar hr_left_bjbm" style="height:92%;position: relative;">
+        <div class="system_right_left left" id="wrap" style="position: absolute;">
+            <p class="system_p">模板导航</p>
+            <hr>
+            <div class="system_tabJr">
+                <ul class="tabtitle system_tabUl">
+                    <li class="taba tabhover" name="system_mbdh" id="zcj_work_list_left_bar">工作</li>
+                    <li class="taba" name="system_mbdh" id="zcj_sell_list_left_bar">销售</li>
+                    <li class="taba" name="system_mbdh" id="zcj_manage_list_left_bar">合同管理</li>
+                    <li class="taba" name="system_mbdh" id="zcj_purchase_list_left_bar">采购</li>
+                    <li class="taba" name="system_mbdh" id="zcj_borrow_list_left_bar">借入借出</li>
+                </ul>
+            </div>
+        </div>
+        <!--工作-->
+
+        <div class="tabcontent left" name="system_mbdh" style="padding: 0;width: 76%;position: absolute;left: 23%;">
+        	 <div class="system_sp_tabJr_a" id="wrap_a">
+	            <div class="system_sp_tabJr clearfix" style="margin-top: 25px;">
+	                <div class="muban_tabBox left">
+	                    <ul class="tabtitle system_sp_tabUI">
+	                        <li class="taba tabhover" id="zcj_sp_list_content_header" name="system_work">审批</li>
+	                        <li class="taba" name="system_work" id="zcj_kq_list_content">考勤</li>
+	                    </ul>
+	                </div>
+	            </div>
+            </div>
+            <div class="tabcontent zcj_system_set_work_list_show_content" name="system_work" style="padding: 0;position: absolute;top:80px;width: 100%;">
+                <!--<div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">请假</span><button class="but_mix but_blue val_dialog" name="xt_sp_qj">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                                    <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                        <th>抄送人</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>请假</td>
+                                        <td><div class="xt_sp_step"><span class="xt_sp_stepName">条件1：</span><div class="inline_block xt_sp_stepBox"><span>0-1天</span><span>需要工作交接人</span><div class="inline_block xt_sp_stepCon c_9">步骤一：<em>张三 <i></i></em>步骤二：<em>部门主管<i></i></em>步骤三：<em>所属上级</em></div></div></div></td>
+                                        <td>所有部门</td>
+                                        <td>李丽</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">报销</span><button class="but_mix but_blue val_dialog" name="xt_sp_bx">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用成员或部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>报销金额</td>
+                                    <td><div class="xt_sp_step"><span class="xt_sp_stepName">条件1：</span><div class="inline_block xt_sp_stepBox"><span>0-1天</span><span>需要工作交接人</span><div class="inline_block xt_sp_stepCon c_9">步骤一：<em>张三 <i></i></em>步骤二：<em>部门主管<i></i></em>步骤三：<em>所属上级</em></div></div></div></td>
+                                    <td>HR部门</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">出差</span><button class="but_mix but_blue val_dialog" name="xt_sp_chuchai">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用成员或部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>出差天数</td>
+                                    <td></td>
+                                    <td>HR部门</td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">借款</span><button class="but_mix but_blue val_dialog" name="xt_sp_jiekuan">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>借款金额</td><td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">招聘</span><button class="but_mix but_blue val_dialog" name="xt_sp_zhaopin">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>招聘</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">离职</span><button class="but_mix but_blue val_dialog" name="xt_sp_lizhi">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>提前申请离职</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">转正</span><button class="but_mix but_blue val_dialog" name="xt_sp_zhuanzheng">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>转正周期</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">公章</span><button class="but_mix but_blue val_dialog" name="xt_sp_gongzhang">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>公章</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">外出</span><button class="but_mix but_blue val_dialog" name="xt_sp_waichu">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>外出时长</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">调薪</span><button class="but_mix but_blue val_dialog" name="xt_sp_tiaoxin">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>调薪范围</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">办公采购</span><button class="but_mix but_blue val_dialog" name="xt_sp_bgypcg">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>金额范围</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">付款</span><button class="but_mix but_blue val_dialog" name="xt_sp_fukuan">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>付款范围</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">物品领用</span><button class="but_mix but_blue val_dialog" name="xt_sp_wupinly">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>物品领用</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">合同</span><button class="but_mix but_blue val_dialog" name="xt_sp_hetong">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>普通审批</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">普通审批</span><button class="but_mix but_blue val_dialog" name="xt_sp_ptsp">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>条件名称</th>
+                                    <th>审批条件</th>
+                                    <th>适用部门</th>
+                                    <th>抄送人</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>普通审批</td>
+                                    <td></td>
+                                    <td>所有部门</td>
+                                    <td>李丽</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="tabcontent zcj_kq_list_data_disply_content" name="system_work"  style="padding: 0;position: absolute;top:80px;display: none;width: 100%;">
+                <!--<div class="system_work_mbdh">
+                    <div class="crk_rkgl_addRKD">
+                        <div class="box_open_head relative">
+                            <span class="systerm_sp_title">统计考勤</span><button class="but_mix but_blue val_dialog" name="xt_sp_kqinsp">编辑</button>
+                            <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                        </div>
+                        <div class="systerm_sp_con">
+                            <div class="div_1 container">
+                                <div class="div_1 table-container">
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>条件名称</th>
+                                            <th>审批条件</th>
+                                            <th>适用部门</th>
+                                            <th>抄送人</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>请假</td>
+                                            <td><div class="xt_sp_step"><span class="xt_sp_stepName">条件1：</span><div class="inline_block xt_sp_stepBox"><span>0-1天</span><span>需要工作交接人</span><div class="inline_block xt_sp_stepCon c_9">步骤一：<em>张三 <i></i></em>步骤二：<em>部门主管<i></i></em>步骤三：<em>所属上级</em></div></div></div></td>
+                                            <td>所有部门</td>
+                                            <td>李丽</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+
+        <!--销售-->
+        <div class="tabcontent system_muban zcj_sell_content_list_show" name="system_mbdh" style="display: none;padding:0;width:76%;position: absolute;left: 23%;margin-top:16px;">
+            <div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">销售报价单</span><button class="but_mix but_blue val_dialog" name="xt_sp_newbjd">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建报价单</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">销售退换货</span><button class="but_mix but_blue val_dialog" name="xt_sp_newthh">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建退换货</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--合同管理-->
+        <div class="tabcontent system_muban zcj_manage_content_list_show" name="system_mbdh" style="display: none;padding:0;width:76%;position: absolute;left: 23%;margin-top:16px;">
+            <!--<div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">销售合同</span><button class="but_mix but_blue val_dialog" name="xt_sp_newxsht">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                       &lt;!&ndash; <th>适用部门</th>
+                                        <th>抄送人</th>&ndash;&gt;
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    &lt;!&ndash;<tr>
+                                        <td>新建销售合同</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                        <td>李丽</td>
+                                    </tr>&ndash;&gt;
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">采购合同</span><button class="but_mix but_blue val_dialog" name="xt_sp_newcght">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                        <th>抄送人</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建采购合同</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                        <td>李丽</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">员工合同</span><button class="but_mix but_blue " name="xt_sp_newyght">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                        <th>抄送人</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建员工合同</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                        <td>李丽</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">其他合同</span><button class="but_mix but_blue val_dialog" name="xt_sp_newqtht">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                        <th>抄送人</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建其他合同</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                        <td>李丽</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <!--采购-->
+        <div class="tabcontent system_muban zcj_cg_content_list_show" name="system_mbdh" style="display: none;padding:0;width:76%;position: absolute;left: 23%;margin-top:16px;">
+            <!--<div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">采购报价单</span><button class="but_mix but_blue val_dialog" name="xt_sp_newcgbjd">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建报价单</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">采购退换货</span><button class="but_mix but_blue val_dialog" name="xt_sp_newcgthh">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建退换货</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <!--借入借出-->
+        <div class="tabcontent system_muban zcj_jrjc_content_list_show" name="system_mbdh" style="display: none;padding:0;width:76%;position: absolute;left: 23%;margin-top:16px;">
+            <!--<div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">借入单</span><button class="but_mix but_blue val_dialog" name="xt_sp_newjin">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建借入单</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">借出单</span><button class="but_mix but_blue val_dialog" name="xt_sp_newjout">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建借出单</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="system_work_mbdh">
+                <div class="crk_rkgl_addRKD">
+                    <div class="box_open_head relative">
+                        <span class="systerm_sp_title">归还单</span><button class="but_mix but_blue val_dialog" name="xt_sp_newjback">编辑</button>
+                        <span class="box_open_btn c_9" style="right:20px;">收起 <i class="right icon_hide"></i></span>
+                    </div>
+                    <div class="systerm_sp_con">
+                        <div class="div_1 container">
+                            <div class="div_1 table-container">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>条件名称</th>
+                                        <th>审批条件</th>
+                                        <th>适用部门</th>
+                                        <th>抄送人</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>新建归还单</td>
+                                        <td></td>
+                                        <td>所有部门</td>
+                                        <td>李丽</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+</div>
+<!--</div>-->
+<!--工作请假-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_qj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3 zcj_qj_edit_content_info_show" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close zj_bmgb_close_bt">关闭</i>
+                <h3 class="dialog_h3 zcj_qj_head_show">请假</h3>
+            </div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="zcj_edit_show_data_list_ck">
+                   <!-- <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                        <i class="sys_sp_close"></i>
+                        <div class="left c_3">
+                            审批条件<span class="page_39_sptjNum">1</span>
+                        </div>
+                        <div class="sys_sp_spfw">
+                            <p class="c_3">审批范围</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3" value=""><span class="m_left_10">天</span>
+                                    <label><input type="checkbox">需要工作交接人</label>
+                                    <label><input type="checkbox">开启自动通过</label>
+                            </div>
+                            <p class="c_3">审批人</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                    <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                    <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                    <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                    <button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_add_qj_spr_tc" name="xt_sp_xzspr"><i></i>添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sys_sp_sptjBox clearfix">
+                        <i class="sys_sp_close"></i>
+                        <div class="left c_3">
+                            审批条件<span class="page_39_sptjNum">2</span>
+                        </div>
+                        <div class="sys_sp_spfw">
+                            <p class="c_3">审批范围</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3" value=""><span class="m_left_10">天</span>
+                                <label><input type="checkbox">需要工作交接人</label>
+                                <label><input type="checkbox">开启自动通过</label>
+                            </div>
+                            <p class="c_3">审批人</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                    <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                    <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                    <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                    <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sys_sp_sptjBox clearfix">
+                        <i class="sys_sp_close"></i>
+                        <div class="left c_3">
+                            审批条件<span class="page_39_sptjNum">3</span>
+                        </div>
+                        <div class="sys_sp_spfw">
+                            <p class="c_3">审批范围</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3" value=""><span class="m_left_10">天</span>
+                                <label><input type="checkbox">需要工作交接人</label>
+                                <label><input type="checkbox">开启自动通过</label>
+                            </div>
+                            <p class="c_3">审批人</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                    <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="t_textinput none1">
+                    <button class="but_icon xtset_spAdd_but zcj_add_work_sp_tj"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+               <!-- <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list zcj_sybm_list_data_zs">
+                           &lt;!&ndash; <li>所有部门 <i></i></li>&ndash;&gt;
+
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_xz_sybm_tc_dept_btn" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>-->
+               <!-- <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        &lt;!&ndash;<li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>&ndash;&gt;
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop zcj_xzcsr_tc_btn" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>-->
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut zcj_is_kq_kjsp_btn"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_edit_leave_btn">确定</button><button class="but_small but_cancel zcj_bmqx_canael_btn">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--工作报销-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_bx">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">报销</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix">
+                    <i class="sys_sp_close"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3" value=""><span class="m_left_10">元</span>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sys_sp_sptjBox clearfix">
+                    <i class="sys_sp_close"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">2</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3" value=""><span class="m_left_10">元</span>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sys_sp_sptjBox clearfix">
+                    <i class="sys_sp_close"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">3</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"><input type="text" class="time_input c_3" value=""><span class="m_left_10">元</span>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--工作出差-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_chuchai">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">出差</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <i class="sys_sp_close"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3" value=""><span class="m_left_10">天</span>
+                                <label><input type="checkbox">需要工作交接人</label>
+                                <label><input type="checkbox">开启自动通过</label>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <div class="sys_sp_sptjBox clearfix">
+                    <i class="sys_sp_close"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">2</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3" value=""><span class="m_left_10">天</span>
+                            <label><input type="checkbox">需要工作交接人</label>
+                            <label><input type="checkbox">开启自动通过</label>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sys_sp_sptjBox clearfix">
+                    <i class="sys_sp_close"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">3</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input c_3" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3" value=""><span class="m_left_10">天</span>
+                            <label><input type="checkbox">需要工作交接人</label>
+                            <label><input type="checkbox">开启自动通过</label>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--工作借款-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_jiekuan">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3 zcj_sp_other_info_show" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3 zcj_head_name_text">借款</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="zcj_edit_show_data_list_ck"></div>
+               <!-- <div class="sys_sp_sptjBox clearfix">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="t_textinput none1">
+                    <button class="but_icon xtset_spAdd_but zcj_add_sptj_addbtn"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <!--<div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>-->
+               <!-- <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>-->
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut zcj_is_open_other_sp"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_add_sp_tj_end_btn">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作招聘-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_zhaopin">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">招聘</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件<span>1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="t_textinput">
+                    <button class="but_icon"><i></i>添加审批条件</button>
+                </div>-->
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作离职-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_lizhi">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:500px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">离职</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="t_textinput">
+                    <button class="but_icon"><i></i>添加审批条件</button>
+                </div>-->
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作转正-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_zhuanzheng">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:500px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">转正</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="t_textinput">
+                    <button class="but_icon"><i></i>添加审批条件</button>
+                </div>-->
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作公章-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_gongzhang">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">公章</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作外出-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_waichu">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">外出</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作调薪-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_tiaoxin">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">调薪</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作办公用品采购-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_bgypcg">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">办公用品采购</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作付款-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_fukuan">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">付款</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作合同-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_hetong">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">合同</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作物品领用-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_wupinly">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">物品领用</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but
+"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作普通审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_ptsp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">普通审批</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <i class="sys_sp_close none"></i>
+                    <div class="left c_3">
+                        审批条件<span class="page_39_sptjNum">1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but
+"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--工作考勤审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_kqinsp">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">考勤</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="zcj_work_kq_edit_list">
+                    <!--<div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                        <i class="sys_sp_close none"></i>
+                        <div class="left c_3">
+                            审批条件<span class="page_39_sptjNum">1</span>
+                        </div>
+                        <div class="sys_sp_spfw">
+                            <p class="c_3">审批人</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                    <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                    <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                    <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                    <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+
+                <div class="t_textinput">
+                    <button class="but_icon xtset_spAdd_but"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--销售报价单-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newbjd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建销售报价单</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <!--<h2 class="cont_title ">新建报价单</h2>-->
+                <!--<label class="sys_sp_spfwOpen"><input type="checkbox">开启自动通过</label>-->
+                <div class="sys_sp_sptjBox clearfix zcj_sell_price_list_display" style="margin-top: 20px;">
+                   <!-- <div class="left c_3">
+                        零售价
+                    </div>
+                    <div class="sys_sp_spfw relative">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9 clearfix">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                        <label class="sys_sp_spfwOpen"><input type="checkbox">开启自动通过</label>
+                    </div>
+                    <div class="left c_3">
+                        最低价
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left c_3">
+                        成本价
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left c_3">
+                        其他价格
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left c_3">
+                        超出信用额
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                <hr style="margin:30px 0;">
+               <!-- <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list zcj_selest_list_display_bm_name">
+                           &lt;!&ndash; <li>所有部门 <i></i></li>&ndash;&gt;
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_selest_bm_list_show_xs_btn" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>-->
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut zcj_show_is_open_kjsp"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_sell_edit_add_xgbtn">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--销售退换货-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newthh">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:400px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建销售退换货</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--合同-销售合同-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newxsht">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3 zcj_xs_ht_head_title_show">销售合同</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="zcj_market_contract_list_show">
+                   <!-- <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                        <div class="left c_3">
+                            审批条件<span>1</span>
+                        </div>
+                        <div class="sys_sp_spfw relative">
+                            <p class="c_3">无条款修改（根据模板条款）</p>
+                            <p class="c_3">审批人</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                    <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                    <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                                </div>
+                            </div>
+                            <label class="sys_sp_spfwOpen" style="right:30%;"><input type="checkbox">开启自动通过</label>
+                        </div>
+                    </div>
+                    <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                        <div class="left c_3">
+                            审批条件<span>1</span>
+                        </div>
+                        <div class="sys_sp_spfw relative">
+                            <p class="c_3">有条款修改</p>
+                            <p class="c_3">审批人</p>
+                            <div class="sys_sp_spfwCon c_9">
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                    <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                    <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                                </div>
+                            </div>
+                            &lt;!&ndash;<label class="sys_sp_spfwOpen" style="right:50%;"><input type="checkbox">开启自动通过</label>&ndash;&gt;
+                        </div>
+                    </div>-->
+                </div>
+                <hr style="margin:30px 0;">
+              <!--  <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list zcj_ht_sybm_list_data_zs">
+                           &lt;!&ndash; <li>所有部门 <i></i></li>&ndash;&gt;
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_select_ht_sybm_tc_btn" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>-->
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2 zcj_ht_csrlist_show">
+                        <!--<li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li> -->
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop zcj_ht_xzcsr_tc_btn" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut zcj_is_kq_kjsp_show_open"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_ht_edit_end_snb_btm">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--合同-采购合同-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newcght">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">采购合同</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件<span>1</span>
+                    </div>
+                    <div class="sys_sp_spfw relative">
+                        <p class="c_3">无条款修改（根据模板条款）</p>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                        <label class="sys_sp_spfwOpen" style="right:30%;"><input type="checkbox">开启自动通过</label>
+                    </div>
+                </div>
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件<span>1</span>
+                    </div>
+                    <div class="sys_sp_spfw relative">
+                        <p class="c_3">有条款修改</p>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                        <!--<label class="sys_sp_spfwOpen" style="right:50%;"><input type="checkbox">开启自动通过</label>-->
+                    </div>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--合同-员工合同-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newyght">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">员工合同</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件<span>1</span>
+                    </div>
+                    <div class="sys_sp_spfw relative">
+                        <p class="c_3">无条款修改（根据模板条款）</p>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                        <label class="sys_sp_spfwOpen" style="right:30%;"><input type="checkbox">开启自动通过</label>
+                    </div>
+                </div>
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件<span>2</span>
+                    </div>
+                    <div class="sys_sp_spfw relative">
+                        <p class="c_3">有条款修改</p>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                        <!--<label class="sys_sp_spfwOpen" style="right:50%;"><input type="checkbox">开启自动通过</label>-->
+                    </div>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--合同-其他合同-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newqtht">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:500px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">其他合同</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="xt_sp_xzryMore"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--采购报价单-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newcgbjd">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:440px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3 zcj_new_cgbjd_head_show">新建采购报价单</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <!--<h2 class="cont_title">新建报价单</h2>-->
+                <div class="zcj_cgbjd_show_data_list">
+                    <!--<div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                        <div class="left c_3">
+                            审批条件
+                        </div>
+                        <div class="sys_sp_spfw">
+                            <p class="c_3">审批人</p>
+                            <div class="sys_sp_spfwCon c_9 clearfix">
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                    <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                                </div>
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                    <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+
+                <hr style="margin:30px 0;">
+                <!--<div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list zcj_cgbjd_xzsybm_list">
+                           &lt;!&ndash; <li>所有部门 <i></i></li>&ndash;&gt;
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_select_sybm_cgbjd_tc_btn" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>-->
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut zcj_is_kq_cgbjd_kjsp"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_cgbjd_edit_end_btn">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--采购退换货-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newcgthh">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:400px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建采购退换货</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--借入单-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newjin">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:400px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3 zcj_new_jrd_name_show">新建借入单</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <!--<h2 class="cont_title">新建报价单</h2>-->
+                <div class="zcj_jrd_sprlist_show_data">
+                    <!--<div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                        <div class="left c_3">
+                            审批条件
+                        </div>
+                        <div class="sys_sp_spfw">
+                            <p class="c_3">审批人</p>
+                            <div class="sys_sp_spfwCon c_9 clearfix">
+                                &lt;!&ndash;<div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                    <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                                </div>&ndash;&gt;
+                                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤：</span>
+                                    <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+
+                <hr style="margin:30px 0;">
+                <!--<div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list zcj_jrd_show_sybm_list">
+                           &lt;!&ndash; <li>所有部门 <i></i></li>&ndash;&gt;
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_jrjc_xzsybm_tc_btn" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>-->
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut zcj_jrjc_is_kq_kjsp"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_jrd_edit_end_btn">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--借出单-审批-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newjout">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:400px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建借出单</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzspr"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--归还单-审批-编辑-->
+<!--<div class="dialog">
+    <div class="dialog_box" name="xt_sp_newjback">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:560px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">新建归还单</h3>
+            </div>
+            <div class="dialog_text sbar" style="height: 83%;margin:0;padding:10px 20px 30px;background: #F2F2F2;">
+               &lt;!&ndash; <div class="zcj_jrgh_back_table_info"></div>&ndash;&gt;
+               <div class="sys_sp_spghdanBox clearfix" style="margin-top: 20px;background: #fff;">
+                    <div class="c_3 sys_sp_spghdcon">
+                        借入归还
+                    </div>
+                    <label class="inp_box clearfix">
+                            <p class="inp_lP left">
+                                <i class="v_hidden">*</i>
+                                <em>抄送人</em>
+                            </p>
+                            <ul class="box_adderCon clearfix box_adderCon2">
+                                <li>
+                                    <i class="del_img_1">-</i>
+                                    <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                    <em class="icon_adderBtn"></em>
+                                    <p class="box_adderName">张三</p>
+
+                                </li>
+                                <li>
+                                    <em class="icon_personBtn icon_personBtn_add val_dialogTop zcj_add_csr_jrgh_tj" name="xt_sp_xzryMore"></em>
+                                </li>
+                            </ul>
+                        </label>
+                </div>
+                <div class="sys_sp_spghdanBox clearfix" style="margin-top: 20px;background: #fff;">
+                    <div class="c_3 sys_sp_spghdcon">
+                        借出归还
+                    </div>
+                    <label class="inp_box clearfix">
+                        <p class="inp_lP left">
+                            <i class="v_hidden">*</i>
+                            <em>抄送人</em>
+                        </p>
+                        <ul class="box_adderCon clearfix box_adderCon2">
+                            <li>
+                                <i class="del_img_1">-</i>
+                                <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                                <em class="icon_adderBtn"></em>
+                                <p class="box_adderName">张三</p>
+
+                            </li>
+                            <li>
+                                <em class="icon_personBtn icon_personBtn_add val_dialogTop zcj_add_csr_jcgh_tj" name="xt_sp_xzryMore"></em>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+                &lt;!&ndash;<div class="sys_sp_spghdanBox clearfix sys_sp_spghdanBoxlast" style="margin-top: 20px;background: #fff;">
+                    <div class="t_textinput" style="margin-left: 2em;">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_xz_bm_tc_dept_btn" name="xt_sp_xzbmMore"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>&ndash;&gt;
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">确定</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>-->
+<!--选择审批人-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_xzspr">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_delete">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择审批人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="t_textarea" style="margin-top: 56px;">
+                    <button class="but_icon val_dialogTop" name="xt_sp_dxry" style="margin-left:21px;"><i></i>添加负责人</button>
+                    <!--此处是单选按钮，如果已经选择了其中一个，被选中的字体颜色为c_c-->
+                    <div class="inline_block" style="margin:0 20px;"><input type="radio" class="zcj_bmzg_xzspr_is_true" value="部门主管" name="xt_sp_xzsprInp"/>部门主管</div>
+                    <div class="inline_block"><input type="radio" class="zcj_ssup_xzspr_is_true"  value="所属上级" name="xt_sp_xzsprInp"/>所属上级</div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_xzspr_person_list_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--选择部门-编辑-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_qj">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_3" style="height:600px;width: 720px;">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">请假</h3></div>
+
+            <div class="dialog_text sbar" style="height: 83%;margin:0;">
+                <div class="sys_sp_sptjBox clearfix" style="margin-top: 20px;">
+                    <div class="left c_3">
+                        审批条件<span>1</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input" value=""><span class="m_left_10">天</span>
+                            <label><input type="checkbox">需要工作交接人</label>
+                            <label><input type="checkbox">开启自动通过</label>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sys_sp_sptjBox clearfix">
+                    <div class="left c_3">
+                        审批条件<span>2</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input" value=""><hr class="inline_block sys_inp_line"/><input type="text" class="time_input" value=""><span class="m_left_10">天</span>
+                            <label><input type="checkbox">需要工作交接人</label>
+                            <label><input type="checkbox">开启自动通过</label>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sys_sp_sptjBox clearfix">
+                    <div class="left c_3">
+                        审批条件<span>3</span>
+                    </div>
+                    <div class="sys_sp_spfw">
+                        <p class="c_3">审批范围</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <span class="m_right_10">范围</span><input type="text" class="time_input" value=""><span class="m_left_10">天(及以上)</span>
+                            <label><input type="checkbox">需要工作交接人</label>
+                            <label><input type="checkbox">开启自动通过</label>
+                        </div>
+                        <p class="c_3">审批人</p>
+                        <div class="sys_sp_spfwCon c_9">
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤一：</span>
+                                <span class="xt_sp_sprAddmsg">张丹 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤二：</span>
+                                <span class="xt_sp_sprAddmsg">部门主管 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤三：</span>
+                                <span class="xt_sp_sprAddmsg">所属上级 <i></i></span>
+                            </div>
+                            <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤四：</span>
+                                <button class="but_icon sys_sp_addsprBtn"><i></i>添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_textinput">
+                    <button class="but_icon"><i></i>添加审批条件</button>
+                </div>
+                <hr style="margin:30px 0;">
+                <div class="t_textinput">
+                    <div class="t_left"><i class="c_r v_hidden">*</i>适用部门</div>
+                    <div class="t_right" style="margin-left:13%;">
+                        <ul class="inp_add_list">
+                            <li>所有部门 <i></i></li>
+                            <li style="background: #fff;"><button class="but_icon sys_sp_addsprBtn"><i></i>选择部门</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <label class="inp_box clearfix work_jjr">
+                    <p class="inp_lP left">
+                        <i class="v_hidden">*</i>
+                        <em>抄送人</em>
+                    </p>
+                    <ul class="box_adderCon clearfix box_adderCon2">
+                        <li>
+                            <i class="del_img_1">-</i>
+                            <em class="icon_personBtn icon_personBtn_msg"><i class="icon_personNext"></i></em>
+                            <em class="icon_adderBtn"></em>
+                            <p class="box_adderName">张三</p>
+
+                        </li>
+                        <li>
+                            <em class="icon_personBtn icon_personBtn_add val_dialogTop" name="work_fqsp_csr"></em>
+                        </li>
+                    </ul>
+                </label>
+                <div class="t_textinput">
+                    <div class="t_left" style="width: 20%;max-width: 10em;"><i class="c_r v_hidden">*</i>是否开启跨级审批</div>
+                    <div class="t_right" style="width: 80%;margin-left: 20%;padding-top: 5px;">
+                        <span class="xt_sp_kjspBut"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small">保存</button><button class="but_small but_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--单选人员-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_dxry">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox3">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择人员</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box" >
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_uldx zcj_xz_spr_tc_tree_list"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类</span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">长大 </span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">不菲</span></li>
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">嘎哈啊</span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术组(1)</span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2 person_left_nav"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">咯咯咯</span></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_select_spr_person_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--多选部门-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_xzbmMore">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择部门</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left sbar">
+                    <div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input" value="搜索成员/部门等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i></div>
+                    </div>
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ul zcj_xz_bm_tree_dx_list"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span><span class="list_check"><em></em></span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部A</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部B</span><span class="list_check"><em></em></span></li>
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">销售部C</span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">技术部(1)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">技术部 </span><span class="list_check"><em></em></span></li>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list zcj_shoose_right_list">
+                            <!--<li>
+                                <span>技术部</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>技术部</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_sybm_yxlist_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--多选人员-->
+<div class="dialog">
+    <div class="dialog_box" name="xt_sp_xzryMore">
+        <div class="dialog_screen"></div>
+        <div class="dialog_content dialog_content_addBox dialog_content_addBox1">
+            <div class="dialog_title"><i class="dialog_close">关闭</i>
+                <h3 class="dialog_h3">选择抄送人</h3></div>
+            <div class="dialog_text sbar clearfix">
+                <div class="list_box left sbar">
+                    <div class="list_box_title">
+                        <div class="list_box_searchCon inline_block relative"><input type="text" class="time_input" value="搜索成员/部门/手机等" onfocus="fn_focus(this);" onblur="fn_blur(this);"><i class="list_search"></i></div>
+                    </div>
+                    <div class="list_box_con sbar">
+                        <div class="left_nav">
+                            <ul class="list_box_level list_box_ul zcj_dx_csr_tc_tree_list_show"><li class="left_all"><span class="icon_open change_ba"></span><span class="icon_file"></span><span class="list_msg">所有分类(4)</span><span class="list_check"><em></em></span></li>
+                                <!--<ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部(3)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部A</span><span class="list_check"><em></em></span></li>
+                                        <ul class="ul3 person_left_nav" style="display: none;">
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">卡萨丁</span><span class="list_check"><em></em></span></li>
+                                        </ul>
+                                    </ul>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部B</span><span class="list_check"><em></em></span></li>
+
+                                        <ul class="ul3 person_left_nav" style="display: none;">
+                                            <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">而思思</span><span class="list_check"><em></em></span></li>
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">都思思</span><span class="list_check"><em></em></span></li>
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">郭思思</span><span class="list_check"><em></em></span></li>
+                                        </ul>
+                                    </ul>
+                                    <ul class="ul3" style="display: none;">
+                                        <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">销售部C</span><span class="list_check"><em></em></span></li>
+                                        <ul class="ul3 person_left_nav" style="display: none;">
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">范丹</span><span class="list_check"><em></em></span></li>
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">范丹</span><span class="list_check"><em></em></span></li>
+                                            <li class="left_2 "><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">范丹</span><span class="list_check"><em></em></span></li>
+                                        </ul>
+                                    </ul>
+                                </ul>
+                                <ul class="ul1">
+                                    <li class="left_1"><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部(1)</span><span class="list_check"><em></em></span></li>
+                                    <ul class="ul3">
+                                        <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部1</span><span class="list_check"><em></em></span></li>
+                                        <ul class="ul3">
+                                            <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="icon_open"></span><span class="icon_file"></span><span class="list_msg">采购部A1</span><span class="list_check"><em></em></span></li>
+                                            <ul class="ul3 person_left_nav">
+                                                <li class="left_2"><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><i class="list_before_span"></i><span class="list_msg">呵呵</span><span class="list_check"><em></em></span></li>
+
+
+                                            </ul>
+                                        </ul>
+                                    </ul>
+                                </ul>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_chooseed right">
+                    <div class="list_box_title">
+                        <!--<h3>已选列表</h3>-->
+                        <h3 class="dialog_h3">已选列表</h3>
+                    </div>
+                    <div class="list_conMsg">
+                        <ul class="list_choose_list zcj_shoose_right_csr_list">
+                            <!--<li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>
+                            <li>
+                                <span>张三</span>
+                                <i class="list_choose_delete"> </i>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dialog_submit">
+                <button class="but_blue but_small zcj_select_bmcsr_list_end_btn">确定</button><button class="but_cancel but_small">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+
+    		   //吸顶条效果
+        $('.hr_left_bjbm').scroll(function(){
+            var h =$(this).scrollTop();
+            $('#wrap').css('top',h);
+            $('#wrap_a').css('top',h);
+        });
+    
+
+
+//        var sp_conH = $(".system_right").parent(".py_content").height()-60;
+//        $(".system_right").height(sp_conH);
+//        $(".system_muban").width($(".system_right").width()-360);
+        $(".xt_sp_kjspBut").die('click').live("click",function () {
+            var xs_right = $(this).children("i").css("right");
+//            console.log(xs_right);
+            if(parseInt(xs_right) < 10){
+                $(this).children("i").css("right","10px");
+                $(this).css("background","#e6e6e6");
+                $(this).data('id',2);
+            }else{
+                $(this).children("i").css("right",0);
+                $(this).css("background","#3bafda")
+                $(this).data('id',1);
+            }
+        });
+
+        /*add添加审批人*/
+        $(".tanceng .zcj_add_work_sp_tj").die().live("click",function () {
+            var p_num=$(this).attr('arr')
+            var sp_add='<i class="sys_sp_close"></i>\
+                <div class="left c_3">\
+                审批条件<span class="page_39_sptjNum">0</span>\
+                </div>\
+                <div class="sys_sp_spfw">\
+                <p class="c_3">审批范围</p>\
+                <div class="sys_sp_spfwCon c_9">\
+                <span class="m_right_10">范围</span><input type="text" class="time_input c_3 zcj_start_time_val" disabled="true" value="1"><hr class="inline_block sys_inp_line"/><input type="text" class="time_input c_3 zcj_end_time_val"\
+                value=""><span class="m_left_10">'+(p_num==4 ? '元' :'天')+'</span>\
+                <label><input type="checkbox" class="zcj_xy_work_is_val">需要工作交接人</label>\
+                </div>\
+                <p class="c_3">审批人</p>\
+                <div class="sys_sp_spfwCon c_9">\
+                <div class="left zcj_select_spr_add_nr"></div>\
+                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤：</span>\
+            <button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_add_qj_spr_tc" name="xt_sp_xzspr"><i class=""></i>添加</button>\
+                </div>\
+                </div>\
+                </div>'
+//           var add_html = $(this).parent(".t_textinput").prev().find('.zcj_qj_list_show_xq_data').eq(0).html();
+//            var add_bfor = $(".tanceng .zcj_qj_list_show_xq_data").length;
+
+            var numvber=$(".tanceng .zcj_qj_list_show_xq_data .zcj_end_time_val:last").val();
+            //$(this).parent(".t_textinput").prev().append('<div class="sys_sp_sptjBox clearfix zcj_qj_list_show_xq_data" data-id="" style="margin-top: 20px;">'+sp_add+'</div>');
+            if(numvber==undefined){
+                $(this).parent(".t_textinput").prev().append('<div class="sys_sp_sptjBox clearfix zcj_qj_list_show_xq_data" data-id="" style="margin-top: 20px;">'+sp_add+'</div>');
+            }
+            var len=$(".zcj_edit_show_data_list_ck").find('.zcj_qj_list_show_xq_data').length;
+
+                if(len>0){
+                    var ks_num=$(".tanceng .zcj_qj_list_show_xq_data .zcj_start_time_val:last").val();
+                    if(numvber>ks_num){
+                        $(this).parent(".t_textinput").prev().append('<div class="sys_sp_sptjBox clearfix zcj_qj_list_show_xq_data" data-id="" style="margin-top: 20px;">'+sp_add+'</div>');
+
+                        setTimeout(function(){
+                            var add_val = $(".tanceng .zcj_qj_list_show_xq_data").length;
+                            var znum;
+                            if(numvber>0){
+                                znum=parseInt(numvber)+1;
+                            }else{
+                                znum=1;
+                            }
+
+                            var n=parseInt(add_val)-1;
+
+                            $(".tanceng .zcj_qj_list_show_xq_data .zcj_start_time_val").eq(n).val(znum);
+
+                        },100)
+
+                    }else {
+                        //$(this).parent(".t_textinput").prev().append('<div class="sys_sp_sptjBox clearfix zcj_qj_list_show_xq_data" data-id="" style="margin-top: 20px;">'+sp_add+'</div>');
+                        //alert("请输入大于开始时间的结束天数");
+                    }
+                }else{
+                    $(this).parent(".t_textinput").prev().append('<div class="sys_sp_sptjBox clearfix zcj_qj_list_show_xq_data" data-id="" style="margin-top: 20px;">'+sp_add+'</div>');
+                }
+
+
+
+
+            sys_sp_sptj_num();
+        });
+        $(".sys_sp_close").live("click",function () {
+            $(this).parent(".sys_sp_sptjBox").remove();
+            sys_sp_sptj_num();
+
+        });
+        function sys_sp_sptj_num(){
+            var add_anum = $(".tanceng .dialog_text .sys_sp_sptjBox").length;
+            for(var i = 0;i<add_anum;i++){
+                $(".tanceng .dialog_text").find(".page_39_sptjNum").eq(i).html(i+1);
+                $(".tanceng .dialog_text").find(".zcj_add_qj_spr_tc").eq(i).data('index',i);
+
+            }
+            if(add_anum >1){
+                $(".tanceng .dialog_text .sys_sp_sptjBox").children(".sys_sp_close").show();
+            }else{
+                $(".tanceng .dialog_text .sys_sp_sptjBox").children(".sys_sp_close").hide();
+            }
+        }
+
+        /*add添加审批人2*/
+        $(".tanceng .zcj_add_sptj_addbtn").die('click').live("click",function () {
+            var sp_add='<i class="sys_sp_close"></i>\
+                <div class="left c_3">\
+                审批条件<span class="page_39_sptjNum">0</span>\
+                </div>\
+                <div class="sys_sp_spfw">\
+                <p class="c_3">审批范围</p>\
+                <div class="sys_sp_spfwCon c_9">\
+                </div>\
+                <p class="c_3">审批人</p>\
+                <div class="sys_sp_spfwCon c_9">\
+                <div class="left zcj_select_spr_add_nr"></div>\
+                <div class="xt_sp_sprAdd left"><span class="m_right_5">步骤：</span>\
+            <button class="but_icon sys_sp_addsprBtn val_dialogTop zcj_add_qj_spr_tc" name="xt_sp_xzspr"><i class=""></i>添加</button>\
+                </div>\
+                </div>\
+                </div>'
+//           var add_html = $(this).parent(".t_textinput").prev().find('.zcj_qj_list_show_xq_data').eq(0).html();
+//            var add_bfor = $(".tanceng .zcj_qj_list_show_xq_data").length;
+
+            var numvber=$(".tanceng .zcj_qj_list_show_xq_data .zcj_end_time_val:last").val();
+           // var len=$(".zcj_edit_show_data_list_ck").find('.zcj_qj_list_show_xq_data').length;
+
+                    $(this).parent(".t_textinput").prev().append('<div class="sys_sp_sptjBox clearfix zcj_qj_list_show_xq_data" data-id="" style="margin-top: 20px;">'+sp_add+'</div>');
+
+
+            setTimeout(function(){
+                var add_val = $(".tanceng .zcj_qj_list_show_xq_data").length;
+                var znum;
+                if(numvber>0){
+                    znum=parseInt(numvber)+1;
+                }else{
+                    znum=1;
+                }
+
+                var n=parseInt(add_val)-1;
+
+                $(".tanceng .zcj_qj_list_show_xq_data .zcj_start_time_val").eq(n).val(znum);
+
+            },100)
+
+            sys_sp_sptj_num();
+        });
+//        $(".sys_sp_close").live("click",function () {
+//            $(this).parent(".sys_sp_sptjBox").remove();
+//            sys_sp_sptj_num();
+//
+//        });
+//        function sys_sp_sptj_num(){
+//            var add_anum = $(".tanceng .dialog_text .sys_sp_sptjBox").length;
+//            for(var i = 0;i<add_anum;i++){
+//                $(".tanceng .dialog_text").find(".page_39_sptjNum").eq(i).html(i+1);
+//                $(".tanceng .dialog_text").find(".zcj_add_qj_spr_tc").eq(i).data('index',i);
+//
+//            }
+//            if(add_anum >1){
+//                $(".tanceng .dialog_text .sys_sp_sptjBox").children(".sys_sp_close").show();
+//            }else{
+//                $(".tanceng .dialog_text .sys_sp_sptjBox").children(".sys_sp_close").hide();
+//            }
+//        }
+    });
+</script>
+<script>
+    //统一给select_list添加类
+    $('ul.select_list').addClass('sbar');
+    //动态设置表格高度
+    $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    $(window).resize(function () {
+        $('.lik_table_max_height').css('maxHeight', $('body').height() - 303);
+    });
+</script>
+
+</body>
+</html>

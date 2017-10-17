@@ -1,0 +1,769 @@
+
+/*收支-账户管理*/
+/*第一行*/
+.finance_content{
+    overflow: auto;
+    background: #fff;
+    height: 100%;
+}
+.finance_title{
+    line-height: 60px;
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 0 25px;
+}
+.finance_xj{
+    width:136px;
+}
+/*第二行*/
+.finance_right{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.finance_xj{
+    width: 323px;
+}
+.finance_tabJr{
+    float: left;
+    margin-top:4px;
+}
+.finance_tabUl{
+    margin-right: 30px;
+}
+.finance_xs{
+    display: inline-block;
+    margin-left: 30px;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+}
+.finance_xs p{
+    width: 100px;
+    margin-left: 18px;
+    margin-top: -29px;
+}
+.finance_yuan span{
+    float: right;
+    margin-top: -28px;
+    margin-right: -22px;
+}
+/*新建账户弹窗*/
+.finance_muban{
+    width: 600px;
+    height: 440px;
+}
+.finance_unhead{
+    margin: 10px 0 30px 0;
+    margin-left: -41px;
+}
+
+/*日常支出*/
+.finance_rczc_xj{
+    width: 323px;
+}
+.finance_rczc_right{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.finance_rczc_tabJr{
+    float: left;
+    margin-top:4px;
+}
+.finance_rczc_tabUl{
+    margin-right: 30px;
+}
+.finance_rczc_xs{
+    display: inline-block;
+    margin-left: 30px;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+}
+.finance_rczc_xs p{
+    width: 100px;
+    margin-left: 18px;
+    margin-top: -29px;
+}
+.finance_yuan span{
+    float: right;
+    margin-top: -28px;
+    margin-right: -22px;
+}
+/*打印按钮*/
+.finance_rcsr_an{
+    padding: 9px 30px 9px 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #82868c;
+    border-radius: 1px;
+    font-size: 12px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/*客户应收欠款模块*/
+.finance_khysqk_xj{
+    width: 112px;
+}
+.finance_khysqk_xj1{
+    float: left;
+    line-height: 30px;
+    margin-top: 6px;
+}
+.b_b1 {
+    background: #32a0f6 !important;
+}
+.cw_td>.t_mark_gantan{
+    /*float: right;*/
+    /*margin-left: 90px;*/
+    /*margin-top: -25px;*/
+    /* position: absolute; */
+    /* right: 1px; */
+    /* top: 19px; */
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 1px;
+    margin-left: 5px;
+}
+.cw_td1>.t_mark_gantan{
+    /*float: right;*/
+    /*margin-left: 90px;*/
+    /*margin-top: -25px;*/
+     /*position: absolute;*/
+     /*right: 10px;*/
+     /*top: 30px;*/
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 1px;
+}
+.finance_khysqk_qkd{
+    margin-top: -13px;
+}
+.cg_ghs_contMsgBox {
+    width: 184px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    height: auto;
+    background: #fff;
+    position: absolute;
+    left: 65px;
+    top: 40px;
+    z-index: 111;
+    border: 1px solid #ccc;
+    display: none;
+    box-shadow: 0 0 3px 1px #ccc;
+}
+.cg_ghs_contMsgBox>div>h3 {
+    margin: 15px 0 5px;
+    display: block;
+}
+.cg_ghs_contMsgBoxDet>ul>li {
+    text-indent: 8px;
+    line-height: 21px;
+    font-size: 12px;
+    color: #999;
+}
+.finance_kh_table th,.finance_kh_table td{
+    border: none;
+}
+.finance_kh_table th,.finance_kh_table tr:not(:last-child){
+    border-bottom: 1px solid #e6e6e6;
+}
+.finance_sz_ysqk{
+    border-top: 6px solid #f5f6fa;
+    width: 640px;
+    margin-left: -40px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+
+
+/*核销*/
+.finance_hx_xj{
+    width: 220px;
+}
+.finance_hx_unhead{
+    margin: 0 0 50px 0;
+    background-color: #FAFAFA;
+    width: 113%;
+    margin-left: -58px;
+    padding: 21px;
+}
+.finance_hx_unhead span{
+   color: #000;
+   padding-right: 12px;
+}
+
+/*物流费用*/
+.finance_wlfy_xj{
+    width: 112px;
+}
+.finance_wlfy_muban{
+    width: 1200px;
+    height: 500px;
+}
+
+/*账户转账*/
+.finance_zhzz_tabJr{
+    float: left;
+    margin-top:4px;
+}
+.finance_zhzz_tabUl{
+    margin-right: 30px;
+}
+.finance_zhzz_xs{
+    display: inline-block;
+    margin-left: 30px;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+}
+.finance_zhzz_xs p{
+    width: 100px;
+    margin-left: 18px;
+    margin-top: -29px;
+}
+
+
+.vend_client_contact{
+    cursor: pointer;
+}
+.vent_client_contMsgBox{
+    width: 165px;
+    padding-left: 16px;
+    padding-bottom: 3px;
+    height: auto;
+    background: #fff;
+    position: absolute;
+    left: 65px;
+    top: 40px;
+    z-index: 111;
+    border: 1px solid #ccc;
+    display: none;
+    box-shadow: 0 0 3px 1px #ccc;
+    padding-top: 7px;
+}
+.vent_client_contMsgBox>hr{
+    width: 151px;
+}
+.vent_client_contMsgBox>div>h3{
+    margin: 15px 0 5px;
+    display: block;
+}
+.vent_client_torr {
+    width: 8px;
+    height: 5px;
+    position: absolute;
+    left: 22px;
+    top: -5px;
+    background: url(../images/sale_torr.png) no-repeat;
+    background-size: 100%;
+}
+.vent_client_contMsgBoxDet>ul>li {
+    text-indent: 8px;
+    line-height: 21px;
+    font-size: 12px;
+    color: #999;
+}
+
+/*客户应付欠票*/
+.f_table{
+    padding: 0;
+    width: 300px;
+    /* border: 1px solid #e6e6e6; */
+    /* margin-bottom: 10px; */
+    text-align: center;
+    border-radius: 3px;
+}
+.f_table tr:first-child{
+    line-height: 34px;
+}
+.f_table tr:last-child{
+    line-height:29px;
+}
+.f_table th{
+    padding: 0;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+.f_table td{
+    border: none;
+}
+
+.finance_dy{
+    float: right;
+    margin-top: -40px;
+    margin-right: 130px;
+}
+
+.finance_gd{
+    float: right;
+    margin-top: -40px;
+    margin-right: 45px;
+    height: 35px;
+}
+.finance_t{
+    width: 400px;
+    height: 200px;
+}
+/**xx人**/
+.work_jjr1 ul{
+    margin-left: 73px;
+}
+.work_jjr ul li{
+    margin-bottom: 0;
+}
+.work_jjr .left{
+    margin-left: -4px;
+}
+/*！滑动样式*/
+/*滑动*/
+.finance_khysqk_kuanxiang>.work_vent_client_contMsgBox {
+    width: 155px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    height: auto;
+    background: #fff;
+    position: absolute;
+    right:109px;
+    z-index: 111;
+    border: 1px solid #ccc;
+    display: none;
+    box-shadow: 0 0 3px 1px #ccc;
+    border-radius: 3px;
+}
+.cw_td>.work_vent_client_contMsgBox {
+    width: 246px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    height: auto;
+    background: #fff;
+    position: absolute;
+    left: 31px;
+    top:33px;
+    z-index: 111;
+    border: 1px solid #ccc;
+    display: none;
+    box-shadow: 0 0 3px 1px #ccc;
+    border-radius: 3px;
+    font-weight: 100;
+    color: #333;
+}
+.work_vent_client_torr {
+    width: 8px;
+    height: 5px;
+    position: absolute;
+    left: 62px;
+    top: -5px;
+    background: url(../../images/sale_torr.png) no-repeat;
+    background-size: 100%;
+}
+.work_vend_client_contact{
+    cursor: pointer;
+    position: relative;
+}
+.work_vent_client_contMsgBox>div>h3 {
+    margin: 15px 0 5px;
+    display: block;
+}
+.work_vent_client_contMsgBoxDet p{
+    margin-top: 7px;
+    margin-bottom: -7px;
+}
+/*选择查看项*/
+.takenote_xzckx{
+    line-height: 30px;
+    /*margin-top: -30px;*/
+    /*margin-right: 15px;*/
+    position: absolute;
+    right: 13px;
+    top:23px;
+}
+.takenote_xzckx .left{
+    margin-right: 20px;
+}
+.takenote_xq button{
+    float: right;
+    margin-right: 26px;
+    margin-top: 12px;
+}
+.cw_zrzh input:first-child{
+    margin-bottom: 14px;
+}
+.finance_fontsize{
+    font-size: 16px;
+    margin-top: -3px;
+}
+.finance_fontsize1{
+    font-size: 18px;
+}
+
+.finance_table{
+    border-radius:3px;
+    border: 1px solid #e6e6e6;
+    display: inline-block;
+}
+.t_left_f{
+    width: 18%;
+    max-width: 10em;
+}
+.finance_khysqk{
+    margin-right: 74px;
+    margin-top: -23px;
+}
+.takenote_bj{
+    margin-left: 36px;
+}
+.takenote_bj p{
+    font-size: 14px;
+    border-left: 6px solid #23a2f3;
+    font-weight: 100;
+    line-height: 16px;
+    margin:17px 20px;
+}
+.takenote_bg{
+
+    width: 100%;
+    border-radius: 3px;
+}
+.f_unhead_box{
+    text-indent: 0;
+    line-height: 22px;
+    height: auto;
+    padding: 10px 40px;
+}
+.highcharts-credits{
+    display: none;
+}
+.work_staicAtt_dlog_det{
+    max-width:1330px;
+    height: 420px;
+}
+.work_staicAtt2_dlog_det{
+    max-width:1330px;
+    height: 366px;
+}
+/*员工工资*/
+.hr_left_bmyg2 span:before{
+    background: url(../../images/menu_person.png) !important;
+    background-repeat: no-repeat;
+    width: 10px !important;
+}
+.hr_ul1:before,.hr_ul2:before {
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    content: "";
+    background: url(../../images/iconright.png);
+    background-repeat: no-repeat;
+    z-index: 3;
+    margin-left: -14px;
+    /*margin-top: 6px;*/
+    margin-top: 12px;
+}
+/*.change:before{*/
+/*background: url(../../images/icondown.png) no-repeat !important;*/
+/*}*/
+.hr_ul3:before{
+    background: none !important;
+}
+.hr_ul2,.hr_ul3{
+    display: none;
+}
+
+.hr_lzry .hr_ul3 span:before{
+    background-image: url("../../images/icon-renwu.png")!important;
+    background-repeat: no-repeat;
+}
+.finance_yggz_date{
+    display: inline-block;
+    margin-left: 15px;
+}
+.finance_yggz_date .t_left{
+    width: 29%;
+}
+.finance_yggz_date .t_right{
+    margin-left: 36%;
+}
+.finance_yggz_hsgz{
+    padding: 0 0 10px;
+}
+.finance_yggz_fxsz .t_textinput{
+    width: 40%;
+    margin: 0;
+    float: left;
+}
+.finance_yggz_fxsz .t_textinput .t_left{
+    width: 36%;
+}
+.finance_yggz_fxsz .t_textinput .t_right{
+    margin-left: 40%;
+}
+.finance_bf .t_textinput{
+    width: 60%;
+    margin-left: 49px;
+}
+.finance_bf .t_textinput .t_left{
+    width: 32%;
+    max-width: 10em;
+}
+.finance_bf .t_textinput .t_right{
+    margin-left: 32%;
+}
+.inp_38{
+    width: 68%;
+}
+.t_textinput .inp_40{
+    width: 40%;
+}
+/*图表*/
+.finance_tubiao{
+    background: #f5f6fa;
+    height: 100%;
+    width: 100%;
+    padding: 3% 30px;
+    box-sizing: border-box;
+}
+.finance_canvas{
+    background: #fff;
+    height: 90%;
+    width: 100%;
+    margin:0 auto;
+    padding: 2% 0 2%;
+    /*margin-left:32px;*/
+    /*margin-right:32px;*/
+    border-radius: 3px;
+    /*margin-top: -21px;*/
+}
+.finance_bt{
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: center;
+
+}
+.finance_tubiao_hr{
+    position: absolute;
+    border-bottom: 1px solid #ebecf0;
+    width: 100%;
+    top:70px;
+    left:0;
+    z-index:999;
+}
+/*账目管理*/
+.finance_zmgl_select .t_textinput .t_right{
+    width:80%;
+    margin-left: 18%;
+}
+.but_hr{
+    background: #f7f7f7;
+    border: none;
+    margin: 0 5px 0 0;
+    border:1px solid #e8e8e8;
+}
+.but_a:hover{
+    border: 1px solid #e8e8e8;
+}
+.finance_zmgl_button button{
+    margin-right:10px;
+}
+/*选择查看项*/
+.takenote_xzckx{
+    line-height: 30px;
+    /*margin-top: -30px;*/
+    /*margin-right: 15px;*/
+    float: right;
+}
+.takenote_xzckx .left{
+    margin-right: 20px;
+}
+/*销项付票*/
+.finance_pay_rent_time{
+    width: 34%!important;
+}
+.finance_pay_rent_three{
+    width: 49.5%;
+    display: inline-block;
+    float: left;
+    margin-right: 1%;
+}
+.finance_pay_rent_three>div{
+    width: 20%;
+}
+.finance_pay_fontsize1{
+    font-size: 18px!important;
+    /*margin-left: 0;*/
+}
+.finance_pay_rent_list{
+    cursor: pointer;
+}
+.finance_pay_rent_list:hover{
+    text-decoration: underline;
+    color: #1983d6!important;
+}
+.handle{
+    position: relative;
+}
+.hr_yidong{
+    position: absolute;
+    left: 38px;
+    top: 13px;
+}
+.finance_fxjl_fxsz_ts{
+    border:1px solid #e6e6e6;
+    background: #f7f7f7;
+    border-radius: 3px;
+    padding: 7px 0;
+}
+.finance_fxjl_fxsz_ts p{
+    line-height: 23px;
+    margin-left: 13px;
+}
+.finance_xxfp_inpa{
+    width: 80%!important;
+}
+.finance_account_a:hover{
+    background: #ff6c60!important;
+}
+/*sq 公式4.28*/
+/*第三行*/
+.finance_three {
+    background-color: #F5F6FA;
+    height: 80px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.finance_three > div {
+    float: left;
+    position: relative;
+    cursor: pointer;
+    /*display: inline-block;*/
+    line-height: 30px;
+    margin-top: 10px;
+    width: 22.5%;
+}
+.finance_three > div p{
+    text-align: center;
+}
+.finance_three .finance_fontsize{
+    width:4.5%;
+}
+.finance_three1 {
+    background-color: #F5F6FA;
+    height: 80px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.finance_three1 > div {
+    display: inline-block;
+    line-height: 30px;
+    margin-top: 10px;
+    width: 24.5%;
+}
+.finance_three1 > div p{
+    text-align: center;
+}
+.finance_three87 {
+    background-color: #F5F6FA;
+    height: 80px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.finance_three87 > div {
+    display: inline-block;
+    line-height: 30px;
+    margin-top: 10px;
+    width: 19.5%;
+}
+.finance_three87 > div p{
+    text-align: center;
+}
+
+.finance_fontsize1 {
+    font-size: 16px;
+    margin-left: -6px;
+}
+
+.finance_fontsize {
+    vertical-align: top;
+    font-size: 20px;
+    /*font-weight: 600;*/
+}
+.finance_salary_active{
+    width: 9%;
+    float: right;
+    margin-top: -127px;
+    height: 125px;
+    border: 1px solid #e6e6e6;
+    border-right: none;
+}
+.finance_salary_active_one{
+    height: 69px;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+    margin-top: 0px;
+    background: #f5f6fa;
+}
+.finance_salary_active_one span{
+    line-height: 69px;
+    font-size: 12px;
+    color: #999;
+    font-weight: 600;
+}
+.finance_three_a{
+    /*overflow: hidden;*/
+}
+.finance_three_a .left1{
+    display: inline-block;
+    background: #ebecf0;
+    width: 39.5%;
+    padding: 21px 0px;
+    text-align: left;
+    font-size: 16px;
+    border-top: 1px solid #e6e6e6;
+    float: left;
+    margin-right: 1%;
+    font-weight: bold;
+}
+.finance_xxfp_a{
+    text-align: left;
+    font-size: 16px;
+    float: left;
+    font-weight: bold;
+    line-height: 30px;
+}
+.finance_three_a .right1{
+    background: #ebecf0;
+    width: 59.5%;
+    padding: 17px 0px;
+    text-align: left;
+    font-size: 18px;
+    border-top: 1px solid #e6e6e6;
+    /* margin-right: 0%; */
+    display: inline-block;
+    float: right;
+    /* margin-right: 8px; */
+}

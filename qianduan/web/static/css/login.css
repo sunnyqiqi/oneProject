@@ -1,0 +1,307 @@
+input:-webkit-autofill { box-shadow: 0 0 0px 1000px white inset;}
+body{
+    background: url("../images/bg.jpg");
+    /*background-size: 100%;*/
+    overflow: hidden;
+    position: relative;
+    background-position: center top;
+    /*background-size: cover;*/
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    background-repeat: no-repeat;
+}
+.login{
+    padding-top: 67px;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: table;
+    width: 100%;
+}
+.login_header{
+    display: table-cell;
+    vertical-align: middle;
+}
+/*.download{*/
+    /*margin-top: 30px;*/
+    /*!* margin-bottom: 30px; *!*/
+    /*max-height: 89px;*/
+    /*min-height: 75px;*/
+    /*height: 10%;*/
+    /*position:absolute;*/
+    /*left:50%;*/
+    /*!*top:19.72%;*!*/
+    /*top: 120px;*/
+    /*width:528px;*/
+    /*height:60px;*/
+    /*margin-left:-264px;*/
+    /*color:#fff;*/
+    /*font-size:16px;*/
+    /*line-height:60px;*/
+    /*background: rgba(255,255,255,0.2);*/
+    /*!*处理兼容IE8*!*/
+    /*!*filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);*!*/
+    /*border-radius: 28px;*/
+/*}*/
+
+
+
+
+.download{
+    position:absolute;
+    left:50%;
+    /*top:19.72%;*/
+    top: 120px;
+    width:528px;
+    height:60px;
+    margin-left:-264px;
+    color:#fff;
+    font-size:16px;
+    line-height:60px;
+    background: rgba(255,255,255,0.2);
+    /*处理兼容IE8*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);*/
+    border-radius: 28px;
+}
+.download>p{
+    cursor: pointer;
+}
+.download>p:hover{
+    text-decoration: solid;
+}
+.d-left {
+    float: left;
+    border-right: 1px solid #453e42;
+    width: 207px;
+    padding-left: 57px;
+    text-indent: 16px;
+    cursor: pointer;
+    /*box-sizing: border-box;*/
+}
+.d-left i{
+    float: left;
+    width:26px;
+    height:31px;
+    background: url("../images/iphoneicon.png");
+    margin-top:12px;
+}
+.d-right{
+    float:right;
+    width:212px;
+    padding-left:50px;
+    text-indent: 16px;
+    cursor: pointer;
+}
+.d-right i{
+    margin-top:12px;
+    float: left;
+    width:26px;
+    height:30px;
+    background: url("../images/Androidicon.png");
+}
+.download a.download_a{
+    display: inline-block;
+    float:left;
+    border-radius: 28px 0 0 28px;
+    color: #fff!important;
+}
+.download a.download_b{
+    border-radius: 0 28px 28px 0;
+    float:right;
+}
+.download a.download_a:hover{
+    background: rgba(255,255,255,0.1);
+}
+.logBox{
+    position: absolute;
+    left: 50%;
+    margin-left: -425px;
+    /*top: 31.44%;*/
+    top:220px;
+    /*width:810px;*/
+    /*height:422px;*/
+    border-radius:3px;
+    border:solid rgba(255,255,255,0.1) 20px;
+    /*overflow: hidden;*/
+}
+.logBox h3{
+    width:100%;
+    height:55px;
+    line-height:55px;
+    background: #2c3743;
+    font-size:20px;
+    text-shadow: 0 1px 1px #28323d;
+    color:#f7fafe;
+    font-weight:100;
+    text-align:center;
+    border-top:1px solid #384452;
+    border-radius: 3px 3px 0 0 ;
+    display: block;
+}
+.conTent{
+    /*width: 631px;*/
+    /*height: 292px;*/
+    /*padding:52px 88px 52px 91px;*/
+    padding:52px 88px;
+    background: #ffffff;
+    border-radius: 0 0 3px 3px;
+}
+.conTent li{
+    float: left;
+}
+.conTent>li>h5{
+    font-size:15px;
+    color:#6a7684;
+    line-height:15px;
+    margin-bottom:19px;
+    text-align: center;
+}
+.log-left>h5{
+    /*text-indent:76px;*/
+}
+.log-left>p{
+    position: relative;
+}
+.log-left>p>input{
+    width:259px;
+    height:38px;
+    border:1px solid #e7edf5;
+    border-radius:3px;
+    margin-bottom:20px;
+    line-height:38px;
+    text-indent:36px;
+    padding: 0;
+}
+.log-left>p>input:focus{
+    border-color: #23a2f3;
+}
+.log-left>p>em{
+    position:absolute;
+    left:11px;
+    top:13px;
+}
+.log-left>.user>em{
+    width:14px;
+    height:13px;
+    background: url("../images/uesricon.png") no-repeat;
+
+}
+.log-left>.pwd>em{
+    width:13px;
+    height:13px;
+    background: url("../images/pwdicon.png") no-repeat;
+}
+
+.loginBtn{
+    display: block;
+    width:259px;
+    height:36px;
+    /*border-bottom:2px solid #55acee;*/
+    border-radius:3px;
+    line-height:38px;
+    background: #55acee;
+    color:#fff;
+    text-align: center;
+    margin-top:10px;
+    box-shadow: 0px 0px 0px #4e9bd5;
+    cursor: pointer;
+    font-size: 14px;
+}
+.loginBtn:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.remeber{
+    width:100%;
+    height:13px;
+    line-height:13px;
+    color:#a4adb7;
+    margin-top:24px;
+    cursor: pointer;
+    font-size:12px;
+}
+.remeber span{
+    float:right;
+}
+.remeber span:hover{
+    text-decoration: underline;
+    color:#23a2f3;
+}
+.middle{
+    margin-left:80px;
+    margin-right:79px;
+    color:#e4e7ea;
+    font-size:14px;
+    text-align:center;
+
+}
+.middle>p{
+    width:1px;
+    height:80px;
+    margin:0 auto;
+    background: #e8ebed;
+}
+.middle>.lineT{
+    margin-top:22px;
+    margin-bottom:13px;
+}
+.middle>.lineB{
+    margin-top:16px;
+}
+.QRbox{
+    width:158px;
+    height:158px;
+    border:1px solid #e7edf5;
+    border-radius: 3px;
+    padding:15px;
+    margin:0 auto;
+}
+.QRbox img{
+    width:100%;
+    height:100%;
+}
+.log-right>h5{
+    /*text-indent:41px;*/
+}
+.log-right>p{
+    font-size:12px;
+    line-height:12px;
+    color:#c9ced4;
+    text-align: center;
+    margin-top:8px;
+}
+.use_QR>img{
+    position: absolute;
+    right: -400px;
+    top:-110px;
+    opacity: 0;
+}
+.ask_icon{
+    width: 18px;
+    height: 18px;
+    background: url("../images/ask_download.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 8px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+
+
+.sao_sao {
+    box-shadow: none!important;
+    opacity: 0!important;
+    filter:alpha(opacity=0)!important;
+    right: -400px!important;
+    transition: all .3s!important;
+    -ms-transition: all .3s!important;
+}
+.sao_sao_hover {
+    box-shadow: none!important;
+    opacity: 1!important;
+    filter:alpha(opacity=100)!important;
+    right: -300px!important;
+    transition: all .3s!important;
+    -ms-transition: all .3s!important;
+}
